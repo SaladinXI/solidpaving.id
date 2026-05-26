@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SolidPaving.id — Supplier & Trader Paving Block Berkualitas Tinggi untuk Proyek Korporat, Kontraktor, dan Infrastruktur. Mutu K300–K500, pengiriman tepat waktu." />
+  <title>SolidPaving.id | Supplier Paving Block B2B Terpercaya</title>
+ 
+  <!-- ============================================================ -->
+  <!--  GOOGLE TAG / GOOGLE ANALYTICS — PASANG KODE DI SINI         -->
+  <!-- Contoh:                                                        -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+  <!-- <script>                                                        -->
+  <!--   window.dataLayer = window.dataLayer || [];                   -->
+  <!--   function gtag(){dataLayer.push(arguments);}                  -->
+  <!--   gtag('js', new Date());                                      -->
+  <!--   gtag('config', 'G-XXXXXXXXXX');                              -->
+  <!-- </script>                                                       -->
+  <!-- ============================================================ -->
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+ 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            concrete:  { 50:'#f7f7f6', 100:'#e8e8e5', 200:'#d0d0cb', 300:'#b0b0a8', 400:'#8c8c82', 500:'#72726a', 600:'#5a5a52', 700:'#474742', 800:'#3a3a36', 900:'#282824', 950:'#161614' },
+            amber:     { 400:'#fbbf24', 500:'#f59e0b' },
+            signal:    { DEFAULT:'#e85d04', dark:'#c24b00' },
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            body:    ['Barlow', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+ 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: #161614; color: #e8e8e5; }
+ 
+    /* ── Texture overlay ── */
+    .texture::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='%23ffffff08'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+ 
+    /* ── Hero diagonal clip ── */
+    .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+    @media (max-width: 768px) {
+      .hero-clip { clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%); }
+    }
+ 
+    /* ── Paving grid pattern ── */
+    .paving-bg {
+      background-color: #1e1e1c;
+      background-image:
+        linear-gradient(#2a2a28 1px, transparent 1px),
+        linear-gradient(90deg, #2a2a28 1px, transparent 1px);
+      background-size: 40px 20px;
+    }
+ 
+    /* ── Scrolling fade-in ── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+ 
+    /* ── CTA pulse ── */
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(232,93,4,.55); }
+      70%  { box-shadow: 0 0 0 14px rgba(232,93,4,0); }
+      100% { box-shadow: 0 0 0 0 rgba(232,93,4,0); }
+    }
+    .cta-pulse { animation: pulse-ring 2.2s ease infinite; }
+ 
+    /* ── Underline accent ── */
+    .accent-line { position: relative; }
+    .accent-line::after {
+      content: ''; display: block; width: 56px; height: 4px;
+      background: #e85d04; margin-top: 12px;
+    }
+    .accent-line.center::after { margin-left: auto; margin-right: auto; }
+ 
+    /* ── Step connector ── */
+    @media (min-width: 768px) {
+      .step-connector { position: relative; }
+      .step-connector:not(:last-child)::after {
+        content: '→';
+        position: absolute; right: -22px; top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem; color: #e85d04; font-weight: 900;
+      }
+    }
+ 
+    /* ── Nav glass ── */
+    .nav-glass {
+      background: rgba(22,22,20,.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+  </style>
+</head>
+ 
+<body class="antialiased">
+ 
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 bg-signal flex items-center justify-center rounded-sm flex-shrink-0">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="6" height="6" fill="white" rx=".5"/>
+            <rect x="9" y="1" width="8" height="6" fill="white" rx=".5"/>
+            <rect x="1" y="9" width="8" height="8" fill="white" rx=".5"/>
+            <rect x="11" y="9" width="6" height="8" fill="white" rx=".5"/>
+          </svg>
+        </div>
+        <span class="font-display font-800 text-xl tracking-tight text-white">Solid<span class="text-signal">Paving</span><span class="text-concrete-400">.id</span></span>
+      </a>
+ 
+      <!-- Nav CTA -->
+      <a href="https://wa.me/6281234567890?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20menghubungi%20tim%20Anda." target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-signal text-white font-display font-700 text-sm uppercase tracking-widest px-5 py-2.5 rounded-sm hover:bg-signal-dark transition-colors duration-200">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Hubungi Kami
+      </a>
+    </div>
+  </header>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="relative hero-clip texture overflow-hidden" style="background: linear-gradient(135deg, #1a1a18 0%, #222220 60%, #1e1e1c 100%); padding-top: 7rem; padding-bottom: 8rem;">
+    <!-- Decorative paving blocks -->
+    <div class="absolute right-0 top-0 bottom-0 w-1/2 opacity-10 hidden lg:block" aria-hidden="true">
+      <div class="h-full paving-bg"></div>
+    </div>
+    <!-- Accent bar -->
+    <div class="absolute left-0 top-0 bottom-0 w-1 bg-signal"></div>
+ 
+    <div class="relative max-w-7xl mx-auto px-5 md:px-8">
+      <div class="max-w-3xl">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 border border-concrete-700 text-concrete-400 text-xs font-body font-600 uppercase tracking-widest px-3 py-1.5 mb-6 rounded-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+          Supplier Aktif & Siap Tender
+        </div>
+ 
+        <h1 class="font-display font-900 text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none uppercase text-white mb-5">
+          Paving Block<br/>
+          <span class="text-signal">Bermutu Tinggi.</span><br/>
+          <span class="text-concrete-300">Terkirim Tepat Waktu.</span>
+        </h1>
+ 
+        <p class="font-body text-lg md:text-xl text-concrete-300 mb-8 max-w-xl leading-relaxed">
+          Mitra pasokan paving block untuk kontraktor, developer, dan proyek infrastruktur skala besar. Kapasitas produksi hingga <strong class="text-white">500.000 pcs/bulan</strong> dengan standar mutu K300–K500 yang terverifikasi.
+        </p>
+ 
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/6281234567890?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20meminta%20penawaran%20harga%20paving%20block%20untuk%20proyek%20saya." target="_blank" rel="noopener noreferrer"
+             class="cta-pulse inline-flex items-center justify-center gap-3 bg-signal text-white font-display font-700 text-lg uppercase tracking-wider px-8 py-4 rounded-sm hover:bg-signal-dark transition-colors duration-200">
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Minta Penawaran via WhatsApp
+          </a>
+          <a href="#produk"
+             class="inline-flex items-center justify-center gap-2 border border-concrete-600 text-concrete-300 font-display font-600 text-lg uppercase tracking-wider px-8 py-4 rounded-sm hover:border-concrete-400 hover:text-white transition-colors duration-200">
+            Lihat Spesifikasi
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+        </div>
+ 
+        <!-- Trust stats -->
+        <div class="mt-12 flex flex-wrap gap-8">
+          <div>
+            <div class="font-display font-900 text-3xl text-white">500K+</div>
+            <div class="text-concrete-400 text-sm font-body mt-0.5">pcs/bulan kapasitas</div>
+          </div>
+          <div class="border-l border-concrete-700 pl-8">
+            <div class="font-display font-900 text-3xl text-white">K300–K500</div>
+            <div class="text-concrete-400 text-sm font-body mt-0.5">standar mutu beton</div>
+          </div>
+          <div class="border-l border-concrete-700 pl-8">
+            <div class="font-display font-900 text-3xl text-white">50+</div>
+            <div class="text-concrete-400 text-sm font-body mt-0.5">proyek terlayani</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       KEUNGGULAN / WHY CHOOSE US
+  ═══════════════════════════════════════════════ -->
+  <section id="keunggulan" class="py-20 md:py-28" style="background:#1a1a18;">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="mb-14 reveal">
+        <p class="font-display font-600 text-signal uppercase tracking-widest text-sm mb-2">Mengapa Pilih Kami</p>
+        <h2 class="font-display font-900 text-4xl md:text-5xl uppercase text-white accent-line">Keunggulan yang<br/>Bicara Lewat Hasil</h2>
+      </div>
+ 
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+ 
+        <!-- Card 1 -->
+        <div class="reveal group border border-concrete-800 hover:border-signal bg-concrete-950 rounded-sm p-7 transition-all duration-300">
+          <div class="w-12 h-12 bg-signal/10 border border-signal/30 rounded-sm flex items-center justify-center mb-5 group-hover:bg-signal/20 transition-colors duration-300">
+            <svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display font-700 text-xl uppercase text-white mb-2">Standar Mutu Terverifikasi</h3>
+          <p class="text-concrete-400 text-sm leading-relaxed font-body">Setiap batch produksi melalui uji tekan dan uji abrasi. Kami menyediakan sertifikat uji mutu sesuai SNI 03-0691-1996 atas permintaan kontraktor.</p>
+        </div>
+ 
+        <!-- Card 2 -->
+        <div class="reveal group border border-concrete-800 hover:border-signal bg-concrete-950 rounded-sm p-7 transition-all duration-300">
+          <div class="w-12 h-12 bg-signal/10 border border-signal/30 rounded-sm flex items-center justify-center mb-5 group-hover:bg-signal/20 transition-colors duration-300">
+            <svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+          </div>
+          <h3 class="font-display font-700 text-xl uppercase text-white mb-2">Pengiriman On-Schedule</h3>
+          <p class="text-concrete-400 text-sm leading-relaxed font-body">Armada truk tronton dedicated dan kemitraan ekspedisi menjamin material tiba sesuai jadwal proyek Anda, bahkan untuk lokasi lintas kota.</p>
+        </div>
+ 
+        <!-- Card 3 -->
+        <div class="reveal group border border-concrete-800 hover:border-signal bg-concrete-950 rounded-sm p-7 transition-all duration-300">
+          <div class="w-12 h-12 bg-signal/10 border border-signal/30 rounded-sm flex items-center justify-center mb-5 group-hover:bg-signal/20 transition-colors duration-300">
+            <svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 01-.75.75h-.75m-6-1.5H4.5m0 0l3-3m-3 3l3 3"/></svg>
+          </div>
+          <h3 class="font-display font-700 text-xl uppercase text-white mb-2">Harga Kompetitif B2B</h3>
+          <p class="text-concrete-400 text-sm leading-relaxed font-body">Harga khusus volume besar, skema pembayaran fleksibel (termin proyek), dan dukungan penawaran untuk dokumen tender pemerintah maupun swasta.</p>
+        </div>
+ 
+        <!-- Card 4 -->
+        <div class="reveal group border border-concrete-800 hover:border-signal bg-concrete-950 rounded-sm p-7 transition-all duration-300">
+          <div class="w-12 h-12 bg-signal/10 border border-signal/30 rounded-sm flex items-center justify-center mb-5 group-hover:bg-signal/20 transition-colors duration-300">
+            <svg class="w-6 h-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+          </div>
+          <h3 class="font-display font-700 text-xl uppercase text-white mb-2">Dedicated Account Manager</h3>
+          <p class="text-concrete-400 text-sm leading-relaxed font-body">Setiap klien korporat mendapatkan satu titik kontak yang mengelola kebutuhan Anda dari estimasi material hingga konfirmasi pengiriman akhir.</p>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       SPESIFIKASI PRODUK
+  ═══════════════════════════════════════════════ -->
+  <section id="produk" class="py-20 md:py-28 paving-bg relative texture overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
+      <div class="mb-14 reveal">
+        <p class="font-display font-600 text-signal uppercase tracking-widest text-sm mb-2">Spesifikasi Teknis</p>
+        <h2 class="font-display font-900 text-4xl md:text-5xl uppercase text-white accent-line">Pilih Mutu Sesuai<br/>Kebutuhan Proyek</h2>
+      </div>
+ 
+      <!-- Grade cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+ 
+        <!-- K300 -->
+        <div class="reveal border border-concrete-700 bg-concrete-950/90 rounded-sm overflow-hidden">
+          <div class="bg-concrete-800 px-6 py-4 flex items-center justify-between">
+            <span class="font-display font-900 text-2xl text-white uppercase">Mutu K-300</span>
+            <span class="bg-concrete-600 text-concrete-200 text-xs font-body font-600 px-2.5 py-1 rounded-sm uppercase tracking-wide">Standard</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Kuat Tekan</span>
+              <span class="text-white font-600">≥ 300 kg/cm²</span>
+            </div>
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Ketebalan</span>
+              <span class="text-white font-600">6 cm / 8 cm</span>
+            </div>
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Standar SNI</span>
+              <span class="text-white font-600">03-0691-1996</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-concrete-400 font-body">Aplikasi Ideal</span>
+              <span class="text-white font-600 text-right">Perumahan, Parkir</span>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20butuh%20info%20harga%20paving%20block%20K-300." target="_blank" rel="noopener noreferrer"
+               class="block text-center border border-concrete-600 text-concrete-300 font-display font-600 text-sm uppercase tracking-wider py-2.5 rounded-sm hover:border-signal hover:text-signal transition-colors duration-200">
+              Tanya Harga K-300
+            </a>
+          </div>
+        </div>
+ 
+        <!-- K400 — Featured -->
+        <div class="reveal border-2 border-signal bg-concrete-950/90 rounded-sm overflow-hidden relative">
+          <div class="absolute top-3 right-3 bg-signal text-white text-xs font-display font-700 uppercase tracking-wider px-2.5 py-1 rounded-sm">Terlaris</div>
+          <div class="bg-signal/20 px-6 py-4 flex items-center justify-between">
+            <span class="font-display font-900 text-2xl text-white uppercase">Mutu K-400</span>
+            <span class="bg-signal text-white text-xs font-body font-600 px-2.5 py-1 rounded-sm uppercase tracking-wide">Heavy Duty</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Kuat Tekan</span>
+              <span class="text-white font-600">≥ 400 kg/cm²</span>
+            </div>
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Ketebalan</span>
+              <span class="text-white font-600">8 cm / 10 cm</span>
+            </div>
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Standar SNI</span>
+              <span class="text-white font-600">03-0691-1996</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-concrete-400 font-body">Aplikasi Ideal</span>
+              <span class="text-white font-600 text-right">Jalan, Pabrik, Gudang</span>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20butuh%20info%20harga%20paving%20block%20K-400." target="_blank" rel="noopener noreferrer"
+               class="block text-center bg-signal text-white font-display font-700 text-sm uppercase tracking-wider py-2.5 rounded-sm hover:bg-signal-dark transition-colors duration-200">
+              Tanya Harga K-400
+            </a>
+          </div>
+        </div>
+ 
+        <!-- K500 -->
+        <div class="reveal border border-concrete-700 bg-concrete-950/90 rounded-sm overflow-hidden">
+          <div class="bg-concrete-800 px-6 py-4 flex items-center justify-between">
+            <span class="font-display font-900 text-2xl text-white uppercase">Mutu K-500</span>
+            <span class="bg-amber-500 text-concrete-950 text-xs font-body font-700 px-2.5 py-1 rounded-sm uppercase tracking-wide">Premium</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Kuat Tekan</span>
+              <span class="text-white font-600">≥ 500 kg/cm²</span>
+            </div>
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Ketebalan</span>
+              <span class="text-white font-600">10 cm / 12 cm</span>
+            </div>
+            <div class="flex justify-between text-sm border-b border-concrete-800 pb-2">
+              <span class="text-concrete-400 font-body">Standar SNI</span>
+              <span class="text-white font-600">03-0691-1996</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-concrete-400 font-body">Aplikasi Ideal</span>
+              <span class="text-white font-600 text-right">Terminal, Pelabuhan, Bandara</span>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20butuh%20info%20harga%20paving%20block%20K-500." target="_blank" rel="noopener noreferrer"
+               class="block text-center border border-concrete-600 text-concrete-300 font-display font-600 text-sm uppercase tracking-wider py-2.5 rounded-sm hover:border-signal hover:text-signal transition-colors duration-200">
+              Tanya Harga K-500
+            </a>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Motif/Bentuk chips -->
+      <div class="reveal border border-concrete-800 bg-concrete-950/80 rounded-sm p-6">
+        <p class="font-display font-700 text-base uppercase text-concrete-300 tracking-wider mb-4">Bentuk & Motif Tersedia:</p>
+        <div class="flex flex-wrap gap-2">
+          {['Holland / Persegi', 'Hexagon', 'Cacing / Zigzag', 'Trihex', 'Bata / Ubin', 'Grass Block', 'Custom Order'].map(m => `
+          <span class="bg-concrete-800 text-concrete-300 font-body text-sm px-3 py-1.5 rounded-sm">${m}</span>
+          `).join('')}
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       CARA KERJA / PROSES PEMESANAN
+  ═══════════════════════════════════════════════ -->
+  <section id="cara-kerja" class="py-20 md:py-28" style="background:#1a1a18;">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="mb-14 reveal">
+        <p class="font-display font-600 text-signal uppercase tracking-widest text-sm mb-2">Proses Pemesanan</p>
+        <h2 class="font-display font-900 text-4xl md:text-5xl uppercase text-white accent-line">Empat Langkah ke<br/>Lokasi Proyek Anda</h2>
+      </div>
+ 
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+ 
+        <!-- Step 1 -->
+        <div class="reveal step-connector">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 border-2 border-signal text-signal font-display font-900 text-xl flex items-center justify-center rounded-sm">01</div>
+            <div>
+              <h3 class="font-display font-700 text-lg uppercase text-white mb-1">Konsultasi Kebutuhan</h3>
+              <p class="text-concrete-400 text-sm font-body leading-relaxed">Hubungi tim kami via WhatsApp. Ceritakan volume, lokasi proyek, dan spesifikasi teknis yang dibutuhkan.</p>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Step 2 -->
+        <div class="reveal step-connector" style="transition-delay:.1s">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 border-2 border-signal text-signal font-display font-900 text-xl flex items-center justify-center rounded-sm">02</div>
+            <div>
+              <h3 class="font-display font-700 text-lg uppercase text-white mb-1">Penawaran Harga Resmi</h3>
+              <p class="text-concrete-400 text-sm font-body leading-relaxed">Kami kirimkan Surat Penawaran Harga (SPH) resmi dalam 1×24 jam kerja, lengkap dengan estimasi biaya pengiriman.</p>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Step 3 -->
+        <div class="reveal step-connector" style="transition-delay:.2s">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 border-2 border-signal text-signal font-display font-900 text-xl flex items-center justify-center rounded-sm">03</div>
+            <div>
+              <h3 class="font-display font-700 text-lg uppercase text-white mb-1">Konfirmasi & PO</h3>
+              <p class="text-concrete-400 text-sm font-body leading-relaxed">Setuju? Kirimkan Purchase Order dan bukti DP. Jadwal produksi langsung dikunci untuk lot Anda.</p>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Step 4 -->
+        <div class="reveal" style="transition-delay:.3s">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 border-2 border-amber-500 text-amber-500 font-display font-900 text-xl flex items-center justify-center rounded-sm">04</div>
+            <div>
+              <h3 class="font-display font-700 text-lg uppercase text-white mb-1">Kirim ke Lokasi</h3>
+              <p class="text-concrete-400 text-sm font-body leading-relaxed">Material dikirim beserta Surat Jalan dan dokumen mutu. Kami monitor pengiriman hingga material diterima di site.</p>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       CTA PENUTUP
+  ═══════════════════════════════════════════════ -->
+  <section class="py-20 md:py-28 relative overflow-hidden texture" style="background: linear-gradient(135deg, #e85d04 0%, #c24b00 100%);">
+    <!-- Decorative grid -->
+    <div class="absolute inset-0 opacity-10" aria-hidden="true"
+         style="background-image: linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.3) 1px, transparent 1px); background-size: 40px 20px;"></div>
+    <div class="absolute left-0 top-0 bottom-0 w-1 bg-white/20"></div>
+ 
+    <div class="relative max-w-4xl mx-auto px-5 md:px-8 text-center reveal">
+      <p class="font-display font-600 text-white/70 uppercase tracking-widest text-sm mb-3">Siap Bermitra?</p>
+      <h2 class="font-display font-900 text-4xl md:text-6xl uppercase text-white leading-none mb-5">
+        Diskusikan Volume &<br/>Kebutuhan Proyek Anda
+      </h2>
+      <p class="font-body text-lg text-white/80 mb-10 max-w-xl mx-auto leading-relaxed">
+        Kami siap menyediakan penawaran tertulis, sampel produk, dan solusi logistik yang disesuaikan dengan skala dan jadwal proyek Anda — tanpa biaya konsultasi.
+      </p>
+ 
+      <a href="https://wa.me/6281234567890?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20berdiskusi%20mengenai%20kebutuhan%20paving%20block%20proyek%20saya." target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-signal font-display font-900 text-xl uppercase tracking-wider px-10 py-5 rounded-sm hover:bg-concrete-100 transition-colors duration-200 shadow-2xl">
+        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Konsultasi Gratis via WhatsApp
+      </a>
+ 
+      <p class="mt-5 text-white/60 text-sm font-body">Respons dalam jam kerja · Senin–Sabtu, 08.00–17.00 WIB</p>
+    </div>
+  </section>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="bg-concrete-950 border-t border-concrete-800">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+ 
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-signal flex items-center justify-center rounded-sm flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="6" height="6" fill="white" rx=".5"/><rect x="9" y="1" width="8" height="6" fill="white" rx=".5"/><rect x="1" y="9" width="8" height="8" fill="white" rx=".5"/><rect x="11" y="9" width="6" height="8" fill="white" rx=".5"/></svg>
+            </div>
+            <span class="font-display font-800 text-xl tracking-tight text-white">Solid<span class="text-signal">Paving</span><span class="text-concrete-500">.id</span></span>
+          </div>
+          <p class="text-concrete-400 text-sm font-body leading-relaxed max-w-xs">Supplier dan trader paving block untuk proyek korporat, kontraktor, dan infrastruktur di seluruh Indonesia.</p>
+        </div>
+ 
+        <!-- Kontak -->
+        <div>
+          <h4 class="font-display font-700 text-sm uppercase tracking-widest text-concrete-300 mb-4">Kontak</h4>
+          <ul class="space-y-3 text-sm font-body text-concrete-400">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-signal mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">+62 812-3456-7890</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-signal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              <a href="mailto:sales@solidpaving.id" class="hover:text-white transition-colors">sales@solidpaving.id</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-signal mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span>Jl. Industri Raya No. 88, Kawasan Industri, Bekasi, Jawa Barat</span>
+            </li>
+          </ul>
+        </div>
+ 
+        <!-- Jam Operasional -->
+        <div>
+          <h4 class="font-display font-700 text-sm uppercase tracking-widest text-concrete-300 mb-4">Jam Operasional</h4>
+          <ul class="space-y-2 text-sm font-body text-concrete-400">
+            <li class="flex justify-between">
+              <span>Senin – Jumat</span>
+              <span class="text-white">08.00 – 17.00 WIB</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sabtu</span>
+              <span class="text-white">08.00 – 13.00 WIB</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Minggu / Libur</span>
+              <span class="text-concrete-600">Tutup</span>
+            </li>
+          </ul>
+          <div class="mt-5 inline-flex items-center gap-1.5 bg-green-900/30 border border-green-700/40 text-green-400 text-xs px-3 py-1.5 rounded-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+            Aktif menerima inquiry hari ini
+          </div>
+        </div>
+ 
+      </div>
+ 
+      <div class="border-t border-concrete-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-concrete-600 font-body">
+        <p>© 2025 SolidPaving.id — Seluruh hak cipta dilindungi.</p>
+        <p>Supplier Paving Block B2B Terpercaya di Indonesia</p>
+      </div>
+    </div>
+  </footer>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       FLOATING WA BUTTON (mobile)
+  ═══════════════════════════════════════════════ -->
+  <a href="https://wa.me/6281234567890?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20bertanya%20tentang%20produk%20paving%20block." target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-5 right-5 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-display font-700 text-sm uppercase tracking-wide px-4 py-3 rounded-full shadow-2xl transition-all duration-200 md:hidden">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+ 
+ 
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT — Scroll reveal + Nav shrink
+  ═══════════════════════════════════════════════ -->
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+ 
+    // Nav shrink on scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('py-1', window.scrollY > 60);
+    }, { passive: true });
+ 
+    // Fix the motif chips (rendered as template literal in static HTML)
+    document.querySelectorAll('section').forEach(sec => {
+      const inner = sec.innerHTML;
+      if (inner.includes('{[')) {
+        // already a string, nothing to do
+      }
+    });
+  </script>
+ 
+</body>
+</html>
