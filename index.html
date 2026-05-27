@@ -214,16 +214,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(248,247,243,.92);backdr
 .cost p{font-size:15px;color:rgba(232,236,244,.74);max-width:560px}
 
 /* ─── METHOD / SOLUTION ─── */
-.method-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;margin-top:52px;align-items:start}
-@media(max-width:900px){.method-wrap{grid-template-columns:1fr;gap:36px}}
-.method-photo{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -22px rgba(19,29,59,.4);position:sticky;top:96px}
-@media(max-width:900px){
-  .method-photo{position:static;max-height:260px}
-}
-.method-photo img{width:100%;aspect-ratio:4/4.6;object-fit:cover;object-position:center top}
-@media(max-width:900px){
-  .method-photo img{aspect-ratio:16/9;max-height:260px}
-}
+.method-wrap{display:grid;grid-template-columns:1fr;gap:0;margin-top:52px;align-items:start;max-width:760px}
 
 /* ─── PRODUCTS ─── */
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
@@ -479,9 +470,6 @@ footer{background:#0c1322;color:rgba(232,236,244,.6);padding:58px 0 28px;border-
     </div>
 
     <div class="method-wrap">
-      <div class="method-photo rv">
-        <img onerror="imgFail(this)" src="https://ectascom.sirv.com/pyracon/pemasangan%20paving%20pltu.jpg?w=720" alt="Proses pemasangan paving block skala industri oleh tim SolidPaving"/>
-      </div>
       <div class="steps">
         <div class="step rv">
           <div class="step-n">01</div>
