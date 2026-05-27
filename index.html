@@ -110,7 +110,7 @@ a{text-decoration:none;color:inherit}
 .eyebrow.light::before{background:var(--accent)}
 .eyebrow.center{justify-content:center}
 
-/* ─── BUTTONS ─── (CTA biru #95B3D9, teks navy — kontras tinggi & sesuai brand asli) */
+/* ─── BUTTONS ─── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:15.5px;padding:15px 30px;border-radius:8px;border:none;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;white-space:nowrap;line-height:1}
 .btn svg{flex-shrink:0;width:19px;height:19px}
 .btn-cta{background:var(--accent);color:var(--navy);box-shadow:0 6px 18px rgba(46,62,95,.18)}
@@ -123,7 +123,7 @@ a{text-decoration:none;color:inherit}
 .btn-ghost.onlight:hover{background:rgba(149,179,217,.12);color:#fff}
 .btn-sm{padding:11px 20px;font-size:14px}
 
-/* ─── HEADER (slim, minim kebocoran) ─── */
+/* ─── HEADER ─── */
 header{position:sticky;top:0;z-index:100;background:rgba(248,247,243,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
 .brand{display:flex;align-items:center;gap:11px}
@@ -217,16 +217,13 @@ header{position:sticky;top:0;z-index:100;background:rgba(248,247,243,.92);backdr
 .method-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;margin-top:52px;align-items:start}
 @media(max-width:900px){.method-wrap{grid-template-columns:1fr;gap:36px}}
 .method-photo{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -22px rgba(19,29,59,.4);position:sticky;top:96px}
-@media(max-width:900px){.method-photo{position:static}}
-.method-photo img{width:100%;aspect-ratio:4/4.6;object-fit:cover}
-.steps{display:flex;flex-direction:column}
-.step{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
-.step:last-child{border-bottom:none}
-.step-n{font-family:'Archivo',sans-serif;font-weight:900;font-size:17px;width:46px;height:46px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.step.win .step-n{background:var(--accent);color:var(--navy)}
-.step h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;color:var(--navy);margin-bottom:6px;line-height:1.12}
-.step p{font-size:14.5px;color:var(--muted);line-height:1.65}
-.step .solves{display:inline-block;margin-top:8px;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--steel);background:rgba(149,179,217,.18);padding:4px 10px;border-radius:100px}
+@media(max-width:900px){
+  .method-photo{position:static;max-height:260px}
+}
+.method-photo img{width:100%;aspect-ratio:4/4.6;object-fit:cover;object-position:center top}
+@media(max-width:900px){
+  .method-photo img{aspect-ratio:16/9;max-height:260px}
+}
 
 /* ─── PRODUCTS ─── */
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
@@ -313,7 +310,7 @@ footer{background:#0c1322;color:rgba(232,236,244,.6);padding:58px 0 28px;border-
 .foot svg{flex-shrink:0;width:15px;height:15px;color:var(--accent)}
 .foot-bottom{border-top:1px solid var(--line2);padding-top:22px;text-align:center;font-size:12px;color:rgba(232,236,244,.3)}
 
-/* ─── FLOATING WA (satu-satunya hijau) ─── */
+/* ─── FLOATING WA ─── */
 @keyframes wapulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 .fwa{position:fixed;right:22px;bottom:22px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.42);animation:wapulse 2s infinite;transition:transform .2s,background .2s}
 .fwa:hover{transform:scale(1.08);background:#1fb958}
@@ -324,6 +321,16 @@ footer{background:#0c1322;color:rgba(232,236,244,.6);padding:58px 0 28px;border-
 /* ─── REVEAL ─── */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
 .rv.in{opacity:1;transform:none}
+
+/* ─── STEPS ─── */
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step-n{font-family:'Archivo',sans-serif;font-weight:900;font-size:17px;width:46px;height:46px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step.win .step-n{background:var(--accent);color:var(--navy)}
+.step h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;color:var(--navy);margin-bottom:6px;line-height:1.12}
+.step p{font-size:14.5px;color:var(--muted);line-height:1.65}
+.step .solves{display:inline-block;margin-top:8px;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--steel);background:rgba(149,179,217,.18);padding:4px 10px;border-radius:100px}
 
 @media(max-width:560px){
   .hero-btns{flex-direction:column}
@@ -700,23 +707,20 @@ footer{background:#0c1322;color:rgba(232,236,244,.6);padding:58px 0 28px;border-
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP (satu-satunya elemen hijau) -->
+<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving,%20saya%20butuh%20bantuan%20informasi%20paving%20block%20dan%20jasa%20pasang." target="_blank" rel="noopener" onclick="wa_convert();" class="fwa" aria-label="Chat bantuan via WhatsApp">
   <span class="tip">Butuh bantuan? Chat kami</span>
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.374 0 0 5.373 0 12c0 2.14.558 4.154 1.535 5.9L.057 23.5c-.072.287.19.55.477.477l5.638-1.478A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.523-5.168-1.43l-.37-.22-3.341.877.892-3.254-.24-.375A9.944 9.944 0 012 12C2 6.478 6.478 2 12 2s10 4.478 10 10-4.478 10-10 10z"/></svg>
 </a>
 
 <script>
-  // Google Ads conversion (asinkron — href WA tetap jalan)
   function wa_convert(){
     try{ gtag('event','conversion',{'send_to':'AW-10900965515/XKw3CO2o6fEaEIuR_s0o'}); }
-    catch(e){ /* pelacakan diblokir / belum dimuat */ }
+    catch(e){}
     return true;
   }
-  // FAQ accordion
   function imgFail(img){ img.style.display='none'; var p=img.parentElement; if(!p) return; if(p.classList.contains('brand')) return; if(!p.getAttribute('data-ph')) p.setAttribute('data-ph','SolidPaving.id'); p.classList.add('ph'); }
   function toggleQA(b){ b.parentElement.classList.toggle('open'); }
-  // Scroll reveal (staggered)
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
   document.querySelectorAll('.rv').forEach(function(el,i){ el.style.transitionDelay=(Math.min(i,4)*40)+'ms'; io.observe(el); });
 </script>
