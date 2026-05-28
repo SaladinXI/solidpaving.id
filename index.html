@@ -636,8 +636,8 @@ footer { background:var(--bg1); border-top:1px solid var(--bdr); padding:48px 5%
               <div class="lay-main">
                 <div class="lay-ico" aria-hidden="true">⬛</div>
                 <div class="lay-text">
-                  <div class="lay-name" id="lay-name-2">Abu Batu 5 cm</div>
-                  <div class="lay-desc">Gelar abu batu 5 cm sebagai lapisan bedding sebelum paving dipasang.</div>
+                  <div class="lay-name" id="lay-name-2">Lapisan Bedding</div>
+                  <div class="lay-desc">Material agregat halus sebagai lapisan dasar pemasangan untuk hasil permukaan yang presisi dan rata.</div>
                 </div>
                 <div class="lay-right">
                   <div class="lay-price">Rp 35rb/m²</div>
@@ -680,7 +680,7 @@ footer { background:var(--bg1); border-top:1px solid var(--bdr); padding:48px 5%
         <div class="struk-rows">
           <div class="s-row"><span class="s-row-lbl">Material Paving</span><span class="s-row-val" id="s-mat">—</span></div>
           <div class="s-row" id="sr1" style="display:none;"><span class="s-row-lbl">Pemasangan</span><span class="s-row-val" id="sv1">—</span></div>
-          <div class="s-row" id="sr2" style="display:none;"><span class="s-row-lbl">Abu Batu 5 cm</span><span class="s-row-val" id="sv2">—</span></div>
+          <div class="s-row" id="sr2" style="display:none;"><span class="s-row-lbl">Lapisan Bedding</span><span class="s-row-val" id="sv2">—</span></div>
           <div class="s-row" id="sr3" style="display:none;"><span class="s-row-lbl">Pemadatan Sub-Base</span><span class="s-row-val" id="sv3">—</span></div>
           <div class="s-row hl"><span class="s-row-lbl">Harga per m²</span><span class="s-row-val" id="s-pm2">—</span></div>
         </div>
@@ -956,7 +956,10 @@ var isInKal=true;
 function updateSticky(){
   var p=parseFloat(document.getElementById('inp-p').value)||0;
   var l=parseFloat(document.getElementById('inp-l').value)||0;
-  document.getElementById('sticky').classList.toggle('visible',!isInKal&&p>0&&l>0);
+  var show=!isInKal&&p>0&&l>0;
+  document.getElementById('sticky').classList.toggle('visible',show);
+  document.querySelector('.wa-float').classList.toggle('lifted',show);
+  document.getElementById('floatCalc').classList.toggle('pushed',show);
 }
 var kalObs=new IntersectionObserver(function(e){e.forEach(function(en){isInKal=en.isIntersecting;updateSticky();});},{threshold:0});
 kalObs.observe(document.getElementById('kalkulator'));
@@ -986,7 +989,7 @@ function kirimWA(){
   var d=getData();
   if(!d.nama||!d.hp||!d.kota){alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.');return;}
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
-  var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Abu Batu 5cm (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
+  var lay=[d.t1?'Jasa Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
   var msg=['━━━━━━━━━━━━━━━━━━','📋 ESTIMASI SOLIDPAVING.ID','Tiket  : '+d.tid,'Tanggal: '+d.tgl,'━━━━━━━━━━━━━━━━━━','👤 DATA PELANGGAN','Nama   : '+d.nama,'No. HP : '+d.hp,'Lokasi : '+d.kota,d.proyek?'Proyek : '+d.proyek:null,d.catatan?'Catatan: '+d.catatan:null,'🧱 SPESIFIKASI','Ukuran : '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis  : '+d.jenis,'Mutu   : '+d.mutu,'Tebal  : '+d.tebal+' cm','🔧 LAYANAN',lay.length?lay.join('\n'):'Material saja (tanpa pasang)','💰 ESTIMASI','Material : '+R(d.mat),d.t1?'Pasang   : '+R(d.v1):null,d.t2?'Abu Batu : '+R(d.v2):null,d.t3?'Pemadatan: '+R(d.v3):null,'TOTAL    : '+R(d.grand),'━━━━━━━━━━━━━━━━━━','*Estimasi awal. Harga pasti setelah survei gratis.*'].filter(function(s){return s!==null&&s!==undefined;}).join('\n');
   window.open('https://wa.me/6285943492832?text='+encodeURIComponent(msg),'_blank');
 }
@@ -995,8 +998,8 @@ function unduhPDF(){
   var d=getData();
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
   var lrows='';
-  if(d.t1) lrows+='<tr><td>Pemasangan (Rp 45rb/m²)</td><td>'+R(d.v1)+'</td></tr>';
-  if(d.t2) lrows+='<tr><td>Abu Batu 5 cm (Rp 35rb/m²)</td><td>'+R(d.v2)+'</td></tr>';
+  if(d.t1) lrows+='<tr><td>Jasa Pemasangan (Rp 45rb/m²)</td><td>'+R(d.v1)+'</td></tr>';
+  if(d.t2) lrows+='<tr><td>Lapisan Bedding (Rp 35rb/m²)</td><td>'+R(d.v2)+'</td></tr>';
   if(d.t3) lrows+='<tr><td>Pemadatan Sub-Base (Rp 40rb/m²)</td><td>'+R(d.v3)+'</td></tr>';
   var now=new Date();
   var tglLong=now.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
