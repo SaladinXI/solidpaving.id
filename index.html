@@ -6,6 +6,9 @@
 <title>Jasa Pasang & Supplier Paving Block — Tidak Amblas, Bergaransi | SolidPaving.id</title>
 <meta name="description" content="Spesialis paving block & jasa pasang lahan parkir untuk kontraktor dan pemilik bisnis. Mutu K200–K500 hidrolik press, pemadatan sub-base, bergaransi. Survei & RAB gratis Jabodetabek & Jawa Barat.">
 <meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
 <meta property="og:title" content="Paving Block Lahan Parkir yang Tidak Amblas | SolidPaving.id">
 <meta property="og:description" content="Satu mitra untuk material mutu K200–K500 dan pemasangan presisi bergaransi.">
 <meta property="og:type" content="website">
@@ -41,8 +44,9 @@ img { display:block; max-width:100%; }
 
 /* NAV */
 nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(255,255,255,.96); backdrop-filter:blur(12px); border-bottom:1px solid var(--bdr); padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:64px; }
-.nav-logo { font-size:18px; font-weight:700; color:var(--tx1); }
-.nav-logo span { color:var(--blue); }
+.nav-logo-wrap { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-wrap svg { display:block; }
+.foot-logo-wrap { display:flex; align-items:center; margin-bottom:12px; }
 .nav-links { display:flex; gap:2rem; list-style:none; }
 .nav-links a { font-size:14px; color:var(--tx2); transition:color .2s; }
 .nav-links a:hover { color:var(--tx1); }
@@ -367,7 +371,15 @@ footer { background:var(--bg1); border-top:1px solid var(--bdr); padding:48px 5%
 <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
 
 <nav>
-  <div class="nav-logo">Solid<span>Paving</span>.id</div>
+  <a href="#" class="nav-logo-wrap" aria-label="SolidPaving.id — Halaman Utama">
+    <svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg" height="36" aria-hidden="true">
+      <g transform="translate(0, 4)">
+        <polygon points="0,0 30,0 20,14 0,14" fill="#2e3e5f"/>
+        <polygon points="10,17 30,17 30,31 0,31" fill="#95b3d9"/>
+      </g>
+      <text x="38" y="34" font-family="Montserrat,sans-serif" font-weight="900" font-size="18" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
+    </svg>
+  </a>
   <ul class="nav-links">
     <li><a href="#problem">Masalah</a></li>
     <li><a href="#method">Metode</a></li>
@@ -819,7 +831,15 @@ footer { background:var(--bg1); border-top:1px solid var(--bdr); padding:48px 5%
   <div class="container">
     <div class="foot-grid">
       <div>
-        <div class="foot-logo">Solid<span>Paving</span>.id</div>
+        <a href="#" class="foot-logo-wrap" aria-label="SolidPaving.id">
+          <svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg" height="32" aria-hidden="true">
+            <g transform="translate(0, 4)">
+              <polygon points="0,0 30,0 20,14 0,14" fill="#2e3e5f"/>
+              <polygon points="10,17 30,17 30,31 0,31" fill="#95b3d9"/>
+            </g>
+            <text x="38" y="34" font-family="Montserrat,sans-serif" font-weight="900" font-size="18" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
+          </svg>
+        </a>
         <p class="foot-brand p" style="font-size:13px;color:var(--tx2);margin-top:12px;max-width:280px;line-height:1.6;">Supplier paving block K200–K500 & jasa pasang bergaransi. Untuk kontraktor, developer, dan pemilik bisnis. Jabodetabek & Jawa Barat.</p>
       </div>
       <div class="foot-col"><h4>Layanan</h4><ul><li><a href="#produk">Paving Holland</a></li><li><a href="#produk">Paving Ubin</a></li><li><a href="#produk">Paving Cacing</a></li><li><a href="#method">Jasa Pasang</a></li></ul></div>
@@ -978,10 +998,132 @@ function unduhPDF(){
   if(d.t1) lrows+='<tr><td>Pemasangan (Rp 45rb/m²)</td><td>'+R(d.v1)+'</td></tr>';
   if(d.t2) lrows+='<tr><td>Abu Batu 5 cm (Rp 35rb/m²)</td><td>'+R(d.v2)+'</td></tr>';
   if(d.t3) lrows+='<tr><td>Pemadatan Sub-Base (Rp 40rb/m²)</td><td>'+R(d.v3)+'</td></tr>';
-  var html='<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>Estimasi '+d.tid+'</title><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:Arial,sans-serif;font-size:13px;color:#0D1A2E;padding:40px;max-width:580px;}h1{font-size:20px;font-weight:800;color:#2E3E5F;}.sub{font-size:11px;color:#4A6080;margin:3px 0 20px;}.tid{display:inline-block;background:#EBF1F8;border:1px solid #C8DAEE;padding:4px 14px;border-radius:100px;font-size:11px;font-weight:700;color:#2E3E5F;letter-spacing:1px;margin-bottom:24px;}.sec{margin-bottom:18px;}.sec h2{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4A6080;padding-bottom:6px;border-bottom:1px solid #EBF1F8;margin-bottom:8px;}table{width:100%;border-collapse:collapse;}td{padding:7px 0;border-bottom:1px solid #F4F7FB;font-size:13px;}td:last-child{text-align:right;font-weight:700;}.grand td{font-size:16px;font-weight:800;color:#2E3E5F;border-top:2px solid #2E3E5F;border-bottom:none;padding-top:10px;}.note{font-size:11px;color:#4A6080;margin-top:24px;line-height:1.6;border-top:1px solid #EBF1F8;padding-top:12px;}</style></head><body><h1>SolidPaving.id</h1><p class="sub">Supplier Paving Block & Jasa Pasang · solidpaving.id · 0859-4349-2832</p><div class="tid">No. Tiket: '+d.tid+'</div>';
-  if(d.nama||d.hp||d.kota){html+='<div class="sec"><h2>Data Pelanggan</h2><table>';if(d.nama) html+='<tr><td>Nama</td><td>'+d.nama+'</td></tr>';if(d.hp) html+='<tr><td>No. HP</td><td>'+d.hp+'</td></tr>';if(d.kota) html+='<tr><td>Lokasi</td><td>'+d.kota+'</td></tr>';if(d.proyek) html+='<tr><td>Proyek</td><td>'+d.proyek+'</td></tr>';if(d.catatan) html+='<tr><td>Catatan</td><td>'+d.catatan+'</td></tr>';html+='</table></div>';}
-  html+='<div class="sec"><h2>Spesifikasi</h2><table><tr><td>Ukuran</td><td>'+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²</td></tr><tr><td>Jenis</td><td>'+d.jenis+'</td></tr><tr><td>Mutu</td><td>'+d.mutu+'</td></tr><tr><td>Ketebalan</td><td>'+d.tebal+' cm</td></tr></table></div><div class="sec"><h2>Rincian Biaya</h2><table><tr><td>Material Paving ('+Rk(d.hP)+')</td><td>'+R(d.mat)+'</td></tr>'+lrows+'<tr class="grand"><td>Total Estimasi</td><td>'+R(d.grand)+'</td></tr></table></div><p class="note">* Estimasi awal. Harga pasti dikonfirmasi setelah survei gratis.<br>SolidPaving.id · 0859-4349-2832 · sales@solidpaving.id</p></body></html>';
-  var w=window.open('','_blank');w.document.write(html);w.document.close();w.focus();setTimeout(function(){w.print();},500);
+  var now=new Date();
+  var tglLong=now.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+  var html='<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>Surat Penawaran '+d.tid+'</title><style>'
+    +'*{margin:0;padding:0;box-sizing:border-box;}'
+    +'body{font-family:Arial,sans-serif;font-size:12px;color:#1a1a1a;padding:40px 48px;max-width:720px;margin:0 auto;}'
+    +/* KOP SURAT */
+    '.kop{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:14px;border-bottom:3px solid #2e3e5f;margin-bottom:20px;}'
+    +'.kop-logo{display:flex;flex-direction:column;gap:2px;}'
+    +'.kop-brand{font-size:22px;font-weight:900;color:#2e3e5f;letter-spacing:2px;}'
+    +'.kop-brand span{font-weight:300;color:#95b3d9;}'
+    +'.kop-alamat{font-size:10px;color:#4a6080;line-height:1.6;margin-top:4px;}'
+    +'.kop-kontak{text-align:right;font-size:10px;color:#4a6080;line-height:1.8;}'
+    +'.kop-kontak strong{color:#2e3e5f;font-size:11px;}'
+    /* NOMOR SURAT */
+    +'.nosurat{margin-bottom:20px;}'
+    +'.nosurat table{border-collapse:collapse;}'
+    +'.nosurat td{padding:2px 8px 2px 0;font-size:11px;color:#1a1a1a;vertical-align:top;}'
+    +'.nosurat td:first-child{width:120px;color:#4a6080;}'
+    +'.nosurat td:nth-child(2){width:12px;color:#4a6080;}'
+    /* PERIHAL */
+    +'.perihal{background:#f4f7fb;border-left:4px solid #2e3e5f;padding:10px 14px;margin-bottom:20px;border-radius:0 4px 4px 0;}'
+    +'.perihal-label{font-size:10px;font-weight:700;color:#4a6080;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}'
+    +'.perihal-val{font-size:13px;font-weight:700;color:#2e3e5f;}'
+    /* YTHS */
+    +'.yth{margin-bottom:16px;font-size:12px;line-height:1.8;}'
+    +'.yth .kepada{font-weight:700;}'
+    /* BODY TEXT */
+    +'.body-text{font-size:12px;line-height:1.8;color:#1a1a1a;margin-bottom:16px;}'
+    /* TABEL SPEK */
+    +'.sec-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a6080;padding-bottom:5px;border-bottom:1px solid #ebf1f8;margin-bottom:8px;margin-top:16px;}'
+    +'table.detail{width:100%;border-collapse:collapse;}'
+    +'table.detail td{padding:6px 0;border-bottom:1px solid #f4f7fb;font-size:12px;}'
+    +'table.detail td:last-child{text-align:right;font-weight:600;}'
+    +'table.detail td:first-child{color:#4a6080;width:50%;}'
+    +'.grand-row td{font-size:14px;font-weight:800;color:#2e3e5f;border-top:2px solid #2e3e5f;border-bottom:none;padding-top:10px;}'
+    /* CATATAN */
+    +'.catatan-box{background:#f4f7fb;border:1px solid #dde8f4;border-radius:6px;padding:12px 14px;margin-top:16px;font-size:11px;color:#4a6080;line-height:1.7;}'
+    /* TTDPARAF */
+    +'.ttd{margin-top:36px;display:flex;justify-content:space-between;}'
+    +'.ttd-block{text-align:center;}'
+    +'.ttd-block .ttd-label{font-size:11px;color:#4a6080;margin-bottom:56px;}'
+    +'.ttd-block .ttd-name{font-size:12px;font-weight:700;border-top:1px solid #2e3e5f;padding-top:4px;margin-top:0;width:160px;}'
+    +'.ttd-block .ttd-role{font-size:10px;color:#4a6080;}'
+    /* FOOTER */
+    +'.page-footer{margin-top:32px;padding-top:12px;border-top:1px solid #ebf1f8;font-size:10px;color:#95b3d9;text-align:center;}'
+    +'</style></head><body>'
+
+    /* KOP */
+    +'<div class="kop">'
+    +'<div class="kop-logo">'
+    +'<div class="kop-brand">SOLID<span>PAVING</span></div>'
+    +'<div class="kop-alamat">Jl. Raya Cilangkap No. 10 RT 004 RW 001<br>Kel. Cipayung, Kec. Cipayung, Jakarta Timur</div>'
+    +'</div>'
+    +'<div class="kop-kontak">'
+    +'<strong>SolidPaving.id</strong><br>'
+    +'0859-4349-2832<br>'
+    +'sales@solidpaving.id<br>'
+    +'www.solidpaving.id'
+    +'</div>'
+    +'</div>'
+
+    /* NOMOR SURAT */
+    +'<div class="nosurat"><table>'
+    +'<tr><td>Nomor</td><td>:</td><td>'+d.tid+'/SP/'+now.getFullYear()+'</td></tr>'
+    +'<tr><td>Tanggal</td><td>:</td><td>'+tglLong+'</td></tr>'
+    +'<tr><td>Sifat</td><td>:</td><td>Penawaran Sementara</td></tr>'
+    +'<tr><td>Lampiran</td><td>:</td><td>1 (satu) lembar</td></tr>'
+    +'</table></div>'
+
+    /* PERIHAL */
+    +'<div class="perihal"><div class="perihal-label">Perihal</div>'
+    +'<div class="perihal-val">Penawaran Harga Paving Block & Jasa Pemasangan</div></div>'
+
+    /* YTH */
+    +'<div class="yth">Kepada Yth.<br>'
+    +(d.nama?'<span class="kepada">Bapak/Ibu '+d.nama+'</span><br>':'<span class="kepada">Bapak/Ibu Calon Pelanggan</span><br>')
+    +(d.proyek?d.proyek+'<br>':'')
+    +(d.kota?d.kota:'')
+    +'</div>'
+
+    /* PEMBUKA */
+    +'<p class="body-text">Dengan hormat,<br><br>'
+    +'Bersama surat ini kami dari <strong>SolidPaving.id</strong> menyampaikan penawaran harga sementara atas kebutuhan paving block dan jasa pemasangan sesuai dengan spesifikasi yang telah dikomunikasikan. Penawaran ini bersifat estimasi awal dan akan dikonfirmasi secara resmi setelah survei lapangan.'
+    +'</p>'
+
+    /* SPESIFIKASI */
+    +'<div class="sec-title">Spesifikasi Pekerjaan</div>'
+    +'<table class="detail">'
+    +'<tr><td>Lokasi Pekerjaan</td><td>'+d.kota+'</td></tr>'
+    +'<tr><td>Luas Area</td><td>'+d.p+' m × '+d.l+' m = '+Math.round(d.luas)+' m²</td></tr>'
+    +'<tr><td>Jenis Paving Block</td><td>'+d.jenis+'</td></tr>'
+    +'<tr><td>Mutu / Kuat Tekan</td><td>'+d.mutu+' (Hidrolik Press, SNI)</td></tr>'
+    +'<tr><td>Ketebalan</td><td>'+d.tebal+' cm</td></tr>'
+    +'</table>'
+
+    /* RINCIAN BIAYA */
+    +'<div class="sec-title">Rincian Estimasi Biaya</div>'
+    +'<table class="detail">'
+    +'<tr><td>Material Paving Block ('+Rk(d.hP)+' × '+Math.round(d.luas)+' m²)</td><td>'+R(d.mat)+'</td></tr>'
+    +lrows
+    +'<tr class="grand-row"><td>TOTAL ESTIMASI</td><td>'+R(d.grand)+'</td></tr>'
+    +'</table>'
+
+    +(d.catatan?'<div class="catatan-box"><strong>Catatan dari pelanggan:</strong><br>'+d.catatan+'</div>':'')
+
+    /* PENUTUP */
+    +'<p class="body-text" style="margin-top:20px;">'
+    +'Harga di atas merupakan estimasi awal berdasarkan informasi yang diberikan. Penawaran resmi dengan harga final akan diterbitkan setelah tim kami melakukan survei lapangan secara langsung. Survei lapangan kami lakukan secara <strong>gratis tanpa kewajiban</strong>.<br><br>'
+    +'Kami berkomitmen untuk memberikan hasil pekerjaan terbaik dengan material bermutu SNI dan garansi perbaikan <strong>3 bulan tertulis</strong>. Atas perhatian dan kepercayaan Bapak/Ibu, kami ucapkan terima kasih.'
+    +'</p>'
+
+    /* TTD */
+    +'<div class="ttd">'
+    +'<div></div>'
+    +'<div class="ttd-block">'
+    +'<div class="ttd-label">Jakarta, '+tglLong+'<br>Hormat kami,</div>'
+    +'<div class="ttd-name">SolidPaving.id</div>'
+    +'<div class="ttd-role">Tim Penjualan</div>'
+    +'</div>'
+    +'</div>'
+
+    /* PAGE FOOTER */
+    +'<div class="page-footer">SolidPaving.id · Jl. Raya Cilangkap No. 10, Jakarta Timur · 0859-4349-2832 · sales@solidpaving.id</div>'
+    +'</body></html>';
+
+  var w=window.open('','_blank');w.document.write(html);w.document.close();w.focus();setTimeout(function(){w.print();},600);
 }
 
 calc();
