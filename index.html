@@ -86,7 +86,18 @@ h3{font-size:18px;font-weight:700;}
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--bds);border-radius:var(--rl);overflow:hidden;border:1px solid var(--bdr);}
 .stat-card{background:var(--bg0);padding:32px 24px;text-align:center;}
 .stat-num{font-size:40px;font-weight:800;color:var(--blue);letter-spacing:-2px;line-height:1;}
-.stat-label{font-size:13px;color:var(--tx3);margin-top:8px;line-height:1.4;}
+.stat-label{font-size:13px;color:#4A6080;margin-top:8px;line-height:1.4;}
+.fail-tag{font-size:11px;font-weight:700;color:#4A6080;letter-spacing:1px;text-transform:uppercase;}
+.fail-ico{width:20px;height:20px;color:#4A6080;flex-shrink:0;}
+.lay-desc{font-size:12px;color:#4A6080;margin-top:2px;line-height:1.4;}
+.struk-note{padding:12px 20px;background:var(--bg1);font-size:11px;color:#4A6080;line-height:1.6;border-top:1px solid var(--bds);}
+.fd-sub{font-size:13px;color:#4A6080;margin-bottom:20px;}
+.fd-field label{font-size:11px;font-weight:700;color:#3D5A80;letter-spacing:1px;text-transform:uppercase;}
+.sc-sum{font-size:12px;color:#4A6080;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;}
+.av-role{font-size:12px;color:#4A6080;}
+.cta-note{font-size:13px;color:rgba(255,255,255,.75);}
+.foot-bottom{border-top:1px solid var(--bds);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:#4A6080;flex-wrap:wrap;gap:12px;}
+.foot-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A6080;margin-bottom:16px;}
 
 /* ─── PROBLEM ─── */
 #problem{background:var(--bg0);}
@@ -323,11 +334,9 @@ footer{background:var(--bg1);padding:48px 5% 32px;border-top:1px solid var(--bdr
 .float-calc-btn:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 6px 28px rgba(26,95,168,.45);}
 .float-calc-btn svg{flex-shrink:0;}
 .float-calc-btn .fc-label{display:block;}
-/* hide label on mobile, show only icon */
 @media(max-width:480px){
-  .float-calc-btn .fc-label{display:none;}
-  .float-calc-btn{padding:14px;}
-  .float-calc-btn{border-radius:50%;width:52px;height:52px;justify-content:center;}
+  .float-calc-btn{padding:11px 14px;font-size:13px;gap:7px;}
+  .float-calc-btn .fc-label{display:block;font-size:13px;}
 }
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:89;background:var(--wa);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s;}
 .wa-float:hover{transform:scale(1.08);}
@@ -353,6 +362,7 @@ footer{background:var(--bg1);padding:48px 5% 32px;border-top:1px solid var(--bdr
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Lewati ke konten utama</a>
 
 <!-- NAV -->
 <nav>
@@ -366,7 +376,7 @@ footer{background:var(--bg1);padding:48px 5% 32px;border-top:1px solid var(--bdr
     <li><a href="#faq">FAQ</a></li>
     <li><a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a></li>
   </ul>
-  <button class="ham" id="ham"><span></span><span></span><span></span></button>
+  <button class="ham" id="ham" aria-label="Buka menu navigasi" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob" id="mob">
   <a href="#problem" onclick="closeMob()">Masalah</a>
@@ -379,6 +389,7 @@ footer{background:var(--bg1);padding:48px 5% 32px;border-top:1px solid var(--bdr
 </div>
 
 <!-- HERO -->
+<main id="main-content">
 <section id="hero">
   <div class="container hero-inner">
     <div>
@@ -593,60 +604,60 @@ footer{background:var(--bg1);padding:48px 5% 32px;border-top:1px solid var(--bdr
           <div class="lay-list">
 
             <!-- Layanan 1 -->
-            <div class="lay-card" id="lc1" onclick="toggleLay(1,event)">
+            <div class="lay-card" id="lc1" onclick="toggleLay(1,event)" role="group" aria-labelledby="lay-name-1">
               <div class="lay-main">
-                <div class="lay-ico">🔨</div>
+                <div class="lay-ico" aria-hidden="true">🔨</div>
                 <div class="lay-text">
-                  <div class="lay-name">Pemasangan</div>
+                  <div class="lay-name" id="lay-name-1">Pemasangan</div>
                   <div class="lay-desc">Jasa pasang paving block. Sub-base & abu batu disiapkan sendiri.</div>
                 </div>
                 <div class="lay-right">
                   <div class="lay-price">Rp 45rb/m²</div>
                   <label class="tog" onclick="event.stopPropagation()">
-                    <input type="checkbox" id="t1" onchange="calc()">
+                    <input type="checkbox" id="t1" onchange="calc()" aria-label="Aktifkan layanan pemasangan Rp 45.000 per m²">
                     <div class="tog-track"></div><div class="tog-thumb"></div>
                   </label>
                 </div>
               </div>
-              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la1">—</span></div>
+              <div class="lay-added" aria-live="polite"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la1">—</span></div>
             </div>
 
             <!-- Layanan 2 -->
-            <div class="lay-card" id="lc2" onclick="toggleLay(2,event)">
+            <div class="lay-card" id="lc2" onclick="toggleLay(2,event)" role="group" aria-labelledby="lay-name-2">
               <div class="lay-main">
-                <div class="lay-ico">⬛</div>
+                <div class="lay-ico" aria-hidden="true">⬛</div>
                 <div class="lay-text">
-                  <div class="lay-name">Abu Batu 5 cm</div>
+                  <div class="lay-name" id="lay-name-2">Abu Batu 5 cm</div>
                   <div class="lay-desc">Gelar abu batu 5 cm sebagai lapisan bedding sebelum paving dipasang.</div>
                 </div>
                 <div class="lay-right">
                   <div class="lay-price">Rp 35rb/m²</div>
                   <label class="tog" onclick="event.stopPropagation()">
-                    <input type="checkbox" id="t2" onchange="calc()">
+                    <input type="checkbox" id="t2" onchange="calc()" aria-label="Aktifkan layanan abu batu 5 cm Rp 35.000 per m²">
                     <div class="tog-track"></div><div class="tog-thumb"></div>
                   </label>
                 </div>
               </div>
-              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la2">—</span></div>
+              <div class="lay-added" aria-live="polite"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la2">—</span></div>
             </div>
 
             <!-- Layanan 3 -->
-            <div class="lay-card" id="lc3" onclick="toggleLay(3,event)">
+            <div class="lay-card" id="lc3" onclick="toggleLay(3,event)" role="group" aria-labelledby="lay-name-3">
               <div class="lay-main">
-                <div class="lay-ico">🔩</div>
+                <div class="lay-ico" aria-hidden="true">🔩</div>
                 <div class="lay-text">
-                  <div class="lay-name">Pemadatan Sub-Base</div>
+                  <div class="lay-name" id="lay-name-3">Pemadatan Sub-Base</div>
                   <div class="lay-desc">Pemadatan 5 cm menggunakan stamper kodok atau baby roller dual vibro.</div>
                 </div>
                 <div class="lay-right">
                   <div class="lay-price">Rp 40rb/m²</div>
                   <label class="tog" onclick="event.stopPropagation()">
-                    <input type="checkbox" id="t3" onchange="calc()">
+                    <input type="checkbox" id="t3" onchange="calc()" aria-label="Aktifkan layanan pemadatan sub-base Rp 40.000 per m²">
                     <div class="tog-track"></div><div class="tog-thumb"></div>
                   </label>
                 </div>
               </div>
-              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la3">—</span></div>
+              <div class="lay-added" aria-live="polite"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la3">—</span></div>
             </div>
 
           </div>
@@ -830,8 +841,8 @@ footer{background:var(--bg1);padding:48px 5% 32px;border-top:1px solid var(--bdr
 
 <!-- FLOATING CALC BTN -->
 <div class="float-calc" id="floatCalc">
-  <button class="float-calc-btn" onclick="scrollToCalc()">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h.01M12 9h.01M15 9h.01M9 12h.01M12 12h.01M15 12h.01M9 15h.01M12 15h.01"/><path d="M15 15h.01"/></svg>
+  <button class="float-calc-btn" onclick="scrollToCalc()" aria-label="Hitung estimasi biaya proyek Anda">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h.01M12 9h.01M15 9h.01M9 12h.01M12 12h.01M15 12h.01M9 15h.01M12 15h.01"/><path d="M15 15h.01"/></svg>
     <span class="fc-label">Hitung Estimasi Biaya</span>
   </button>
 </div>
@@ -842,10 +853,19 @@ footer{background:var(--bg1);padding:48px 5% 32px;border-top:1px solid var(--bdr
 </a>
 
 <script>
+// skip link style
+var skipStyle=document.createElement('style');
+skipStyle.textContent='.skip-link{position:absolute;top:-40px;left:0;background:var(--blue);color:#fff;padding:8px 16px;border-radius:0 0 8px 0;font-size:13px;font-weight:600;z-index:999;transition:top .2s;}.skip-link:focus{top:0;}';
+document.head.appendChild(skipStyle);
+
 // ── Nav ──
 var ham=document.getElementById('ham'),mob=document.getElementById('mob');
-ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');});
-function closeMob(){ham.classList.remove('open');mob.classList.remove('open');}
+ham.addEventListener('click',function(){
+  var open=ham.classList.toggle('open');
+  mob.classList.toggle('open',open);
+  ham.setAttribute('aria-expanded',open);
+});
+function closeMob(){ham.classList.remove('open');mob.classList.remove('open');ham.setAttribute('aria-expanded','false');}
 
 // ── Accordion ──
 function toggleSc(n){document.getElementById('sc'+n).classList.toggle('open');}
