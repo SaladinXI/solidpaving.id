@@ -276,6 +276,12 @@ h3{font-size:18px;font-weight:700;}
 .av-name{font-size:13px;font-weight:600;}
 .av-role{font-size:12px;color:var(--tx3);}
 
+/* AREA OPERASIONAL (INTERNAL LINKING) */
+#area-operasional{background:var(--bg0);border-top:1px solid var(--bdr);padding:80px 5%;}
+.area-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px;}
+.area-link{display:block;padding:14px;background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);text-align:center;font-size:13px;font-weight:700;color:var(--tx2);transition:all .2s ease;}
+.area-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-1px);}
+
 /* FAQ */
 #faq{background:var(--bg1);}
 .faq-wrap{max-width:760px;}
@@ -285,12 +291,6 @@ details summary::-webkit-details-marker{display:none;}
 details summary::after{content:'+';font-size:20px;color:var(--blue);flex-shrink:0;transition:transform .2s;}
 details[open] summary::after{transform:rotate(45deg);}
 .faq-a{padding-bottom:20px;font-size:14px;color:var(--tx2);line-height:1.7;}
-
-/* AREA OPERASIONAL (INTERNAL LINKING) */
-#area-operasional{background:var(--bg0);border-top:1px solid var(--bdr);padding:80px 5%;}
-.area-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px;}
-.area-link{display:block;padding:14px;background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);text-align:center;font-size:13px;font-weight:700;color:var(--tx2);transition:all .2s ease;}
-.area-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-1px);}
 
 /* CTA Final */
 #cta-final{padding:80px 5%;background:var(--blue);text-align:center;}
@@ -366,6 +366,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <li><a href="#kalkulator">Estimasi</a></li>
     <li><a href="#produk">Produk</a></li>
     <li><a href="#bukti">Proyek</a></li>
+    <li><a href="#area-operasional">Area Layanan</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a></li>
   </ul>
@@ -377,6 +378,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   <a href="#kalkulator" onclick="closeMob()">Estimasi Biaya</a>
   <a href="#produk" onclick="closeMob()">Produk</a>
   <a href="#bukti" onclick="closeMob()">Proyek</a>
+  <a href="#area-operasional" onclick="closeMob()">Area Layanan</a>
   <a href="#faq" onclick="closeMob()">FAQ</a>
   <a href="https://wa.me/6285943492832" class="mcta">Survei & RAB Gratis</a>
 </div>
@@ -718,26 +720,9 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
-<section id="faq">
-  <div class="container">
-    <div class="sec-label">07 — FAQ</div>
-    <h2>Pertanyaan yang <span class="blue">Sering Ditanyakan</span></h2>
-    <div class="divider"></div>
-    <div class="faq-wrap">
-      <details><summary>Apa penyebab utama lahan parkir paving amblas?</summary><p class="faq-a">Mayoritas bukan karena bloknya, melainkan sub-base tidak dipadatkan benar dan lapisan bedding tidak di-leveling presisi.</p></details>
-      <details><summary>Mutu paving block apa yang tepat untuk lahan parkir saya?</summary><p class="faq-a">K200 untuk taman/trotoar. K300 untuk parkir motor dan mobil pribadi. K350 untuk parkiran padat dan ruko. K400 untuk gudang dan kendaraan niaga.</p></details>
-      <details><summary>Apakah SolidPaving.id menyediakan material sekaligus jasa pasang?</summary><p class="faq-a">Ya. Supply material dan jasa pasang dalam satu kontrak terima beres — akuntabilitas penuh dari survei hingga garansi 3 bulan.</p></details>
-      <details><summary>Mengapa harga SolidPaving.id tidak selalu yang termurah?</summary><p class="faq-a">Karena harga kami sudah termasuk pemadatan sub-base yang benar, leveling presisi, kanstin pengunci, dan garansi tertulis.</p></details>
-      <details><summary>Berapa minimal order dan area layanan?</summary><p class="faq-a">Minimal 30–35 m². Melayani Jabodetabek dan seluruh Jawa Barat: Cikarang, Karawang, Bekasi, Bandung, Purwakarta, Bogor, Depok, Tangerang.</p></details>
-      <details><summary>Ada garansi pekerjaan?</summary><p class="faq-a">Ya. Garansi perbaikan 3 bulan tertulis setelah serah terima.</p></details>
-      <details><summary>Berapa lama proses survei dan RAB?</summary><p class="faq-a">RAB siap dalam kurang dari 24 jam kerja setelah survei. Gratis, tanpa kewajiban apapun.</p></details>
-    </div>
-  </div>
-</section>
-
 <section id="area-operasional">
   <div class="container">
-    <div class="sec-label">08 — Area Operasional</div>
+    <div class="sec-label">07 — Area Operasional</div>
     <h2>Supplier & Jasa Pasang <span class="blue">Paving Block Terdekat</span></h2>
     <div class="divider"></div>
     <p class="prob-intro">Kami melayani pengadaan material hidrolik press bersertifikat dan tim mekanik ahli ke berbagai wilayah strategis berikut:</p>
@@ -761,6 +746,23 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<section id="faq">
+  <div class="container">
+    <div class="sec-label">08 — FAQ</div>
+    <h2>Pertanyaan yang <span class="blue">Sering Ditanyakan</span></h2>
+    <div class="divider"></div>
+    <div class="faq-wrap">
+      <details><summary>Apa penyebab utama lahan parkir paving amblas?</summary><p class="faq-a">Mayoritas bukan karena bloknya, melainkan sub-base tidak dipadatkan benar dan lapisan bedding tidak di-leveling presisi.</p></details>
+      <details><summary>Mutu paving block apa yang tepat untuk lahan parkir saya?</summary><p class="faq-a">K200 untuk taman/trotoar. K300 untuk parkir motor dan mobil pribadi. K350 untuk parkiran padat dan ruko. K400 untuk gudang dan kendaraan niaga.</p></details>
+      <details><summary>Apakah SolidPaving.id menyediakan material sekaligus jasa pasang?</summary><p class="faq-a">Ya. Supply material dan jasa pasang dalam satu kontrak terima beres — akuntabilitas penuh dari survei hingga garansi 3 bulan.</p></details>
+      <details><summary>Mengapa harga SolidPaving.id tidak selalu yang termurah?</summary><p class="faq-a">Karena harga kami sudah termasuk pemadatan sub-base yang benar, leveling presisi, kanstin pengunci, dan garansi tertulis.</p></details>
+      <details><summary>Berapa minimal order dan area layanan?</summary><p class="faq-a">Minimal 30–35 m². Melayani Jabodetabek dan seluruh Jawa Barat: Cikarang, Karawang, Bekasi, Bandung, Purwakarta, Bogor, Depok, Tangerang.</p></details>
+      <details><summary>Ada garansi pekerjaan?</summary><p class="faq-a">Ya. Garansi perbaikan 3 bulan tertulis setelah serah terima.</p></details>
+      <details><summary>Berapa lama proses survei dan RAB?</summary><p class="faq-a">RAB siap dalam kurang dari 24 jam kerja setelah survei. Gratis, tanpa kewajiban apapun.</p></details>
+    </div>
+  </div>
+</section>
+  
 <section id="cta-final">
   <div class="container">
     <div class="sec-label" style="color:rgba(255,255,255,.85)">Langkah Berikutnya</div>
