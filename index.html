@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="/images/site-icon.svg">  
+<link rel="icon" type="image/svg+xml" href="/images/site-icon.svg">
 <title>Jasa Pasang & Supplier Paving Block — Tidak Amblas, Bergaransi | SolidPaving.id</title>
 <meta name="description" content="Spesialis paving block & jasa pasang lahan parkir untuk kontraktor dan pemilik bisnis. Mutu K200–K400 hidrolik press, pemadatan sub-base, bergaransi. Survei & RAB gratis Jabodetabek & Jawa Barat.">
 <meta name="robots" content="index,follow">
@@ -17,6 +17,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap"></noscript>
 <style>
+/* ─── RESET & ROOT ─── */
 :root{
   --blue:#2E3E5F;--blue2:#3D5280;--accent:#95B3D9;
   --bg0:#fff;--bg1:#F4F7FB;--bg2:#EBF1F8;--bg3:#DDE8F4;--bg4:#C8DAEE;
@@ -31,27 +32,84 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--
 a{color:var(--blue);text-decoration:none;}
 img{display:block;max-width:100%;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo-wrap{display:flex;align-items:center;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{font-size:14px;color:var(--tx2);transition:color .2s;}
-.nav-links a:hover{color:var(--tx1);}
-.nav-cta{background:var(--blue);color:#fff!important;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;}
+/* ─── NAVBAR ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--bdr);
+  height:64px;
+  display:flex;align-items:center;
+  padding:0 5%;
+  gap:16px;
+}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none;margin-left:auto;}
+.nav-cta-wrap{display:flex;align-items:center;gap:8px;margin-left:16px;flex-shrink:0;}
+.nav-cta{background:var(--blue);color:#fff!important;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;white-space:nowrap;transition:background .15s;}
 .nav-cta:hover{background:var(--blue2)!important;}
-.ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:36px;}
-.ham span{display:block;height:2px;width:24px;background:var(--tx1);border-radius:2px;transition:all .25s;}
-.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.ham.open span:nth-child(2){opacity:0;}
-.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mob{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--bdr);padding:16px 5% 24px;z-index:99;flex-direction:column;gap:4px;}
-.mob.open{display:flex;}
-.mob a{font-size:15px;color:var(--tx2);padding:10px 0;border-bottom:1px solid var(--bds);}
-.mob .mcta{margin-top:12px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;}
-.skip-link{position:absolute;top:-40px;left:0;background:var(--blue);color:#fff;padding:8px 16px;font-size:13px;font-weight:600;z-index:999;transition:top .2s;}
-.skip-link:focus{top:0;}
 
-/* LAYOUT */
+/* Dropdown item */
+.nav-item{position:relative;}
+.nav-btn{display:flex;align-items:center;gap:3px;font-size:13px;color:var(--tx2);padding:5px 10px;border-radius:var(--r);background:none;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .15s,color .15s;}
+.nav-btn svg{opacity:.5;transition:transform .2s,opacity .15s;flex-shrink:0;width:11px;height:11px;}
+.nav-item:hover .nav-btn,.nav-item:focus-within .nav-btn{background:var(--bg1);color:var(--tx1);}
+.nav-item:hover .nav-btn svg,.nav-item:focus-within .nav-btn svg{transform:rotate(180deg);opacity:1;}
+
+/* Dropdown panel */
+.nav-panel{
+  position:absolute;top:calc(100% + 8px);left:0;
+  background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);
+  box-shadow:0 12px 40px rgba(13,26,46,.13);
+  padding:8px;min-width:220px;
+  opacity:0;pointer-events:none;transform:translateY(-4px);
+  transition:opacity .15s,transform .15s;z-index:200;
+}
+.nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-panel.panel-right{left:auto;right:0;}
+.nav-panel.panel-mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;}
+.mega-col{padding:4px;}
+.mega-sep{background:var(--bds);}
+
+/* Panel content */
+.pnl-head{padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-top:6px;}
+.pnl-head:first-child{margin-top:0;}
+.pnl-sep{height:1px;background:var(--bds);margin:5px 0;}
+.pnl-link{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;font-size:13px;color:var(--tx2);transition:background .12s,color .12s;}
+.pnl-link:hover{background:var(--bg1);color:var(--tx1);}
+.pnl-ico{width:26px;height:26px;border-radius:6px;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;}
+.pnl-title{font-weight:600;color:var(--tx1);font-size:13px;display:block;line-height:1.3;}
+.pnl-sub{font-size:11px;color:var(--tx3);margin-top:1px;display:block;}
+.pnl-plain{display:flex;align-items:center;gap:5px;padding:6px 10px;border-radius:8px;font-size:13px;color:var(--tx2);transition:background .12s,color .12s;}
+.pnl-plain::before{content:'📍';font-size:11px;}
+.pnl-plain:hover{background:var(--bg1);color:var(--tx1);}
+.pnl-all{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:2px;border-top:1px solid var(--bds);transition:background .12s;}
+.pnl-all:hover{background:var(--bg1);}
+
+/* Hamburger */
+.nav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:36px;flex-shrink:0;}
+.nav-ham span{display:block;height:2px;width:24px;background:var(--tx1);border-radius:2px;transition:all .25s;}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-ham.open span:nth-child(2){opacity:0;}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* Mobile drawer */
+.mob-drawer{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--bdr);padding:12px 5% 28px;z-index:99;flex-direction:column;gap:2px;max-height:calc(100vh - 64px);overflow-y:auto;}
+.mob-drawer.open{display:flex;}
+.mob-head{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);padding:14px 0 4px;}
+.mob-drawer a{font-size:14px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bds);}
+.mob-drawer a:hover{color:var(--tx1);}
+.mob-cta{margin-top:14px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;display:block;border-bottom:none!important;}
+
+/* Responsive */
+@media(max-width:1100px){
+  .nav-menu{display:none;}
+  .nav-ham{display:flex;}
+}
+@media(max-width:480px){
+  .nav-cta{display:none;}
+}
+
+/* ─── LAYOUT ─── */
 section{padding:80px 5%;}
 .container{max-width:1100px;margin:0 auto;}
 .sec-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
@@ -61,7 +119,7 @@ h3{font-size:18px;font-weight:700;}
 .blue{color:var(--blue);}
 .divider{width:48px;height:3px;background:var(--blue);margin:16px 0 32px;border-radius:2px;}
 
-/* HERO */
+/* ─── HERO ─── */
 #hero{padding-top:140px;padding-bottom:100px;background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);overflow:hidden;}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,62,95,.08);border:1px solid var(--bdr);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;color:var(--blue);margin-bottom:20px;}
@@ -79,20 +137,20 @@ h3{font-size:18px;font-weight:700;}
 .hero-badges{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:8px;flex-wrap:wrap;}
 .hbadge{background:rgba(255,255,255,.92);border:1px solid var(--bdr);padding:5px 10px;border-radius:4px;font-size:11px;font-weight:600;color:var(--blue);}
 
-/* TRUST */
+/* ─── TRUST ─── */
 #trust{padding:24px 5%;background:var(--blue);}
 .trust-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
 .trust-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:rgba(255,255,255,.9);}
 .trust-item svg{color:rgba(255,255,255,.7);flex-shrink:0;}
 
-/* STATS */
+/* ─── STATS ─── */
 #stats{padding:64px 5%;background:var(--bg1);}
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--bds);border-radius:var(--rl);overflow:hidden;border:1px solid var(--bdr);}
 .stat-card{background:var(--bg0);padding:32px 24px;text-align:center;}
 .stat-num{font-size:40px;font-weight:800;color:var(--blue);letter-spacing:-2px;line-height:1;}
 .stat-label{font-size:13px;color:var(--tx3);margin-top:8px;line-height:1.4;}
 
-/* PROBLEM */
+/* ─── PROBLEM ─── */
 #problem{background:var(--bg0);}
 .prob-intro{max-width:680px;margin-bottom:48px;font-size:18px;color:var(--tx2);line-height:1.7;}
 .fail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
@@ -105,7 +163,7 @@ h3{font-size:18px;font-weight:700;}
 .cost-warn{margin-top:40px;padding:28px 32px;background:rgba(192,57,43,.06);border:1px solid rgba(192,57,43,.2);border-radius:var(--rl);font-size:16px;color:var(--tx2);line-height:1.7;}
 .cost-warn strong{color:var(--red);}
 
-/* METHOD */
+/* ─── METHOD ─── */
 #method{background:var(--bg1);}
 .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 .method-img{border-radius:var(--rl);overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 20px rgba(46,62,95,.08);}
@@ -118,7 +176,7 @@ h3{font-size:18px;font-weight:700;}
 .step p{font-size:13px;color:var(--tx2);}
 .step-tag{display:inline-block;font-size:11px;font-weight:600;color:var(--green);margin-top:4px;}
 
-/* KALKULATOR */
+/* ─── KALKULATOR ─── */
 #kalkulator{background:var(--bg1);padding-bottom:120px;}
 .calc-shell{max-width:640px;}
 .sc{background:var(--bg0);border:1.5px solid var(--bds);border-radius:var(--rl);margin-bottom:10px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
@@ -138,8 +196,6 @@ h3{font-size:18px;font-weight:700;}
 .sc-body{display:none;padding:0 20px 18px;}
 .sc.open .sc-body{display:block;}
 .sc-divider{height:1px;background:var(--bds);margin:0 20px;}
-
-/* Ukuran */
 .size-row{display:flex;align-items:center;gap:8px;margin-top:12px;}
 .sf{flex:1;}
 .sf label{display:block;font-size:10px;font-weight:700;color:var(--tx3);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;}
@@ -154,16 +210,12 @@ h3{font-size:18px;font-weight:700;}
 .luas-val{background:var(--blue);border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:center;gap:5px;}
 .luas-num{font-size:18px;font-weight:800;color:#fff;line-height:1;}
 .luas-unit{font-size:13px;color:rgba(255,255,255,.75);font-weight:600;}
-
-/* Pills */
 .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
 .pill{padding:7px 14px;border-radius:100px;border:1.5px solid var(--bds);background:var(--bg1);font-size:13px;font-weight:600;color:var(--tx2);cursor:pointer;transition:all .18s;user-select:none;}
 .pill:hover{border-color:var(--blue);color:var(--blue);}
 .pill.sel{background:var(--blue);border-color:var(--blue);color:#fff;}
 .pill.disabled{opacity:.35;cursor:not-allowed;pointer-events:none;}
 .rekom-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(46,62,95,.07);border:1px solid var(--bdr);border-radius:100px;padding:6px 12px;font-size:12px;color:var(--blue);font-weight:600;margin-top:12px;}
-
-/* Layanan */
 .lay-list{display:flex;flex-direction:column;gap:8px;}
 .lay-card{border:1.5px solid var(--bds);border-radius:var(--rl);background:var(--bg0);overflow:hidden;transition:border-color .2s;cursor:pointer;}
 .lay-card.on{border-color:var(--blue);background:rgba(46,62,95,.03);}
@@ -185,8 +237,6 @@ h3{font-size:18px;font-weight:700;}
 .lay-card.on .lay-added{display:flex;}
 .lay-added-label{font-size:12px;font-weight:600;color:var(--blue);}
 .lay-added-val{font-size:13px;font-weight:800;color:var(--blue);}
-
-/* Sticky */
 .sticky-est{position:fixed;bottom:0;left:0;right:0;z-index:88;background:var(--bg0);border-top:1px solid var(--bdr);box-shadow:0 -4px 24px rgba(13,26,46,.1);padding:10px 5%;display:none;}
 .sticky-est.visible{display:block;}
 .sticky-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;}
@@ -199,8 +249,6 @@ h3{font-size:18px;font-weight:700;}
 .sticky-total .sticky-val{font-size:18px;}
 .btn-wa-sm{background:var(--wa);color:#fff;padding:10px 18px;border-radius:10px;font-weight:700;font-size:13px;border:none;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;font-family:inherit;}
 .btn-wa-sm:hover{background:#1EAF56;}
-
-/* Struk */
 .struk{background:var(--bg0);border:1.5px solid var(--bdr);border-radius:var(--rl);overflow:hidden;margin-bottom:10px;}
 .struk-top{background:var(--blue);padding:20px 24px;}
 .struk-top-label{font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.65);text-transform:uppercase;margin-bottom:6px;}
@@ -214,8 +262,6 @@ h3{font-size:18px;font-weight:700;}
 .s-row.hl .s-row-lbl{color:var(--blue);font-weight:600;}
 .s-row.hl .s-row-val{color:var(--blue);}
 .struk-note{padding:10px 20px;background:var(--bg1);font-size:11px;color:var(--tx3);line-height:1.6;border-top:1px solid var(--bds);}
-
-/* Form */
 .fd-card{background:var(--bg0);border:1.5px solid var(--bds);border-radius:var(--rl);padding:24px;margin-bottom:10px;}
 .fd-title{font-size:16px;font-weight:700;margin-bottom:4px;}
 .fd-sub{font-size:13px;color:var(--tx3);margin-bottom:20px;}
@@ -229,10 +275,8 @@ h3{font-size:18px;font-weight:700;}
 .cta-stack{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
 .btn-wa-full{background:#1a9e50;color:#fff;padding:16px;border-radius:12px;font-weight:700;font-size:16px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-family:inherit;}
 .btn-wa-full:hover{background:#158040;}
-.btn-pdf-full{background:var(--bg0);color:var(--tx2);padding:14px;border-radius:12px;font-weight:700;font-size:15px;border:1.5px solid var(--bds);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-family:inherit;}
-.btn-pdf-full:hover{background:var(--bg2);}
 
-/* Produk */
+/* ─── PRODUK ─── */
 #produk{background:var(--bg0);}
 .produk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
 .produk-card{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);overflow:hidden;transition:border-color .2s,transform .2s;}
@@ -249,7 +293,7 @@ h3{font-size:18px;font-weight:700;}
 .spec-tag{background:var(--bg2);border:1px solid var(--bds);padding:4px 10px;border-radius:4px;font-size:11px;font-weight:600;color:var(--tx2);}
 .prod-link{font-size:13px;font-weight:600;color:var(--blue);}
 
-/* Validator */
+/* ─── VALIDATOR ─── */
 #validator{background:var(--bg1);}
 .val-intro{max-width:600px;margin-bottom:40px;font-size:17px;color:var(--tx2);}
 .check-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;}
@@ -260,7 +304,7 @@ h3{font-size:18px;font-weight:700;}
 .val-footer{margin-top:32px;padding:24px 28px;background:rgba(46,62,95,.05);border:1px solid var(--bdr);border-radius:var(--rl);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .val-footer p{font-size:15px;color:var(--tx2);max-width:560px;}
 
-/* Bukti */
+/* ─── BUKTI ─── */
 #bukti{background:var(--bg0);}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:48px;}
 .gal-item{border-radius:var(--rl);overflow:hidden;border:1px solid var(--bds);position:relative;}
@@ -276,13 +320,24 @@ h3{font-size:18px;font-weight:700;}
 .av-name{font-size:13px;font-weight:600;}
 .av-role{font-size:12px;color:var(--tx3);}
 
-/* AREA OPERASIONAL (INTERNAL LINKING) */
+/* ─── AREA LAYANAN ─── */
 #area-operasional{background:var(--bg0);border-top:1px solid var(--bdr);padding:80px 5%;}
-.area-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px;}
-.area-link{display:block;padding:14px;background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);text-align:center;font-size:13px;font-weight:700;color:var(--tx2);transition:all .2s ease;}
-.area-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-1px);}
+.area-regions{display:flex;flex-direction:column;gap:24px;margin-top:8px;}
+.area-region-block{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);padding:24px 28px;}
+.area-region-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--bds);}
+.area-region-icon{width:44px;height:44px;border-radius:var(--r);background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.area-region-title{font-size:16px;font-weight:700;color:var(--tx1);margin-bottom:3px;}
+.area-region-desc{font-size:12px;color:var(--tx3);}
+.area-links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+.area-link-card{display:flex;flex-direction:column;padding:12px 14px;background:var(--bg0);border:1px solid var(--bds);border-radius:var(--r);font-size:13px;font-weight:700;color:var(--tx1);transition:all .18s;line-height:1.3;}
+.area-link-card span{font-size:11px;font-weight:400;color:var(--tx3);margin-top:2px;}
+.area-link-card:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-1px);}
+.area-link-card:hover span{color:rgba(255,255,255,.7);}
+.area-cta-strip{margin-top:24px;padding:24px 28px;background:var(--blue);border-radius:var(--rl);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.area-cta-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
+.area-cta-sub{font-size:13px;color:rgba(255,255,255,.75);}
 
-/* FAQ */
+/* ─── FAQ ─── */
 #faq{background:var(--bg1);}
 .faq-wrap{max-width:760px;}
 details{border-bottom:1px solid var(--bds);}
@@ -292,7 +347,7 @@ details summary::after{content:'+';font-size:20px;color:var(--blue);flex-shrink:
 details[open] summary::after{transform:rotate(45deg);}
 .faq-a{padding-bottom:20px;font-size:14px;color:var(--tx2);line-height:1.7;}
 
-/* CTA Final */
+/* ─── CTA FINAL ─── */
 #cta-final{padding:80px 5%;background:var(--blue);text-align:center;}
 #cta-final h2{color:#fff;margin-bottom:16px;}
 #cta-final p{font-size:17px;color:rgba(255,255,255,.8);margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto;}
@@ -303,7 +358,7 @@ details[open] summary::after{transform:rotate(45deg);}
 .btn-ow:hover{border-color:#fff;}
 .cta-note{font-size:13px;color:rgba(255,255,255,.75);}
 
-/* Footer */
+/* ─── FOOTER ─── */
 footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32px;}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
 .foot-logo-wrap{display:flex;align-items:center;margin-bottom:12px;}
@@ -314,7 +369,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 .foot-col li a:hover{color:var(--blue);}
 .foot-bottom{border-top:1px solid var(--bds);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;}
 
-/* Floating */
+/* ─── FLOATING ─── */
 .float-calc{position:fixed;bottom:100px;right:24px;z-index:88;}
 .float-calc-btn{display:flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:12px 18px;border-radius:100px;font-size:14px;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(46,62,95,.35);white-space:nowrap;font-family:inherit;}
 .float-calc-btn:hover{background:var(--blue2);}
@@ -323,15 +378,13 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 .wa-float.hidden{opacity:0;pointer-events:none;}
 .wa-float svg{width:28px;height:28px;fill:#fff;}
 
-/* Responsive */
+/* ─── RESPONSIVE ─── */
 @media(max-width:768px){
   .hero-inner{grid-template-columns:1fr;}
   .hero-img-wrap{margin-top:24px;}
   .method-grid{grid-template-columns:1fr;}
   .method-img{margin-bottom:24px;}
   .foot-grid{grid-template-columns:1fr;}
-  .nav-links{display:none;}
-  .ham{display:flex;}
   .val-footer{flex-direction:column;}
   .fd-grid{grid-template-columns:1fr;}
   .hero-proof{gap:20px;}
@@ -345,6 +398,9 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   .luas-num{font-size:15px;}
   .size-sep{font-size:13px;}
   .float-calc-btn{font-size:13px;padding:11px 14px;}
+  .area-region-block{padding:18px 16px;}
+  .area-links-grid{grid-template-columns:1fr 1fr;}
+  .area-cta-strip{flex-direction:column;align-items:flex-start;}
 }
 @media(max-width:480px){
   .cta-row{flex-direction:column;align-items:center;}
@@ -353,37 +409,165 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 </style>
 </head>
 <body>
+
+<!-- ════ NAVBAR ════ -->
 <nav>
-  <a href="#" class="nav-logo-wrap" aria-label="SolidPaving.id — Kembali ke halaman utama">
+  <!-- Logo -->
+  <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
     <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="34">
       <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
       <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
     </svg>
   </a>
-  <ul class="nav-links">
-    <li><a href="#problem">Masalah</a></li>
-    <li><a href="#method">Metode</a></li>
-    <li><a href="#kalkulator">Estimasi</a></li>
-    <li><a href="#produk">Produk</a></li>
-    <li><a href="#bukti">Proyek</a></li>
-    <li><a href="#area-operasional">Area Layanan</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a></li>
+
+  <!-- Desktop menu -->
+  <ul class="nav-menu">
+    <!-- Produk -->
+    <li class="nav-item">
+      <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Paving Block</div>
+        <a href="/produk/paving-holland/" class="pnl-link"><div class="pnl-ico">🧱</div><div><span class="pnl-title">Holland (Bata)</span><span class="pnl-sub">Terlaris · K200–K400</span></div></a>
+        <a href="/produk/paving-ubin/" class="pnl-link"><div class="pnl-ico">⬛</div><div><span class="pnl-title">Ubin (Square)</span><span class="pnl-sub">Tampilan premium modern</span></div></a>
+        <a href="/produk/paving-cacing/" class="pnl-link"><div class="pnl-ico">〰️</div><div><span class="pnl-title">Cacing (Uni)</span><span class="pnl-sub">Beban berat, kuncian rapat</span></div></a>
+        <a href="/produk/paving-hexagon/" class="pnl-link"><div class="pnl-ico">⬡</div><div><span class="pnl-title">Hexagon</span><span class="pnl-sub">Taman & area dekoratif</span></div></a>
+        <a href="/produk/grassblock/" class="pnl-link"><div class="pnl-ico">🌿</div><div><span class="pnl-title">Grassblock</span><span class="pnl-sub">Resapan air, area hijau</span></div></a>
+        <div class="pnl-sep"></div>
+        <div class="pnl-head">Aksesoris</div>
+        <a href="/produk/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Kanstin / Kerb Beton</span><span class="pnl-sub">Pengunci tepi paving</span></div></a>
+      </div>
+    </li>
+    <!-- Layanan -->
+    <li class="nav-item">
+      <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Jasa Pemasangan</div>
+        <a href="/layanan/jasa-pasang/" class="pnl-link"><div class="pnl-ico">🔨</div><div><span class="pnl-title">Jasa Pasang Paving Block</span><span class="pnl-sub">Sub-base · bedding · kanstin · garansi</span></div></a>
+        <a href="/layanan/paving-lahan-parkir/" class="pnl-link"><div class="pnl-ico">🅿️</div><div><span class="pnl-title">Paving Lahan Parkir</span><span class="pnl-sub">Komersial & industri</span></div></a>
+        <a href="/layanan/paving-kawasan-industri/" class="pnl-link"><div class="pnl-ico">🏭</div><div><span class="pnl-title">Paving Kawasan Industri</span><span class="pnl-sub">Standar forklift & truk berat</span></div></a>
+        <a href="/layanan/paving-perumahan/" class="pnl-link"><div class="pnl-ico">🏠</div><div><span class="pnl-title">Paving Perumahan & Cluster</span><span class="pnl-sub">Hunian, taman, carport</span></div></a>
+        <div class="pnl-sep"></div>
+        <div class="pnl-head">Supply Material</div>
+        <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span><span class="pnl-sub">Kirim ke lokasi proyek Anda</span></div></a>
+      </div>
+    </li>
+    <!-- Harga -->
+    <li class="nav-item">
+      <button class="nav-btn">Harga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Estimasi & RAB</div>
+        <a href="/#kalkulator" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Estimasi Biaya</span><span class="pnl-sub">Hitung langsung, real-time</span></div></a>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga 2026</span><span class="pnl-sub">Harga per m² semua produk</span></div></a>
+        <a href="/blog/biaya-paving-lahan-parkir-1000m2/" class="pnl-link"><div class="pnl-ico">📋</div><div><span class="pnl-title">Contoh RAB Parkir 1.000 m²</span><span class="pnl-sub">Rincian biaya aktual</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20RAB%20gratis." class="pnl-link" style="color:var(--green);">
+          <div class="pnl-ico" style="background:rgba(15,110,86,.1);">✉️</div>
+          <div><span class="pnl-title" style="color:var(--green);">Minta RAB Gratis</span><span class="pnl-sub">Survei lokasi, tanpa biaya</span></div>
+        </a>
+      </div>
+    </li>
+    <!-- Area Layanan -->
+    <li class="nav-item">
+      <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel panel-mega">
+        <div class="mega-col">
+          <div class="pnl-head">Jakarta & Sekitarnya</div>
+          <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
+          <a href="/jakarta-timur/" class="pnl-plain">Jakarta Timur</a>
+          <a href="/jakarta-selatan/" class="pnl-plain">Jakarta Selatan</a>
+          <a href="/depok/" class="pnl-plain">Depok</a>
+          <a href="/bogor/" class="pnl-plain">Bogor</a>
+          <div class="pnl-head">Tangerang</div>
+          <a href="/tangerang/" class="pnl-plain">Tangerang</a>
+          <a href="/tangerang-selatan/" class="pnl-plain">Tangerang Selatan</a>
+          <a href="/serpong/" class="pnl-plain">Serpong</a>
+        </div>
+        <div class="mega-sep"></div>
+        <div class="mega-col">
+          <div class="pnl-head">Bekasi & Kawasan Industri</div>
+          <a href="/bekasi/" class="pnl-plain">Bekasi</a>
+          <a href="/cikarang/" class="pnl-plain">Cikarang</a>
+          <a href="/jababeka/" class="pnl-plain">Jababeka</a>
+          <a href="/mm2100/" class="pnl-plain">MM2100</a>
+          <a href="/cibitung/" class="pnl-plain">Cibitung</a>
+          <a href="/karawang/" class="pnl-plain">Karawang</a>
+          <div class="pnl-head">Jawa Barat</div>
+          <a href="/bandung/" class="pnl-plain">Bandung</a>
+          <a href="/purwakarta/" class="pnl-plain">Purwakarta</a>
+        </div>
+      </div>
+    </li>
+    <!-- Tentang -->
+    <li class="nav-item">
+      <button class="nav-btn">Tentang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel panel-right">
+        <a href="/tentang-kami/" class="pnl-link"><div class="pnl-ico">🏢</div><div><span class="pnl-title">Tentang SolidPaving.id</span><span class="pnl-sub">Profil, visi, tim kami</span></div></a>
+        <a href="/portofolio/" class="pnl-link"><div class="pnl-ico">📸</div><div><span class="pnl-title">Portofolio Proyek</span><span class="pnl-sub">Dokumentasi hasil nyata</span></div></a>
+        <a href="/#bukti" class="pnl-link"><div class="pnl-ico">⭐</div><div><span class="pnl-title">Testimoni Klien</span><span class="pnl-sub">Ulasan dari pelanggan kami</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/#faq" class="pnl-link"><div class="pnl-ico">❓</div><div><span class="pnl-title">FAQ</span><span class="pnl-sub">Pertanyaan yang sering ditanyakan</span></div></a>
+        <a href="mailto:sales@solidpaving.id" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span><span class="pnl-sub">sales@solidpaving.id</span></div></a>
+      </div>
+    </li>
+    <!-- Panduan -->
+    <li class="nav-item">
+      <button class="nav-btn">Panduan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel panel-right">
+        <div class="pnl-head">Artikel Populer</div>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Harga Pasang Paving 2026</span></div></a>
+        <a href="/blog/kenapa-paving-amblas/" class="pnl-link"><div class="pnl-ico">⚠️</div><div><span class="pnl-title">Kenapa Paving Amblas?</span></div></a>
+        <a href="/blog/paving-block-k300-vs-k400/" class="pnl-link"><div class="pnl-ico">🔬</div><div><span class="pnl-title">K300 vs K400 — Pilih Mana?</span></div></a>
+        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Kebutuhan</span></div></a>
+        <a href="/blog/tips-memilih-kontraktor-paving/" class="pnl-link"><div class="pnl-ico">✅</div><div><span class="pnl-title">Tips Memilih Kontraktor</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/blog/" class="pnl-all">Lihat Semua Artikel <span>→</span></a>
+      </div>
+    </li>
   </ul>
-  <button class="ham" id="ham" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+  <!-- CTA + Hamburger -->
+  <div class="nav-cta-wrap">
+    <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a>
+    <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
-<div class="mob" id="mob">
-  <a href="#problem" onclick="closeMob()">Masalah</a>
-  <a href="#method" onclick="closeMob()">Metode</a>
-  <a href="#kalkulator" onclick="closeMob()">Estimasi Biaya</a>
-  <a href="#produk" onclick="closeMob()">Produk</a>
-  <a href="#bukti" onclick="closeMob()">Proyek</a>
-  <a href="#area-operasional" onclick="closeMob()">Area Layanan</a>
-  <a href="#faq" onclick="closeMob()">FAQ</a>
-  <a href="https://wa.me/6285943492832" class="mcta">Survei & RAB Gratis</a>
+
+<!-- Mobile drawer -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-head">Produk</div>
+  <a href="/produk/paving-holland/" onclick="closeMob()">🧱 Holland (Bata)</a>
+  <a href="/produk/paving-ubin/" onclick="closeMob()">⬛ Ubin (Square)</a>
+  <a href="/produk/paving-cacing/" onclick="closeMob()">〰️ Cacing (Uni)</a>
+  <a href="/produk/grassblock/" onclick="closeMob()">🌿 Grassblock</a>
+  <a href="/produk/kanstin/" onclick="closeMob()">📐 Kanstin / Kerb</a>
+  <div class="mob-head">Layanan</div>
+  <a href="/layanan/jasa-pasang/" onclick="closeMob()">🔨 Jasa Pasang Paving Block</a>
+  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">🅿️ Paving Lahan Parkir</a>
+  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">🏭 Paving Kawasan Industri</a>
+  <a href="/layanan/paving-perumahan/" onclick="closeMob()">🏠 Paving Perumahan</a>
+  <div class="mob-head">Harga</div>
+  <a href="/#kalkulator" onclick="closeMob()">🧮 Kalkulator Estimasi</a>
+  <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">💰 Daftar Harga 2026</a>
+  <div class="mob-head">Area Layanan</div>
+  <a href="/jakarta/" onclick="closeMob()">Jakarta</a>
+  <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
+  <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
+  <a href="/jababeka/" onclick="closeMob()">Jababeka</a>
+  <a href="/bandung/" onclick="closeMob()">Bandung</a>
+  <a href="/#area-operasional" onclick="closeMob()">Lihat Semua Area →</a>
+  <div class="mob-head">Tentang & Panduan</div>
+  <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
+  <a href="/portofolio/" onclick="closeMob()">Portofolio Proyek</a>
+  <a href="/blog/" onclick="closeMob()">📚 Semua Artikel</a>
+  <a href="/#faq" onclick="closeMob()">FAQ</a>
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">Survei & RAB Gratis</a>
 </div>
 
 <main id="main-content">
+
+<!-- HERO -->
 <section id="hero">
   <div class="container hero-inner">
     <div>
@@ -409,6 +593,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<!-- TRUST -->
 <div id="trust">
   <div class="container trust-inner">
     <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garansi 3 Bulan Tertulis</div>
@@ -418,7 +603,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </div>
 
-<section id="stats">
+<!-- STATS -->
+<section id="stats" style="padding:64px 5%;background:var(--bg1);">
   <div class="container">
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Proyek dari hunian hingga kawasan industri</div></div>
@@ -430,6 +616,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<!-- PROBLEM -->
 <section id="problem">
   <div class="container">
     <div class="sec-label">01 — Kenapa Ini Penting</div>
@@ -448,6 +635,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<!-- METHOD -->
 <section id="method">
   <div class="container">
     <div class="sec-label">02 — Solusi</div>
@@ -467,6 +655,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<!-- KALKULATOR -->
 <section id="kalkulator">
   <div class="container">
     <div class="sec-label">03 — Estimasi Biaya</div>
@@ -474,7 +663,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <div class="divider"></div>
     <p style="color:var(--tx2);margin-bottom:24px;max-width:520px;font-size:15px;">Isi langkah demi langkah — estimasi langsung muncul.</p>
     <div class="calc-shell">
-
       <div class="sc open" id="sc1">
         <div class="sc-head" onclick="toggleSc(1)">
           <div class="sc-dot"><span class="sc-dot-num">1</span><svg class="sc-done-check" width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -485,15 +673,14 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="sc-body">
           <div style="height:12px"></div>
           <div class="size-row">
-            <div class="sf"><label for="inp-p">Panjang</label><div class="sf-in"><input type="number" id="inp-p" value="" min="1" placeholder="0" oninput="calc()"><span class="sf-unit">m</span></div></div>
+            <div class="sf"><label for="inp-p">Panjang</label><div class="sf-in"><input type="number" id="inp-p" min="1" placeholder="0" oninput="calc()"><span class="sf-unit">m</span></div></div>
             <div class="size-sep">×</div>
-            <div class="sf"><label for="inp-l">Lebar</label><div class="sf-in"><input type="number" id="inp-l" value="" min="1" placeholder="0" oninput="calc()"><span class="sf-unit">m</span></div></div>
+            <div class="sf"><label for="inp-l">Lebar</label><div class="sf-in"><input type="number" id="inp-l" min="1" placeholder="0" oninput="calc()"><span class="sf-unit">m</span></div></div>
             <div class="size-sep">=</div>
             <div class="luas-box"><label>Luas</label><div class="luas-val"><div class="luas-num" id="out-luas">0</div><div class="luas-unit">m²</div></div></div>
           </div>
         </div>
       </div>
-
       <div class="sc open" id="sc2">
         <div class="sc-head" onclick="toggleSc(2)">
           <div class="sc-dot"><span class="sc-dot-num">2</span><svg class="sc-done-check" width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -513,7 +700,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
           </div>
         </div>
       </div>
-
       <div class="sc open" id="sc3">
         <div class="sc-head" onclick="toggleSc(3)">
           <div class="sc-dot"><span class="sc-dot-num">3</span><svg class="sc-done-check" width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -535,7 +721,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
           </div>
         </div>
       </div>
-
       <div class="sc open" id="sc4">
         <div class="sc-head" onclick="toggleSc(4)">
           <div class="sc-dot"><span class="sc-dot-num">4</span><svg class="sc-done-check" width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -552,7 +737,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
           </div>
         </div>
       </div>
-
       <div class="sc open" id="sc5">
         <div class="sc-head" onclick="toggleSc(5)">
           <div class="sc-dot"><span class="sc-dot-num">5</span><svg class="sc-done-check" width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -565,38 +749,37 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
           <div class="lay-list">
             <div class="lay-card" id="lc1" onclick="toggleLay(1,event)">
               <div class="lay-main">
-                <div class="lay-ico" aria-hidden="true">🔨</div>
+                <div class="lay-ico">🔨</div>
                 <div class="lay-text"><div class="lay-name">Pemasangan</div><div class="lay-desc">Jasa pasang paving block. Sub-base & lapisan bedding disiapkan sendiri.</div></div>
                 <div class="lay-right"><div class="lay-price">Rp 45rb/m²</div>
-                  <label class="tog" onclick="event.stopPropagation()" aria-label="Aktifkan layanan pemasangan Rp 45.000 per m²"><input type="checkbox" id="t1" onchange="calc()" aria-label="Aktifkan layanan pemasangan Rp 45.000 per m²"><div class="tog-track"></div><div class="tog-thumb"></div></label>
+                  <label class="tog" onclick="event.stopPropagation()"><input type="checkbox" id="t1" onchange="calc()"><div class="tog-track"></div><div class="tog-thumb"></div></label>
                 </div>
               </div>
-              <div class="lay-added" aria-live="polite"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la1">—</span></div>
+              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la1">—</span></div>
             </div>
             <div class="lay-card" id="lc2" onclick="toggleLay(2,event)">
               <div class="lay-main">
-                <div class="lay-ico" aria-hidden="true">⬛</div>
+                <div class="lay-ico">⬛</div>
                 <div class="lay-text"><div class="lay-name">Lapisan Bedding</div><div class="lay-desc">Material agregat halus sebagai lapisan dasar pemasangan untuk hasil presisi dan rata.</div></div>
                 <div class="lay-right"><div class="lay-price">Rp 35rb/m²</div>
-                  <label class="tog" onclick="event.stopPropagation()" aria-label="Aktifkan layanan lapisan bedding Rp 35.000 per m²"><input type="checkbox" id="t2" onchange="calc()" aria-label="Aktifkan layanan lapisan bedding Rp 35.000 per m²"><div class="tog-track"></div><div class="tog-thumb"></div></label>
+                  <label class="tog" onclick="event.stopPropagation()"><input type="checkbox" id="t2" onchange="calc()"><div class="tog-track"></div><div class="tog-thumb"></div></label>
                 </div>
               </div>
-              <div class="lay-added" aria-live="polite"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la2">—</span></div>
+              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la2">—</span></div>
             </div>
             <div class="lay-card" id="lc3" onclick="toggleLay(3,event)">
               <div class="lay-main">
-                <div class="lay-ico" aria-hidden="true">🔩</div>
+                <div class="lay-ico">🔩</div>
                 <div class="lay-text"><div class="lay-name">Pemadatan Sub-Base</div><div class="lay-desc">Pemadatan 5 cm menggunakan stamper kodok atau baby roller dual vibro.</div></div>
                 <div class="lay-right"><div class="lay-price">Rp 40rb/m²</div>
-                  <label class="tog" onclick="event.stopPropagation()" aria-label="Aktifkan layanan pemadatan sub-base Rp 40.000 per m²"><input type="checkbox" id="t3" onchange="calc()" aria-label="Aktifkan layanan pemadatan sub-base Rp 40.000 per m²"><div class="tog-track"></div><div class="tog-thumb"></div></label>
+                  <label class="tog" onclick="event.stopPropagation()"><input type="checkbox" id="t3" onchange="calc()"><div class="tog-track"></div><div class="tog-thumb"></div></label>
                 </div>
               </div>
-              <div class="lay-added" aria-live="polite"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la3">—</span></div>
+              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la3">—</span></div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="struk">
         <div class="struk-top">
           <div class="struk-top-label">Total Estimasi</div>
@@ -612,7 +795,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </div>
         <div class="struk-note">* Estimasi awal — harga pasti dikonfirmasi setelah survei lapangan gratis.</div>
       </div>
-
       <div class="fd-card">
         <div class="fd-title">Data Anda</div>
         <div class="fd-sub">Isi data berikut agar tim kami bisa segera menindaklanjuti.</div>
@@ -624,7 +806,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
           <div class="fd-field fd-full"><label for="fd-catatan">Catatan</label><textarea id="fd-catatan" placeholder="Kondisi lapangan, pertanyaan khusus, dll."></textarea></div>
         </div>
         <div class="cta-stack">
-          <button class="btn-wa-full" onclick="kirimWA()" aria-label="Kirim estimasi biaya via WhatsApp ke SolidPaving.id" style="background:#1a7a3c;">
+          <button class="btn-wa-full" onclick="kirimWA()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Kirim Estimasi via WhatsApp
           </button>
@@ -642,6 +824,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<!-- STICKY -->
 <div class="sticky-est" id="sticky">
   <div class="sticky-inner">
     <div class="sticky-breakdown">
@@ -658,6 +841,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </div>
 
+<!-- PRODUK -->
 <section id="produk">
   <div class="container">
     <div class="sec-label">04 — Produk</div>
@@ -667,20 +851,21 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       <div class="produk-card feat">
         <div class="prod-top">TERLARIS</div>
         <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/Paving%20block%20bata.jpg?w=420&h=420&q=75&format=webp" alt="Paving block Holland Bata" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Holland (Bata)</h3><p>Klasik & fleksibel. Cocok untuk hampir semua lahan parkir.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Holland." class="prod-link" aria-label="Cek harga paving Holland per m²">Cek Harga / m² →</a></div>
+        <div class="prod-body"><h3>Holland (Bata)</h3><p>Klasik & fleksibel. Cocok untuk hampir semua lahan parkir.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Holland." class="prod-link">Cek Harga / m² →</a></div>
       </div>
       <div class="produk-card">
         <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/Paving%20ubin%2021.jpg?w=420&h=420&q=75&format=webp" alt="Paving block Ubin Square" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Ubin (Square)</h3><p>Tampilan minimalis modern untuk properti komersial premium.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Ubin." class="prod-link" aria-label="Cek harga paving Ubin per m²">Cek Harga / m² →</a></div>
+        <div class="prod-body"><h3>Ubin (Square)</h3><p>Tampilan minimalis modern untuk properti komersial premium.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Ubin." class="prod-link">Cek Harga / m² →</a></div>
       </div>
       <div class="produk-card">
         <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/Paving%20cacing.jpg?w=420&h=420&q=75&format=webp" alt="Paving block Cacing Uni" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Cacing (Uni)</h3><p>Kuncian paling rapat. Ideal untuk area beban kendaraan berat.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Cacing." class="prod-link" aria-label="Cek harga paving Cacing per m²">Cek Harga / m² →</a></div>
+        <div class="prod-body"><h3>Cacing (Uni)</h3><p>Kuncian paling rapat. Ideal untuk area beban kendaraan berat.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Cacing." class="prod-link">Cek Harga / m² →</a></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- VALIDATOR -->
 <section id="validator">
   <div class="container">
     <div class="sec-label">05 — Lindungi Proyek Anda</div>
@@ -701,6 +886,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<!-- BUKTI -->
 <section id="bukti">
   <div class="container">
     <div class="sec-label">06 — Bukti Lapangan</div>
@@ -720,32 +906,81 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </section>
 
+<!-- AREA LAYANAN -->
 <section id="area-operasional">
   <div class="container">
-    <div class="sec-label">07 — Area Operasional</div>
-    <h2>Supplier & Jasa Pasang <span class="blue">Paving Block Terdekat</span></h2>
+    <div class="sec-label">07 — Area Layanan</div>
+    <h2>Melayani Seluruh <span class="blue">Jabodetabek & Jawa Barat</span></h2>
     <div class="divider"></div>
-    <p class="prob-intro">Kami melayani pengadaan material hidrolik press bersertifikat dan tim mekanik ahli ke berbagai wilayah strategis berikut:</p>
-    
-    <div class="area-grid">
-      <a href="/cikarang/" class="area-link">📍 Paving Block Cikarang</a>
-      <a href="/karawang/" class="area-link">📍 Paving Block Karawang</a>
-      <a href="/bekasi/" class="area-link">📍 Paving Block Bekasi</a>
-      <a href="/bogor/" class="area-link">📍 Paving Block Bogor</a>
-      <a href="/depok/" class="area-link">📍 Paving Block Depok</a>
-      <a href="/tangerang/" class="area-link">📍 Paving Block Tangerang</a>
-      <a href="/tangerang-selatan/" class="area-link">📍 Paving Block Tangerang Sel.</a>
-      <a href="/bandung/" class="area-link">📍 Paving Block Bandung</a>
-      
-      <a href="/jakarta/" class="area-link">📍 Paving Block DKI Jakarta</a>
-      <a href="/jakarta-timur/" class="area-link">📍 Paving Block Jakarta Timur</a>
-      <a href="/jakarta-barat/" class="area-link">📍 Paving Block Jakarta Barat</a>
-      <a href="/jakarta-selatan/" class="area-link">📍 Paving Block Jakarta Selatan</a>
-      <a href="/jakarta-utara/" class="area-link">📍 Paving Block Jakarta Utara</a>
+    <p class="prob-intro">Tim SolidPaving.id siap datang ke lokasi Anda — dari kawasan industri berskala internasional hingga cluster perumahan. Survei gratis, respons dalam 24 jam kerja.</p>
+    <div class="area-regions">
+      <div class="area-region-block">
+        <div class="area-region-header">
+          <div class="area-region-icon">🏭</div>
+          <div><div class="area-region-title">Kawasan Industri</div><div class="area-region-desc">Standar K400 · forklift & truk berat</div></div>
+        </div>
+        <div class="area-links-grid">
+          <a href="/jababeka/" class="area-link-card">Jababeka <span>Cikarang</span></a>
+          <a href="/mm2100/" class="area-link-card">MM2100 <span>Cibitung</span></a>
+          <a href="/ejip/" class="area-link-card">EJIP <span>Cikarang Selatan</span></a>
+          <a href="/cikarang/" class="area-link-card">Cikarang <span>Bekasi</span></a>
+          <a href="/karawang/" class="area-link-card">Karawang <span>Jawa Barat</span></a>
+        </div>
+      </div>
+      <div class="area-region-block">
+        <div class="area-region-header">
+          <div class="area-region-icon">🏙️</div>
+          <div><div class="area-region-title">Jakarta & Sekitarnya</div><div class="area-region-desc">Parkir komersial · perkantoran · pergudangan</div></div>
+        </div>
+        <div class="area-links-grid">
+          <a href="/jakarta/" class="area-link-card">DKI Jakarta <span>Semua wilayah</span></a>
+          <a href="/jakarta-timur/" class="area-link-card">Jakarta Timur <span></span></a>
+          <a href="/jakarta-selatan/" class="area-link-card">Jakarta Selatan <span></span></a>
+          <a href="/jakarta-barat/" class="area-link-card">Jakarta Barat <span></span></a>
+          <a href="/jakarta-utara/" class="area-link-card">Jakarta Utara <span></span></a>
+          <a href="/depok/" class="area-link-card">Depok <span>Jawa Barat</span></a>
+        </div>
+      </div>
+      <div class="area-region-block">
+        <div class="area-region-header">
+          <div class="area-region-icon">🏘️</div>
+          <div><div class="area-region-title">Bekasi & Tangerang</div><div class="area-region-desc">Perumahan · ruko · komersial</div></div>
+        </div>
+        <div class="area-links-grid">
+          <a href="/bekasi/" class="area-link-card">Bekasi <span>Kota & Kabupaten</span></a>
+          <a href="/cibitung/" class="area-link-card">Cibitung <span>Bekasi</span></a>
+          <a href="/tambun/" class="area-link-card">Tambun <span>Bekasi</span></a>
+          <a href="/tangerang/" class="area-link-card">Tangerang <span></span></a>
+          <a href="/tangerang-selatan/" class="area-link-card">Tangerang Selatan <span></span></a>
+          <a href="/serpong/" class="area-link-card">Serpong <span>BSD · Alam Sutera</span></a>
+        </div>
+      </div>
+      <div class="area-region-block">
+        <div class="area-region-header">
+          <div class="area-region-icon">🌄</div>
+          <div><div class="area-region-title">Jawa Barat</div><div class="area-region-desc">Bandung · Bogor · Purwakarta & sekitarnya</div></div>
+        </div>
+        <div class="area-links-grid">
+          <a href="/bandung/" class="area-link-card">Bandung <span>Kota & Kab.</span></a>
+          <a href="/bogor/" class="area-link-card">Bogor <span>Kota & Kab.</span></a>
+          <a href="/purwakarta/" class="area-link-card">Purwakarta <span></span></a>
+          <a href="/cimahi/" class="area-link-card">Cimahi <span></span></a>
+          <a href="/cileungsi/" class="area-link-card">Cileungsi <span></span></a>
+          <a href="/subang/" class="area-link-card">Subang <span></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="area-cta-strip">
+      <div>
+        <div class="area-cta-title">Tidak ada di daftar?</div>
+        <div class="area-cta-sub">Kami melayani seluruh Jabodetabek & Jawa Barat — hubungi kami untuk konfirmasi area Anda.</div>
+      </div>
+      <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20tanya%20area%20layanan." class="btn-primary">Tanya Area Layanan →</a>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section id="faq">
   <div class="container">
     <div class="sec-label">08 — FAQ</div>
@@ -756,13 +991,14 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       <details><summary>Mutu paving block apa yang tepat untuk lahan parkir saya?</summary><p class="faq-a">K200 untuk taman/trotoar. K300 untuk parkir motor dan mobil pribadi. K350 untuk parkiran padat dan ruko. K400 untuk gudang dan kendaraan niaga.</p></details>
       <details><summary>Apakah SolidPaving.id menyediakan material sekaligus jasa pasang?</summary><p class="faq-a">Ya. Supply material dan jasa pasang dalam satu kontrak terima beres — akuntabilitas penuh dari survei hingga garansi 3 bulan.</p></details>
       <details><summary>Mengapa harga SolidPaving.id tidak selalu yang termurah?</summary><p class="faq-a">Karena harga kami sudah termasuk pemadatan sub-base yang benar, leveling presisi, kanstin pengunci, dan garansi tertulis.</p></details>
-      <details><summary>Berapa minimal order dan area layanan?</summary><p class="faq-a">Minimal 30–35 m². Melayani Jabodetabek dan seluruh Jawa Barat: Cikarang, Karawang, Bekasi, Bandung, Purwakarta, Bogor, Depok, Tangerang.</p></details>
+      <details><summary>Berapa minimal order dan area layanan?</summary><p class="faq-a">Tidak ada minimum order yang kaku. Namun untuk proyek di bawah 100 m², harga per m² akan berbeda karena biaya mobilisasi dan alat tidak berubah. Hubungi kami untuk diskusi — kami melayani Jabodetabek dan seluruh Jawa Barat.</p></details>
       <details><summary>Ada garansi pekerjaan?</summary><p class="faq-a">Ya. Garansi perbaikan 3 bulan tertulis setelah serah terima.</p></details>
       <details><summary>Berapa lama proses survei dan RAB?</summary><p class="faq-a">RAB siap dalam kurang dari 24 jam kerja setelah survei. Gratis, tanpa kewajiban apapun.</p></details>
     </div>
   </div>
 </section>
-  
+
+<!-- CTA FINAL -->
 <section id="cta-final">
   <div class="container">
     <div class="sec-label" style="color:rgba(255,255,255,.85)">Langkah Berikutnya</div>
@@ -772,16 +1008,17 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20mau%20survei%20gratis." class="btn-white">Chat WhatsApp Sekarang</a>
       <a href="mailto:sales@solidpaving.id" class="btn-ow">sales@solidpaving.id</a>
     </div>
-    <p class="cta-note">Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat · Min. 30 m²</p>
+    <p class="cta-note">Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat</p>
   </div>
 </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a href="#" class="foot-logo-wrap" aria-label="SolidPaving.id — Kembali ke halaman utama">
+        <a href="/" class="foot-logo-wrap" aria-label="SolidPaving.id">
           <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="30">
             <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
             <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
@@ -789,8 +1026,19 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </a>
         <p class="foot-brand-text">Supplier paving block K200–K400 & jasa pasang bergaransi. Untuk kontraktor, developer, dan pemilik bisnis. Jabodetabek & Jawa Barat.</p>
       </div>
-      <div class="foot-col"><h3 style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;">Layanan</h3><ul><li><a href="#produk">Paving Holland</a></li><li><a href="#produk">Paving Ubin</a></li><li><a href="#produk">Paving Cacing</a></li><li><a href="#method">Jasa Pasang</a></li></ul></div>
-      <div class="foot-col"><h3 style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;">Kontak</h3><ul><li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li><li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div class="foot-col"><h5>Layanan</h5><ul>
+        <li><a href="/produk/paving-holland/">Paving Holland</a></li>
+        <li><a href="/produk/paving-ubin/">Paving Ubin</a></li>
+        <li><a href="/produk/paving-cacing/">Paving Cacing</a></li>
+        <li><a href="/layanan/jasa-pasang/">Jasa Pasang</a></li>
+        <li><a href="/blog/">Panduan & Artikel</a></li>
+      </ul></div>
+      <div class="foot-col"><h5>Kontak</h5><ul>
+        <li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li>
+        <li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li>
+        <li><a href="/tentang-kami/">Tentang Kami</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+      </ul></div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 SolidPaving.id</span>
@@ -799,371 +1047,134 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   </div>
 </footer>
 
+<!-- FLOATING -->
 <div class="float-calc" id="floatCalc">
   <button class="float-calc-btn" onclick="scrollToCalc()">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h.01M12 9h.01M15 9h.01M9 12h.01M12 12h.01M15 12h.01M9 15h.01M12 15h.01M15 15h.01"/></svg>
     Hitung Estimasi Biaya
   </button>
 </div>
-
 <a href="https://wa.me/6285943492832" class="wa-float" id="waFloat" aria-label="Chat WhatsApp SolidPaving.id">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-(function() {
-  // ── Data ──
-  var S = { jenis: 'holland', mutu: 'K300', tebal: '8' };
+(function(){
+var S={jenis:'holland',mutu:'K300',tebal:'8'};
+var JL={holland:'Holland (Bata)',ubin:'Ubin (Square)',cacing:'Cacing (Uni)',hexagon:'Hexagon',grassL8:'Grassblock Lubang 8',grassL5:'Grassblock Lubang 5'};
+var HP={K200:{6:75000,8:85000},K300:{6:90000,8:100000,10:150000},K350:{6:100000,8:105000,10:155000},K400:{6:110000,8:115000,10:160000}};
+var HG={grassL8:{pcs6:18000,pcs8:23000,perM2:7.4},grassL5:{pcs6:19000,pcs8:24000,perM2:6.25}};
+var HL={1:45000,2:35000,3:40000};
+var RK={K200:'Cocok untuk taman, trotoar, dan pejalan kaki',K300:'Ideal untuk perumahan dan parkiran motor / mobil pribadi',K350:'Pilihan menengah untuk parkiran padat dan ruko',K400:'Direkomendasikan untuk gudang dan kendaraan niaga'};
+function isGrass(){return S.jenis==='grassL8'||S.jenis==='grassL5';}
+function hargaPerM2(){if(isGrass()){var g=HG[S.jenis];var pcs=S.tebal==='6'?g.pcs6:g.pcs8;return Math.round(pcs*g.perM2);}var tbl=HP[S.mutu];return tbl?(tbl[parseInt(S.tebal)]||0):0;}
+function R(n){if(!n||n===0)return'—';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
+function Rk(n){if(!n)return'—';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
 
-  var JL = {
-    holland: 'Holland (Bata)', ubin: 'Ubin (Square)', cacing: 'Cacing (Uni)',
-    hexagon: 'Hexagon', grassL8: 'Grassblock Lubang 8', grassL5: 'Grassblock Lubang 5'
-  };
+// Nav hamburger
+var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
+ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
+window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
 
-  var HP = {
-    K200: { 6: 75000, 8: 85000 },
-    K300: { 6: 90000, 8: 100000, 10: 150000 },
-    K350: { 6: 100000, 8: 105000, 10: 155000 },
-    K400: { 6: 110000, 8: 115000, 10: 160000 }
-  };
-
-  var HG = {
-    grassL8: { pcs6: 18000, pcs8: 23000, perM2: 7.4 },
-    grassL5: { pcs6: 19000, pcs8: 24000, perM2: 6.25 }
-  };
-
-  var HL = { 1: 45000, 2: 35000, 3: 40000 };
-
-  var RK = {
-    K200: 'Cocok untuk taman, trotoar, dan pejalan kaki',
-    K300: 'Ideal untuk perumahan dan parkiran motor / mobil pribadi',
-    K350: 'Pilihan menengah untuk parkiran padat dan ruko',
-    K400: 'Direkomendasikan untuk gudang dan kendaraan niaga'
-  };
-
-  // ── Helpers ──
-  function isGrass() { return S.jenis === 'grassL8' || S.jenis === 'grassL5'; }
-
-  function hargaPerM2() {
-    if (isGrass()) {
-      var g = HG[S.jenis];
-      var pcs = S.tebal === '6' ? g.pcs6 : g.pcs8;
-      return Math.round(pcs * g.perM2);
-    }
-    var tbl = HP[S.mutu];
-    return tbl ? (tbl[parseInt(S.tebal)] || 0) : 0;
-  }
-
-  function R(n) {
-    if (!n || n === 0) return '—';
-    if (n >= 1e9) return 'Rp ' + (n / 1e9).toFixed(1).replace('.0', '') + 'M';
-    if (n >= 1e6) return 'Rp ' + (n / 1e6).toFixed(1).replace('.0', '') + ' jt';
-    return 'Rp ' + Math.round(n).toLocaleString('id-ID');
-  }
-
-  function Rk(n) {
-    if (!n) return '—';
-    return 'Rp ' + (n / 1000).toFixed(0) + 'rb/m²';
-  }
-
-  // ── Nav ──
-  var ham = document.getElementById('ham');
-  var mob = document.getElementById('mob');
-  ham.addEventListener('click', function () {
-    var o = ham.classList.toggle('open');
-    mob.classList.toggle('open', o);
-    ham.setAttribute('aria-expanded', o);
-  });
-  window.closeMob = function () {
-    ham.classList.remove('open');
-    mob.classList.remove('open');
-    ham.setAttribute('aria-expanded', 'false');
-  };
-
-  // ── Accordion ──
-  window.toggleSc = function (n) {
-    document.getElementById('sc' + n).classList.toggle('open');
-  };
-
-  // ── Pill picker ──
-  window.pickPill = function (el) {
-    var g = el.getAttribute('data-g');
-    document.querySelectorAll('.pill[data-g="' + g + '"]').forEach(function (p) { p.classList.remove('sel'); });
-    el.classList.add('sel');
-    S[g] = el.getAttribute('data-v');
-
-    var grass = isGrass();
-
-    // Mutu pills: disabled saat grassblock
-    document.querySelectorAll('.pill[data-g="mutu"]').forEach(function (p) {
-      if (grass) p.classList.add('disabled');
-      else p.classList.remove('disabled');
-    });
-
-    // Tebal 10cm: disabled untuk K200 dan grassblock
-    var t10 = document.querySelector('.pill[data-g="tebal"][data-v="10"]');
-    var no10 = grass || (S.mutu === 'K200');
-    if (no10) {
-      t10.classList.add('disabled');
-      if (S.tebal === '10') {
-        S.tebal = '8';
-        document.querySelectorAll('.pill[data-g="tebal"]').forEach(function (p) { p.classList.remove('sel'); });
-        document.querySelector('.pill[data-g="tebal"][data-v="8"]').classList.add('sel');
-      }
-    } else {
-      t10.classList.remove('disabled');
-    }
-    calc();
-  };
-
-  // ── Toggle layanan ──
-  window.toggleLay = function (n, e) {
-    if (e && e.target.tagName === 'INPUT') return;
-    var cb = document.getElementById('t' + n);
-    cb.checked = !cb.checked;
-    calc();
-  };
-
-  // ── Kalkulator ──
-  function calc() {
-    var p = parseFloat(document.getElementById('inp-p').value) || 0;
-    var l = parseFloat(document.getElementById('inp-l').value) || 0;
-    var luas = p * l;
-    var grass = isGrass();
-    var mutu = S.mutu;
-    var tebal = parseInt(S.tebal);
-    var t1 = document.getElementById('t1').checked;
-    var t2 = document.getElementById('t2').checked;
-    var t3 = document.getElementById('t3').checked;
-
-    document.getElementById('out-luas').textContent = Math.round(luas);
-    document.getElementById('sum1').textContent = luas > 0 ? (p + ' m × ' + l + ' m = ' + Math.round(luas) + ' m²') : 'Masukkan panjang dan lebar';
-    document.getElementById('sum2').textContent = JL[S.jenis] || S.jenis;
-    document.getElementById('sum3').textContent = grass ? 'Tidak berlaku untuk grassblock' : (mutu + ' — ' + (RK[mutu] || ''));
-    document.getElementById('sum4').textContent = S.tebal + ' cm';
-    var la = [t1 ? 'Pasang' : null, t2 ? 'Bedding' : null, t3 ? 'Pemadatan' : null].filter(Boolean);
-    document.getElementById('sum5').textContent = la.length ? la.join(', ') : 'Aktifkan layanan yang dibutuhkan';
-
-    document.getElementById('rekom-txt').textContent = grass
-      ? (S.jenis === 'grassL8' ? 'Grassblock lubang besar — 7,4 pcs/m² — cocok untuk parkir rumput dan resapan air' : 'Grassblock lubang kecil — 6,25 pcs/m² — cocok untuk taman dan jalan setapak hijau')
-      : (RK[mutu] || '—');
-
-    [6, 8, 10].forEach(function (t) {
-      var el = document.getElementById('hp' + t);
-      if (!el) return;
-      var no10 = grass || (mutu === 'K200');
-      if (t === 10 && no10) { el.textContent = ''; return; }
-      if (grass) {
-        var g = HG[S.jenis];
-        var pcs = t === 6 ? g.pcs6 : g.pcs8;
-        el.textContent = '· ' + (pcs / 1000).toFixed(0) + 'rb/pcs';
-      } else {
-        var h = HP[mutu] && HP[mutu][t] || null;
-        el.textContent = h ? '· ' + Rk(h) : '';
-      }
-    });
-
-    [1, 2, 3].forEach(function (i) {
-      document.getElementById('lc' + i).classList.toggle('on', document.getElementById('t' + i).checked);
-    });
-
-    var hP = hargaPerM2();
-    var mat = luas * hP;
-    var v1 = t1 ? luas * HL[1] : 0;
-    var v2 = t2 ? luas * HL[2] : 0;
-    var v3 = t3 ? luas * HL[3] : 0;
-    var lay = v1 + v2 + v3;
-    var grand = mat + lay;
-    var pm2 = hP + (t1 ? HL[1] : 0) + (t2 ? HL[2] : 0) + (t3 ? HL[3] : 0);
-
-    document.getElementById('la1').textContent = t1 && luas > 0 ? R(v1) : '—';
-    document.getElementById('la2').textContent = t2 && luas > 0 ? R(v2) : '—';
-    document.getElementById('la3').textContent = t3 && luas > 0 ? R(v3) : '—';
-    document.getElementById('s-mat').textContent = luas > 0 ? R(mat) : '—';
-
-    function sr(rId, vId, val, on) {
-      document.getElementById(rId).style.display = on && luas > 0 ? 'flex' : 'none';
-      document.getElementById(vId).textContent = on && luas > 0 ? R(val) : '—';
-    }
-    sr('sr1', 'sv1', v1, t1); sr('sr2', 'sv2', v2, t2); sr('sr3', 'sv3', v3, t3);
-
-    document.getElementById('s-pm2').textContent = luas > 0 ? Rk(pm2) : '—';
-    document.getElementById('s-grand').textContent = luas > 0 ? R(grand) : '—';
-    document.getElementById('s-sub').textContent = 'untuk ' + Math.round(luas) + ' m²' + (grass ? '' : ' · ' + mutu) + ' · ' + tebal + ' cm';
-    document.getElementById('st-mat').textContent = luas > 0 ? R(mat) : '—';
-    document.getElementById('st-lay').textContent = lay > 0 ? R(lay) : '—';
-    document.getElementById('st-total').textContent = luas > 0 ? R(grand) : '—';
-    updateSticky();
-  }
-  window.calc = calc;
-
-  // ── Sticky & float ──
-  var isInKal = true;
-  function updateSticky() {
-    var p = parseFloat(document.getElementById('inp-p').value) || 0;
-    var l = parseFloat(document.getElementById('inp-l').value) || 0;
-    var show = !isInKal && p > 0 && l > 0;
-    document.getElementById('sticky').classList.toggle('visible', show);
-    document.getElementById('waFloat').classList.toggle('hidden', show);
-  }
-  var kalObs = new IntersectionObserver(function (e) {
-    e.forEach(function (en) { isInKal = en.isIntersecting; updateSticky(); });
-  }, { threshold: 0 });
-  kalObs.observe(document.getElementById('kalkulator'));
-
-  var floatEl = document.getElementById('floatCalc');
-  var floatObs = new IntersectionObserver(function (e) {
-    e.forEach(function (en) { floatEl.style.display = en.isIntersecting ? 'none' : 'flex'; });
-  }, { threshold: 0.1 });
-  floatObs.observe(document.getElementById('kalkulator'));
-
-  window.scrollToCalc = function () {
-    document.getElementById('kalkulator').scrollIntoView({ behavior: 'smooth' });
-    setTimeout(function () { document.getElementById('inp-p').focus(); }, 600);
-  };
-
-  // ── getData ──
-  function getData() {
-    var p = parseFloat(document.getElementById('inp-p').value) || 0;
-    var l = parseFloat(document.getElementById('inp-l').value) || 0;
-    var luas = p * l;
-    var hP = hargaPerM2();
-    var t1 = document.getElementById('t1').checked;
-    var t2 = document.getElementById('t2').checked;
-    var t3 = document.getElementById('t3').checked;
-    var v1 = t1 ? luas * HL[1] : 0, v2 = t2 ? luas * HL[2] : 0, v3 = t3 ? luas * HL[3] : 0;
-    var mat = luas * hP, lay = v1 + v2 + v3, grand = mat + lay;
-    var now = new Date();
-    var tgl = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-    var tid = 'SP-' + now.getFullYear() + String(now.getMonth() + 1).padStart(2, '0') + String(now.getDate()).padStart(2, '0') + '-' + String(now.getHours()).padStart(2, '0') + String(now.getMinutes()).padStart(2, '0');
-    return {
-      tid: tid, tgl: tgl, luas: luas, p: p, l: l,
-      jenis: JL[S.jenis] || S.jenis,
-      mutu: isGrass() ? 'Grassblock' : S.mutu,
-      tebal: S.tebal, hP: hP, mat: mat, v1: v1, v2: v2, v3: v3, lay: lay, grand: grand, t1: t1, t2: t2, t3: t3,
-      pm2: hP + (t1 ? HL[1] : 0) + (t2 ? HL[2] : 0) + (t3 ? HL[3] : 0),
-      nama: document.getElementById('fd-nama').value.trim(),
-      hp: document.getElementById('fd-hp').value.trim(),
-      kota: document.getElementById('fd-kota').value.trim(),
-      proyek: document.getElementById('fd-proyek').value.trim(),
-      catatan: document.getElementById('fd-catatan').value.trim()
-    };
-  }
-
-  // ── Kirim WA ──
-  window.kirimWA = function () {
-    var d = getData();
-    if (!d.nama || !d.hp || !d.kota) { alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.'); return; }
-    if (d.luas <= 0) { alert('Mohon isi ukuran lahan.'); return; }
-    var lay = [d.t1 ? 'Pemasangan (Rp 45.000/m²)' : null, d.t2 ? 'Lapisan Bedding (Rp 35.000/m²)' : null, d.t3 ? 'Pemadatan Sub-Base (Rp 40.000/m²)' : null].filter(Boolean);
-    var msg = [
-      '━━━━━━━━━━━━━━━━━━', '📋 ESTIMASI SOLIDPAVING.ID',
-      'Tiket  : ' + d.tid, 'Tanggal: ' + d.tgl, '━━━━━━━━━━━━━━━━━━',
-      '👤 DATA PELANGGAN', 'Nama   : ' + d.nama, 'No. HP : ' + d.hp, 'Lokasi : ' + d.kota,
-      d.proyek ? 'Proyek : ' + d.proyek : null, d.catatan ? 'Catatan: ' + d.catatan : null,
-      '🧱 SPESIFIKASI',
-      'Ukuran : ' + d.p + ' × ' + d.l + ' m = ' + Math.round(d.luas) + ' m²',
-      'Jenis  : ' + d.jenis, 'Mutu   : ' + d.mutu, 'Tebal  : ' + d.tebal + ' cm',
-      '🔧 LAYANAN', lay.length ? lay.join('\n') : 'Material saja (tanpa pasang)',
-      '💰 ESTIMASI', 'Material : ' + R(d.mat),
-      d.t1 ? 'Pasang   : ' + R(d.v1) : null, d.t2 ? 'Bedding  : ' + R(d.v2) : null, d.t3 ? 'Pemadatan: ' + R(d.v3) : null,
-      'TOTAL    : ' + R(d.grand), '━━━━━━━━━━━━━━━━━━',
-      '*Estimasi awal. Harga pasti setelah survei gratis.*'
-    ].filter(function (s) { return s !== null && s !== undefined; }).join('\n');
-    window.open('https://wa.me/6285943492832?text=' + encodeURIComponent(msg), '_blank');
-  };
-
-  // ── Kirim Email ──
-  window.kirimEmail = function () {
-    var d = getData();
-    if (!d.nama || !d.hp || !d.kota) { alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.'); return; }
-    if (d.luas <= 0) { alert('Mohon isi ukuran lahan.'); return; }
-    var lay = [d.t1 ? 'Pemasangan (Rp 45.000/m²)' : null, d.t2 ? 'Lapisan Bedding (Rp 35.000/m²)' : null, d.t3 ? 'Pemadatan Sub-Base (Rp 40.000/m²)' : null].filter(Boolean);
-    var subj = 'Permintaan Estimasi Paving Block — ' + d.tid + (d.nama ? ' (' + d.nama + ')' : '');
-    var body = ['Halo Tim SolidPaving.id,', '', 'Permintaan estimasi biaya paving block:', '',
-      '--- DATA ---', 'Nama: ' + d.nama, 'HP: ' + d.hp, 'Lokasi: ' + d.kota,
-      d.proyek ? 'Proyek: ' + d.proyek : '', d.catatan ? 'Catatan: ' + d.catatan : '', '',
-      '--- SPESIFIKASI ---', 'Ukuran: ' + d.p + ' × ' + d.l + ' m = ' + Math.round(d.luas) + ' m²',
-      'Jenis: ' + d.jenis, 'Mutu: ' + d.mutu, 'Tebal: ' + d.tebal + ' cm', '',
-      '--- LAYANAN ---', lay.length ? lay.join(', ') : 'Material saja', '',
-      '--- ESTIMASI ---', 'Material: ' + R(d.mat),
-      d.t1 ? 'Pasang: ' + R(d.v1) : '', d.t2 ? 'Bedding: ' + R(d.v2) : '', d.t3 ? 'Pemadatan: ' + R(d.v3) : '',
-      'TOTAL: ' + R(d.grand), '', 'Ref: ' + d.tid, '', 'Terima kasih.', d.nama
-    ].filter(function (s) { return s !== null && s !== undefined; }).join('\n');
-    window.location.href = 'mailto:sales@solidpaving.id?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
-  };
-
-  // ── Unduh PDF ──
-  window.unduhPDF = function () {
-    var d = getData();
-    if (d.luas <= 0) { alert('Mohon isi ukuran lahan.'); return; }
-    var lrows = '';
-    if (d.t1) lrows += '<tr><td>Pemasangan (Rp 45rb/m²)</td><td>' + R(d.v1) + '</td></tr>';
-    if (d.t2) lrows += '<tr><td>Lapisan Bedding (Rp 35rb/m²)</td><td>' + R(d.v2) + '</td></tr>';
-    if (d.t3) lrows += '<tr><td>Pemadatan Sub-Base (Rp 40rb/m²)</td><td>' + R(d.v3) + '</td></tr>';
-    var now = new Date(), tglLong = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-    var html = '<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>Surat Penawaran ' + d.tid + '</title>'
-      + '<style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:Arial,sans-serif;font-size:12px;color:#1a1a1a;padding:40px 48px;max-width:720px;margin:0 auto;}'
-      + '.kop{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:14px;border-bottom:3px solid #2e3e5f;margin-bottom:20px;}'
-      + '.kop-brand{font-size:22px;font-weight:900;color:#2e3e5f;letter-spacing:2px;}.kop-brand span{font-weight:300;color:#95b3d9;}'
-      + '.kop-alamat{font-size:10px;color:#4a6080;line-height:1.6;margin-top:4px;}'
-      + '.kop-kontak{text-align:right;font-size:10px;color:#4a6080;line-height:1.8;}.kop-kontak strong{color:#2e3e5f;font-size:11px;}'
-      + '.nosurat{margin-bottom:20px;}.nosurat table{border-collapse:collapse;}'
-      + '.nosurat td{padding:2px 8px 2px 0;font-size:11px;color:#1a1a1a;vertical-align:top;}'
-      + '.nosurat td:first-child{width:120px;color:#4a6080;}.nosurat td:nth-child(2){width:12px;color:#4a6080;}'
-      + '.perihal{background:#f4f7fb;border-left:4px solid #2e3e5f;padding:10px 14px;margin-bottom:20px;border-radius:0 4px 4px 0;}'
-      + '.perihal-label{font-size:10px;font-weight:700;color:#4a6080;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}'
-      + '.perihal-val{font-size:13px;font-weight:700;color:#2e3e5f;}'
-      + '.yth{margin-bottom:16px;font-size:12px;line-height:1.8;}.yth .kepada{font-weight:700;}'
-      + '.body-text{font-size:12px;line-height:1.8;color:#1a1a1a;margin-bottom:16px;}'
-      + '.sec-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a6080;padding-bottom:5px;border-bottom:1px solid #ebf1f8;margin-bottom:8px;margin-top:16px;}'
-      + 'table.detail{width:100%;border-collapse:collapse;}'
-      + 'table.detail td{padding:6px 0;border-bottom:1px solid #f4f7fb;font-size:12px;}'
-      + 'table.detail td:last-child{text-align:right;font-weight:600;}table.detail td:first-child{color:#4a6080;width:60%;}'
-      + '.grand-row td{font-size:14px;font-weight:800;color:#2e3e5f;border-top:2px solid #2e3e5f;border-bottom:none;padding-top:10px;}'
-      + '.ttd{margin-top:36px;display:flex;justify-content:flex-end;}'
-      + '.ttd-label{font-size:11px;color:#4a6080;margin-bottom:56px;}'
-      + '.ttd-name{font-size:12px;font-weight:700;border-top:1px solid #2e3e5f;padding-top:4px;width:160px;}'
-      + '.ttd-role{font-size:10px;color:#4a6080;}'
-      + '.page-footer{margin-top:32px;padding-top:12px;border-top:1px solid #ebf1f8;font-size:10px;color:#95b3d9;text-align:center;}'
-      + '</style></head><body>'
-      + '<div class="kop"><div><div class="kop-brand">SOLID<span>PAVING</span></div>'
-      + '<div class="kop-alamat">Jl. Raya Cilangkap No. 10 RT 004 RW 001<br>Kel. Cipayung, Kec. Cipayung, Jakarta Timur</div></div>'
-      + '<div class="kop-kontak"><strong>SolidPaving.id</strong><br>0859-4349-2832<br>sales@solidpaving.id<br>www.solidpaving.id</div></div>'
-      + '<div class="nosurat"><table>'
-      + '<tr><td>Nomor</td><td>:</td><td>' + d.tid + '/SP/' + now.getFullYear() + '</td></tr>'
-      + '<tr><td>Tanggal</td><td>:</td><td>' + tglLong + '</td></tr>'
-      + '<tr><td>Sifat</td><td>:</td><td>Penawaran Sementara</td></tr>'
-      + '<tr><td>Lampiran</td><td>:</td><td>1 (satu) lembar</td></tr>'
-      + '</table></div>'
-      + '<div class="perihal"><div class="perihal-label">Perihal</div><div class="perihal-val">Penawaran Harga Paving Block & Jasa Pemasangan</div></div>'
-      + '<div class="yth">Kepada Yth.<br>' + (d.nama ? '<span class="kepada">Bapak/Ibu ' + d.nama + '</span><br>' : '<span class="kepada">Bapak/Ibu Calon Pelanggan</span><br>') + (d.proyek ? d.proyek + '<br>' : '') + (d.kota || '') + '</div>'
-      + '<p class="body-text">Dengan hormat,<br><br>Bersama surat ini kami dari <strong>SolidPaving.id</strong> menyampaikan penawaran harga sementara atas kebutuhan paving block dan jasa pemasangan. Penawaran ini bersifat estimasi awal dan akan dikonfirmasi secara resmi setelah survei lapangan.</p>'
-      + '<div class="sec-title">Spesifikasi Pekerjaan</div>'
-      + '<table class="detail">'
-      + '<tr><td>Lokasi Pekerjaan</td><td>' + d.kota + '</td></tr>'
-      + '<tr><td>Luas Area</td><td>' + d.p + ' m × ' + d.l + ' m = ' + Math.round(d.luas) + ' m²</td></tr>'
-      + '<tr><td>Jenis Paving Block</td><td>' + d.jenis + '</td></tr>'
-      + '<tr><td>Mutu / Kuat Tekan</td><td>' + d.mutu + (isGrass() ? '' : ' (Hidrolik Press, SNI)') + '</td></tr>'
-      + '<tr><td>Ketebalan</td><td>' + d.tebal + ' cm</td></tr>'
-      + '</table>'
-      + '<div class="sec-title">Rincian Estimasi Biaya</div>'
-      + '<table class="detail"><tr><td>Material Paving (' + Rk(d.hP) + ')</td><td>' + R(d.mat) + '</td></tr>' + lrows
-      + '<tr class="grand-row"><td>TOTAL ESTIMASI</td><td>' + R(d.grand) + '</td></tr></table>'
-      + (d.catatan ? '<p class="body-text" style="margin-top:14px;background:#f4f7fb;padding:10px 14px;border-radius:4px;"><strong>Catatan:</strong> ' + d.catatan + '</p>' : '')
-      + '<p class="body-text" style="margin-top:20px;">Harga di atas merupakan estimasi awal. Penawaran resmi dengan harga final akan diterbitkan setelah survei lapangan <strong>gratis tanpa kewajiban</strong>. Kami berkomitmen memberikan hasil terbaik dengan garansi perbaikan <strong>3 bulan tertulis</strong>.<br><br>Atas perhatian dan kepercayaan Bapak/Ibu, kami ucapkan terima kasih.</p>'
-      + '<div class="ttd"><div><div class="ttd-label">Jakarta, ' + tglLong + '<br>Hormat kami,</div><div class="ttd-name">SolidPaving.id</div><div class="ttd-role">Tim Penjualan</div></div></div>'
-      + '<div class="page-footer">SolidPaving.id · Jl. Raya Cilangkap No. 10, Jakarta Timur · 0859-4349-2832 · sales@solidpaving.id</div>'
-      + '</body></html>';
-    var w = window.open('', '_blank');
-    w.document.write(html);
-    w.document.close();
-    w.focus();
-    setTimeout(function () { w.print(); }, 600);
-  };
-
-  // ── Init ──
+window.toggleSc=function(n){document.getElementById('sc'+n).classList.toggle('open');};
+window.pickPill=function(el){
+  var g=el.getAttribute('data-g');
+  document.querySelectorAll('.pill[data-g="'+g+'"]').forEach(function(p){p.classList.remove('sel');});
+  el.classList.add('sel');S[g]=el.getAttribute('data-v');
+  var grass=isGrass();
+  document.querySelectorAll('.pill[data-g="mutu"]').forEach(function(p){if(grass)p.classList.add('disabled');else p.classList.remove('disabled');});
+  var t10=document.querySelector('.pill[data-g="tebal"][data-v="10"]');
+  var no10=grass||(S.mutu==='K200');
+  if(no10){t10.classList.add('disabled');if(S.tebal==='10'){S.tebal='8';document.querySelectorAll('.pill[data-g="tebal"]').forEach(function(p){p.classList.remove('sel');});document.querySelector('.pill[data-g="tebal"][data-v="8"]').classList.add('sel');}}
+  else{t10.classList.remove('disabled');}
   calc();
+};
+window.toggleLay=function(n,e){if(e&&e.target.tagName==='INPUT')return;var cb=document.getElementById('t'+n);cb.checked=!cb.checked;calc();};
+
+function calc(){
+  var p=parseFloat(document.getElementById('inp-p').value)||0;
+  var l=parseFloat(document.getElementById('inp-l').value)||0;
+  var luas=p*l;var grass=isGrass();var mutu=S.mutu;var tebal=parseInt(S.tebal);
+  var t1=document.getElementById('t1').checked,t2=document.getElementById('t2').checked,t3=document.getElementById('t3').checked;
+  document.getElementById('out-luas').textContent=Math.round(luas);
+  document.getElementById('sum1').textContent=luas>0?(p+' m × '+l+' m = '+Math.round(luas)+' m²'):'Masukkan panjang dan lebar';
+  document.getElementById('sum2').textContent=JL[S.jenis]||S.jenis;
+  document.getElementById('sum3').textContent=grass?'Tidak berlaku untuk grassblock':(mutu+' — '+(RK[mutu]||''));
+  document.getElementById('sum4').textContent=S.tebal+' cm';
+  var la=[t1?'Pasang':null,t2?'Bedding':null,t3?'Pemadatan':null].filter(Boolean);
+  document.getElementById('sum5').textContent=la.length?la.join(', '):'Aktifkan layanan yang dibutuhkan';
+  document.getElementById('rekom-txt').textContent=grass?(S.jenis==='grassL8'?'Grassblock lubang besar — 7,4 pcs/m² — cocok untuk parkir rumput dan resapan air':'Grassblock lubang kecil — 6,25 pcs/m² — cocok untuk taman dan jalan setapak hijau'):(RK[mutu]||'—');
+  [6,8,10].forEach(function(t){var el=document.getElementById('hp'+t);if(!el)return;var no10=grass||(mutu==='K200');if(t===10&&no10){el.textContent='';return;}if(grass){var g=HG[S.jenis];var pcs=t===6?g.pcs6:g.pcs8;el.textContent='· '+(pcs/1000).toFixed(0)+'rb/pcs';}else{var h=HP[mutu]&&HP[mutu][t]||null;el.textContent=h?'· '+Rk(h):'';}});
+  [1,2,3].forEach(function(i){document.getElementById('lc'+i).classList.toggle('on',document.getElementById('t'+i).checked);});
+  var hP=hargaPerM2(),mat=luas*hP,v1=t1?luas*HL[1]:0,v2=t2?luas*HL[2]:0,v3=t3?luas*HL[3]:0,lay=v1+v2+v3,grand=mat+lay,pm2=hP+(t1?HL[1]:0)+(t2?HL[2]:0)+(t3?HL[3]:0);
+  document.getElementById('la1').textContent=t1&&luas>0?R(v1):'—';
+  document.getElementById('la2').textContent=t2&&luas>0?R(v2):'—';
+  document.getElementById('la3').textContent=t3&&luas>0?R(v3):'—';
+  document.getElementById('s-mat').textContent=luas>0?R(mat):'—';
+  function sr(rId,vId,val,on){document.getElementById(rId).style.display=on&&luas>0?'flex':'none';document.getElementById(vId).textContent=on&&luas>0?R(val):'—';}
+  sr('sr1','sv1',v1,t1);sr('sr2','sv2',v2,t2);sr('sr3','sv3',v3,t3);
+  document.getElementById('s-pm2').textContent=luas>0?Rk(pm2):'—';
+  document.getElementById('s-grand').textContent=luas>0?R(grand):'—';
+  document.getElementById('s-sub').textContent='untuk '+Math.round(luas)+' m²'+(grass?'':' · '+mutu)+' · '+tebal+' cm';
+  document.getElementById('st-mat').textContent=luas>0?R(mat):'—';
+  document.getElementById('st-lay').textContent=lay>0?R(lay):'—';
+  document.getElementById('st-total').textContent=luas>0?R(grand):'—';
+  updateSticky();
+}
+window.calc=calc;
+
+var isInKal=true;
+function updateSticky(){
+  var p=parseFloat(document.getElementById('inp-p').value)||0;
+  var l=parseFloat(document.getElementById('inp-l').value)||0;
+  var show=!isInKal&&p>0&&l>0;
+  document.getElementById('sticky').classList.toggle('visible',show);
+  document.getElementById('waFloat').classList.toggle('hidden',show);
+}
+var kalObs=new IntersectionObserver(function(e){e.forEach(function(en){isInKal=en.isIntersecting;updateSticky();});},{threshold:0});
+kalObs.observe(document.getElementById('kalkulator'));
+var floatEl=document.getElementById('floatCalc');
+var floatObs=new IntersectionObserver(function(e){e.forEach(function(en){floatEl.style.display=en.isIntersecting?'none':'flex';});},{threshold:0.1});
+floatObs.observe(document.getElementById('kalkulator'));
+window.scrollToCalc=function(){document.getElementById('kalkulator').scrollIntoView({behavior:'smooth'});setTimeout(function(){document.getElementById('inp-p').focus();},600);};
+
+function getData(){
+  var p=parseFloat(document.getElementById('inp-p').value)||0,l=parseFloat(document.getElementById('inp-l').value)||0,luas=p*l,hP=hargaPerM2();
+  var t1=document.getElementById('t1').checked,t2=document.getElementById('t2').checked,t3=document.getElementById('t3').checked;
+  var v1=t1?luas*HL[1]:0,v2=t2?luas*HL[2]:0,v3=t3?luas*HL[3]:0,mat=luas*hP,lay=v1+v2+v3,grand=mat+lay;
+  var now=new Date(),tgl=now.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+  var tid='SP-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0');
+  return{tid,tgl,luas,p,l,jenis:JL[S.jenis]||S.jenis,mutu:isGrass()?'Grassblock':S.mutu,tebal:S.tebal,hP,mat,v1,v2,v3,lay,grand,t1,t2,t3,pm2:hP+(t1?HL[1]:0)+(t2?HL[2]:0)+(t3?HL[3]:0),nama:document.getElementById('fd-nama').value.trim(),hp:document.getElementById('fd-hp').value.trim(),kota:document.getElementById('fd-kota').value.trim(),proyek:document.getElementById('fd-proyek').value.trim(),catatan:document.getElementById('fd-catatan').value.trim()};
+}
+window.kirimWA=function(){
+  var d=getData();
+  if(!d.nama||!d.hp||!d.kota){alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.');return;}
+  if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
+  var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
+  var msg=['━━━━━━━━━━━━━━━━━━','📋 ESTIMASI SOLIDPAVING.ID','Tiket  : '+d.tid,'Tanggal: '+d.tgl,'━━━━━━━━━━━━━━━━━━','👤 DATA PELANGGAN','Nama   : '+d.nama,'No. HP : '+d.hp,'Lokasi : '+d.kota,d.proyek?'Proyek : '+d.proyek:null,d.catatan?'Catatan: '+d.catatan:null,'🧱 SPESIFIKASI','Ukuran : '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis  : '+d.jenis,'Mutu   : '+d.mutu,'Tebal  : '+d.tebal+' cm','🔧 LAYANAN',lay.length?lay.join('\n'):'Material saja (tanpa pasang)','💰 ESTIMASI','Material : '+R(d.mat),d.t1?'Pasang   : '+R(d.v1):null,d.t2?'Bedding  : '+R(d.v2):null,d.t3?'Pemadatan: '+R(d.v3):null,'TOTAL    : '+R(d.grand),'━━━━━━━━━━━━━━━━━━','*Estimasi awal. Harga pasti setelah survei gratis.*'].filter(s=>s!==null&&s!==undefined).join('\n');
+  window.open('https://wa.me/6285943492832?text='+encodeURIComponent(msg),'_blank');
+};
+window.kirimEmail=function(){
+  var d=getData();
+  if(!d.nama||!d.hp||!d.kota){alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.');return;}
+  if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
+  var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
+  var subj='Permintaan Estimasi Paving Block — '+d.tid+(d.nama?' ('+d.nama+')':'');
+  var body=['Halo Tim SolidPaving.id,','','Permintaan estimasi biaya paving block:','','--- DATA ---','Nama: '+d.nama,'HP: '+d.hp,'Lokasi: '+d.kota,d.proyek?'Proyek: '+d.proyek:'',d.catatan?'Catatan: '+d.catatan:'','','--- SPESIFIKASI ---','Ukuran: '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis: '+d.jenis,'Mutu: '+d.mutu,'Tebal: '+d.tebal+' cm','','--- LAYANAN ---',lay.length?lay.join(', '):'Material saja','','--- ESTIMASI ---','Material: '+R(d.mat),d.t1?'Pasang: '+R(d.v1):'',d.t2?'Bedding: '+R(d.v2):'',d.t3?'Pemadatan: '+R(d.v3):'','TOTAL: '+R(d.grand),'','Ref: '+d.tid,'','Terima kasih.',d.nama].filter(s=>s!==null&&s!==undefined).join('\n');
+  window.location.href='mailto:sales@solidpaving.id?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+};
+window.unduhPDF=function(){
+  var d=getData();
+  if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
+  var lrows='';
+  if(d.t1)lrows+='<tr><td>Pemasangan (Rp 45rb/m²)</td><td>'+R(d.v1)+'</td></tr>';
+  if(d.t2)lrows+='<tr><td>Lapisan Bedding (Rp 35rb/m²)</td><td>'+R(d.v2)+'</td></tr>';
+  if(d.t3)lrows+='<tr><td>Pemadatan Sub-Base (Rp 40rb/m²)</td><td>'+R(d.v3)+'</td></tr>';
+  var now=new Date(),tglLong=now.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+  var html='<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><title>Surat Penawaran '+d.tid+'</title><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:Arial,sans-serif;font-size:12px;color:#1a1a1a;padding:40px 48px;max-width:720px;margin:0 auto;}.kop{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:14px;border-bottom:3px solid #2e3e5f;margin-bottom:20px;}.kop-brand{font-size:22px;font-weight:900;color:#2e3e5f;letter-spacing:2px;}.kop-brand span{font-weight:300;color:#95b3d9;}.kop-alamat{font-size:10px;color:#4a6080;line-height:1.6;margin-top:4px;}.kop-kontak{text-align:right;font-size:10px;color:#4a6080;line-height:1.8;}.kop-kontak strong{color:#2e3e5f;font-size:11px;}.nosurat{margin-bottom:20px;}.nosurat table{border-collapse:collapse;}.nosurat td{padding:2px 8px 2px 0;font-size:11px;color:#1a1a1a;vertical-align:top;}.nosurat td:first-child{width:120px;color:#4a6080;}.nosurat td:nth-child(2){width:12px;color:#4a6080;}.perihal{background:#f4f7fb;border-left:4px solid #2e3e5f;padding:10px 14px;margin-bottom:20px;border-radius:0 4px 4px 0;}.perihal-label{font-size:10px;font-weight:700;color:#4a6080;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}.perihal-val{font-size:13px;font-weight:700;color:#2e3e5f;}.yth{margin-bottom:16px;font-size:12px;line-height:1.8;}.yth .kepada{font-weight:700;}.body-text{font-size:12px;line-height:1.8;color:#1a1a1a;margin-bottom:16px;}.sec-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a6080;padding-bottom:5px;border-bottom:1px solid #ebf1f8;margin-bottom:8px;margin-top:16px;}table.detail{width:100%;border-collapse:collapse;}table.detail td{padding:6px 0;border-bottom:1px solid #f4f7fb;font-size:12px;}table.detail td:last-child{text-align:right;font-weight:600;}table.detail td:first-child{color:#4a6080;width:60%;}.grand-row td{font-size:14px;font-weight:800;color:#2e3e5f;border-top:2px solid #2e3e5f;border-bottom:none;padding-top:10px;}.ttd{margin-top:36px;display:flex;justify-content:flex-end;}.ttd-label{font-size:11px;color:#4a6080;margin-bottom:56px;}.ttd-name{font-size:12px;font-weight:700;border-top:1px solid #2e3e5f;padding-top:4px;width:160px;}.ttd-role{font-size:10px;color:#4a6080;}.page-footer{margin-top:32px;padding-top:12px;border-top:1px solid #ebf1f8;font-size:10px;color:#95b3d9;text-align:center;}</style></head><body><div class="kop"><div><div class="kop-brand">SOLID<span>PAVING</span></div><div class="kop-alamat">Jl. Raya Cilangkap No. 10 RT 004 RW 001<br>Kel. Cipayung, Kec. Cipayung, Jakarta Timur</div></div><div class="kop-kontak"><strong>SolidPaving.id</strong><br>0859-4349-2832<br>sales@solidpaving.id<br>www.solidpaving.id</div></div><div class="nosurat"><table><tr><td>Nomor</td><td>:</td><td>'+d.tid+'/SP/'+now.getFullYear()+'</td></tr><tr><td>Tanggal</td><td>:</td><td>'+tglLong+'</td></tr><tr><td>Sifat</td><td>:</td><td>Penawaran Sementara</td></tr><tr><td>Lampiran</td><td>:</td><td>1 (satu) lembar</td></tr></table></div><div class="perihal"><div class="perihal-label">Perihal</div><div class="perihal-val">Penawaran Harga Paving Block & Jasa Pemasangan</div></div><div class="yth">Kepada Yth.<br>'+(d.nama?'<span class="kepada">Bapak/Ibu '+d.nama+'</span><br>':'<span class="kepada">Bapak/Ibu Calon Pelanggan</span><br>')+(d.proyek?d.proyek+'<br>':'')+(d.kota||'')+'</div><p class="body-text">Dengan hormat,<br><br>Bersama surat ini kami dari <strong>SolidPaving.id</strong> menyampaikan penawaran harga sementara atas kebutuhan paving block dan jasa pemasangan.</p><div class="sec-title">Spesifikasi Pekerjaan</div><table class="detail"><tr><td>Lokasi Pekerjaan</td><td>'+d.kota+'</td></tr><tr><td>Luas Area</td><td>'+d.p+' m × '+d.l+' m = '+Math.round(d.luas)+' m²</td></tr><tr><td>Jenis Paving Block</td><td>'+d.jenis+'</td></tr><tr><td>Mutu / Kuat Tekan</td><td>'+d.mutu+(isGrass()?'':' (Hidrolik Press, SNI)')+'</td></tr><tr><td>Ketebalan</td><td>'+d.tebal+' cm</td></tr></table><div class="sec-title">Rincian Estimasi Biaya</div><table class="detail"><tr><td>Material Paving ('+Rk(d.hP)+')</td><td>'+R(d.mat)+'</td></tr>'+lrows+'<tr class="grand-row"><td>TOTAL ESTIMASI</td><td>'+R(d.grand)+'</td></tr></table>'+(d.catatan?'<p class="body-text" style="margin-top:14px;background:#f4f7fb;padding:10px 14px;border-radius:4px;"><strong>Catatan:</strong> '+d.catatan+'</p>':'')+'<p class="body-text" style="margin-top:20px;">Penawaran resmi dengan harga final akan diterbitkan setelah survei lapangan <strong>gratis</strong>. Garansi perbaikan <strong>3 bulan tertulis</strong>.</p><div class="ttd"><div><div class="ttd-label">Jakarta, '+tglLong+'<br>Hormat kami,</div><div class="ttd-name">SolidPaving.id</div><div class="ttd-role">Tim Penjualan</div></div></div><div class="page-footer">SolidPaving.id · 0859-4349-2832 · sales@solidpaving.id</div></body></html>';
+  var w=window.open('','_blank');w.document.write(html);w.document.close();w.focus();setTimeout(function(){w.print();},600);
+};
+calc();
 })();
 </script>
 </body>
