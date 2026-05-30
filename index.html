@@ -301,6 +301,21 @@ h3{font-size:18px;font-weight:700;}
 .val-footer{margin-top:32px;padding:24px 28px;background:rgba(46,62,95,.05);border:1px solid var(--bdr);border-radius:var(--rl);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .val-footer p{font-size:15px;color:var(--tx2);max-width:560px;}
 
+
+/* Before-After PLN */
+.pln-section{margin-bottom:48px;}
+.pln-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
+.pln-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
+.pln-item{border-radius:var(--rl);overflow:hidden;border:1px solid var(--bds);position:relative;background:var(--bg1);}
+.pln-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s;}
+.pln-item:hover img{transform:scale(1.03);}
+.pln-step{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:600;color:var(--tx2);background:var(--bg0);}
+.pln-num{width:24px;height:24px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--blue);flex-shrink:0;}
+.pln-step-done{color:var(--green);}
+.pln-step-done .pln-num{background:rgba(15,110,86,.12);border-color:rgba(15,110,86,.3);color:var(--green);}
+.pln-item-final{border-color:var(--green);}
+@media(max-width:600px){.pln-grid{grid-template-columns:1fr 1fr;}}
+
 /* ─── BUKTI ─── */
 #bukti{background:var(--bg0);}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:48px;}
@@ -891,10 +906,33 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <div class="divider"></div>
     <div class="gallery">
       <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/pemasangan%20paving%20ubin%20rumah%20wapres%20maruf%20amin.jpg?w=520&q=75&format=webp" alt="Hunian VIP" loading="lazy" width="520" height="390"><div class="gal-label">Hunian VIP</div></div>
-      <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/Pemasangan%20paving%20kampus%20IT%20PLN.jpg?w=520&q=75&format=webp" alt="Kampus IT PLN" loading="lazy" width="520" height="390"><div class="gal-label">Kampus IT PLN</div></div>
-      <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/Pemasangan%20paving%20wakil%20presiden%20Ma'ruf%20Amin.jpg?w=520&q=75&format=webp" alt="Proyek Kenegaraan VIP" loading="lazy" width="520" height="390"><div class="gal-label">Proyek Kenegaraan VIP</div></div>
+      <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/Pemasangan%20paving%20wakil%20presiden%20Ma&#39;ruf%20Amin.jpg?w=520&q=75&format=webp" alt="Proyek Kenegaraan VIP" loading="lazy" width="520" height="390"><div class="gal-label">Proyek Kenegaraan VIP</div></div>
       <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/WhatsApp%20Image%202025-04-20%20at%2015.07.06.jpeg?w=520&q=75&format=webp" alt="Area Komersial" loading="lazy" width="520" height="390"><div class="gal-label">Area Komersial</div></div>
     </div>
+
+    <!-- Before-After Kampus IT PLN -->
+    <div class="pln-section">
+      <div class="pln-label">Proyek Terbaru — Kampus IT PLN</div>
+      <div class="pln-grid">
+        <div class="pln-item">
+          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/1e1392d3-18ae-419f-a31b-733372e48f2d.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Galian dan pembersihan lahan" loading="lazy" width="560" height="420">
+          <div class="pln-step"><span class="pln-num">01</span> Galian & Pembersihan Lahan</div>
+        </div>
+        <div class="pln-item">
+          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/bf93e12c-91b3-49d9-a457-e12a14b8e9df.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Proses kupas lahan" loading="lazy" width="560" height="420">
+          <div class="pln-step"><span class="pln-num">02</span> Proses Kupas Lahan</div>
+        </div>
+        <div class="pln-item">
+          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/1c72e508-b458-4011-be9d-bbb29cfebe44.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Sub-base dipadatkan" loading="lazy" width="560" height="420">
+          <div class="pln-step"><span class="pln-num">03</span> Sub-Base Dipadatkan</div>
+        </div>
+        <div class="pln-item pln-item-final">
+          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/IMG_8205.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Hasil akhir serah terima" loading="lazy" width="560" height="420">
+          <div class="pln-step pln-step-done"><span class="pln-num">✓</span> Selesai & Serah Terima</div>
+        </div>
+      </div>
+    </div>
+
     <div class="testis">
       <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-q">"Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."</p><div class="testi-av"><div class="av">BW</div><div><div class="av-name">Budi Wicaksono</div><div class="av-role">Manajer Operasional, Pergudangan</div></div></div></div>
       <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-q">"Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."</p><div class="testi-av"><div class="av">RA</div><div><div class="av-name">Rini Anggraeni</div><div class="av-role">Project Manager, Developer</div></div></div></div>
