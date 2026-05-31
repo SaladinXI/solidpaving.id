@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/images/site-icon.svg">
+<title>Portofolio Proyek Paving Block — SolidPaving.id</title>
+<meta name="description" content="Dokumentasi proyek paving block SolidPaving.id — PLTU Labuan, Polytron EV Sudirman, OFFO Living Cikampek, Kampus IT PLN, Hunian VIP, dan proyek lainnya di Jabodetabek & Jawa Barat.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://solidpaving.id/portofolio/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap"></noscript>
+<style>
+:root{
+  --blue:#2E3E5F;--blue2:#3D5280;--accent:#95B3D9;
+  --bg0:#fff;--bg1:#F4F7FB;--bg2:#EBF1F8;--bg3:#DDE8F4;
+  --tx1:#0D1A2E;--tx2:#2D4466;--tx3:#4A6080;
+  --bdr:rgba(46,62,95,.18);--bds:rgba(13,26,46,.08);
+  --green:#0F6E56;--wa:#25D366;
+  --r:6px;--rl:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg0);color:var(--tx1);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-decoration:none;}
+img{display:block;max-width:100%;}
+
+/* NAV — sama persis dengan halaman lain */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;align-items:center;height:64px;gap:16px;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center;}
+.nav-cta{background:var(--blue);color:#fff!important;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;white-space:nowrap;flex-shrink:0;transition:background .15s;}
+.nav-cta:hover{background:var(--blue2)!important;}
+.nav-item{position:relative;}
+.nav-btn{display:flex;align-items:center;gap:3px;font-size:13px;color:var(--tx2);padding:5px 10px;border-radius:var(--r);background:none;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .15s,color .15s;}
+.nav-btn svg{opacity:.5;transition:transform .2s,opacity .15s;flex-shrink:0;width:11px;height:11px;}
+.nav-item:hover .nav-btn,.nav-item:focus-within .nav-btn{background:var(--bg1);color:var(--tx1);}
+.nav-item:hover .nav-btn svg,.nav-item:focus-within .nav-btn svg{transform:rotate(180deg);opacity:1;}
+.nav-panel{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);box-shadow:0 12px 40px rgba(13,26,46,.13);padding:8px;min-width:220px;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity .15s,transform .15s;z-index:200;}
+.nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-panel.right{left:auto;right:0;}
+.nav-panel.mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;}
+.mega-col{padding:4px;}
+.mega-sep{background:var(--bds);}
+.pnl-head{padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-top:6px;}
+.pnl-head:first-child{margin-top:0;}
+.pnl-sep{height:1px;background:var(--bds);margin:5px 0;}
+.pnl-link{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;font-size:13px;color:var(--tx2);transition:background .12s,color .12s;}
+.pnl-link:hover{background:var(--bg1);color:var(--tx1);}
+.pnl-ico{width:26px;height:26px;border-radius:6px;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;}
+.pnl-title{font-weight:600;color:var(--tx1);font-size:13px;display:block;}
+.pnl-sub{font-size:11px;color:var(--tx3);margin-top:1px;display:block;}
+.pnl-plain{display:flex;align-items:center;gap:5px;padding:6px 10px;border-radius:8px;font-size:13px;color:var(--tx2);transition:background .12s,color .12s;}
+.pnl-plain::before{content:'📍';font-size:11px;}
+.pnl-plain:hover{background:var(--bg1);color:var(--tx1);}
+.pnl-all{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:2px;border-top:1px solid var(--bds);transition:background .12s;}
+.pnl-all:hover{background:var(--bg1);}
+.nav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:36px;margin-left:auto;flex-shrink:0;}
+.nav-ham span{display:block;height:2px;width:24px;background:var(--tx1);border-radius:2px;transition:all .25s;}
+.nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-ham.open span:nth-child(2){opacity:0;}
+.nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-drawer{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--bdr);padding:12px 5% 28px;z-index:99;flex-direction:column;gap:2px;max-height:calc(100vh - 64px);overflow-y:auto;}
+.mob-drawer.open{display:flex;}
+.mob-head{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);padding:14px 0 4px;}
+.mob-drawer a{font-size:14px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bds);}
+.mob-cta{margin-top:14px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;display:block;border-bottom:none!important;}
+@media(max-width:1100px){.nav-menu{display:none;}.nav-cta{display:none;}.nav-ham{display:flex;}}
+
+/* PAGE */
+.breadcrumb{padding:76px 5% 0;font-size:13px;color:var(--tx3);}
+.breadcrumb a{color:var(--tx3);}
+.breadcrumb a:hover{color:var(--blue);}
+.breadcrumb span{margin:0 6px;}
+
+/* HERO PORTO */
+#porto-hero{padding:48px 5% 56px;background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);}
+.porto-hero-inner{max-width:1100px;margin:0 auto;}
+.porto-hero-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
+.porto-hero-title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;}
+.porto-hero-sub{font-size:16px;color:var(--tx2);max-width:600px;line-height:1.7;margin-bottom:32px;}
+.porto-stats{display:flex;gap:40px;flex-wrap:wrap;}
+.porto-stat{text-align:left;}
+.porto-stat-num{font-size:32px;font-weight:800;color:var(--blue);letter-spacing:-1px;line-height:1;}
+.porto-stat-label{font-size:12px;color:var(--tx3);margin-top:4px;}
+
+/* FILTER */
+#filter{padding:20px 5%;border-bottom:1px solid var(--bds);background:var(--bg0);position:sticky;top:64px;z-index:50;}
+.filter-inner{max-width:1100px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.filter-label{font-size:12px;font-weight:600;color:var(--tx3);margin-right:4px;}
+.filter-btn{padding:6px 16px;border-radius:100px;font-size:12px;font-weight:600;border:1px solid var(--bds);background:var(--bg1);color:var(--tx2);cursor:pointer;transition:all .15s;font-family:inherit;}
+.filter-btn:hover{border-color:var(--blue);color:var(--blue);}
+.filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+
+/* PROYEK GRID */
+#proyek-section{padding:48px 5% 80px;background:var(--bg0);}
+.proyek-container{max-width:1100px;margin:0 auto;}
+.proyek-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;}
+
+/* PROYEK CARD */
+.proyek-card{background:var(--bg0);border:1px solid var(--bds);border-radius:var(--rl);overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.proyek-card:hover{border-color:var(--bdr);transform:translateY(-3px);box-shadow:0 8px 32px rgba(46,62,95,.1);}
+.proyek-card.featured{border-color:var(--blue);}
+
+/* Foto utama card */
+.card-hero{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer;}
+.card-hero img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.proyek-card:hover .card-hero img{transform:scale(1.05);}
+.card-tag{position:absolute;top:12px;left:12px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:.5px;}
+.card-tag.verified{background:var(--green);}
+.card-tag.featured-tag{background:rgba(149,179,217,.95);color:var(--blue);}
+
+/* Thumbnail strip */
+.card-thumbs{display:grid;gap:2px;background:var(--bds);}
+.card-thumbs.t2{grid-template-columns:1fr 1fr;}
+.card-thumbs.t3{grid-template-columns:1fr 1fr 1fr;}
+.card-thumbs.t4{grid-template-columns:1fr 1fr 1fr 1fr;}
+.thumb{aspect-ratio:4/3;overflow:hidden;cursor:pointer;position:relative;}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s,opacity .2s;}
+.thumb:hover img{transform:scale(1.08);opacity:.9;}
+
+/* Card body */
+.card-body{padding:20px;}
+.card-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.card-type{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);background:var(--bg2);padding:3px 10px;border-radius:100px;}
+.card-lokasi{font-size:11px;color:var(--tx3);display:flex;align-items:center;gap:3px;}
+.card-title{font-size:17px;font-weight:700;margin-bottom:8px;line-height:1.3;}
+.card-desc{font-size:13px;color:var(--tx2);line-height:1.6;margin-bottom:16px;}
+.card-specs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.spec-tag{background:var(--bg1);border:1px solid var(--bds);padding:3px 10px;border-radius:4px;font-size:11px;font-weight:600;color:var(--tx2);}
+.spec-tag.highlight{background:rgba(46,62,95,.08);border-color:var(--bdr);color:var(--blue);}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--bds);}
+.card-wa{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);}
+.card-gmap{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--green);font-weight:600;}
+
+/* LIGHTBOX */
+.lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;}
+.lb-overlay.open{opacity:1;pointer-events:all;}
+.lb-img-wrap{position:relative;max-width:90vw;max-height:90vh;}
+.lb-img-wrap img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:var(--r);display:block;}
+.lb-close{position:fixed;top:20px;right:24px;background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.lb-close:hover{background:rgba(255,255,255,.3);}
+.lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.lb-prev{left:16px;}
+.lb-next{right:16px;}
+.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.3);}
+.lb-caption{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-size:13px;text-align:center;background:rgba(0,0,0,.5);padding:8px 20px;border-radius:100px;white-space:nowrap;}
+
+/* CTA */
+#cta{padding:64px 5%;background:var(--blue);text-align:center;}
+#cta h2{color:#fff;font-size:clamp(22px,3vw,32px);font-weight:700;margin-bottom:12px;}
+#cta p{color:rgba(255,255,255,.8);font-size:16px;max-width:480px;margin:0 auto 28px;}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:#fff;color:var(--blue);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:14px;display:inline-block;transition:background .15s;}
+.btn-white:hover{background:var(--bg2);}
+.btn-ow{background:transparent;color:#fff;padding:13px 28px;border-radius:var(--r);font-weight:600;font-size:14px;border:1px solid rgba(255,255,255,.4);display:inline-block;}
+.btn-ow:hover{border-color:#fff;}
+
+/* FOOTER */
+footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:40px 5% 28px;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:32px;max-width:1100px;margin-left:auto;margin-right:auto;}
+.foot-brand{font-size:13px;color:var(--tx2);line-height:1.6;max-width:280px;margin-top:12px;}
+.foot-col h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:14px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.foot-col li a{font-size:13px;color:var(--tx2);}
+.foot-col li a:hover{color:var(--blue);}
+.foot-bottom{max-width:1100px;margin:0 auto;border-top:1px solid var(--bds);padding-top:20px;display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:10px;}
+
+/* FLOAT */
+.float-wa{position:fixed;bottom:28px;right:24px;z-index:95;background:var(--wa);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s;}
+.float-wa:hover{transform:scale(1.08);}
+.float-wa svg{width:28px;height:28px;fill:#fff;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .proyek-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .porto-stats{gap:24px;}
+}
+@media(max-width:480px){
+  .card-thumbs.t4{grid-template-columns:1fr 1fr;}
+  .cta-row{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
+    <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="34">
+      <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
+      <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
+    </svg>
+  </a>
+  <ul class="nav-menu">
+    <li class="nav-item">
+      <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Paving Block</div>
+        <a href="/produk/paving-holland/" class="pnl-link"><div class="pnl-ico">🧱</div><div><span class="pnl-title">Holland (Bata)</span><span class="pnl-sub">Terlaris · K200–K400</span></div></a>
+        <a href="/produk/paving-ubin/" class="pnl-link"><div class="pnl-ico">⬛</div><div><span class="pnl-title">Ubin (Square)</span><span class="pnl-sub">Tampilan premium modern</span></div></a>
+        <a href="/produk/paving-cacing/" class="pnl-link"><div class="pnl-ico">〰️</div><div><span class="pnl-title">Cacing (Uni)</span><span class="pnl-sub">Beban berat, kuncian rapat</span></div></a>
+        <a href="/produk/grassblock/" class="pnl-link"><div class="pnl-ico">🌿</div><div><span class="pnl-title">Grassblock</span><span class="pnl-sub">Resapan air, area hijau</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/produk/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Kanstin / Kerb Beton</span></div></a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Jasa Pemasangan</div>
+        <a href="/layanan/jasa-pasang/" class="pnl-link"><div class="pnl-ico">🔨</div><div><span class="pnl-title">Jasa Pasang Paving Block</span></div></a>
+        <a href="/layanan/paving-lahan-parkir/" class="pnl-link"><div class="pnl-ico">🅿️</div><div><span class="pnl-title">Paving Lahan Parkir</span></div></a>
+        <a href="/layanan/paving-kawasan-industri/" class="pnl-link"><div class="pnl-ico">🏭</div><div><span class="pnl-title">Paving Kawasan Industri</span></div></a>
+        <a href="/layanan/paving-perumahan/" class="pnl-link"><div class="pnl-ico">🏠</div><div><span class="pnl-title">Paving Perumahan</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span></div></a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Harga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <a href="/#kalkulator" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Estimasi</span></div></a>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga 2026</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20minta%20RAB%20gratis." class="pnl-link"><div class="pnl-ico" style="background:rgba(15,110,86,.1);">✉️</div><div><span class="pnl-title" style="color:var(--green);">Minta RAB Gratis</span></div></a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel mega">
+        <div class="mega-col">
+          <div class="pnl-head">Jakarta & Sekitarnya</div>
+          <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
+          <a href="/jakarta-timur/" class="pnl-plain">Jakarta Timur</a>
+          <a href="/jakarta-selatan/" class="pnl-plain">Jakarta Selatan</a>
+          <a href="/depok/" class="pnl-plain">Depok</a>
+          <a href="/bogor/" class="pnl-plain">Bogor</a>
+          <div class="pnl-head">Tangerang</div>
+          <a href="/tangerang/" class="pnl-plain">Tangerang</a>
+          <a href="/serpong/" class="pnl-plain">Serpong</a>
+        </div>
+        <div class="mega-sep"></div>
+        <div class="mega-col">
+          <div class="pnl-head">Bekasi & Kawasan Industri</div>
+          <a href="/bekasi/" class="pnl-plain">Bekasi</a>
+          <a href="/cikarang/" class="pnl-plain">Cikarang</a>
+          <a href="/jababeka/" class="pnl-plain">Jababeka</a>
+          <a href="/mm2100/" class="pnl-plain">MM2100</a>
+          <a href="/karawang/" class="pnl-plain">Karawang</a>
+          <div class="pnl-head">Jawa Barat</div>
+          <a href="/bandung/" class="pnl-plain">Bandung</a>
+          <a href="/purwakarta/" class="pnl-plain">Purwakarta</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Tentang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel right">
+        <a href="/tentang-kami/" class="pnl-link"><div class="pnl-ico">🏢</div><div><span class="pnl-title">Tentang SolidPaving.id</span></div></a>
+        <a href="/portofolio/" class="pnl-link" style="background:var(--bg1);"><div class="pnl-ico">📸</div><div><span class="pnl-title" style="color:var(--blue);">Portofolio ✓</span></div></a>
+        <a href="/#bukti" class="pnl-link"><div class="pnl-ico">⭐</div><div><span class="pnl-title">Testimoni Klien</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/#faq" class="pnl-link"><div class="pnl-ico">❓</div><div><span class="pnl-title">FAQ</span></div></a>
+        <a href="mailto:sales@solidpaving.id" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span></div></a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Panduan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel right">
+        <div class="pnl-head">Artikel Populer</div>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Harga Pasang Paving 2026</span></div></a>
+        <a href="/blog/kenapa-paving-amblas/" class="pnl-link"><div class="pnl-ico">⚠️</div><div><span class="pnl-title">Kenapa Paving Amblas?</span></div></a>
+        <a href="/blog/paving-block-k300-vs-k400/" class="pnl-link"><div class="pnl-ico">🔬</div><div><span class="pnl-title">K300 vs K400</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/blog/" class="pnl-all">Lihat Semua Artikel <span>→</span></a>
+      </div>
+    </li>
+  </ul>
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a>
+  <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-head">Produk</div>
+  <a href="/produk/paving-holland/" onclick="closeMob()">🧱 Holland (Bata)</a>
+  <a href="/produk/paving-ubin/" onclick="closeMob()">⬛ Ubin (Square)</a>
+  <a href="/produk/paving-cacing/" onclick="closeMob()">〰️ Cacing (Uni)</a>
+  <div class="mob-head">Layanan</div>
+  <a href="/layanan/jasa-pasang/" onclick="closeMob()">🔨 Jasa Pasang</a>
+  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">🅿️ Paving Lahan Parkir</a>
+  <div class="mob-head">Harga</div>
+  <a href="/#kalkulator" onclick="closeMob()">🧮 Kalkulator Estimasi</a>
+  <div class="mob-head">Area Layanan</div>
+  <a href="/jakarta/" onclick="closeMob()">Jakarta</a>
+  <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
+  <a href="/karawang/" onclick="closeMob()">Karawang</a>
+  <div class="mob-head">Tentang</div>
+  <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
+  <a href="/blog/" onclick="closeMob()">📚 Semua Artikel</a>
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">Survei & RAB Gratis</a>
+</div>
+
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="/">SolidPaving.id</a>
+    <span>›</span>
+    <a href="/tentang-kami/">Tentang</a>
+    <span>›</span>
+    Portofolio
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="porto-hero">
+  <div class="porto-hero-inner">
+    <div class="porto-hero-label">Dokumentasi Proyek Nyata</div>
+    <h1 class="porto-hero-title">Portofolio <span style="color:var(--blue);">SolidPaving.id</span></h1>
+    <p class="porto-hero-sub">Dari PLTU Labuan hingga Jl. Sudirman Jakarta Pusat — setiap proyek didokumentasikan dengan foto asli dari lapangan dan ulasan Google Maps klien kami.</p>
+    <div class="porto-stats">
+      <div class="porto-stat"><div class="porto-stat-num">10</div><div class="porto-stat-label">Proyek terdokumentasi</div></div>
+      <div class="porto-stat"><div class="porto-stat-num">50+</div><div class="porto-stat-label">Total proyek selesai</div></div>
+      <div class="porto-stat"><div class="porto-stat-num">40rb+</div><div class="porto-stat-label">m² paving terpasang</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div id="filter">
+  <div class="filter-inner">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" onclick="filterProyek('semua',this)">Semua (10)</button>
+    <button class="filter-btn" onclick="filterProyek('industri',this)">Industri & PLTU</button>
+    <button class="filter-btn" onclick="filterProyek('komersial',this)">Komersial</button>
+    <button class="filter-btn" onclick="filterProyek('institusi',this)">Institusi</button>
+    <button class="filter-btn" onclick="filterProyek('hunian',this)">Hunian</button>
+    <button class="filter-btn" onclick="filterProyek('infrastruktur',this)">Infrastruktur</button>
+  </div>
+</div>
+
+<!-- PROYEK -->
+<section id="proyek-section">
+  <div class="proyek-container">
+    <div class="proyek-grid" id="proyekGrid">
+
+      <!-- 1. PLTU LABUAN — FEATURED -->
+      <div class="proyek-card featured" data-kategori="industri">
+        <div class="card-hero" onclick="openLb('pltu',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/WhatsApp%20Image%202025-02-18%20at%2017.14.22.jpeg?w=680&q=82&format=webp" alt="Proyek paving block PLTU Labuan — jalur akses container 40ft" loading="lazy" width="680" height="383">
+          <span class="card-tag">PROYEK BESAR</span>
+        </div>
+        <div class="card-thumbs t3">
+          <div class="thumb" onclick="openLb('pltu',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/9494cc93-7626-4e3c-8832-aadc5dd2bcf9.jpeg?w=220&q=75&format=webp" alt="PLTU Labuan area paving progress" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('pltu',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/5aa99f80-5ad4-4214-b259-3ec0c8b587e3.jpeg?w=220&q=75&format=webp" alt="PLTU Labuan tim pemasangan" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('pltu',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/WhatsApp%20Image%202025-02-18%20at%207.22.30%20AM.jpeg?w=220&q=75&format=webp" alt="PLTU Labuan pemasangan pagi" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Industri Energi · PLTU</span>
+            <span class="card-lokasi">📍 Labuan, Banten</span>
+          </div>
+          <h2 class="card-title">PLTU Labuan, Banten</h2>
+          <p class="card-desc">Proyek paving block skala besar di PLTU Labuan. Menggunakan paving tebal 10 cm K300 untuk menahan beban container 40 ft — salah satu standar beban terberat dalam proyek paving kami.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K300 · 10 cm</span>
+            <span class="spec-tag">Beban Container 40 ft</span>
+            <span class="spec-tag">Skala Besar</span>
+            <span class="spec-tag">PLTU · Banten</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20tertarik%20dengan%20proyek%20PLTU%20Labuan%20dan%20ingin%20konsultasi%20paving%20beban%20berat." class="card-wa">Konsultasi Proyek Serupa →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. POLYTRON EV SUDIRMAN -->
+      <div class="proyek-card" data-kategori="komersial">
+        <div class="card-hero" onclick="openLb('polytron',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0740.jpeg?w=680&q=82&format=webp" alt="Hasil paving block Polytron EV Jl. Sudirman Jakarta Pusat" loading="lazy" width="680" height="383">
+          <span class="card-tag verified">✓ Google Maps</span>
+        </div>
+        <div class="card-thumbs t2">
+          <div class="thumb" onclick="openLb('polytron',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0739.jpeg?w=320&q=75&format=webp" alt="Polytron EV Sudirman setelah paving" loading="lazy" width="320" height="240"></div>
+          <div class="thumb" onclick="openLb('polytron',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0741.jpeg?w=320&q=75&format=webp" alt="Polytron EV Sudirman sebelum paving" loading="lazy" width="320" height="240"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Komersial · Showroom</span>
+            <span class="card-lokasi">📍 Jl. Sudirman, Jakarta Pusat</span>
+          </div>
+          <h2 class="card-title">Polytron EV — Jl. Sudirman Jakarta Pusat</h2>
+          <p class="card-desc">Pemasangan paving block di halaman dan area parkir showroom Polytron EV, salah satu koridor bisnis paling prestisius di Indonesia.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K300</span>
+            <span class="spec-tag">Holland</span>
+            <span class="spec-tag">Area Parkir Showroom</span>
+            <span class="spec-tag verify-tag" style="color:var(--green);background:rgba(15,110,86,.08);border-color:rgba(15,110,86,.2);">Foto Google Maps</span>
+          </div>
+          <div class="card-footer">
+            <a href="/jakarta/" class="card-wa">Lihat Halaman Jakarta →</a>
+            <span class="card-gmap">✓ Terverifikasi ulasan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. OFFO LIVING CIKAMPEK -->
+      <div class="proyek-card" data-kategori="komersial">
+        <div class="card-hero" onclick="openLb('offo',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0735.jpeg?w=680&q=82&format=webp" alt="Hasil paving block OFFO Living Cikampek Karawang" loading="lazy" width="680" height="383">
+          <span class="card-tag verified">✓ Google Maps</span>
+        </div>
+        <div class="card-thumbs t3">
+          <div class="thumb" onclick="openLb('offo',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0736.jpeg?w=220&q=75&format=webp" alt="OFFO Living sebelum paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('offo',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0737.jpeg?w=220&q=75&format=webp" alt="OFFO Living sesudah paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('offo',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0738.jpeg?w=220&q=75&format=webp" alt="OFFO Living tampak samping" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Komersial · Toko Furniture</span>
+            <span class="card-lokasi">📍 Cikampek, Karawang</span>
+          </div>
+          <h2 class="card-title">OFFO Living Cikampek, Karawang</h2>
+          <p class="card-desc">Dari lahan tanah tidak rata menjadi area parkir paving yang rapi dan luas. Foto after diambil dari ulasan Google Maps pengunjung toko.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K300</span>
+            <span class="spec-tag">Holland</span>
+            <span class="spec-tag">Parkir & Halaman Toko</span>
+            <span class="spec-tag" style="color:var(--green);background:rgba(15,110,86,.08);border-color:rgba(15,110,86,.2);">Foto Google Maps</span>
+          </div>
+          <div class="card-footer">
+            <a href="/karawang/" class="card-wa">Lihat Halaman Karawang →</a>
+            <span class="card-gmap">✓ Terverifikasi ulasan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. INSTITUT TEKNOLOGI PLN -->
+      <div class="proyek-card" data-kategori="institusi">
+        <div class="card-hero" onclick="openLb('itpln',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_6595.jpeg?w=680&q=82&format=webp" alt="Proyek paving block Kampus Institut Teknologi PLN" loading="lazy" width="680" height="383">
+          <span class="card-tag">Kampus</span>
+        </div>
+        <div class="card-thumbs t3">
+          <div class="thumb" onclick="openLb('itpln',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_6789.jpeg?w=220&q=75&format=webp" alt="IT PLN progress paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('itpln',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_6873.jpeg?w=220&q=75&format=webp" alt="IT PLN sub-base paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('itpln',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_7019.jpeg?w=220&q=75&format=webp" alt="IT PLN selesai paving" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Institusi Pendidikan</span>
+            <span class="card-lokasi">📍 Jakarta</span>
+          </div>
+          <h2 class="card-title">Institut Teknologi PLN, Jakarta</h2>
+          <p class="card-desc">Pemasangan paving block di area kampus Institut Teknologi PLN. Proyek mencakup persiapan lahan, kupas, pemadatan sub-base, hingga serah terima.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K300</span>
+            <span class="spec-tag">Holland & Ubin</span>
+            <span class="spec-tag">Area Kampus</span>
+            <span class="spec-tag">4 Tahap Dokumentasi</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20tertarik%20proyek%20paving%20untuk%20institusi%20seperti%20IT%20PLN." class="card-wa">Konsultasi Proyek Kampus →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. TAMAN GRASSBLOCK IT PLN -->
+      <div class="proyek-card" data-kategori="institusi">
+        <div class="card-hero" onclick="openLb('grass',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_6688.jpeg?w=680&q=82&format=webp" alt="Taman grassblock Institut Teknologi PLN" loading="lazy" width="680" height="383">
+          <span class="card-tag">Grassblock</span>
+        </div>
+        <div class="card-thumbs t3">
+          <div class="thumb" onclick="openLb('grass',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_5936.jpeg?w=220&q=75&format=webp" alt="Taman grassblock IT PLN proses" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('grass',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_6578.jpeg?w=220&q=75&format=webp" alt="Taman grassblock IT PLN pemasangan" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('grass',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_7014.jpeg?w=220&q=75&format=webp" alt="Taman grassblock IT PLN hasil akhir" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Taman · Ruang Hijau</span>
+            <span class="card-lokasi">📍 Kampus IT PLN, Jakarta</span>
+          </div>
+          <h2 class="card-title">Taman Grassblock — Kampus IT PLN</h2>
+          <p class="card-desc">Pemasangan grassblock di area taman dan ruang hijau kampus IT PLN. Grassblock memungkinkan resapan air tetap optimal sambil memperkuat permukaan lahan.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">Grassblock</span>
+            <span class="spec-tag">Taman Kampus</span>
+            <span class="spec-tag">Ramah Lingkungan</span>
+            <span class="spec-tag">Resapan Air</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20tertarik%20grassblock%20untuk%20taman." class="card-wa">Tanya Grassblock →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. PARKIRAN GEDUNG -->
+      <div class="proyek-card" data-kategori="komersial">
+        <div class="card-hero" onclick="openLb('parkir',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9900.jpeg?w=680&q=82&format=webp" alt="Parkiran gedung paving block setelah pemasangan" loading="lazy" width="680" height="383">
+          <span class="card-tag">Parkiran Gedung</span>
+        </div>
+        <div class="card-thumbs t3">
+          <div class="thumb" onclick="openLb('parkir',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9109.jpeg?w=220&q=75&format=webp" alt="Parkiran gedung proses paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('parkir',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9111.jpeg?w=220&q=75&format=webp" alt="Parkiran gedung progress paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('parkir',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9915.jpeg?w=220&q=75&format=webp" alt="Parkiran gedung hasil akhir" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Komersial · Parkiran</span>
+            <span class="card-lokasi">📍 Jabodetabek</span>
+          </div>
+          <h2 class="card-title">Parkiran Gedung Komersial</h2>
+          <p class="card-desc">Pemasangan paving block untuk area parkir gedung komersial. Dokumentasi dari proses persiapan lahan hingga hasil akhir yang rapi dan presisi.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K300</span>
+            <span class="spec-tag">Holland</span>
+            <span class="spec-tag">Area Parkir</span>
+            <span class="spec-tag">Kapasitas Besar</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20butuh%20paving%20untuk%20parkiran%20gedung." class="card-wa">Konsultasi Parkiran →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. HUNIAN VIP -->
+      <div class="proyek-card" data-kategori="hunian">
+        <div class="card-hero" onclick="openLb('vip',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/IMG_8654.jpeg?w=680&q=82&format=webp" alt="Paving block hunian VIP premium" loading="lazy" width="680" height="383">
+          <span class="card-tag featured-tag">Hunian VIP</span>
+        </div>
+        <div class="card-thumbs t2">
+          <div class="thumb" onclick="openLb('vip',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/ff661c72-2ae6-4eb6-98a0-2c20147925dd.jpeg?w=320&q=75&format=webp" alt="Hunian VIP paving proses" loading="lazy" width="320" height="240"></div>
+          <div class="thumb" onclick="openLb('vip',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/IMG_3955.jpeg?w=320&q=75&format=webp" alt="Hunian VIP paving hasil" loading="lazy" width="320" height="240"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Hunian Premium</span>
+            <span class="card-lokasi">📍 Jabodetabek</span>
+          </div>
+          <h2 class="card-title">Hunian VIP — Kediaman Premium</h2>
+          <p class="card-desc">Paving block K300 untuk hunian VIP dengan standar estetika tinggi. Termasuk dalam portofolio proyek kenegaraan SolidPaving.id.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K300</span>
+            <span class="spec-tag">Ubin Premium</span>
+            <span class="spec-tag">Estetika Tinggi</span>
+            <span class="spec-tag">Kenegaraan</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20ingin%20paving%20premium%20untuk%20hunian%20saya." class="card-wa">Konsultasi Hunian →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. AKSES RUMAH CIMANGGIS -->
+      <div class="proyek-card" data-kategori="hunian">
+        <div class="card-hero" onclick="openLb('cimanggis',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_3927.jpeg?w=680&q=82&format=webp" alt="Akses jalan paving block rumah Cimanggis Depok" loading="lazy" width="680" height="383">
+          <span class="card-tag">Hunian</span>
+        </div>
+        <div class="card-thumbs t3">
+          <div class="thumb" onclick="openLb('cimanggis',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_2112.jpeg?w=220&q=75&format=webp" alt="Akses rumah Cimanggis proses" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('cimanggis',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_2233.jpeg?w=220&q=75&format=webp" alt="Akses rumah Cimanggis progress" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('cimanggis',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_6914.jpeg?w=220&q=75&format=webp" alt="Akses rumah Cimanggis selesai" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Hunian · Akses Jalan</span>
+            <span class="card-lokasi">📍 Cimanggis, Depok</span>
+          </div>
+          <h2 class="card-title">Akses Jalan Rumah — Cimanggis, Depok</h2>
+          <p class="card-desc">Pemasangan paving block untuk jalan akses dan halaman rumah di Cimanggis, Depok. Material K300 Holland dengan finishing rapi.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K300</span>
+            <span class="spec-tag">Holland</span>
+            <span class="spec-tag">Akses Rumah</span>
+            <span class="spec-tag">Depok</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20butuh%20paving%20untuk%20akses%20rumah." class="card-wa">Konsultasi Paving Rumah →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. JALAN SETAPAK -->
+      <div class="proyek-card" data-kategori="infrastruktur">
+        <div class="card-hero" onclick="openLb('taman',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3967.jpeg?w=680&q=82&format=webp" alt="Jalan setapak paving block hasil akhir" loading="lazy" width="680" height="383">
+          <span class="card-tag">Jalan Setapak</span>
+        </div>
+        <div class="card-thumbs t3">
+          <div class="thumb" onclick="openLb('taman',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3958.jpeg?w=220&q=75&format=webp" alt="Jalan setapak proses pemasangan" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('taman',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3968.jpeg?w=220&q=75&format=webp" alt="Jalan setapak progress paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('taman',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3980.jpeg?w=220&q=75&format=webp" alt="Jalan setapak selesai" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Infrastruktur · Jalan Setapak</span>
+            <span class="card-lokasi">📍 Jabodetabek</span>
+          </div>
+          <h2 class="card-title">Jalan Setapak Paving Block</h2>
+          <p class="card-desc">Pemasangan paving block untuk jalan setapak. Material K200 yang nyaman untuk pejalan kaki, presisi, dan tahan lama — cocok untuk area perumahan, taman, dan fasilitas publik.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K200–K300</span>
+            <span class="spec-tag">Holland</span>
+            <span class="spec-tag">Jalan Setapak</span>
+            <span class="spec-tag">Fasilitas Publik</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20butuh%20paving%20untuk%20jalan%20setapak." class="card-wa">Konsultasi Jalan Setapak →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. GUDANG TIGA RAKSA TANGERANG -->
+      <div class="proyek-card" data-kategori="industri">
+        <div class="card-hero" onclick="openLb('gudang',0)">
+          <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2661.jpeg?w=680&q=82&format=webp" alt="Hasil paving block gudang pergudangan Tiga Raksa Tangerang" loading="lazy" width="680" height="383">
+          <span class="card-tag">Pergudangan</span>
+        </div>
+        <div class="card-thumbs t4">
+          <div class="thumb" onclick="openLb('gudang',1)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2475.jpeg?w=220&q=75&format=webp" alt="Gudang Tiga Raksa sebelum paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('gudang',2)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2477.jpeg?w=220&q=75&format=webp" alt="Gudang Tiga Raksa progress paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('gudang',3)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2667.jpeg?w=220&q=75&format=webp" alt="Gudang Tiga Raksa sesudah paving" loading="lazy" width="220" height="165"></div>
+          <div class="thumb" onclick="openLb('gudang',4)"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2680.jpeg?w=220&q=75&format=webp" alt="Gudang Tiga Raksa tampak keseluruhan" loading="lazy" width="220" height="165"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-type">Pergudangan & Logistik</span>
+            <span class="card-lokasi">📍 Tiga Raksa, Tangerang</span>
+          </div>
+          <h2 class="card-title">Gudang Tiga Raksa, Tangerang</h2>
+          <p class="card-desc">Pemasangan paving block di area parkir dan halaman gudang pergudangan di Tiga Raksa, Tangerang. Material K350 untuk menahan beban kendaraan logistik dan forklift.</p>
+          <div class="card-specs">
+            <span class="spec-tag highlight">K350</span>
+            <span class="spec-tag">Holland</span>
+            <span class="spec-tag">Area Gudang</span>
+            <span class="spec-tag">Tiga Raksa · Tangerang</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://wa.me/6285943492832?text=Halo%2C%20saya%20butuh%20paving%20untuk%20area%20gudang%20seperti%20Tiga%20Raksa." class="card-wa">Konsultasi Paving Gudang →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lbOverlay" onclick="closeLbOnBg(event)">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt="" loading="lazy">
+  </div>
+  <button class="lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<!-- CTA -->
+<section id="cta">
+  <h2>Proyek Anda Bisa Jadi yang Berikutnya</h2>
+  <p>Survei gratis, RAB dalam 24 jam, dan garansi tertulis 3 bulan.</p>
+  <div class="cta-row">
+    <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20lihat%20portofolio%20Anda%20dan%20ingin%20konsultasi%20proyek." class="btn-white">Chat WhatsApp Sekarang</a>
+    <a href="mailto:sales@solidpaving.id" class="btn-ow">sales@solidpaving.id</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <a href="/" aria-label="SolidPaving.id">
+        <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="30">
+          <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
+          <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
+        </svg>
+      </a>
+      <p class="foot-brand">Supplier paving block K200–K400 & jasa pasang bergaransi. Terbukti dari PLTU Labuan hingga Sudirman Jakarta. Jabodetabek & Jawa Barat.</p>
+    </div>
+    <div class="foot-col">
+      <h3>Proyek Kami</h3>
+      <ul>
+        <li><a href="/jakarta/">Polytron EV Sudirman</a></li>
+        <li><a href="/karawang/">OFFO Living Cikampek</a></li>
+        <li><a href="/cikarang/">Kampus IT PLN</a></li>
+        <li><a href="/#bukti">Kediaman VIP</a></li>
+        <li><a href="/portofolio/">Semua Portofolio</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h3>Kontak</h3>
+      <ul>
+        <li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li>
+        <li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li>
+        <li><a href="/blog/">Artikel & Panduan</a></li>
+        <li><a href="/tentang-kami/">Tentang Kami</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 SolidPaving.id</span>
+    <span>Supplier Paving Block & Jasa Pasang · Jabodetabek & Jawa Barat</span>
+  </div>
+</footer>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/6285943492832" class="float-wa" aria-label="Chat WhatsApp SolidPaving.id">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// NAV
+(function(){
+  var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
+  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
+  window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
+})();
+
+// FILTER
+window.filterProyek=function(kat,btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.proyek-card').forEach(function(c){
+    if(kat==='semua'||c.dataset.kategori===kat){c.style.display='';c.style.animation='fadeIn .3s ease';}
+    else{c.style.display='none';}
+  });
+};
+
+// LIGHTBOX
+var lbData={
+  pltu:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/WhatsApp%20Image%202025-02-18%20at%2017.14.22.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/9494cc93-7626-4e3c-8832-aadc5dd2bcf9.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/5aa99f80-5ad4-4214-b259-3ec0c8b587e3.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/WhatsApp%20Image%202025-02-18%20at%207.22.30%20AM.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/pemasangan%20paving%20pltu.jpg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/WhatsApp%20Image%202025-02-16%20at%202.42.53%20PM%20(copy).jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/WhatsApp%20Image%202025-02-25%20at%209.42.49%20AM.jpeg'
+    ],
+    captions:['PLTU Labuan — Jalur akses container 40ft','PLTU Labuan — Area pemasangan K300 10cm','PLTU Labuan — Tim di lapangan','PLTU Labuan — Proses pemasangan pagi hari','PLTU Labuan — Proses awal pengerjaan','PLTU Labuan — Area lahan sebelum paving','PLTU Labuan — Progress pemasangan']
+  },
+  polytron:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0740.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0739.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0741.jpeg'
+    ],
+    captions:['Polytron EV Sudirman — Hasil akhir (Google Maps)','Polytron EV Sudirman — Sesudah paving (Google Maps)','Polytron EV Sudirman — Kondisi sebelum paving']
+  },
+  offo:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0735.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0736.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0737.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0738.jpeg'
+    ],
+    captions:['OFFO Living Cikampek — Hasil akhir panorama (Google Maps)','OFFO Living — Sebelum paving','OFFO Living — Sesudah paving (Google Maps)','OFFO Living — Tampak samping (Google Maps)']
+  },
+  itpln:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_6595.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_6789.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_6873.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_7019.jpeg'
+    ],
+    captions:['IT PLN — Persiapan lahan','IT PLN — Proses kupas','IT PLN — Sub-base dipadatkan','IT PLN — Hasil akhir']
+  },
+  grass:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_6688.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_5936.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_6578.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Taman%20grassblok%20IT%20PLN/IMG_7014.jpeg'
+    ],
+    captions:['Taman Grassblock IT PLN — Progress','Taman Grassblock IT PLN — Awal lahan','Taman Grassblock IT PLN — Pemasangan','Taman Grassblock IT PLN — Hasil akhir']
+  },
+  parkir:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9900.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9109.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9111.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9915.jpeg'
+    ],
+    captions:['Parkiran Gedung — Hasil akhir','Parkiran Gedung — Proses awal','Parkiran Gedung — Progress pemasangan','Parkiran Gedung — Tampak keseluruhan']
+  },
+  vip:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/IMG_8654.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/ff661c72-2ae6-4eb6-98a0-2c20147925dd.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/IMG_3955.jpeg'
+    ],
+    captions:['Hunian VIP — Hasil akhir paving','Hunian VIP — Proses pengerjaan','Hunian VIP — Area halaman']
+  },
+  cimanggis:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_3927.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_2112.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_2233.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20rumah%20cimanggis/IMG_6914.jpeg'
+    ],
+    captions:['Akses Rumah Cimanggis — Hasil akhir','Cimanggis — Proses awal','Cimanggis — Progress','Cimanggis — Tampak keseluruhan']
+  },
+  taman:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3967.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3958.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3968.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Akses%20taman%20pejalan%20kaki/IMG_3980.jpeg'
+    ],
+    captions:['Jalan Setapak — Hasil akhir','Jalan Setapak — Proses pemasangan','Jalan Setapak — Progress paving','Jalan Setapak — Selesai']
+  },
+  gudang:{
+    imgs:[
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2661.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2475.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2477.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2667.jpeg',
+      'https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2680.jpeg'
+    ],
+    captions:['Gudang Tiga Raksa — Hasil akhir paving','Gudang Tiga Raksa — Kondisi sebelum paving','Gudang Tiga Raksa — Progress pemasangan','Gudang Tiga Raksa — Area parkir sesudah','Gudang Tiga Raksa — Tampak keseluruhan']
+  }
+};
+
+var lbCurrent={key:'',idx:0};
+
+window.openLb=function(key,idx){
+  lbCurrent={key:key,idx:idx};
+  updateLb();
+  document.getElementById('lbOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+};
+
+function updateLb(){
+  var d=lbData[lbCurrent.key];
+  document.getElementById('lbImg').src=d.imgs[lbCurrent.idx]+'?w=1400&q=90&format=webp';
+  document.getElementById('lbImg').alt=d.captions[lbCurrent.idx];
+  document.getElementById('lbCaption').textContent=(lbCurrent.idx+1)+' / '+d.imgs.length+' — '+d.captions[lbCurrent.idx];
+}
+
+window.closeLb=function(){
+  document.getElementById('lbOverlay').classList.remove('open');
+  document.body.style.overflow='';
+};
+
+window.closeLbOnBg=function(e){
+  if(e.target===document.getElementById('lbOverlay'))closeLb();
+};
+
+window.lbNav=function(dir){
+  var d=lbData[lbCurrent.key];
+  lbCurrent.idx=(lbCurrent.idx+dir+d.imgs.length)%d.imgs.length;
+  updateLb();
+};
+
+document.addEventListener('keydown',function(e){
+  var o=document.getElementById('lbOverlay');
+  if(!o.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')lbNav(-1);
+  if(e.key==='ArrowRight')lbNav(1);
+});
+</script>
+</body>
+</html>
