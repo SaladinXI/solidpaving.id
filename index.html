@@ -316,6 +316,22 @@ h3{font-size:18px;font-weight:700;}
 .pln-item-final{border-color:var(--green);}
 @media(max-width:600px){.pln-grid{grid-template-columns:1fr 1fr;}}
 
+
+/* Porto Grid di Homepage */
+.porto-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+.porto-strip-item{position:relative;border-radius:var(--rl);overflow:hidden;border:1px solid var(--bds);aspect-ratio:4/3;cursor:pointer;}
+.porto-strip-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;}
+.porto-strip-item:hover img{transform:scale(1.06);}
+.porto-strip-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(13,26,46,.7));opacity:0;transition:opacity .2s;}
+.porto-strip-item:hover .porto-strip-overlay{opacity:1;}
+.porto-strip-label{font-size:12px;font-weight:700;color:#fff;}
+.porto-strip-loc{font-size:11px;color:rgba(255,255,255,.75);margin-top:2px;}
+.porto-cta-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:40px;padding:24px 28px;background:var(--bg1);border-radius:var(--rl);border:1px solid var(--bds);}
+.porto-cta-row p{font-size:14px;color:var(--tx2);}
+.porto-cta-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);border:1px solid var(--bdr);padding:10px 20px;border-radius:var(--r);transition:all .15s;}
+.porto-cta-link:hover{background:var(--blue);color:#fff;}
+@media(max-width:640px){.porto-strip{grid-template-columns:repeat(2,1fr);}.porto-strip-overlay{opacity:1;}}
+
 /* ─── BUKTI ─── */
 #bukti{background:var(--bg0);}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:48px;}
@@ -904,35 +920,39 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <div class="sec-label">06 — Bukti Lapangan</div>
     <h2>Dikerjakan, <span class="blue">Bukan Sekadar Diklaim</span></h2>
     <div class="divider"></div>
-    <div class="gallery">
-      <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/pemasangan%20paving%20ubin%20rumah%20wapres%20maruf%20amin.jpg?w=520&q=75&format=webp" alt="Hunian VIP" loading="lazy" width="520" height="390"><div class="gal-label">Hunian VIP</div></div>
-      <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/Pemasangan%20paving%20wakil%20presiden%20Ma&#39;ruf%20Amin.jpg?w=520&q=75&format=webp" alt="Proyek Kenegaraan VIP" loading="lazy" width="520" height="390"><div class="gal-label">Proyek Kenegaraan VIP</div></div>
-      <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/WhatsApp%20Image%202025-04-20%20at%2015.07.06.jpeg?w=520&q=75&format=webp" alt="Area Komersial" loading="lazy" width="520" height="390"><div class="gal-label">Area Komersial</div></div>
-      <div class="gal-item"><img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/Pemasangan%20paving%20Simpang%20raya%20pasming.jpg?w=520&q=75&format=webp" alt="Pemasangan paving block Simpang Raya Pasming" loading="lazy" width="520" height="390"><div class="gal-label">Simpang Raya Pasming</div></div>
-    </div>
-
-    <!-- Before-After Kampus IT PLN -->
-    <div class="pln-section">
-      <div class="pln-label">Proyek Terbaru — Kampus IT PLN</div>
-      <div class="pln-grid">
-        <div class="pln-item">
-          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/1e1392d3-18ae-419f-a31b-733372e48f2d.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Galian dan pembersihan lahan" loading="lazy" width="560" height="420">
-          <div class="pln-step"><span class="pln-num">01</span> Galian & Pembersihan Lahan</div>
-        </div>
-        <div class="pln-item">
-          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/bf93e12c-91b3-49d9-a457-e12a14b8e9df.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Proses kupas lahan" loading="lazy" width="560" height="420">
-          <div class="pln-step"><span class="pln-num">02</span> Proses Kupas Lahan</div>
-        </div>
-        <div class="pln-item">
-          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/1c72e508-b458-4011-be9d-bbb29cfebe44.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Sub-base dipadatkan" loading="lazy" width="560" height="420">
-          <div class="pln-step"><span class="pln-num">03</span> Sub-Base Dipadatkan</div>
-        </div>
-        <div class="pln-item pln-item-final">
-          <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/IMG_8205.jpeg?w=560&q=85&format=webp" alt="Kampus IT PLN — Hasil akhir serah terima" loading="lazy" width="560" height="420">
-          <div class="pln-step pln-step-done"><span class="pln-num">✓</span> Selesai & Serah Terima</div>
-        </div>
+    <!-- Porto Strip — 6 hasil akhir terbaik -->
+    <div class="porto-strip">
+      <div class="porto-strip-item">
+        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0735.jpeg?w=480&q=80&format=webp" alt="OFFO Living Cikampek — lahan parkir paving block rapi" loading="lazy" width="480" height="360">
+        <div class="porto-strip-overlay"><div class="porto-strip-label">OFFO Living Cikampek</div><div class="porto-strip-loc">📍 Karawang</div></div>
+      </div>
+      <div class="porto-strip-item">
+        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0740.jpeg?w=480&q=80&format=webp" alt="Polytron EV Sudirman Jakarta — paving block komersial" loading="lazy" width="480" height="360">
+        <div class="porto-strip-overlay"><div class="porto-strip-label">Polytron EV</div><div class="porto-strip-loc">📍 Jl. Sudirman, Jakarta Pusat</div></div>
+      </div>
+      <div class="porto-strip-item">
+        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Peruamahan%20tangerang%20pondok%20kacang/IMG_4449.jpeg?w=480&q=80&format=webp" alt="Perumahan Pondok Kacang Tangerang — jalan cluster paving block" loading="lazy" width="480" height="360">
+        <div class="porto-strip-overlay"><div class="porto-strip-label">Perumahan Pondok Kacang</div><div class="porto-strip-loc">📍 Tangerang</div></div>
+      </div>
+      <div class="porto-strip-item">
+        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9900.jpeg?w=480&q=80&format=webp" alt="Parkiran gedung komersial paving block" loading="lazy" width="480" height="360">
+        <div class="porto-strip-overlay"><div class="porto-strip-label">Parkiran Gedung Komersial</div><div class="porto-strip-loc">📍 Jabodetabek</div></div>
+      </div>
+      <div class="porto-strip-item">
+        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2661.jpeg?w=480&q=80&format=webp" alt="Gudang Tiga Raksa Tangerang — paving block pergudangan" loading="lazy" width="480" height="360">
+        <div class="porto-strip-overlay"><div class="porto-strip-label">Gudang Tiga Raksa</div><div class="porto-strip-loc">📍 Tangerang</div></div>
+      </div>
+      <div class="porto-strip-item">
+        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/IMG_8654.jpeg?w=480&q=80&format=webp" alt="Hunian VIP — paving block premium kenegaraan" loading="lazy" width="480" height="360">
+        <div class="porto-strip-overlay"><div class="porto-strip-label">Hunian VIP Kenegaraan</div><div class="porto-strip-loc">📍 Jabodetabek</div></div>
       </div>
     </div>
+    <div class="porto-cta-row">
+      <p>12 proyek terdokumentasi · dari Labuan hingga Sudirman Jakarta</p>
+      <a href="/portofolio/" class="porto-cta-link">Lihat Semua Proyek <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9,18 15,12 9,6"/></svg></a>
+    </div>
+
+
 
     <div class="testis">
       <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-q">"Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."</p><div class="testi-av"><div class="av">BW</div><div><div class="av-name">Budi Wicaksono</div><div class="av-role">Manajer Operasional, Pergudangan</div></div></div></div>
