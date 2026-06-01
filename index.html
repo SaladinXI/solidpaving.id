@@ -55,15 +55,8 @@ nav{
 .nav-item:hover .nav-btn svg,.nav-item:focus-within .nav-btn svg{transform:rotate(180deg);opacity:1;}
 
 /* Dropdown panel */
-.nav-panel{
-  position:absolute;top:calc(100% + 8px);left:0;
-  background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);
-  box-shadow:0 12px 40px rgba(13,26,46,.13);
-  padding:8px;min-width:220px;
-  opacity:0;pointer-events:none;transform:translateY(-4px);
-  transition:opacity .15s,transform .15s;z-index:200;
-}
-.nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-panel{position:absolute;top:100%;left:0;padding-top:6px;min-width:220px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .18s,visibility .18s;z-index:200;}.nav-panel-wrap{background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);box-shadow:0 12px 40px rgba(13,26,46,.13);padding:8px;}
+.nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
 .nav-panel.panel-right{left:auto;right:0;}
 .nav-panel.panel-mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;}
 .mega-col{padding:4px;}
