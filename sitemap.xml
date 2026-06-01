@@ -1,91 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<!--  Halaman Utama  -->
-<url>
-<loc>https://solidpaving.id/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
-<!--  Induk Jakarta  -->
-<url>
-<loc>https://solidpaving.id/jakarta/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.9</priority>
-</url>
-<!--  Wilayah Jakarta  -->
-<url>
-<loc>https://solidpaving.id/jakarta-timur/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/jakarta-utara/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/jakarta-selatan/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/jakarta-barat/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<!--  Jabodetabek  -->
-<url>
-<loc>https://solidpaving.id/bekasi/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/cikarang/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/karawang/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/depok/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/bogor/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/tangerang/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://solidpaving.id/tangerang-selatan/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<!--  Luar Jabodetabek  -->
-<url>
-<loc>https://solidpaving.id/bandung/</loc>
-<lastmod>2026-05-29</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
+  <url><loc>https://solidpaving.id/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://solidpaving.id/jakarta/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/jakarta-timur/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/jakarta-selatan/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/jakarta-barat/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/jakarta-utara/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/bekasi/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/cikarang/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/karawang/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/bogor/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/depok/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/tangerang/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/tangerang-selatan/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/bandung/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/jababeka/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/mm2100/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/ejip/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/cibitung/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/tambun/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/serpong/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/cileungsi/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/purwakarta/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidpaving.id/cimahi/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidpaving.id/subang/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidpaving.id/serang/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidpaving.id/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://solidpaving.id/blog/harga-pasang-paving-block-2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidpaving.id/blog/kenapa-paving-amblas/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidpaving.id/blog/paving-block-k300-vs-k400/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://solidpaving.id/blog/cara-hitung-kebutuhan-paving-block/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
