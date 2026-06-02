@@ -56,7 +56,8 @@
     a{color:var(--blue);text-decoration:none;}
     img{display:block;max-width:100%;}
 
-    nav{position:sticky;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;align-items:center;height:64px;gap:16px;}
+    nav{position:sticky;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;align-items:center;height:64px;gap:16px;}
+    nav::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:-1;}
 .nav-logo{display:flex;align-items:center;flex-shrink:0;}
 .nav-menu{display:none;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center;}
 @media(min-width:1100px){.nav-menu{display:flex;}}
@@ -72,12 +73,12 @@
 .nav-item{position:relative;}
 .nav-btn{display:flex;align-items:center;gap:3px;font-size:13px;color:var(--tx2);padding:5px 10px;border-radius:var(--r);background:none;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;}
 .nav-btn svg{opacity:.5;transition:transform .2s;flex-shrink:0;width:11px;height:11px;}
-.nav-item:hover .nav-btn,.nav-item:focus-within .nav-btn{background:var(--bg1);color:var(--tx1);}
-.nav-item:hover .nav-btn svg,.nav-item:focus-within .nav-btn svg{transform:rotate(180deg);opacity:1;}
+.nav-item:hover .nav-btn,.nav-item:focus-within .nav-btn,.nav-item.js-open .nav-btn{background:var(--bg1);color:var(--tx1);}
+.nav-item:hover .nav-btn svg,.nav-item:focus-within .nav-btn svg,.nav-item.js-open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 .nav-panel{position:absolute;top:100%;left:0;min-width:220px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);box-shadow:0 12px 40px rgba(13,26,46,.13);padding:8px;margin-top:8px;}
 .nav-panel::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;}
-.nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
-.nav-panel.right{left:auto;right:0;}.nav-panel.panel-mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;}
+.nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel,.nav-item.js-open .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
+.nav-panel.right{left:auto;right:0;}.nav-panel.panel-mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;}.nav-panel.panel-mega.right{left:auto;right:0;}
 .mega-col{padding:4px;}.mega-sep{background:var(--bds);}
 .pnl-head{padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-top:6px;}.pnl-head:first-child{margin-top:0;}
 .pnl-sep{height:1px;background:var(--bds);margin:5px 0;}
@@ -95,7 +96,7 @@
 
     /* LAYOUT */
     .wrap{max-width:800px;margin:0 auto;padding:0 5%;}
-    .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--tx3);}
+    .breadcrumb{padding:32px 0 0;font-size:13px;color:var(--tx3);position:relative;z-index:1;}
     .breadcrumb a{color:var(--tx3);}
     .breadcrumb a:hover{color:var(--blue);}
     .breadcrumb span{margin:0 6px;}
@@ -277,7 +278,7 @@
     </li>
     <li class="nav-item">
       <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel panel-mega">
+      <div class="nav-panel panel-mega right">
         <div class="mega-col">
           <div class="pnl-head">Jakarta & Sekitarnya</div>
           <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
@@ -686,9 +687,53 @@
 
 <script>
 (function(){
-  var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
-  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
-  window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
+
+  /* ── 1. MOBILE HAMBURGER ── */
+  var ham = document.getElementById('navHam');
+  var drawer = document.getElementById('mobDrawer');
+  ham.addEventListener('click', function(){
+    var o = ham.classList.toggle('open');
+    drawer.classList.toggle('open', o);
+    ham.setAttribute('aria-expanded', String(o));
+  });
+  window.closeMob = function(){
+    ham.classList.remove('open');
+    drawer.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+  };
+
+  /* ── 2. DESKTOP DROPDOWN — click-toggle (tablet & mouse) ── */
+  // Adds JS-controlled .js-open class alongside CSS :hover/:focus-within.
+  // This makes dropdowns work on touch-capable devices at ≥1100px width.
+  var navItems = document.querySelectorAll('.nav-item');
+
+  navItems.forEach(function(item){
+    var btn = item.querySelector('.nav-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = item.classList.contains('js-open');
+      // Close all other open items first
+      navItems.forEach(function(other){ other.classList.remove('js-open'); });
+      if (!isOpen) item.classList.add('js-open');
+    });
+  });
+
+  // Close dropdown when clicking anywhere outside the navbar
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.nav-item')) {
+      navItems.forEach(function(item){ item.classList.remove('js-open'); });
+    }
+  });
+
+  // Close dropdown when pressing Escape
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      navItems.forEach(function(item){ item.classList.remove('js-open'); });
+    }
+  });
+
 })();
 </script>
 </body>
