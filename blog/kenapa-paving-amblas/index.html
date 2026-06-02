@@ -60,47 +60,77 @@
     a{color:var(--blue);text-decoration:none;}
     img{display:block;max-width:100%;}
 
-    /* NAV */
-    nav{position:sticky;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
-    .nav-logo-wrap{display:flex;align-items:center;}
-    .nav-links{display:flex;gap:2rem;list-style:none;}
-    .nav-links a{font-size:14px;color:var(--tx2);transition:color .2s;}
-    .nav-links a:hover{color:var(--tx1);}
-    .nav-cta{background:var(--blue);color:#fff!important;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;}
+    /* ── NAV ── */
+    nav{position:sticky;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;align-items:center;height:64px;gap:16px;}
+    nav::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:-1;}
+    .nav-logo{display:flex;align-items:center;flex-shrink:0;}
+    .nav-menu{display:none;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center;}
+    @media(min-width:1100px){.nav-menu{display:flex;}}
+    .nav-cta{display:none;background:var(--blue);color:#fff!important;padding:8px 20px;border-radius:var(--r);font-size:13px;font-weight:700;white-space:nowrap;flex-shrink:0;transition:background .15s;}
     .nav-cta:hover{background:var(--blue2)!important;}
-    .ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:36px;}
-    .ham span{display:block;height:2px;width:24px;background:var(--tx1);border-radius:2px;transition:all .25s;}
-    .ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-    .ham.open span:nth-child(2){opacity:0;}
-    .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .mob{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--bdr);padding:16px 5% 24px;z-index:99;flex-direction:column;gap:4px;}
-    .mob.open{display:flex;}
-    .mob a{font-size:15px;color:var(--tx2);padding:10px 0;border-bottom:1px solid var(--bds);}
-    .mob .mcta{margin-top:12px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;}
+    @media(min-width:1100px){.nav-cta{display:inline-block;}}
+    .nav-ham{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:36px;margin-left:auto;flex-shrink:0;}
+    .nav-ham span{display:block;height:2px;width:24px;background:var(--tx1);border-radius:2px;transition:all .25s;}
+    .nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-ham.open span:nth-child(2){opacity:0;}
+    .nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    @media(min-width:1100px){.nav-ham{display:none;}}
+    .nav-item{position:relative;}
+    .nav-btn{display:flex;align-items:center;gap:3px;font-size:13px;color:var(--tx2);padding:5px 10px;border-radius:var(--r);background:none;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;}
+    .nav-btn svg{opacity:.5;transition:transform .2s;flex-shrink:0;width:11px;height:11px;}
+    .nav-item:hover .nav-btn,.nav-item:focus-within .nav-btn,.nav-item.js-open .nav-btn{background:var(--bg1);color:var(--tx1);}
+    .nav-item:hover .nav-btn svg,.nav-item:focus-within .nav-btn svg,.nav-item.js-open .nav-btn svg{transform:rotate(180deg);opacity:1;}
+    .nav-panel{position:absolute;top:100%;left:0;min-width:220px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);box-shadow:0 12px 40px rgba(13,26,46,.13);padding:8px;margin-top:8px;}
+    .nav-panel::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;}
+    .nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel,.nav-item.js-open .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
+    .nav-panel.right{left:auto;right:0;}
+    .nav-panel.panel-mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;}
+    .nav-panel.panel-mega.right{left:auto;right:0;}
+    .mega-col{padding:4px;}.mega-sep{background:var(--bds);}
+    .pnl-head{padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-top:6px;}
+    .pnl-head:first-child{margin-top:0;}
+    .pnl-sep{height:1px;background:var(--bds);margin:5px 0;}
+    .pnl-link{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;font-size:13px;color:var(--tx2);transition:background .12s,color .12s;}
+    .pnl-link:hover,.pnl-link.active{background:var(--bg1);color:var(--tx1);}
+    .pnl-ico{width:26px;height:26px;border-radius:6px;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;}
+    .pnl-title{font-weight:600;color:var(--tx1);font-size:13px;display:block;}
+    .pnl-sub{font-size:11px;color:var(--tx3);margin-top:1px;display:block;}
+    .pnl-plain{display:flex;align-items:center;gap:5px;padding:6px 10px;border-radius:8px;font-size:13px;color:var(--tx2);transition:background .12s,color .12s;}
+    .pnl-plain::before{content:'📍';font-size:11px;}
+    .pnl-plain:hover{background:var(--bg1);color:var(--tx1);}
+    .pnl-all{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:2px;border-top:1px solid var(--bds);transition:background .12s;}
+    .pnl-all:hover{background:var(--bg1);}
 
-    /* LAYOUT */
+    /* ── MOBILE DRAWER ── */
+    .mob-drawer{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,.98);border-bottom:1px solid var(--bdr);padding:12px 5% 28px;z-index:99;flex-direction:column;gap:2px;max-height:calc(100vh - 64px);overflow-y:auto;}
+    .mob-drawer.open{display:flex;}
+    .mob-head{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);padding:14px 0 4px;}
+    .mob-drawer a{font-size:14px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bds);}
+    .mob-cta{margin-top:14px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;display:block;border-bottom:none!important;}
+
+    /* ── LAYOUT ── */
     .wrap{max-width:800px;margin:0 auto;padding:0 5%;}
 
-    /* BREADCRUMB */
-    .breadcrumb{padding:24px 0 0;font-size:13px;color:var(--tx3);}
-    .breadcrumb a{color:var(--blue);}
-    .breadcrumb a:hover{text-decoration:underline;}
-    .breadcrumb span{margin:0 6px;opacity:.5;}
+    /* ── BREADCRUMB ── */
+    .breadcrumb{padding:20px 0 0;font-size:13px;color:var(--tx3);position:relative;z-index:1;}
+    .breadcrumb a{color:var(--tx3);}
+    .breadcrumb a:hover{color:var(--blue);}
+    .breadcrumb span{margin:0 6px;}
 
-    /* HEADER */
-    .art-header{padding:24px 0 32px;border-bottom:1px solid var(--bds);margin-bottom:40px;}
+    /* ── ARTICLE HEADER ── */
+    .art-header{padding:20px 0 32px;border-bottom:1px solid var(--bds);margin-bottom:40px;}
     .art-cat{display:inline-flex;align-items:center;gap:6px;background:rgba(46,62,95,.08);border:1px solid var(--bdr);padding:5px 12px;border-radius:100px;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
     .art-header h1{font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.5px;color:var(--tx1);margin-bottom:16px;}
     .art-header h1 .blue{color:var(--blue);}
     .art-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--tx3);}
     .art-meta strong{color:var(--tx2);}
 
-    /* HIGHLIGHT BOX */
+    /* ── HIGHLIGHT BOX ── */
     .hl-box{background:var(--bg1);border:1px solid var(--bdr);border-left:4px solid var(--blue);border-radius:0 var(--rl) var(--rl) 0;padding:20px 24px;margin:32px 0;}
     .hl-box p{font-size:15px;color:var(--tx2);line-height:1.7;}
     .hl-box strong{color:var(--tx1);}
 
-    /* BODY */
+    /* ── BODY ── */
     .art-body{padding-bottom:64px;}
     .art-body h2{font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--tx1);margin:48px 0 16px;letter-spacing:-.3px;padding-bottom:12px;border-bottom:2px solid var(--bg3);}
     .art-body h2 .blue{color:var(--blue);}
@@ -111,7 +141,7 @@
     .art-body strong{color:var(--tx1);}
     .divider{width:48px;height:3px;background:var(--blue);margin:12px 0 28px;border-radius:2px;}
 
-    /* PENYEBAB CARDS */
+    /* ── CAUSE CARDS ── */
     .cause-list{display:flex;flex-direction:column;gap:20px;margin:24px 0 32px;}
     .cause-card{display:flex;gap:20px;background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);padding:24px;position:relative;overflow:hidden;}
     .cause-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--red);}
@@ -122,7 +152,7 @@
     .cause-body p{font-size:14px;color:var(--tx2);line-height:1.6;margin:0;}
     .cause-impact{display:inline-flex;align-items:center;gap:5px;margin-top:10px;background:rgba(192,57,43,.07);border:1px solid rgba(192,57,43,.15);padding:4px 10px;border-radius:100px;font-size:11px;font-weight:700;color:var(--red);}
 
-    /* SOLUSI CARDS */
+    /* ── SOLUTION CARDS ── */
     .sol-list{display:flex;flex-direction:column;gap:16px;margin:24px 0 32px;}
     .sol-card{display:flex;gap:20px;background:var(--bg0);border:1px solid var(--bds);border-radius:var(--rl);padding:20px;position:relative;overflow:hidden;}
     .sol-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--green);}
@@ -131,14 +161,14 @@
     .sol-body p{font-size:14px;color:var(--tx2);line-height:1.6;margin:0;}
     .sol-tag{display:inline-flex;align-items:center;gap:5px;margin-top:8px;background:rgba(15,110,86,.08);border:1px solid rgba(15,110,86,.15);padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;color:var(--green);}
 
-    /* CHECKLIST */
+    /* ── CHECKLIST ── */
     .checklist{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);padding:24px;margin:20px 0 28px;}
     .checklist h3{font-size:15px;font-weight:700;color:var(--tx1);margin-bottom:16px;}
     .check-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bds);font-size:14px;color:var(--tx2);}
     .check-row:last-child{border-bottom:none;}
     .check-ico{width:20px;height:20px;border-radius:50%;background:rgba(15,110,86,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:11px;color:var(--green);font-weight:700;}
 
-    /* PERBANDINGAN */
+    /* ── COMPARE ── */
     .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 28px;}
     .cmp-card{border-radius:var(--rl);padding:20px;}
     .cmp-card.bad{background:rgba(192,57,43,.05);border:1px solid rgba(192,57,43,.15);}
@@ -152,7 +182,7 @@
     .cmp-card.bad .cmp-dot{background:var(--red);}
     .cmp-card.good .cmp-dot{background:var(--green);}
 
-    /* WARN / TIP */
+    /* ── WARN / TIP ── */
     .warn{background:rgba(192,57,43,.05);border:1px solid rgba(192,57,43,.18);border-left:4px solid var(--red);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:20px 0;}
     .warn p{font-size:14px;color:#7b2a1f;line-height:1.6;margin:0;}
     .warn strong{color:#5c1e14;}
@@ -160,15 +190,15 @@
     .tip p{font-size:14px;color:#0a4d3b;line-height:1.6;margin:0;}
     .tip strong{color:#083829;}
 
-    /* CTA */
+    /* ── CTA ── */
     .cta-block{background:var(--blue);border-radius:var(--rl);padding:36px;text-align:center;margin:48px 0;}
-    .cta-block h2{color:#fff;font-size:22px;border:none;padding:0;margin:0 0 12px;}
+    .cta-block h2{color:#fff;font-size:22px;border:none;padding:0;margin:0 0 12px;letter-spacing:0;}
     .cta-block p{color:rgba(255,255,255,.8);font-size:15px;margin-bottom:24px;}
     .btn-wa{display:inline-flex;align-items:center;gap:10px;background:#1a9e50;color:#fff;padding:14px 28px;border-radius:var(--r);font-weight:700;font-size:15px;transition:background .2s,transform .15s;}
     .btn-wa:hover{background:#158040;color:#fff;transform:translateY(-1px);}
     .cta-note{font-size:12px;color:rgba(255,255,255,.65);margin-top:14px;}
 
-    /* FAQ */
+    /* ── FAQ ── */
     .faq-wrap{margin-bottom:48px;}
     details{border-bottom:1px solid var(--bds);}
     details summary{padding:18px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;color:var(--tx1);gap:16px;list-style:none;}
@@ -177,15 +207,15 @@
     details[open] summary::after{transform:rotate(45deg);}
     .faq-a{padding-bottom:18px;font-size:14px;color:var(--tx2);line-height:1.7;}
 
-    /* ARTIKEL TERKAIT */
-    .related h2{font-size:18px;font-weight:700;color:var(--tx1);margin-bottom:16px;border:none;padding:0;}
+    /* ── RELATED ── */
+    .related h2{font-size:18px;font-weight:700;color:var(--tx1);margin-bottom:16px;border:none;padding:0;letter-spacing:0;}
     .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
     .rel-card{display:block;background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);padding:18px 20px;transition:border-color .2s,transform .15s;}
     .rel-card:hover{border-color:var(--blue);transform:translateY(-1px);}
     .rel-tag{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
     .rel-title{font-size:14px;font-weight:600;color:var(--tx1);line-height:1.4;}
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32px;}
     .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
     .foot-brand-text{font-size:13px;color:var(--tx2);line-height:1.6;max-width:280px;margin-top:12px;}
@@ -195,14 +225,12 @@
     .foot-col li a:hover{color:var(--blue);}
     .foot-bottom{border-top:1px solid var(--bds);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;}
 
-    /* WA FLOAT */
+    /* ── WA FLOAT ── */
     .wa-float{position:fixed;bottom:28px;right:24px;z-index:95;background:var(--wa);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s;}
     .wa-float:hover{transform:scale(1.08);}
     .wa-float svg{width:28px;height:28px;fill:#fff;}
 
     @media(max-width:768px){
-      .nav-links{display:none;}
-      .ham{display:flex;}
       .foot-grid{grid-template-columns:1fr;}
       .compare-grid{grid-template-columns:1fr;}
       .cause-card{flex-direction:column;gap:12px;}
@@ -211,31 +239,139 @@
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav>
-  <a href="https://solidpaving.id/" class="nav-logo-wrap" aria-label="SolidPaving.id">
+  <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
     <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="34">
       <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
       <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
     </svg>
   </a>
-  <ul class="nav-links">
-    <li><a href="https://solidpaving.id/#problem">Masalah</a></li>
-    <li><a href="https://solidpaving.id/#method">Metode</a></li>
-    <li><a href="https://solidpaving.id/#kalkulator">Estimasi</a></li>
-    <li><a href="https://solidpaving.id/#produk">Produk</a></li>
-    <li><a href="https://solidpaving.id/#faq">FAQ</a></li>
-    <li><a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a></li>
+
+  <ul class="nav-menu">
+    <li class="nav-item">
+      <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Paving Block</div>
+        <a href="/produk/paving-holland/" class="pnl-link"><div class="pnl-ico">🧱</div><div><span class="pnl-title">Holland (Bata)</span><span class="pnl-sub">Terlaris · K300–K500</span></div></a>
+        <a href="/produk/paving-ubin/" class="pnl-link"><div class="pnl-ico">⬛</div><div><span class="pnl-title">Ubin (Square)</span><span class="pnl-sub">Tampilan premium modern</span></div></a>
+        <a href="/produk/paving-cacing/" class="pnl-link"><div class="pnl-ico">〰️</div><div><span class="pnl-title">Cacing (Uni)</span><span class="pnl-sub">Beban berat, kuncian rapat</span></div></a>
+        <div class="pnl-sep"></div>
+        <div class="pnl-head">Aksesoris</div>
+        <a href="/produk/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Kanstin / Kerb Beton</span><span class="pnl-sub">Pengunci tepi paving</span></div></a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Jasa Pemasangan</div>
+        <a href="/layanan/jasa-pasang/" class="pnl-link"><div class="pnl-ico">🔨</div><div><span class="pnl-title">Jasa Pasang Paving Block</span><span class="pnl-sub">Bedding · kanstin · garansi</span></div></a>
+        <a href="/layanan/paving-lahan-parkir/" class="pnl-link"><div class="pnl-ico">🅿️</div><div><span class="pnl-title">Paving Lahan Parkir</span><span class="pnl-sub">Komersial & industri</span></div></a>
+        <a href="/layanan/paving-kawasan-industri/" class="pnl-link"><div class="pnl-ico">🏭</div><div><span class="pnl-title">Paving Kawasan Industri</span><span class="pnl-sub">Standar forklift & truk berat</span></div></a>
+        <a href="/layanan/paving-perumahan/" class="pnl-link"><div class="pnl-ico">🏠</div><div><span class="pnl-title">Paving Perumahan & Cluster</span><span class="pnl-sub">Hunian, taman, carport</span></div></a>
+        <div class="pnl-sep"></div>
+        <div class="pnl-head">Supply Material</div>
+        <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span><span class="pnl-sub">Kirim ke lokasi proyek Anda</span></div></a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Harga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel">
+        <div class="pnl-head">Estimasi & RAB</div>
+        <a href="/#kalkulator" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Estimasi Biaya</span><span class="pnl-sub">Hitung langsung, real-time</span></div></a>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga 2026</span><span class="pnl-sub">Harga per m² semua produk</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20RAB%20gratis." class="pnl-link" style="color:var(--green);">
+          <div class="pnl-ico" style="background:rgba(15,110,86,.1);">✉️</div>
+          <div><span class="pnl-title" style="color:var(--green);">Minta RAB Gratis</span><span class="pnl-sub">Survei lokasi, tanpa biaya</span></div>
+        </a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel panel-mega right">
+        <div class="mega-col">
+          <div class="pnl-head">Jakarta & Sekitarnya</div>
+          <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
+          <a href="/depok/" class="pnl-plain">Depok</a>
+          <a href="/bogor/" class="pnl-plain">Bogor</a>
+          <div class="pnl-head">Tangerang</div>
+          <a href="/tangerang/" class="pnl-plain">Tangerang</a>
+          <a href="/tangerang-selatan/" class="pnl-plain">Tangerang Selatan</a>
+        </div>
+        <div class="mega-sep"></div>
+        <div class="mega-col">
+          <div class="pnl-head">Bekasi & Kawasan Industri</div>
+          <a href="/bekasi/" class="pnl-plain">Bekasi</a>
+          <a href="/cikarang/" class="pnl-plain">Cikarang</a>
+          <a href="/jababeka/" class="pnl-plain">Jababeka</a>
+          <a href="/mm2100/" class="pnl-plain">MM2100</a>
+          <a href="/karawang/" class="pnl-plain">Karawang</a>
+          <div class="pnl-head">Jawa Barat</div>
+          <a href="/bandung/" class="pnl-plain">Bandung</a>
+          <a href="/purwakarta/" class="pnl-plain">Purwakarta</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Panduan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel right">
+        <div class="pnl-head">Artikel Populer</div>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Harga Pasang Paving 2026</span></div></a>
+        <a href="/blog/kenapa-paving-amblas/" class="pnl-link active"><div class="pnl-ico">⚠️</div><div><span class="pnl-title">Kenapa Paving Amblas?</span></div></a>
+        <a href="/blog/paving-block-k300-vs-k400/" class="pnl-link"><div class="pnl-ico">🔬</div><div><span class="pnl-title">K300 vs K400 — Pilih Mana?</span></div></a>
+        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Kebutuhan</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/blog/" class="pnl-all">Lihat Semua Artikel <span>→</span></a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <button class="nav-btn">Tentang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel right">
+        <a href="/tentang-kami/" class="pnl-link"><div class="pnl-ico">🏢</div><div><span class="pnl-title">Tentang SolidPaving.id</span><span class="pnl-sub">Profil, visi, tim kami</span></div></a>
+        <a href="/portofolio/" class="pnl-link"><div class="pnl-ico">📸</div><div><span class="pnl-title">Portofolio Proyek</span><span class="pnl-sub">Dokumentasi hasil nyata</span></div></a>
+        <a href="/#bukti" class="pnl-link"><div class="pnl-ico">⭐</div><div><span class="pnl-title">Testimoni Klien</span><span class="pnl-sub">Ulasan dari pelanggan kami</span></div></a>
+        <div class="pnl-sep"></div>
+        <a href="/#faq" class="pnl-link"><div class="pnl-ico">❓</div><div><span class="pnl-title">FAQ</span><span class="pnl-sub">Pertanyaan yang sering ditanyakan</span></div></a>
+        <a href="mailto:sales@solidpaving.id" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span><span class="pnl-sub">sales@solidpaving.id</span></div></a>
+      </div>
+    </li>
   </ul>
-  <button class="ham" id="ham" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a>
+  <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div class="mob" id="mob">
-  <a href="https://solidpaving.id/#problem" onclick="closeMob()">Masalah</a>
-  <a href="https://solidpaving.id/#method" onclick="closeMob()">Metode</a>
-  <a href="https://solidpaving.id/#kalkulator" onclick="closeMob()">Estimasi Biaya</a>
-  <a href="https://solidpaving.id/#produk" onclick="closeMob()">Produk</a>
-  <a href="https://solidpaving.id/#faq" onclick="closeMob()">FAQ</a>
-  <a href="https://wa.me/6285943492832" class="mcta">Survei & RAB Gratis</a>
+
+<!-- ── MOBILE DRAWER ── -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-head">Produk</div>
+  <a href="/produk/paving-holland/" onclick="closeMob()">🧱 Holland (Bata)</a>
+  <a href="/produk/paving-ubin/" onclick="closeMob()">⬛ Ubin (Square)</a>
+  <a href="/produk/paving-cacing/" onclick="closeMob()">〰️ Cacing (Uni)</a>
+  <a href="/produk/kanstin/" onclick="closeMob()">📐 Kanstin / Kerb</a>
+  <div class="mob-head">Layanan</div>
+  <a href="/layanan/jasa-pasang/" onclick="closeMob()">🔨 Jasa Pasang Paving Block</a>
+  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">🅿️ Paving Lahan Parkir</a>
+  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">🏭 Paving Kawasan Industri</a>
+  <a href="/layanan/paving-perumahan/" onclick="closeMob()">🏠 Paving Perumahan</a>
+  <a href="/layanan/supplier-paving/" onclick="closeMob()">🚚 Supplier Material Only</a>
+  <div class="mob-head">Harga</div>
+  <a href="/#kalkulator" onclick="closeMob()">🧮 Kalkulator Estimasi</a>
+  <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">💰 Daftar Harga 2026</a>
+  <div class="mob-head">Area Layanan</div>
+  <a href="/jakarta/" onclick="closeMob()">Jakarta</a>
+  <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
+  <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
+  <a href="/karawang/" onclick="closeMob()">Karawang</a>
+  <a href="/bandung/" onclick="closeMob()">Bandung</a>
+  <div class="mob-head">Panduan & Tentang</div>
+  <a href="/blog/" onclick="closeMob()">📚 Semua Artikel</a>
+  <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
+  <a href="/portofolio/" onclick="closeMob()">Portofolio Proyek</a>
+  <a href="/#faq" onclick="closeMob()">FAQ</a>
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">Survei & RAB Gratis</a>
 </div>
 
 <main>
@@ -243,16 +379,14 @@
 
   <!-- BREADCRUMB -->
   <nav class="breadcrumb" aria-label="Breadcrumb">
-    <a href="https://solidpaving.id/">Beranda</a>
-    <span>›</span>
-    <a href="https://solidpaving.id/blog/">Panduan</a>
-    <span>›</span>
+    <a href="/">SolidPaving.id</a><span>›</span>
+    <a href="/blog/">Panduan</a><span>›</span>
     Kenapa Paving Parkir Amblas
   </nav>
 
   <!-- HEADER -->
   <header class="art-header">
-    <div class="art-cat">Tips Proyek</div>
+    <div class="art-cat">⚠️ Tips Proyek</div>
     <h1>Kenapa Lahan Parkir Paving <span class="blue">Amblas?</span> 6 Penyebab Utama & Solusinya</h1>
     <div class="art-meta">
       <span>Oleh <strong>Tim SolidPaving.id</strong></span>
@@ -275,7 +409,6 @@
     <div class="divider"></div>
 
     <div class="cause-list">
-
       <div class="cause-card">
         <div class="cause-num">1</div>
         <div class="cause-body">
@@ -286,7 +419,6 @@
           <div class="cause-impact">⚠ Menyebabkan amblas di seluruh area, bukan hanya satu titik</div>
         </div>
       </div>
-
       <div class="cause-card">
         <div class="cause-num">2</div>
         <div class="cause-body">
@@ -297,51 +429,43 @@
           <div class="cause-impact">⚠ Menyebabkan permukaan bergelombang dan tidak rata</div>
         </div>
       </div>
-
       <div class="cause-card">
         <div class="cause-num">3</div>
         <div class="cause-body">
           <div class="cause-tag">Kesalahan Spesifikasi</div>
           <h3>Mutu Paving Tidak Sesuai Beban</h3>
-          <p>Setiap mutu paving dirancang untuk beban tertentu. K200 untuk taman dan trotoar. K300 untuk parkir mobil pribadi. K400 untuk truk dan forklift. Ketika K300 dipakai untuk area yang dilalui truk setiap hari, blok akan retak dan pecah jauh lebih cepat dari yang seharusnya.</p>
+          <p>Setiap mutu paving dirancang untuk beban tertentu. K300 untuk parkir mobil pribadi. K400 untuk truk dan forklift. Ketika K300 dipakai untuk area yang dilalui truk setiap hari, blok akan retak dan pecah jauh lebih cepat dari yang seharusnya.</p>
           <p>Kesalahan ini sering terjadi karena pemilik proyek tidak tahu bedanya, atau vendor menawarkan mutu lebih rendah agar harga terlihat lebih murah di penawaran awal.</p>
           <div class="cause-impact">⚠ Blok retak dan pecah dalam hitungan bulan</div>
         </div>
       </div>
-
       <div class="cause-card">
         <div class="cause-num">4</div>
         <div class="cause-body">
           <div class="cause-tag">Sering Diabaikan</div>
           <h3>Tidak Ada Kanstin Pengunci di Tepi</h3>
           <p>Kanstin (kerb beton) dipasang di setiap tepi area paving untuk "mengunci" seluruh susunan agar tidak bergerak ke samping. Tanpa kanstin, paving perlahan merenggang ke tepi ketika menahan beban dan getaran kendaraan. Begitu satu blok bergeser, blok-blok lain di sekitarnya ikut bergerak dan celah pun terbentuk.</p>
-          <p>Kerusakan jenis ini biasanya mulai terlihat di bagian tepi area parkir, lalu menyebar ke tengah.</p>
           <div class="cause-impact">⚠ Paving merenggang dari tepi, makin lama makin lebar</div>
         </div>
       </div>
-
       <div class="cause-card">
         <div class="cause-num">5</div>
         <div class="cause-body">
           <div class="cause-tag">Masalah Drainase</div>
           <h3>Drainase dan Kemiringan Tidak Dirancang</h3>
           <p>Air adalah musuh terbesar konstruksi paving. Jika tidak ada kemiringan yang cukup (minimal 1–2%) untuk mengalirkan air hujan, genangan akan terbentuk. Air yang menggenang meresap ke bawah paving, melemahkan lapisan bedding dan sub-base, dan mempercepat kerusakan secara signifikan.</p>
-          <p>Vendor yang tidak bicara soal drainase sejak awal hampir pasti akan menciptakan masalah genangan di kemudian hari.</p>
           <div class="cause-impact">⚠ Genangan air mempercepat kerusakan sub-base 3–5x lipat</div>
         </div>
       </div>
-
       <div class="cause-card">
         <div class="cause-num">6</div>
         <div class="cause-body">
           <div class="cause-tag">Kualitas Material</div>
           <h3>Paving Block Cetak Manual, Bukan Hidrolik Press</h3>
-          <p>Ada dua cara produksi paving block: cetak manual dan hidrolik press. Paving cetak manual memiliki kepadatan yang tidak merata antar blok — satu blok bisa lebih keras, blok sebelahnya lebih rapuh. Hasilnya tidak konsisten dan lebih mudah retak.</p>
-          <p>Paving hidrolik press menghasilkan kepadatan seragam di setiap blok karena proses pemadatan dikendalikan mesin. Ini yang seharusnya digunakan untuk lahan parkir komersial.</p>
+          <p>Paving cetak manual memiliki kepadatan yang tidak merata antar blok — satu blok bisa lebih keras, blok sebelahnya lebih rapuh. Paving hidrolik press menghasilkan kepadatan seragam di setiap blok karena proses pemadatan dikendalikan mesin. Ini yang seharusnya digunakan untuk lahan parkir komersial.</p>
           <div class="cause-impact">⚠ Kekuatan blok tidak konsisten, beberapa cepat hancur</div>
         </div>
       </div>
-
     </div>
 
     <h2>Cara Membedakan <span class="blue">Vendor yang Benar vs Vendor Asal Murah</span></h2>
@@ -378,7 +502,7 @@
         <div class="sol-num">01</div>
         <div class="sol-body">
           <h3>Survei & Analisa Tanah Dasar</h3>
-          <p>Sebelum apapun dimulai, tanah dasar harus diperiksa. Jenis tanah menentukan seberapa dalam dan padat sub-base yang dibutuhkan. Tanah lempung membutuhkan perlakuan berbeda dari tanah keras.</p>
+          <p>Sebelum apapun dimulai, tanah dasar harus diperiksa. Jenis tanah menentukan seberapa dalam dan padat sub-base yang dibutuhkan.</p>
           <div class="sol-tag">✓ Mencegah: biaya kejutan di tengah proyek</div>
         </div>
       </div>
@@ -386,7 +510,7 @@
         <div class="sol-num">02</div>
         <div class="sol-body">
           <h3>Pemadatan Sub-Base dengan Alat yang Tepat</h3>
-          <p>Gunakan stamper kodok untuk area kecil dan baby roller dual vibro untuk area luas. Pemadatan dilakukan berlapis — bukan sekali jadi. Setiap lapisan 10–15 cm dipadatkan sebelum lapisan berikutnya ditambah.</p>
+          <p>Gunakan stamper kodok untuk area kecil dan baby roller dual vibro untuk area luas. Pemadatan dilakukan berlapis — setiap lapisan 10–15 cm dipadatkan sebelum lapisan berikutnya ditambah.</p>
           <div class="sol-tag">✓ Mencegah: amblas di seluruh area</div>
         </div>
       </div>
@@ -394,7 +518,7 @@
         <div class="sol-num">03</div>
         <div class="sol-body">
           <h3>Gelar Bedding 3–5 cm dan Leveling Presisi</h3>
-          <p>Abu batu digelar setebal 3–5 cm, lalu diratakan menggunakan screed dengan kemiringan yang sudah dihitung untuk drainase. Tahap ini menentukan apakah permukaan akhir rata atau bergelombang.</p>
+          <p>Abu batu digelar setebal 3–5 cm, lalu diratakan menggunakan screed dengan kemiringan yang sudah dihitung untuk drainase.</p>
           <div class="sol-tag">✓ Mencegah: permukaan bergelombang dan genangan air</div>
         </div>
       </div>
@@ -402,7 +526,7 @@
         <div class="sol-num">04</div>
         <div class="sol-body">
           <h3>Pilih Mutu K yang Sesuai Beban Nyata</h3>
-          <p>K200 untuk taman dan trotoar. K300 untuk parkir motor dan mobil pribadi. K350 untuk parkir padat dan ruko. K400 wajib untuk area truk, bus, dan forklift. Jangan turunkan mutu demi harga lebih murah.</p>
+          <p>K300 untuk parkir motor dan mobil pribadi. K400 untuk area truk, bus, dan forklift. Jangan turunkan mutu demi harga lebih murah.</p>
           <div class="sol-tag">✓ Mencegah: blok retak dan pecah dalam hitungan bulan</div>
         </div>
       </div>
@@ -410,7 +534,7 @@
         <div class="sol-num">05</div>
         <div class="sol-body">
           <h3>Pasang Kanstin Pengunci di Semua Tepi</h3>
-          <p>Kanstin beton dipasang mengelilingi seluruh area paving sebelum blok dipasang. Ini adalah "bingkai" yang menahan seluruh susunan agar tidak merenggang ke samping ketika menerima beban dan getaran.</p>
+          <p>Kanstin beton dipasang mengelilingi seluruh area paving sebelum blok dipasang. Ini adalah "bingkai" yang menahan seluruh susunan agar tidak merenggang ke samping.</p>
           <div class="sol-tag">✓ Mencegah: paving merenggang dari tepi</div>
         </div>
       </div>
@@ -418,7 +542,7 @@
         <div class="sol-num">06</div>
         <div class="sol-body">
           <h3>Finishing, Pengisian Nat, dan Pemadatan Akhir</h3>
-          <p>Setelah semua blok terpasang, celah antar blok diisi pasir dan dilakukan pemadatan akhir menggunakan plate compactor. Tahap ini mengunci posisi setiap blok agar saling menopang satu sama lain.</p>
+          <p>Setelah semua blok terpasang, celah antar blok diisi pasir dan dilakukan pemadatan akhir menggunakan plate compactor untuk mengunci posisi setiap blok.</p>
           <div class="sol-tag">✓ Mencegah: blok longgar dan bergerak saat dilalui kendaraan</div>
         </div>
       </div>
@@ -447,21 +571,19 @@
 
     <p>Ini kabar baiknya: paving block bisa diperbaiki secara parsial. Tidak perlu membongkar seluruh area — hanya bagian yang bermasalah saja yang dibongkar, sub-base diperbaiki dan dipadatkan ulang, lalu paving dipasang kembali.</p>
 
-    <p>Langkah perbaikan yang benar:</p>
     <ol>
       <li>Identifikasi area yang amblas dan tandai batasnya</li>
       <li>Bongkar paving di area tersebut — simpan blok yang masih baik untuk dipakai lagi</li>
       <li>Gali dan periksa kondisi sub-base — tambah material agregat jika perlu</li>
       <li>Padatkan ulang sub-base dengan stamper hingga benar-benar stabil</li>
       <li>Gelar lapisan bedding baru dan leveling ulang</li>
-      <li>Pasang kembali paving — ganti blok yang rusak dengan yang baru dari stok yang sama</li>
+      <li>Pasang kembali paving — ganti blok yang rusak dengan yang baru</li>
     </ol>
 
     <div class="warn">
       <p><strong>Perhatian:</strong> Perbaikan tanpa memperbaiki akar masalah (sub-base yang tidak stabil) hanya akan menghasilkan masalah yang sama dalam beberapa bulan ke depan. Pastikan penyebab amblas diidentifikasi dan ditangani tuntas sebelum memasang ulang.</p>
     </div>
 
-    <!-- CTA -->
     <div class="cta-block">
       <h2>Mau Pastikan Proyek Paving Anda Tidak Amblas?</h2>
       <p>Survei lapangan gratis — tim kami periksa kondisi tanah, rekomendasikan mutu yang tepat, dan beri RAB transparan. Tanpa kewajiban apapun.</p>
@@ -472,7 +594,6 @@
       <div class="cta-note">Senin–Sabtu 08.00–17.00 WIB · Melayani Jabodetabek & Jawa Barat · Min. 30 m²</div>
     </div>
 
-    <!-- FAQ -->
     <h2>Pertanyaan yang <span class="blue">Sering Ditanyakan</span></h2>
     <div class="divider"></div>
     <div class="faq-wrap">
@@ -480,22 +601,21 @@
       <details><summary>Berapa lama paving block seharusnya bertahan?</summary><p class="faq-a">Paving block yang dipasang dengan benar bisa bertahan 15–25 tahun dengan perawatan minimal. Jika amblas dalam 1–2 tahun, hampir pasti ada tahap pemasangan yang dilewati — paling sering pemadatan sub-base.</p></details>
       <details><summary>Apakah paving yang sudah amblas bisa diperbaiki tanpa bongkar total?</summary><p class="faq-a">Bisa. Ini salah satu keunggulan paving block dibanding aspal atau beton cor. Cukup bongkar bagian yang bermasalah, perbaiki sub-base, padatkan ulang, lalu pasang kembali. Biayanya jauh lebih hemat dari mengganti seluruh area.</p></details>
       <details><summary>Apa bedanya paving hidrolik press dan cetak manual?</summary><p class="faq-a">Paving hidrolik press diproduksi dengan tekanan mesin yang seragam sehingga setiap blok punya kepadatan dan kekuatan yang konsisten. Paving cetak manual kepadatannya tidak merata — kekuatan antar blok bisa berbeda-beda dan lebih mudah retak untuk penggunaan komersial.</p></details>
-      <details><summary>Berapa biaya perbaikan paving yang sudah amblas?</summary><p class="faq-a">Biaya perbaikan tergantung luas area yang rusak dan kondisi sub-base. Secara umum, perbaikan parsial jauh lebih mahal per m² dibanding pemasangan yang benar dari awal — belum termasuk kerugian operasional selama parkir tidak bisa digunakan. Ini yang dimaksud "vendor termurah sering berakhir paling mahal".</p></details>
+      <details><summary>Berapa biaya perbaikan paving yang sudah amblas?</summary><p class="faq-a">Biaya perbaikan tergantung luas area yang rusak dan kondisi sub-base. Secara umum, perbaikan parsial jauh lebih mahal per m² dibanding pemasangan yang benar dari awal — belum termasuk kerugian operasional selama parkir tidak bisa digunakan.</p></details>
     </div>
 
-    <!-- TERKAIT -->
     <div class="related">
       <h2>Artikel Terkait</h2>
       <div class="rel-grid">
-        <a href="https://solidpaving.id/blog/harga-pasang-paving-block-2026/" class="rel-card">
+        <a href="/blog/harga-pasang-paving-block-2026/" class="rel-card">
           <div class="rel-tag">Panduan Biaya</div>
           <div class="rel-title">Harga Pasang Paving Block per m² 2026 — Semua Komponen Biaya</div>
         </a>
-        <a href="https://solidpaving.id/blog/paving-block-k300-vs-k400/" class="rel-card">
+        <a href="/blog/paving-block-k300-vs-k400/" class="rel-card">
           <div class="rel-tag">Panduan Teknis</div>
           <div class="rel-title">Paving Block K300 vs K400 — Mana yang Tepat untuk Proyek Anda?</div>
         </a>
-        <a href="https://solidpaving.id/blog/cara-hitung-kebutuhan-paving-block/" class="rel-card">
+        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="rel-card">
           <div class="rel-tag">Kalkulator</div>
           <div class="rel-title">Cara Menghitung Kebutuhan Paving Block per m²</div>
         </a>
@@ -511,21 +631,21 @@
   <div style="max-width:1100px;margin:0 auto;">
     <div class="foot-grid">
       <div>
-        <a href="https://solidpaving.id/" aria-label="SolidPaving.id">
+        <a href="/" aria-label="SolidPaving.id">
           <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="30">
             <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
             <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
           </svg>
         </a>
-        <p class="foot-brand-text">Supplier paving block K200–K400 & jasa pasang bergaransi. Untuk kontraktor, developer, dan pemilik bisnis. Jabodetabek & Jawa Barat.</p>
+        <p class="foot-brand-text">Supplier paving block K300–K500 & jasa pasang bergaransi. Untuk kontraktor, developer, dan pemilik bisnis. Jabodetabek & Jawa Barat.</p>
       </div>
       <div class="foot-col">
         <h5>Layanan</h5>
         <ul>
-          <li><a href="https://solidpaving.id/#produk">Paving Holland</a></li>
-          <li><a href="https://solidpaving.id/#produk">Paving Ubin</a></li>
-          <li><a href="https://solidpaving.id/#produk">Paving Cacing</a></li>
-          <li><a href="https://solidpaving.id/#method">Jasa Pasang</a></li>
+          <li><a href="/produk/paving-holland/">Paving Holland</a></li>
+          <li><a href="/produk/paving-ubin/">Paving Ubin</a></li>
+          <li><a href="/produk/paving-cacing/">Paving Cacing</a></li>
+          <li><a href="/layanan/jasa-pasang/">Jasa Pasang</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -533,7 +653,8 @@
         <ul>
           <li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li>
           <li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li>
-          <li><a href="https://solidpaving.id/#faq">FAQ</a></li>
+          <li><a href="/blog/">Panduan & Artikel</a></li>
+          <li><a href="/#faq">FAQ</a></li>
         </ul>
       </div>
     </div>
@@ -549,18 +670,42 @@
 </a>
 
 <script>
-  var ham = document.getElementById('ham');
-  var mob = document.getElementById('mob');
-  ham.addEventListener('click', function() {
+(function(){
+  var ham = document.getElementById('navHam');
+  var drawer = document.getElementById('mobDrawer');
+  ham.addEventListener('click', function(){
     var o = ham.classList.toggle('open');
-    mob.classList.toggle('open', o);
-    ham.setAttribute('aria-expanded', o);
+    drawer.classList.toggle('open', o);
+    ham.setAttribute('aria-expanded', String(o));
   });
-  function closeMob() {
+  window.closeMob = function(){
     ham.classList.remove('open');
-    mob.classList.remove('open');
+    drawer.classList.remove('open');
     ham.setAttribute('aria-expanded','false');
-  }
+  };
+
+  var navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(function(item){
+    var btn = item.querySelector('.nav-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = item.classList.contains('js-open');
+      navItems.forEach(function(other){ other.classList.remove('js-open'); });
+      if (!isOpen) item.classList.add('js-open');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.nav-item')) {
+      navItems.forEach(function(item){ item.classList.remove('js-open'); });
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      navItems.forEach(function(item){ item.classList.remove('js-open'); });
+    }
+  });
+})();
 </script>
 </body>
 </html>
