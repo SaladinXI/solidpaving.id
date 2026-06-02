@@ -1,0 +1,28 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main # Ubah menjadi 'master' jika nama branch utama Anda adalah master
+    paths:
+      - '**/*.html'
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Generate Sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://solidpaving.id/
+
+      - name: Commit and Push Sitemap
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "Auto-generate sitemap.xml untuk Solidpaving" || echo "Tidak ada perubahan sitemap"
+          git push
