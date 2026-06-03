@@ -55,6 +55,10 @@ nav{
 .nav-item:hover .nav-btn,.nav-item:focus-within .nav-btn{background:var(--bg1);color:var(--tx1);}
 .nav-item:hover .nav-btn svg,.nav-item:focus-within .nav-btn svg{transform:rotate(180deg);opacity:1;}
 
+/* nav-link: plain link item in nav (no dropdown) */
+.nav-link{display:flex;align-items:center;font-size:13px;color:var(--tx2);padding:5px 10px;border-radius:var(--r);white-space:nowrap;transition:background .15s,color .15s;font-weight:600;}
+.nav-link:hover{background:var(--bg1);color:var(--tx1);}
+
 /* Dropdown panel */
 .nav-panel{position:absolute;top:100%;left:0;min-width:220px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);box-shadow:0 12px 40px rgba(13,26,46,.13);padding:8px;margin-top:8px;}.nav-panel::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;}.nav-panel-wrap{background:#fff;border:1px solid var(--bdr);border-radius:var(--rl);box-shadow:0 12px 40px rgba(13,26,46,.13);padding:8px;}
 .nav-item:hover .nav-panel,.nav-item:focus-within .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
@@ -79,6 +83,10 @@ nav{
 .pnl-all{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:2px;border-top:1px solid var(--bds);transition:background .12s;}
 .pnl-all:hover{background:var(--bg1);}
 
+/* ── NEW: "Lihat Semua" shortcut link di bawah panel items ── */
+.pnl-viewall{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:4px;border-top:1px solid var(--bds);transition:background .12s;}
+.pnl-viewall:hover{background:var(--bg1);}
+
 /* Hamburger */
 .nav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:36px;margin-left:auto;}
 .nav-ham span{display:block;height:2px;width:24px;background:var(--tx1);border-radius:2px;transition:all .25s;}
@@ -92,6 +100,8 @@ nav{
 .mob-head{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);padding:14px 0 4px;}
 .mob-drawer a{font-size:14px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bds);}
 .mob-drawer a:hover{color:var(--tx1);}
+/* ── NEW: highlighted "Lihat Semua" links in mobile drawer ── */
+.mob-viewall{font-size:13px!important;font-weight:700!important;color:var(--blue)!important;padding:10px 0!important;}
 .mob-cta{margin-top:14px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;display:block;border-bottom:none!important;}
 
 /* Responsive */
@@ -128,6 +138,11 @@ h3{font-size:18px;font-weight:700;}
 .hero-img-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
 .hero-badges{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:8px;flex-wrap:wrap;}
 .hbadge{background:rgba(255,255,255,.92);border:1px solid var(--bdr);padding:5px 10px;border-radius:4px;font-size:11px;font-weight:600;color:var(--blue);}
+
+/* ── NEW: hero quick-links ── */
+.hero-quicklinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.hero-ql{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--r);border:1px solid var(--bdr);font-size:13px;font-weight:600;color:var(--blue);background:var(--bg0);transition:all .15s;}
+.hero-ql:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
 
 /* ─── TRUST ─── */
 #trust{padding:20px 5%;background:var(--blue);}
@@ -285,6 +300,12 @@ h3{font-size:18px;font-weight:700;}
 .spec-tag{background:var(--bg2);border:1px solid var(--bds);padding:4px 10px;border-radius:4px;font-size:11px;font-weight:600;color:var(--tx2);}
 .prod-link{font-size:13px;font-weight:600;color:var(--blue);}
 
+/* ── NEW: produk section "Lihat semua produk" CTA row ── */
+.produk-cta-row{margin-top:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:20px 24px;background:var(--bg1);border-radius:var(--rl);border:1px solid var(--bds);}
+.produk-cta-row p{font-size:14px;color:var(--tx2);}
+.btn-outline-blue{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);border:1px solid var(--bdr);padding:10px 20px;border-radius:var(--r);transition:all .15s;}
+.btn-outline-blue:hover{background:var(--blue);color:#fff;}
+
 /* ─── VALIDATOR ─── */
 #validator{background:var(--bg1);}
 .val-intro{max-width:600px;margin-bottom:40px;font-size:17px;color:var(--tx2);}
@@ -383,13 +404,15 @@ details[open] summary::after{transform:rotate(45deg);}
 
 /* ─── FOOTER ─── */
 footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32px;}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
 .foot-logo-wrap{display:flex;align-items:center;margin-bottom:12px;}
 .foot-brand-text{font-size:13px;color:var(--tx2);line-height:1.6;max-width:280px;}
 .foot-col h5{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .foot-col li a{font-size:13px;color:var(--tx2);}
 .foot-col li a:hover{color:var(--blue);}
+/* NEW: footer "Lihat semua" link */
+.foot-viewall{font-size:13px;font-weight:700;color:var(--blue)!important;margin-top:4px;}
 .foot-bottom{border-top:1px solid var(--bds);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;}
 
 /* ─── FLOATING ─── */
@@ -408,7 +431,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   .hero-img-wrap{margin-top:24px;}
   .method-grid{grid-template-columns:1fr;}
   .method-img{margin-bottom:24px;}
-  .foot-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
   .val-footer{flex-direction:column;}
   .fd-grid{grid-template-columns:1fr;}
   .hero-proof{gap:20px;}
@@ -429,6 +452,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 @media(max-width:480px){
   .cta-row{flex-direction:column;align-items:center;}
   .stats-grid{grid-template-columns:1fr 1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .hero-quicklinks{gap:8px;}
 }
 @media(max-width:1100px){.nav-menu{display:none;}.nav-cta{display:none;}.nav-ham{display:flex;}}
 </style>
@@ -472,265 +497,11 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       "@type": "OfferCatalog",
       "name": "Produk & Layanan Paving Block",
       "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Holland K200",
-            "description": "Paving block tipe Holland mutu K200. Tersedia tebal 6cm dan 8cm. Cocok untuk pedestrian dan halaman ringan.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "75000",
-              "highPrice": "85000",
-              "offerCount": "2",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Holland K300",
-            "description": "Paving block tipe Holland mutu K300. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk jalan perumahan dan area parkir.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "90000",
-              "highPrice": "150000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Holland K350",
-            "description": "Paving block tipe Holland mutu K350. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk jalan dengan beban sedang.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "100000",
-              "highPrice": "155000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Holland K400",
-            "description": "Paving block tipe Holland mutu K400. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk kawasan industri dan jalan berat.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "110000",
-              "highPrice": "160000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Ubin K200",
-            "description": "Paving block tipe Ubin (Square) mutu K200. Tersedia tebal 6cm dan 8cm. Cocok untuk pedestrian dan taman.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "75000",
-              "highPrice": "85000",
-              "offerCount": "2",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Ubin K300",
-            "description": "Paving block tipe Ubin (Square) mutu K300. Tersedia tebal 6cm, 8cm, dan 10cm.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "90000",
-              "highPrice": "150000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Ubin K350",
-            "description": "Paving block tipe Ubin (Square) mutu K350. Tersedia tebal 6cm, 8cm, dan 10cm.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "100000",
-              "highPrice": "155000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Ubin K400",
-            "description": "Paving block tipe Ubin (Square) mutu K400. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk kawasan industri.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "110000",
-              "highPrice": "160000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Cacing K300",
-            "description": "Paving block tipe Cacing (Uni) mutu K300. Tersedia tebal 6cm, 8cm, dan 10cm.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "90000",
-              "highPrice": "150000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Cacing K350",
-            "description": "Paving block tipe Cacing (Uni) mutu K350. Tersedia tebal 6cm, 8cm, dan 10cm.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "100000",
-              "highPrice": "155000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Cacing K400",
-            "description": "Paving block tipe Cacing (Uni) mutu K400. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk kawasan industri.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "110000",
-              "highPrice": "160000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Grassblock Lubang 8",
-            "description": "Paving block rumput tipe lubang 8. Tersedia tebal 6cm dan 8cm. Cocok untuk area hijau, parkir rumput, dan tepi jalan.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "133000",
-              "highPrice": "170000",
-              "offerCount": "2",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Grassblock Lubang 5",
-            "description": "Paving block rumput tipe lubang 5. Tersedia tebal 6cm dan 8cm. Cocok untuk area hijau dan parkir berumput.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "119000",
-              "highPrice": "150000",
-              "offerCount": "2",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Kanstin",
-            "description": "Kanstin beton untuk pembatas jalan, trotoar, dan tepi area paving. Tersedia berbagai ukuran dan mutu.",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "18000",
-              "highPrice": "60000",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Jasa Pemasangan Paving Block",
-            "description": "Jasa pemasangan paving block mulai Rp 45.000/m². Termasuk opsi penambahan lapisan abu batu 5cm (+Rp 35.000/m²) dan pemadatan lahan (+Rp 40.000/m²).",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "45000",
-              "highPrice": "120000",
-              "offerCount": "3",
-              "seller": { "@id": "https://solidpaving.id/#business" }
-            }
-          }
-        }
+        {"@type":"Offer","itemOffered":{"@type":"Product","name":"Paving Block Holland K200","description":"Paving block tipe Holland mutu K200. Tersedia tebal 6cm dan 8cm. Cocok untuk pedestrian dan halaman ringan.","offers":{"@type":"AggregateOffer","priceCurrency":"IDR","lowPrice":"75000","highPrice":"85000","offerCount":"2","seller":{"@id":"https://solidpaving.id/#business"}}}},
+        {"@type":"Offer","itemOffered":{"@type":"Product","name":"Paving Block Holland K300","description":"Paving block tipe Holland mutu K300. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk jalan perumahan dan area parkir.","offers":{"@type":"AggregateOffer","priceCurrency":"IDR","lowPrice":"90000","highPrice":"150000","offerCount":"3","seller":{"@id":"https://solidpaving.id/#business"}}}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Jasa Pemasangan Paving Block","description":"Jasa pemasangan paving block mulai Rp 45.000/m². Termasuk opsi penambahan lapisan abu batu 5cm (+Rp 35.000/m²) dan pemadatan lahan (+Rp 40.000/m²).","offers":{"@type":"AggregateOffer","priceCurrency":"IDR","lowPrice":"45000","highPrice":"120000","offerCount":"3","seller":{"@id":"https://solidpaving.id/#business"}}}}
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Supplier & Jasa Pemasangan Paving Block",
-    "description": "Penyediaan material paving block dan jasa pemasangan lengkap untuk proyek residensial, komersial, dan industri di Jabodetabek dan Jawa Barat.",
-    "provider": {
-      "@id": "https://solidpaving.id/#business"
-    },
-    "areaServed": [
-      "Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi",
-      "Cikarang", "Karawang", "Bandung", "Cimahi", "Sukabumi"
-    ],
-    "serviceType": [
-      "Supplier Paving Block",
-      "Jasa Pemasangan Paving Block",
-      "Kontraktor Paving"
-    ]
   }
 ]
 </script>  
@@ -749,7 +520,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 
   <!-- Desktop menu -->
   <ul class="nav-menu">
-    <!-- Produk -->
+
+    <!-- ── PRODUK (dengan link ke /produk/) ── -->
     <li class="nav-item">
       <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -762,9 +534,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="pnl-sep"></div>
         <div class="pnl-head">Aksesoris</div>
         <a href="/produk/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Kanstin / Kerb Beton</span><span class="pnl-sub">Pengunci tepi paving</span></div></a>
+        <!-- ★ BARU: link ke halaman utama Produk -->
+        <a href="/produk/" class="pnl-viewall">Lihat Semua Produk <span>→</span></a>
       </div>
     </li>
-    <!-- Layanan -->
+
+    <!-- ── LAYANAN (dengan link ke /layanan/) ── -->
     <li class="nav-item">
       <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -776,8 +551,11 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="pnl-sep"></div>
         <div class="pnl-head">Supply Material</div>
         <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span><span class="pnl-sub">Kirim ke lokasi proyek Anda</span></div></a>
+        <!-- ★ BARU: link ke halaman utama Layanan -->
+        <a href="/layanan/" class="pnl-viewall">Lihat Semua Layanan <span>→</span></a>
       </div>
     </li>
+
     <!-- Harga -->
     <li class="nav-item">
       <button class="nav-btn">Harga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
@@ -793,6 +571,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </a>
       </div>
     </li>
+
     <!-- Area Layanan -->
     <li class="nav-item">
       <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
@@ -824,6 +603,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </div>
       </div>
     </li>
+
     <!-- Tentang -->
     <li class="nav-item">
       <button class="nav-btn">Tentang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
@@ -836,6 +616,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <a href="mailto:sales@solidpaving.id" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span><span class="pnl-sub">sales@solidpaving.id</span></div></a>
       </div>
     </li>
+
     <!-- Panduan -->
     <li class="nav-item">
       <button class="nav-btn">Panduan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
@@ -854,7 +635,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 
   <!-- CTA -->
   <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a>
-  <!-- Hamburger — selalu di ujung kanan -->
+  <!-- Hamburger -->
   <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -863,17 +644,21 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 <!-- Mobile drawer -->
 <div class="mob-drawer" id="mobDrawer">
   <div class="mob-head">Produk</div>
-  <a href="/produk/paving-holland/" onclick="closeMob()">🧱 Holland (Bata)</a>
-  <a href="/produk/paving-ubin/" onclick="closeMob()">⬛ Ubin (Square)</a>
-  <a href="/produk/paving-cacing/" onclick="closeMob()">〰️ Cacing (Uni)</a>
-  <a href="/produk/grassblock/" onclick="closeMob()">🌿 Grassblock</a>
-  <a href="/produk/kanstin/" onclick="closeMob()">📐 Kanstin / Kerb</a>
+  <!-- ★ BARU: Lihat Semua Produk di atas daftar sub-halaman -->
+  <a href="/produk/" class="mob-viewall" onclick="closeMob()">🧱 Lihat Semua Produk →</a>
+  <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
+  <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
+  <a href="/produk/paving-cacing/" onclick="closeMob()">Cacing (Uni)</a>
+  <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
+  <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
   <div class="mob-head">Layanan</div>
-  <a href="/layanan/jasa-pasang/" onclick="closeMob()">🔨 Jasa Pasang Paving Block</a>
-  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">🅿️ Paving Lahan Parkir</a>
-  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">🏭 Paving Kawasan Industri</a>
-  <a href="/layanan/paving-perumahan/" onclick="closeMob()">🏠 Paving Perumahan</a>
-  <a href="/layanan/supplier-paving/" onclick="closeMob()">🚚 Supplier Material Only</a>
+  <!-- ★ BARU: Lihat Semua Layanan di atas daftar sub-halaman -->
+  <a href="/layanan/" class="mob-viewall" onclick="closeMob()">🔨 Lihat Semua Layanan →</a>
+  <a href="/layanan/jasa-pasang/" onclick="closeMob()">Jasa Pasang Paving Block</a>
+  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
+  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">Paving Kawasan Industri</a>
+  <a href="/layanan/paving-perumahan/" onclick="closeMob()">Paving Perumahan</a>
+  <a href="/layanan/supplier-paving/" onclick="closeMob()">Supplier Material Only</a>
   <div class="mob-head">Harga</div>
   <a href="/#kalkulator" onclick="closeMob()">🧮 Kalkulator Estimasi</a>
   <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">💰 Daftar Harga 2026</a>
@@ -905,7 +690,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="btn-primary">Minta Survei & RAB Gratis</a>
         <a href="#kalkulator" class="btn-outline">Hitung Estimasi Biaya</a>
       </div>
-      <div class="hero-proof">
+      <!-- ★ BARU: quick-link ke Produk & Layanan di bawah CTA hero -->
+      <div class="hero-quicklinks">
+        <a href="/produk/" class="hero-ql">🧱 Lihat Semua Produk</a>
+        <a href="/layanan/" class="hero-ql">🔨 Lihat Semua Layanan</a>
+      </div>
+      <div class="hero-proof" style="margin-top:24px;">
         <div><div class="proof-num">50+</div><div class="proof-label">Proyek Selesai</div></div>
         <div><div class="proof-num">40rb+</div><div class="proof-label">m² Terpasang</div></div>
         <div><div class="proof-num">3 Bln</div><div class="proof-label">Garansi Tertulis</div></div>
@@ -978,6 +768,10 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="step"><div class="step-num">05</div><div><h3>Pemasangan Pola & Kanstin Pengunci</h3><p>Pola kuncian rapat + kanstin di setiap tepi agar tidak merenggang.</p><span class="step-tag">Mencegah: bergeser</span></div></div>
         <div class="step"><div class="step-num">06</div><div><h3>Finishing & Serah Terima Bergaransi</h3><p>Nat, pemadatan akhir, pembersihan + <strong>garansi 3 bulan tertulis</strong>.</p><span class="step-tag">Jaminan tertulis</span></div></div>
       </div>
+    </div>
+    <!-- ★ BARU: CTA ke halaman Layanan setelah metode -->
+    <div style="margin-top:32px;">
+      <a href="/layanan/" class="btn-outline-blue" style="display:inline-flex;">Lihat Detail Semua Layanan →</a>
     </div>
   </div>
 </section>
@@ -1189,6 +983,11 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="prod-body"><h3>Cacing (Uni)</h3><p>Kuncian paling rapat. Ideal untuk area beban kendaraan berat.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Cacing." class="prod-link">Cek Harga / m² →</a></div>
       </div>
     </div>
+    <!-- ★ BARU: CTA row ke halaman /produk/ -->
+    <div class="produk-cta-row">
+      <p>Masih ada Hexagon, Grassblock, Kanstin, dan variasi mutu lainnya.</p>
+      <a href="/produk/" class="btn-outline-blue">Lihat Semua Produk →</a>
+    </div>
   </div>
 </section>
 
@@ -1219,7 +1018,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <div class="sec-label">06 — Bukti Lapangan</div>
     <h2>Dikerjakan, <span class="blue">Bukan Sekadar Diklaim</span></h2>
     <div class="divider"></div>
-    <!-- Porto Strip — 6 hasil akhir terbaik -->
     <div class="porto-strip">
       <div class="porto-strip-item">
         <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0735.jpeg?w=480&q=80&format=webp" alt="OFFO Living Cikampek — lahan parkir paving block rapi" loading="lazy" width="480" height="360">
@@ -1250,8 +1048,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       <p>12 proyek terdokumentasi · dari Labuan hingga Sudirman Jakarta</p>
       <a href="/portofolio/" class="porto-cta-link">Lihat Semua Proyek <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9,18 15,12 9,6"/></svg></a>
     </div>
-
-
 
     <div class="testis">
       <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-q">"Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."</p><div class="testi-av"><div class="av">BW</div><div><div class="av-name">Budi Wicaksono</div><div class="av-role">Manajer Operasional, Pergudangan</div></div></div></div>
@@ -1361,6 +1157,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <p>Kirim lokasi dan luas lahan Anda. Kami balas dengan rekomendasi mutu, estimasi biaya, dan jadwal — dalam 24 jam kerja.</p>
     <div class="cta-row">
       <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20mau%20survei%20gratis." class="btn-white">Chat WhatsApp Sekarang</a>
+      <a href="/produk/" class="btn-ow">Lihat Produk</a>
+      <a href="/layanan/" class="btn-ow">Lihat Layanan</a>
       <a href="mailto:sales@solidpaving.id" class="btn-ow">sales@solidpaving.id</a>
     </div>
     <p class="cta-note">Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat</p>
@@ -1381,19 +1179,43 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </a>
         <p class="foot-brand-text">Supplier paving block K200–K400 & jasa pasang bergaransi. Untuk kontraktor, developer, dan pemilik bisnis. Jabodetabek & Jawa Barat.</p>
       </div>
-      <div class="foot-col"><h3 style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;">Layanan</h3><ul>
-        <li><a href="/produk/paving-holland/">Paving Holland</a></li>
-        <li><a href="/produk/paving-ubin/">Paving Ubin</a></li>
-        <li><a href="/produk/paving-cacing/">Paving Cacing</a></li>
-        <li><a href="/layanan/jasa-pasang/">Jasa Pasang</a></li>
-        <li><a href="/blog/">Panduan & Artikel</a></li>
-      </ul></div>
-      <div class="foot-col"><h3 style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;">Kontak</h3><ul>
-        <li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li>
-        <li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li>
-        <li><a href="/tentang-kami/">Tentang Kami</a></li>
-        <li><a href="/#faq">FAQ</a></li>
-      </ul></div>
+
+      <!-- ★ KOLOM PRODUK — sekarang link pertama ke /produk/ -->
+      <div class="foot-col">
+        <h5>Produk</h5>
+        <ul>
+          <li><a href="/produk/" class="foot-viewall">Semua Produk →</a></li>
+          <li><a href="/produk/paving-holland/">Paving Holland</a></li>
+          <li><a href="/produk/paving-ubin/">Paving Ubin</a></li>
+          <li><a href="/produk/paving-cacing/">Paving Cacing</a></li>
+          <li><a href="/produk/grassblock/">Grassblock</a></li>
+          <li><a href="/produk/kanstin/">Kanstin / Kerb</a></li>
+        </ul>
+      </div>
+
+      <!-- ★ KOLOM LAYANAN — sekarang link pertama ke /layanan/ -->
+      <div class="foot-col">
+        <h5>Layanan</h5>
+        <ul>
+          <li><a href="/layanan/" class="foot-viewall">Semua Layanan →</a></li>
+          <li><a href="/layanan/jasa-pasang/">Jasa Pasang</a></li>
+          <li><a href="/layanan/paving-lahan-parkir/">Paving Parkir</a></li>
+          <li><a href="/layanan/paving-kawasan-industri/">Kawasan Industri</a></li>
+          <li><a href="/layanan/paving-perumahan/">Perumahan</a></li>
+          <li><a href="/layanan/supplier-paving/">Supplier Material</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Kontak</h5>
+        <ul>
+          <li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li>
+          <li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li>
+          <li><a href="/tentang-kami/">Tentang Kami</a></li>
+          <li><a href="/blog/">Blog & Panduan</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 SolidPaving.id</span>
@@ -1426,7 +1248,6 @@ function hargaPerM2(){if(isGrass()){var g=HG[S.jenis];var pcs=S.tebal==='6'?g.pc
 function R(n){if(!n||n===0)return'—';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
 function Rk(n){if(!n)return'—';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
 
-// Nav hamburger
 var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
 ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
 window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
