@@ -21,6 +21,7 @@
     *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
     body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg0);color:var(--tx1);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
     a{color:var(--blue);text-decoration:none;}
+    /* FIX: nav sticky, backdrop via ::before */
     nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;align-items:center;height:64px;gap:16px;}
     nav::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:-1;}
     .nav-logo{display:flex;align-items:center;flex-shrink:0;}
@@ -43,6 +44,7 @@
     .nav-panel::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;}
     .nav-item:hover .nav-panel,.nav-item.js-open .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
     .nav-panel.right{left:auto;right:0;}
+    /* FIX: panel-mega 2 kolom */
     .nav-panel.panel-mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;}
     .mega-col{padding:4px;}.mega-sep{background:var(--bds);}
     .pnl-head{padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-top:6px;}
@@ -64,7 +66,8 @@
     .mob-drawer a{font-size:14px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bds);}
     .mob-cta{margin-top:14px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;display:block;border-bottom:none!important;}
     .wrap{max-width:800px;margin:0 auto;padding:0 5%;}
-    .breadcrumb{padding:20px 0 0;font-size:13px;color:var(--tx3);}
+    /* FIX: breadcrumb z-index dinaikkan */
+    .breadcrumb{padding:20px 0 0;font-size:13px;color:var(--tx3);position:relative;z-index:10;}
     .breadcrumb a{color:var(--tx3);}
     .breadcrumb span{margin:0 6px;}
     .art-header{padding:20px 0 32px;border-bottom:1px solid var(--bds);margin-bottom:40px;}
@@ -116,6 +119,10 @@
     .foot-col li a{font-size:13px;color:var(--tx2);}
     .foot-col li a:hover{color:var(--blue);}
     .foot-bottom{border-top:1px solid var(--bds);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;}
+    /* FIX: float-calc ditambahkan */
+    .float-calc{position:fixed;bottom:100px;right:24px;z-index:88;}
+    .float-calc-btn{display:flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:12px 18px;border-radius:100px;font-size:14px;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(46,62,95,.35);white-space:nowrap;font-family:inherit;text-decoration:none;}
+    .float-calc-btn:hover{background:var(--blue2);color:#fff;}
     .wa-float{position:fixed;bottom:28px;right:24px;z-index:95;background:var(--wa);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s;}
     .wa-float:hover{transform:scale(1.08);}
     .wa-float svg{width:28px;height:28px;fill:#fff;}
@@ -156,7 +163,7 @@
     .layer-table tr:nth-child(even) td{background:var(--bg1);}
     .layer-table .lbl{font-weight:700;color:var(--tx1);}
 
-    @media(max-width:600px){.calc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.calc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}.float-calc-btn{font-size:13px;padding:11px 14px;}}
   </style>
 </head>
 <body>
@@ -198,20 +205,33 @@
         <a href="https://wa.me/6285943492832" class="pnl-link" style="color:var(--green);"><div class="pnl-ico" style="background:rgba(15,110,86,.1);">✉️</div><div><span class="pnl-title" style="color:var(--green);">Minta RAB Gratis</span></div></a>
       </div>
     </li>
+    <!-- FIX: Area Layanan lengkap dengan Jakarta Timur, Jakarta Selatan, Serpong, Cibitung -->
     <li class="nav-item"><button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel panel-mega right">
         <div class="mega-col">
           <div class="pnl-head">Jakarta & Sekitarnya</div>
-          <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a><a href="/depok/" class="pnl-plain">Depok</a><a href="/bogor/" class="pnl-plain">Bogor</a>
+          <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
+          <a href="/jakarta-timur/" class="pnl-plain">Jakarta Timur</a>
+          <a href="/jakarta-selatan/" class="pnl-plain">Jakarta Selatan</a>
+          <a href="/depok/" class="pnl-plain">Depok</a>
+          <a href="/bogor/" class="pnl-plain">Bogor</a>
           <div class="pnl-head">Tangerang</div>
-          <a href="/tangerang/" class="pnl-plain">Tangerang</a><a href="/tangerang-selatan/" class="pnl-plain">Tangerang Selatan</a>
+          <a href="/tangerang/" class="pnl-plain">Tangerang</a>
+          <a href="/tangerang-selatan/" class="pnl-plain">Tangerang Selatan</a>
+          <a href="/serpong/" class="pnl-plain">Serpong</a>
         </div>
         <div class="mega-sep"></div>
         <div class="mega-col">
           <div class="pnl-head">Bekasi & Kawasan Industri</div>
-          <a href="/bekasi/" class="pnl-plain">Bekasi</a><a href="/cikarang/" class="pnl-plain">Cikarang</a><a href="/jababeka/" class="pnl-plain">Jababeka</a><a href="/mm2100/" class="pnl-plain">MM2100</a><a href="/karawang/" class="pnl-plain">Karawang</a>
+          <a href="/bekasi/" class="pnl-plain">Bekasi</a>
+          <a href="/cikarang/" class="pnl-plain">Cikarang</a>
+          <a href="/jababeka/" class="pnl-plain">Jababeka</a>
+          <a href="/mm2100/" class="pnl-plain">MM2100</a>
+          <a href="/cibitung/" class="pnl-plain">Cibitung</a>
+          <a href="/karawang/" class="pnl-plain">Karawang</a>
           <div class="pnl-head">Jawa Barat</div>
-          <a href="/bandung/" class="pnl-plain">Bandung</a><a href="/purwakarta/" class="pnl-plain">Purwakarta</a>
+          <a href="/bandung/" class="pnl-plain">Bandung</a>
+          <a href="/purwakarta/" class="pnl-plain">Purwakarta</a>
         </div>
       </div>
     </li>
@@ -280,7 +300,6 @@
 
     <p>Menghitung kebutuhan paving block bukan sekadar mengalikan panjang dikali lebar. Ada beberapa lapisan perhitungan yang perlu dipahami agar estimasi material Anda akurat — dan anggaran proyek tidak jebol di tengah jalan.</p>
 
-    <!-- KALKULATOR INTERAKTIF -->
     <h2>Kalkulator <span class="blue">Estimasi Material Paving</span></h2>
     <div class="divider"></div>
     <p>Masukkan ukuran area Anda dan kalkulator ini akan memperkirakan kebutuhan semua material utama secara otomatis.</p>
@@ -481,6 +500,14 @@
     <div class="foot-bottom"><span>© 2026 SolidPaving.id</span><span>Supplier Paving Block & Jasa Pasang · Jabodetabek & Jawa Barat</span></div>
   </div>
 </footer>
+
+<!-- FIX: Tombol floating Hitung Estimasi Biaya ditambahkan -->
+<div class="float-calc">
+  <a href="/#kalkulator" class="float-calc-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h.01M12 9h.01M15 9h.01M9 12h.01M12 12h.01M15 12h.01M9 15h.01M12 15h.01M15 15h.01"/></svg>
+    Hitung Estimasi Biaya
+  </a>
+</div>
 
 <a href="https://wa.me/6285943492832" class="wa-float" aria-label="Chat WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
