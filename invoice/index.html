@@ -13,154 +13,146 @@ sitemap: false
 :root{
   --blue:#2E3E5F;--blue2:#3D5280;--accent:#95B3D9;
   --bg0:#fff;--bg1:#F4F7FB;--bg2:#EBF1F8;
-  --tx1:#0D1A2E;--tx2:#2D4466;--tx3:#4A6080;
-  --bdr:rgba(46,62,95,.18);--bds:rgba(13,26,46,.08);
-  --green:#0F6E56;--red:#b41e1e;--r:6px;
+  --tx1:#0D1A2E;--tx2:#2D4466;--tx3:#6A80A0;
+  --bdr:rgba(46,62,95,.15);--bds:rgba(13,26,46,.07);
+  --green:#0F6E56;--red:#b41e1e;--r:5px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:#e8edf3;color:var(--tx1);font-size:14px;}
-.app{display:grid;grid-template-columns:400px 1fr;min-height:100vh;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#e8edf3;color:var(--tx1);font-size:13px;line-height:1.5;}
+.app{display:grid;grid-template-columns:390px 1fr;min-height:100vh;}
 
 /* FORM */
-.fp{background:var(--bg1);padding:18px;overflow-y:auto;border-right:1px solid var(--bdr);position:sticky;top:0;height:100vh;}
-.fp h2{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);}
-.sec{margin-bottom:16px;}
-.sec-t{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:7px;padding-bottom:4px;border-bottom:1px solid var(--bds);}
-.r2{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
-.r3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;}
-.f{margin-bottom:7px;}
-label{display:block;font-size:10px;font-weight:600;color:var(--tx2);margin-bottom:2px;}
+.fp{background:var(--bg1);padding:16px;overflow-y:auto;border-right:1px solid var(--bdr);position:sticky;top:0;height:100vh;}
+.fp h2{font-size:12px;font-weight:600;color:var(--blue);margin-bottom:12px;padding-bottom:8px;border-bottom:1.5px solid var(--accent);letter-spacing:.5px;}
+.sec{margin-bottom:14px;}
+.sec-t{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--bds);}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.f{margin-bottom:6px;}
+label{display:block;font-size:10px;color:var(--tx3);margin-bottom:2px;}
 input,select,textarea{width:100%;padding:5px 8px;border:1px solid var(--bdr);border-radius:var(--r);font-size:12px;font-family:inherit;color:var(--tx1);background:var(--bg0);outline:none;transition:border-color .15s;}
-input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(149,179,217,.2);}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(149,179,217,.15);}
 textarea{resize:vertical;}
-.inv-no-row{display:flex;gap:6px;align-items:flex-end;}
+.inv-no-row{display:flex;gap:5px;align-items:flex-end;}
 .inv-no-row input{flex:1;}
-.btn-gen{padding:5px 10px;background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);font-size:11px;font-weight:600;color:var(--blue2);cursor:pointer;white-space:nowrap;}
+.btn-gen{padding:5px 9px;background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);font-size:10px;color:var(--blue2);cursor:pointer;white-space:nowrap;}
 .btn-gen:hover{background:var(--accent);color:#fff;}
 
-/* ITEMS */
-.ih{display:grid;grid-template-columns:1fr 64px 90px 26px;gap:4px;margin-bottom:3px;}
-.ih span{font-size:9px;color:var(--tx3);font-weight:700;}
-.ir{display:grid;grid-template-columns:1fr 64px 90px 26px;gap:4px;align-items:start;margin-bottom:4px;}
+.ih{display:grid;grid-template-columns:1fr 60px 88px 24px;gap:4px;margin-bottom:3px;}
+.ih span{font-size:9px;color:var(--tx3);}
+.ir{display:grid;grid-template-columns:1fr 60px 88px 24px;gap:4px;align-items:start;margin-bottom:4px;}
 .ir input{font-size:11px;padding:4px 6px;}
-.bd{width:26px;height:28px;background:none;border:1px solid rgba(180,30,30,.25);border-radius:var(--r);color:var(--red);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;}
-.bd:hover{background:rgba(180,30,30,.08);}
-.ba{background:none;border:1px dashed var(--accent);color:var(--blue2);padding:5px 8px;border-radius:var(--r);cursor:pointer;font-size:11px;font-weight:600;width:100%;margin-top:2px;}
-.ba:hover{background:var(--bg2);}
+.bd{width:24px;height:26px;background:none;border:1px solid rgba(180,30,30,.2);border-radius:var(--r);color:var(--red);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;opacity:.7;}
+.bd:hover{opacity:1;background:rgba(180,30,30,.06);}
+.ba{background:none;border:1px dashed var(--bdr);color:var(--tx3);padding:4px 8px;border-radius:var(--r);cursor:pointer;font-size:11px;width:100%;margin-top:2px;transition:all .15s;}
+.ba:hover{border-color:var(--accent);color:var(--blue2);}
 
-/* PAYMENT SUMMARY BOX */
-.pay-summary{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);padding:10px 12px;margin-bottom:8px;font-size:12px;}
-.pay-row{display:flex;justify-content:space-between;padding:2px 0;color:var(--tx2);}
-.pay-row.bold{font-weight:700;color:var(--tx1);border-top:1px solid var(--bdr);margin-top:4px;padding-top:6px;}
+.pay-summary{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);padding:8px 10px;margin-bottom:6px;font-size:11px;}
+.pay-row{display:flex;justify-content:space-between;padding:2px 0;color:var(--tx3);}
+.pay-row.em{color:var(--tx1);border-top:1px solid var(--bdr);margin-top:3px;padding-top:4px;}
 .pay-row.red{color:var(--red);}
-.pay-row.green{color:var(--green);font-weight:600;}
+.pay-row.green{color:var(--green);}
 
-.btn-print{width:100%;background:var(--blue);color:#fff;border:none;padding:10px;border-radius:var(--r);font-size:13px;font-weight:700;cursor:pointer;margin-top:6px;}
+.btn-print{width:100%;background:var(--blue);color:#fff;border:none;padding:9px;border-radius:var(--r);font-size:12px;cursor:pointer;margin-top:4px;letter-spacing:.3px;}
 .btn-print:hover{background:var(--blue2);}
 
 /* PREVIEW */
 .pp{background:#c8d3e0;padding:24px;overflow-y:auto;display:flex;justify-content:center;align-items:flex-start;}
 
-/* A4 INVOICE */
-.a4{background:#fff;width:210mm;min-height:297mm;padding:14mm 14mm 12mm;font-family:'Segoe UI',system-ui,sans-serif;font-size:9.5pt;color:#0D1A2E;box-shadow:0 4px 32px rgba(0,0,0,.18);position:relative;}
+/* A4 */
+.a4{background:#fff;width:210mm;min-height:297mm;padding:13mm 14mm 11mm;font-family:'Segoe UI',system-ui,sans-serif;font-size:8.5pt;color:#1a2a40;line-height:1.55;box-shadow:0 4px 32px rgba(0,0,0,.15);}
 
 /* HEADER */
-.a4-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8mm;padding-bottom:5mm;border-bottom:2px solid #2E3E5F;}
-.logo-block .logo-main{font-size:20pt;font-weight:900;letter-spacing:3px;line-height:1;}
-.logo-block .logo-main .s1{color:#2E3E5F;}
-.logo-block .logo-main .s2{color:#95B3D9;font-weight:300;}
-.logo-block .tagline{font-size:7pt;color:#4A6080;letter-spacing:1.5px;margin-top:2px;}
-.logo-block .contact{font-size:7.5pt;color:#4A6080;margin-top:5px;line-height:1.6;}
+.a4-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7mm;padding-bottom:5mm;border-bottom:1px solid #d0d8e8;}
+.logo-main{font-size:17pt;letter-spacing:2.5px;line-height:1;}
+.logo-main .s1{color:#2E3E5F;font-weight:700;}
+.logo-main .s2{color:#95B3D9;font-weight:300;}
+.tagline{font-size:6.5pt;color:#8A9AB8;letter-spacing:1px;margin-top:2px;}
+.from-contact{font-size:7pt;color:#8A9AB8;margin-top:6px;line-height:1.7;}
 
 .inv-info-block{text-align:right;}
-.inv-info-block .inv-label{font-size:7pt;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:3px;}
-.inv-info-block .inv-number{font-size:16pt;font-weight:900;color:#2E3E5F;letter-spacing:1px;line-height:1.1;}
-.status-badge{display:inline-block;padding:3px 10px;border-radius:3px;font-size:7.5pt;font-weight:700;margin-top:5px;letter-spacing:.5px;}
+.inv-label{font-size:6.5pt;color:#8A9AB8;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px;}
+.inv-number{font-size:13pt;color:#2E3E5F;font-weight:600;letter-spacing:.5px;line-height:1.2;}
+.status-badge{display:inline-block;padding:2px 9px;border-radius:3px;font-size:6.5pt;letter-spacing:.5px;margin-top:4px;}
 
-/* META ROW */
-.meta-row{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:6mm;}
-.meta-box{background:#F4F7FB;border-radius:4px;padding:6px 10px;}
-.meta-box .ml{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A6080;margin-bottom:2px;}
-.meta-box .mv{font-size:9pt;color:#0D1A2E;font-weight:600;}
-.meta-box .mv2{font-size:8pt;color:#2D4466;margin-top:1px;}
+/* META */
+.meta-row{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
+.meta-box{background:#F7F9FC;border-radius:3px;padding:5px 8px;}
+.ml{font-size:6.5pt;color:#8A9AB8;letter-spacing:1px;text-transform:uppercase;margin-bottom:1px;}
+.mv{font-size:8.5pt;color:#1a2a40;}
+.mv-due{color:#b41e1e;}
+.mv2{font-size:7pt;color:#8A9AB8;margin-top:1px;}
 
 /* CLIENT */
-.client-row{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:6mm;}
-.client-box{background:#F4F7FB;border:1px solid rgba(13,26,46,.08);border-radius:4px;padding:8px 10px;}
-.box-title{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A6080;margin-bottom:5px;}
-.client-name{font-size:11pt;font-weight:700;color:#0D1A2E;margin-bottom:4px;}
-.client-detail{font-size:8pt;color:#2D4466;line-height:1.7;}
-.from-box{background:#2E3E5F;border-radius:4px;padding:8px 10px;}
-.from-box .box-title{color:rgba(255,255,255,.55);}
-.from-box .client-name{color:#fff;font-size:10pt;}
-.from-box .client-detail{color:rgba(255,255,255,.75);}
+.client-row{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
+.client-box{background:#F7F9FC;border-radius:3px;padding:7px 9px;}
+.box-lbl{font-size:6.5pt;color:#8A9AB8;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.client-name{font-size:9.5pt;color:#1a2a40;font-weight:600;margin-bottom:3px;}
+.client-detail{font-size:7.5pt;color:#4A6080;line-height:1.7;}
+.from-box{background:#2E3E5F;border-radius:3px;padding:7px 9px;}
+.from-box .box-lbl{color:rgba(255,255,255,.4);}
+.from-box .client-name{color:#fff;font-weight:500;}
+.from-box .client-detail{color:rgba(255,255,255,.6);}
 
 /* TABLE */
-table.it{width:100%;border-collapse:collapse;margin-bottom:4mm;font-size:8.5pt;}
+table.it{width:100%;border-collapse:collapse;margin-bottom:5mm;font-size:8pt;}
 table.it thead tr{background:#2E3E5F;}
-table.it thead th{color:#fff;padding:6px 8px;font-size:7pt;font-weight:700;letter-spacing:.8px;text-transform:uppercase;}
+table.it thead th{color:rgba(255,255,255,.8);padding:5px 7px;font-size:6.5pt;font-weight:500;letter-spacing:.8px;text-transform:uppercase;}
 table.it thead th:not(:first-child){text-align:right;}
-table.it tbody tr{border-bottom:1px solid rgba(13,26,46,.07);}
-table.it tbody tr:nth-child(even){background:#F4F7FB;}
-table.it tbody td{padding:6px 8px;}
-table.it tbody td:not(:first-child){text-align:right;color:#2D4466;}
-table.it tbody td:last-child{font-weight:600;color:#0D1A2E;}
-table.it tfoot tr{border-top:1.5px solid #2E3E5F;}
-table.it tfoot td{padding:5px 8px;font-size:8.5pt;}
+table.it tbody tr{border-bottom:1px solid #EEF1F6;}
+table.it tbody tr:nth-child(even){background:#FAFBFD;}
+table.it tbody td{padding:5px 7px;color:#1a2a40;}
+table.it tbody td:not(:first-child){text-align:right;color:#4A6080;}
+table.it tbody td:last-child{color:#1a2a40;}
 
 /* PAYMENT BLOCK */
-.pay-block{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm;}
-.pay-table{font-size:8.5pt;width:100%;}
-.pay-table tr td{padding:3px 0;}
-.pay-table tr td:last-child{text-align:right;font-weight:600;}
-.pay-table .pt-sub td{color:#4A6080;}
-.pay-table .pt-disc td{color:#b41e1e;}
-.pay-table .pt-ppn td{color:#4A6080;}
-.pay-table .pt-gross{border-top:1px solid rgba(13,26,46,.15);}
-.pay-table .pt-gross td{font-weight:700;padding-top:6px;}
-.pay-table .pt-termin td{color:#2E3E5F;font-weight:700;}
-.pay-table .pt-paid td{color:#0F6E56;}
-.pay-table .pt-sisa td{color:#b41e1e;font-size:9.5pt;font-weight:700;}
+.pay-block{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
+.pay-table{font-size:8pt;width:100%;border-top:1px solid #EEF1F6;padding-top:3mm;}
+.pay-table tr td{padding:2.5px 0;color:#4A6080;}
+.pay-table tr td:last-child{text-align:right;}
+.pt-disc td{color:#b41e1e;}
+.pt-gross td{color:#1a2a40;border-top:1px solid #d0d8e8;padding-top:5px;margin-top:2px;}
+.pt-termin td{color:#2E3E5F;}
+.pt-paid td{color:#0F6E56;}
+.pt-sisa td{color:#b41e1e;}
 
-.termin-box{background:#2E3E5F;border-radius:4px;padding:10px 12px;text-align:center;}
-.termin-box .tb-label{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:4px;}
-.termin-box .tb-pct{font-size:18pt;font-weight:900;color:#95B3D9;line-height:1;}
-.termin-box .tb-amount{font-size:10pt;font-weight:700;color:#fff;margin-top:4px;}
-.termin-box .tb-status{display:inline-block;margin-top:6px;padding:2px 10px;border-radius:3px;font-size:7pt;font-weight:700;}
+.right-pay{display:flex;flex-direction:column;gap:3mm;}
+.termin-box{background:#2E3E5F;border-radius:3px;padding:8px 10px;text-align:center;}
+.tb-lbl{font-size:6.5pt;color:rgba(255,255,255,.45);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+.tb-pct{font-size:16pt;color:#95B3D9;font-weight:300;line-height:1;}
+.tb-amt{font-size:9pt;color:#fff;font-weight:500;margin-top:3px;}
+.tb-badge{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:3px;font-size:6.5pt;}
+.sisa-box{border:1px solid rgba(180,30,30,.2);border-radius:3px;padding:8px 10px;text-align:center;background:#FFF8F8;}
+.sisa-box .tb-lbl{color:rgba(180,30,30,.5);}
+.sisa-box .tb-amt{font-size:9.5pt;color:#b41e1e;font-weight:600;}
+.sisa-box.lunas{background:rgba(15,110,86,.05);border-color:rgba(15,110,86,.2);}
+.sisa-box.lunas .tb-lbl{color:rgba(15,110,86,.5);}
+.sisa-box.lunas .tb-amt{color:#0F6E56;}
 
-.sisa-box{background:#FFF4F4;border:1px solid rgba(180,30,30,.2);border-radius:4px;padding:10px 12px;text-align:center;}
-.sisa-box .tb-label{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b41e1e;opacity:.7;margin-bottom:4px;}
-.sisa-box .tb-amount{font-size:13pt;font-weight:900;color:#b41e1e;line-height:1.1;}
-.sisa-box.lunas{background:rgba(15,110,86,.07);border-color:rgba(15,110,86,.2);}
-.sisa-box.lunas .tb-label{color:#0F6E56;}
-.sisa-box.lunas .tb-amount{color:#0F6E56;}
-
-/* NOTES & GUARANTEE */
-.note-guar{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm;}
-.note-box{background:rgba(149,179,217,.12);border-left:2.5px solid #95B3D9;padding:7px 10px;border-radius:0 4px 4px 0;font-size:8pt;color:#2D4466;line-height:1.6;}
-.guar-box{background:rgba(15,110,86,.07);border-left:2.5px solid #0F6E56;padding:7px 10px;border-radius:0 4px 4px 0;font-size:8pt;color:#0F6E56;font-weight:600;line-height:1.6;}
-.box-lbl{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;opacity:.65;}
+/* NOTES */
+.note-guar{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
+.note-box{border-left:2px solid #95B3D9;padding:6px 9px;background:#FAFBFD;border-radius:0 3px 3px 0;font-size:7.5pt;color:#4A6080;line-height:1.6;}
+.guar-box{border-left:2px solid #0F6E56;padding:6px 9px;background:rgba(15,110,86,.04);border-radius:0 3px 3px 0;font-size:7.5pt;color:#0F6E56;line-height:1.6;}
+.nlbl{font-size:6.5pt;color:#8A9AB8;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
 
 /* BANK & SIG */
-.bank-sig{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm;}
-.bank-box{background:#F4F7FB;border:1px solid rgba(13,26,46,.08);border-radius:4px;padding:8px 10px;}
-.bank-name{font-size:8pt;font-weight:700;color:#2E3E5F;margin-bottom:4px;}
-.bank-detail{font-size:8pt;color:#2D4466;line-height:1.6;}
-.sig-box{text-align:center;}
-.sig-space{height:40px;border-bottom:1px solid rgba(13,26,46,.18);margin-bottom:5px;}
-.sig-label{font-size:7.5pt;color:#4A6080;}
-.sig-name{font-size:8.5pt;font-weight:700;margin-top:2px;}
+.bank-sig{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
+.bank-box{background:#F7F9FC;border-radius:3px;padding:7px 9px;}
+.bank-name{font-size:7.5pt;color:#2E3E5F;margin-bottom:3px;}
+.bank-detail{font-size:7.5pt;color:#4A6080;line-height:1.7;}
+.sig-box{text-align:center;padding-top:2mm;}
+.sig-space{height:36px;border-bottom:1px solid #d0d8e8;margin-bottom:4px;}
+.sig-lbl{font-size:7pt;color:#8A9AB8;}
+.sig-name{font-size:8pt;color:#1a2a40;margin-top:2px;}
 
 /* FOOTER */
-.a4-foot{border-top:1px solid rgba(13,26,46,.12);padding-top:4mm;text-align:center;font-size:7.5pt;color:#4A6080;line-height:1.7;}
-.a4-foot strong{color:#2E3E5F;}
+.a4-foot{border-top:1px solid #EEF1F6;padding-top:3mm;text-align:center;font-size:7pt;color:#8A9AB8;line-height:1.8;}
+.a4-foot span{color:#4A6080;}
 
-/* PRINT */
 @media print{
   .fp{display:none!important;}
   body{background:#fff;}
   .pp{padding:0;background:#fff;display:block;}
-  .a4{box-shadow:none;margin:0;width:100%;}
+  .a4{box-shadow:none;margin:0;width:100%;min-height:auto;}
   @page{size:A4 portrait;margin:0;}
 }
 @media(max-width:960px){
@@ -174,9 +166,8 @@ table.it tfoot td{padding:5px 8px;font-size:8.5pt;}
 <body>
 <div class="app">
 
-<!-- FORM -->
 <div class="fp">
-  <h2>&#9998;&nbsp; Invoice SolidPaving.id</h2>
+  <h2>Invoice · SolidPaving.id</h2>
 
   <div class="sec">
     <div class="sec-t">Info Invoice</div>
@@ -184,25 +175,24 @@ table.it tfoot td{padding:5px 8px;font-size:8.5pt;}
       <label>No. Invoice</label>
       <div class="inv-no-row">
         <input id="fNo" value="INV-2026-001" oninput="render()">
-        <button class="btn-gen" onclick="genNo()" title="Generate otomatis">&#8635; Auto</button>
+        <button class="btn-gen" onclick="genNo()">&#8635; Auto</button>
       </div>
     </div>
-    <div class="f">
-      <label>Status Pembayaran</label>
+    <div class="f"><label>Status Pembayaran</label>
       <select id="fStatus" onchange="statusChange()">
-        <option value="PROFORMA:0">Proforma (tanpa tagihan)</option>
+        <option value="PROFORMA:0">Proforma</option>
         <option value="TERMIN1:30">Termin 1 — 30%</option>
         <option value="TERMIN2:50">Termin 2 — 50%</option>
         <option value="PELUNASAN:20">Pelunasan — 20%</option>
-        <option value="DP:50">DP — 50%</option>
+        <option value="DP:50">Down Payment — 50%</option>
         <option value="LUNAS:100">Lunas — 100%</option>
         <option value="TAGIHAN:100">Tagihan Penuh</option>
         <option value="CUSTOM:0">Persentase Kustom...</option>
       </select>
     </div>
-    <div class="f" id="customPctWrap" style="display:none">
-      <label>Persentase Tagihan (%)</label>
-      <input id="fCustomPct" type="number" min="1" max="100" value="30" oninput="render()">
+    <div class="f" id="cPctWrap" style="display:none">
+      <label>Persentase (%)</label>
+      <input id="fCPct" type="number" min="1" max="100" value="30" oninput="render()">
     </div>
     <div class="r2">
       <div class="f"><label>Tgl. Invoice</label><input id="fDate" type="date" oninput="render()"></div>
@@ -215,18 +205,18 @@ table.it tfoot td{padding:5px 8px;font-size:8.5pt;}
     <div class="sec-t">Data Klien</div>
     <div class="f"><label>Nama / Perusahaan</label><input id="cName" placeholder="PT. Contoh / Bpk. Ahmad" oninput="render()"></div>
     <div class="r2">
-      <div class="f"><label>No. Telepon / WA</label><input id="cPhone" placeholder="0812-xxxx-xxxx" oninput="render()"></div>
+      <div class="f"><label>Telepon / WA</label><input id="cPhone" placeholder="0812-xxxx-xxxx" oninput="render()"></div>
       <div class="f"><label>Email (opsional)</label><input id="cEmail" placeholder="email@..." oninput="render()"></div>
     </div>
     <div class="f"><label>Alamat Klien</label><textarea id="cAddr" rows="2" placeholder="Jl. ..." oninput="render()"></textarea></div>
-    <div class="f"><label>Lokasi / Alamat Proyek</label><textarea id="cProj" rows="2" placeholder="Lokasi pemasangan..." oninput="render()"></textarea></div>
+    <div class="f"><label>Lokasi Proyek</label><textarea id="cProj" rows="2" placeholder="Lokasi pemasangan..." oninput="render()"></textarea></div>
   </div>
 
   <div class="sec">
     <div class="sec-t">Item &amp; Layanan</div>
     <div class="ih"><span>Deskripsi</span><span>Qty/Vol</span><span>Harga/Sat (Rp)</span><span></span></div>
     <div id="iWrap"></div>
-    <button class="ba" onclick="addItem()">+ Tambah Item</button>
+    <button class="ba" onclick="addItem()">+ tambah item</button>
   </div>
 
   <div class="sec">
@@ -260,81 +250,50 @@ table.it tfoot td{padding:5px 8px;font-size:8.5pt;}
     </div>
   </div>
 
-  <!-- LIVE SUMMARY -->
   <div class="pay-summary" id="liveSummary"></div>
-
-  <button class="btn-print" onclick="window.print()">&#128424;&nbsp; Cetak / Simpan PDF</button>
+  <button class="btn-print" onclick="window.print()">&#128424; Cetak / Simpan PDF</button>
 </div>
 
-<!-- PREVIEW -->
 <div class="pp">
   <div class="a4" id="inv"></div>
 </div>
 </div>
 
 <script>
-var items=[], uid=0;
-
-var statusMap={
-  'PROFORMA':0,'TERMIN1':30,'TERMIN2':50,'PELUNASAN':20,
-  'DP':50,'LUNAS':100,'TAGIHAN':100,'CUSTOM':0
-};
-var statusLabel={
-  'PROFORMA':'PROFORMA','TERMIN1':'TERMIN 1 · 30%','TERMIN2':'TERMIN 2 · 50%',
-  'PELUNASAN':'PELUNASAN · 20%','DP':'DOWN PAYMENT · 50%',
-  'LUNAS':'LUNAS','TAGIHAN':'TAGIHAN PENUH','CUSTOM':'TAGIHAN'
-};
-var badgeStyle={
+var items=[],uid=0;
+var sMap={'PROFORMA':0,'TERMIN1':30,'TERMIN2':50,'PELUNASAN':20,'DP':50,'LUNAS':100,'TAGIHAN':100,'CUSTOM':0};
+var sLabel={'PROFORMA':'Proforma','TERMIN1':'Termin 1 · 30%','TERMIN2':'Termin 2 · 50%','PELUNASAN':'Pelunasan · 20%','DP':'Down Payment · 50%','LUNAS':'Lunas','TAGIHAN':'Tagihan Penuh','CUSTOM':'Tagihan'};
+var sBadge={
   'PROFORMA':'background:#EBF1F8;color:#2E3E5F;',
-  'TERMIN1':'background:#FAEEDA;color:#854F0B;',
-  'TERMIN2':'background:#FAEEDA;color:#854F0B;',
-  'PELUNASAN':'background:#FFF4F4;color:#b41e1e;',
+  'TERMIN1':'background:#FDF3E3;color:#8A5500;',
+  'TERMIN2':'background:#FDF3E3;color:#8A5500;',
+  'PELUNASAN':'background:#FFF0F0;color:#961515;',
   'DP':'background:#EBF1F8;color:#2E3E5F;',
-  'LUNAS':'background:rgba(15,110,86,.18);color:#0F6E56;',
-  'TAGIHAN':'background:#FAEEDA;color:#854F0B;',
-  'CUSTOM':'background:#FAEEDA;color:#854F0B;'
+  'LUNAS':'background:rgba(15,110,86,.12);color:#0F6E56;',
+  'TAGIHAN':'background:#FDF3E3;color:#8A5500;',
+  'CUSTOM':'background:#FDF3E3;color:#8A5500;'
 };
 
 function idr(n){return'Rp\u00a0'+Math.round(n).toLocaleString('id-ID');}
 function fd(d){if(!d)return'—';var p=d.split('-'),M=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des'];return p[2]+' '+M[+p[1]-1]+' '+p[0];}
 function eh(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
 function v(id){return(document.getElementById(id)||{value:''}).value;}
+function sk(){return v('fStatus').split(':')[0];}
+function pct(){return sk()==='CUSTOM'?parseFloat(v('fCPct'))||0:sMap[sk()]||0;}
 
 function genNo(){
-  var d=new Date();
-  var y=d.getFullYear();
-  var m=('0'+(d.getMonth()+1)).slice(-2);
-  var r=Math.floor(Math.random()*900)+100;
-  document.getElementById('fNo').value='INV-'+y+m+'-'+r;
-  render();
+  var d=new Date(),y=d.getFullYear(),m=('0'+(d.getMonth()+1)).slice(-2),r=Math.floor(Math.random()*900)+100;
+  document.getElementById('fNo').value='INV-'+y+m+'-'+r;render();
 }
-
 function statusChange(){
-  var raw=v('fStatus').split(':')[0];
-  document.getElementById('customPctWrap').style.display=raw==='CUSTOM'?'':'none';
-  render();
+  document.getElementById('cPctWrap').style.display=sk()==='CUSTOM'?'':'none';render();
 }
 function guarChange(){
-  document.getElementById('gcWrap').style.display=v('fGuar')==='__c'?'':'none';
-  render();
+  document.getElementById('gcWrap').style.display=v('fGuar')==='__c'?'':'none';render();
 }
-function getGuar(){
-  var s=v('fGuar');
-  if(s==='__c')return v('fGuarC');
-  return s;
-}
-function getPct(){
-  var raw=v('fStatus').split(':')[0];
-  if(raw==='CUSTOM')return parseFloat(v('fCustomPct'))||0;
-  return statusMap[raw]||0;
-}
-function getStatusKey(){return v('fStatus').split(':')[0];}
+function getGuar(){var s=v('fGuar');return s==='__c'?v('fGuarC'):s;}
 
-function addItem(){
-  var id=++uid;
-  items.push({id:id,desc:'',qty:'',price:''});
-  renderItems();render();
-}
+function addItem(){var id=++uid;items.push({id:id,desc:'',qty:'',price:''});renderItems();render();}
 function delItem(id){items=items.filter(function(i){return i.id!==id;});renderItems();render();}
 function upd(id,f,val){items.forEach(function(i){if(i.id===id)i[f]=val;});render();}
 
@@ -342,8 +301,7 @@ function renderItems(){
   var w=document.getElementById('iWrap');w.innerHTML='';
   items.forEach(function(it){
     var d=document.createElement('div');d.className='ir';
-    d.innerHTML=
-      '<input value="'+eh(it.desc)+'" placeholder="Jasa Pasang Paving Holland K300..." oninput="upd('+it.id+',\'desc\',this.value)">'+
+    d.innerHTML='<input value="'+eh(it.desc)+'" placeholder="Jasa Pasang Paving Holland K300..." oninput="upd('+it.id+',\'desc\',this.value)">'+
       '<input value="'+eh(it.qty)+'" placeholder="100 m²" oninput="upd('+it.id+',\'qty\',this.value)" style="text-align:right">'+
       '<input type="number" min="0" value="'+eh(it.price)+'" placeholder="175000" oninput="upd('+it.id+',\'price\',this.value)" style="text-align:right">'+
       '<button class="bd" onclick="delItem('+it.id+')">&times;</button>';
@@ -351,154 +309,124 @@ function renderItems(){
   });
 }
 
-function calcAll(){
+function calc(){
   var sub=0;
   items.forEach(function(it){sub+=(parseFloat(it.qty)||0)*(parseFloat(it.price)||0);});
   var disc=parseFloat(v('fDisc'))||0;
-  var ppnPct=parseInt(v('fPpn'))||0;
-  var afterDisc=sub-disc;
-  var ppnAmt=afterDisc*(ppnPct/100);
-  var gross=afterDisc+ppnAmt;
-  var pct=getPct();
-  var tagihan=gross*(pct/100);
-  var paid=parseFloat(v('fPaid'))||0;
-  var sisa=tagihan-paid;
-  return{sub:sub,disc:disc,ppnPct:ppnPct,ppnAmt:ppnAmt,afterDisc:afterDisc,gross:gross,pct:pct,tagihan:tagihan,paid:paid,sisa:sisa};
+  var pp=parseInt(v('fPpn'))||0;
+  var ad=sub-disc,ppA=ad*(pp/100),gross=ad+ppA;
+  var p=pct(),tag=gross*(p/100),paid=parseFloat(v('fPaid'))||0,sisa=tag-paid;
+  return{sub:sub,disc:disc,pp:pp,ppA:ppA,ad:ad,gross:gross,p:p,tag:tag,paid:paid,sisa:sisa};
 }
 
 function render(){
-  var c=calcAll();
-  var sk=getStatusKey();
-  var sl=statusLabel[sk]||'TAGIHAN';
-  var bs=badgeStyle[sk]||badgeStyle['TAGIHAN'];
+  var c=calc(),key=sk(),lbl=sLabel[key]||'',bs=sBadge[key]||sBadge['TAGIHAN'];
   var no=v('fNo')||'INV-2026-001';
-  var date=v('fDate'),due=v('fDue'),next=v('fNext');
   var cn=v('cName')||'—',cp=v('cPhone')||'—',ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj')||'—';
-  var notes=v('fNotes'),guar=getGuar();
+  var notes=v('fNotes'),guar=getGuar(),next=v('fNext');
 
-  /* live summary */
   document.getElementById('liveSummary').innerHTML=
     '<div class="pay-row"><span>Grand Total</span><span>'+idr(c.gross)+'</span></div>'+
-    '<div class="pay-row bold"><span>Tagihan Ini ('+c.pct+'%)</span><span>'+idr(c.tagihan)+'</span></div>'+
-    '<div class="pay-row green"><span>Sudah Terbayar</span><span>'+idr(c.paid)+'</span></div>'+
-    '<div class="pay-row red bold"><span>Sisa Tagihan</span><span>'+idr(Math.max(0,c.sisa))+'</span></div>';
+    '<div class="pay-row em"><span>Tagihan ini ('+c.p+'%)</span><span>'+idr(c.tag)+'</span></div>'+
+    '<div class="pay-row green"><span>Terbayar</span><span>'+idr(c.paid)+'</span></div>'+
+    '<div class="pay-row red"><span>Sisa</span><span>'+idr(Math.max(0,c.sisa))+'</span></div>';
 
-  /* item rows */
   var trows='';
   items.forEach(function(it){
     var q=parseFloat(it.qty)||0,p=parseFloat(it.price)||0,tot=q*p;
     trows+='<tr><td>'+eh(it.desc||'—')+'</td><td>'+q.toLocaleString('id-ID')+'</td><td>'+idr(p)+'</td><td>'+idr(tot)+'</td></tr>';
   });
-  if(!items.length)trows='<tr><td colspan="4" style="text-align:center;color:#4A6080;padding:12px;font-size:8pt;">Belum ada item</td></tr>';
+  if(!items.length)trows='<tr><td colspan="4" style="text-align:center;color:#8A9AB8;padding:10px;font-size:7.5pt;">Belum ada item</td></tr>';
 
-  var discRow=c.disc>0?'<tr class="pt-disc"><td>Diskon</td><td>- '+idr(c.disc)+'</td></tr>':'';
-  var ppnRow=c.ppnPct?'<tr class="pt-ppn"><td>PPN '+c.ppnPct+'%</td><td>'+idr(c.ppnAmt)+'</td></tr>':'';
-  var nextRow=next?'<div class="mv2">Penagihan berikutnya: '+fd(next)+'</div>':'';
-  var sisaLunas=c.sisa<=0;
+  var dRow=c.disc>0?'<tr class="pt-disc"><td>Diskon</td><td>− '+idr(c.disc)+'</td></tr>':'';
+  var pRow=c.pp?'<tr><td style="color:#4A6080">PPN '+c.pp+'%</td><td style="text-align:right;color:#4A6080">'+idr(c.ppA)+'</td></tr>':'';
+  var nxtRow=next?'<div class="mv2">Tagihan berikutnya: '+fd(next)+'</div>':'';
+  var lunas=c.sisa<=0;
 
   document.getElementById('inv').innerHTML=
-  /* HEADER */
   '<div class="a4-head">'+
-    '<div class="logo-block">'+
+    '<div>'+
       '<div class="logo-main"><span class="s1">SOLID</span><span class="s2">PAVING</span></div>'+
       '<div class="tagline">Tidak Amblas &nbsp;·&nbsp; Bergaransi</div>'+
-      '<div class="contact">solidpaving.id &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id</div>'+
+      '<div class="from-contact">solidpaving.id &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id</div>'+
     '</div>'+
     '<div class="inv-info-block">'+
-      '<div class="inv-label">Dokumen Invoice</div>'+
+      '<div class="inv-label">Invoice</div>'+
       '<div class="inv-number">'+eh(no)+'</div>'+
-      '<div><span class="status-badge" style="'+bs+'">'+sl+'</span></div>'+
+      '<div><span class="status-badge" style="'+bs+'">'+lbl+'</span></div>'+
     '</div>'+
   '</div>'+
 
-  /* DATE META */
   '<div class="meta-row">'+
-    '<div class="meta-box"><div class="ml">Tanggal Invoice</div><div class="mv">'+fd(date)+'</div></div>'+
-    '<div class="meta-box"><div class="ml">Jatuh Tempo</div><div class="mv" style="color:#b41e1e">'+fd(due)+'</div>'+nextRow+'</div>'+
+    '<div class="meta-box"><div class="ml">Tanggal Invoice</div><div class="mv">'+fd(v('fDate'))+'</div></div>'+
+    '<div class="meta-box"><div class="ml">Jatuh Tempo</div><div class="mv mv-due">'+fd(v('fDue'))+'</div>'+nxtRow+'</div>'+
   '</div>'+
 
-  /* CLIENT & FROM */
   '<div class="client-row">'+
     '<div class="client-box">'+
-      '<div class="box-title">Ditagihkan Kepada</div>'+
+      '<div class="box-lbl">Ditagihkan kepada</div>'+
       '<div class="client-name">'+eh(cn)+'</div>'+
-      '<div class="client-detail">'+
-        '&#128222;&nbsp;'+eh(cp)+(ce?'<br>&#9993;&nbsp;'+eh(ce):'')+
-        '<br>&#128205;&nbsp;'+eh(ca)+
-        '<br>&#128736;&nbsp;'+eh(cpr)+
-      '</div>'+
+      '<div class="client-detail">'+eh(cp)+(ce?'<br>'+eh(ce):'')+
+        '<br>'+eh(ca)+'<br>'+eh(cpr)+'</div>'+
     '</div>'+
     '<div class="from-box">'+
-      '<div class="box-title">Dari</div>'+
+      '<div class="box-lbl">Dari</div>'+
       '<div class="client-name">SolidPaving.id</div>'+
-      '<div class="client-detail">'+
-        'Muh Nafis Arifuddin<br>'+
-        '&#128222;&nbsp;0859-4349-2832<br>'+
-        '&#9993;&nbsp;sales@solidpaving.id<br>'+
-        '&#128205;&nbsp;Jabodetabek &amp; Jawa Barat'+
-      '</div>'+
+      '<div class="client-detail">Muh Nafis Arifuddin<br>0859-4349-2832<br>sales@solidpaving.id<br>Jabodetabek &amp; Jawa Barat</div>'+
     '</div>'+
   '</div>'+
 
-  /* ITEMS TABLE */
   '<table class="it">'+
-    '<thead><tr><th>Deskripsi Pekerjaan</th><th style="text-align:right">Qty/Vol</th><th style="text-align:right">Harga Satuan</th><th style="text-align:right">Total</th></tr></thead>'+
+    '<thead><tr><th>Deskripsi Pekerjaan</th><th style="text-align:right">Qty / Vol</th><th style="text-align:right">Harga Satuan</th><th style="text-align:right">Total</th></tr></thead>'+
     '<tbody>'+trows+'</tbody>'+
   '</table>'+
 
-  /* PAYMENT BLOCK */
   '<div class="pay-block">'+
     '<table class="pay-table">'+
-      '<tr class="pt-sub"><td>Subtotal</td><td>'+idr(c.sub)+'</td></tr>'+
-      discRow+ppnRow+
-      '<tr class="pt-gross"><td>Grand Total</td><td>'+idr(c.gross)+'</td></tr>'+
-      (c.pct<100?'<tr class="pt-termin"><td>Tagihan ini ('+c.pct+'%)</td><td>'+idr(c.tagihan)+'</td></tr>':'')+
-      '<tr class="pt-paid"><td>Sudah Terbayar</td><td>'+idr(c.paid)+'</td></tr>'+
-      '<tr class="pt-sisa"><td>Sisa Tagihan</td><td>'+idr(Math.max(0,c.sisa))+'</td></tr>'+
+      '<tr><td style="color:#8A9AB8">Subtotal</td><td style="text-align:right;color:#4A6080">'+idr(c.sub)+'</td></tr>'+
+      dRow+pRow+
+      '<tr class="pt-gross"><td>Grand Total</td><td style="text-align:right">'+idr(c.gross)+'</td></tr>'+
+      (c.p<100?'<tr class="pt-termin"><td>Tagihan ini ('+c.p+'%)</td><td style="text-align:right">'+idr(c.tag)+'</td></tr>':'')+
+      '<tr class="pt-paid"><td>Sudah terbayar</td><td style="text-align:right">'+idr(c.paid)+'</td></tr>'+
+      '<tr class="pt-sisa"><td>Sisa tagihan</td><td style="text-align:right">'+idr(Math.max(0,c.sisa))+'</td></tr>'+
     '</table>'+
-    '<div>'+
-      '<div class="termin-box" style="margin-bottom:6px;">'+
-        '<div class="tb-label">Tagihan Ini</div>'+
-        '<div class="tb-pct">'+c.pct+'%</div>'+
-        '<div class="tb-amount">'+idr(c.tagihan)+'</div>'+
-        '<span class="tb-status" style="'+bs+'">'+sl+'</span>'+
+    '<div class="right-pay">'+
+      '<div class="termin-box">'+
+        '<div class="tb-lbl">Tagihan Ini</div>'+
+        '<div class="tb-pct">'+c.p+'%</div>'+
+        '<div class="tb-amt">'+idr(c.tag)+'</div>'+
+        '<span class="tb-badge" style="'+bs+'">'+lbl+'</span>'+
       '</div>'+
-      '<div class="sisa-box'+(sisaLunas?' lunas':'')+'">'+
-        '<div class="tb-label">'+(sisaLunas?'STATUS':'Sisa Tagihan')+'</div>'+
-        '<div class="tb-amount">'+(sisaLunas?'&#10003; LUNAS':idr(c.sisa))+'</div>'+
+      '<div class="sisa-box'+(lunas?' lunas':'')+'">'+
+        '<div class="tb-lbl">'+(lunas?'Status':'Sisa Tagihan')+'</div>'+
+        '<div class="tb-amt">'+(lunas?'&#10003; Lunas':idr(c.sisa))+'</div>'+
       '</div>'+
     '</div>'+
   '</div>'+
 
-  /* NOTES & GUARANTEE */
   ((notes||guar)?
-  '<div class="note-guar">'+
-    (notes?'<div class="note-box"><div class="box-lbl">Catatan</div>'+eh(notes)+'</div>':'<div></div>')+
-    (guar?'<div class="guar-box"><div class="box-lbl">Garansi</div>&#10003;&nbsp;'+eh(guar)+'</div>':'<div></div>')+
-  '</div>':'')+
+    '<div class="note-guar">'+
+      (notes?'<div class="note-box"><div class="nlbl">Catatan</div>'+eh(notes)+'</div>':'<div></div>')+
+      (guar?'<div class="guar-box"><div class="nlbl">Garansi</div>&#10003;&nbsp;'+eh(guar)+'</div>':'<div></div>')+
+    '</div>':'')+
 
-  /* BANK & SIG */
   '<div class="bank-sig">'+
-    '<div>'+
-      '<div class="box-title" style="margin-bottom:6px;">Informasi Pembayaran</div>'+
-      '<div class="bank-box">'+
-        '<div class="bank-name">BCA — Cab. Cibubur Arundina</div>'+
-        '<div class="bank-detail">No. Rek: <strong>628-184-6962</strong><br>A.n: Muh Nafis Arifuddin</div>'+
-      '</div>'+
+    '<div class="bank-box">'+
+      '<div class="box-lbl" style="font-size:6.5pt;color:#8A9AB8;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Pembayaran ke</div>'+
+      '<div class="bank-name">BCA — Cab. Cibubur Arundina</div>'+
+      '<div class="bank-detail">628-184-6962 &nbsp;·&nbsp; a.n. Muh Nafis Arifuddin</div>'+
     '</div>'+
     '<div class="sig-box">'+
       '<div class="sig-space"></div>'+
-      '<div class="sig-label">Hormat Kami,</div>'+
+      '<div class="sig-lbl">Hormat kami,</div>'+
       '<div class="sig-name">Muh Nafis Arifuddin</div>'+
-      '<div class="sig-label">SolidPaving.id</div>'+
+      '<div class="sig-lbl">SolidPaving.id</div>'+
     '</div>'+
   '</div>'+
 
-  /* FOOTER */
   '<div class="a4-foot">'+
-    'Dokumen ini dibuat secara digital oleh <strong>SolidPaving.id</strong> &nbsp;·&nbsp; '+
-    'Supplier Paving Block &amp; Jasa Pasang Bergaransi &nbsp;·&nbsp; Jabodetabek &amp; Jawa Barat<br>'+
-    '<strong>solidpaving.id</strong> &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id'+
+    '<span>SolidPaving.id</span> &nbsp;·&nbsp; Supplier Paving Block &amp; Jasa Pasang Bergaransi &nbsp;·&nbsp; Jabodetabek &amp; Jawa Barat<br>'+
+    'solidpaving.id &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id'+
   '</div>';
 }
 
@@ -507,8 +435,7 @@ function render(){
   function p(x){return x.getFullYear()+'-'+('0'+(x.getMonth()+1)).slice(-2)+'-'+('0'+x.getDate()).slice(-2);}
   document.getElementById('fDate').value=p(t);
   document.getElementById('fDue').value=p(d);
-  addItem();addItem();
-  render();
+  addItem();addItem();render();
 })();
 </script>
 </body>
