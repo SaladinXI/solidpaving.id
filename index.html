@@ -84,7 +84,7 @@ nav{
 .pnl-all:hover{background:var(--bg1);}
 
 /* ── NEW: "Lihat Semua" shortcut link di bawah panel items ── */
-.pnl-viewall{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:4px;border-top:1px solid var(--bds);transition:background .12s;}
+.pnl-viewall{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:4px;border-top:1px solid var(--bds);transition:background .12px;}
 .pnl-viewall:hover{background:var(--bg1);}
 
 /* Hamburger */
@@ -138,11 +138,6 @@ h3{font-size:18px;font-weight:700;}
 .hero-img-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
 .hero-badges{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:8px;flex-wrap:wrap;}
 .hbadge{background:rgba(255,255,255,.92);border:1px solid var(--bdr);padding:5px 10px;border-radius:4px;font-size:11px;font-weight:600;color:var(--blue);}
-
-/* ── NEW: hero quick-links ── */
-.hero-quicklinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
-.hero-ql{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--r);border:1px solid var(--bdr);font-size:13px;font-weight:600;color:var(--blue);background:var(--bg0);transition:all .15s;}
-.hero-ql:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
 
 /* ─── TRUST ─── */
 #trust{padding:20px 5%;background:var(--blue);}
@@ -521,7 +516,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   <!-- Desktop menu -->
   <ul class="nav-menu">
 
-    <!-- ── PRODUK (dengan link ke /produk/) ── -->
+    <!-- ── PRODUK ── -->
     <li class="nav-item">
       <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -534,12 +529,11 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="pnl-sep"></div>
         <div class="pnl-head">Aksesoris</div>
         <a href="/produk/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Kanstin / Kerb Beton</span><span class="pnl-sub">Pengunci tepi paving</span></div></a>
-        <!-- ★ BARU: link ke halaman utama Produk -->
         <a href="/produk/" class="pnl-viewall">Lihat Semua Produk <span>→</span></a>
       </div>
     </li>
 
-    <!-- ── LAYANAN (dengan link ke /layanan/) ── -->
+    <!-- ── LAYANAN ── -->
     <li class="nav-item">
       <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -551,7 +545,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="pnl-sep"></div>
         <div class="pnl-head">Supply Material</div>
         <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span><span class="pnl-sub">Kirim ke lokasi proyek Anda</span></div></a>
-        <!-- ★ BARU: link ke halaman utama Layanan -->
         <a href="/layanan/" class="pnl-viewall">Lihat Semua Layanan <span>→</span></a>
       </div>
     </li>
@@ -644,7 +637,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 <!-- Mobile drawer -->
 <div class="mob-drawer" id="mobDrawer">
   <div class="mob-head">Produk</div>
-  <!-- ★ BARU: Lihat Semua Produk di atas daftar sub-halaman -->
   <a href="/produk/" class="mob-viewall" onclick="closeMob()">🧱 Lihat Semua Produk →</a>
   <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
   <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
@@ -652,7 +644,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
   <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
   <div class="mob-head">Layanan</div>
-  <!-- ★ BARU: Lihat Semua Layanan di atas daftar sub-halaman -->
   <a href="/layanan/" class="mob-viewall" onclick="closeMob()">🔨 Lihat Semua Layanan →</a>
   <a href="/layanan/jasa-pasang/" onclick="closeMob()">Jasa Pasang Paving Block</a>
   <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
@@ -690,11 +681,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="btn-primary">Minta Survei & RAB Gratis</a>
         <a href="#kalkulator" class="btn-outline">Hitung Estimasi Biaya</a>
       </div>
-      <!-- ★ BARU: quick-link ke Produk & Layanan di bawah CTA hero -->
-      <div class="hero-quicklinks">
-        <a href="/produk/" class="hero-ql">🧱 Lihat Semua Produk</a>
-        <a href="/layanan/" class="hero-ql">🔨 Lihat Semua Layanan</a>
-      </div>
+      <!-- hero-quicklinks DIHAPUS sesuai permintaan -->
       <div class="hero-proof" style="margin-top:24px;">
         <div><div class="proof-num">50+</div><div class="proof-label">Proyek Selesai</div></div>
         <div><div class="proof-num">40rb+</div><div class="proof-label">m² Terpasang</div></div>
@@ -769,7 +756,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="step"><div class="step-num">06</div><div><h3>Finishing & Serah Terima Bergaransi</h3><p>Nat, pemadatan akhir, pembersihan + <strong>garansi 3 bulan tertulis</strong>.</p><span class="step-tag">Jaminan tertulis</span></div></div>
       </div>
     </div>
-    <!-- ★ BARU: CTA ke halaman Layanan setelah metode -->
     <div style="margin-top:32px;">
       <a href="/layanan/" class="btn-outline-blue" style="display:inline-flex;">Lihat Detail Semua Layanan →</a>
     </div>
@@ -983,7 +969,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <div class="prod-body"><h3>Cacing (Uni)</h3><p>Kuncian paling rapat. Ideal untuk area beban kendaraan berat.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Cacing." class="prod-link">Cek Harga / m² →</a></div>
       </div>
     </div>
-    <!-- ★ BARU: CTA row ke halaman /produk/ -->
     <div class="produk-cta-row">
       <p>Masih ada Hexagon, Grassblock, Kanstin, dan variasi mutu lainnya.</p>
       <a href="/produk/" class="btn-outline-blue">Lihat Semua Produk →</a>
@@ -1179,8 +1164,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </a>
         <p class="foot-brand-text">Supplier paving block K200–K400 & jasa pasang bergaransi. Untuk kontraktor, developer, dan pemilik bisnis. Jabodetabek & Jawa Barat.</p>
       </div>
-
-      <!-- ★ KOLOM PRODUK — sekarang link pertama ke /produk/ -->
       <div class="foot-col">
         <h5>Produk</h5>
         <ul>
@@ -1192,8 +1175,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
           <li><a href="/produk/kanstin/">Kanstin / Kerb</a></li>
         </ul>
       </div>
-
-      <!-- ★ KOLOM LAYANAN — sekarang link pertama ke /layanan/ -->
       <div class="foot-col">
         <h5>Layanan</h5>
         <ul>
@@ -1205,7 +1186,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
           <li><a href="/layanan/supplier-paving/">Supplier Material</a></li>
         </ul>
       </div>
-
       <div class="foot-col">
         <h5>Kontak</h5>
         <ul>
@@ -1237,6 +1217,11 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 
 <script>
 (function(){
+// ═══════════════════════════════════════════════
+// GANTI URL INI SETELAH DEPLOY GOOGLE APPS SCRIPT
+// ═══════════════════════════════════════════════
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyPElVqBQiLW_fA7-9iCDllRiTAaXvqKL5ImCzaXKBuwWXEuHit_YERJi80egtwJCz1nA/exec';
+
 var S={jenis:'holland',mutu:'K300',tebal:'8'};
 var JL={holland:'Holland (Bata)',ubin:'Ubin (Square)',cacing:'Cacing (Uni)',hexagon:'Hexagon',grassL8:'Grassblock Lubang 8',grassL5:'Grassblock Lubang 5'};
 var HP={K200:{6:75000,8:85000},K300:{6:90000,8:100000,10:150000},K350:{6:100000,8:105000,10:155000},K400:{6:110000,8:115000,10:160000}};
@@ -1247,6 +1232,18 @@ function isGrass(){return S.jenis==='grassL8'||S.jenis==='grassL5';}
 function hargaPerM2(){if(isGrass()){var g=HG[S.jenis];var pcs=S.tebal==='6'?g.pcs6:g.pcs8;return Math.round(pcs*g.perM2);}var tbl=HP[S.mutu];return tbl?(tbl[parseInt(S.tebal)]||0):0;}
 function R(n){if(!n||n===0)return'—';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
 function Rk(n){if(!n)return'—';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
+
+// ── Kirim data ke Google Sheet (fire & forget) ──
+function logToSheet(sumber, data) {
+  if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_URL_APPS_SCRIPT_DI_SINI') return;
+  try {
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(Object.assign({}, data, {sumber: sumber}))
+    });
+  } catch(e) { /* silent fail — tidak mengganggu user */ }
+}
 
 var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
 ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
@@ -1322,26 +1319,35 @@ function getData(){
   var tid='SP-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0');
   return{tid,tgl,luas,p,l,jenis:JL[S.jenis]||S.jenis,mutu:isGrass()?'Grassblock':S.mutu,tebal:S.tebal,hP,mat,v1,v2,v3,lay,grand,t1,t2,t3,pm2:hP+(t1?HL[1]:0)+(t2?HL[2]:0)+(t3?HL[3]:0),nama:document.getElementById('fd-nama').value.trim(),hp:document.getElementById('fd-hp').value.trim(),kota:document.getElementById('fd-kota').value.trim(),proyek:document.getElementById('fd-proyek').value.trim(),catatan:document.getElementById('fd-catatan').value.trim()};
 }
+
 window.kirimWA=function(){
   var d=getData();
   if(!d.nama||!d.hp||!d.kota){alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.');return;}
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
+  // Log ke Google Sheet
+  logToSheet('WhatsApp', d);
   var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
   var msg=['━━━━━━━━━━━━━━━━━━','📋 ESTIMASI SOLIDPAVING.ID','Tiket  : '+d.tid,'Tanggal: '+d.tgl,'━━━━━━━━━━━━━━━━━━','👤 DATA PELANGGAN','Nama   : '+d.nama,'No. HP : '+d.hp,'Lokasi : '+d.kota,d.proyek?'Proyek : '+d.proyek:null,d.catatan?'Catatan: '+d.catatan:null,'🧱 SPESIFIKASI','Ukuran : '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis  : '+d.jenis,'Mutu   : '+d.mutu,'Tebal  : '+d.tebal+' cm','🔧 LAYANAN',lay.length?lay.join('\n'):'Material saja (tanpa pasang)','💰 ESTIMASI','Material : '+R(d.mat),d.t1?'Pasang   : '+R(d.v1):null,d.t2?'Bedding  : '+R(d.v2):null,d.t3?'Pemadatan: '+R(d.v3):null,'TOTAL    : '+R(d.grand),'━━━━━━━━━━━━━━━━━━','*Estimasi awal. Harga pasti setelah survei gratis.*'].filter(s=>s!==null&&s!==undefined).join('\n');
   window.open('https://wa.me/6285943492832?text='+encodeURIComponent(msg),'_blank');
 };
+
 window.kirimEmail=function(){
   var d=getData();
   if(!d.nama||!d.hp||!d.kota){alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.');return;}
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
+  // Log ke Google Sheet
+  logToSheet('Email', d);
   var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
   var subj='Permintaan Estimasi Paving Block — '+d.tid+(d.nama?' ('+d.nama+')':'');
   var body=['Halo Tim SolidPaving.id,','','Permintaan estimasi biaya paving block:','','--- DATA ---','Nama: '+d.nama,'HP: '+d.hp,'Lokasi: '+d.kota,d.proyek?'Proyek: '+d.proyek:'',d.catatan?'Catatan: '+d.catatan:'','','--- SPESIFIKASI ---','Ukuran: '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis: '+d.jenis,'Mutu: '+d.mutu,'Tebal: '+d.tebal+' cm','','--- LAYANAN ---',lay.length?lay.join(', '):'Material saja','','--- ESTIMASI ---','Material: '+R(d.mat),d.t1?'Pasang: '+R(d.v1):'',d.t2?'Bedding: '+R(d.v2):'',d.t3?'Pemadatan: '+R(d.v3):'','TOTAL: '+R(d.grand),'','Ref: '+d.tid,'','Terima kasih.',d.nama].filter(s=>s!==null&&s!==undefined).join('\n');
   window.location.href='mailto:sales@solidpaving.id?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
 };
+
 window.unduhPDF=function(){
   var d=getData();
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
+  // Log ke Google Sheet (PDF tidak wajib isi nama, tapi tetap kita catat kalau ada)
+  logToSheet('PDF', d);
   var lrows='';
   if(d.t1)lrows+='<tr><td>Pemasangan (Rp 45rb/m²)</td><td>'+R(d.v1)+'</td></tr>';
   if(d.t2)lrows+='<tr><td>Lapisan Bedding (Rp 35rb/m²)</td><td>'+R(d.v2)+'</td></tr>';
