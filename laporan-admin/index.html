@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Admin Laporan · SolidPaving.id</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Archivo',sans-serif;background:#f5f5f3;color:#1a1a1a;min-height:100vh}
+.container{max-width:680px;margin:0 auto;padding:2rem 1.25rem}
+.card{background:#fff;border-radius:12px;border:0.5px solid #e0ddd6;padding:1.5rem;margin-bottom:1.25rem}
+.site-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+.brand{font-size:20px;font-weight:500}.brand span{color:#4A7FB5}
+.doc-badge{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#888;border:0.5px solid #ddd;padding:4px 10px;border-radius:6px}
+.section-title{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:10px;padding-bottom:6px;border-bottom:0.5px solid #eee}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.field{margin-bottom:10px}
+.field label{font-size:11px;color:#888;display:block;margin-bottom:4px}
+.field input,.field textarea,.field select{width:100%;background:#fafaf8;border:0.5px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13px;color:#1a1a1a;font-family:'Archivo',sans-serif;transition:border-color .15s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:#4A7FB5}
+.field textarea{resize:vertical;min-height:72px;line-height:1.6}
+.btn-primary{width:100%;padding:12px;background:#4A7FB5;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Archivo',sans-serif;transition:background .15s}
+.btn-primary:hover{background:#3d6d9e}
+.btn-primary:disabled{background:#aaa;cursor:not-allowed}
+.btn-secondary{padding:8px 16px;background:#fff;color:#1a1a1a;border:0.5px solid #ddd;border-radius:8px;font-size:12px;cursor:pointer;font-family:'Archivo',sans-serif}
+.btn-secondary:hover{background:#f5f5f3}
+.btn-danger{padding:6px 10px;background:none;color:#e24b4a;border:0.5px solid #f0c0c0;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Archivo',sans-serif}
+.btn-add-small{font-size:12px;color:#4A7FB5;background:none;border:0.5px dashed #4A7FB5;border-radius:6px;padding:5px 12px;cursor:pointer;margin-top:4px}
+.material-row{display:grid;grid-template-columns:1fr 80px 70px 28px;gap:8px;align-items:center;margin-bottom:6px}
+.material-row input{background:#fafaf8;border:0.5px solid #ddd;border-radius:6px;padding:6px 8px;font-size:12px;color:#1a1a1a;font-family:'Archivo',sans-serif;width:100%}
+.foto-row{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.foto-row input{flex:1;background:#fafaf8;border:0.5px solid #ddd;border-radius:6px;padding:6px 8px;font-size:12px;color:#1a1a1a;font-family:'Archivo',sans-serif}
+.foto-row input:focus{outline:none;border-color:#4A7FB5}
+.btn-del{background:none;border:none;color:#bbb;cursor:pointer;font-size:18px;line-height:1;padding:2px 4px}
+.btn-del:hover{color:#e24b4a}
+.tabs{display:flex;gap:4px;margin-bottom:1.5rem}
+.tab{padding:8px 18px;border-radius:8px;font-size:13px;cursor:pointer;border:0.5px solid #ddd;background:#fff;font-family:'Archivo',sans-serif;transition:all .15s}
+.tab.active{background:#4A7FB5;color:#fff;border-color:#4A7FB5}
+.tab-content{display:none}.tab-content.active{display:block}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.proyek-card{border:0.5px solid #eee;border-radius:8px;padding:12px;margin-bottom:8px;cursor:pointer;transition:border-color .15s}
+.proyek-card:hover{border-color:#4A7FB5}
+.proyek-card h4{font-size:13px;font-weight:500;margin-bottom:2px}
+.proyek-card p{font-size:11px;color:#888}
+.update-item{border-left:2px solid #4A7FB5;padding:10px 14px;margin-bottom:10px;background:#fafaf8;border-radius:0 8px 8px 0}
+.update-item .date{font-size:11px;color:#888;margin-bottom:4px}
+.update-item .status-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;background:#e6f1fb;color:#185FA5;margin-bottom:6px}
+.update-item h4{font-size:13px;font-weight:500;margin-bottom:4px}
+.update-item p{font-size:12px;color:#555;line-height:1.6}
+.update-actions{display:flex;gap:6px;margin-top:8px}
+.progres-bar{height:4px;background:#eee;border-radius:2px;margin-top:6px}
+.progres-fill{height:4px;background:#4A7FB5;border-radius:2px;transition:width .3s}
+.loading{text-align:center;padding:2rem;color:#888;font-size:13px}
+.empty{text-align:center;padding:2rem;color:#aaa;font-size:13px}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem}
+.modal{background:#fff;border-radius:12px;padding:1.5rem;width:100%;max-width:480px;max-height:80vh;overflow-y:auto}
+.modal h3{font-size:16px;font-weight:500;margin-bottom:1rem}
+@media(max-width:560px){
+  .two-col,.three-col{grid-template-columns:1fr}
+  .material-row{grid-template-columns:1fr 70px 60px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="site-header">
+    <div class="brand">Solid<span>Paving</span>.id</div>
+    <div class="doc-badge">Admin Laporan</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('update')">Input Update</button>
+    <button class="tab" onclick="switchTab('proyek')">Kelola Proyek</button>
+  </div>
+
+  <!-- ═══ TAB: INPUT UPDATE ═══ -->
+  <div id="tab-update" class="tab-content active">
+
+    <div class="card">
+      <div class="section-title">Pilih Proyek</div>
+      <div class="field">
+        <label>Proyek</label>
+        <select id="sel-proyek" onchange="loadUpdates()">
+          <option value="">— Pilih proyek —</option>
+        </select>
+      </div>
+      <div id="proyek-info" style="display:none;font-size:12px;color:#888;margin-top:-4px;line-height:1.7"></div>
+    </div>
+
+    <div id="update-list-area" style="display:none">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <div class="section-title" style="margin:0">Update Terbaru</div>
+          <a id="link-laporan" href="#" target="_blank" style="font-size:12px;color:#4A7FB5;text-decoration:none">Lihat laporan klien ↗</a>
+        </div>
+        <div id="update-list"><div class="loading">Memuat...</div></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Tambah Update Harian</div>
+        <div class="two-col">
+          <div class="field"><label>Tanggal</label><input type="date" id="inp-tanggal"></div>
+          <div class="field">
+            <label>Status</label>
+            <select id="inp-status">
+              <option>Persiapan lahan</option>
+              <option>Pemasangan</option>
+              <option>Finishing</option>
+              <option>Selesai</option>
+            </select>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="field">
+            <label>Progres keseluruhan (%)</label>
+            <input type="number" id="inp-progres" min="0" max="100" placeholder="65">
+          </div>
+          <div class="field">
+            <label>Jumlah pekerja</label>
+            <input type="number" id="inp-pekerja" min="0" placeholder="8">
+          </div>
+        </div>
+        <div class="field">
+          <label>Catatan pekerjaan hari ini</label>
+          <textarea id="inp-catatan" placeholder="Pemasangan paving block selesai 120 m², lanjut area parkir belakang..."></textarea>
+        </div>
+
+        <div class="field">
+          <label>Material masuk hari ini</label>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:#aaa;display:grid;grid-template-columns:1fr 80px 70px 28px;gap:8px;margin-bottom:4px;padding:0 2px">
+            <span>Nama material</span><span>Jumlah</span><span>Satuan</span><span></span>
+          </div>
+          <div id="material-list"></div>
+          <button class="btn-add-small" onclick="addMaterial()">+ material</button>
+        </div>
+
+        <div class="field">
+          <label>Foto progress (URL)</label>
+          <div id="foto-list"></div>
+          <button class="btn-add-small" onclick="addFoto()">+ foto</button>
+          <div style="font-size:11px;color:#aaa;margin-top:4px">Paste link Google Drive / WhatsApp / Dropbox</div>
+        </div>
+
+        <button class="btn-primary" id="btn-submit" onclick="submitUpdate()" style="margin-top:8px">Simpan Update</button>
+      </div>
+    </div>
+
+  </div><!-- /tab-update -->
+
+  <!-- ═══ TAB: KELOLA PROYEK ═══ -->
+  <div id="tab-proyek" class="tab-content">
+    <div class="card">
+      <div class="section-title">Daftar Proyek</div>
+      <div id="proyek-list"><div class="loading">Memuat...</div></div>
+    </div>
+    <div class="card">
+      <div class="section-title">Tambah Proyek Baru</div>
+      <div class="two-col">
+        <div class="field"><label>Kode Proyek</label><input type="text" id="np-kode" placeholder="SP-2026-001" style="text-transform:uppercase"></div>
+        <div class="field"><label>Nama Proyek</label><input type="text" id="np-nama" placeholder="Parkiran PT. Maju Bersama"></div>
+      </div>
+      <div class="two-col">
+        <div class="field"><label>Nama Klien</label><input type="text" id="np-klien" placeholder="Budi Santoso / PT. Maju"></div>
+        <div class="field"><label>Lokasi</label><input type="text" id="np-lokasi" placeholder="Cikarang Barat, Bekasi"></div>
+      </div>
+      <div class="two-col">
+        <div class="field"><label>Mulai</label><input type="date" id="np-mulai"></div>
+        <div class="field"><label>Target Selesai</label><input type="date" id="np-selesai"></div>
+      </div>
+      <div class="field"><label>Nilai Kontrak (Rp, opsional)</label><input type="number" id="np-nilai" placeholder="125000000"></div>
+      <button class="btn-primary" onclick="addProyek()" style="margin-top:4px">Buat Proyek</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal Edit -->
+<div id="modal-edit" class="modal-bg" style="display:none">
+  <div class="modal">
+    <h3>Edit Update</h3>
+    <div class="two-col">
+      <div class="field"><label>Tanggal</label><input type="date" id="edit-tanggal"></div>
+      <div class="field"><label>Status</label>
+        <select id="edit-status">
+          <option>Persiapan lahan</option><option>Pemasangan</option><option>Finishing</option><option>Selesai</option>
+        </select>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="field"><label>Progres (%)</label><input type="number" id="edit-progres" min="0" max="100"></div>
+      <div class="field"><label>Jumlah pekerja</label><input type="number" id="edit-pekerja" min="0"></div>
+    </div>
+    <div class="field"><label>Catatan</label><textarea id="edit-catatan"></textarea></div>
+    <div class="field">
+      <label>Material</label>
+      <div id="edit-material-list"></div>
+      <button class="btn-add-small" onclick="addEditMaterial()">+ material</button>
+    </div>
+    <div class="field">
+      <label>Foto (URL)</label>
+      <div id="edit-foto-list"></div>
+      <button class="btn-add-small" onclick="addEditFoto()">+ foto</button>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <button class="btn-secondary" style="flex:1" onclick="closeModal()">Batal</button>
+      <button class="btn-primary" style="flex:2" onclick="saveEdit()">Simpan</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+// ══ GANTI INI ══
+var API_URL = 'https://script.google.com/macros/s/AKfycby8MuDPyYObyhUKzHcp2PsJ90mye2oAAA18LUe1WscvzPUPNc8uJXB3Lb4bY8Zs3dzPIw/exec';
+var BASE_URL = 'https://solidpaving.id/laporan/';
+
+var materials = [];
+var fotos = [];
+var editMaterials = [];
+var editFotos = [];
+var editId = null;
+var currentKode = null;
+
+var fmt = function(n){ return new Intl.NumberFormat('id-ID').format(Math.round(n)); };
+var fmtDate = function(s){
+  if(!s) return '—';
+  var d = new Date(s+'T00:00:00');
+  return d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+};
+
+function toast(msg, ok){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = ok === false ? '#e24b4a' : '#1a1a1a';
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2800);
+}
+
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(function(t,i){
+    t.classList.toggle('active', ['update','proyek'][i] === name);
+  });
+  document.getElementById('tab-update').classList.toggle('active', name==='update');
+  document.getElementById('tab-proyek').classList.toggle('active', name==='proyek');
+  if(name==='proyek') loadProyekList();
+}
+
+// ── Material rows ──
+function addMaterial(){
+  var id = Date.now();
+  materials.push({id:id,nama:'',jumlah:'',satuan:'pcs'});
+  renderMaterial();
+}
+function renderMaterial(){
+  document.getElementById('material-list').innerHTML = materials.map(function(m){
+    return '<div class="material-row">'+
+      '<input value="'+esc(m.nama)+'" placeholder="Paving block Holland" oninput="updM('+m.id+',\'nama\',this.value)">'+
+      '<input value="'+esc(m.jumlah)+'" placeholder="500" type="number" oninput="updM('+m.id+',\'jumlah\',this.value)">'+
+      '<input value="'+esc(m.satuan)+'" placeholder="pcs" oninput="updM('+m.id+',\'satuan\',this.value)">'+
+      '<button class="btn-del" onclick="delM('+m.id+')">&#215;</button></div>';
+  }).join('');
+}
+function updM(id,k,v){ var m=materials.find(function(x){return x.id===id;}); if(m)m[k]=v; }
+function delM(id){ materials=materials.filter(function(x){return x.id!==id;}); renderMaterial(); }
+
+function addFoto(){
+  var id = Date.now();
+  fotos.push({id:id,url:''});
+  renderFoto();
+}
+function renderFoto(){
+  document.getElementById('foto-list').innerHTML = fotos.map(function(f){
+    return '<div class="foto-row">'+
+      '<input value="'+esc(f.url)+'" placeholder="https://drive.google.com/..." oninput="updF('+f.id+',this.value)">'+
+      '<button class="btn-del" onclick="delF('+f.id+')">&#215;</button></div>';
+  }).join('');
+}
+function updF(id,v){ var f=fotos.find(function(x){return x.id===id;}); if(f)f.url=v; }
+function delF(id){ fotos=fotos.filter(function(x){return x.id!==id;}); renderFoto(); }
+
+// ── Edit material rows ──
+function addEditMaterial(){
+  var id = Date.now();
+  editMaterials.push({id:id,nama:'',jumlah:'',satuan:'pcs'});
+  renderEditMaterial();
+}
+function renderEditMaterial(){
+  document.getElementById('edit-material-list').innerHTML = editMaterials.map(function(m){
+    return '<div class="material-row">'+
+      '<input value="'+esc(m.nama)+'" placeholder="Paving block" oninput="updEM('+m.id+',\'nama\',this.value)">'+
+      '<input value="'+esc(m.jumlah)+'" placeholder="500" type="number" oninput="updEM('+m.id+',\'jumlah\',this.value)">'+
+      '<input value="'+esc(m.satuan)+'" placeholder="pcs" oninput="updEM('+m.id+',\'satuan\',this.value)">'+
+      '<button class="btn-del" onclick="delEM('+m.id+')">&#215;</button></div>';
+  }).join('');
+}
+function updEM(id,k,v){ var m=editMaterials.find(function(x){return x.id===id;}); if(m)m[k]=v; }
+function delEM(id){ editMaterials=editMaterials.filter(function(x){return x.id!==id;}); renderEditMaterial(); }
+
+function addEditFoto(){
+  var id = Date.now();
+  editFotos.push({id:id,url:''});
+  renderEditFoto();
+}
+function renderEditFoto(){
+  document.getElementById('edit-foto-list').innerHTML = editFotos.map(function(f){
+    return '<div class="foto-row">'+
+      '<input value="'+esc(f.url)+'" placeholder="https://drive.google.com/..." oninput="updEF('+f.id+',this.value)">'+
+      '<button class="btn-del" onclick="delEF('+f.id+')">&#215;</button></div>';
+  }).join('');
+}
+function updEF(id,v){ var f=editFotos.find(function(x){return x.id===id;}); if(f)f.url=v; }
+function delEF(id){ editFotos=editFotos.filter(function(x){return x.id!==id;}); renderEditFoto(); }
+
+function esc(s){ return(s||'').replace(/"/g,'&quot;'); }
+
+// ── Load daftar proyek ke select ──
+function loadProyekSelect(){
+  fetch(API_URL+'?action=listProjects')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var sel = document.getElementById('sel-proyek');
+      var current = sel.value;
+      sel.innerHTML = '<option value="">— Pilih proyek —</option>';
+      (d.projects||[]).forEach(function(p){
+        var o = document.createElement('option');
+        o.value = p.kode; o.textContent = p.kode+' — '+p.nama_proyek;
+        sel.appendChild(o);
+      });
+      if(current) sel.value = current;
+    });
+}
+
+function loadProyekList(){
+  var el = document.getElementById('proyek-list');
+  el.innerHTML = '<div class="loading">Memuat...</div>';
+  fetch(API_URL+'?action=listProjects')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(!d.projects||!d.projects.length){ el.innerHTML='<div class="empty">Belum ada proyek</div>'; return; }
+      el.innerHTML = d.projects.map(function(p){
+        return '<div class="proyek-card">'+
+          '<h4>'+p.kode+' — '+p.nama_proyek+'</h4>'+
+          '<p>'+p.klien+' · '+p.lokasi+'</p>'+
+          '<p style="margin-top:4px;color:#4A7FB5;font-size:11px">'+BASE_URL+p.kode+'</p>'+
+        '</div>';
+      }).join('');
+    });
+}
+
+function loadUpdates(){
+  var kode = document.getElementById('sel-proyek').value;
+  if(!kode){ document.getElementById('update-list-area').style.display='none'; return; }
+  currentKode = kode;
+  document.getElementById('update-list-area').style.display='block';
+  document.getElementById('link-laporan').href = BASE_URL+kode;
+  document.getElementById('update-list').innerHTML = '<div class="loading">Memuat...</div>';
+
+  fetch(API_URL+'?action=getProject&kode='+kode)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(!d.ok){ document.getElementById('update-list').innerHTML='<div class="empty">Gagal memuat</div>'; return; }
+      var p = d.proyek;
+      document.getElementById('proyek-info').style.display='block';
+      document.getElementById('proyek-info').innerHTML =
+        p.klien+' · '+p.lokasi+'<br>'+fmtDate(p.tgl_mulai)+' s/d '+fmtDate(p.tgl_selesai);
+
+      if(!d.updates||!d.updates.length){
+        document.getElementById('update-list').innerHTML='<div class="empty">Belum ada update</div>';
+        return;
+      }
+      document.getElementById('update-list').innerHTML = d.updates.slice(0,5).map(function(u){
+        var matStr = (u.material||[]).map(function(m){return m.jumlah+' '+m.satuan+' '+m.nama;}).join(', ');
+        return '<div class="update-item">'+
+          '<div class="date">'+fmtDate(u.tanggal)+'</div>'+
+          '<span class="status-badge">'+u.status+'</span>'+
+          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">'+
+            '<div class="progres-bar" style="flex:1"><div class="progres-fill" style="width:'+u.progres+'%"></div></div>'+
+            '<span style="font-size:12px;font-weight:500">'+u.progres+'%</span>'+
+            '<span style="font-size:12px;color:#888">'+u.pekerja+' pekerja</span>'+
+          '</div>'+
+          '<p>'+u.catatan+'</p>'+
+          (matStr?'<p style="margin-top:4px;color:#888">&#128230; '+matStr+'</p>':'')+
+          '<div class="update-actions">'+
+            '<button class="btn-secondary" onclick="openEdit('+JSON.stringify(u).replace(/"/g,'&quot;')+')">Edit</button>'+
+            '<button class="btn-danger" onclick="hapusUpdate(\''+u.id+'\')">Hapus</button>'+
+          '</div>'+
+        '</div>';
+      }).join('');
+    });
+}
+
+function submitUpdate(){
+  var kode = document.getElementById('sel-proyek').value;
+  if(!kode){ toast('Pilih proyek dulu', false); return; }
+  var tanggal = document.getElementById('inp-tanggal').value;
+  var progres = document.getElementById('inp-progres').value;
+  if(!tanggal||!progres){ toast('Tanggal dan progres wajib diisi', false); return; }
+
+  var btn = document.getElementById('btn-submit');
+  btn.disabled = true; btn.textContent = 'Menyimpan...';
+
+  var payload = {
+    action: 'addUpdate',
+    kode: kode,
+    tanggal: tanggal,
+    status: document.getElementById('inp-status').value,
+    progres: parseInt(progres),
+    pekerja: parseInt(document.getElementById('inp-pekerja').value)||0,
+    catatan: document.getElementById('inp-catatan').value,
+    material: materials.filter(function(m){return m.nama;}).map(function(m){return{nama:m.nama,jumlah:m.jumlah,satuan:m.satuan};}),
+    foto: fotos.filter(function(f){return f.url;}).map(function(f){return f.url;})
+  };
+
+  fetch(API_URL, {method:'POST',body:JSON.stringify(payload)})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      btn.disabled=false; btn.textContent='Simpan Update';
+      if(d.ok){
+        toast('Update berhasil disimpan ✓');
+        document.getElementById('inp-catatan').value='';
+        document.getElementById('inp-pekerja').value='';
+        document.getElementById('inp-progres').value='';
+        materials=[]; fotos=[];
+        renderMaterial(); renderFoto();
+        loadUpdates();
+      } else {
+        toast('Gagal: '+(d.error||'unknown'), false);
+      }
+    })
+    .catch(function(){ btn.disabled=false; btn.textContent='Simpan Update'; toast('Gagal koneksi', false); });
+}
+
+function openEdit(u){
+  editId = u.id;
+  document.getElementById('edit-tanggal').value = u.tanggal;
+  document.getElementById('edit-status').value = u.status;
+  document.getElementById('edit-progres').value = u.progres;
+  document.getElementById('edit-pekerja').value = u.pekerja;
+  document.getElementById('edit-catatan').value = u.catatan;
+  editMaterials = (u.material||[]).map(function(m,i){return{id:i,nama:m.nama,jumlah:m.jumlah,satuan:m.satuan};});
+  editFotos = (u.foto||[]).map(function(f,i){return{id:i,url:f};});
+  renderEditMaterial(); renderEditFoto();
+  document.getElementById('modal-edit').style.display='flex';
+}
+function closeModal(){ document.getElementById('modal-edit').style.display='none'; }
+
+function saveEdit(){
+  var payload = {
+    action: 'editUpdate',
+    kode: currentKode,
+    id: editId,
+    tanggal: document.getElementById('edit-tanggal').value,
+    status: document.getElementById('edit-status').value,
+    progres: parseInt(document.getElementById('edit-progres').value)||0,
+    pekerja: parseInt(document.getElementById('edit-pekerja').value)||0,
+    catatan: document.getElementById('edit-catatan').value,
+    material: editMaterials.filter(function(m){return m.nama;}).map(function(m){return{nama:m.nama,jumlah:m.jumlah,satuan:m.satuan};}),
+    foto: editFotos.filter(function(f){return f.url;}).map(function(f){return f.url;})
+  };
+  fetch(API_URL, {method:'POST',body:JSON.stringify(payload)})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok){ closeModal(); toast('Update disimpan ✓'); loadUpdates(); }
+      else toast('Gagal: '+(d.error||'unknown'), false);
+    });
+}
+
+function hapusUpdate(id){
+  if(!confirm('Hapus update ini?')) return;
+  fetch(API_URL, {method:'POST',body:JSON.stringify({action:'deleteUpdate',kode:currentKode,id:id})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok){ toast('Dihapus'); loadUpdates(); }
+      else toast('Gagal hapus', false);
+    });
+}
+
+function addProyek(){
+  var kode = document.getElementById('np-kode').value.toUpperCase().trim();
+  var nama = document.getElementById('np-nama').value.trim();
+  var klien = document.getElementById('np-klien').value.trim();
+  if(!kode||!nama||!klien){ toast('Kode, nama, dan klien wajib diisi', false); return; }
+  var payload = {
+    action:'addProject', kode:kode, nama_proyek:nama, klien:klien,
+    lokasi:document.getElementById('np-lokasi').value,
+    tgl_mulai:document.getElementById('np-mulai').value,
+    tgl_selesai:document.getElementById('np-selesai').value,
+    nilai_kontrak:document.getElementById('np-nilai').value
+  };
+  fetch(API_URL, {method:'POST',body:JSON.stringify(payload)})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok){
+        toast('Proyek '+kode+' dibuat ✓');
+        ['np-kode','np-nama','np-klien','np-lokasi','np-mulai','np-selesai','np-nilai'].forEach(function(id){
+          document.getElementById(id).value='';
+        });
+        loadProyekSelect();
+        loadProyekList();
+      } else toast('Gagal: '+(d.error||'unknown'), false);
+    });
+}
+
+document.getElementById('inp-tanggal').valueAsDate = new Date();
+loadProyekSelect();
+</script>
+</body>
+</html>
