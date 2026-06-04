@@ -15,156 +15,225 @@ sitemap: false
   --bg0:#fff;--bg1:#F4F7FB;--bg2:#EBF1F8;
   --tx1:#0D1A2E;--tx2:#2D4466;--tx3:#4A6080;
   --bdr:rgba(46,62,95,.18);--bds:rgba(13,26,46,.08);
-  --green:#0F6E56;--r:6px;
+  --green:#0F6E56;--red:#b41e1e;--r:6px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f4f8;color:var(--tx1);font-size:14px;}
-.app{display:grid;grid-template-columns:420px 1fr;min-height:100vh;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#e8edf3;color:var(--tx1);font-size:14px;}
+.app{display:grid;grid-template-columns:400px 1fr;min-height:100vh;}
 
-.form-panel{background:var(--bg1);padding:20px;overflow-y:auto;border-right:1px solid var(--bdr);}
-.form-panel h2{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--accent);}
-.section{margin-bottom:18px;}
-.section-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--bds);}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.field{margin-bottom:8px;}
-label{display:block;font-size:11px;font-weight:600;color:var(--tx2);margin-bottom:3px;}
-input,select,textarea{width:100%;padding:6px 9px;border:1px solid var(--bdr);border-radius:var(--r);font-size:13px;font-family:inherit;color:var(--tx1);background:var(--bg0);outline:none;transition:border-color .15s;}
-input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(149,179,217,.2);}
+/* FORM */
+.fp{background:var(--bg1);padding:18px;overflow-y:auto;border-right:1px solid var(--bdr);position:sticky;top:0;height:100vh;}
+.fp h2{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent);}
+.sec{margin-bottom:16px;}
+.sec-t{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:7px;padding-bottom:4px;border-bottom:1px solid var(--bds);}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.r3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;}
+.f{margin-bottom:7px;}
+label{display:block;font-size:10px;font-weight:600;color:var(--tx2);margin-bottom:2px;}
+input,select,textarea{width:100%;padding:5px 8px;border:1px solid var(--bdr);border-radius:var(--r);font-size:12px;font-family:inherit;color:var(--tx1);background:var(--bg0);outline:none;transition:border-color .15s;}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(149,179,217,.2);}
 textarea{resize:vertical;}
+.inv-no-row{display:flex;gap:6px;align-items:flex-end;}
+.inv-no-row input{flex:1;}
+.btn-gen{padding:5px 10px;background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);font-size:11px;font-weight:600;color:var(--blue2);cursor:pointer;white-space:nowrap;}
+.btn-gen:hover{background:var(--accent);color:#fff;}
 
-.item-header{display:grid;grid-template-columns:1fr 70px 100px 28px;gap:5px;margin-bottom:4px;}
-.item-header span{font-size:10px;color:var(--tx3);font-weight:700;}
-.item-row{display:grid;grid-template-columns:1fr 70px 100px 28px;gap:5px;align-items:start;margin-bottom:5px;}
-.item-row input{font-size:12px;padding:5px 7px;}
-.btn-del{width:28px;height:30px;background:none;border:1px solid rgba(180,30,30,.25);border-radius:var(--r);color:#b41e1e;cursor:pointer;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;}
-.btn-del:hover{background:rgba(180,30,30,.08);}
-.btn-add{background:none;border:1px dashed var(--accent);color:var(--blue2);padding:6px 10px;border-radius:var(--r);cursor:pointer;font-size:12px;font-weight:600;width:100%;margin-top:3px;transition:background .15s;}
-.btn-add:hover{background:var(--bg2);}
-.btn-print{width:100%;background:var(--blue);color:#fff;border:none;padding:11px;border-radius:var(--r);font-size:14px;font-weight:700;cursor:pointer;margin-top:4px;transition:background .15s;}
+/* ITEMS */
+.ih{display:grid;grid-template-columns:1fr 64px 90px 26px;gap:4px;margin-bottom:3px;}
+.ih span{font-size:9px;color:var(--tx3);font-weight:700;}
+.ir{display:grid;grid-template-columns:1fr 64px 90px 26px;gap:4px;align-items:start;margin-bottom:4px;}
+.ir input{font-size:11px;padding:4px 6px;}
+.bd{width:26px;height:28px;background:none;border:1px solid rgba(180,30,30,.25);border-radius:var(--r);color:var(--red);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;}
+.bd:hover{background:rgba(180,30,30,.08);}
+.ba{background:none;border:1px dashed var(--accent);color:var(--blue2);padding:5px 8px;border-radius:var(--r);cursor:pointer;font-size:11px;font-weight:600;width:100%;margin-top:2px;}
+.ba:hover{background:var(--bg2);}
+
+/* PAYMENT SUMMARY BOX */
+.pay-summary{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);padding:10px 12px;margin-bottom:8px;font-size:12px;}
+.pay-row{display:flex;justify-content:space-between;padding:2px 0;color:var(--tx2);}
+.pay-row.bold{font-weight:700;color:var(--tx1);border-top:1px solid var(--bdr);margin-top:4px;padding-top:6px;}
+.pay-row.red{color:var(--red);}
+.pay-row.green{color:var(--green);font-weight:600;}
+
+.btn-print{width:100%;background:var(--blue);color:#fff;border:none;padding:10px;border-radius:var(--r);font-size:13px;font-weight:700;cursor:pointer;margin-top:6px;}
 .btn-print:hover{background:var(--blue2);}
 
-.preview-panel{background:#dde5ef;padding:20px;overflow-y:auto;}
-.inv-wrap{background:#fff;max-width:680px;margin:0 auto;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.14);}
+/* PREVIEW */
+.pp{background:#c8d3e0;padding:24px;overflow-y:auto;display:flex;justify-content:center;align-items:flex-start;}
 
-.inv-header{background:var(--blue);color:#fff;padding:26px 30px 20px;}
-.inv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
-.inv-logo-text .solid{font-size:22px;font-weight:900;letter-spacing:3px;color:#fff;}
-.inv-logo-text .paving{font-size:22px;font-weight:300;letter-spacing:3px;color:var(--accent);}
-.inv-logo-text .tagline{font-size:10px;opacity:.55;letter-spacing:1px;margin-top:3px;}
-.inv-badge-title{text-align:right;}
-.inv-badge{display:inline-block;padding:3px 12px;border-radius:4px;font-size:10px;font-weight:700;margin-bottom:8px;}
-.inv-title-text{font-size:24px;font-weight:900;letter-spacing:2px;opacity:.9;}
-.inv-num{font-size:11px;opacity:.55;margin-top:1px;}
-.inv-dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.inv-dates .dl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:.55;margin-bottom:2px;}
-.inv-dates .dv{font-size:13px;opacity:.88;}
+/* A4 INVOICE */
+.a4{background:#fff;width:210mm;min-height:297mm;padding:14mm 14mm 12mm;font-family:'Segoe UI',system-ui,sans-serif;font-size:9.5pt;color:#0D1A2E;box-shadow:0 4px 32px rgba(0,0,0,.18);position:relative;}
 
-.inv-body{padding:22px 30px;}
-.inv-sec{margin-bottom:18px;}
-.inv-sec-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:8px;}
-.client-box{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);padding:12px 14px;}
-.client-name{font-size:15px;font-weight:700;color:var(--tx1);margin-bottom:7px;}
-.client-grid{display:grid;grid-template-columns:90px 1fr;gap:3px 8px;font-size:12px;}
-.client-grid .lbl{color:var(--tx3);}
-.client-grid .val{color:var(--tx1);}
+/* HEADER */
+.a4-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8mm;padding-bottom:5mm;border-bottom:2px solid #2E3E5F;}
+.logo-block .logo-main{font-size:20pt;font-weight:900;letter-spacing:3px;line-height:1;}
+.logo-block .logo-main .s1{color:#2E3E5F;}
+.logo-block .logo-main .s2{color:#95B3D9;font-weight:300;}
+.logo-block .tagline{font-size:7pt;color:#4A6080;letter-spacing:1.5px;margin-top:2px;}
+.logo-block .contact{font-size:7.5pt;color:#4A6080;margin-top:5px;line-height:1.6;}
 
-table.inv-table{width:100%;border-collapse:collapse;font-size:12.5px;}
-table.inv-table thead tr{background:var(--blue);}
-table.inv-table thead th{color:#fff;padding:8px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-table.inv-table thead th:not(:first-child){text-align:right;}
-table.inv-table tbody tr{border-bottom:1px solid var(--bds);}
-table.inv-table tbody tr:nth-child(even){background:var(--bg1);}
-table.inv-table tbody td{padding:8px 10px;color:var(--tx1);}
-table.inv-table tbody td:not(:first-child){text-align:right;color:var(--tx2);}
-table.inv-table tbody td:last-child{font-weight:600;color:var(--tx1);}
-table.inv-table tfoot td{padding:6px 10px;font-size:12px;}
-.row-sub td{color:var(--tx2)!important;font-size:12px;}
-.row-ppn td{color:var(--tx2)!important;font-size:12px;}
-.row-total{background:var(--blue)!important;}
-.row-total td{color:#fff!important;font-weight:700!important;font-size:14px!important;padding:10px!important;}
+.inv-info-block{text-align:right;}
+.inv-info-block .inv-label{font-size:7pt;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:3px;}
+.inv-info-block .inv-number{font-size:16pt;font-weight:900;color:#2E3E5F;letter-spacing:1px;line-height:1.1;}
+.status-badge{display:inline-block;padding:3px 10px;border-radius:3px;font-size:7.5pt;font-weight:700;margin-top:5px;letter-spacing:.5px;}
 
-.note-box{background:rgba(149,179,217,.13);border-left:3px solid var(--accent);padding:9px 12px;border-radius:0 var(--r) var(--r) 0;margin-bottom:14px;}
-.note-box p{font-size:12px;color:var(--tx2);line-height:1.6;}
-.guar-box{background:rgba(15,110,86,.07);border-left:3px solid var(--green);padding:9px 12px;border-radius:0 var(--r) var(--r) 0;margin-bottom:14px;}
-.guar-box p{font-size:12px;color:var(--green);font-weight:600;}
+/* META ROW */
+.meta-row{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:6mm;}
+.meta-box{background:#F4F7FB;border-radius:4px;padding:6px 10px;}
+.meta-box .ml{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A6080;margin-bottom:2px;}
+.meta-box .mv{font-size:9pt;color:#0D1A2E;font-weight:600;}
+.meta-box .mv2{font-size:8pt;color:#2D4466;margin-top:1px;}
 
-.bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;}
-.bank-box{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);padding:10px 13px;}
-.bank-box .bn{font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px;}
-.bank-box .bd{font-size:12px;color:var(--tx2);line-height:1.6;}
+/* CLIENT */
+.client-row{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:6mm;}
+.client-box{background:#F4F7FB;border:1px solid rgba(13,26,46,.08);border-radius:4px;padding:8px 10px;}
+.box-title{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A6080;margin-bottom:5px;}
+.client-name{font-size:11pt;font-weight:700;color:#0D1A2E;margin-bottom:4px;}
+.client-detail{font-size:8pt;color:#2D4466;line-height:1.7;}
+.from-box{background:#2E3E5F;border-radius:4px;padding:8px 10px;}
+.from-box .box-title{color:rgba(255,255,255,.55);}
+.from-box .client-name{color:#fff;font-size:10pt;}
+.from-box .client-detail{color:rgba(255,255,255,.75);}
 
-.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:8px;}
-.sig-item{text-align:center;}
-.sig-space{height:48px;border-bottom:1px solid var(--bdr);margin-bottom:6px;}
-.sig-item .sn{font-size:11px;color:var(--tx3);}
-.sig-item .sp{font-weight:600;font-size:13px;margin-top:2px;}
+/* TABLE */
+table.it{width:100%;border-collapse:collapse;margin-bottom:4mm;font-size:8.5pt;}
+table.it thead tr{background:#2E3E5F;}
+table.it thead th{color:#fff;padding:6px 8px;font-size:7pt;font-weight:700;letter-spacing:.8px;text-transform:uppercase;}
+table.it thead th:not(:first-child){text-align:right;}
+table.it tbody tr{border-bottom:1px solid rgba(13,26,46,.07);}
+table.it tbody tr:nth-child(even){background:#F4F7FB;}
+table.it tbody td{padding:6px 8px;}
+table.it tbody td:not(:first-child){text-align:right;color:#2D4466;}
+table.it tbody td:last-child{font-weight:600;color:#0D1A2E;}
+table.it tfoot tr{border-top:1.5px solid #2E3E5F;}
+table.it tfoot td{padding:5px 8px;font-size:8.5pt;}
 
-.inv-footer{background:var(--blue);color:rgba(255,255,255,.65);text-align:center;padding:12px;font-size:11px;line-height:1.7;}
-.inv-footer strong{color:#fff;}
+/* PAYMENT BLOCK */
+.pay-block{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm;}
+.pay-table{font-size:8.5pt;width:100%;}
+.pay-table tr td{padding:3px 0;}
+.pay-table tr td:last-child{text-align:right;font-weight:600;}
+.pay-table .pt-sub td{color:#4A6080;}
+.pay-table .pt-disc td{color:#b41e1e;}
+.pay-table .pt-ppn td{color:#4A6080;}
+.pay-table .pt-gross{border-top:1px solid rgba(13,26,46,.15);}
+.pay-table .pt-gross td{font-weight:700;padding-top:6px;}
+.pay-table .pt-termin td{color:#2E3E5F;font-weight:700;}
+.pay-table .pt-paid td{color:#0F6E56;}
+.pay-table .pt-sisa td{color:#b41e1e;font-size:9.5pt;font-weight:700;}
 
+.termin-box{background:#2E3E5F;border-radius:4px;padding:10px 12px;text-align:center;}
+.termin-box .tb-label{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:4px;}
+.termin-box .tb-pct{font-size:18pt;font-weight:900;color:#95B3D9;line-height:1;}
+.termin-box .tb-amount{font-size:10pt;font-weight:700;color:#fff;margin-top:4px;}
+.termin-box .tb-status{display:inline-block;margin-top:6px;padding:2px 10px;border-radius:3px;font-size:7pt;font-weight:700;}
+
+.sisa-box{background:#FFF4F4;border:1px solid rgba(180,30,30,.2);border-radius:4px;padding:10px 12px;text-align:center;}
+.sisa-box .tb-label{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b41e1e;opacity:.7;margin-bottom:4px;}
+.sisa-box .tb-amount{font-size:13pt;font-weight:900;color:#b41e1e;line-height:1.1;}
+.sisa-box.lunas{background:rgba(15,110,86,.07);border-color:rgba(15,110,86,.2);}
+.sisa-box.lunas .tb-label{color:#0F6E56;}
+.sisa-box.lunas .tb-amount{color:#0F6E56;}
+
+/* NOTES & GUARANTEE */
+.note-guar{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm;}
+.note-box{background:rgba(149,179,217,.12);border-left:2.5px solid #95B3D9;padding:7px 10px;border-radius:0 4px 4px 0;font-size:8pt;color:#2D4466;line-height:1.6;}
+.guar-box{background:rgba(15,110,86,.07);border-left:2.5px solid #0F6E56;padding:7px 10px;border-radius:0 4px 4px 0;font-size:8pt;color:#0F6E56;font-weight:600;line-height:1.6;}
+.box-lbl{font-size:7pt;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;opacity:.65;}
+
+/* BANK & SIG */
+.bank-sig{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm;}
+.bank-box{background:#F4F7FB;border:1px solid rgba(13,26,46,.08);border-radius:4px;padding:8px 10px;}
+.bank-name{font-size:8pt;font-weight:700;color:#2E3E5F;margin-bottom:4px;}
+.bank-detail{font-size:8pt;color:#2D4466;line-height:1.6;}
+.sig-box{text-align:center;}
+.sig-space{height:40px;border-bottom:1px solid rgba(13,26,46,.18);margin-bottom:5px;}
+.sig-label{font-size:7.5pt;color:#4A6080;}
+.sig-name{font-size:8.5pt;font-weight:700;margin-top:2px;}
+
+/* FOOTER */
+.a4-foot{border-top:1px solid rgba(13,26,46,.12);padding-top:4mm;text-align:center;font-size:7.5pt;color:#4A6080;line-height:1.7;}
+.a4-foot strong{color:#2E3E5F;}
+
+/* PRINT */
 @media print{
-  .form-panel{display:none!important;}
-  .preview-panel{padding:0;background:#fff;}
-  .inv-wrap{box-shadow:none;border-radius:0;max-width:100%;}
-  .app{display:block;}
+  .fp{display:none!important;}
   body{background:#fff;}
+  .pp{padding:0;background:#fff;display:block;}
+  .a4{box-shadow:none;margin:0;width:100%;}
+  @page{size:A4 portrait;margin:0;}
 }
-@media(max-width:900px){
+@media(max-width:960px){
   .app{grid-template-columns:1fr;}
-  .preview-panel{padding:12px;}
+  .fp{position:static;height:auto;}
+  .pp{padding:12px;}
+  .a4{width:100%;min-height:auto;padding:8mm;}
 }
 </style>
 </head>
 <body>
 <div class="app">
 
-<div class="form-panel">
+<!-- FORM -->
+<div class="fp">
   <h2>&#9998;&nbsp; Invoice SolidPaving.id</h2>
 
-  <div class="section">
-    <div class="section-title">Info Invoice</div>
-    <div class="row2">
-      <div class="field"><label>No. Invoice</label><input id="fNo" value="INV-2026-001" oninput="render()"></div>
-      <div class="field"><label>Status</label>
-        <select id="fStatus" onchange="render()">
-          <option value="PROFORMA">Proforma</option>
-          <option value="TAGIHAN">Tagihan</option>
-          <option value="DP 50%">DP 50%</option>
-          <option value="LUNAS">Lunas</option>
-        </select>
+  <div class="sec">
+    <div class="sec-t">Info Invoice</div>
+    <div class="f">
+      <label>No. Invoice</label>
+      <div class="inv-no-row">
+        <input id="fNo" value="INV-2026-001" oninput="render()">
+        <button class="btn-gen" onclick="genNo()" title="Generate otomatis">&#8635; Auto</button>
       </div>
     </div>
-    <div class="row2">
-      <div class="field"><label>Tanggal Invoice</label><input id="fDate" type="date" oninput="render()"></div>
-      <div class="field"><label>Jatuh Tempo</label><input id="fDue" type="date" oninput="render()"></div>
+    <div class="f">
+      <label>Status Pembayaran</label>
+      <select id="fStatus" onchange="statusChange()">
+        <option value="PROFORMA:0">Proforma (tanpa tagihan)</option>
+        <option value="TERMIN1:30">Termin 1 — 30%</option>
+        <option value="TERMIN2:50">Termin 2 — 50%</option>
+        <option value="PELUNASAN:20">Pelunasan — 20%</option>
+        <option value="DP:50">DP — 50%</option>
+        <option value="LUNAS:100">Lunas — 100%</option>
+        <option value="TAGIHAN:100">Tagihan Penuh</option>
+        <option value="CUSTOM:0">Persentase Kustom...</option>
+      </select>
     </div>
+    <div class="f" id="customPctWrap" style="display:none">
+      <label>Persentase Tagihan (%)</label>
+      <input id="fCustomPct" type="number" min="1" max="100" value="30" oninput="render()">
+    </div>
+    <div class="r2">
+      <div class="f"><label>Tgl. Invoice</label><input id="fDate" type="date" oninput="render()"></div>
+      <div class="f"><label>Jatuh Tempo</label><input id="fDue" type="date" oninput="render()"></div>
+    </div>
+    <div class="f"><label>Tgl. Penagihan Berikutnya (opsional)</label><input id="fNext" type="date" oninput="render()"></div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Data Klien</div>
-    <div class="field"><label>Nama / Perusahaan</label><input id="cName" placeholder="PT. Contoh / Bpk. Ahmad" oninput="render()"></div>
-    <div class="row2">
-      <div class="field"><label>No. Telepon / WA</label><input id="cPhone" placeholder="0812-xxxx-xxxx" oninput="render()"></div>
-      <div class="field"><label>Email (opsional)</label><input id="cEmail" placeholder="email@..." oninput="render()"></div>
+  <div class="sec">
+    <div class="sec-t">Data Klien</div>
+    <div class="f"><label>Nama / Perusahaan</label><input id="cName" placeholder="PT. Contoh / Bpk. Ahmad" oninput="render()"></div>
+    <div class="r2">
+      <div class="f"><label>No. Telepon / WA</label><input id="cPhone" placeholder="0812-xxxx-xxxx" oninput="render()"></div>
+      <div class="f"><label>Email (opsional)</label><input id="cEmail" placeholder="email@..." oninput="render()"></div>
     </div>
-    <div class="field"><label>Alamat Klien</label><textarea id="cAddr" rows="2" placeholder="Jl. ..." oninput="render()"></textarea></div>
-    <div class="field"><label>Lokasi / Alamat Proyek</label><textarea id="cProj" rows="2" placeholder="Lokasi pemasangan..." oninput="render()"></textarea></div>
+    <div class="f"><label>Alamat Klien</label><textarea id="cAddr" rows="2" placeholder="Jl. ..." oninput="render()"></textarea></div>
+    <div class="f"><label>Lokasi / Alamat Proyek</label><textarea id="cProj" rows="2" placeholder="Lokasi pemasangan..." oninput="render()"></textarea></div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Item &amp; Layanan</div>
-    <div class="item-header">
-      <span>Deskripsi</span><span>Qty/Vol</span><span>Harga/Sat (Rp)</span><span></span>
-    </div>
-    <div id="itemsWrap"></div>
-    <button class="btn-add" onclick="addItem()">+ Tambah Item</button>
+  <div class="sec">
+    <div class="sec-t">Item &amp; Layanan</div>
+    <div class="ih"><span>Deskripsi</span><span>Qty/Vol</span><span>Harga/Sat (Rp)</span><span></span></div>
+    <div id="iWrap"></div>
+    <button class="ba" onclick="addItem()">+ Tambah Item</button>
   </div>
 
-  <div class="section">
-    <div class="section-title">Diskon &amp; Pajak</div>
-    <div class="row2">
-      <div class="field"><label>Diskon (Rp)</label><input id="fDisc" type="number" min="0" value="0" oninput="render()"></div>
-      <div class="field"><label>PPN</label>
+  <div class="sec">
+    <div class="sec-t">Diskon &amp; Pajak</div>
+    <div class="r2">
+      <div class="f"><label>Diskon (Rp)</label><input id="fDisc" type="number" min="0" value="0" oninput="render()"></div>
+      <div class="f"><label>PPN</label>
         <select id="fPpn" onchange="render()">
           <option value="0">Tanpa PPN</option>
           <option value="11">PPN 11%</option>
@@ -172,44 +241,94 @@ table.inv-table tfoot td{padding:6px 10px;font-size:12px;}
         </select>
       </div>
     </div>
+    <div class="f"><label>Sudah Terbayar (Rp)</label><input id="fPaid" type="number" min="0" value="0" oninput="render()"></div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Catatan &amp; Garansi</div>
-    <div class="field"><label>Catatan</label><textarea id="fNotes" rows="3" placeholder="Termasuk biaya mobilisasi, material, tenaga kerja..." oninput="render()"></textarea></div>
-    <div class="field"><label>Garansi</label>
+  <div class="sec">
+    <div class="sec-t">Catatan &amp; Garansi</div>
+    <div class="f"><label>Catatan</label><textarea id="fNotes" rows="2" placeholder="Termasuk mobilisasi, material, tenaga kerja..." oninput="render()"></textarea></div>
+    <div class="f"><label>Garansi</label>
       <select id="fGuar" onchange="guarChange()">
         <option value="Garansi tertulis 3 bulan mencakup material dan hasil pemasangan.">Garansi 3 bulan (standar)</option>
         <option value="Garansi tertulis 6 bulan mencakup material dan hasil pemasangan.">Garansi 6 bulan</option>
         <option value="">Supply only — tanpa garansi pemasangan</option>
-        <option value="__custom">Kustom...</option>
+        <option value="__c">Kustom...</option>
       </select>
     </div>
-    <div id="guarCustomWrap" style="display:none" class="field">
-      <textarea id="fGuarCustom" rows="2" placeholder="Tulis syarat garansi..." oninput="render()"></textarea>
+    <div class="f" id="gcWrap" style="display:none">
+      <textarea id="fGuarC" rows="2" placeholder="Syarat garansi kustom..." oninput="render()"></textarea>
     </div>
   </div>
+
+  <!-- LIVE SUMMARY -->
+  <div class="pay-summary" id="liveSummary"></div>
 
   <button class="btn-print" onclick="window.print()">&#128424;&nbsp; Cetak / Simpan PDF</button>
 </div>
 
-<div class="preview-panel">
-  <div class="inv-wrap" id="inv"></div>
+<!-- PREVIEW -->
+<div class="pp">
+  <div class="a4" id="inv"></div>
 </div>
 </div>
 
 <script>
 var items=[], uid=0;
-var badgeStyles={
-  'PROFORMA':'background:#EBF1F8;color:#2E3E5F;',
-  'TAGIHAN':'background:#FAEEDA;color:#854F0B;',
-  'DP 50%':'background:#EBF1F8;color:#2E3E5F;',
-  'LUNAS':'background:rgba(15,110,86,.18);color:#0F6E56;'
+
+var statusMap={
+  'PROFORMA':0,'TERMIN1':30,'TERMIN2':50,'PELUNASAN':20,
+  'DP':50,'LUNAS':100,'TAGIHAN':100,'CUSTOM':0
 };
+var statusLabel={
+  'PROFORMA':'PROFORMA','TERMIN1':'TERMIN 1 · 30%','TERMIN2':'TERMIN 2 · 50%',
+  'PELUNASAN':'PELUNASAN · 20%','DP':'DOWN PAYMENT · 50%',
+  'LUNAS':'LUNAS','TAGIHAN':'TAGIHAN PENUH','CUSTOM':'TAGIHAN'
+};
+var badgeStyle={
+  'PROFORMA':'background:#EBF1F8;color:#2E3E5F;',
+  'TERMIN1':'background:#FAEEDA;color:#854F0B;',
+  'TERMIN2':'background:#FAEEDA;color:#854F0B;',
+  'PELUNASAN':'background:#FFF4F4;color:#b41e1e;',
+  'DP':'background:#EBF1F8;color:#2E3E5F;',
+  'LUNAS':'background:rgba(15,110,86,.18);color:#0F6E56;',
+  'TAGIHAN':'background:#FAEEDA;color:#854F0B;',
+  'CUSTOM':'background:#FAEEDA;color:#854F0B;'
+};
+
 function idr(n){return'Rp\u00a0'+Math.round(n).toLocaleString('id-ID');}
 function fd(d){if(!d)return'—';var p=d.split('-'),M=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des'];return p[2]+' '+M[+p[1]-1]+' '+p[0];}
 function eh(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
-function v(id){return document.getElementById(id).value;}
+function v(id){return(document.getElementById(id)||{value:''}).value;}
+
+function genNo(){
+  var d=new Date();
+  var y=d.getFullYear();
+  var m=('0'+(d.getMonth()+1)).slice(-2);
+  var r=Math.floor(Math.random()*900)+100;
+  document.getElementById('fNo').value='INV-'+y+m+'-'+r;
+  render();
+}
+
+function statusChange(){
+  var raw=v('fStatus').split(':')[0];
+  document.getElementById('customPctWrap').style.display=raw==='CUSTOM'?'':'none';
+  render();
+}
+function guarChange(){
+  document.getElementById('gcWrap').style.display=v('fGuar')==='__c'?'':'none';
+  render();
+}
+function getGuar(){
+  var s=v('fGuar');
+  if(s==='__c')return v('fGuarC');
+  return s;
+}
+function getPct(){
+  var raw=v('fStatus').split(':')[0];
+  if(raw==='CUSTOM')return parseFloat(v('fCustomPct'))||0;
+  return statusMap[raw]||0;
+}
+function getStatusKey(){return v('fStatus').split(':')[0];}
 
 function addItem(){
   var id=++uid;
@@ -220,128 +339,176 @@ function delItem(id){items=items.filter(function(i){return i.id!==id;});renderIt
 function upd(id,f,val){items.forEach(function(i){if(i.id===id)i[f]=val;});render();}
 
 function renderItems(){
-  var w=document.getElementById('itemsWrap');w.innerHTML='';
+  var w=document.getElementById('iWrap');w.innerHTML='';
   items.forEach(function(it){
-    var d=document.createElement('div');d.className='item-row';
+    var d=document.createElement('div');d.className='ir';
     d.innerHTML=
-      '<input value="'+eh(it.desc)+'" placeholder="Jasa Pasang / Paving Holland K300..." oninput="upd('+it.id+',\'desc\',this.value)">'+
+      '<input value="'+eh(it.desc)+'" placeholder="Jasa Pasang Paving Holland K300..." oninput="upd('+it.id+',\'desc\',this.value)">'+
       '<input value="'+eh(it.qty)+'" placeholder="100 m²" oninput="upd('+it.id+',\'qty\',this.value)" style="text-align:right">'+
       '<input type="number" min="0" value="'+eh(it.price)+'" placeholder="175000" oninput="upd('+it.id+',\'price\',this.value)" style="text-align:right">'+
-      '<button class="btn-del" onclick="delItem('+it.id+')" title="Hapus">&times;</button>';
+      '<button class="bd" onclick="delItem('+it.id+')">&times;</button>';
     w.appendChild(d);
   });
 }
 
-function guarChange(){
-  var s=document.getElementById('fGuar').value;
-  document.getElementById('guarCustomWrap').style.display=s==='__custom'?'':'none';
-  render();
-}
-function getGuar(){
-  var s=document.getElementById('fGuar').value;
-  if(s==='__custom')return v('fGuarCustom');
-  return s;
+function calcAll(){
+  var sub=0;
+  items.forEach(function(it){sub+=(parseFloat(it.qty)||0)*(parseFloat(it.price)||0);});
+  var disc=parseFloat(v('fDisc'))||0;
+  var ppnPct=parseInt(v('fPpn'))||0;
+  var afterDisc=sub-disc;
+  var ppnAmt=afterDisc*(ppnPct/100);
+  var gross=afterDisc+ppnAmt;
+  var pct=getPct();
+  var tagihan=gross*(pct/100);
+  var paid=parseFloat(v('fPaid'))||0;
+  var sisa=tagihan-paid;
+  return{sub:sub,disc:disc,ppnPct:ppnPct,ppnAmt:ppnAmt,afterDisc:afterDisc,gross:gross,pct:pct,tagihan:tagihan,paid:paid,sisa:sisa};
 }
 
 function render(){
+  var c=calcAll();
+  var sk=getStatusKey();
+  var sl=statusLabel[sk]||'TAGIHAN';
+  var bs=badgeStyle[sk]||badgeStyle['TAGIHAN'];
   var no=v('fNo')||'INV-2026-001';
-  var status=v('fStatus');
-  var date=v('fDate'),due=v('fDue');
-  var cn=v('cName')||'—',cp=v('cPhone')||'—';
-  var ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj')||'—';
-  var disc=parseFloat(v('fDisc'))||0;
-  var ppnPct=parseInt(v('fPpn'))||0;
+  var date=v('fDate'),due=v('fDue'),next=v('fNext');
+  var cn=v('cName')||'—',cp=v('cPhone')||'—',ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj')||'—';
   var notes=v('fNotes'),guar=getGuar();
 
-  var sub=0,trows='';
+  /* live summary */
+  document.getElementById('liveSummary').innerHTML=
+    '<div class="pay-row"><span>Grand Total</span><span>'+idr(c.gross)+'</span></div>'+
+    '<div class="pay-row bold"><span>Tagihan Ini ('+c.pct+'%)</span><span>'+idr(c.tagihan)+'</span></div>'+
+    '<div class="pay-row green"><span>Sudah Terbayar</span><span>'+idr(c.paid)+'</span></div>'+
+    '<div class="pay-row red bold"><span>Sisa Tagihan</span><span>'+idr(Math.max(0,c.sisa))+'</span></div>';
+
+  /* item rows */
+  var trows='';
   items.forEach(function(it){
     var q=parseFloat(it.qty)||0,p=parseFloat(it.price)||0,tot=q*p;
-    sub+=tot;
     trows+='<tr><td>'+eh(it.desc||'—')+'</td><td>'+q.toLocaleString('id-ID')+'</td><td>'+idr(p)+'</td><td>'+idr(tot)+'</td></tr>';
   });
-  if(!items.length)trows='<tr><td colspan="4" style="text-align:center;color:var(--tx3);padding:16px;font-size:12px;">Belum ada item</td></tr>';
+  if(!items.length)trows='<tr><td colspan="4" style="text-align:center;color:#4A6080;padding:12px;font-size:8pt;">Belum ada item</td></tr>';
 
-  var afterDisc=sub-disc;
-  var ppnAmt=afterDisc*(ppnPct/100);
-  var grand=afterDisc+ppnAmt;
-
-  var discRow=disc>0?'<tr class="row-sub"><td colspan="3" style="text-align:right">Diskon</td><td style="text-align:right;color:#b41e1e">- '+idr(disc)+'</td></tr>':'';
-  var ppnRow=ppnPct?'<tr class="row-ppn"><td colspan="3" style="text-align:right">PPN '+ppnPct+'%</td><td style="text-align:right">'+idr(ppnAmt)+'</td></tr>':'';
-  var bs=badgeStyles[status]||badgeStyles['TAGIHAN'];
+  var discRow=c.disc>0?'<tr class="pt-disc"><td>Diskon</td><td>- '+idr(c.disc)+'</td></tr>':'';
+  var ppnRow=c.ppnPct?'<tr class="pt-ppn"><td>PPN '+c.ppnPct+'%</td><td>'+idr(c.ppnAmt)+'</td></tr>':'';
+  var nextRow=next?'<div class="mv2">Penagihan berikutnya: '+fd(next)+'</div>':'';
+  var sisaLunas=c.sisa<=0;
 
   document.getElementById('inv').innerHTML=
-  '<div class="inv-header">'+
-    '<div class="inv-top">'+
-      '<div class="inv-logo-text">'+
-        '<div><span class="solid">SOLID</span><span class="paving">PAVING</span></div>'+
-        '<div class="tagline">Tidak Amblas · Bergaransi</div>'+
-      '</div>'+
-      '<div class="inv-badge-title">'+
-        '<div><span class="inv-badge" style="'+bs+'">'+status+'</span></div>'+
-        '<div class="inv-title-text">INVOICE</div>'+
-        '<div class="inv-num"># '+eh(no)+'</div>'+
-      '</div>'+
+  /* HEADER */
+  '<div class="a4-head">'+
+    '<div class="logo-block">'+
+      '<div class="logo-main"><span class="s1">SOLID</span><span class="s2">PAVING</span></div>'+
+      '<div class="tagline">Tidak Amblas &nbsp;·&nbsp; Bergaransi</div>'+
+      '<div class="contact">solidpaving.id &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id</div>'+
     '</div>'+
-    '<div class="inv-dates">'+
-      '<div><div class="dl">Tanggal Invoice</div><div class="dv">'+fd(date)+'</div></div>'+
-      '<div><div class="dl">Jatuh Tempo</div><div class="dv">'+fd(due)+'</div></div>'+
+    '<div class="inv-info-block">'+
+      '<div class="inv-label">Dokumen Invoice</div>'+
+      '<div class="inv-number">'+eh(no)+'</div>'+
+      '<div><span class="status-badge" style="'+bs+'">'+sl+'</span></div>'+
     '</div>'+
   '</div>'+
-  '<div class="inv-body">'+
-    '<div class="inv-sec">'+
-      '<div class="inv-sec-title">Ditagihkan Kepada</div>'+
-      '<div class="client-box">'+
-        '<div class="client-name">'+eh(cn)+'</div>'+
-        '<div class="client-grid">'+
-          '<span class="lbl">Telepon</span><span class="val">'+eh(cp)+'</span>'+
-          (ce?'<span class="lbl">Email</span><span class="val">'+eh(ce)+'</span>':'')+
-          '<span class="lbl">Alamat</span><span class="val">'+eh(ca)+'</span>'+
-          '<span class="lbl">Lokasi Proyek</span><span class="val">'+eh(cpr)+'</span>'+
-        '</div>'+
+
+  /* DATE META */
+  '<div class="meta-row">'+
+    '<div class="meta-box"><div class="ml">Tanggal Invoice</div><div class="mv">'+fd(date)+'</div></div>'+
+    '<div class="meta-box"><div class="ml">Jatuh Tempo</div><div class="mv" style="color:#b41e1e">'+fd(due)+'</div>'+nextRow+'</div>'+
+  '</div>'+
+
+  /* CLIENT & FROM */
+  '<div class="client-row">'+
+    '<div class="client-box">'+
+      '<div class="box-title">Ditagihkan Kepada</div>'+
+      '<div class="client-name">'+eh(cn)+'</div>'+
+      '<div class="client-detail">'+
+        '&#128222;&nbsp;'+eh(cp)+(ce?'<br>&#9993;&nbsp;'+eh(ce):'')+
+        '<br>&#128205;&nbsp;'+eh(ca)+
+        '<br>&#128736;&nbsp;'+eh(cpr)+
       '</div>'+
     '</div>'+
-    '<div class="inv-sec">'+
-      '<div class="inv-sec-title">Rincian Pekerjaan</div>'+
-      '<table class="inv-table">'+
-        '<thead><tr><th>Deskripsi</th><th style="text-align:right">Qty / Vol</th><th style="text-align:right">Harga Satuan</th><th style="text-align:right">Total</th></tr></thead>'+
-        '<tbody>'+trows+'</tbody>'+
-        '<tfoot>'+
-          '<tr class="row-sub"><td colspan="3" style="text-align:right">Subtotal</td><td style="text-align:right;font-weight:600">'+idr(sub)+'</td></tr>'+
-          discRow+ppnRow+
-          '<tr class="row-total"><td colspan="3">TOTAL</td><td style="text-align:right">'+idr(grand)+'</td></tr>'+
-        '</tfoot>'+
-      '</table>'+
-    '</div>'+
-    (notes?'<div class="note-box"><p>'+eh(notes)+'</p></div>':'')+
-    (guar?'<div class="guar-box"><p>&#10003;&nbsp;'+eh(guar)+'</p></div>':'')+
-    '<div class="inv-sec">'+
-      '<div class="inv-sec-title">Informasi Pembayaran</div>'+
-      '<div class="bank-grid">'+
-        '<div class="bank-box"><div class="bn">BCA — Cab. Cibubur Arundina</div><div class="bd">No. Rek: <strong>628-184-6962</strong><br>A.n: Muh Nafis Arifuddin</div></div>'+
-        '<div class="bank-box"><div class="bn">Konfirmasi Pembayaran</div><div class="bd">WhatsApp: <strong>0859-4349-2832</strong><br>sales@solidpaving.id</div></div>'+
+    '<div class="from-box">'+
+      '<div class="box-title">Dari</div>'+
+      '<div class="client-name">SolidPaving.id</div>'+
+      '<div class="client-detail">'+
+        'Muh Nafis Arifuddin<br>'+
+        '&#128222;&nbsp;0859-4349-2832<br>'+
+        '&#9993;&nbsp;sales@solidpaving.id<br>'+
+        '&#128205;&nbsp;Jabodetabek &amp; Jawa Barat'+
       '</div>'+
-    '</div>'+
-    '<div class="sig-grid">'+
-      '<div class="sig-item"><div class="sig-space"></div><div class="sn">Klien / Pemesan</div><div class="sp">'+eh(cn)+'</div></div>'+
-      '<div class="sig-item"><div class="sig-space"></div><div class="sn">SolidPaving.id</div><div class="sp">Muh Nafis Arifuddin</div></div>'+
     '</div>'+
   '</div>'+
-  '<div class="inv-footer">'+
-    '<strong>SolidPaving.id</strong> &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id &nbsp;·&nbsp; solidpaving.id'+
+
+  /* ITEMS TABLE */
+  '<table class="it">'+
+    '<thead><tr><th>Deskripsi Pekerjaan</th><th style="text-align:right">Qty/Vol</th><th style="text-align:right">Harga Satuan</th><th style="text-align:right">Total</th></tr></thead>'+
+    '<tbody>'+trows+'</tbody>'+
+  '</table>'+
+
+  /* PAYMENT BLOCK */
+  '<div class="pay-block">'+
+    '<table class="pay-table">'+
+      '<tr class="pt-sub"><td>Subtotal</td><td>'+idr(c.sub)+'</td></tr>'+
+      discRow+ppnRow+
+      '<tr class="pt-gross"><td>Grand Total</td><td>'+idr(c.gross)+'</td></tr>'+
+      (c.pct<100?'<tr class="pt-termin"><td>Tagihan ini ('+c.pct+'%)</td><td>'+idr(c.tagihan)+'</td></tr>':'')+
+      '<tr class="pt-paid"><td>Sudah Terbayar</td><td>'+idr(c.paid)+'</td></tr>'+
+      '<tr class="pt-sisa"><td>Sisa Tagihan</td><td>'+idr(Math.max(0,c.sisa))+'</td></tr>'+
+    '</table>'+
+    '<div>'+
+      '<div class="termin-box" style="margin-bottom:6px;">'+
+        '<div class="tb-label">Tagihan Ini</div>'+
+        '<div class="tb-pct">'+c.pct+'%</div>'+
+        '<div class="tb-amount">'+idr(c.tagihan)+'</div>'+
+        '<span class="tb-status" style="'+bs+'">'+sl+'</span>'+
+      '</div>'+
+      '<div class="sisa-box'+(sisaLunas?' lunas':'')+'">'+
+        '<div class="tb-label">'+(sisaLunas?'STATUS':'Sisa Tagihan')+'</div>'+
+        '<div class="tb-amount">'+(sisaLunas?'&#10003; LUNAS':idr(c.sisa))+'</div>'+
+      '</div>'+
+    '</div>'+
+  '</div>'+
+
+  /* NOTES & GUARANTEE */
+  ((notes||guar)?
+  '<div class="note-guar">'+
+    (notes?'<div class="note-box"><div class="box-lbl">Catatan</div>'+eh(notes)+'</div>':'<div></div>')+
+    (guar?'<div class="guar-box"><div class="box-lbl">Garansi</div>&#10003;&nbsp;'+eh(guar)+'</div>':'<div></div>')+
+  '</div>':'')+
+
+  /* BANK & SIG */
+  '<div class="bank-sig">'+
+    '<div>'+
+      '<div class="box-title" style="margin-bottom:6px;">Informasi Pembayaran</div>'+
+      '<div class="bank-box">'+
+        '<div class="bank-name">BCA — Cab. Cibubur Arundina</div>'+
+        '<div class="bank-detail">No. Rek: <strong>628-184-6962</strong><br>A.n: Muh Nafis Arifuddin</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="sig-box">'+
+      '<div class="sig-space"></div>'+
+      '<div class="sig-label">Hormat Kami,</div>'+
+      '<div class="sig-name">Muh Nafis Arifuddin</div>'+
+      '<div class="sig-label">SolidPaving.id</div>'+
+    '</div>'+
+  '</div>'+
+
+  /* FOOTER */
+  '<div class="a4-foot">'+
+    'Dokumen ini dibuat secara digital oleh <strong>SolidPaving.id</strong> &nbsp;·&nbsp; '+
+    'Supplier Paving Block &amp; Jasa Pasang Bergaransi &nbsp;·&nbsp; Jabodetabek &amp; Jawa Barat<br>'+
+    '<strong>solidpaving.id</strong> &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id'+
   '</div>';
 }
 
-function guarChange(){
-  document.getElementById('guarCustomWrap').style.display=document.getElementById('fGuar').value==='__custom'?'':'none';
-  render();
-}
-
 (function(){
-  var t=new Date(),d=new Date(t);d.setDate(d.getDate()+7);
+  var t=new Date(),d=new Date(t);d.setDate(d.getDate()+14);
   function p(x){return x.getFullYear()+'-'+('0'+(x.getMonth()+1)).slice(-2)+'-'+('0'+x.getDate()).slice(-2);}
   document.getElementById('fDate').value=p(t);
   document.getElementById('fDue').value=p(d);
   addItem();addItem();
+  render();
 })();
 </script>
 </body>
