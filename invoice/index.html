@@ -343,6 +343,10 @@ function render(){
   var nxtRow=next?'<div class="mv2">Tagihan berikutnya: '+fd(next)+'</div>':'';
   var lunas=c.sisa<=0;
 
+  var cleanName=(v('cName')||'Klien').replace(/[^a-zA-Z0-9À-ÖØ-öø-ÿ\s]/g,'').trim().replace(/\s+/g,'-');
+  var cleanStatus=lbl.replace(/\s*·\s*/g,'-').replace(/\s+/g,'').replace(/%/g,'pct');
+  document.title='INV-'+cleanStatus+'-'+cleanName;
+
   document.getElementById('inv').innerHTML=
   '<div class="a4-head">'+
     '<div>'+
