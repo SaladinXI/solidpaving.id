@@ -1233,14 +1233,13 @@ function hargaPerM2(){if(isGrass()){var g=HG[S.jenis];var pcs=S.tebal==='6'?g.pc
 function R(n){if(!n||n===0)return'—';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
 function Rk(n){if(!n)return'—';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
 
-// ── Kirim data ke Google Sheet (fire & forget via GET) ──
+// ── Kirim data ke Google Sheet (no-cors fetch) ──
 function logToSheet(sumber, data) {
   if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_URL_APPS_SCRIPT_DI_SINI') return;
   try {
     var payload = JSON.stringify(Object.assign({}, data, {sumber: sumber}));
     var url = SCRIPT_URL + '?payload=' + encodeURIComponent(payload);
-    var img = new Image();
-    img.src = url;
+    fetch(url, {method: 'GET', mode: 'no-cors'});
   } catch(e) { /* silent fail */ }
 }
 
