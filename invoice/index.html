@@ -1,8 +1,14 @@
+---
+sitemap: false
+---
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice Generator — SolidPaving.id</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
 <style>
 :root{
   --blue:#2E3E5F;--blue2:#3D5280;--accent:#95B3D9;
@@ -13,152 +19,154 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f4f8;color:var(--tx1);font-size:14px;}
-.app{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:100vh;}
+.app{display:grid;grid-template-columns:420px 1fr;min-height:100vh;}
 
-/* FORM PANEL */
-.form-panel{background:var(--bg1);padding:24px;overflow-y:auto;border-right:1px solid var(--bdr);}
-.form-panel h2{font-size:15px;font-weight:700;color:var(--blue);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
-.section{margin-bottom:20px;}
-.section-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bds);}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.field{margin-bottom:10px;}
-label{display:block;font-size:11px;font-weight:600;color:var(--tx2);margin-bottom:4px;}
-input,select,textarea{width:100%;padding:7px 10px;border:1px solid var(--bdr);border-radius:var(--r);font-size:13px;font-family:inherit;color:var(--tx1);background:var(--bg0);outline:none;transition:border-color .15s;}
-input:focus,select:focus,textarea:focus{border-color:var(--accent);}
-textarea{resize:vertical;min-height:52px;}
+.form-panel{background:var(--bg1);padding:20px;overflow-y:auto;border-right:1px solid var(--bdr);}
+.form-panel h2{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--accent);}
+.section{margin-bottom:18px;}
+.section-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--bds);}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.field{margin-bottom:8px;}
+label{display:block;font-size:11px;font-weight:600;color:var(--tx2);margin-bottom:3px;}
+input,select,textarea{width:100%;padding:6px 9px;border:1px solid var(--bdr);border-radius:var(--r);font-size:13px;font-family:inherit;color:var(--tx1);background:var(--bg0);outline:none;transition:border-color .15s;}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(149,179,217,.2);}
+textarea{resize:vertical;}
 
-/* ITEM ROWS */
-.item-row{display:grid;grid-template-columns:1fr 80px 90px 28px;gap:6px;align-items:start;margin-bottom:6px;}
-.item-row input{font-size:12px;}
-.btn-del{width:28px;height:32px;background:none;border:1px solid rgba(220,50,50,.3);border-radius:var(--r);color:#c0392b;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
-.btn-del:hover{background:rgba(220,50,50,.08);}
-.btn-add{background:none;border:1px dashed var(--accent);color:var(--blue2);padding:6px 12px;border-radius:var(--r);cursor:pointer;font-size:12px;font-weight:600;width:100%;margin-top:4px;}
+.item-header{display:grid;grid-template-columns:1fr 70px 100px 28px;gap:5px;margin-bottom:4px;}
+.item-header span{font-size:10px;color:var(--tx3);font-weight:700;}
+.item-row{display:grid;grid-template-columns:1fr 70px 100px 28px;gap:5px;align-items:start;margin-bottom:5px;}
+.item-row input{font-size:12px;padding:5px 7px;}
+.btn-del{width:28px;height:30px;background:none;border:1px solid rgba(180,30,30,.25);border-radius:var(--r);color:#b41e1e;cursor:pointer;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;}
+.btn-del:hover{background:rgba(180,30,30,.08);}
+.btn-add{background:none;border:1px dashed var(--accent);color:var(--blue2);padding:6px 10px;border-radius:var(--r);cursor:pointer;font-size:12px;font-weight:600;width:100%;margin-top:3px;transition:background .15s;}
 .btn-add:hover{background:var(--bg2);}
-.btn-print{width:100%;background:var(--blue);color:#fff;border:none;padding:11px;border-radius:var(--r);font-size:14px;font-weight:700;cursor:pointer;margin-top:16px;}
+.btn-print{width:100%;background:var(--blue);color:#fff;border:none;padding:11px;border-radius:var(--r);font-size:14px;font-weight:700;cursor:pointer;margin-top:4px;transition:background .15s;}
 .btn-print:hover{background:var(--blue2);}
 
-/* PREVIEW PANEL */
-.preview-panel{background:#e8edf3;padding:24px;overflow-y:auto;}
-.invoice-wrap{background:#fff;max-width:640px;margin:0 auto;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.12);}
+.preview-panel{background:#dde5ef;padding:20px;overflow-y:auto;}
+.inv-wrap{background:#fff;max-width:680px;margin:0 auto;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.14);}
 
-/* INVOICE STYLES */
-.inv-header{background:var(--blue);color:#fff;padding:28px 32px 22px;}
-.inv-logo-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
-.inv-logo svg{height:28px;}
-.inv-title{text-align:right;}
-.inv-title h1{font-size:22px;font-weight:800;letter-spacing:1px;opacity:.9;}
-.inv-title .inv-num{font-size:12px;opacity:.65;margin-top:2px;}
-.inv-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.inv-meta-item label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;display:block;margin-bottom:2px;}
-.inv-meta-item span{font-size:13px;opacity:.9;}
-.inv-body{padding:24px 32px;}
-.inv-section{margin-bottom:20px;}
-.inv-section-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:10px;}
-.inv-client-box{background:var(--bg1);border-radius:var(--r);padding:14px 16px;border:1px solid var(--bds);}
-.inv-client-box .name{font-size:15px;font-weight:700;color:var(--tx1);margin-bottom:6px;}
-.inv-client-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;}
-.inv-client-grid span{font-size:12px;color:var(--tx2);}
-.inv-client-grid .lbl{color:var(--tx3);}
+.inv-header{background:var(--blue);color:#fff;padding:26px 30px 20px;}
+.inv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
+.inv-logo-text .solid{font-size:22px;font-weight:900;letter-spacing:3px;color:#fff;}
+.inv-logo-text .paving{font-size:22px;font-weight:300;letter-spacing:3px;color:var(--accent);}
+.inv-logo-text .tagline{font-size:10px;opacity:.55;letter-spacing:1px;margin-top:3px;}
+.inv-badge-title{text-align:right;}
+.inv-badge{display:inline-block;padding:3px 12px;border-radius:4px;font-size:10px;font-weight:700;margin-bottom:8px;}
+.inv-title-text{font-size:24px;font-weight:900;letter-spacing:2px;opacity:.9;}
+.inv-num{font-size:11px;opacity:.55;margin-top:1px;}
+.inv-dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.inv-dates .dl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:.55;margin-bottom:2px;}
+.inv-dates .dv{font-size:13px;opacity:.88;}
 
-/* TABLE */
-.inv-table{width:100%;border-collapse:collapse;font-size:13px;}
-.inv-table thead tr{background:var(--blue);}
-.inv-table thead th{color:#fff;padding:8px 10px;text-align:left;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-.inv-table thead th:last-child{text-align:right;}
-.inv-table tbody tr{border-bottom:1px solid var(--bds);}
-.inv-table tbody tr:nth-child(even){background:var(--bg1);}
-.inv-table tbody td{padding:9px 10px;color:var(--tx1);}
-.inv-table tbody td:nth-child(2),.inv-table tbody td:nth-child(3){text-align:right;color:var(--tx2);}
-.inv-table tbody td:last-child{text-align:right;font-weight:600;}
-.inv-table tfoot tr{border-top:2px solid var(--bdr);}
-.inv-table tfoot td{padding:7px 10px;}
-.inv-table .sub-row td{color:var(--tx2);}
-.inv-table .ppn-row td{color:var(--tx2);}
-.inv-table .total-row{background:var(--blue)!important;}
-.inv-table .total-row td{color:#fff;font-weight:700;font-size:14px;}
+.inv-body{padding:22px 30px;}
+.inv-sec{margin-bottom:18px;}
+.inv-sec-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:8px;}
+.client-box{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);padding:12px 14px;}
+.client-name{font-size:15px;font-weight:700;color:var(--tx1);margin-bottom:7px;}
+.client-grid{display:grid;grid-template-columns:90px 1fr;gap:3px 8px;font-size:12px;}
+.client-grid .lbl{color:var(--tx3);}
+.client-grid .val{color:var(--tx1);}
 
-/* NOTES & FOOTER */
-.inv-notes{background:rgba(149,179,217,.12);border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 var(--r) var(--r) 0;margin-bottom:20px;}
-.inv-notes p{font-size:12px;color:var(--tx2);line-height:1.6;}
-.inv-guarantee{background:rgba(15,110,86,.07);border-left:3px solid var(--green);padding:10px 14px;border-radius:0 var(--r) var(--r) 0;margin-bottom:20px;}
-.inv-guarantee p{font-size:12px;color:var(--green);font-weight:600;}
-.inv-bank{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
-.inv-bank-box{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);padding:12px 14px;}
-.inv-bank-box .bank-name{font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px;}
-.inv-bank-box .bank-detail{font-size:12px;color:var(--tx2);line-height:1.5;}
-.inv-footer{background:var(--blue);color:rgba(255,255,255,.7);text-align:center;padding:14px;font-size:11px;}
+table.inv-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+table.inv-table thead tr{background:var(--blue);}
+table.inv-table thead th{color:#fff;padding:8px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+table.inv-table thead th:not(:first-child){text-align:right;}
+table.inv-table tbody tr{border-bottom:1px solid var(--bds);}
+table.inv-table tbody tr:nth-child(even){background:var(--bg1);}
+table.inv-table tbody td{padding:8px 10px;color:var(--tx1);}
+table.inv-table tbody td:not(:first-child){text-align:right;color:var(--tx2);}
+table.inv-table tbody td:last-child{font-weight:600;color:var(--tx1);}
+table.inv-table tfoot td{padding:6px 10px;font-size:12px;}
+.row-sub td{color:var(--tx2)!important;font-size:12px;}
+.row-ppn td{color:var(--tx2)!important;font-size:12px;}
+.row-total{background:var(--blue)!important;}
+.row-total td{color:#fff!important;font-weight:700!important;font-size:14px!important;padding:10px!important;}
+
+.note-box{background:rgba(149,179,217,.13);border-left:3px solid var(--accent);padding:9px 12px;border-radius:0 var(--r) var(--r) 0;margin-bottom:14px;}
+.note-box p{font-size:12px;color:var(--tx2);line-height:1.6;}
+.guar-box{background:rgba(15,110,86,.07);border-left:3px solid var(--green);padding:9px 12px;border-radius:0 var(--r) var(--r) 0;margin-bottom:14px;}
+.guar-box p{font-size:12px;color:var(--green);font-weight:600;}
+
+.bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;}
+.bank-box{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);padding:10px 13px;}
+.bank-box .bn{font-size:11px;font-weight:700;color:var(--blue);margin-bottom:5px;}
+.bank-box .bd{font-size:12px;color:var(--tx2);line-height:1.6;}
+
+.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:8px;}
+.sig-item{text-align:center;}
+.sig-space{height:48px;border-bottom:1px solid var(--bdr);margin-bottom:6px;}
+.sig-item .sn{font-size:11px;color:var(--tx3);}
+.sig-item .sp{font-weight:600;font-size:13px;margin-top:2px;}
+
+.inv-footer{background:var(--blue);color:rgba(255,255,255,.65);text-align:center;padding:12px;font-size:11px;line-height:1.7;}
 .inv-footer strong{color:#fff;}
-.inv-sig{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:20px;}
-.sig-box{text-align:center;font-size:12px;color:var(--tx2);}
-.sig-line{height:40px;border-bottom:1px solid var(--bdr);margin-bottom:6px;}
 
-/* PRINT */
 @media print{
   .form-panel{display:none!important;}
   .preview-panel{padding:0;background:#fff;}
-  .invoice-wrap{box-shadow:none;border-radius:0;max-width:100%;}
+  .inv-wrap{box-shadow:none;border-radius:0;max-width:100%;}
   .app{display:block;}
+  body{background:#fff;}
 }
-@media(max-width:860px){
+@media(max-width:900px){
   .app{grid-template-columns:1fr;}
-  .preview-panel{padding:16px;}
+  .preview-panel{padding:12px;}
 }
 </style>
 </head>
 <body>
 <div class="app">
 
-<!-- FORM -->
 <div class="form-panel">
-  <h2>&#9998; Form Invoice SolidPaving.id</h2>
+  <h2>&#9998;&nbsp; Invoice SolidPaving.id</h2>
 
   <div class="section">
     <div class="section-title">Info Invoice</div>
     <div class="row2">
-      <div class="field"><label>No. Invoice</label><input id="invNo" value="INV-2026-001" oninput="render()"></div>
-      <div class="field"><label>Tanggal</label><input id="invDate" type="date" oninput="render()"></div>
-    </div>
-    <div class="row2">
-      <div class="field"><label>Jatuh Tempo</label><input id="invDue" type="date" oninput="render()"></div>
+      <div class="field"><label>No. Invoice</label><input id="fNo" value="INV-2026-001" oninput="render()"></div>
       <div class="field"><label>Status</label>
-        <select id="invStatus" onchange="render()">
+        <select id="fStatus" onchange="render()">
           <option value="PROFORMA">Proforma</option>
           <option value="TAGIHAN">Tagihan</option>
-          <option value="LUNAS">Lunas</option>
           <option value="DP 50%">DP 50%</option>
+          <option value="LUNAS">Lunas</option>
         </select>
       </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Tanggal Invoice</label><input id="fDate" type="date" oninput="render()"></div>
+      <div class="field"><label>Jatuh Tempo</label><input id="fDue" type="date" oninput="render()"></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-title">Data Klien</div>
-    <div class="field"><label>Nama / Perusahaan</label><input id="cName" placeholder="PT. Contoh Maju" oninput="render()"></div>
-    <div class="field"><label>No. Telepon / WhatsApp</label><input id="cPhone" placeholder="0812-xxxx-xxxx" oninput="render()"></div>
-    <div class="field"><label>Email (opsional)</label><input id="cEmail" placeholder="email@perusahaan.com" oninput="render()"></div>
+    <div class="field"><label>Nama / Perusahaan</label><input id="cName" placeholder="PT. Contoh / Bpk. Ahmad" oninput="render()"></div>
+    <div class="row2">
+      <div class="field"><label>No. Telepon / WA</label><input id="cPhone" placeholder="0812-xxxx-xxxx" oninput="render()"></div>
+      <div class="field"><label>Email (opsional)</label><input id="cEmail" placeholder="email@..." oninput="render()"></div>
+    </div>
     <div class="field"><label>Alamat Klien</label><textarea id="cAddr" rows="2" placeholder="Jl. ..." oninput="render()"></textarea></div>
-    <div class="field"><label>Lokasi / Alamat Proyek</label><textarea id="cProject" rows="2" placeholder="Lokasi pemasangan paving..." oninput="render()"></textarea></div>
+    <div class="field"><label>Lokasi / Alamat Proyek</label><textarea id="cProj" rows="2" placeholder="Lokasi pemasangan..." oninput="render()"></textarea></div>
   </div>
 
   <div class="section">
-    <div class="section-title">Item & Layanan</div>
-    <div style="display:grid;grid-template-columns:1fr 80px 90px 28px;gap:6px;margin-bottom:6px;">
-      <span style="font-size:10px;color:var(--tx3);font-weight:700;">Deskripsi</span>
-      <span style="font-size:10px;color:var(--tx3);font-weight:700;">Qty / Vol</span>
-      <span style="font-size:10px;color:var(--tx3);font-weight:700;">Harga / sat</span>
-      <span></span>
+    <div class="section-title">Item &amp; Layanan</div>
+    <div class="item-header">
+      <span>Deskripsi</span><span>Qty/Vol</span><span>Harga/Sat (Rp)</span><span></span>
     </div>
-    <div id="itemsContainer"></div>
+    <div id="itemsWrap"></div>
     <button class="btn-add" onclick="addItem()">+ Tambah Item</button>
   </div>
 
   <div class="section">
-    <div class="section-title">Pajak & Diskon</div>
+    <div class="section-title">Diskon &amp; Pajak</div>
     <div class="row2">
-      <div class="field"><label>Diskon (Rp)</label><input id="discount" type="number" min="0" value="0" oninput="render()"></div>
+      <div class="field"><label>Diskon (Rp)</label><input id="fDisc" type="number" min="0" value="0" oninput="render()"></div>
       <div class="field"><label>PPN</label>
-        <select id="ppn" onchange="render()">
-          <option value="0">Tidak ada PPN</option>
+        <select id="fPpn" onchange="render()">
+          <option value="0">Tanpa PPN</option>
           <option value="11">PPN 11%</option>
           <option value="12">PPN 12%</option>
         </select>
@@ -167,203 +175,173 @@ textarea{resize:vertical;min-height:52px;}
   </div>
 
   <div class="section">
-    <div class="section-title">Catatan Tambahan</div>
-    <div class="field"><label>Catatan / Keterangan</label><textarea id="notes" rows="3" placeholder="Termasuk biaya mobilisasi, bahan, dan tenaga..." oninput="render()"></textarea></div>
-    <div class="field"><label>Syarat Garansi</label>
-      <select id="guarantee" onchange="render()">
-        <option value="Garansi tertulis 3 bulan mencakup material dan pemasangan.">Garansi 3 bulan (default)</option>
-        <option value="Garansi tertulis 6 bulan mencakup material dan pemasangan.">Garansi 6 bulan</option>
-        <option value="">Tanpa garansi (supply only)</option>
-        <option value="custom">Kustom...</option>
+    <div class="section-title">Catatan &amp; Garansi</div>
+    <div class="field"><label>Catatan</label><textarea id="fNotes" rows="3" placeholder="Termasuk biaya mobilisasi, material, tenaga kerja..." oninput="render()"></textarea></div>
+    <div class="field"><label>Garansi</label>
+      <select id="fGuar" onchange="guarChange()">
+        <option value="Garansi tertulis 3 bulan mencakup material dan hasil pemasangan.">Garansi 3 bulan (standar)</option>
+        <option value="Garansi tertulis 6 bulan mencakup material dan hasil pemasangan.">Garansi 6 bulan</option>
+        <option value="">Supply only — tanpa garansi pemasangan</option>
+        <option value="__custom">Kustom...</option>
       </select>
     </div>
-    <div class="field" id="guaranteeCustomField" style="display:none;">
-      <textarea id="guaranteeCustom" rows="2" placeholder="Tulis syarat garansi kustom..." oninput="render()"></textarea>
+    <div id="guarCustomWrap" style="display:none" class="field">
+      <textarea id="fGuarCustom" rows="2" placeholder="Tulis syarat garansi..." oninput="render()"></textarea>
     </div>
   </div>
 
-  <button class="btn-print" onclick="window.print()">&#128424; Cetak / Simpan PDF</button>
+  <button class="btn-print" onclick="window.print()">&#128424;&nbsp; Cetak / Simpan PDF</button>
 </div>
 
-<!-- PREVIEW -->
 <div class="preview-panel">
-  <div class="invoice-wrap" id="invoicePreview"></div>
+  <div class="inv-wrap" id="inv"></div>
 </div>
 </div>
 
 <script>
-var items=[];
-var itemId=0;
-
-function fmt(n){return'Rp '+Math.round(n).toLocaleString('id-ID');}
-function fmtDate(d){if(!d)return'-';var p=d.split('-');var M=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des'];return p[2]+' '+M[parseInt(p[1])-1]+' '+p[0];}
+var items=[], uid=0;
+var badgeStyles={
+  'PROFORMA':'background:#EBF1F8;color:#2E3E5F;',
+  'TAGIHAN':'background:#FAEEDA;color:#854F0B;',
+  'DP 50%':'background:#EBF1F8;color:#2E3E5F;',
+  'LUNAS':'background:rgba(15,110,86,.18);color:#0F6E56;'
+};
+function idr(n){return'Rp\u00a0'+Math.round(n).toLocaleString('id-ID');}
+function fd(d){if(!d)return'—';var p=d.split('-'),M=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des'];return p[2]+' '+M[+p[1]-1]+' '+p[0];}
+function eh(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
+function v(id){return document.getElementById(id).value;}
 
 function addItem(){
-  var id=++itemId;
-  items.push({id:id,desc:'',qty:'',unit:'m²',price:''});
+  var id=++uid;
+  items.push({id:id,desc:'',qty:'',price:''});
   renderItems();render();
 }
-
-function removeItem(id){
-  items=items.filter(function(i){return i.id!==id;});
-  renderItems();render();
-}
+function delItem(id){items=items.filter(function(i){return i.id!==id;});renderItems();render();}
+function upd(id,f,val){items.forEach(function(i){if(i.id===id)i[f]=val;});render();}
 
 function renderItems(){
-  var c=document.getElementById('itemsContainer');
-  c.innerHTML='';
-  items.forEach(function(item){
-    var row=document.createElement('div');
-    row.className='item-row';
-    row.innerHTML=
-      '<input placeholder="Produk/Layanan (mis. Jasa Pasang Paving Holland K300)" value="'+esc(item.desc)+'" oninput="updItem('+item.id+',\'desc\',this.value)">'+
-      '<input placeholder="100 m²" value="'+esc(item.qty)+'" oninput="updItem('+item.id+',\'qty\',this.value)" style="text-align:right">'+
-      '<input placeholder="175.000" type="number" min="0" value="'+esc(item.price)+'" oninput="updItem('+item.id+',\'price\',this.value)" style="text-align:right">'+
-      '<button class="btn-del" onclick="removeItem('+item.id+')" title="Hapus">&#215;</button>';
-    c.appendChild(row);
+  var w=document.getElementById('itemsWrap');w.innerHTML='';
+  items.forEach(function(it){
+    var d=document.createElement('div');d.className='item-row';
+    d.innerHTML=
+      '<input value="'+eh(it.desc)+'" placeholder="Jasa Pasang / Paving Holland K300..." oninput="upd('+it.id+',\'desc\',this.value)">'+
+      '<input value="'+eh(it.qty)+'" placeholder="100 m²" oninput="upd('+it.id+',\'qty\',this.value)" style="text-align:right">'+
+      '<input type="number" min="0" value="'+eh(it.price)+'" placeholder="175000" oninput="upd('+it.id+',\'price\',this.value)" style="text-align:right">'+
+      '<button class="btn-del" onclick="delItem('+it.id+')" title="Hapus">&times;</button>';
+    w.appendChild(d);
   });
 }
 
-function esc(v){return(v||'').toString().replace(/"/g,'&quot;');}
-
-function updItem(id,field,val){
-  items.forEach(function(i){if(i.id===id)i[field]=val;});
+function guarChange(){
+  var s=document.getElementById('fGuar').value;
+  document.getElementById('guarCustomWrap').style.display=s==='__custom'?'':'none';
   render();
 }
-
-function getGuarantee(){
-  var sel=document.getElementById('guarantee').value;
-  if(sel==='custom')return(document.getElementById('guaranteeCustom')||{}).value||'';
-  return sel;
+function getGuar(){
+  var s=document.getElementById('fGuar').value;
+  if(s==='__custom')return v('fGuarCustom');
+  return s;
 }
-
-document.getElementById('guarantee').addEventListener('change',function(){
-  document.getElementById('guaranteeCustomField').style.display=this.value==='custom'?'':'none';
-  render();
-});
 
 function render(){
-  var invNo=document.getElementById('invNo').value||'INV-2026-001';
-  var invDate=document.getElementById('invDate').value;
-  var invDue=document.getElementById('invDue').value;
-  var status=document.getElementById('invStatus').value;
-  var cName=document.getElementById('cName').value||'—';
-  var cPhone=document.getElementById('cPhone').value||'—';
-  var cEmail=document.getElementById('cEmail').value;
-  var cAddr=document.getElementById('cAddr').value||'—';
-  var cProject=document.getElementById('cProject').value||'—';
-  var notes=document.getElementById('notes').value;
-  var discount=parseFloat(document.getElementById('discount').value)||0;
-  var ppnPct=parseInt(document.getElementById('ppn').value)||0;
-  var guarantee=getGuarantee();
+  var no=v('fNo')||'INV-2026-001';
+  var status=v('fStatus');
+  var date=v('fDate'),due=v('fDue');
+  var cn=v('cName')||'—',cp=v('cPhone')||'—';
+  var ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj')||'—';
+  var disc=parseFloat(v('fDisc'))||0;
+  var ppnPct=parseInt(v('fPpn'))||0;
+  var notes=v('fNotes'),guar=getGuar();
 
-  var statusColors={
-    'PROFORMA':'background:#95B3D9;color:#2E3E5F;',
-    'TAGIHAN':'background:#FAEEDA;color:#854F0B;',
-    'LUNAS':'background:rgba(15,110,86,.15);color:#0F6E56;',
-    'DP 50%':'background:#EBF1F8;color:#2E3E5F;'
-  };
-  var sc=statusColors[status]||statusColors['TAGIHAN'];
-
-  var subtotal=0;
-  var rows='';
-  items.forEach(function(item){
-    var qty=parseFloat(item.qty)||0;
-    var price=parseFloat(item.price)||0;
-    var total=qty*price;
-    subtotal+=total;
-    rows+='<tr><td>'+escHtml(item.desc||'—')+'</td><td>'+qty.toLocaleString('id-ID')+'</td><td>'+fmt(price)+'</td><td>'+fmt(total)+'</td></tr>';
+  var sub=0,trows='';
+  items.forEach(function(it){
+    var q=parseFloat(it.qty)||0,p=parseFloat(it.price)||0,tot=q*p;
+    sub+=tot;
+    trows+='<tr><td>'+eh(it.desc||'—')+'</td><td>'+q.toLocaleString('id-ID')+'</td><td>'+idr(p)+'</td><td>'+idr(tot)+'</td></tr>';
   });
-  if(!items.length) rows='<tr><td colspan="4" style="text-align:center;color:var(--tx3);padding:16px;font-size:12px;">Belum ada item — tambahkan di form kiri</td></tr>';
+  if(!items.length)trows='<tr><td colspan="4" style="text-align:center;color:var(--tx3);padding:16px;font-size:12px;">Belum ada item</td></tr>';
 
-  var afterDiscount=subtotal-discount;
-  var ppnAmt=afterDiscount*(ppnPct/100);
-  var grandTotal=afterDiscount+ppnAmt;
+  var afterDisc=sub-disc;
+  var ppnAmt=afterDisc*(ppnPct/100);
+  var grand=afterDisc+ppnAmt;
 
-  var discountRow=discount>0?'<tr class="sub-row"><td colspan="3" style="text-align:right;padding:6px 10px;font-size:12px;">Diskon</td><td style="text-align:right;padding:6px 10px;color:#c0392b;">- '+fmt(discount)+'</td></tr>':'';
-  var ppnRow=ppnPct>0?'<tr class="ppn-row"><td colspan="3" style="text-align:right;padding:6px 10px;font-size:12px;">PPN '+ppnPct+'%</td><td style="text-align:right;padding:6px 10px;">'+fmt(ppnAmt)+'</td></tr>':'';
+  var discRow=disc>0?'<tr class="row-sub"><td colspan="3" style="text-align:right">Diskon</td><td style="text-align:right;color:#b41e1e">- '+idr(disc)+'</td></tr>':'';
+  var ppnRow=ppnPct?'<tr class="row-ppn"><td colspan="3" style="text-align:right">PPN '+ppnPct+'%</td><td style="text-align:right">'+idr(ppnAmt)+'</td></tr>':'';
+  var bs=badgeStyles[status]||badgeStyles['TAGIHAN'];
 
-  var html=
+  document.getElementById('inv').innerHTML=
   '<div class="inv-header">'+
-    '<div class="inv-logo-row">'+
-      '<svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="28">'+
-        '<g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#fff" opacity=".9"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>'+
-        '<text x="36" y="32" font-family="Segoe UI,sans-serif" font-weight="900" font-size="17" fill="#fff" opacity=".9" letter-spacing="3">SOLID</text>'+
-        '<text x="96" y="32" font-family="Segoe UI,sans-serif" font-weight="300" font-size="17" fill="#95b3d9" letter-spacing="3">PAVING</text>'+
-      '</svg>'+
-      '<div class="inv-title">'+
-        '<span style="display:inline-block;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;'+sc+'margin-bottom:6px;">'+status+'</span>'+
-        '<h1>INVOICE</h1>'+
-        '<div class="inv-num"># '+escHtml(invNo)+'</div>'+
+    '<div class="inv-top">'+
+      '<div class="inv-logo-text">'+
+        '<div><span class="solid">SOLID</span><span class="paving">PAVING</span></div>'+
+        '<div class="tagline">Tidak Amblas · Bergaransi</div>'+
+      '</div>'+
+      '<div class="inv-badge-title">'+
+        '<div><span class="inv-badge" style="'+bs+'">'+status+'</span></div>'+
+        '<div class="inv-title-text">INVOICE</div>'+
+        '<div class="inv-num"># '+eh(no)+'</div>'+
       '</div>'+
     '</div>'+
-    '<div class="inv-meta">'+
-      '<div class="inv-meta-item"><label>Tanggal Invoice</label><span>'+fmtDate(invDate)+'</span></div>'+
-      '<div class="inv-meta-item"><label>Jatuh Tempo</label><span>'+fmtDate(invDue)+'</span></div>'+
+    '<div class="inv-dates">'+
+      '<div><div class="dl">Tanggal Invoice</div><div class="dv">'+fd(date)+'</div></div>'+
+      '<div><div class="dl">Jatuh Tempo</div><div class="dv">'+fd(due)+'</div></div>'+
     '</div>'+
   '</div>'+
   '<div class="inv-body">'+
-    '<div class="inv-section">'+
-      '<div class="inv-section-title">Ditagihkan Kepada</div>'+
-      '<div class="inv-client-box">'+
-        '<div class="name">'+escHtml(cName)+'</div>'+
-        '<div class="inv-client-grid">'+
-          '<span class="lbl">Telepon</span><span>'+escHtml(cPhone)+'</span>'+
-          (cEmail?'<span class="lbl">Email</span><span>'+escHtml(cEmail)+'</span>':'')+
-          '<span class="lbl">Alamat</span><span>'+escHtml(cAddr)+'</span>'+
-          '<span class="lbl">Lokasi Proyek</span><span>'+escHtml(cProject)+'</span>'+
+    '<div class="inv-sec">'+
+      '<div class="inv-sec-title">Ditagihkan Kepada</div>'+
+      '<div class="client-box">'+
+        '<div class="client-name">'+eh(cn)+'</div>'+
+        '<div class="client-grid">'+
+          '<span class="lbl">Telepon</span><span class="val">'+eh(cp)+'</span>'+
+          (ce?'<span class="lbl">Email</span><span class="val">'+eh(ce)+'</span>':'')+
+          '<span class="lbl">Alamat</span><span class="val">'+eh(ca)+'</span>'+
+          '<span class="lbl">Lokasi Proyek</span><span class="val">'+eh(cpr)+'</span>'+
         '</div>'+
       '</div>'+
     '</div>'+
-
-    '<div class="inv-section">'+
-      '<div class="inv-section-title">Rincian Pekerjaan</div>'+
+    '<div class="inv-sec">'+
+      '<div class="inv-sec-title">Rincian Pekerjaan</div>'+
       '<table class="inv-table">'+
-        '<thead><tr><th>Deskripsi</th><th style="text-align:right">Qty/Vol</th><th style="text-align:right">Harga Sat.</th><th style="text-align:right">Total</th></tr></thead>'+
-        '<tbody>'+rows+'</tbody>'+
+        '<thead><tr><th>Deskripsi</th><th style="text-align:right">Qty / Vol</th><th style="text-align:right">Harga Satuan</th><th style="text-align:right">Total</th></tr></thead>'+
+        '<tbody>'+trows+'</tbody>'+
         '<tfoot>'+
-          '<tr class="sub-row"><td colspan="3" style="text-align:right;padding:7px 10px;font-size:12px;color:var(--tx2);">Subtotal</td><td style="text-align:right;padding:7px 10px;font-weight:600;">'+fmt(subtotal)+'</td></tr>'+
-          discountRow+ppnRow+
-          '<tr class="total-row"><td colspan="3" style="padding:10px;font-size:12px;letter-spacing:1px;">TOTAL KESELURUHAN</td><td style="text-align:right;padding:10px;font-size:15px;">'+fmt(grandTotal)+'</td></tr>'+
+          '<tr class="row-sub"><td colspan="3" style="text-align:right">Subtotal</td><td style="text-align:right;font-weight:600">'+idr(sub)+'</td></tr>'+
+          discRow+ppnRow+
+          '<tr class="row-total"><td colspan="3">TOTAL</td><td style="text-align:right">'+idr(grand)+'</td></tr>'+
         '</tfoot>'+
       '</table>'+
     '</div>'+
-
-    (notes?'<div class="inv-notes"><p>'+escHtml(notes)+'</p></div>':'')+
-    (guarantee?'<div class="inv-guarantee"><p>&#10003; '+escHtml(guarantee)+'</p></div>':'')+
-
-    '<div class="inv-section">'+
-      '<div class="inv-section-title">Informasi Pembayaran</div>'+
-      '<div class="inv-bank">'+
-        '<div class="inv-bank-box"><div class="bank-name">BCA — Cab. Cibubur Arundina</div><div class="bank-detail">No. Rek: <strong>628-184-6962</strong><br>A.n: Muh Nafis Arifuddin</div></div>'+
-        '<div class="inv-bank-box"><div class="bank-name">Transfer ke WhatsApp</div><div class="bank-detail">Konfirmasi pembayaran ke<br><strong>0859-4349-2832</strong></div></div>'+
+    (notes?'<div class="note-box"><p>'+eh(notes)+'</p></div>':'')+
+    (guar?'<div class="guar-box"><p>&#10003;&nbsp;'+eh(guar)+'</p></div>':'')+
+    '<div class="inv-sec">'+
+      '<div class="inv-sec-title">Informasi Pembayaran</div>'+
+      '<div class="bank-grid">'+
+        '<div class="bank-box"><div class="bn">BCA — Cab. Cibubur Arundina</div><div class="bd">No. Rek: <strong>628-184-6962</strong><br>A.n: Muh Nafis Arifuddin</div></div>'+
+        '<div class="bank-box"><div class="bn">Konfirmasi Pembayaran</div><div class="bd">WhatsApp: <strong>0859-4349-2832</strong><br>sales@solidpaving.id</div></div>'+
       '</div>'+
     '</div>'+
-
-    '<div class="inv-sig">'+
-      '<div class="sig-box"><div class="sig-line"></div><div style="font-size:11px;color:var(--tx3);">Klien / Pemesan</div><div style="font-weight:600;margin-top:2px;">'+escHtml(cName)+'</div></div>'+
-      '<div class="sig-box"><div class="sig-line"></div><div style="font-size:11px;color:var(--tx3);">SolidPaving.id</div><div style="font-weight:600;margin-top:2px;">Muh Nafis Arifuddin</div></div>'+
+    '<div class="sig-grid">'+
+      '<div class="sig-item"><div class="sig-space"></div><div class="sn">Klien / Pemesan</div><div class="sp">'+eh(cn)+'</div></div>'+
+      '<div class="sig-item"><div class="sig-space"></div><div class="sn">SolidPaving.id</div><div class="sp">Muh Nafis Arifuddin</div></div>'+
     '</div>'+
-
   '</div>'+
   '<div class="inv-footer">'+
-    '<strong>SolidPaving.id</strong> &nbsp;|&nbsp; 0859-4349-2832 &nbsp;|&nbsp; sales@solidpaving.id &nbsp;|&nbsp; solidpaving.id'+
+    '<strong>SolidPaving.id</strong> &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id &nbsp;·&nbsp; solidpaving.id'+
   '</div>';
-
-  document.getElementById('invoicePreview').innerHTML=html;
 }
 
-function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
+function guarChange(){
+  document.getElementById('guarCustomWrap').style.display=document.getElementById('fGuar').value==='__custom'?'':'none';
+  render();
+}
 
-// Init
 (function(){
-  var today=new Date();
-  var due=new Date();due.setDate(due.getDate()+7);
-  function fmt2(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
-  document.getElementById('invDate').value=fmt2(today);
-  document.getElementById('invDue').value=fmt2(due);
-  addItem();
-  addItem();
+  var t=new Date(),d=new Date(t);d.setDate(d.getDate()+7);
+  function p(x){return x.getFullYear()+'-'+('0'+(x.getMonth()+1)).slice(-2)+'-'+('0'+x.getDate()).slice(-2);}
+  document.getElementById('fDate').value=p(t);
+  document.getElementById('fDue').value=p(d);
+  addItem();addItem();
 })();
 </script>
 </body>
