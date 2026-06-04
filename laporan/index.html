@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Laporan Proyek · SolidPaving.id</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Archivo',sans-serif;background:#f5f5f3;color:#1a1a1a;min-height:100vh}
+.container{max-width:680px;margin:0 auto;padding:2rem 1.25rem}
+.brand{font-size:20px;font-weight:500;margin-bottom:0}.brand span{color:#4A7FB5}
+.brand-sub{font-size:11px;color:#888;margin-top:2px;margin-bottom:2rem}
+.card{background:#fff;border-radius:12px;border:0.5px solid #e0ddd6;padding:1.5rem;margin-bottom:1.25rem}
+.section-title{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:10px;padding-bottom:6px;border-bottom:0.5px solid #eee}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.info-block strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:2px}
+.info-block p{font-size:13px}
+.progres-wrap{margin:1rem 0}
+.progres-track{height:8px;background:#eee;border-radius:4px;overflow:hidden}
+.progres-bar{height:8px;background:#4A7FB5;border-radius:4px;transition:width .6s ease}
+.progres-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.progres-label span:first-child{font-size:13px;color:#888}
+.progres-label span:last-child{font-size:22px;font-weight:500}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1rem}
+.stat{background:#f5f5f3;border-radius:8px;padding:10px 12px;text-align:center}
+.stat-val{font-size:20px;font-weight:500}
+.stat-label{font-size:11px;color:#888;margin-top:2px}
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:1px;background:#e0ddd6}
+.tl-item{position:relative;margin-bottom:1.5rem}
+.tl-dot{position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#4A7FB5;border:2px solid #fff;outline:1px solid #4A7FB5}
+.tl-dot.latest{background:#4A7FB5;width:12px;height:12px;left:-21px}
+.tl-date{font-size:11px;color:#888;margin-bottom:4px}
+.tl-status{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;background:#e6f1fb;color:#185FA5;margin-bottom:6px}
+.tl-body{font-size:13px;line-height:1.7;color:#444}
+.tl-meta{display:flex;gap:12px;margin-top:6px;font-size:12px;color:#888}
+.tl-meta span{display:flex;align-items:center;gap:4px}
+.material-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-size:11px;background:#f0f0ec;padding:3px 10px;border-radius:20px;color:#555}
+.foto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px}
+.foto-thumb{aspect-ratio:1;border-radius:8px;overflow:hidden;background:#f0f0ec;border:0.5px solid #eee}
+.foto-thumb a{display:block;width:100%;height:100%;background:#e0ddd6;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:11px;color:#888;border-radius:8px}
+.foto-thumb a:hover{background:#d0cec8}
+.mat-table{width:100%;font-size:12px;border-collapse:collapse}
+.mat-table th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:#888;padding:4px 8px;border-bottom:0.5px solid #eee}
+.mat-table td{padding:5px 8px;border-bottom:0.5px solid #f5f5f3}
+.loading{text-align:center;padding:3rem;color:#888;font-size:13px}
+.error-box{text-align:center;padding:3rem;color:#888}
+.error-box h2{font-size:16px;font-weight:500;margin-bottom:8px}
+.wa-btn{display:block;text-align:center;background:#25D366;color:#fff;border-radius:10px;padding:12px;font-size:14px;font-weight:500;text-decoration:none;margin-top:1rem}
+.wa-btn:hover{background:#1fba5a}
+@media(max-width:480px){
+  .info-grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="brand">Solid<span>Paving</span>.id</div>
+  <div class="brand-sub">Laporan Progres Pekerjaan</div>
+  <div id="content"><div class="loading">Memuat laporan...</div></div>
+</div>
+
+<script>
+var API_URL = 'https://script.google.com/macros/s/AKfycby8MuDPyYObyhUKzHcp2PsJ90mye2oAAA18LUe1WscvzPUPNc8uJXB3Lb4bY8Zs3dzPIw/exec';
+
+var fmtDate = function(s){
+  if(!s) return '—';
+  var d = new Date(s+'T00:00:00');
+  return d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+};
+var fmt = function(n){ return new Intl.NumberFormat('id-ID').format(Math.round(n)); };
+
+function getKode(){
+  var path = window.location.pathname;
+  var parts = path.replace(/\/$/,'').split('/');
+  return parts[parts.length-1];
+}
+
+function render(data){
+  var p = data.proyek;
+  var updates = data.updates || [];
+  var latest = updates[0] || {};
+  var progres = latest.progres || 0;
+
+  // Kumulatif material
+  var matMap = {};
+  updates.forEach(function(u){
+    (u.material||[]).forEach(function(m){
+      var key = m.nama+'|'+m.satuan;
+      matMap[key] = matMap[key] || {nama:m.nama,satuan:m.satuan,total:0};
+      matMap[key].total += parseFloat(m.jumlah)||0;
+    });
+  });
+  var matList = Object.values(matMap);
+
+  document.title = 'Laporan '+p.nama_proyek+' · SolidPaving.id';
+
+  var html =
+  '<div class="card">'+
+    '<div class="section-title">Info Proyek</div>'+
+    '<div class="info-grid">'+
+      '<div class="info-block"><strong>Proyek</strong><p>'+p.nama_proyek+'</p></div>'+
+      '<div class="info-block"><strong>Klien</strong><p>'+p.klien+'</p></div>'+
+      '<div class="info-block"><strong>Lokasi</strong><p>'+p.lokasi+'</p></div>'+
+      '<div class="info-block"><strong>Periode</strong><p>'+fmtDate(p.tgl_mulai)+' — '+fmtDate(p.tgl_selesai)+'</p></div>'+
+    '</div>'+
+    '<div class="progres-wrap">'+
+      '<div class="progres-label"><span>Progres keseluruhan</span><span>'+progres+'%</span></div>'+
+      '<div class="progres-track"><div class="progres-bar" id="pbar" style="width:0%"></div></div>'+
+    '</div>'+
+    '<div class="stat-row">'+
+      '<div class="stat"><div class="stat-val">'+updates.length+'</div><div class="stat-label">Hari update</div></div>'+
+      '<div class="stat"><div class="stat-val">'+(latest.pekerja||0)+'</div><div class="stat-label">Pekerja hari ini</div></div>'+
+      '<div class="stat"><div class="stat-val">'+(latest.status||'—')+'</div><div class="stat-label">Status</div></div>'+
+    '</div>'+
+  '</div>';
+
+  // Timeline
+  html += '<div class="card"><div class="section-title">Riwayat Update</div><div class="timeline">';
+  if(!updates.length){
+    html += '<div style="color:#aaa;font-size:13px;padding:1rem 0">Belum ada update</div>';
+  } else {
+    updates.forEach(function(u, idx){
+      var matStr = (u.material||[]).map(function(m){ return m.jumlah+' '+m.satuan+' '+m.nama; }).join(' · ');
+      var fotoHtml = '';
+      if((u.foto||[]).length){
+        fotoHtml = '<div class="foto-grid">'+u.foto.map(function(f,fi){
+          return '<div class="foto-thumb"><a href="'+f+'" target="_blank">📷 Foto '+(fi+1)+'</a></div>';
+        }).join('')+'</div>';
+      }
+      html += '<div class="tl-item">'+
+        '<div class="tl-dot'+(idx===0?' latest':'')+'"></div>'+
+        '<div class="tl-date">'+fmtDate(u.tanggal)+'</div>'+
+        '<span class="tl-status">'+u.status+'</span>'+
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">'+
+          '<div style="flex:1;height:4px;background:#eee;border-radius:2px"><div style="width:'+u.progres+'%;height:4px;background:#4A7FB5;border-radius:2px"></div></div>'+
+          '<span style="font-size:12px;font-weight:500">'+u.progres+'%</span>'+
+          '<span style="font-size:12px;color:#888">'+u.pekerja+' pekerja</span>'+
+        '</div>'+
+        '<div class="tl-body">'+u.catatan+'</div>'+
+        (matStr?'<div class="material-chips">'+
+          (u.material||[]).map(function(m){
+            return '<span class="chip">'+m.jumlah+' '+m.satuan+' '+m.nama+'</span>';
+          }).join('')+
+        '</div>':'')+
+        fotoHtml+
+      '</div>';
+    });
+  }
+  html += '</div></div>';
+
+  // Material kumulatif
+  if(matList.length){
+    html += '<div class="card"><div class="section-title">Total Material Masuk</div>'+
+      '<table class="mat-table"><thead><tr><th>Material</th><th>Total</th><th>Satuan</th></tr></thead><tbody>'+
+      matList.map(function(m){
+        return '<tr><td>'+m.nama+'</td><td style="font-weight:500">'+fmt(m.total)+'</td><td>'+m.satuan+'</td></tr>';
+      }).join('')+
+      '</tbody></table></div>';
+  }
+
+  // Footer
+  html += '<div class="card" style="text-align:center">'+
+    '<div style="font-size:13px;color:#888;margin-bottom:8px">Ada pertanyaan tentang progres pekerjaan?</div>'+
+    '<a class="wa-btn" href="https://wa.me/6285943492832?text=Halo%2C+saya+ingin+bertanya+tentang+proyek+'+encodeURIComponent(p.nama_proyek)+'" target="_blank">'+
+      '&#128172; Hubungi via WhatsApp'+
+    '</a>'+
+    '<div style="font-size:11px;color:#aaa;margin-top:12px">SolidPaving.id · Tidak amblas, bergaransi</div>'+
+  '</div>';
+
+  document.getElementById('content').innerHTML = html;
+  setTimeout(function(){ document.getElementById('pbar').style.width = progres+'%'; }, 100);
+}
+
+var kode = getKode();
+if(!kode || kode === 'laporan'){
+  document.getElementById('content').innerHTML =
+    '<div class="error-box"><h2>Proyek tidak ditemukan</h2><p>Link laporan tidak valid.</p></div>';
+} else {
+  fetch(API_URL+'?action=getProject&kode='+kode)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(d.ok) render(d);
+      else document.getElementById('content').innerHTML =
+        '<div class="error-box"><h2>Laporan tidak tersedia</h2><p>'+( d.error||'Proyek tidak ditemukan')+'</p></div>';
+    })
+    .catch(function(){
+      document.getElementById('content').innerHTML =
+        '<div class="error-box"><h2>Gagal memuat</h2><p>Periksa koneksi internet kamu.</p></div>';
+    });
+}
+</script>
+</body>
+</html>
