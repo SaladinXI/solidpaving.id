@@ -1220,7 +1220,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 // ═══════════════════════════════════════════════
 // GANTI URL INI SETELAH DEPLOY GOOGLE APPS SCRIPT
 // ═══════════════════════════════════════════════
-var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyPElVqBQiLW_fA7-9iCDllRiTAaXvqKL5ImCzaXKBuwWXEuHit_YERJi80egtwJCz1nA/exec';
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwDVfb2a2JVaLA24TBms8tofolzEFo1RhVYPw2YepZLYgsBbkNLynUCEZZsx1PbFgrthg/exec';
 
 var S={jenis:'holland',mutu:'K300',tebal:'8'};
 var JL={holland:'Holland (Bata)',ubin:'Ubin (Square)',cacing:'Cacing (Uni)',hexagon:'Hexagon',grassL8:'Grassblock Lubang 8',grassL5:'Grassblock Lubang 5'};
@@ -1233,16 +1233,15 @@ function hargaPerM2(){if(isGrass()){var g=HG[S.jenis];var pcs=S.tebal==='6'?g.pc
 function R(n){if(!n||n===0)return'—';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
 function Rk(n){if(!n)return'—';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
 
-// ── Kirim data ke Google Sheet (fire & forget) ──
+// ── Kirim data ke Google Sheet (fire & forget via GET) ──
 function logToSheet(sumber, data) {
   if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_URL_APPS_SCRIPT_DI_SINI') return;
   try {
-    fetch(SCRIPT_URL, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(Object.assign({}, data, {sumber: sumber}))
-    });
-  } catch(e) { /* silent fail — tidak mengganggu user */ }
+    var payload = JSON.stringify(Object.assign({}, data, {sumber: sumber}));
+    var url = SCRIPT_URL + '?payload=' + encodeURIComponent(payload);
+    var img = new Image();
+    img.src = url;
+  } catch(e) { /* silent fail */ }
 }
 
 var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
