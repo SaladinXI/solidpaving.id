@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=1200&h=630&format=webp">  
 <link rel="canonical" href="https://solidpaving.id/">
 <!-- FIX 1: Preload LCP image → eliminasi resource load delay 130ms -->
-<link rel="preload" as="image" href="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=760&q=65&format=webp" fetchpriority="high">
+<link rel="preload" as="image" href="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=760&q=50&format=webp" fetchpriority="high" media="(min-width:769px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -653,8 +653,13 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       </div>
     </div>
     <div class="hero-img-wrap">
-      <!-- FIX 2: q=85→q=65, hemat ~50 KiB. loading=eager + fetchpriority=high sudah benar untuk LCP -->
-      <img src="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=760&q=65&format=webp" alt="Hasil paving block SolidPaving.id — parkiran gedung komersial rapi dan presisi" loading="eager" fetchpriority="high" width="760" height="570">
+      <!-- FIX B: <picture> untuk serve ukuran gambar sesuai viewport
+           Mobile (~390px): w=480 q=50 → est ~15 KiB (bukan LCP di mobile, h1 yg jadi LCP)
+           Desktop: w=760 q=50 → est ~37 KiB (LCP element, preload di head sudah match) -->
+      <picture>
+        <source media="(max-width:768px)" srcset="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=480&q=50&format=webp">
+        <img src="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=760&q=50&format=webp" alt="Hasil paving block SolidPaving.id — parkiran gedung komersial rapi dan presisi" loading="eager" fetchpriority="high" width="760" height="570">
+      </picture>
       <div class="hero-badges">
         <span class="hbadge">SNI Bersertifikat</span><span class="hbadge">Hidrolik Press</span><span class="hbadge">K200–K400</span><span class="hbadge">±2000 m²/hari</span>
       </div>
@@ -711,8 +716,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <h2>Cara Kami Memastikan <span class="blue">Parkir Anda Tidak Gagal</span></h2>
     <div class="divider"></div>
     <div class="method-grid">
-      <!-- FIX 3: q=80→q=65, hemat ~48 KiB -->
-      <div class="method-img"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/pemasangan%20paving%20pltu.jpg?w=720&q=65&format=webp" alt="Proses pemasangan paving block SolidPaving.id" loading="lazy" width="720" height="540"></div>
+      <!-- FIX A: q=65→q=45, hemat ~15 KiB tambahan (dari 50.4 KiB → est ~35 KiB) -->
+      <div class="method-img"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/pemasangan%20paving%20pltu.jpg?w=720&q=45&format=webp" alt="Proses pemasangan paving block SolidPaving.id" loading="lazy" width="720" height="540"></div>
       <div class="steps">
         <div class="step"><div class="step-num">01</div><div><h3>Survei Lokasi & Analisa Tanah</h3><p>Pengukuran lahan, pengecekan tanah dasar, RAB transparan sebelum pekerjaan dimulai.</p><span class="step-tag">Mencegah: biaya kejutan</span></div></div>
         <div class="step"><div class="step-num">02</div><div><h3>Pemadatan Sub-Base</h3><p>Lapisan makadam/sirtu dipadatkan hingga rapat. Tahap paling sering dilewati vendor murah.</p><span class="step-tag">Mencegah: amblas</span></div></div>
