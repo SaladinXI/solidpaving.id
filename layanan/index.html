@@ -11,6 +11,10 @@
 <meta property="og:description" content="Jasa pasang paving block untuk parkir komersial, kawasan industri, dan perumahan. Garansi tertulis 3 bulan. Jabodetabek & Jawa Barat.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://solidpaving.id/layanan/">
+<meta property="og:image" content="https://ectascom.sirv.com/solidpaving.id/Tentang%20kami%20solidpaving.id/pengiriman%20paving%20UBIN%2021.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Pengiriman paving block ubin oleh SolidPaving.id">
 <link rel="canonical" href="https://solidpaving.id/layanan/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,7 +139,7 @@ h3{font-size:18px;font-weight:700;}
 .layanan-link-wa{font-size:13px;font-weight:600;color:var(--tx3);}
 .layanan-link-wa:hover{color:var(--green);}
 
-/* Supply card (smaller) */
+/* Supply card (smaller) — kept for backward compat */
 .supply-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;}
 .supply-card{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);padding:28px;transition:border-color .2s,transform .2s;}
 .supply-card:hover{border-color:var(--bdr);transform:translateY(-2px);}
@@ -204,6 +208,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   "@type": "CollectionPage",
   "name": "Layanan Jasa Paving Block — SolidPaving.id",
   "url": "https://solidpaving.id/layanan/",
+  "image": "https://ectascom.sirv.com/solidpaving.id/Tentang%20kami%20solidpaving.id/pengiriman%20paving%20UBIN%2021.jpg",
   "description": "Layanan jasa pasang paving block bergaransi: parkir komersial, kawasan industri, perumahan, dan supplier material. Jabodetabek & Jawa Barat.",
   "provider": {
     "@type": "GeneralContractor",
@@ -488,20 +493,24 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <!-- Supply Material -->
     <div class="layanan-section">
       <div class="cat-title">Supply Material</div>
-      <div class="supply-grid">
-        <div class="supply-card">
-          <div class="supply-ico">🚚</div>
+
+      <div class="layanan-card">
+        <div class="layanan-card-img">
+          <img src="https://ectascom.sirv.com/solidpaving.id/Tentang%20kami%20solidpaving.id/pengiriman%20paving%20UBIN%2021.jpg?w=700&h=525&q=80&format=webp" alt="Pengiriman material paving block ubin ke lokasi proyek" loading="lazy" width="700" height="525">
+        </div>
+        <div class="layanan-card-body">
+          <div class="layanan-ico">🚚</div>
           <h3>Supplier Material Only</h3>
           <p>Untuk kontraktor yang sudah punya tim pasang sendiri. Kami kirim paving block K200–K400 langsung ke lokasi proyek — tepat waktu, kuantitas akurat, kondisi terjaga.</p>
-          <div class="supply-tags">
-            <span class="supply-tag">Holland · Ubin · Cacing</span>
-            <span class="supply-tag">Grassblock · Hexagon</span>
-            <span class="supply-tag">Kanstin / Kerb</span>
-            <span class="supply-tag">Jabodetabek & Jabar</span>
+          <div class="layanan-tags">
+            <span class="layanan-tag">Holland · Ubin · Cacing</span>
+            <span class="layanan-tag">Grassblock · Hexagon</span>
+            <span class="layanan-tag">Kanstin / Kerb</span>
+            <span class="layanan-tag">Jabodetabek & Jabar</span>
           </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="/layanan/supplier-paving/" style="font-size:13px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:4px;">Lihat Detail →</a>
-            <a href="https://wa.me/6285943492832?text=Halo,%20saya%20butuh%20supplier%20material%20paving." style="font-size:13px;font-weight:600;color:var(--tx3);">Tanya via WA</a>
+          <div class="layanan-actions">
+            <a href="/layanan/supplier-paving/" class="layanan-link">Lihat Detail Layanan →</a>
+            <a href="https://wa.me/6285943492832?text=Halo,%20saya%20butuh%20supplier%20material%20paving." class="layanan-link-wa">Tanya via WA</a>
           </div>
         </div>
       </div>
