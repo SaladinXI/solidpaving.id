@@ -431,8 +431,9 @@ function backToForm(){
   // Default 3 termin
   termins=[
     {id:1,nama:'Termin I — Uang Muka (DP)',pct:30,trigger:'Setelah SPK ditandatangani'},
-    {id:2,nama:'Termin II — Progress',pct:60,trigger:'Saat progress pekerjaan mencapai 30%'},
-    {id:3,nama:'Termin III — Pelunasan',pct:10,trigger:'Saat serah terima & pemeriksaan bersama'}
+    {id:2,nama:'Termin II — Progress',pct:40,trigger:'Saat progress pekerjaan mencapai 30%'},
+    {id:3,nama:'Termin III — Pelunasan',pct:25,trigger:'Saat pekerjaan selesai 100%'},
+    {id:4,nama:'Termin IV — Retensi',pct:5,trigger:'Saat serah terima & pemeriksaan bersama'}
   ];
   renderTermins();
   updateTermins();
