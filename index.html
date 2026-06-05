@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://solidpaving.id/">
 <meta property="og:image" content="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=1200&h=630&format=webp">  
 <link rel="canonical" href="https://solidpaving.id/">
+<!-- FIX 1: Preload LCP image → eliminasi resource load delay 130ms -->
+<link rel="preload" as="image" href="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=760&q=65&format=webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -80,10 +82,8 @@ nav{
 .pnl-plain{display:flex;align-items:center;gap:5px;padding:6px 10px;border-radius:8px;font-size:13px;color:var(--tx2);transition:background .12s,color .12s;}
 .pnl-plain::before{content:'📍';font-size:11px;}
 .pnl-plain:hover{background:var(--bg1);color:var(--tx1);}
-.pnl-all{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:2px;border-top:1px solid var(--bds);transition:background .12s;}
+.pnl-all{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:2px;border-top:1px solid var(--bds);transition:background .12px;}
 .pnl-all:hover{background:var(--bg1);}
-
-/* ── NEW: "Lihat Semua" shortcut link di bawah panel items ── */
 .pnl-viewall{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:700;color:var(--blue);margin-top:4px;border-top:1px solid var(--bds);transition:background .12px;}
 .pnl-viewall:hover{background:var(--bg1);}
 
@@ -100,7 +100,6 @@ nav{
 .mob-head{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);padding:14px 0 4px;}
 .mob-drawer a{font-size:14px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bds);}
 .mob-drawer a:hover{color:var(--tx1);}
-/* ── NEW: highlighted "Lihat Semua" links in mobile drawer ── */
 .mob-viewall{font-size:13px!important;font-weight:700!important;color:var(--blue)!important;padding:10px 0!important;}
 .mob-cta{margin-top:14px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;display:block;border-bottom:none!important;}
 
@@ -275,8 +274,9 @@ h3{font-size:18px;font-weight:700;}
 .fd-field textarea{resize:none;min-height:72px;}
 .fd-full{grid-column:1/-1;}
 .cta-stack{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
-.btn-wa-full{background:#1a8c46;color:#fff;padding:16px;border-radius:12px;font-weight:700;font-size:16px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-family:inherit;}
-.btn-wa-full:hover{background:#158040;}
+/* FIX 4: btn-wa-full contrast ratio dinaikkan dari #1a8c46 (4.3:1 FAIL) → #156e38 (6.33:1 PASS) */
+.btn-wa-full{background:#156e38;color:#fff;padding:16px;border-radius:12px;font-weight:700;font-size:16px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-family:inherit;}
+.btn-wa-full:hover{background:#115c2f;}
 
 /* ─── PRODUK ─── */
 #produk{background:var(--bg0);}
@@ -294,8 +294,6 @@ h3{font-size:18px;font-weight:700;}
 .prod-specs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
 .spec-tag{background:var(--bg2);border:1px solid var(--bds);padding:4px 10px;border-radius:4px;font-size:11px;font-weight:600;color:var(--tx2);}
 .prod-link{font-size:13px;font-weight:600;color:var(--blue);}
-
-/* ── NEW: produk section "Lihat semua produk" CTA row ── */
 .produk-cta-row{margin-top:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:20px 24px;background:var(--bg1);border-radius:var(--rl);border:1px solid var(--bds);}
 .produk-cta-row p{font-size:14px;color:var(--tx2);}
 .btn-outline-blue{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--blue);border:1px solid var(--bdr);padding:10px 20px;border-radius:var(--r);transition:all .15s;}
@@ -311,22 +309,6 @@ h3{font-size:18px;font-weight:700;}
 .check-body p{font-size:13px;color:var(--tx2);}
 .val-footer{margin-top:32px;padding:24px 28px;background:rgba(46,62,95,.05);border:1px solid var(--bdr);border-radius:var(--rl);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .val-footer p{font-size:15px;color:var(--tx2);max-width:560px;}
-
-
-/* Before-After PLN */
-.pln-section{margin-bottom:48px;}
-.pln-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
-.pln-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
-.pln-item{border-radius:var(--rl);overflow:hidden;border:1px solid var(--bds);position:relative;background:var(--bg1);}
-.pln-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s;}
-.pln-item:hover img{transform:scale(1.03);}
-.pln-step{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:13px;font-weight:600;color:var(--tx2);background:var(--bg0);}
-.pln-num{width:24px;height:24px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--blue);flex-shrink:0;}
-.pln-step-done{color:var(--green);}
-.pln-step-done .pln-num{background:rgba(15,110,86,.12);border-color:rgba(15,110,86,.3);color:var(--green);}
-.pln-item-final{border-color:var(--green);}
-@media(max-width:600px){.pln-grid{grid-template-columns:1fr 1fr;}}
-
 
 /* Porto Grid di Homepage */
 .porto-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px;}
@@ -402,11 +384,11 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
 .foot-logo-wrap{display:flex;align-items:center;margin-bottom:12px;}
 .foot-brand-text{font-size:13px;color:var(--tx2);line-height:1.6;max-width:280px;}
-.foot-col h5{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;}
+/* FIX 5: Ganti h5 di footer jadi .foot-col-head untuk fix heading order (h1→h2→h3, skip ke h5 = violation) */
+.foot-col-head{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .foot-col li a{font-size:13px;color:var(--tx2);}
 .foot-col li a:hover{color:var(--blue);}
-/* NEW: footer "Lihat semua" link */
 .foot-viewall{font-size:13px;font-weight:700;color:var(--blue)!important;margin-top:4px;}
 .foot-bottom{border-top:1px solid var(--bds);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;}
 
@@ -448,7 +430,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   .cta-row{flex-direction:column;align-items:center;}
   .stats-grid{grid-template-columns:1fr 1fr;}
   .foot-grid{grid-template-columns:1fr;}
-  .hero-quicklinks{gap:8px;}
 }
 @media(max-width:1100px){.nav-menu{display:none;}.nav-cta{display:none;}.nav-ham{display:flex;}}
 </style>
@@ -505,7 +486,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 
 <!-- ════ NAVBAR ════ -->
 <nav>
-  <!-- Logo -->
   <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
     <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="34">
       <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
@@ -513,10 +493,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     </svg>
   </a>
 
-  <!-- Desktop menu -->
   <ul class="nav-menu">
-
-    <!-- ── PRODUK ── -->
     <li class="nav-item">
       <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -532,8 +509,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <a href="/produk/" class="pnl-viewall">Lihat Semua Produk <span>→</span></a>
       </div>
     </li>
-
-    <!-- ── LAYANAN ── -->
     <li class="nav-item">
       <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -548,8 +523,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <a href="/layanan/" class="pnl-viewall">Lihat Semua Layanan <span>→</span></a>
       </div>
     </li>
-
-    <!-- Harga -->
     <li class="nav-item">
       <button class="nav-btn">Harga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -564,8 +537,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </a>
       </div>
     </li>
-
-    <!-- Area Layanan -->
     <li class="nav-item">
       <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel panel-mega panel-right">
@@ -596,8 +567,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </div>
       </div>
     </li>
-
-    <!-- Tentang -->
     <li class="nav-item">
       <button class="nav-btn">Tentang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel panel-right">
@@ -609,8 +578,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <a href="mailto:sales@solidpaving.id" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span><span class="pnl-sub">sales@solidpaving.id</span></div></a>
       </div>
     </li>
-
-    <!-- Panduan -->
     <li class="nav-item">
       <button class="nav-btn">Panduan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel panel-right">
@@ -626,9 +593,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     </li>
   </ul>
 
-  <!-- CTA -->
   <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a>
-  <!-- Hamburger -->
   <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -681,7 +646,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="btn-primary">Minta Survei & RAB Gratis</a>
         <a href="#kalkulator" class="btn-outline">Hitung Estimasi Biaya</a>
       </div>
-      <!-- hero-quicklinks DIHAPUS sesuai permintaan -->
       <div class="hero-proof" style="margin-top:24px;">
         <div><div class="proof-num">50+</div><div class="proof-label">Proyek Selesai</div></div>
         <div><div class="proof-num">40rb+</div><div class="proof-label">m² Terpasang</div></div>
@@ -689,7 +653,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       </div>
     </div>
     <div class="hero-img-wrap">
-      <img src="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=760&q=85&format=webp" alt="Hasil paving block SolidPaving.id — parkiran gedung komersial rapi dan presisi" loading="eager" fetchpriority="high" width="760" height="570">
+      <!-- FIX 2: q=85→q=65, hemat ~50 KiB. loading=eager + fetchpriority=high sudah benar untuk LCP -->
+      <img src="https://ectascom.sirv.com/solidpaving.id/Parkiran%20gedung/IMG_9915.jpeg?w=760&q=65&format=webp" alt="Hasil paving block SolidPaving.id — parkiran gedung komersial rapi dan presisi" loading="eager" fetchpriority="high" width="760" height="570">
       <div class="hero-badges">
         <span class="hbadge">SNI Bersertifikat</span><span class="hbadge">Hidrolik Press</span><span class="hbadge">K200–K400</span><span class="hbadge">±2000 m²/hari</span>
       </div>
@@ -746,7 +711,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     <h2>Cara Kami Memastikan <span class="blue">Parkir Anda Tidak Gagal</span></h2>
     <div class="divider"></div>
     <div class="method-grid">
-      <div class="method-img"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/pemasangan%20paving%20pltu.jpg?w=720&q=80&format=webp" alt="Proses pemasangan paving block SolidPaving.id" loading="lazy" width="720" height="540"></div>
+      <!-- FIX 3: q=80→q=65, hemat ~48 KiB -->
+      <div class="method-img"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/PLTU%20Labuan/pemasangan%20paving%20pltu.jpg?w=720&q=65&format=webp" alt="Proses pemasangan paving block SolidPaving.id" loading="lazy" width="720" height="540"></div>
       <div class="steps">
         <div class="step"><div class="step-num">01</div><div><h3>Survei Lokasi & Analisa Tanah</h3><p>Pengukuran lahan, pengecekan tanah dasar, RAB transparan sebelum pekerjaan dimulai.</p><span class="step-tag">Mencegah: biaya kejutan</span></div></div>
         <div class="step"><div class="step-num">02</div><div><h3>Pemadatan Sub-Base</h3><p>Lapisan makadam/sirtu dipadatkan hingga rapat. Tahap paling sering dilewati vendor murah.</p><span class="step-tag">Mencegah: amblas</span></div></div>
@@ -1033,7 +999,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       <p>12 proyek terdokumentasi · dari Labuan hingga Sudirman Jakarta</p>
       <a href="/portofolio/" class="porto-cta-link">Lihat Semua Proyek <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9,18 15,12 9,6"/></svg></a>
     </div>
-
     <div class="testis">
       <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-q">"Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."</p><div class="testi-av"><div class="av">BW</div><div><div class="av-name">Budi Wicaksono</div><div class="av-role">Manajer Operasional, Pergudangan</div></div></div></div>
       <div class="testi"><div class="testi-stars">★★★★★</div><p class="testi-q">"Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."</p><div class="testi-av"><div class="av">RA</div><div><div class="av-name">Rini Anggraeni</div><div class="av-role">Project Manager, Developer</div></div></div></div>
@@ -1152,6 +1117,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 </main>
 
 <!-- FOOTER -->
+<!-- FIX 5: Semua <h5> di footer diganti ke <p class="foot-col-head"> untuk fix heading order accessibility -->
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -1165,7 +1131,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         <p class="foot-brand-text">Supplier paving block K200–K400 & jasa pasang bergaransi. Untuk kontraktor, developer, dan pemilik bisnis. Jabodetabek & Jawa Barat.</p>
       </div>
       <div class="foot-col">
-        <h5>Produk</h5>
+        <p class="foot-col-head">Produk</p>
         <ul>
           <li><a href="/produk/" class="foot-viewall">Semua Produk →</a></li>
           <li><a href="/produk/paving-holland/">Paving Holland</a></li>
@@ -1176,7 +1142,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </ul>
       </div>
       <div class="foot-col">
-        <h5>Layanan</h5>
+        <p class="foot-col-head">Layanan</p>
         <ul>
           <li><a href="/layanan/" class="foot-viewall">Semua Layanan →</a></li>
           <li><a href="/layanan/jasa-pasang/">Jasa Pasang</a></li>
@@ -1187,7 +1153,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
         </ul>
       </div>
       <div class="foot-col">
-        <h5>Kontak</h5>
+        <p class="foot-col-head">Kontak</p>
         <ul>
           <li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li>
           <li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li>
@@ -1217,9 +1183,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
 
 <script>
 (function(){
-// ═══════════════════════════════════════════════
-// GANTI URL INI SETELAH DEPLOY GOOGLE APPS SCRIPT
-// ═══════════════════════════════════════════════
 var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxfWKBqgsmmKPcJCNysEimxtEhy-p48YDioyXNVUC93KN6SrPUilRpi0FD7kMrPt8Oz7g/exec';
 
 var S={jenis:'holland',mutu:'K300',tebal:'8'};
@@ -1233,7 +1196,6 @@ function hargaPerM2(){if(isGrass()){var g=HG[S.jenis];var pcs=S.tebal==='6'?g.pc
 function R(n){if(!n||n===0)return'—';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
 function Rk(n){if(!n)return'—';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
 
-// ── Kirim data ke Google Sheet (no-cors fetch) ──
 function logToSheet(sumber, data) {
   if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_URL_APPS_SCRIPT_DI_SINI') return;
   try {
@@ -1322,7 +1284,6 @@ window.kirimWA=function(){
   var d=getData();
   if(!d.nama||!d.hp||!d.kota){alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.');return;}
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
-  // Log ke Google Sheet
   logToSheet('WhatsApp', d);
   var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
   var msg=['━━━━━━━━━━━━━━━━━━','📋 ESTIMASI SOLIDPAVING.ID','Tiket  : '+d.tid,'Tanggal: '+d.tgl,'━━━━━━━━━━━━━━━━━━','👤 DATA PELANGGAN','Nama   : '+d.nama,'No. HP : '+d.hp,'Lokasi : '+d.kota,d.proyek?'Proyek : '+d.proyek:null,d.catatan?'Catatan: '+d.catatan:null,'🧱 SPESIFIKASI','Ukuran : '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis  : '+d.jenis,'Mutu   : '+d.mutu,'Tebal  : '+d.tebal+' cm','🔧 LAYANAN',lay.length?lay.join('\n'):'Material saja (tanpa pasang)','💰 ESTIMASI','Material : '+R(d.mat),d.t1?'Pasang   : '+R(d.v1):null,d.t2?'Bedding  : '+R(d.v2):null,d.t3?'Pemadatan: '+R(d.v3):null,'TOTAL    : '+R(d.grand),'━━━━━━━━━━━━━━━━━━','*Estimasi awal. Harga pasti setelah survei gratis.*'].filter(s=>s!==null&&s!==undefined).join('\n');
@@ -1333,7 +1294,6 @@ window.kirimEmail=function(){
   var d=getData();
   if(!d.nama||!d.hp||!d.kota){alert('Mohon lengkapi Nama, Nomor HP, dan Lokasi/Kota.');return;}
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
-  // Log ke Google Sheet
   logToSheet('Email', d);
   var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
   var subj='Permintaan Estimasi Paving Block — '+d.tid+(d.nama?' ('+d.nama+')':'');
@@ -1344,7 +1304,6 @@ window.kirimEmail=function(){
 window.unduhPDF=function(){
   var d=getData();
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
-  // Log ke Google Sheet (PDF tidak wajib isi nama, tapi tetap kita catat kalau ada)
   logToSheet('PDF', d);
   var lrows='';
   if(d.t1)lrows+='<tr><td>Pemasangan (Rp 45rb/m²)</td><td>'+R(d.v1)+'</td></tr>';
