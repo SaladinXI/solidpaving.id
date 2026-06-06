@@ -360,9 +360,6 @@ function addKanstin(){
   renderBlocks();
 }
 function renderKanstin(it){
-  var vol=parseFloat(it.vol)||0;
-  var hp=parseFloat(it.harga_pcs)||0;
-  var hm=parseFloat(it.harga_pasang)||0;
   return'<div class="item-block custom">'+
     '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
     '<div class="item-type-label custom">Kanstin</div>'+
