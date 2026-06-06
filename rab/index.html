@@ -143,6 +143,7 @@ table.rab-table tr.total-row td{background:#1a1a1a;color:#fff;font-weight:500;fo
       <button class="btn-add-type paving" onclick="addPaving()">+ Paving Block</button>
       <button class="btn-add-type jasa" onclick="addJasaPasang()">+ Jasa Pasang</button>
       <button class="btn-add-type pemadatan" onclick="addPemadatan()">+ Jasa Pemadatan</button>
+      <button class="btn-add-type custom" onclick="addKanstin()">+ Kanstin</button>
       <button class="btn-add-type custom" onclick="addCustom()">+ Item Lain</button>
     </div>
 
@@ -190,10 +191,12 @@ table.rab-table tr.total-row td{background:#1a1a1a;color:#fff;font-weight:500;fo
 <script>
 var items=[];
 var SATUAN=['m²','m¹','m³','pcs','unit','Ls','set','kg','ton','zak'];
-var JENIS=['Holland','Cacing','Ubin'];
+var JENIS=['Holland','Cacing','Ubin','Hexagon','Grassblock'];
 var TEBAL=['6 cm','8 cm','10 cm'];
 var MUTU=['K250','K300','K350','K400'];
 var WARNA=['Natural','Merah','Hijau','Hitam','Abu-abu'];
+var JENIS_KANSTIN=['Kanstin Beton Lurus','Kanstin Beton Radius','Kanstin Beton L'];
+var DIM_KANSTIN=['10x20x40 cm','10x25x50 cm','15x25x50 cm','20x30x60 cm'];
 
 var fmt=function(n){return new Intl.NumberFormat('id-ID').format(Math.round(n));};
 var esc=function(s){return(s||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');};
@@ -268,7 +271,8 @@ function renderBlocks(){
     if(it.type==='paving') html+=renderPaving(it);
     else if(it.type==='jasa-pasang') html+=renderJasaPasang(it);
     else if(it.type==='pemadatan') html+=renderPemadatan(it);
-    else html+=renderCustom(it);
+    if(it.type==='kanstin') html+=renderKanstin(it);
+    else if(it.type==='custom') html+=renderCustom(it);
   });
   document.getElementById('item-blocks').innerHTML=html;
   renderSummary();
@@ -350,7 +354,41 @@ function renderPemadatan(it){
   '</div>';
 }
 
-function renderCustom(it){
+function addKanstin(){
+  var id=Date.now();
+  items.push({id:id,type:'kanstin',jenis:'Kanstin Beton Lurus',dimensi:'10x20x40 cm',vol:'',harga_pcs:'',harga_pasang:''});
+  renderBlocks();
+}
+function renderKanstin(it){
+  var vol=parseFloat(it.vol)||0;
+  var hp=parseFloat(it.harga_pcs)||0;
+  var hm=parseFloat(it.harga_pasang)||0;
+  return'<div class="item-block custom">'+
+    '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
+    '<div class="item-type-label custom">Kanstin</div>'+
+    '<div class="three-col" style="margin-bottom:8px">'+
+      '<div class="field" style="margin:0"><label>Jenis Kanstin</label>'+
+        '<input type="text" value="'+esc(it.jenis)+'" placeholder="Kanstin Beton Lurus..." oninput="updItem('+it.id+',\'jenis\',this.value)"></div>'+
+      '<div class="field" style="margin:0"><label>Dimensi</label>'+
+        '<input type="text" value="'+esc(it.dimensi)+'" placeholder="10x20x40 cm" oninput="updItem('+it.id+',\'dimensi\',this.value)"></div>'+
+      '<div class="field" style="margin:0"><label>Volume (m¹)</label>'+
+        '<input type="number" value="'+esc(it.vol)+'" placeholder="50" oninput="updItem('+it.id+',\'vol\',this.value)"></div>'+
+    '</div>'+
+    '<div class="two-col">'+
+      '<div class="field" style="margin:0"><label>Harga material / pcs (Rp)</label>'+
+        '<input type="number" value="'+esc(it.harga_pcs)+'" placeholder="25000" oninput="updItem('+it.id+',\'harga_pcs\',this.value)"></div>'+
+      '<div class="field" style="margin:0"><label>Harga pasang / m¹ (Rp)</label>'+
+        '<input type="number" value="'+esc(it.harga_pasang)+'" placeholder="15000" oninput="updItem('+it.id+',\'harga_pasang\',this.value)"></div>'+
+    '</div>'+
+  '</div>';
+}
+function kanstinSubtotal(it){
+  // Tidak bisa otomatis hitung pcs tanpa tahu konversi dimensi ke pcs,
+  // jadi harga pasang dihitung per m1, harga material dibiarkan input manual total
+  var vol=parseFloat(it.vol)||0;
+  var hm=parseFloat(it.harga_pasang)||0;
+  return vol*hm; // hanya jasa pasang yang bisa dihitung otomatis per m1
+}
   return'<div class="item-block custom">'+
     '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
     '<div class="item-type-label custom">Item Lain</div>'+
@@ -369,6 +407,12 @@ function renderCustom(it){
 
 function getSubtotal(){
   return items.reduce(function(s,it){
+    if(it.type==='kanstin'){
+      var vol=parseFloat(it.vol)||0;
+      var hp=parseFloat(it.harga_pcs)||0;
+      var hm=parseFloat(it.harga_pasang)||0;
+      return s+hp+vol*hm; // material total (input manual pcs) + jasa pasang per m1
+    }
     return s+(parseFloat(it.vol)||0)*(parseFloat(it.harga)||0);
   },0);
 }
@@ -400,6 +444,23 @@ function generatePreview(){
     var harga=parseFloat(it.harga)||0;
     var jumlah=vol*harga;
     var desc='';
+
+    if(it.type==='kanstin'){
+      var hp=parseFloat(it.harga_pcs)||0;
+      var hm=parseFloat(it.harga_pasang)||0;
+      var totalKanstin=hp+vol*hm;
+      rows+='<tr>'+
+        '<td style="width:28px;color:#aaa">'+(i+1)+'</td>'+
+        '<td>'+it.jenis+' '+it.dimensi+'<br>'+
+          '<span style="font-size:10px;color:#888">Material: Rp '+fmt(hp)+' (total) · Jasa pasang: Rp '+fmt(hm)+'/m¹</span></td>'+
+        '<td class="num">'+fmt(vol)+'</td>'+
+        '<td class="num">m¹</td>'+
+        '<td class="num">—</td>'+
+        '<td class="num">Rp '+fmt(totalKanstin)+'</td>'+
+      '</tr>';
+      return;
+    }
+
     if(it.type==='paving') desc=pavingDesc(it);
     else if(it.type==='jasa-pasang') desc='Jasa Pasang<br><span style="font-size:10px;color:#888;line-height:1.6">'+jasaPasangScope(it)+'</span>';
     else if(it.type==='pemadatan') desc='Jasa Pemadatan<br><span style="font-size:10px;color:#888;line-height:1.6">'+pemadatanScope()+'</span>';
