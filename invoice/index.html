@@ -178,9 +178,11 @@ table.it tbody td.td-unit{text-align:center;color:#6A80A0;font-size:7.5pt;}
         <option value="CUSTOM:0">Persentase Kustom...</option>
       </select>
     </div>
-    <div class="f" id="cPctWrap" style="display:none">
-      <label>Persentase (%)</label>
-      <input id="fCPct" type="number" min="1" max="100" value="30" oninput="render()">
+    <div id="cPctWrap" style="display:none">
+      <div class="r2">
+        <div class="f"><label>Nama Tagihan</label><input id="fCLabel" placeholder="Uang Muka, Cicilan 1..." oninput="render()"></div>
+        <div class="f"><label>Persentase (%)</label><input id="fCPct" type="number" min="1" max="100" value="30" oninput="render()"></div>
+      </div>
     </div>
     <div class="r2">
       <div class="f"><label>Tgl. Invoice</label><input id="fDate" type="date" oninput="render()"></div>
@@ -281,6 +283,10 @@ function eh(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
 function v(id){return(document.getElementById(id)||{value:''}).value;}
 function sk(){return v('fStatus').split(':')[0];}
 function pct(){return sk()==='CUSTOM'?parseFloat(v('fCPct'))||0:sMap[sk()]||0;}
+function customLabel(){
+  var l=v('fCLabel').trim();
+  return l?l+(pct()?' · '+pct()+'%':''):'Tagihan'+(pct()?' · '+pct()+'%':'');
+}
 
 function genNo(){
   var d=new Date(),y=d.getFullYear(),m=('0'+(d.getMonth()+1)).slice(-2),dy=('0'+d.getDate()).slice(-2);
