@@ -7,8 +7,9 @@ sitemap: false
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invoice · SolidPaving.id</title>
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
 <style>
 :root{
   --blue:#2E3E5F;--blue2:#3D5280;--accent:#95B3D9;
@@ -36,9 +37,9 @@ textarea{resize:vertical;}
 .btn-gen{padding:5px 9px;background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);font-size:10px;color:var(--blue2);cursor:pointer;white-space:nowrap;}
 .btn-gen:hover{background:var(--accent);color:#fff;}
 
-.ih{display:grid;grid-template-columns:1fr 50px 60px 88px 24px;gap:4px;margin-bottom:3px;}
+.ih{display:grid;grid-template-columns:1fr 50px 70px 88px 24px;gap:4px;margin-bottom:3px;}
 .ih span{font-size:9px;color:var(--tx3);}
-.ir{display:grid;grid-template-columns:1fr 50px 60px 88px 24px;gap:4px;align-items:start;margin-bottom:4px;}
+.ir{display:grid;grid-template-columns:1fr 50px 70px 88px 24px;gap:4px;align-items:start;margin-bottom:4px;}
 .ir input,.ir select{font-size:11px;padding:4px 6px;}
 .bd{width:24px;height:28px;background:none;border:1px solid rgba(180,30,30,.2);border-radius:var(--r);color:var(--red);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;opacity:.7;}
 .bd:hover{opacity:1;background:rgba(180,30,30,.06);}
@@ -55,10 +56,8 @@ textarea{resize:vertical;}
 
 .pp{background:#c8d3e0;padding:24px;overflow-y:auto;display:flex;justify-content:center;align-items:flex-start;}
 
-/* ── A4 INVOICE ── */
 .a4{background:#fff;width:210mm;min-height:297mm;padding:13mm 14mm 11mm;font-family:'Segoe UI',system-ui,sans-serif;color:#111827;line-height:1.55;box-shadow:0 4px 32px rgba(0,0,0,.15);}
 
-/* header */
 .a4-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6mm;padding-bottom:5mm;border-bottom:1.5px solid #2E3E5F;}
 .logo-main{font-size:17pt;letter-spacing:2px;line-height:1;}
 .logo-main .s1{color:#2E3E5F;font-weight:700;}
@@ -70,7 +69,6 @@ textarea{resize:vertical;}
 .inv-number{font-size:13pt;color:#1a2a40;font-weight:600;letter-spacing:.5px;line-height:1.2;}
 .status-badge{display:inline-block;padding:2px 9px;border-radius:3px;font-size:6.5pt;letter-spacing:.5px;margin-top:4px;font-weight:600;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 
-/* meta */
 .meta-row{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
 .meta-box{background:#F2F5FA;border-radius:3px;padding:5px 8px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 .ml{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:1px;}
@@ -78,7 +76,6 @@ textarea{resize:vertical;}
 .mv-due{color:#991B1B;font-weight:600;}
 .mv2{font-size:7pt;color:#6A80A0;margin-top:1px;}
 
-/* client */
 .client-row{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
 .client-box{background:#F2F5FA;border-radius:3px;padding:7px 9px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 .box-lbl{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
@@ -89,7 +86,6 @@ textarea{resize:vertical;}
 .from-box .client-name{color:#fff;font-weight:500;}
 .from-box .client-detail{color:rgba(255,255,255,.75);}
 
-/* table */
 table.it{width:100%;border-collapse:collapse;margin-bottom:5mm;font-size:8pt;}
 table.it thead tr{background:#2E3E5F;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 table.it thead th{color:#fff;padding:5px 7px;font-size:6.5pt;font-weight:600;letter-spacing:.8px;text-transform:uppercase;}
@@ -100,7 +96,6 @@ table.it tbody td{padding:5px 7px;color:#111827;}
 table.it tbody td:not(:first-child){text-align:right;color:#374151;}
 table.it tbody td.td-unit{text-align:center;color:#6A80A0;font-size:7.5pt;}
 
-/* payment */
 .pay-block{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
 .pay-table{font-size:8pt;width:100%;border-top:1px solid #E5EAF2;padding-top:3mm;}
 .pay-table tr td{padding:2.5px 0;color:#374151;}
@@ -124,13 +119,11 @@ table.it tbody td.td-unit{text-align:center;color:#6A80A0;font-size:7.5pt;}
 .sisa-box.lunas .tb-lbl{color:#065F46;opacity:.7;}
 .sisa-box.lunas .tb-amt{color:#065F46;}
 
-/* notes */
 .note-guar{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
 .note-box{border-left:2.5px solid #95B3D9;padding:6px 9px;background:#F5F8FC;border-radius:0 3px 3px 0;font-size:7.5pt;color:#374151;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 .guar-box{border-left:2.5px solid #059669;padding:6px 9px;background:#F0FDF4;border-radius:0 3px 3px 0;font-size:7.5pt;color:#065F46;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 .nlbl{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
 
-/* bank & sig */
 .bank-sig{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
 .bank-box{background:#F2F5FA;border-radius:3px;padding:7px 9px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 .bank-name{font-size:7.5pt;color:#1E3A5F;font-weight:600;margin-bottom:3px;}
@@ -176,10 +169,10 @@ table.it tbody td.td-unit{text-align:center;color:#6A80A0;font-size:7.5pt;}
     <div class="f"><label>Status Pembayaran</label>
       <select id="fStatus" onchange="statusChange()">
         <option value="PROFORMA:0">Proforma</option>
-        <option value="TERMIN1:30">Termin 1 — 30%</option>
-        <option value="TERMIN2:50">Termin 2 — 50%</option>
-        <option value="PELUNASAN:20">Pelunasan — 20%</option>
-        <option value="DP:50">Down Payment — 50%</option>
+        <option value="TERMIN1:30">Termin I — DP 30%</option>
+        <option value="TERMIN2:40">Termin II — Progress 40%</option>
+        <option value="TERMIN3:25">Termin III — Progress 25%</option>
+        <option value="TERMIN4:5">Termin IV — Pelunasan 5%</option>
         <option value="LUNAS:100">Lunas — 100%</option>
         <option value="TAGIHAN:100">Tagihan Penuh</option>
         <option value="CUSTOM:0">Persentase Kustom...</option>
@@ -256,19 +249,31 @@ table.it tbody td.td-unit{text-align:center;color:#6A80A0;font-size:7.5pt;}
 
 <script>
 var items=[],uid=0;
-var sMap={'PROFORMA':0,'TERMIN1':30,'TERMIN2':50,'PELUNASAN':20,'DP':50,'LUNAS':100,'TAGIHAN':100,'CUSTOM':0};
-var sLabel={'PROFORMA':'Proforma','TERMIN1':'Termin 1 · 30%','TERMIN2':'Termin 2 · 50%','PELUNASAN':'Pelunasan · 20%','DP':'Down Payment · 50%','LUNAS':'Lunas','TAGIHAN':'Tagihan Penuh','CUSTOM':'Tagihan'};
+var sMap={
+  'PROFORMA':0,'TERMIN1':30,'TERMIN2':40,'TERMIN3':25,'TERMIN4':5,
+  'LUNAS':100,'TAGIHAN':100,'CUSTOM':0
+};
+var sLabel={
+  'PROFORMA':'Proforma',
+  'TERMIN1':'Termin I · DP 30%',
+  'TERMIN2':'Termin II · Progress 40%',
+  'TERMIN3':'Termin III · Progress 25%',
+  'TERMIN4':'Termin IV · Pelunasan 5%',
+  'LUNAS':'Lunas',
+  'TAGIHAN':'Tagihan Penuh',
+  'CUSTOM':'Tagihan'
+};
 var sBadge={
   'PROFORMA':'background:#DBEAFE;color:#1E40AF;',
   'TERMIN1':'background:#FEF3C7;color:#92400E;',
   'TERMIN2':'background:#FEF3C7;color:#92400E;',
-  'PELUNASAN':'background:#FEE2E2;color:#991B1B;',
-  'DP':'background:#DBEAFE;color:#1E40AF;',
+  'TERMIN3':'background:#FEF3C7;color:#92400E;',
+  'TERMIN4':'background:#FEE2E2;color:#991B1B;',
   'LUNAS':'background:#D1FAE5;color:#065F46;',
   'TAGIHAN':'background:#FEF3C7;color:#92400E;',
   'CUSTOM':'background:#FEF3C7;color:#92400E;'
 };
-var units=['m²','m¹','pcs','Ls','unit','set','titik'];
+var units=['m²','m¹','m³','pcs','unit','Ls','set','kg','ton','zak'];
 
 function idr(n){return'Rp\u00a0'+Math.round(n).toLocaleString('id-ID');}
 function fd(d){if(!d)return'—';var p=d.split('-'),M=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des'];return p[2]+' '+M[+p[1]-1]+' '+p[0];}
@@ -278,8 +283,12 @@ function sk(){return v('fStatus').split(':')[0];}
 function pct(){return sk()==='CUSTOM'?parseFloat(v('fCPct'))||0:sMap[sk()]||0;}
 
 function genNo(){
-  var d=new Date(),y=d.getFullYear(),m=('0'+(d.getMonth()+1)).slice(-2),r=Math.floor(Math.random()*900)+100;
-  document.getElementById('fNo').value='INV-'+y+m+'-'+r;render();
+  var d=new Date(),y=d.getFullYear(),m=('0'+(d.getMonth()+1)).slice(-2),dy=('0'+d.getDate()).slice(-2);
+  var key='inv_counter_'+y+m+dy;
+  var count=parseInt(localStorage.getItem(key)||'0')+1;
+  localStorage.setItem(key,count);
+  document.getElementById('fNo').value='INV-'+y+m+dy+'-'+('00'+count).slice(-3);
+  render();
 }
 function statusChange(){document.getElementById('cPctWrap').style.display=sk()==='CUSTOM'?'':'none';render();}
 function guarChange(){document.getElementById('gcWrap').style.display=v('fGuar')==='__c'?'':'none';render();}
@@ -323,9 +332,8 @@ function render(){
   var cn=v('cName')||'—',cp=v('cPhone')||'—',ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj')||'—';
   var notes=v('fNotes'),guar=getGuar(),next=v('fNext');
 
-  var cleanName=(v('cName')||'Klien').replace(/[^a-zA-Z0-9À-ÖØ-öø-ÿ\s]/g,'').trim().replace(/\s+/g,'-');
-  var cleanStatus=lbl.replace(/\s*·\s*/g,'-').replace(/\s+/g,'').replace(/%/g,'pct');
-  document.title='INV-'+cleanStatus+'-'+cleanName;
+  var cleanName=(v('cName')||'Klien').replace(/[^a-zA-Z0-9\s]/g,'').trim().replace(/\s+/g,'-');
+  document.title='INV-'+key+'-'+cleanName;
 
   document.getElementById('liveSummary').innerHTML=
     '<div class="pay-row"><span>Grand Total</span><span>'+idr(c.gross)+'</span></div>'+
