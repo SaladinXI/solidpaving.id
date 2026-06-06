@@ -19,52 +19,49 @@ body{font-family:'Archivo',sans-serif;background:#f5f5f3;color:#1a1a1a;min-heigh
 .section-title{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:10px;padding-bottom:6px;border-bottom:0.5px solid #eee}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.four-col{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}
 .field{margin-bottom:10px}
 .field label{font-size:11px;color:#888;display:block;margin-bottom:4px}
 .field input,.field textarea,.field select{width:100%;background:#fafaf8;border:0.5px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13px;color:#1a1a1a;font-family:'Archivo',sans-serif;transition:border-color .15s}
 .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:#4A7FB5}
 .field textarea{resize:vertical;min-height:60px;line-height:1.6}
+.field input[readonly]{color:#888;background:#f5f5f3}
 
-/* item blocks */
 .item-block{border:0.5px solid #eee;border-radius:10px;padding:1rem;margin-bottom:10px;position:relative}
 .item-block.paving{border-left:3px solid #4A7FB5}
 .item-block.jasa-pasang{border-left:3px solid #7FB54A}
 .item-block.pemadatan{border-left:3px solid #B5904A}
+.item-block.kanstin{border-left:3px solid #9B59B6}
 .item-block.custom{border-left:3px solid #aaa}
 .item-type-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 .item-type-label.paving{color:#4A7FB5}
 .item-type-label.jasa-pasang{color:#7FB54A}
 .item-type-label.pemadatan{color:#B5904A}
+.item-type-label.kanstin{color:#9B59B6}
 .item-type-label.custom{color:#aaa}
-.row-3{display:grid;grid-template-columns:1fr 80px 100px;gap:10px}
-.row-4{display:grid;grid-template-columns:1fr 70px 90px 110px;gap:10px}
-.paving-attrs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
-.btn-del-block{position:absolute;top:10px;right:10px;background:none;border:none;color:#ccc;font-size:18px;cursor:pointer;line-height:1}
+.btn-del-block{position:absolute;top:10px;right:10px;background:none;border:none;color:#ccc;font-size:20px;cursor:pointer;line-height:1;padding:0 4px}
 .btn-del-block:hover{color:#e24b4a}
-.desc-preview{font-size:11px;color:#888;background:#f5f5f3;border-radius:6px;padding:6px 10px;margin-top:6px;line-height:1.6}
-.desc-preview.editable{background:#fafaf8;border:0.5px solid #ddd;color:#1a1a1a;font-size:12px}
+.desc-preview{font-size:11px;color:#888;background:#f5f5f3;border-radius:6px;padding:8px 10px;margin-bottom:8px;line-height:1.65}
 
-/* add buttons */
 .btn-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
-.btn-add-type{font-size:12px;padding:6px 14px;border-radius:6px;cursor:pointer;font-family:'Archivo',sans-serif;border:0.5px solid}
+.btn-add-type{font-size:12px;padding:6px 14px;border-radius:6px;cursor:pointer;font-family:'Archivo',sans-serif;border:0.5px solid;background:#fff}
+.btn-add-type:hover{opacity:.8}
 .btn-add-type.paving{color:#4A7FB5;border-color:#4A7FB5;background:#f0f6fc}
 .btn-add-type.jasa{color:#7FB54A;border-color:#7FB54A;background:#f4f9ee}
 .btn-add-type.pemadatan{color:#B5904A;border-color:#B5904A;background:#faf6ee}
+.btn-add-type.kanstin{color:#9B59B6;border-color:#9B59B6;background:#f8f0fc}
 .btn-add-type.custom{color:#888;border-color:#aaa;background:#f5f5f3}
 
-/* summary */
-.summary-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;border-bottom:0.5px solid #f0f0ee}
+.summary-box{background:#f5f5f3;border-radius:8px;padding:12px 14px;margin-top:8px}
+.summary-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:0.5px solid #e8e8e4}
 .summary-row:last-child{border-bottom:none;font-weight:500;font-size:15px;padding-top:10px}
-.summary-label{color:#555}
 
-/* buttons */
-.btn-primary{width:100%;padding:12px;background:#4A7FB5;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Archivo',sans-serif;transition:background .15s}
+.btn-primary{width:100%;padding:12px;background:#4A7FB5;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Archivo',sans-serif}
 .btn-primary:hover{background:#3d6d9e}
 .btn-secondary{padding:10px 20px;background:#fff;color:#1a1a1a;border:0.5px solid #ddd;border-radius:10px;font-size:13px;cursor:pointer;font-family:'Archivo',sans-serif}
 .btn-secondary:hover{background:#f5f5f3}
 .btn-row{display:flex;gap:10px;margin-bottom:1.25rem}
 
-/* preview */
 #preview-area{display:none}
 .preview-doc{background:#fff;border-radius:12px;border:0.5px solid #e0ddd6;padding:2rem}
 .pv-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:2px solid #1a1a1a}
@@ -77,18 +74,15 @@ body{font-family:'Archivo',sans-serif;background:#f5f5f3;color:#1a1a1a;min-heigh
 .pv-block strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:2px}
 .pv-block p{font-size:12px;line-height:1.7}
 table.rab-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:1rem}
-table.rab-table th{background:#f5f5f3;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:#888;padding:6px 10px;text-align:left;border-bottom:0.5px solid #e0ddd6}
+table.rab-table th{background:#f5f5f3;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#888;padding:6px 10px;text-align:left;border-bottom:.5px solid #e0ddd6}
 table.rab-table th.num{text-align:right}
-table.rab-table td{padding:8px 10px;border-bottom:0.5px solid #f0f0ee;vertical-align:top}
+table.rab-table td{padding:8px 10px;border-bottom:.5px solid #f0f0ee;vertical-align:top}
 table.rab-table td.num{text-align:right;white-space:nowrap}
-table.rab-table tr.section-head td{background:#fafaf8;font-weight:500;font-size:11px;color:#555;padding:6px 10px}
-table.rab-table tr.subtotal td{background:#f5f5f3;font-weight:500}
-table.rab-table tr.total-row td{background:#1a1a1a;color:#fff;font-weight:500;font-size:13px}
-.pv-notes{font-size:11px;color:#555;line-height:1.75;padding:12px;border:0.5px solid #eee;border-radius:8px;margin-bottom:1rem}
+.pv-notes{font-size:11px;color:#555;line-height:1.75;padding:12px;border:.5px solid #eee;border-radius:8px;margin-bottom:1rem}
 .pv-notes strong{color:#1a1a1a;font-weight:500}
 .ttd-area{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;font-size:12px}
 .ttd-block{text-align:center}
-.ttd-line{border-bottom:0.5px solid #ccc;margin:3rem 0 4px}
+.ttd-line{border-bottom:.5px solid #ccc;margin:3rem 0 4px}
 
 @media print{
   body{background:#fff}
@@ -97,8 +91,7 @@ table.rab-table tr.total-row td{background:#1a1a1a;color:#fff;font-weight:500;fo
   .preview-doc{border:none;border-radius:0;padding:1rem}
 }
 @media(max-width:600px){
-  .two-col,.three-col,.paving-attrs{grid-template-columns:1fr 1fr}
-  .row-4{grid-template-columns:1fr 70px 90px}
+  .two-col,.three-col,.four-col{grid-template-columns:1fr 1fr}
   .pv-grid,.ttd-area{grid-template-columns:1fr}
 }
 </style>
@@ -106,23 +99,20 @@ table.rab-table tr.total-row td{background:#1a1a1a;color:#fff;font-weight:500;fo
 <body>
 <div class="container">
 
-<!-- ═══ FORM ═══ -->
 <div id="form-area">
   <div class="site-header no-print">
     <div class="brand">Solid<span>Paving</span>.id</div>
     <div class="doc-badge">Generator RAB</div>
   </div>
 
-  <!-- Info -->
   <div class="card">
     <div class="section-title">Info Dokumen</div>
     <div class="two-col">
-      <div class="field"><label>No. RAB</label><input type="text" id="rab-no" placeholder="RAB-20260605-001"></div>
+      <div class="field"><label>No. RAB</label><input type="text" id="rab-no"></div>
       <div class="field"><label>Tanggal</label><input type="date" id="tgl-rab"></div>
     </div>
   </div>
 
-  <!-- Klien -->
   <div class="card">
     <div class="section-title">Data Klien</div>
     <div class="two-col">
@@ -135,23 +125,19 @@ table.rab-table tr.total-row td{background:#1a1a1a;color:#fff;font-weight:500;fo
     </div>
   </div>
 
-  <!-- Items -->
   <div class="card">
     <div class="section-title">Item Pekerjaan</div>
     <div id="item-blocks"></div>
-    <div class="btn-group">
-      <button class="btn-add-type paving" onclick="addPaving()">+ Paving Block</button>
-      <button class="btn-add-type jasa" onclick="addJasaPasang()">+ Jasa Pasang</button>
-      <button class="btn-add-type pemadatan" onclick="addPemadatan()">+ Jasa Pemadatan</button>
-      <button class="btn-add-type custom" onclick="addKanstin()">+ Kanstin</button>
-      <button class="btn-add-type custom" onclick="addCustom()">+ Item Lain</button>
+    <div class="btn-group no-print">
+      <button class="btn-add-type paving" id="btn-paving">+ Paving Block</button>
+      <button class="btn-add-type jasa" id="btn-jasa">+ Jasa Pasang</button>
+      <button class="btn-add-type pemadatan" id="btn-pemadatan">+ Jasa Pemadatan</button>
+      <button class="btn-add-type kanstin" id="btn-kanstin">+ Kanstin</button>
+      <button class="btn-add-type custom" id="btn-custom">+ Item Lain</button>
     </div>
-
-    <!-- Summary -->
-    <div id="summary" style="margin-top:8px"></div>
+    <div id="summary"></div>
   </div>
 
-  <!-- Catatan -->
   <div class="card">
     <div class="section-title">Catatan &amp; Validitas</div>
     <div class="two-col">
@@ -165,415 +151,370 @@ table.rab-table tr.total-row td{background:#1a1a1a;color:#fff;font-weight:500;fo
       </div>
       <div class="field">
         <label>PPN</label>
-        <select id="ppn" onchange="renderSummary()">
+        <select id="ppn">
           <option value="0">Tanpa PPN</option>
           <option value="11">PPN 11%</option>
           <option value="12">PPN 12%</option>
         </select>
       </div>
     </div>
-    <div class="field"><label>Catatan Tambahan (opsional)</label><textarea id="catatan" placeholder="Harga belum termasuk pekerjaan galian dan persiapan lahan di luar scope..."></textarea></div>
+    <div class="field"><label>Catatan Tambahan (opsional)</label><textarea id="catatan" placeholder="Harga belum termasuk pekerjaan galian di luar scope..."></textarea></div>
   </div>
 
-  <button class="btn-primary no-print" onclick="generatePreview()">&#128196; Buat Pratinjau RAB</button>
+  <button class="btn-primary no-print" id="btn-preview">&#128196; Buat Pratinjau RAB</button>
 </div>
 
-<!-- ═══ PREVIEW ═══ -->
 <div id="preview-area">
   <div class="btn-row no-print">
-    <button class="btn-secondary" onclick="backToForm()">&#8592; Kembali Edit</button>
-    <button class="btn-primary" style="flex:1" onclick="printRAB()">&#128438; Cetak / Simpan PDF</button>
+    <button class="btn-secondary" id="btn-back">&#8592; Kembali Edit</button>
+    <button class="btn-primary" style="flex:1" id="btn-print">&#128438; Cetak / Simpan PDF</button>
   </div>
   <div class="preview-doc" id="rab-output"></div>
 </div>
 
 </div>
+
 <script>
-var items=[];
-var SATUAN=['m²','m¹','m³','pcs','unit','Ls','set','kg','ton','zak'];
-var JENIS=['Holland','Cacing','Ubin','Hexagon','Grassblock'];
-var TEBAL=['6 cm','8 cm','10 cm'];
-var MUTU=['K250','K300','K350','K400'];
-var WARNA=['Natural','Merah','Hijau','Hitam','Abu-abu'];
-var JENIS_KANSTIN=['Kanstin Beton Lurus','Kanstin Beton Radius','Kanstin Beton L'];
-var DIM_KANSTIN=['10x20x40 cm','10x25x50 cm','15x25x50 cm','20x30x60 cm'];
+var items = [];
+var idCounter = 100;
 
-var fmt=function(n){return new Intl.NumberFormat('id-ID').format(Math.round(n));};
-var esc=function(s){return(s||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');};
-var fmtDate=function(s){
-  if(!s)return'—';
-  var d=new Date(s+'T00:00:00');
+var SATUAN = ['m²','m¹','m³','pcs','unit','Ls','set','kg','ton','zak'];
+var JENIS  = ['Holland','Cacing','Ubin','Hexagon','Grassblock'];
+var TEBAL  = ['6 cm','8 cm','10 cm'];
+var MUTU   = ['K250','K300','K350','K400'];
+var WARNA  = ['Natural','Merah','Hijau','Hitam','Abu-abu'];
+
+function fmt(n){ return new Intl.NumberFormat('id-ID').format(Math.round(n||0)); }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+function fmtDate(s){
+  if(!s) return '—';
+  var d = new Date(s+'T00:00:00');
   return d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
-};
-var v=function(id){return(document.getElementById(id)||{}).value||'—';};
-var sel=function(id){return(document.getElementById(id)||{}).value||'';};
-
-function selOpts(arr,cur){
-  return arr.map(function(o){return'<option'+(o===cur?' selected':'')+'>'+o+'</option>';}).join('');
 }
-function satuanOpts(cur){return selOpts(SATUAN,cur||'m²');}
+function gv(id){ return (document.getElementById(id)||{}).value||'—'; }
+function selOpts(arr, cur){
+  return arr.map(function(o){ return '<option'+(o===cur?' selected':'')+'>'+esc(o)+'</option>'; }).join('');
+}
+function satuanOpts(cur){ return selOpts(SATUAN, cur||'m²'); }
 
-// ── Paving Block ──
+function newId(){ return ++idCounter; }
+
+// ── Add functions ──
 function addPaving(){
-  var id=Date.now();
-  items.push({id:id,type:'paving',jenis:'Holland',tebal:'6 cm',mutu:'K300',warna:'Natural',vol:'',sat:'m²',harga:''});
-  renderBlocks();
+  items.push({id:newId(),type:'paving',jenis:'Holland',tebal:'6 cm',mutu:'K300',warna:'Natural',vol:'',sat:'m²',harga:''});
+  render();
 }
-function pavingDesc(it){
-  return'Paving Block '+it.jenis+' tebal '+it.tebal+' mutu '+it.mutu+' warna '+it.warna;
-}
-
-// ── Jasa Pasang ──
 function addJasaPasang(){
-  var id=Date.now();
-  // Cari paving pertama untuk referensi awal
-  var pav=items.find(function(x){return x.type==='paving';});
-  items.push({id:id,type:'jasa-pasang',refDesc:pav?pavingDesc(pav):'',tambahan:'',vol:'',sat:'m²',harga:''});
-  renderBlocks();
+  var pav = items.find(function(x){ return x.type==='paving'; });
+  var ref = pav ? pavingDesc(pav) : '';
+  items.push({id:newId(),type:'jasa-pasang',refDesc:ref,tambahan:'',vol:'',sat:'m²',harga:''});
+  render();
 }
-function jasaPasangScope(it){
-  var base='Persiapan lahan, leveling (maks. kupas 5 cm), gelar abu batu 3–4 cm, jidar (screed) abu batu, pemasangan '+
-    (it.refDesc||'paving block')+
-    (it.tambahan?' dan '+it.tambahan:'')+
-    ', pengisian nat dengan abu batu, pemadatan paving dengan stamper, pembuatan kuncian dengan adukan sederhana';
-  return base;
+function addPemadatan(){
+  items.push({id:newId(),type:'pemadatan',vol:'',sat:'m²',harga:''});
+  render();
+}
+function addKanstin(){
+  items.push({id:newId(),type:'kanstin',jenis:'',dimensi:'',vol:'',harga_pcs:'',harga_pasang:''});
+  render();
+}
+function addCustom(){
+  items.push({id:newId(),type:'custom',desc:'',vol:'',sat:'m²',harga:''});
+  render();
+}
+function removeItem(id){
+  items = items.filter(function(x){ return x.id !== id; });
+  render();
 }
 
-// ── Jasa Pemadatan ──
-function addPemadatan(){
-  var id=Date.now();
-  items.push({id:id,type:'pemadatan',vol:'',sat:'m²',harga:''});
-  renderBlocks();
+// ── Update field ──
+function upd(id, key, val){
+  var it = items.find(function(x){ return x.id===id; });
+  if(it){ it[key]=val; render(); }
+}
+
+// ── Descriptions ──
+function pavingDesc(it){
+  return 'Paving Block '+it.jenis+' tebal '+it.tebal+' mutu '+it.mutu+' warna '+it.warna;
+}
+function jasaScope(it){
+  return 'Persiapan lahan, leveling (maks. kupas 5 cm), gelar abu batu 3–4 cm, jidar (screed) abu batu, pemasangan '+(it.refDesc||'paving block')+(it.tambahan?' dan '+it.tambahan:'')+', pengisian nat dengan abu batu, pemadatan paving dengan stamper, pembuatan kuncian dengan adukan sederhana';
 }
 function pemadatanScope(){
-  return'Gelar base course 5 cm, pemadatan menggunakan stamper kuda atau baby roller 2 ton';
+  return 'Gelar base course 5 cm, pemadatan menggunakan stamper kuda atau baby roller 2 ton';
 }
 
-// ── Custom ──
-function addCustom(){
-  var id=Date.now();
-  items.push({id:id,type:'custom',desc:'',vol:'',sat:'m²',harga:''});
-  renderBlocks();
-}
-
-function removeItem(id){
-  items=items.filter(function(x){return x.id!==id;});
-  renderBlocks();
-}
-function updItem(id,k,val){
-  var it=items.find(function(x){return x.id===id;});
-  if(it){it[k]=val;renderBlocks();}
-}
-
-function renderBlocks(){
-  var html='';
-  items.forEach(function(it){
-    if(it.type==='paving') html+=renderPaving(it);
-    else if(it.type==='jasa-pasang') html+=renderJasaPasang(it);
-    else if(it.type==='pemadatan') html+=renderPemadatan(it);
-    if(it.type==='kanstin') html+=renderKanstin(it);
-    else if(it.type==='custom') html+=renderCustom(it);
-  });
-  document.getElementById('item-blocks').innerHTML=html;
-  renderSummary();
-}
-
-function renderPaving(it){
-  return'<div class="item-block paving">'+
-    '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
-    '<div class="item-type-label paving">Paving Block</div>'+
-    '<div class="paving-attrs">'+
-      '<div class="field" style="margin:0"><label>Jenis</label>'+
-        '<select onchange="updItem('+it.id+',\'jenis\',this.value)">'+selOpts(JENIS,it.jenis)+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Tebal</label>'+
-        '<select onchange="updItem('+it.id+',\'tebal\',this.value)">'+selOpts(TEBAL,it.tebal)+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Mutu</label>'+
-        '<select onchange="updItem('+it.id+',\'mutu\',this.value)">'+selOpts(MUTU,it.mutu)+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Warna</label>'+
-        '<select onchange="updItem('+it.id+',\'warna\',this.value)">'+selOpts(WARNA,it.warna)+'</select></div>'+
-    '</div>'+
-    '<div class="row-4">'+
-      '<div class="field" style="margin:0"><label>Deskripsi (otomatis)</label>'+
-        '<input value="'+esc(pavingDesc(it))+'" readonly style="color:#888;background:#f5f5f3"></div>'+
-      '<div class="field" style="margin:0"><label>Volume</label>'+
-        '<input type="number" value="'+esc(it.vol)+'" placeholder="500" oninput="updItem('+it.id+',\'vol\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Satuan</label>'+
-        '<select onchange="updItem('+it.id+',\'sat\',this.value)">'+satuanOpts(it.sat)+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label>'+
-        '<input type="number" value="'+esc(it.harga)+'" placeholder="85000" oninput="updItem('+it.id+',\'harga\',this.value)"></div>'+
-    '</div>'+
-  '</div>';
-}
-
-function renderJasaPasang(it){
-  // Ambil semua paving untuk dropdown referensi
-  var pavItems=items.filter(function(x){return x.type==='paving';});
-  var refOpts=pavItems.length?
-    pavItems.map(function(p){
-      var d=pavingDesc(p);
-      return'<option'+(d===it.refDesc?' selected':'')+' value="'+esc(d)+'">'+d+'</option>';
-    }).join(''):
-    '<option value="">— Tambah paving block dulu —</option>';
-
-  return'<div class="item-block jasa-pasang">'+
-    '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
-    '<div class="item-type-label jasa-pasang">Jasa Pasang</div>'+
-    '<div class="two-col" style="margin-bottom:8px">'+
-      '<div class="field" style="margin:0"><label>Referensi paving</label>'+
-        '<select onchange="updItem('+it.id+',\'refDesc\',this.value)">'+refOpts+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Tambahan jenis (opsional)</label>'+
-        '<input value="'+esc(it.tambahan)+'" placeholder="dan Paving Block Holland merah tebal 6cm mutu K300" oninput="updItem('+it.id+',\'tambahan\',this.value)"></div>'+
-    '</div>'+
-    '<div class="desc-preview">'+jasaPasangScope(it)+'</div>'+
-    '<div class="row-4" style="margin-top:8px">'+
-      '<div></div>'+
-      '<div class="field" style="margin:0"><label>Volume</label>'+
-        '<input type="number" value="'+esc(it.vol)+'" placeholder="500" oninput="updItem('+it.id+',\'vol\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Satuan</label>'+
-        '<select onchange="updItem('+it.id+',\'sat\',this.value)">'+satuanOpts(it.sat)+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label>'+
-        '<input type="number" value="'+esc(it.harga)+'" placeholder="45000" oninput="updItem('+it.id+',\'harga\',this.value)"></div>'+
-    '</div>'+
-  '</div>';
-}
-
-function renderPemadatan(it){
-  return'<div class="item-block pemadatan">'+
-    '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
-    '<div class="item-type-label pemadatan">Jasa Pemadatan</div>'+
-    '<div class="desc-preview" style="margin-bottom:8px">'+pemadatanScope()+'</div>'+
-    '<div class="row-4">'+
-      '<div></div>'+
-      '<div class="field" style="margin:0"><label>Volume</label>'+
-        '<input type="number" value="'+esc(it.vol)+'" placeholder="500" oninput="updItem('+it.id+',\'vol\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Satuan</label>'+
-        '<select onchange="updItem('+it.id+',\'sat\',this.value)">'+satuanOpts(it.sat)+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label>'+
-        '<input type="number" value="'+esc(it.harga)+'" placeholder="25000" oninput="updItem('+it.id+',\'harga\',this.value)"></div>'+
-    '</div>'+
-  '</div>';
-}
-
-function addKanstin(){
-  var id=Date.now();
-  items.push({id:id,type:'kanstin',jenis:'Kanstin Beton Lurus',dimensi:'10x20x40 cm',vol:'',harga_pcs:'',harga_pasang:''});
-  renderBlocks();
-}
-function renderKanstin(it){
-  return'<div class="item-block custom">'+
-    '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
-    '<div class="item-type-label custom">Kanstin</div>'+
-    '<div class="three-col" style="margin-bottom:8px">'+
-      '<div class="field" style="margin:0"><label>Jenis Kanstin</label>'+
-        '<input type="text" value="'+esc(it.jenis)+'" placeholder="Kanstin Beton Lurus..." oninput="updItem('+it.id+',\'jenis\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Dimensi</label>'+
-        '<input type="text" value="'+esc(it.dimensi)+'" placeholder="10x20x40 cm" oninput="updItem('+it.id+',\'dimensi\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Volume (m¹)</label>'+
-        '<input type="number" value="'+esc(it.vol)+'" placeholder="50" oninput="updItem('+it.id+',\'vol\',this.value)"></div>'+
-    '</div>'+
-    '<div class="two-col">'+
-      '<div class="field" style="margin:0"><label>Harga material / pcs (Rp)</label>'+
-        '<input type="number" value="'+esc(it.harga_pcs)+'" placeholder="25000" oninput="updItem('+it.id+',\'harga_pcs\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Harga pasang / m¹ (Rp)</label>'+
-        '<input type="number" value="'+esc(it.harga_pasang)+'" placeholder="15000" oninput="updItem('+it.id+',\'harga_pasang\',this.value)"></div>'+
-    '</div>'+
-  '</div>';
-}
-function kanstinSubtotal(it){
-  // Tidak bisa otomatis hitung pcs tanpa tahu konversi dimensi ke pcs,
-  // jadi harga pasang dihitung per m1, harga material dibiarkan input manual total
-  var vol=parseFloat(it.vol)||0;
-  var hm=parseFloat(it.harga_pasang)||0;
-  return vol*hm; // hanya jasa pasang yang bisa dihitung otomatis per m1
-}
-  return'<div class="item-block custom">'+
-    '<button class="btn-del-block" onclick="removeItem('+it.id+')">&#215;</button>'+
-    '<div class="item-type-label custom">Item Lain</div>'+
-    '<div class="row-4">'+
-      '<div class="field" style="margin:0"><label>Deskripsi</label>'+
-        '<input value="'+esc(it.desc)+'" placeholder="Kanstin beton, mobilisasi, dll..." oninput="updItem('+it.id+',\'desc\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Volume</label>'+
-        '<input type="number" value="'+esc(it.vol)+'" placeholder="100" oninput="updItem('+it.id+',\'vol\',this.value)"></div>'+
-      '<div class="field" style="margin:0"><label>Satuan</label>'+
-        '<select onchange="updItem('+it.id+',\'sat\',this.value)">'+satuanOpts(it.sat)+'</select></div>'+
-      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label>'+
-        '<input type="number" value="'+esc(it.harga)+'" placeholder="50000" oninput="updItem('+it.id+',\'harga\',this.value)"></div>'+
-    '</div>'+
-  '</div>';
-}
-
+// ── Subtotal ──
 function getSubtotal(){
   return items.reduce(function(s,it){
     if(it.type==='kanstin'){
-      var vol=parseFloat(it.vol)||0;
-      var hp=parseFloat(it.harga_pcs)||0;
-      var hm=parseFloat(it.harga_pasang)||0;
-      return s+hp+vol*hm; // material total (input manual pcs) + jasa pasang per m1
+      return s + (parseFloat(it.harga_pcs)||0) + (parseFloat(it.vol)||0)*(parseFloat(it.harga_pasang)||0);
     }
-    return s+(parseFloat(it.vol)||0)*(parseFloat(it.harga)||0);
+    return s + (parseFloat(it.vol)||0)*(parseFloat(it.harga)||0);
   },0);
 }
 
-function renderSummary(){
-  var sub=getSubtotal();
-  var ppnPct=parseInt(sel('ppn'))||0;
-  var ppnVal=sub*ppnPct/100;
-  var total=sub+ppnVal;
-  var html='<div style="background:#f5f5f3;border-radius:8px;padding:12px 14px">'+
-    '<div class="summary-row"><span class="summary-label">Subtotal</span><span>Rp '+fmt(sub)+'</span></div>'+
-    (ppnPct?'<div class="summary-row"><span class="summary-label">PPN '+ppnPct+'%</span><span>Rp '+fmt(ppnVal)+'</span></div>':'')+
-    '<div class="summary-row"><span>Total</span><span>Rp '+fmt(total)+'</span></div>'+
-  '</div>';
-  document.getElementById('summary').innerHTML=html;
+// ── Render blocks ──
+function render(){
+  var html = '';
+  items.forEach(function(it){
+    if(it.type==='paving')      html += blockPaving(it);
+    else if(it.type==='jasa-pasang') html += blockJasa(it);
+    else if(it.type==='pemadatan')   html += blockPemadatan(it);
+    else if(it.type==='kanstin')     html += blockKanstin(it);
+    else                             html += blockCustom(it);
+  });
+  document.getElementById('item-blocks').innerHTML = html;
+  renderSummary();
 }
 
+function blockPaving(it){
+  return '<div class="item-block paving">'+
+    '<button class="btn-del-block" data-id="'+it.id+'" data-action="del">&#215;</button>'+
+    '<div class="item-type-label paving">Paving Block</div>'+
+    '<div class="four-col" style="margin-bottom:10px">'+
+      '<div class="field" style="margin:0"><label>Jenis</label><select data-id="'+it.id+'" data-key="jenis">'+selOpts(JENIS,it.jenis)+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Tebal</label><select data-id="'+it.id+'" data-key="tebal">'+selOpts(TEBAL,it.tebal)+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Mutu</label><select data-id="'+it.id+'" data-key="mutu">'+selOpts(MUTU,it.mutu)+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Warna</label><select data-id="'+it.id+'" data-key="warna">'+selOpts(WARNA,it.warna)+'</select></div>'+
+    '</div>'+
+    '<div class="field"><label>Deskripsi (otomatis)</label><input readonly value="'+esc(pavingDesc(it))+'"></div>'+
+    '<div class="three-col">'+
+      '<div class="field" style="margin:0"><label>Volume</label><input type="number" data-id="'+it.id+'" data-key="vol" value="'+esc(it.vol)+'" placeholder="500"></div>'+
+      '<div class="field" style="margin:0"><label>Satuan</label><select data-id="'+it.id+'" data-key="sat">'+satuanOpts(it.sat)+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label><input type="number" data-id="'+it.id+'" data-key="harga" value="'+esc(it.harga)+'" placeholder="85000"></div>'+
+    '</div>'+
+  '</div>';
+}
+
+function blockJasa(it){
+  var pavItems = items.filter(function(x){ return x.type==='paving'; });
+  var refOpts = pavItems.length
+    ? pavItems.map(function(p){ var d=pavingDesc(p); return '<option'+(d===it.refDesc?' selected':'')+' value="'+esc(d)+'">'+esc(d)+'</option>'; }).join('')
+    : '<option value="">— Tambah paving block dulu —</option>';
+
+  return '<div class="item-block jasa-pasang">'+
+    '<button class="btn-del-block" data-id="'+it.id+'" data-action="del">&#215;</button>'+
+    '<div class="item-type-label jasa-pasang">Jasa Pasang</div>'+
+    '<div class="two-col" style="margin-bottom:8px">'+
+      '<div class="field" style="margin:0"><label>Referensi paving</label><select data-id="'+it.id+'" data-key="refDesc">'+refOpts+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Tambahan jenis (opsional)</label><input type="text" data-id="'+it.id+'" data-key="tambahan" value="'+esc(it.tambahan)+'" placeholder="dan Paving Block Holland merah tebal 6cm mutu K300"></div>'+
+    '</div>'+
+    '<div class="desc-preview">'+esc(jasaScope(it))+'</div>'+
+    '<div class="three-col">'+
+      '<div class="field" style="margin:0"><label>Volume</label><input type="number" data-id="'+it.id+'" data-key="vol" value="'+esc(it.vol)+'" placeholder="500"></div>'+
+      '<div class="field" style="margin:0"><label>Satuan</label><select data-id="'+it.id+'" data-key="sat">'+satuanOpts(it.sat)+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label><input type="number" data-id="'+it.id+'" data-key="harga" value="'+esc(it.harga)+'" placeholder="45000"></div>'+
+    '</div>'+
+  '</div>';
+}
+
+function blockPemadatan(it){
+  return '<div class="item-block pemadatan">'+
+    '<button class="btn-del-block" data-id="'+it.id+'" data-action="del">&#215;</button>'+
+    '<div class="item-type-label pemadatan">Jasa Pemadatan</div>'+
+    '<div class="desc-preview">'+pemadatanScope()+'</div>'+
+    '<div class="three-col">'+
+      '<div class="field" style="margin:0"><label>Volume</label><input type="number" data-id="'+it.id+'" data-key="vol" value="'+esc(it.vol)+'" placeholder="500"></div>'+
+      '<div class="field" style="margin:0"><label>Satuan</label><select data-id="'+it.id+'" data-key="sat">'+satuanOpts(it.sat)+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label><input type="number" data-id="'+it.id+'" data-key="harga" value="'+esc(it.harga)+'" placeholder="25000"></div>'+
+    '</div>'+
+  '</div>';
+}
+
+function blockKanstin(it){
+  return '<div class="item-block kanstin">'+
+    '<button class="btn-del-block" data-id="'+it.id+'" data-action="del">&#215;</button>'+
+    '<div class="item-type-label kanstin">Kanstin</div>'+
+    '<div class="three-col" style="margin-bottom:8px">'+
+      '<div class="field" style="margin:0"><label>Jenis Kanstin</label><input type="text" data-id="'+it.id+'" data-key="jenis" value="'+esc(it.jenis)+'" placeholder="Kanstin Beton Lurus..."></div>'+
+      '<div class="field" style="margin:0"><label>Dimensi</label><input type="text" data-id="'+it.id+'" data-key="dimensi" value="'+esc(it.dimensi)+'" placeholder="10x20x40 cm"></div>'+
+      '<div class="field" style="margin:0"><label>Volume (m¹)</label><input type="number" data-id="'+it.id+'" data-key="vol" value="'+esc(it.vol)+'" placeholder="50"></div>'+
+    '</div>'+
+    '<div class="two-col">'+
+      '<div class="field" style="margin:0"><label>Harga material total (Rp)</label><input type="number" data-id="'+it.id+'" data-key="harga_pcs" value="'+esc(it.harga_pcs)+'" placeholder="1250000"></div>'+
+      '<div class="field" style="margin:0"><label>Harga pasang / m¹ (Rp)</label><input type="number" data-id="'+it.id+'" data-key="harga_pasang" value="'+esc(it.harga_pasang)+'" placeholder="15000"></div>'+
+    '</div>'+
+  '</div>';
+}
+
+function blockCustom(it){
+  return '<div class="item-block custom">'+
+    '<button class="btn-del-block" data-id="'+it.id+'" data-action="del">&#215;</button>'+
+    '<div class="item-type-label custom">Item Lain</div>'+
+    '<div class="field"><label>Deskripsi</label><input type="text" data-id="'+it.id+'" data-key="desc" value="'+esc(it.desc)+'" placeholder="Kanstin, mobilisasi, dll..."></div>'+
+    '<div class="three-col">'+
+      '<div class="field" style="margin:0"><label>Volume</label><input type="number" data-id="'+it.id+'" data-key="vol" value="'+esc(it.vol)+'" placeholder="100"></div>'+
+      '<div class="field" style="margin:0"><label>Satuan</label><select data-id="'+it.id+'" data-key="sat">'+satuanOpts(it.sat)+'</select></div>'+
+      '<div class="field" style="margin:0"><label>Harga/Sat (Rp)</label><input type="number" data-id="'+it.id+'" data-key="harga" value="'+esc(it.harga)+'" placeholder="50000"></div>'+
+    '</div>'+
+  '</div>';
+}
+
+function renderSummary(){
+  var sub = getSubtotal();
+  var ppnPct = parseInt(document.getElementById('ppn').value)||0;
+  var ppnVal = sub*ppnPct/100;
+  var total = sub+ppnVal;
+  var html = '<div class="summary-box">'+
+    '<div class="summary-row"><span style="color:#888">Subtotal</span><span>Rp '+fmt(sub)+'</span></div>'+
+    (ppnPct?'<div class="summary-row"><span style="color:#888">PPN '+ppnPct+'%</span><span>Rp '+fmt(ppnVal)+'</span></div>':'')+
+    '<div class="summary-row"><span>Total</span><span>Rp '+fmt(total)+'</span></div>'+
+  '</div>';
+  document.getElementById('summary').innerHTML = html;
+}
+
+// ── Event delegation ──
+document.getElementById('item-blocks').addEventListener('change', function(e){
+  var el = e.target;
+  var id = parseInt(el.dataset.id);
+  var key = el.dataset.key;
+  if(!id||!key) return;
+  var it = items.find(function(x){ return x.id===id; });
+  if(it){ it[key]=el.value; render(); }
+});
+document.getElementById('item-blocks').addEventListener('input', function(e){
+  var el = e.target;
+  var id = parseInt(el.dataset.id);
+  var key = el.dataset.key;
+  if(!id||!key||el.readOnly) return;
+  var it = items.find(function(x){ return x.id===id; });
+  if(it){ it[key]=el.value; renderSummary(); }
+});
+document.getElementById('item-blocks').addEventListener('click', function(e){
+  var el = e.target;
+  if(el.dataset.action==='del'){
+    var id = parseInt(el.dataset.id);
+    items = items.filter(function(x){ return x.id!==id; });
+    render();
+  }
+});
+document.getElementById('ppn').addEventListener('change', renderSummary);
+
+document.getElementById('btn-paving').addEventListener('click', addPaving);
+document.getElementById('btn-jasa').addEventListener('click', addJasaPasang);
+document.getElementById('btn-pemadatan').addEventListener('click', addPemadatan);
+document.getElementById('btn-kanstin').addEventListener('click', addKanstin);
+document.getElementById('btn-custom').addEventListener('click', addCustom);
+document.getElementById('btn-preview').addEventListener('click', generatePreview);
+document.getElementById('btn-back').addEventListener('click', backToForm);
+document.getElementById('btn-print').addEventListener('click', printRAB);
+
+// ── Preview ──
 function generatePreview(){
-  var sub=getSubtotal();
-  var ppnPct=parseInt(sel('ppn'))||0;
-  var ppnVal=sub*ppnPct/100;
-  var total=sub+ppnVal;
-  var catatan=document.getElementById('catatan').value;
-  var validitas=sel('validitas');
+  var sub = getSubtotal();
+  var ppnPct = parseInt(document.getElementById('ppn').value)||0;
+  var ppnVal = sub*ppnPct/100;
+  var total = sub+ppnVal;
+  var catatan = document.getElementById('catatan').value;
+  var validitas = document.getElementById('validitas').value;
 
-  var rows='';
-  items.forEach(function(it,i){
-    var vol=parseFloat(it.vol)||0;
-    var harga=parseFloat(it.harga)||0;
-    var jumlah=vol*harga;
-    var desc='';
-
+  var rows = '';
+  items.forEach(function(it, i){
+    var no = i+1;
     if(it.type==='kanstin'){
-      var hp=parseFloat(it.harga_pcs)||0;
-      var hm=parseFloat(it.harga_pasang)||0;
-      var totalKanstin=hp+vol*hm;
-      rows+='<tr>'+
-        '<td style="width:28px;color:#aaa">'+(i+1)+'</td>'+
-        '<td>'+it.jenis+' '+it.dimensi+'<br>'+
+      var hp = parseFloat(it.harga_pcs)||0;
+      var hm = parseFloat(it.harga_pasang)||0;
+      var vol = parseFloat(it.vol)||0;
+      var jml = hp + vol*hm;
+      rows += '<tr>'+
+        '<td style="color:#aaa">'+no+'</td>'+
+        '<td>'+esc(it.jenis)+' '+esc(it.dimensi)+'<br>'+
           '<span style="font-size:10px;color:#888">Material: Rp '+fmt(hp)+' (total) · Jasa pasang: Rp '+fmt(hm)+'/m¹</span></td>'+
         '<td class="num">'+fmt(vol)+'</td>'+
         '<td class="num">m¹</td>'+
         '<td class="num">—</td>'+
-        '<td class="num">Rp '+fmt(totalKanstin)+'</td>'+
+        '<td class="num">Rp '+fmt(jml)+'</td>'+
       '</tr>';
       return;
     }
-
-    if(it.type==='paving') desc=pavingDesc(it);
-    else if(it.type==='jasa-pasang') desc='Jasa Pasang<br><span style="font-size:10px;color:#888;line-height:1.6">'+jasaPasangScope(it)+'</span>';
-    else if(it.type==='pemadatan') desc='Jasa Pemadatan<br><span style="font-size:10px;color:#888;line-height:1.6">'+pemadatanScope()+'</span>';
-    else desc=it.desc||'—';
-
-    rows+='<tr>'+
-      '<td style="width:28px;color:#aaa">'+(i+1)+'</td>'+
+    var vol = parseFloat(it.vol)||0;
+    var harga = parseFloat(it.harga)||0;
+    var jml = vol*harga;
+    var desc = '';
+    if(it.type==='paving') desc = esc(pavingDesc(it));
+    else if(it.type==='jasa-pasang') desc = 'Jasa Pasang<br><span style="font-size:10px;color:#888;line-height:1.6">'+esc(jasaScope(it))+'</span>';
+    else if(it.type==='pemadatan') desc = 'Jasa Pemadatan<br><span style="font-size:10px;color:#888;line-height:1.6">'+pemadatanScope()+'</span>';
+    else desc = esc(it.desc||'—');
+    rows += '<tr>'+
+      '<td style="color:#aaa">'+no+'</td>'+
       '<td>'+desc+'</td>'+
       '<td class="num">'+fmt(vol)+'</td>'+
-      '<td class="num">'+it.sat+'</td>'+
+      '<td class="num">'+esc(it.sat)+'</td>'+
       '<td class="num">Rp '+fmt(harga)+'</td>'+
-      '<td class="num">Rp '+fmt(jumlah)+'</td>'+
+      '<td class="num">Rp '+fmt(jml)+'</td>'+
     '</tr>';
   });
 
-  var html=
+  var html =
   '<div class="pv-header">'+
-    '<div>'+
-      '<div class="pv-brand">Solid<span>Paving</span>.id</div>'+
-      '<div class="pv-brand-sub">Supplier &amp; Instalasi Paving Block</div>'+
-    '</div>'+
-    '<div class="pv-title">'+
-      '<h2>Rencana Anggaran Biaya</h2>'+
-      '<p>No. '+v('rab-no')+'</p>'+
-      '<p>'+fmtDate(document.getElementById('tgl-rab').value)+'</p>'+
-    '</div>'+
+    '<div><div class="pv-brand">Solid<span>Paving</span>.id</div><div class="pv-brand-sub">Supplier &amp; Instalasi Paving Block</div></div>'+
+    '<div class="pv-title"><h2>Rencana Anggaran Biaya</h2><p>No. '+gv('rab-no')+'</p><p>'+fmtDate(document.getElementById('tgl-rab').value)+'</p></div>'+
   '</div>'+
-
   '<div class="pv-grid">'+
     '<div class="pv-block"><strong>Penyedia Jasa</strong><p>Muh Nafis Arifuddin<br>SolidPaving.id<br>Jl. Raya Cilangkap No. 10a, Cipayung, Jakarta Timur<br>WA: 0859-4349-2832</p></div>'+
-    '<div class="pv-block"><strong>Diajukan Kepada</strong><p>'+v('kl-nama')+'<br>'+v('kl-alamat')+'<br>WA: '+v('kl-wa')+'</p>'+
-      '<strong style="margin-top:8px">Lokasi Proyek</strong><p>'+v('kl-lokasi')+'</p></div>'+
+    '<div class="pv-block"><strong>Diajukan Kepada</strong><p>'+gv('kl-nama')+'<br>'+gv('kl-alamat')+'<br>WA: '+gv('kl-wa')+'</p>'+
+      '<strong style="margin-top:8px">Lokasi Proyek</strong><p>'+gv('kl-lokasi')+'</p></div>'+
   '</div>'+
-
-  '<table class="rab-table">'+
-    '<thead><tr>'+
-      '<th style="width:28px">No</th>'+
-      '<th>Uraian Pekerjaan</th>'+
-      '<th class="num">Vol</th>'+
-      '<th class="num">Sat</th>'+
-      '<th class="num">Harga Satuan</th>'+
-      '<th class="num">Jumlah</th>'+
-    '</tr></thead>'+
-    '<tbody>'+rows+'</tbody>'+
-  '</table>'+
-
+  '<table class="rab-table"><thead><tr>'+
+    '<th style="width:28px">No</th><th>Uraian Pekerjaan</th>'+
+    '<th class="num">Vol</th><th class="num">Sat</th><th class="num">Harga Satuan</th><th class="num">Jumlah</th>'+
+  '</tr></thead><tbody>'+rows+'</tbody></table>'+
   '<div style="display:flex;justify-content:flex-end;margin-bottom:1rem">'+
     '<div style="min-width:280px">'+
-      '<div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;border-bottom:0.5px solid #eee">'+
-        '<span style="color:#888">Subtotal</span><span>Rp '+fmt(sub)+'</span></div>'+
-      (ppnPct?'<div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;border-bottom:0.5px solid #eee">'+
-        '<span style="color:#888">PPN '+ppnPct+'%</span><span>Rp '+fmt(ppnVal)+'</span></div>':'')+
-      '<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:15px;font-weight:500">'+
-        '<span>Total</span><span>Rp '+fmt(total)+'</span></div>'+
+      '<div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;border-bottom:.5px solid #eee"><span style="color:#888">Subtotal</span><span>Rp '+fmt(sub)+'</span></div>'+
+      (ppnPct?'<div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;border-bottom:.5px solid #eee"><span style="color:#888">PPN '+ppnPct+'%</span><span>Rp '+fmt(ppnVal)+'</span></div>':'')+
+      '<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:15px;font-weight:500"><span>Total</span><span>Rp '+fmt(total)+'</span></div>'+
     '</div>'+
   '</div>'+
-
   '<div class="pv-notes">'+
     '<strong>Catatan</strong><br>'+
     '1. Penawaran ini berlaku selama '+validitas+' sejak tanggal diterbitkan.<br>'+
     '2. Harga di atas belum termasuk biaya tak terduga di luar lingkup pekerjaan yang tercantum.<br>'+
-    '3. Pekerjaan dilaksanakan sesuai spesifikasi dan volume yang telah disepakati bersama.<br>'+
-    (catatan?'4. '+catatan.replace(/\n/g,'<br>')+'<br>':'')+
-  '</div>'+
-
+    '3. Pekerjaan dilaksanakan sesuai spesifikasi dan volume yang telah disepakati bersama.'+
+    (catatan?'<br>4. '+catatan.replace(/\n/g,'<br>'):'')+'</div>'+
   '<div class="ttd-area">'+
-    '<div class="ttd-block">'+
-      '<div style="font-size:11px;color:#888">Penyedia Jasa</div>'+
-      '<div class="ttd-line"></div>'+
-      '<div style="font-size:12px;font-weight:500">Muh Nafis Arifuddin</div>'+
-      '<div style="font-size:11px;color:#888">Pemilik, SolidPaving.id</div>'+
-    '</div>'+
-    '<div class="ttd-block">'+
-      '<div style="font-size:11px;color:#888">Pemberi Kerja</div>'+
-      '<div class="ttd-line"></div>'+
-      '<div style="font-size:12px;font-weight:500">'+v('kl-nama')+'</div>'+
-    '</div>'+
+    '<div class="ttd-block"><div style="font-size:11px;color:#888">Penyedia Jasa</div><div class="ttd-line"></div>'+
+      '<div style="font-size:12px;font-weight:500">Muh Nafis Arifuddin</div><div style="font-size:11px;color:#888">Pemilik, SolidPaving.id</div></div>'+
+    '<div class="ttd-block"><div style="font-size:11px;color:#888">Pemberi Kerja</div><div class="ttd-line"></div>'+
+      '<div style="font-size:12px;font-weight:500">'+gv('kl-nama')+'</div></div>'+
   '</div>';
 
-  document.getElementById('rab-output').innerHTML=html;
-  document.getElementById('form-area').style.display='none';
-  document.getElementById('preview-area').style.display='block';
+  document.getElementById('rab-output').innerHTML = html;
+  document.getElementById('form-area').style.display = 'none';
+  document.getElementById('preview-area').style.display = 'block';
   window.scrollTo(0,0);
 }
 
 function printRAB(){
-  var rabNo=document.getElementById('rab-no').value||'RAB';
-  var kl=document.getElementById('kl-nama').value||'Klien';
-  document.title='RAB - '+kl+' - '+rabNo;
+  var rabNo = document.getElementById('rab-no').value||'RAB';
+  var kl = document.getElementById('kl-nama').value||'Klien';
+  document.title = 'RAB - '+kl+' - '+rabNo;
   window.print();
-  document.title='RAB · SolidPaving.id';
+  document.title = 'RAB · SolidPaving.id';
 }
 function backToForm(){
-  document.getElementById('form-area').style.display='block';
-  document.getElementById('preview-area').style.display='none';
+  document.getElementById('form-area').style.display = 'block';
+  document.getElementById('preview-area').style.display = 'none';
   window.scrollTo(0,0);
 }
 
 // ── Init ──
 (function(){
-  var now=new Date();
-  var ymd=now.getFullYear().toString()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0');
-  var key='rab_counter_'+ymd;
-  var count=parseInt(localStorage.getItem(key)||'0')+1;
-  localStorage.setItem(key,count);
-  document.getElementById('rab-no').value='RAB-'+ymd+'-'+String(count).padStart(3,'0');
-  document.getElementById('tgl-rab').valueAsDate=new Date();
+  var now = new Date();
+  var ymd = now.getFullYear().toString()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0');
+  var key = 'rab_counter_'+ymd;
+  var count = parseInt(localStorage.getItem(key)||'0')+1;
+  localStorage.setItem(key, count);
+  document.getElementById('rab-no').value = 'RAB-'+ymd+'-'+String(count).padStart(3,'0');
+  document.getElementById('tgl-rab').valueAsDate = new Date();
 
-  // Default items
-  var pid=1, jpid=2, pmd=3;
-  items=[
-    {id:pid,type:'paving',jenis:'Holland',tebal:'6 cm',mutu:'K300',warna:'Natural',vol:'',sat:'m²',harga:''},
-    {id:jpid,type:'jasa-pasang',refDesc:'Paving Block Holland tebal 6 cm mutu K300 warna Natural',tambahan:'',vol:'',sat:'m²',harga:''},
-    {id:pmd,type:'pemadatan',vol:'',sat:'m²',harga:''}
+  items = [
+    {id:newId(),type:'paving',jenis:'Holland',tebal:'6 cm',mutu:'K300',warna:'Natural',vol:'',sat:'m²',harga:''},
+    {id:newId(),type:'jasa-pasang',refDesc:'Paving Block Holland tebal 6 cm mutu K300 warna Natural',tambahan:'',vol:'',sat:'m²',harga:''},
+    {id:newId(),type:'pemadatan',vol:'',sat:'m²',harga:''}
   ];
-  renderBlocks();
+  render();
 })();
 </script>
 </body>
