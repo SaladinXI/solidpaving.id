@@ -479,41 +479,20 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
     "review": [
       {
         "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Budi Wicaksono"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
+        "author": {"@type": "Person", "name": "Budi Wicaksono"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
         "reviewBody": "Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."
       },
       {
         "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Rini Anggraeni"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
+        "author": {"@type": "Person", "name": "Rini Anggraeni"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
         "reviewBody": "Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."
       },
       {
         "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Denny Prasetyo"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
+        "author": {"@type": "Person", "name": "Denny Prasetyo"},
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
         "reviewBody": "RAB transparan sejak awal, tidak ada biaya kejutan. K400 untuk area forklift kami terbukti kuat sampai sekarang."
       }
     ],
@@ -521,9 +500,108 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
       "@type": "OfferCatalog",
       "name": "Produk & Layanan Paving Block",
       "itemListElement": [
-        {"@type":"Offer","itemOffered":{"@type":"Product","name":"Paving Block Holland K200","description":"Paving block tipe Holland mutu K200. Tersedia tebal 6cm dan 8cm. Cocok untuk pedestrian dan halaman ringan.","offers":{"@type":"AggregateOffer","priceCurrency":"IDR","lowPrice":"75000","highPrice":"85000","offerCount":"2","seller":{"@id":"https://solidpaving.id/#business"}}}},
-        {"@type":"Offer","itemOffered":{"@type":"Product","name":"Paving Block Holland K300","description":"Paving block tipe Holland mutu K300. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk jalan perumahan dan area parkir.","offers":{"@type":"AggregateOffer","priceCurrency":"IDR","lowPrice":"90000","highPrice":"150000","offerCount":"3","seller":{"@id":"https://solidpaving.id/#business"}}}},
-        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Jasa Pemasangan Paving Block","description":"Jasa pemasangan paving block mulai Rp 45.000/m². Termasuk opsi penambahan lapisan abu batu 5cm (+Rp 35.000/m²) dan pemadatan lahan (+Rp 40.000/m²).","offers":{"@type":"AggregateOffer","priceCurrency":"IDR","lowPrice":"45000","highPrice":"120000","offerCount":"3","seller":{"@id":"https://solidpaving.id/#business"}}}}
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Paving Block Holland K200",
+            "description": "Paving block tipe Holland mutu K200. Tersedia tebal 6cm dan 8cm. Cocok untuk pedestrian dan halaman ringan.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1",
+              "reviewCount": "3"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Budi Wicaksono"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."
+              },
+              {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Rini Anggraeni"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."
+              },
+              {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Denny Prasetyo"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "RAB transparan sejak awal, tidak ada biaya kejutan. K400 untuk area forklift kami terbukti kuat sampai sekarang."
+              }
+            ],
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "IDR",
+              "lowPrice": "75000",
+              "highPrice": "85000",
+              "offerCount": "2",
+              "seller": {"@id": "https://solidpaving.id/#business"}
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Paving Block Holland K300",
+            "description": "Paving block tipe Holland mutu K300. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk jalan perumahan dan area parkir.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1",
+              "reviewCount": "3"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Budi Wicaksono"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."
+              },
+              {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Rini Anggraeni"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."
+              },
+              {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Denny Prasetyo"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "RAB transparan sejak awal, tidak ada biaya kejutan. K400 untuk area forklift kami terbukti kuat sampai sekarang."
+              }
+            ],
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "IDR",
+              "lowPrice": "90000",
+              "highPrice": "150000",
+              "offerCount": "3",
+              "seller": {"@id": "https://solidpaving.id/#business"}
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Jasa Pemasangan Paving Block",
+            "description": "Jasa pemasangan paving block mulai Rp 45.000/m². Termasuk opsi penambahan lapisan abu batu 5cm (+Rp 35.000/m²) dan pemadatan lahan (+Rp 40.000/m²).",
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "IDR",
+              "lowPrice": "45000",
+              "highPrice": "120000",
+              "offerCount": "3",
+              "seller": {"@id": "https://solidpaving.id/#business"}
+            }
+          }
+        }
       ]
     }
   }
