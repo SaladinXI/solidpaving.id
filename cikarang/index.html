@@ -6,11 +6,11 @@
 <link rel="icon" type="image/svg+xml" href="/images/site-icon.svg">
 <link rel="icon" type="image/png" sizes="64x64" href="https://ectascom.sirv.com/solidpaving.id/solidpaving.id%20logo.png?w=64&h=64">
 <link rel="icon" type="image/png" sizes="32x32" href="https://ectascom.sirv.com/solidpaving.id/solidpaving.id%20logo.png?w=32&h=32">  
-<title>Jasa Pasang & Supplier Paving Block Cikarang — K200–K400, Bergaransi | SolidPaving.id</title>
-<meta name="description" content="Supplier paving block & jasa pasang terpercaya di Cikarang. Spesialis kawasan industri EJIP, Jababeka, MM2100. Material K200–K400 hidrolik press SNI, garansi 3 bulan tertulis. Survei & RAB gratis.">
+<title>Paving Block Cikarang — Spesialis Kawasan Industri EJIP, Jababeka, MM2100 | SolidPaving.id</title>
+<meta name="description" content="Supplier paving block & jasa pasang spesialis kawasan industri Cikarang. K400 untuk forklift, K300 untuk industri ringan. Engineering workflow lengkap: vibro 8-10 ton, bedding abu batu presisi, kanstin pengunci. Garansi 3 bulan tertulis.">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="Jasa Pasang Paving Block Cikarang — Kawasan Industri & Perumahan | SolidPaving.id">
-<meta property="og:description" content="Spesialis paving block kawasan industri Cikarang. K200–K400 hidrolik press, garansi tertulis, survei gratis.">
+<meta property="og:title" content="Paving Block Kawasan Industri Cikarang — K400 Engineering Workflow Lengkap">
+<meta property="og:description" content="Spesialis paving block kawasan industri Cikarang: EJIP, Jababeka, MM2100. Material K200–K400 hidrolik press, engineering workflow lengkap, garansi tertulis.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://solidpaving.id/cikarang/">
 <link rel="canonical" href="https://solidpaving.id/cikarang/">
@@ -171,23 +171,47 @@ h3{font-size:17px;font-weight:700;}
 
 /* ── PROSES ── */
 #proses{background:var(--bg1);}
-.proses-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-.proses-img{border-radius:var(--rl);overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 24px rgba(46,62,95,.1);}
+.proses-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.proses-img{border-radius:var(--rl);overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 24px rgba(46,62,95,.1);position:sticky;top:96px;}
 .proses-img img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
 .steps{display:flex;flex-direction:column;}
 .step{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--bds);}
 .step:last-child{border-bottom:none;}
 .step-dot{width:32px;height:32px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--blue);flex-shrink:0;margin-top:2px;}
 .step h3{font-size:14px;font-weight:700;margin-bottom:4px;}
-.step p{font-size:13px;color:var(--tx2);}
-.step-tag{font-size:11px;font-weight:600;color:var(--green);margin-top:4px;display:inline-block;}
+.step p{font-size:13px;color:var(--tx2);line-height:1.6;}
+.step-tag{font-size:11px;font-weight:600;color:var(--green);margin-top:6px;display:inline-block;}
+
+/* ── SPEC LOGIC ── */
+#spec-logic{background:var(--bg0);}
+.spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:32px;}
+.spec-card{background:var(--bg1);border:1.5px solid var(--bds);border-radius:var(--rl);padding:24px;position:relative;display:flex;flex-direction:column;transition:border-color .2s;}
+.spec-card:hover{border-color:var(--bdr);}
+.spec-card.spec-feat{border-color:var(--blue);background:linear-gradient(135deg,rgba(46,62,95,.04) 0%,var(--bg1) 100%);}
+.spec-tag{position:absolute;top:-10px;left:24px;background:var(--accent);color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1.2px;padding:4px 11px;border-radius:4px;}
+.spec-card.spec-feat .spec-tag{background:var(--blue);color:#fff;}
+.spec-tag-alt{background:var(--bg3)!important;color:var(--blue)!important;}
+.spec-header{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;margin-top:6px;}
+.spec-ico{width:44px;height:44px;border-radius:var(--r);background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.spec-card.spec-feat .spec-ico{background:var(--blue);color:#fff;}
+.spec-title{font-size:16px;font-weight:700;color:var(--tx1);margin-bottom:3px;line-height:1.3;}
+.spec-sub{font-size:12px;color:var(--tx3);line-height:1.45;display:block;}
+.spec-rec{display:flex;flex-direction:column;gap:0;background:var(--bg0);border:1px solid var(--bds);border-radius:var(--r);overflow:hidden;margin-bottom:14px;}
+.spec-rec-line{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1px solid var(--bds);}
+.spec-rec-line:last-child{border-bottom:none;}
+.spec-rec-label{font-size:12px;color:var(--tx3);font-weight:600;letter-spacing:.3px;text-transform:uppercase;}
+.spec-rec-val{font-size:13.5px;color:var(--tx1);font-weight:700;text-align:right;}
+.spec-card.spec-feat .spec-rec-val{color:var(--blue);}
+.spec-why{font-size:13px;color:var(--tx2);line-height:1.6;margin-top:auto;}
+.spec-note{background:var(--bg1);border:1px solid var(--bds);border-left:3px solid var(--blue);border-radius:var(--rl);padding:22px 28px;font-size:14px;color:var(--tx2);line-height:1.7;}
+.spec-note strong{color:var(--tx1);}
 
 /* ── HARGA ── */
-#harga{background:var(--bg0);}
-.harga-note{background:var(--bg1);border:1px solid var(--bds);border-left:3px solid var(--blue);border-radius:var(--rl);padding:20px 24px;margin-bottom:32px;font-size:14px;color:var(--tx2);line-height:1.7;}
+#harga{background:var(--bg1);}
+.harga-note{background:var(--bg0);border:1px solid var(--bds);border-left:3px solid var(--blue);border-radius:var(--rl);padding:20px 24px;margin-bottom:32px;font-size:14px;color:var(--tx2);line-height:1.7;}
 .harga-note strong{color:var(--tx1);}
 .harga-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px;}
-.harga-card{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);overflow:hidden;}
+.harga-card{background:var(--bg0);border:1px solid var(--bds);border-radius:var(--rl);overflow:hidden;}
 .harga-card.featured{border-color:var(--blue);}
 .harga-top{padding:16px 20px;border-bottom:1px solid var(--bds);}
 .harga-top h3{font-size:15px;font-weight:700;margin-bottom:4px;}
@@ -199,11 +223,11 @@ h3{font-size:17px;font-weight:700;}
 .harga-val{font-size:13px;font-weight:700;color:var(--tx1);}
 .harga-val.hl{font-weight:800;font-size:15px;color:var(--blue);}
 .harga-divider{height:1px;background:var(--bdr);margin:8px 0;}
-.harga-cta{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.harga-cta{background:var(--bg0);border:1px solid var(--bds);border-radius:var(--rl);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
 .harga-cta p{font-size:14px;color:var(--tx2);max-width:560px;}
 
 /* ── FAQ ── */
-#faq{background:var(--bg1);}
+#faq{background:var(--bg0);}
 .faq-wrap{max-width:760px;}
 details{border-bottom:1px solid var(--bds);}
 details summary{padding:18px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:600;color:var(--tx1);gap:16px;list-style:none;}
@@ -213,9 +237,9 @@ details[open] summary::after{transform:rotate(45deg);}
 .faq-a{padding-bottom:18px;font-size:14px;color:var(--tx2);line-height:1.7;}
 
 /* ── NEARBY ── */
-#nearby{background:var(--bg0);border-top:1px solid var(--bdr);}
+#nearby{background:var(--bg1);border-top:1px solid var(--bdr);}
 .nearby-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:24px;}
-.nearby-link{display:flex;flex-direction:column;padding:14px 16px;background:var(--bg1);border:1px solid var(--bds);border-radius:var(--r);font-size:13px;font-weight:700;color:var(--tx1);transition:all .18s;}
+.nearby-link{display:flex;flex-direction:column;padding:14px 16px;background:var(--bg0);border:1px solid var(--bds);border-radius:var(--r);font-size:13px;font-weight:700;color:var(--tx1);transition:all .18s;}
 .nearby-link span{font-size:11px;font-weight:400;color:var(--tx3);margin-top:3px;}
 .nearby-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-1px);}
 .nearby-link:hover span{color:rgba(255,255,255,.7);}
@@ -231,16 +255,6 @@ details[open] summary::after{transform:rotate(45deg);}
 .btn-ow:hover{border-color:#fff;}
 .cta-note{font-size:13px;color:rgba(255,255,255,.7);}
 
-/* ── FOOTER ── */
-footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32px;}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
-.foot-brand{font-size:13px;color:var(--tx2);line-height:1.6;max-width:280px;margin-top:12px;}
-.foot-col h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:16px;}
-.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.foot-col li a{font-size:13px;color:var(--tx2);}
-.foot-col li a:hover{color:var(--blue);}
-.foot-bottom{border-top:1px solid var(--bds);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;}
-
 /* ── FLOAT ── */
 .float-wa{position:fixed;bottom:28px;right:24px;z-index:95;background:var(--wa);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s;}
 .float-wa:hover{transform:scale(1.08);}
@@ -255,7 +269,8 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   .hero-img{margin-top:24px;}
   .kawasan-grid{grid-template-columns:1fr;}
   .proses-grid{grid-template-columns:1fr;}
-  .proses-img{margin-bottom:24px;}
+  .proses-img{position:relative;top:0;margin-bottom:24px;}
+  .spec-grid{grid-template-columns:1fr;}
   .foot-grid{grid-template-columns:1fr;}
   .kec-grid{grid-template-columns:1fr 1fr;}
   .harga-cta{flex-direction:column;}
@@ -265,54 +280,6 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:48px 5% 32p
   .cta-row{flex-direction:column;align-items:center;}
   .hero-stats{grid-template-columns:1fr 1fr 1fr;}
 }
-
-/* FOOTER-CSS:START — auto-managed by build.py */
-/* ─── FOOTER (canonical) ─── */
-footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28px;}
-.foot-grid{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr 1.4fr;gap:48px;margin-bottom:48px;}
-.foot-brand-col .foot-logo-wrap{display:inline-flex;align-items:center;margin-bottom:16px;}
-.foot-brand-text{font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:18px;max-width:320px;}
-.foot-badges{display:flex;gap:6px;flex-wrap:wrap;}
-.foot-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.3px;color:var(--blue);background:var(--bg2);border:1px solid var(--bdr);padding:4px 9px;border-radius:4px;}
-.foot-col h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:18px;}
-.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.foot-col li a{font-size:13px;color:var(--tx2);transition:color .15s;}
-.foot-col li a:hover{color:var(--blue);}
-.foot-all{font-weight:700;color:var(--blue)!important;margin-top:6px;display:inline-block;}
-.foot-kontak li{font-size:13px;color:var(--tx2);line-height:1.55;}
-.foot-kontak .foot-wa{font-weight:700;color:var(--blue);}
-.foot-kontak .foot-addr{padding:6px 0 2px;color:var(--tx2);line-height:1.55;}
-.foot-kontak .foot-hours{padding-top:10px;border-top:1px solid var(--bds);margin-top:6px;font-size:12px;line-height:1.65;color:var(--tx3);}
-.foot-kontak .foot-hours strong{color:var(--tx2);font-size:12px;}
-.foot-kontak .foot-wa-247{display:inline-block;margin-top:4px;color:var(--green);font-weight:600;font-size:11.5px;}
-.foot-area-strip{border-top:1px solid var(--bds);padding:28px 0 8px;margin-bottom:20px;}
-.foot-area-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px;}
-.foot-area-head h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin:0;}
-.foot-area-all{font-size:12px;font-weight:700;color:var(--blue);}
-.foot-area-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
-.foot-area-grid a{font-size:12.5px;color:var(--tx2);padding:7px 12px;border-radius:4px;background:var(--bg0);border:1px solid var(--bds);transition:all .15s;text-align:left;}
-.foot-area-grid a:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
-.foot-bottom{padding-top:22px;border-top:1px solid var(--bds);display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;align-items:center;}
-.foot-legal{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.foot-sep{color:var(--bdr);}
-.foot-legal-sub{font-size:11px;color:var(--tx3);}
-
-@media(max-width:1024px){
-  .foot-grid{grid-template-columns:1fr 1fr 1fr;gap:36px;}
-  .foot-brand-col{grid-column:1/-1;}
-  .foot-area-grid{grid-template-columns:repeat(4,1fr);}
-}
-@media(max-width:640px){
-  footer{padding:48px 5% 24px;}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
-  .foot-area-grid{grid-template-columns:repeat(2,1fr);}
-  .foot-bottom{flex-direction:column;align-items:flex-start;}
-}
-@media(max-width:480px){
-  .foot-grid{grid-template-columns:1fr;gap:28px;}
-  .foot-area-grid{grid-template-columns:1fr 1fr;}
-}
-/* FOOTER-CSS:END */
 </style>
 <script type="application/ld+json">
 [
@@ -338,9 +305,13 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
       {"@type": "City", "name": "Cikarang"},
       {"@type": "City", "name": "Bekasi"},
       {"@type": "City", "name": "Jakarta"},
-      {"@type": "City", "name": "Karawang"}
+      {"@type": "City", "name": "Karawang"},
+      {"@type": "City", "name": "Tangerang"},
+      {"@type": "City", "name": "Depok"},
+      {"@type": "City", "name": "Bogor"},
+      {"@type": "City", "name": "Bandung"}
     ],
-    "description": "Supplier paving block & jasa pasang terpercaya di Cikarang. Spesialis kawasan industri EJIP, Jababeka, MM2100. Material K200–K400 hidrolik press SNI, garansi 3 bulan tertulis.",
+    "description": "Supplier paving block dan jasa pemasangan untuk kawasan industri Cikarang (EJIP, Jababeka, MM2100, Delta Silicon, Hyundai Industrial Park), perumahan, dan area komersial. Material K200–K400 hidrolik press SNI dengan engineering workflow lengkap: pemadatan sub-base vibro 8–10 ton, bedding abu batu presisi, kanstin pengunci, garansi 3 bulan tertulis.",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
@@ -351,18 +322,79 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Jasa Pemasangan & Supplier Paving Block Cikarang",
-    "description": "Layanan pemasangan paving block dan penyediaan material di Cikarang, termasuk kawasan industri MM2100, EJIP, Delta Silicon, Jababeka, dan perumahan sekitar Cikarang.",
+    "name": "Paving Block Kawasan Industri Cikarang",
+    "url": "https://solidpaving.id/cikarang/",
+    "description": "Layanan supplier paving block K400 dan jasa pemasangan profesional untuk kawasan industri Cikarang. Spesialis area forklift, loading dock, gudang logistik, dan parkir kendaraan niaga di Jababeka, EJIP, MM2100, KIIC, Delta Silicon, dan Hyundai Industrial Park. Menggunakan vibro roller 8–10 ton untuk pemadatan sub-base, bedding abu batu 3–5 cm presisi, dan kanstin pengunci tepi.",
     "provider": {"@id": "https://solidpaving.id/#business"},
-    "areaServed": {"@type": "City", "name": "Cikarang"},
-    "serviceType": ["Supplier Paving Block","Jasa Pemasangan Paving Block","Kontraktor Paving"]
+    "areaServed": {
+      "@type": "City",
+      "name": "Cikarang",
+      "containedInPlace": {"@type": "AdministrativeArea", "name": "Bekasi, Jawa Barat"}
+    },
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Kontraktor, Developer, Pabrik, Logistik, Pergudangan"
+    },
+    "serviceType": [
+      "Supplier Paving Block Industrial",
+      "Jasa Pasang Paving Kawasan Industri",
+      "Paving Loading Dock & Forklift Area",
+      "Paving Parkir Truk Niaga",
+      "Kontraktor Paving Block"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "IDR",
+      "lowPrice": "85000",
+      "highPrice": "235000",
+      "offerCount": "8",
+      "description": "Paket material + jasa pasang per m² untuk berbagai mutu (K200–K400) dan tebal (6–10 cm)"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mutu Paving Block untuk Cikarang",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {"@type": "Product", "name": "Paving Block K400 · 8 cm — Standar Industri Berat"},
+          "description": "Untuk forklift, truk niaga, dan area loading dock di kawasan industri Cikarang"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {"@type": "Product", "name": "Paving Block K300 · 8 cm — Industri Ringan"},
+          "description": "Opsi budget untuk gudang menengah dan area kendaraan sedang"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {"@type": "Product", "name": "Paving Block K300 · 6–8 cm — Perumahan & Komersial"},
+          "description": "Untuk cluster, ruko, dan parkir kendaraan pribadi"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Metode Pemasangan Paving Block untuk Kawasan Industri Cikarang",
+    "description": "Engineering workflow lengkap pemasangan paving block oleh SolidPaving.id untuk beban industri Cikarang.",
+    "step": [
+      {"@type": "HowToStep", "name": "Cek & Persiapan Lahan", "text": "Pengukuran, cek kepadatan tanah dasar, evaluasi drainase. Lahan belum padat wajib dipadatkan dulu."},
+      {"@type": "HowToStep", "name": "Tebar Base Course 5 cm", "text": "Material agregat kasar (makadam/sirtu) digelar setebal 5 cm sebagai lapisan struktural utama."},
+      {"@type": "HowToStep", "name": "Pemadatan Sub-Base", "text": "Pemadatan menggunakan vibro roller 8–10 ton untuk kawasan industri, baby roller 2 ton untuk komersial, atau stamper kodok untuk perumahan."},
+      {"@type": "HowToStep", "name": "Tebar Bedding Abu Batu 3–5 cm", "text": "Abu batu setebal 3–5 cm tergantung tebal paving sebagai bantalan leveling."},
+      {"@type": "HowToStep", "name": "Pemilihan Mutu K", "text": "K400 8 cm untuk forklift dan truk berat. K300 untuk industri ringan dan perumahan."},
+      {"@type": "HowToStep", "name": "Pemasangan + Isi Celah Abu Batu", "text": "Paving dipasang sesuai pola kuncian, lalu abu batu ditebar untuk mengisi celah antar blok."},
+      {"@type": "HowToStep", "name": "Pemadatan Akhir Stamper Kodok", "text": "Stamper kodok di atas paving untuk memadatkan sekaligus mendorong abu batu ke celah antar blok."},
+      {"@type": "HowToStep", "name": "Kanstin Kuncian Tepi", "text": "Kanstin dipasang dengan adukan beton di tepi untuk mencegah paving merenggang saat dibebani."},
+      {"@type": "HowToStep", "name": "Serah Terima + Garansi", "text": "Pembersihan akhir dan garansi perbaikan 3 bulan tertulis dalam kontrak."}
+    ]
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://solidpaving.id/"},
-      {"@type": "ListItem", "position": 2, "name": "Area Layanan", "item": "https://solidpaving.id/#area-operasional"},
+      {"@type": "ListItem", "position": 2, "name": "Area Layanan", "item": "https://solidpaving.id/area-layanan/"},
       {"@type": "ListItem", "position": 3, "name": "Cikarang", "item": "https://solidpaving.id/cikarang/"}
     ]
   }
@@ -371,218 +403,13 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══ -->
+<!-- ═══ NAVBAR (auto-managed by build.py) ═══ -->
 <!-- NAVBAR:START -->
-<style>
-/* Dropdown open state (added by JS on click) */
-nav .nav-item.open .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
-nav .nav-item.open .nav-btn{background:var(--bg1);color:var(--tx1);}
-nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
-</style>
-<nav>
-  <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
-    <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="34">
-      <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
-      <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
-    </svg>
-  </a>
-
-  <ul class="nav-menu">
-    <li class="nav-item">
-      <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel">
-        <div class="pnl-head">Paving Block</div>
-        <a href="/produk/paving-holland/" class="pnl-link"><div class="pnl-ico">🧱</div><div><span class="pnl-title">Holland (Bata)</span><span class="pnl-sub">Terlaris · K200–K400</span></div></a>
-        <a href="/produk/paving-ubin/" class="pnl-link"><div class="pnl-ico">⬛</div><div><span class="pnl-title">Ubin (Square)</span><span class="pnl-sub">Tampilan premium modern</span></div></a>
-        <a href="/produk/paving-cacing/" class="pnl-link"><div class="pnl-ico">〰️</div><div><span class="pnl-title">Cacing (Uni)</span><span class="pnl-sub">Beban berat, kuncian rapat</span></div></a>
-        <a href="/produk/paving-hexagon/" class="pnl-link"><div class="pnl-ico">⬡</div><div><span class="pnl-title">Hexagon</span><span class="pnl-sub">Taman & area dekoratif</span></div></a>
-        <a href="/produk/grassblock/" class="pnl-link"><div class="pnl-ico">🌿</div><div><span class="pnl-title">Grassblock</span><span class="pnl-sub">Resapan air, area hijau</span></div></a>
-        <div class="pnl-sep"></div>
-        <div class="pnl-head">Aksesoris</div>
-        <a href="/produk/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Kanstin / Kerb Beton</span><span class="pnl-sub">Pengunci tepi paving</span></div></a>
-        <a href="/produk/" class="pnl-all">Lihat Semua Produk <span>→</span></a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel">
-        <div class="pnl-head">Jasa Pemasangan</div>
-        <a href="/layanan/jasa-pasang/" class="pnl-link"><div class="pnl-ico">🔨</div><div><span class="pnl-title">Jasa Pasang Paving Block</span><span class="pnl-sub">Sub-base · bedding · kanstin · garansi</span></div></a>
-        <a href="/layanan/paving-lahan-parkir/" class="pnl-link"><div class="pnl-ico">🅿️</div><div><span class="pnl-title">Paving Lahan Parkir</span><span class="pnl-sub">Komersial & industri</span></div></a>
-        <a href="/layanan/paving-kawasan-industri/" class="pnl-link"><div class="pnl-ico">🏭</div><div><span class="pnl-title">Paving Kawasan Industri</span><span class="pnl-sub">Standar forklift & truk berat</span></div></a>
-        <a href="/layanan/paving-perumahan/" class="pnl-link"><div class="pnl-ico">🏠</div><div><span class="pnl-title">Paving Perumahan & Cluster</span><span class="pnl-sub">Hunian, taman, carport</span></div></a>
-        <div class="pnl-sep"></div>
-        <div class="pnl-head">Supply Material</div>
-        <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span><span class="pnl-sub">Kirim ke lokasi proyek Anda</span></div></a>
-        <a href="/layanan/" class="pnl-all">Lihat Semua Layanan <span>→</span></a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <button class="nav-btn">Harga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel">
-        <div class="pnl-head">Estimasi & RAB</div>
-        <a href="/#kalkulator" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Estimasi Biaya</span><span class="pnl-sub">Hitung langsung, real-time</span></div></a>
-        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga Terbaru</span><span class="pnl-sub">Harga per m² semua produk</span></div></a>
-        <a href="/blog/biaya-paving-lahan-parkir-1000m2/" class="pnl-link"><div class="pnl-ico">📋</div><div><span class="pnl-title">Contoh RAB Parkir 1.000 m²</span><span class="pnl-sub">Rincian biaya aktual</span></div></a>
-        <div class="pnl-sep"></div>
-        <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20RAB%20gratis." class="pnl-link" style="color:var(--green);">
-          <div class="pnl-ico" style="background:rgba(15,110,86,.1);">✉️</div>
-          <div><span class="pnl-title" style="color:var(--green);">Minta RAB Gratis</span><span class="pnl-sub">Survei lokasi, tanpa biaya</span></div>
-        </a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel panel-mega">
-        <div class="mega-col">
-          <div class="pnl-head">Jakarta & Sekitarnya</div>
-          <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
-          <a href="/jakarta-timur/" class="pnl-plain">Jakarta Timur</a>
-          <a href="/jakarta-selatan/" class="pnl-plain">Jakarta Selatan</a>
-          <a href="/jakarta-barat/" class="pnl-plain">Jakarta Barat</a>
-          <a href="/jakarta-utara/" class="pnl-plain">Jakarta Utara</a>
-          <a href="/depok/" class="pnl-plain">Depok</a>
-          <a href="/bogor/" class="pnl-plain">Bogor</a>
-          <div class="pnl-head">Tangerang</div>
-          <a href="/tangerang/" class="pnl-plain">Tangerang</a>
-          <a href="/tangerang-selatan/" class="pnl-plain">Tangerang Selatan</a>
-          <a href="/serpong/" class="pnl-plain">Serpong</a>
-        </div>
-        <div class="mega-sep"></div>
-        <div class="mega-col">
-          <div class="pnl-head">Bekasi & Kawasan Industri</div>
-          <a href="/bekasi/" class="pnl-plain">Bekasi</a>
-          <a href="/cikarang/" class="pnl-plain">Cikarang</a>
-          <a href="/jababeka/" class="pnl-plain">Jababeka</a>
-          <a href="/mm2100/" class="pnl-plain">MM2100</a>
-          <a href="/cibitung/" class="pnl-plain">Cibitung</a>
-          <a href="/karawang/" class="pnl-plain">Karawang</a>
-          <div class="pnl-head">Jawa Barat</div>
-          <a href="/bandung/" class="pnl-plain">Bandung</a>
-          <a href="/purwakarta/" class="pnl-plain">Purwakarta</a>
-          <a href="/area-layanan/" class="pnl-all">Lihat Semua Area Layanan <span>→</span></a>
-        </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <button class="nav-btn">Tentang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel right">
-        <a href="/tentang-kami/" class="pnl-link"><div class="pnl-ico">🏢</div><div><span class="pnl-title">Tentang SolidPaving.id</span><span class="pnl-sub">Profil, visi, tim kami</span></div></a>
-        <a href="/portofolio/" class="pnl-link"><div class="pnl-ico">📸</div><div><span class="pnl-title">Portofolio Proyek</span><span class="pnl-sub">Dokumentasi hasil nyata</span></div></a>
-        <a href="/#bukti" class="pnl-link"><div class="pnl-ico">⭐</div><div><span class="pnl-title">Testimoni Klien</span><span class="pnl-sub">Ulasan dari pelanggan kami</span></div></a>
-        <div class="pnl-sep"></div>
-        <a href="/#faq" class="pnl-link"><div class="pnl-ico">❓</div><div><span class="pnl-title">FAQ</span><span class="pnl-sub">Pertanyaan yang sering ditanyakan</span></div></a>
-        <a href="/kontak/" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span><span class="pnl-sub">WhatsApp · Email · Alamat</span></div></a>
-      </div>
-    </li>
-    <li class="nav-item">
-      <button class="nav-btn">Blog <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel right">
-        <div class="pnl-head">Artikel Populer</div>
-        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga Terbaru</span></div></a>
-        <a href="/blog/kenapa-paving-amblas/" class="pnl-link"><div class="pnl-ico">⚠️</div><div><span class="pnl-title">Kenapa Paving Amblas?</span></div></a>
-        <a href="/blog/paving-block-k300-vs-k400/" class="pnl-link"><div class="pnl-ico">🔬</div><div><span class="pnl-title">K300 vs K400 — Pilih Mana?</span></div></a>
-        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Cara Hitung Kebutuhan Paving</span></div></a>
-        <a href="/blog/tips-memilih-kontraktor-paving/" class="pnl-link"><div class="pnl-ico">✅</div><div><span class="pnl-title">Tips Memilih Kontraktor</span></div></a>
-        <div class="pnl-sep"></div>
-        <a href="/blog/" class="pnl-all">Lihat Semua Artikel <span>→</span></a>
-      </div>
-    </li>
-  </ul>
-
-  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a>
-  <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<script>
-(function(){
-  // Dropdown click-toggle behavior
-  var items = document.querySelectorAll('nav .nav-item');
-  items.forEach(function(item){
-    var btn = item.querySelector('.nav-btn');
-    if(!btn) return;
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      var wasOpen = item.classList.contains('open');
-      // Tutup semua dropdown lain
-      items.forEach(function(i){ i.classList.remove('open'); });
-      // Toggle yang ini
-      if(!wasOpen) item.classList.add('open');
-    });
-  });
-  // Klik di luar nav → tutup semua dropdown
-  document.addEventListener('click', function(e){
-    if(!e.target.closest('nav')){
-      items.forEach(function(i){ i.classList.remove('open'); });
-    }
-  });
-  // ESC key → tutup semua dropdown
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      items.forEach(function(i){ i.classList.remove('open'); });
-    }
-  });
-})();
-</script>
+<nav>placeholder — akan di-replace oleh build.py</nav>
 <!-- NAVBAR:END -->
 
-<!-- Mobile Drawer -->
 <!-- MOB-DRAWER:START -->
-<div class="mob-drawer" id="mobDrawer">
-  <div class="mob-head">Produk</div>
-  <a href="/produk/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">🧱 Lihat Semua Produk →</a>
-  <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
-  <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
-  <a href="/produk/paving-cacing/" onclick="closeMob()">Cacing (Uni)</a>
-  <a href="/produk/paving-hexagon/" onclick="closeMob()">Hexagon</a>
-  <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
-  <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
-
-  <div class="mob-head">Layanan</div>
-  <a href="/layanan/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">🔨 Lihat Semua Layanan →</a>
-  <a href="/layanan/jasa-pasang/" onclick="closeMob()">Jasa Pasang Paving Block</a>
-  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
-  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">Paving Kawasan Industri</a>
-  <a href="/layanan/paving-perumahan/" onclick="closeMob()">Paving Perumahan</a>
-  <a href="/layanan/supplier-paving/" onclick="closeMob()">Supplier Material Only</a>
-
-  <div class="mob-head">Harga & Estimasi</div>
-  <a href="/#kalkulator" onclick="closeMob()">🧮 Kalkulator Estimasi</a>
-  <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">💰 Daftar Harga Terbaru</a>
-  <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">📋 Contoh RAB Parkir 1.000 m²</a>
-
-  <div class="mob-head">Area Layanan</div>
-  <a href="/area-layanan/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">📍 Lihat Semua Area →</a>
-  <a href="/jakarta/" onclick="closeMob()">DKI Jakarta</a>
-  <a href="/jakarta-timur/" onclick="closeMob()">Jakarta Timur</a>
-  <a href="/jakarta-selatan/" onclick="closeMob()">Jakarta Selatan</a>
-  <a href="/jakarta-barat/" onclick="closeMob()">Jakarta Barat</a>
-  <a href="/jakarta-utara/" onclick="closeMob()">Jakarta Utara</a>
-  <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
-  <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
-  <a href="/jababeka/" onclick="closeMob()">Jababeka</a>
-  <a href="/mm2100/" onclick="closeMob()">MM2100</a>
-  <a href="/cibitung/" onclick="closeMob()">Cibitung</a>
-  <a href="/karawang/" onclick="closeMob()">Karawang</a>
-  <a href="/depok/" onclick="closeMob()">Depok</a>
-  <a href="/bogor/" onclick="closeMob()">Bogor</a>
-  <a href="/tangerang/" onclick="closeMob()">Tangerang</a>
-  <a href="/tangerang-selatan/" onclick="closeMob()">Tangerang Selatan</a>
-  <a href="/serpong/" onclick="closeMob()">Serpong</a>
-  <a href="/bandung/" onclick="closeMob()">Bandung</a>
-  <a href="/purwakarta/" onclick="closeMob()">Purwakarta</a>
-
-  <div class="mob-head">Tentang & Panduan</div>
-  <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
-  <a href="/portofolio/" onclick="closeMob()">📸 Portofolio Proyek</a>
-  <a href="/blog/" onclick="closeMob()">📚 Semua Artikel</a>
-  <a href="/#faq" onclick="closeMob()">FAQ</a>
-  <a href="/kontak/" onclick="closeMob()">✉️ Hubungi Kami</a>
-
-  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">💬 Survei & RAB Gratis</a>
-</div>
+<div class="mob-drawer" id="mobDrawer">placeholder</div>
 <!-- MOB-DRAWER:END -->
 
 <!-- BREADCRUMB -->
@@ -590,7 +417,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
   <div class="container">
     <a href="/">SolidPaving.id</a>
     <span>›</span>
-    <a href="/#area-operasional">Area Layanan</a>
+    <a href="/area-layanan/">Area Layanan</a>
     <span>›</span>
     Cikarang
   </div>
@@ -602,21 +429,21 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <section id="hero">
   <div class="container hero-grid">
     <div>
-      <div class="hero-badge">📍 Kawasan Industri & Residensial · Cikarang, Bekasi</div>
-      <h1>Supplier & Jasa Pasang <span class="blue">Paving Block Cikarang</span></h1>
-      <p class="hero-sub">Spesialis paving block untuk kawasan industri EJIP, Jababeka, MM2100, dan perumahan di seluruh Cikarang. Material K200–K400 hidrolik press SNI, pemasangan presisi bergaransi.</p>
+      <div class="hero-badge">🏭 Spesialis Kawasan Industri · Cikarang, Bekasi</div>
+      <h1>Paving Block <span class="blue">Kawasan Industri Cikarang</span></h1>
+      <p class="hero-sub">Spesialis paving block untuk forklift, loading dock, dan area logistik di EJIP, Jababeka, MM2100, KIIC, dan kawasan industri Cikarang lainnya. Material K400 hidrolik press SNI dengan engineering workflow lengkap — vibro 8-10 ton, kanstin pengunci, garansi tertulis.</p>
       <div class="hero-btns">
         <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20butuh%20paving%20block%20di%20Cikarang%2C%20bisa%20survei%20gratis%3F" class="btn-primary">Survei & RAB Gratis Cikarang</a>
-        <a href="/#kalkulator" class="btn-outline">Hitung Estimasi Biaya</a>
+        <a href="#spec-logic" class="btn-outline">Lihat Spec Engineering</a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Proyek selesai</div></div>
         <div class="hero-stat"><div class="hero-stat-num">K400</div><div class="hero-stat-label">Standar industri berat</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">8-10t</div><div class="hero-stat-label">Vibro roller kawasan</div></div>
         <div class="hero-stat"><div class="hero-stat-num">3 Bln</div><div class="hero-stat-label">Garansi tertulis</div></div>
       </div>
     </div>
     <div class="hero-img">
-      <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/Pemasangan%20paving%20kampus%20IT%20PLN.jpg?w=760&q=80&format=webp" alt="Pemasangan paving block di kawasan industri Cikarang oleh SolidPaving.id" loading="eager" fetchpriority="high" width="760" height="570">
+      <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/Pemasangan%20paving%20kampus%20IT%20PLN.jpg?w=760&q=80&format=webp" alt="Pemasangan paving block di kawasan industri — referensi proyek industrial SolidPaving.id" loading="eager" fetchpriority="high" width="760" height="570">
       <div class="hero-img-badges">
         <span class="hbadge">SNI Bersertifikat</span>
         <span class="hbadge">Hidrolik Press</span>
@@ -633,7 +460,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garansi 3 Bulan Tertulis</div>
     <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>Respons &lt;24 Jam</div>
     <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>Satu Kontrak, Nol Saling Lempar</div>
-    <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Familiar Kondisi Lahan Cikarang</div>
+    <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Familiar Kawasan Industri Cikarang</div>
   </div>
 </div>
 
@@ -650,7 +477,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
           <div>
             <div class="kw-title">Kawasan Industri</div>
             <div class="kw-desc">EJIP, KIIC, Jababeka, MM2100, Delta Silicon, Hyundai Industrial Park — spesialis parkir truk, forklift, dan kontainer.</div>
-            <span class="kw-tag">K350–K400 · Standar Beban Berat</span>
+            <span class="kw-tag">K350–K400 · Vibro Roller</span>
           </div>
         </div>
         <div class="kawasan-card">
@@ -688,7 +515,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
           </div>
           <div class="lokasi-box">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p><strong style="color:#fff;">Lokasi Kami:</strong> Jl. Raya Cilangkap No. 10, Jakarta Timur<br>± 45 menit dari pusat Cikarang via Tol Jakarta-Cikampek</p>
+            <p><strong style="color:#fff;">Basis kami:</strong> Jakarta Timur · Cikarang ± 45 menit via Tol Jakarta-Cikampek. Tim mobile, datang ke lokasi proyek Anda.</p>
           </div>
         </div>
       </div>
@@ -706,12 +533,12 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <div class="why-card">
         <div class="why-num">01</div>
         <h3>Spesialis Kawasan Industri Cikarang</h3>
-        <p>Berpengalaman di proyek skala besar — parkiran gudang, area forklift, dock truk. Paham kondisi tanah dan kebutuhan teknis kawasan industri Cikarang.</p>
+        <p>Berpengalaman di proyek industrial scale — area forklift, loading dock, parkir truk. Paham karakteristik tanah dan beban kerja kawasan industri Cikarang.</p>
       </div>
       <div class="why-card">
         <div class="why-num">02</div>
-        <h3>Material Hidrolik Press SNI</h3>
-        <p>Bukan cetak manual. Kepadatan merata, dimensi presisi, tahan beban berat. K200–K400 ready stock, siap kirim ke lokasi proyek Anda di Cikarang.</p>
+        <h3>Engineering Workflow yang Teruji</h3>
+        <p>Bukan asal pasang. Base course → pemadatan vibro 8-10 ton → bedding abu batu presisi → kanstin pengunci. Step-by-step yang mencegah ambles & bergeser.</p>
       </div>
       <div class="why-card featured">
         <div class="why-num">03</div>
@@ -735,22 +562,22 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <div class="divider"></div>
     <div class="produk-grid">
       <div class="produk-card feat">
-        <div class="prod-badge">TERLARIS DI CIKARANG</div>
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/Paving%20block%20bata.jpg?w=600&h=338&q=80&format=webp" alt="Paving block Holland Bata untuk kawasan industri Cikarang" loading="lazy" width="600" height="338"></div>
+        <div class="prod-badge">TERLARIS DI KAWASAN INDUSTRI</div>
+        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/Paving%20cacing.jpg?w=600&h=338&q=80&format=webp" alt="Paving block Cacing Uni K400 untuk kawasan industri Cikarang — area forklift dan truk berat" loading="lazy" width="600" height="338"></div>
         <div class="prod-body">
-          <h3>Holland (Bata)</h3>
-          <p>Pilihan paling fleksibel. Cocok untuk parkir industri, perumahan, hingga area komersial di Cikarang.</p>
-          <div class="prod-mutu"><span class="mutu-tag">K200</span><span class="mutu-tag">K300</span><span class="mutu-tag industri">K350</span><span class="mutu-tag industri">K400</span><span class="mutu-tag">6–10 cm</span><span class="mutu-tag">Ready Stock</span></div>
-          <a href="https://wa.me/6285943492832?text=Halo%2C%20mau%20tanya%20harga%20paving%20Holland%20untuk%20proyek%20di%20Cikarang." class="prod-link">Tanya Harga Cikarang →</a>
+          <h3>Cacing (Uni) K400</h3>
+          <p>Kuncian paling rapat. Standar untuk area forklift, truk niaga, dan loading dock di EJIP, Jababeka, MM2100.</p>
+          <div class="prod-mutu"><span class="mutu-tag industri">K400</span><span class="mutu-tag industri">K350</span><span class="mutu-tag">8–10 cm</span><span class="mutu-tag">Ready Stock</span></div>
+          <a href="https://wa.me/6285943492832?text=Halo%2C%20mau%20tanya%20harga%20paving%20Cacing%20K400%20untuk%20proyek%20di%20Cikarang." class="prod-link">Tanya Harga Cikarang →</a>
         </div>
       </div>
       <div class="produk-card">
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/Paving%20cacing.jpg?w=600&h=338&q=80&format=webp" alt="Paving block Cacing Uni untuk area forklift Cikarang" loading="lazy" width="600" height="338"></div>
+        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/Paving%20block%20bata.jpg?w=600&h=338&q=80&format=webp" alt="Paving block Holland Bata untuk perumahan dan komersial Cikarang" loading="lazy" width="600" height="338"></div>
         <div class="prod-body">
-          <h3>Cacing (Uni)</h3>
-          <p>Kuncian paling rapat. Pilihan terbaik untuk area forklift, truk berat, dan loading dock di kawasan industri Cikarang.</p>
-          <div class="prod-mutu"><span class="mutu-tag industri">K350</span><span class="mutu-tag industri">K400</span><span class="mutu-tag">8–10 cm</span></div>
-          <a href="https://wa.me/6285943492832?text=Halo%2C%20mau%20tanya%20harga%20paving%20Cacing%20untuk%20proyek%20di%20Cikarang." class="prod-link">Tanya Harga Cikarang →</a>
+          <h3>Holland (Bata)</h3>
+          <p>Pilihan paling fleksibel. Cocok untuk perumahan, ruko, dan area komersial di seluruh Cikarang.</p>
+          <div class="prod-mutu"><span class="mutu-tag">K200</span><span class="mutu-tag">K300</span><span class="mutu-tag industri">K400</span><span class="mutu-tag">6–10 cm</span></div>
+          <a href="https://wa.me/6285943492832?text=Halo%2C%20mau%20tanya%20harga%20paving%20Holland%20untuk%20proyek%20di%20Cikarang." class="prod-link">Tanya Harga Cikarang →</a>
         </div>
       </div>
       <div class="produk-card">
@@ -766,24 +593,205 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
   </div>
 </section>
 
-<!-- ═══ PROSES ═══ -->
+<!-- ═══ PROSES (ENGINEERING WORKFLOW DETAIL) ═══ -->
 <section id="proses">
   <div class="container">
     <div class="sec-label">04 — Metode Pengerjaan</div>
-    <h2>Standar Pemasangan <span class="blue">yang Tidak Boleh Dilewati</span></h2>
+    <h2>Engineering Workflow <span class="blue">untuk Kawasan Industri Cikarang</span></h2>
     <div class="divider"></div>
+    <p style="font-size:15px;color:var(--tx2);max-width:680px;margin-bottom:32px;">Banyak vendor melewati tahap pemadatan dan bedding yang benar. Berikut urutan kerja kami yang teruji untuk beban industri Cikarang — termasuk kawasan EJIP, Jababeka, MM2100, dan area logistik.</p>
     <div class="proses-grid">
       <div class="proses-img">
-        <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/pemasangan%20paving%20pltu.jpg?w=720&q=80&format=webp" alt="Proses pemasangan paving block di kawasan industri Cikarang" loading="lazy" width="720" height="540">
+        <img src="https://ectascom.sirv.com/solidpaving.id/solidpaving%20file/pemasangan%20paving%20pltu.jpg?w=720&q=80&format=webp" alt="Proses pemadatan dan pemasangan paving block di kawasan industri Cikarang" loading="lazy" width="720" height="540">
       </div>
       <div class="steps">
-        <div class="step"><div class="step-dot">01</div><div><h3>Survei Lokasi & Analisa Tanah</h3><p>Pengukuran lahan, cek kondisi tanah dasar Cikarang, RAB transparan sebelum pekerjaan dimulai.</p><span class="step-tag">Mencegah: biaya kejutan</span></div></div>
-        <div class="step"><div class="step-dot">02</div><div><h3>Pemadatan Sub-Base</h3><p>Lapisan makadam/sirtu dipadatkan menggunakan baby roller atau stamper kodok. Tahap paling sering dilewati vendor murah.</p><span class="step-tag">Mencegah: amblas</span></div></div>
-        <div class="step"><div class="step-dot">03</div><div><h3>Gelar Bedding & Leveling Presisi</h3><p>Lapisan abu batu diratakan dengan screed dan kemiringan terencana untuk drainase sempurna.</p><span class="step-tag">Mencegah: bergelombang & genangan</span></div></div>
-        <div class="step"><div class="step-dot">04</div><div><h3>Mutu K Sesuai Beban Aktual</h3><p>K400 untuk forklift & truk berat. K300 untuk parkir kendaraan pribadi. Disesuaikan beban nyata di lokasi Anda.</p><span class="step-tag">Mencegah: pecah & retak</span></div></div>
-        <div class="step"><div class="step-dot">05</div><div><h3>Pemasangan + Kanstin Pengunci</h3><p>Pola kuncian rapat + kanstin di setiap tepi. Paving tidak akan merenggang meski dilewati kendaraan berat.</p><span class="step-tag">Mencegah: bergeser</span></div></div>
-        <div class="step"><div class="step-dot">✓</div><div><h3>Serah Terima Bergaransi 3 Bulan</h3><p>Finishing, pembersihan, dan <strong>garansi perbaikan 3 bulan tertulis dalam kontrak</strong>.</p><span class="step-tag">Jaminan tertulis</span></div></div>
+
+        <div class="step">
+          <div class="step-dot">01</div>
+          <div>
+            <h3>Cek & Persiapan Lahan</h3>
+            <p>Pengukuran, cek tingkat kepadatan tanah dasar, evaluasi drainase. Lahan yang belum padat <strong>wajib dipadatkan dulu</strong> sebelum lanjut — tidak ada shortcut.</p>
+            <span class="step-tag">Output: lahan stabil & RAB transparan</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">02</div>
+          <div>
+            <h3>Tebar Base Course 5 cm</h3>
+            <p>Material agregat kasar (makadam/sirtu) digelar setebal 5 cm sebagai lapisan struktural utama. Ini fondasi yang menahan beban kendaraan — bukan abu batu.</p>
+            <span class="step-tag">Output: lapisan struktur dasar</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">03</div>
+          <div>
+            <h3>Pemadatan Sub-Base (Alat Sesuai Beban)</h3>
+            <p>Pemadatan base course menggunakan alat yang sesuai severity proyek:</p>
+            <ul style="margin:8px 0 8px 18px;font-size:13px;color:var(--tx2);line-height:1.8;">
+              <li><strong>Stamper kuda/kodok</strong> — perumahan & area pejalan</li>
+              <li><strong>Baby roller 2 ton</strong> — parkir kendaraan ringan & komersial</li>
+              <li><strong>Vibro roller 8–10 ton</strong> — kawasan industri, gudang, forklift</li>
+            </ul>
+            <p style="font-size:13px;color:var(--tx2);">Untuk proyek di EJIP/Jababeka/MM2100, vibro roller adalah default kami.</p>
+            <span class="step-tag">Mencegah: amblas di titik beban berat</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">04</div>
+          <div>
+            <h3>Tebar Bedding Abu Batu 3–5 cm</h3>
+            <p>Abu batu setebal <strong>3–5 cm tergantung tebal paving</strong> digelar di atas base course yang sudah padat. Berfungsi sebagai bantalan leveling — bukan sebagai struktur penahan beban.</p>
+            <span class="step-tag">Mencegah: bergelombang & tidak presisi</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">05</div>
+          <div>
+            <h3>Pemilihan Mutu K Sesuai Beban Nyata</h3>
+            <p>Mutu K tidak ditebak — dipilih berdasarkan beban aktual:</p>
+            <ul style="margin:8px 0 8px 18px;font-size:13px;color:var(--tx2);line-height:1.8;">
+              <li><strong>K400 · 8 cm</strong> — kawasan industri, forklift, truk niaga</li>
+              <li><strong>K300 · 8 cm</strong> — opsi budget untuk industri ringan</li>
+              <li><strong>K300 · 6–8 cm</strong> — perumahan, cluster, carport</li>
+              <li><strong>K300 · 6 cm</strong> — parkir motor & mobil pribadi</li>
+            </ul>
+            <span class="step-tag">Mencegah: pecah & retak prematur</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">06</div>
+          <div>
+            <h3>Pemasangan + Isi Celah dengan Abu Batu</h3>
+            <p>Paving dipasang sesuai pola kuncian. Setelah terpasang, abu batu ditebar lagi di atasnya untuk mengisi celah antar paving.</p>
+            <span class="step-tag">Output: kuncian rapat antar blok</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">07</div>
+          <div>
+            <h3>Pemadatan Akhir dengan Stamper Kodok</h3>
+            <p>Stamper kodok dijalankan di atas paving untuk <strong>double function</strong>: memadatkan paving sekaligus mendorong abu batu masuk ke celah antar blok. Tahap ini yang bikin paving tidak bergeser saat dibebani.</p>
+            <span class="step-tag">Mencegah: blok bergeser saat dibebani</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">08</div>
+          <div>
+            <h3>Kanstin Kuncian Tepi (Adukan)</h3>
+            <p>Tepi paving dikunci menggunakan kanstin dengan adukan beton sederhana. Ini mencegah paving merenggang ke luar saat menahan beban kendaraan berat — kritis untuk loading dock & jalur forklift.</p>
+            <span class="step-tag">Mencegah: renggang di tepi</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">✓</div>
+          <div>
+            <h3>Serah Terima + Garansi 3 Bulan Tertulis</h3>
+            <p>Pembersihan akhir, dokumentasi hasil, dan <strong>garansi perbaikan 3 bulan dalam kontrak</strong>. Kalau ada yang amblas/bergeser dalam masa garansi, kami perbaiki.</p>
+            <span class="step-tag">Jaminan tertulis, bukan janji lisan</span>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPEC LOGIC ═══ -->
+<section id="spec-logic">
+  <div class="container">
+    <div class="sec-label">05 — Spec Engineering</div>
+    <h2>Spec yang Tepat untuk <span class="blue">Kondisi Anda di Cikarang</span></h2>
+    <div class="divider"></div>
+    <p style="font-size:15px;color:var(--tx2);max-width:680px;margin-bottom:40px;">Mutu paving block bukan ditebak. Setiap profil beban di Cikarang punya spec optimal — di bawah standar = amblas, di atas standar = pemborosan budget.</p>
+
+    <div class="spec-grid">
+
+      <div class="spec-card spec-feat">
+        <div class="spec-tag">REKOMENDASI INDUSTRI</div>
+        <div class="spec-header">
+          <div class="spec-ico">🏭</div>
+          <div>
+            <div class="spec-title">Kawasan Industri & Logistik</div>
+            <div class="spec-sub">EJIP · KIIC · Jababeka · MM2100 · Delta Silicon · Hyundai</div>
+          </div>
+        </div>
+        <div class="spec-rec">
+          <div class="spec-rec-line"><span class="spec-rec-label">Mutu</span><span class="spec-rec-val">K400</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Tebal</span><span class="spec-rec-val">8 cm</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pemadatan</span><span class="spec-rec-val">Vibro 8–10 ton</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pola</span><span class="spec-rec-val">Cacing Herringbone</span></div>
+        </div>
+        <p class="spec-why">Untuk forklift, truk niaga, dan area loading dock. K400 ber-uji kuat tekan tinggi tidak akan pecah meski dilalui kendaraan berat ratusan kali per hari.</p>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-tag spec-tag-alt">OPSI BUDGET INDUSTRI</div>
+        <div class="spec-header">
+          <div class="spec-ico">🏗️</div>
+          <div>
+            <div class="spec-title">Industri Ringan / Press Budget</div>
+            <div class="spec-sub">Gudang menengah · area kendaraan sedang</div>
+          </div>
+        </div>
+        <div class="spec-rec">
+          <div class="spec-rec-line"><span class="spec-rec-label">Mutu</span><span class="spec-rec-val">K300</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Tebal</span><span class="spec-rec-val">8 cm</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pemadatan</span><span class="spec-rec-val">Baby roller 2 ton</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pola</span><span class="spec-rec-val">Holland Stretcher</span></div>
+        </div>
+        <p class="spec-why">Untuk gudang yang dilalui kendaraan sedang (pickup, truk kecil), atau industri yang menerima trade-off harga vs umur pakai. Tetap pakai vibro untuk area beban berat spesifik.</p>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-tag spec-tag-alt">PERUMAHAN & RUKO</div>
+        <div class="spec-header">
+          <div class="spec-ico">🏘️</div>
+          <div>
+            <div class="spec-title">Perumahan, Cluster, Ruko</div>
+            <div class="spec-sub">Cluster Cikarang & sekitarnya</div>
+          </div>
+        </div>
+        <div class="spec-rec">
+          <div class="spec-rec-line"><span class="spec-rec-label">Mutu</span><span class="spec-rec-val">K300</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Tebal</span><span class="spec-rec-val">6–8 cm</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pemadatan</span><span class="spec-rec-val">Stamper kuda/kodok</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pola</span><span class="spec-rec-val">Holland / Ubin</span></div>
+        </div>
+        <p class="spec-why">Untuk jalan cluster, carport, dan halaman ruko yang dilewati mobil pribadi & motor. K300 6 cm cukup; 8 cm kalau jalan utama cluster.</p>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-tag spec-tag-alt">PARKIR KOMERSIAL RINGAN</div>
+        <div class="spec-header">
+          <div class="spec-ico">🅿️</div>
+          <div>
+            <div class="spec-title">Parkir Mobil & Motor</div>
+            <div class="spec-sub">Kantor · showroom · ritel</div>
+          </div>
+        </div>
+        <div class="spec-rec">
+          <div class="spec-rec-line"><span class="spec-rec-label">Mutu</span><span class="spec-rec-val">K300</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Tebal</span><span class="spec-rec-val">6 cm</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pemadatan</span><span class="spec-rec-val">Baby roller 2 ton</span></div>
+          <div class="spec-rec-line"><span class="spec-rec-label">Pola</span><span class="spec-rec-val">Holland / Ubin Stretcher</span></div>
+        </div>
+        <p class="spec-why">Parkir mobil pribadi & motor di area komersial ringan. K300 6 cm sudah cukup — tebal lebih = over-spec yang tidak terpakai.</p>
+      </div>
+
+    </div>
+
+    <div class="spec-note">
+      <strong>💡 Tidak yakin spec yang tepat?</strong> Kami survei gratis ke lokasi Anda di Cikarang dan rekomendasi mutu, tebal, dan metode pemadatan berdasarkan kondisi tanah aktual + beban yang akan dilalui.
+      <br><br>
+      <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20butuh%20rekomendasi%20spec%20paving%20untuk%20proyek%20di%20Cikarang." class="btn-primary">Konsultasi Spec Gratis →</a>
     </div>
   </div>
 </section>
@@ -791,7 +799,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <!-- ═══ HARGA ═══ -->
 <section id="harga">
   <div class="container">
-    <div class="sec-label">05 — Estimasi Harga</div>
+    <div class="sec-label">06 — Estimasi Harga</div>
     <h2>Kisaran Harga Paving Block <span class="blue">di Cikarang</span></h2>
     <div class="divider"></div>
     <div class="harga-note">
@@ -809,14 +817,14 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
         </div>
       </div>
       <div class="harga-card featured">
-        <div class="harga-top"><h3>Jasa Pasang & Paket</h3><p>Harga per m² · termasuk material + pasang + bedding</p></div>
+        <div class="harga-top"><h3>Paket Industri + Pasang</h3><p>Harga per m² · termasuk material + pasang + bedding</p></div>
         <div class="harga-body">
           <div class="harga-row"><span class="harga-label">Jasa Pasang</span><span class="harga-val">+ Rp 45.000/m²</span></div>
           <div class="harga-row"><span class="harga-label">Lapisan Bedding</span><span class="harga-val">+ Rp 35.000/m²</span></div>
-          <div class="harga-row"><span class="harga-label" style="color:var(--tx3);">Pemadatan Sub-Base</span><span class="harga-val" style="color:var(--tx3);">+ Rp 40.000/m² <em style="font-weight:400;font-size:11px;">(opsional)</em></span></div>
+          <div class="harga-row"><span class="harga-label" style="color:var(--tx3);">Pemadatan Sub-Base</span><span class="harga-val" style="color:var(--tx3);">+ Rp 40.000/m² <em style="font-weight:400;font-size:11px;">(industri wajib)</em></span></div>
           <div class="harga-divider"></div>
-          <div class="harga-row"><span class="harga-label" style="font-weight:700;">Paket Standar K300 · 8 cm</span><span class="harga-val hl">Rp 180.000/m²</span></div>
-          <div class="harga-row"><span class="harga-label" style="font-weight:700;">Paket Standar K400 · 8 cm</span><span class="harga-val hl">Rp 195.000/m²</span></div>
+          <div class="harga-row"><span class="harga-label" style="font-weight:700;">Paket K300 · 8 cm (Komersial)</span><span class="harga-val hl">Rp 180.000/m²</span></div>
+          <div class="harga-row"><span class="harga-label" style="font-weight:700;">Paket K400 · 8 cm (Industri)</span><span class="harga-val hl">Rp 235.000/m²</span></div>
         </div>
       </div>
     </div>
@@ -830,15 +838,16 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <!-- ═══ FAQ ═══ -->
 <section id="faq">
   <div class="container">
-    <div class="sec-label">06 — FAQ</div>
+    <div class="sec-label">07 — FAQ</div>
     <h2>Pertanyaan tentang <span class="blue">Paving Block Cikarang</span></h2>
     <div class="divider"></div>
     <div class="faq-wrap">
-      <details><summary>Apakah SolidPaving.id melayani kawasan industri di Cikarang?</summary><p class="faq-a">Ya. Cikarang adalah salah satu area utama layanan kami. Tim kami familiar dengan akses dan kondisi lahan di EJIP, KIIC, Jababeka, MM2100, Delta Silicon, dan Hyundai Industrial Park.</p></details>
-      <details><summary>Mutu paving block apa yang cocok untuk area forklift dan truk di Cikarang?</summary><p class="faq-a">Untuk area yang dilalui forklift dan truk berat, kami menggunakan minimal K400 tebal 8–10 cm. Untuk area parkir karyawan atau kendaraan pribadi, K300 8 cm sudah cukup. Kami rekomendasikan mutu yang tepat setelah survei lapangan.</p></details>
-      <details><summary>Berapa estimasi harga paving block per m² di Cikarang?</summary><p class="faq-a">Paket lengkap (material + jasa pasang + bedding + pemadatan): K300 sekitar Rp 220.000/m², K400 sekitar Rp 235.000/m². Material saja mulai Rp 85.000–160.000/m² tergantung mutu. Harga final dikonfirmasi setelah survei gratis.</p></details>
-      <details><summary>Berapa lama survei dan RAB bisa siap untuk lokasi di Cikarang?</summary><p class="faq-a">RAB siap dalam kurang dari 24 jam kerja setelah survei. Survei gratis, tanpa kewajiban apapun.</p></details>
-      <details><summary>Berapa lama pengerjaan untuk proyek skala besar di Cikarang?</summary><p class="faq-a">Kapasitas pemasangan kami ±2.000 m² per hari. Proyek 1.000 m² biasanya selesai dalam 1–2 hari kerja. Untuk kawasan industri, jadwal disesuaikan kebutuhan operasional klien.</p></details>
+      <details><summary>Apakah SolidPaving.id melayani kawasan industri di Cikarang?</summary><p class="faq-a">Ya. Cikarang adalah salah satu area utama layanan kami. Tim kami familiar dengan akses dan kondisi lahan di EJIP, KIIC, Jababeka, MM2100, Delta Silicon, dan Hyundai Industrial Park. Untuk proyek di kawasan industri, kami pakai vibro roller 8-10 ton sebagai standar pemadatan.</p></details>
+      <details><summary>Mutu paving block apa yang cocok untuk area forklift dan truk di Cikarang?</summary><p class="faq-a">Untuk area yang dilalui forklift dan truk niaga, kami rekomendasikan K400 tebal 8 cm. Untuk area parkir karyawan atau kendaraan pribadi, K300 6-8 cm sudah cukup. Lihat section "Spec Engineering" di atas untuk detail rekomendasi per profile beban.</p></details>
+      <details><summary>Kenapa vibro roller 8-10 ton penting untuk proyek di kawasan industri?</summary><p class="faq-a">Pemadatan sub-base adalah tahap paling sering dilewati vendor murah — padahal ini yang menentukan paving akan amblas atau tidak di bawah beban berat. Stamper kodok atau baby roller 2 ton tidak cukup untuk menahan beban forklift atau truk niaga. Vibro 8-10 ton memberikan kepadatan yang dibutuhkan untuk umur pakai panjang di kawasan industri.</p></details>
+      <details><summary>Berapa estimasi harga paving block per m² di Cikarang?</summary><p class="faq-a">Paket lengkap industri (K400 + jasa pasang + bedding + pemadatan vibro): sekitar Rp 235.000/m². Paket komersial (K300 + jasa pasang + bedding): sekitar Rp 180.000/m². Material saja mulai Rp 85.000–160.000/m² tergantung mutu. Harga final dikonfirmasi setelah survei gratis.</p></details>
+      <details><summary>Berapa lama survei dan RAB bisa siap untuk lokasi di Cikarang?</summary><p class="faq-a">RAB siap dalam kurang dari 24 jam kerja setelah survei. Survei gratis, tanpa kewajiban apapun. Untuk akses ke kawasan industri yang butuh izin masuk, kami sesuaikan jadwal dengan PIC area.</p></details>
+      <details><summary>Berapa lama pengerjaan untuk proyek skala besar di Cikarang?</summary><p class="faq-a">Kapasitas pemasangan kami ±2.000 m² per hari. Proyek 1.000 m² biasanya selesai dalam 1–2 hari kerja. Untuk kawasan industri, jadwal disesuaikan kebutuhan operasional klien — kami bisa kerja malam atau weekend agar tidak mengganggu produksi.</p></details>
       <details><summary>Ada garansi setelah pemasangan di Cikarang?</summary><p class="faq-a">Ya. Garansi perbaikan 3 bulan tertulis dalam kontrak. Jika ada yang amblas atau bergeser dalam masa garansi, kami perbaiki tanpa biaya tambahan.</p></details>
     </div>
   </div>
@@ -847,7 +856,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <!-- ═══ NEARBY ═══ -->
 <section id="nearby">
   <div class="container">
-    <div class="sec-label">07 — Area Terdekat</div>
+    <div class="sec-label">08 — Area Terdekat</div>
     <h2>Wilayah Lain yang <span class="blue">Kami Layani</span></h2>
     <div class="divider"></div>
     <p style="color:var(--tx2);font-size:15px;max-width:600px;">Selain Cikarang, SolidPaving.id melayani seluruh Jabodetabek & Jawa Barat:</p>
@@ -858,7 +867,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <a href="/cibitung/" class="nearby-link">Cibitung <span>Bekasi</span></a>
       <a href="/karawang/" class="nearby-link">Karawang <span>Jawa Barat</span></a>
       <a href="/jakarta/" class="nearby-link">Jakarta <span>DKI Jakarta</span></a>
-      <a href="/tangerang/" class="nearby-link">Tangerang <span></span></a>
+      <a href="/tangerang/" class="nearby-link">Tangerang</a>
       <a href="/bandung/" class="nearby-link">Bandung <span>Jawa Barat</span></a>
     </div>
   </div>
@@ -874,128 +883,15 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20mau%20survei%20gratis%20untuk%20proyek%20paving%20di%20Cikarang." class="btn-white">Chat WhatsApp Sekarang</a>
       <a href="mailto:sales@solidpaving.id" class="btn-ow">sales@solidpaving.id</a>
     </div>
-    <p class="cta-note">Senin–Sabtu 08.00–17.00 WIB · Melayani seluruh Cikarang & Bekasi</p>
+    <p class="cta-note">Senin–Sabtu 08.00–17.00 WIB · Melayani seluruh Cikarang & kawasan industri</p>
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER (auto-managed by build.py) ═══ -->
 <!-- FOOTER:START -->
-<footer>
-  <div class="container">
-    <!-- Row 1: Main columns -->
-    <div class="foot-grid">
-      <div class="foot-brand-col">
-        <a href="/" aria-label="SolidPaving.id" class="foot-logo-wrap">
-          <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" width="160" height="32" style="overflow:visible">
-            <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
-            <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
-          </svg>
-        </a>
-        <p class="foot-brand-text">Supplier paving block K200–K400 dan jasa pemasangan bergaransi. Untuk kontraktor, developer, dan pemilik bisnis di Jabodetabek & Jawa Barat.</p>
-        <div class="foot-badges">
-          <span class="foot-badge">SNI Bersertifikat</span>
-          <span class="foot-badge">Hidrolik Press</span>
-          <span class="foot-badge">Garansi 3 Bulan</span>
-        </div>
-      </div>
-
-      <div class="foot-col">
-        <h3>Produk</h3>
-        <ul>
-          <li><a href="/produk/paving-holland/">Paving Holland</a></li>
-          <li><a href="/produk/paving-ubin/">Paving Ubin</a></li>
-          <li><a href="/produk/paving-cacing/">Paving Cacing</a></li>
-          <li><a href="/produk/paving-hexagon/">Paving Hexagon</a></li>
-          <li><a href="/produk/grassblock/">Grassblock</a></li>
-          <li><a href="/produk/kanstin/">Kanstin / Kerb</a></li>
-          <li><a href="/produk/" class="foot-all">Semua Produk →</a></li>
-        </ul>
-      </div>
-
-      <div class="foot-col">
-        <h3>Layanan</h3>
-        <ul>
-          <li><a href="/layanan/jasa-pasang/">Jasa Pasang</a></li>
-          <li><a href="/layanan/paving-lahan-parkir/">Paving Lahan Parkir</a></li>
-          <li><a href="/layanan/paving-kawasan-industri/">Kawasan Industri</a></li>
-          <li><a href="/layanan/paving-perumahan/">Perumahan & Cluster</a></li>
-          <li><a href="/layanan/supplier-paving/">Supplier Material</a></li>
-          <li><a href="/layanan/" class="foot-all">Semua Layanan →</a></li>
-        </ul>
-      </div>
-
-      <div class="foot-col">
-        <h3>Perusahaan</h3>
-        <ul>
-          <li><a href="/tentang-kami/">Tentang Kami</a></li>
-          <li><a href="/portofolio/">Portofolio Proyek</a></li>
-          <li><a href="/blog/">Blog & Panduan</a></li>
-          <li><a href="/#bukti">Testimoni Klien</a></li>
-          <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/kontak/" class="foot-all">Hubungi Kami →</a></li>
-        </ul>
-      </div>
-
-      <div class="foot-col foot-kontak">
-        <h3>Kontak</h3>
-        <ul>
-          <li><a href="https://wa.me/6285943492832" class="foot-wa">📱 0859-4349-2832</a></li>
-          <li><a href="mailto:sales@solidpaving.id">✉️ sales@solidpaving.id</a></li>
-          <li class="foot-addr">📍 Jl. Raya Cilangkap No. 10<br>Jakarta Timur 13870</li>
-          <li class="foot-hours">
-            <strong>Jam Kerja:</strong><br>
-            Senin–Sabtu · 08.00–17.00 WIB<br>
-            <span class="foot-wa-247">💬 WhatsApp 24/7 untuk urgent</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Row 2: Area Layanan strip -->
-    <div class="foot-area-strip">
-      <div class="foot-area-head">
-        <h3>Area Layanan</h3>
-        <a href="/area-layanan/" class="foot-area-all">Lihat Semua Area Layanan →</a>
-      </div>
-      <div class="foot-area-grid">
-        <a href="/jakarta/">DKI Jakarta</a>
-        <a href="/jakarta-timur/">Jakarta Timur</a>
-        <a href="/jakarta-selatan/">Jakarta Selatan</a>
-        <a href="/jakarta-barat/">Jakarta Barat</a>
-        <a href="/jakarta-utara/">Jakarta Utara</a>
-        <a href="/bekasi/">Bekasi</a>
-        <a href="/cikarang/">Cikarang</a>
-        <a href="/jababeka/">Jababeka</a>
-        <a href="/mm2100/">MM2100</a>
-        <a href="/cibitung/">Cibitung</a>
-        <a href="/karawang/">Karawang</a>
-        <a href="/depok/">Depok</a>
-        <a href="/bogor/">Bogor</a>
-        <a href="/tangerang/">Tangerang</a>
-        <a href="/tangerang-selatan/">Tangerang Selatan</a>
-        <a href="/serpong/">Serpong</a>
-        <a href="/bandung/">Bandung</a>
-        <a href="/purwakarta/">Purwakarta</a>
-      </div>
-    </div>
-
-    <!-- Row 3: Legal -->
-    <div class="foot-bottom">
-      <div class="foot-legal">
-        <span>© 2026 SolidPaving.id</span>
-        <span class="foot-sep">·</span>
-        <span>Supplier Paving Block & Jasa Pasang</span>
-        <span class="foot-sep">·</span>
-        <span>Jabodetabek & Jawa Barat</span>
-      </div>
-      <div class="foot-legal-sub">
-        <!-- NIB akan ditambahkan setelah dokumen siap -->
-      </div>
-    </div>
-  </div>
-</footer>
+<footer>placeholder — akan di-replace oleh build.py</footer>
 <!-- FOOTER:END -->
 
 <!-- FLOATING -->
@@ -1012,6 +908,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <script>
 (function(){
   var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
+  if(!ham || !drawer) return;
   ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
   window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
 })();
