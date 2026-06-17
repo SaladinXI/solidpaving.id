@@ -1,0 +1,45 @@
+/* ─── FOOTER (canonical) ─── */
+footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28px;}
+.foot-grid{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr 1.4fr;gap:48px;margin-bottom:48px;}
+.foot-brand-col .foot-logo-wrap{display:inline-flex;align-items:center;margin-bottom:16px;}
+.foot-brand-text{font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:18px;max-width:320px;}
+.foot-badges{display:flex;gap:6px;flex-wrap:wrap;}
+.foot-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.3px;color:var(--blue);background:var(--bg2);border:1px solid var(--bdr);padding:4px 9px;border-radius:4px;}
+.foot-col h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:18px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.foot-col li a{font-size:13px;color:var(--tx2);transition:color .15s;}
+.foot-col li a:hover{color:var(--blue);}
+.foot-all{font-weight:700;color:var(--blue)!important;margin-top:6px;display:inline-block;}
+.foot-kontak li{font-size:13px;color:var(--tx2);line-height:1.55;}
+.foot-kontak .foot-wa{font-weight:700;color:var(--blue);}
+.foot-kontak .foot-addr{padding:6px 0 2px;color:var(--tx2);line-height:1.55;}
+.foot-kontak .foot-hours{padding-top:10px;border-top:1px solid var(--bds);margin-top:6px;font-size:12px;line-height:1.65;color:var(--tx3);}
+.foot-kontak .foot-hours strong{color:var(--tx2);font-size:12px;}
+.foot-kontak .foot-wa-247{display:inline-block;margin-top:4px;color:var(--green);font-weight:600;font-size:11.5px;}
+.foot-area-strip{border-top:1px solid var(--bds);padding:28px 0 8px;margin-bottom:20px;}
+.foot-area-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px;}
+.foot-area-head h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin:0;}
+.foot-area-all{font-size:12px;font-weight:700;color:var(--blue);}
+.foot-area-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+.foot-area-grid a{font-size:12.5px;color:var(--tx2);padding:7px 12px;border-radius:4px;background:var(--bg0);border:1px solid var(--bds);transition:all .15s;text-align:left;}
+.foot-area-grid a:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.foot-bottom{padding-top:22px;border-top:1px solid var(--bds);display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;align-items:center;}
+.foot-legal{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.foot-sep{color:var(--bdr);}
+.foot-legal-sub{font-size:11px;color:var(--tx3);}
+
+@media(max-width:1024px){
+  .foot-grid{grid-template-columns:1fr 1fr 1fr;gap:36px;}
+  .foot-brand-col{grid-column:1/-1;}
+  .foot-area-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:640px){
+  footer{padding:48px 5% 24px;}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .foot-area-grid{grid-template-columns:repeat(2,1fr);}
+  .foot-bottom{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:480px){
+  .foot-grid{grid-template-columns:1fr;gap:28px;}
+  .foot-area-grid{grid-template-columns:1fr 1fr;}
+}

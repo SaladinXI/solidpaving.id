@@ -176,12 +176,66 @@ nav{
 .mob-drawer a:hover{color:var(--tx1);}
 .mob-cta{margin-top:14px;background:var(--blue);color:#fff!important;text-align:center;padding:13px;border-radius:var(--r);font-weight:700;display:block;border-bottom:none!important;}
 @media(max-width:1100px){.nav-menu{display:none;}.nav-cta{display:none;}.nav-ham{display:flex;}}
+
+/* FOOTER-CSS:START — auto-managed by build.py */
+/* ─── FOOTER (canonical) ─── */
+footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28px;}
+.foot-grid{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr 1.4fr;gap:48px;margin-bottom:48px;}
+.foot-brand-col .foot-logo-wrap{display:inline-flex;align-items:center;margin-bottom:16px;}
+.foot-brand-text{font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:18px;max-width:320px;}
+.foot-badges{display:flex;gap:6px;flex-wrap:wrap;}
+.foot-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.3px;color:var(--blue);background:var(--bg2);border:1px solid var(--bdr);padding:4px 9px;border-radius:4px;}
+.foot-col h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:18px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.foot-col li a{font-size:13px;color:var(--tx2);transition:color .15s;}
+.foot-col li a:hover{color:var(--blue);}
+.foot-all{font-weight:700;color:var(--blue)!important;margin-top:6px;display:inline-block;}
+.foot-kontak li{font-size:13px;color:var(--tx2);line-height:1.55;}
+.foot-kontak .foot-wa{font-weight:700;color:var(--blue);}
+.foot-kontak .foot-addr{padding:6px 0 2px;color:var(--tx2);line-height:1.55;}
+.foot-kontak .foot-hours{padding-top:10px;border-top:1px solid var(--bds);margin-top:6px;font-size:12px;line-height:1.65;color:var(--tx3);}
+.foot-kontak .foot-hours strong{color:var(--tx2);font-size:12px;}
+.foot-kontak .foot-wa-247{display:inline-block;margin-top:4px;color:var(--green);font-weight:600;font-size:11.5px;}
+.foot-area-strip{border-top:1px solid var(--bds);padding:28px 0 8px;margin-bottom:20px;}
+.foot-area-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px;}
+.foot-area-head h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);margin:0;}
+.foot-area-all{font-size:12px;font-weight:700;color:var(--blue);}
+.foot-area-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+.foot-area-grid a{font-size:12.5px;color:var(--tx2);padding:7px 12px;border-radius:4px;background:var(--bg0);border:1px solid var(--bds);transition:all .15s;text-align:left;}
+.foot-area-grid a:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.foot-bottom{padding-top:22px;border-top:1px solid var(--bds);display:flex;justify-content:space-between;font-size:12px;color:var(--tx3);flex-wrap:wrap;gap:12px;align-items:center;}
+.foot-legal{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.foot-sep{color:var(--bdr);}
+.foot-legal-sub{font-size:11px;color:var(--tx3);}
+
+@media(max-width:1024px){
+  .foot-grid{grid-template-columns:1fr 1fr 1fr;gap:36px;}
+  .foot-brand-col{grid-column:1/-1;}
+  .foot-area-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:640px){
+  footer{padding:48px 5% 24px;}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .foot-area-grid{grid-template-columns:repeat(2,1fr);}
+  .foot-bottom{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:480px){
+  .foot-grid{grid-template-columns:1fr;gap:28px;}
+  .foot-area-grid{grid-template-columns:1fr 1fr;}
+}
+/* FOOTER-CSS:END */
 </style>
 </head>
 <body>
 
+<!-- NAVBAR:START -->
+<style>
+/* Dropdown open state (added by JS on click) */
+nav .nav-item.open .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
+nav .nav-item.open .nav-btn{background:var(--bg1);color:var(--tx1);}
+nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
+</style>
 <nav>
-  <!-- Logo -->
   <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
     <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="34">
       <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
@@ -189,9 +243,7 @@ nav{
     </svg>
   </a>
 
-  <!-- Desktop menu -->
   <ul class="nav-menu">
-    <!-- Produk -->
     <li class="nav-item">
       <button class="nav-btn">Produk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -204,9 +256,9 @@ nav{
         <div class="pnl-sep"></div>
         <div class="pnl-head">Aksesoris</div>
         <a href="/produk/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Kanstin / Kerb Beton</span><span class="pnl-sub">Pengunci tepi paving</span></div></a>
+        <a href="/produk/" class="pnl-all">Lihat Semua Produk <span>→</span></a>
       </div>
     </li>
-    <!-- Layanan -->
     <li class="nav-item">
       <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
@@ -218,15 +270,15 @@ nav{
         <div class="pnl-sep"></div>
         <div class="pnl-head">Supply Material</div>
         <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span><span class="pnl-sub">Kirim ke lokasi proyek Anda</span></div></a>
+        <a href="/layanan/" class="pnl-all">Lihat Semua Layanan <span>→</span></a>
       </div>
     </li>
-    <!-- Harga -->
     <li class="nav-item">
       <button class="nav-btn">Harga <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
         <div class="pnl-head">Estimasi & RAB</div>
         <a href="/#kalkulator" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Estimasi Biaya</span><span class="pnl-sub">Hitung langsung, real-time</span></div></a>
-        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga 2026</span><span class="pnl-sub">Harga per m² semua produk</span></div></a>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga Terbaru</span><span class="pnl-sub">Harga per m² semua produk</span></div></a>
         <a href="/blog/biaya-paving-lahan-parkir-1000m2/" class="pnl-link"><div class="pnl-ico">📋</div><div><span class="pnl-title">Contoh RAB Parkir 1.000 m²</span><span class="pnl-sub">Rincian biaya aktual</span></div></a>
         <div class="pnl-sep"></div>
         <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20RAB%20gratis." class="pnl-link" style="color:var(--green);">
@@ -235,7 +287,6 @@ nav{
         </a>
       </div>
     </li>
-    <!-- Area Layanan -->
     <li class="nav-item">
       <button class="nav-btn">Area Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel panel-mega">
@@ -244,6 +295,8 @@ nav{
           <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
           <a href="/jakarta-timur/" class="pnl-plain">Jakarta Timur</a>
           <a href="/jakarta-selatan/" class="pnl-plain">Jakarta Selatan</a>
+          <a href="/jakarta-barat/" class="pnl-plain">Jakarta Barat</a>
+          <a href="/jakarta-utara/" class="pnl-plain">Jakarta Utara</a>
           <a href="/depok/" class="pnl-plain">Depok</a>
           <a href="/bogor/" class="pnl-plain">Bogor</a>
           <div class="pnl-head">Tangerang</div>
@@ -263,30 +316,29 @@ nav{
           <div class="pnl-head">Jawa Barat</div>
           <a href="/bandung/" class="pnl-plain">Bandung</a>
           <a href="/purwakarta/" class="pnl-plain">Purwakarta</a>
+          <a href="/area-layanan/" class="pnl-all">Lihat Semua Area Layanan <span>→</span></a>
         </div>
       </div>
     </li>
-    <!-- Tentang -->
     <li class="nav-item">
       <button class="nav-btn">Tentang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel panel-right">
+      <div class="nav-panel right">
         <a href="/tentang-kami/" class="pnl-link"><div class="pnl-ico">🏢</div><div><span class="pnl-title">Tentang SolidPaving.id</span><span class="pnl-sub">Profil, visi, tim kami</span></div></a>
         <a href="/portofolio/" class="pnl-link"><div class="pnl-ico">📸</div><div><span class="pnl-title">Portofolio Proyek</span><span class="pnl-sub">Dokumentasi hasil nyata</span></div></a>
         <a href="/#bukti" class="pnl-link"><div class="pnl-ico">⭐</div><div><span class="pnl-title">Testimoni Klien</span><span class="pnl-sub">Ulasan dari pelanggan kami</span></div></a>
         <div class="pnl-sep"></div>
         <a href="/#faq" class="pnl-link"><div class="pnl-ico">❓</div><div><span class="pnl-title">FAQ</span><span class="pnl-sub">Pertanyaan yang sering ditanyakan</span></div></a>
-        <a href="mailto:sales@solidpaving.id" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span><span class="pnl-sub">sales@solidpaving.id</span></div></a>
+        <a href="/kontak/" class="pnl-link"><div class="pnl-ico">✉️</div><div><span class="pnl-title">Hubungi Kami</span><span class="pnl-sub">WhatsApp · Email · Alamat</span></div></a>
       </div>
     </li>
-    <!-- Panduan -->
     <li class="nav-item">
-      <button class="nav-btn">Panduan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
-      <div class="nav-panel panel-right">
+      <button class="nav-btn">Blog <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
+      <div class="nav-panel right">
         <div class="pnl-head">Artikel Populer</div>
-        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Harga Pasang Paving 2026</span></div></a>
+        <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico">💰</div><div><span class="pnl-title">Daftar Harga Terbaru</span></div></a>
         <a href="/blog/kenapa-paving-amblas/" class="pnl-link"><div class="pnl-ico">⚠️</div><div><span class="pnl-title">Kenapa Paving Amblas?</span></div></a>
         <a href="/blog/paving-block-k300-vs-k400/" class="pnl-link"><div class="pnl-ico">🔬</div><div><span class="pnl-title">K300 vs K400 — Pilih Mana?</span></div></a>
-        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Kalkulator Kebutuhan</span></div></a>
+        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="pnl-link"><div class="pnl-ico">🧮</div><div><span class="pnl-title">Cara Hitung Kebutuhan Paving</span></div></a>
         <a href="/blog/tips-memilih-kontraktor-paving/" class="pnl-link"><div class="pnl-ico">✅</div><div><span class="pnl-title">Tips Memilih Kontraktor</span></div></a>
         <div class="pnl-sep"></div>
         <a href="/blog/" class="pnl-all">Lihat Semua Artikel <span>→</span></a>
@@ -294,43 +346,98 @@ nav{
     </li>
   </ul>
 
-  <!-- CTA -->
   <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="nav-cta">Survei Gratis</a>
-  <!-- Hamburger — selalu di ujung kanan -->
   <button class="nav-ham" id="navHam" aria-label="Buka menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
+<script>
+(function(){
+  // Dropdown click-toggle behavior
+  var items = document.querySelectorAll('nav .nav-item');
+  items.forEach(function(item){
+    var btn = item.querySelector('.nav-btn');
+    if(!btn) return;
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var wasOpen = item.classList.contains('open');
+      // Tutup semua dropdown lain
+      items.forEach(function(i){ i.classList.remove('open'); });
+      // Toggle yang ini
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+  // Klik di luar nav → tutup semua dropdown
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('nav')){
+      items.forEach(function(i){ i.classList.remove('open'); });
+    }
+  });
+  // ESC key → tutup semua dropdown
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      items.forEach(function(i){ i.classList.remove('open'); });
+    }
+  });
+})();
+</script>
+<!-- NAVBAR:END -->
+<!-- MOB-DRAWER:START -->
 <div class="mob-drawer" id="mobDrawer">
   <div class="mob-head">Produk</div>
-  <a href="/produk/paving-holland/" onclick="closeMob()">🧱 Holland (Bata)</a>
-  <a href="/produk/paving-ubin/" onclick="closeMob()">⬛ Ubin (Square)</a>
-  <a href="/produk/paving-cacing/" onclick="closeMob()">〰️ Cacing (Uni)</a>
-  <a href="/produk/grassblock/" onclick="closeMob()">🌿 Grassblock</a>
-  <a href="/produk/kanstin/" onclick="closeMob()">📐 Kanstin / Kerb</a>
+  <a href="/produk/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">🧱 Lihat Semua Produk →</a>
+  <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
+  <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
+  <a href="/produk/paving-cacing/" onclick="closeMob()">Cacing (Uni)</a>
+  <a href="/produk/paving-hexagon/" onclick="closeMob()">Hexagon</a>
+  <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
+  <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
+
   <div class="mob-head">Layanan</div>
-  <a href="/layanan/jasa-pasang/" onclick="closeMob()">🔨 Jasa Pasang Paving Block</a>
-  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">🅿️ Paving Lahan Parkir</a>
-  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">🏭 Paving Kawasan Industri</a>
-  <a href="/layanan/paving-perumahan/" onclick="closeMob()">🏠 Paving Perumahan</a>
-  <a href="/layanan/supplier-paving/" onclick="closeMob()">🚚 Supplier Material Only</a>
-  <div class="mob-head">Harga</div>
+  <a href="/layanan/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">🔨 Lihat Semua Layanan →</a>
+  <a href="/layanan/jasa-pasang/" onclick="closeMob()">Jasa Pasang Paving Block</a>
+  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
+  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">Paving Kawasan Industri</a>
+  <a href="/layanan/paving-perumahan/" onclick="closeMob()">Paving Perumahan</a>
+  <a href="/layanan/supplier-paving/" onclick="closeMob()">Supplier Material Only</a>
+
+  <div class="mob-head">Harga & Estimasi</div>
   <a href="/#kalkulator" onclick="closeMob()">🧮 Kalkulator Estimasi</a>
-  <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">💰 Daftar Harga 2026</a>
+  <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">💰 Daftar Harga Terbaru</a>
+  <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">📋 Contoh RAB Parkir 1.000 m²</a>
+
   <div class="mob-head">Area Layanan</div>
-  <a href="/jakarta/" onclick="closeMob()">Jakarta</a>
+  <a href="/area-layanan/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">📍 Lihat Semua Area →</a>
+  <a href="/jakarta/" onclick="closeMob()">DKI Jakarta</a>
+  <a href="/jakarta-timur/" onclick="closeMob()">Jakarta Timur</a>
+  <a href="/jakarta-selatan/" onclick="closeMob()">Jakarta Selatan</a>
+  <a href="/jakarta-barat/" onclick="closeMob()">Jakarta Barat</a>
+  <a href="/jakarta-utara/" onclick="closeMob()">Jakarta Utara</a>
   <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
   <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
   <a href="/jababeka/" onclick="closeMob()">Jababeka</a>
+  <a href="/mm2100/" onclick="closeMob()">MM2100</a>
+  <a href="/cibitung/" onclick="closeMob()">Cibitung</a>
+  <a href="/karawang/" onclick="closeMob()">Karawang</a>
+  <a href="/depok/" onclick="closeMob()">Depok</a>
+  <a href="/bogor/" onclick="closeMob()">Bogor</a>
+  <a href="/tangerang/" onclick="closeMob()">Tangerang</a>
+  <a href="/tangerang-selatan/" onclick="closeMob()">Tangerang Selatan</a>
+  <a href="/serpong/" onclick="closeMob()">Serpong</a>
   <a href="/bandung/" onclick="closeMob()">Bandung</a>
-  <a href="/#area-operasional" onclick="closeMob()">Lihat Semua Area →</a>
+  <a href="/purwakarta/" onclick="closeMob()">Purwakarta</a>
+
   <div class="mob-head">Tentang & Panduan</div>
   <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
-  <a href="/portofolio/" onclick="closeMob()">Portofolio Proyek</a>
+  <a href="/portofolio/" onclick="closeMob()">📸 Portofolio Proyek</a>
   <a href="/blog/" onclick="closeMob()">📚 Semua Artikel</a>
   <a href="/#faq" onclick="closeMob()">FAQ</a>
-  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">Survei & RAB Gratis</a>
+  <a href="/kontak/" onclick="closeMob()">✉️ Hubungi Kami</a>
+
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">💬 Survei & RAB Gratis</a>
 </div>
+<!-- MOB-DRAWER:END -->
 
 <div class="breadcrumb"><div class="container">
   <a href="/">SolidPaving.id</a><span>›</span><a href="/produk/">Produk</a><span>›</span>Grassblock (Blok Rumput)
@@ -524,30 +631,122 @@ nav{
   </div>
 </section>
 
+<!-- FOOTER:START -->
 <footer>
   <div class="container">
+    <!-- Row 1: Main columns -->
     <div class="foot-grid">
-      <div><a href="/"><svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="30"><g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g><text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text></svg></a>
-        <p class="foot-brand">Supplier paving block K200–K400 & jasa pasang bergaransi. Jabodetabek & Jawa Barat.</p>
+      <div class="foot-brand-col">
+        <a href="/" aria-label="SolidPaving.id" class="foot-logo-wrap">
+          <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" width="160" height="32" style="overflow:visible">
+            <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
+            <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
+          </svg>
+        </a>
+        <p class="foot-brand-text">Supplier paving block K200–K400 dan jasa pemasangan bergaransi. Untuk kontraktor, developer, dan pemilik bisnis di Jabodetabek & Jawa Barat.</p>
+        <div class="foot-badges">
+          <span class="foot-badge">SNI Bersertifikat</span>
+          <span class="foot-badge">Hidrolik Press</span>
+          <span class="foot-badge">Garansi 3 Bulan</span>
+        </div>
       </div>
-      <div class="foot-col"><h3>Produk</h3><ul>
-        <li><a href="/produk/paving-holland/">Holland (Bata)</a></li>
-        <li><a href="/produk/paving-ubin/">Ubin (Square)</a></li>
-        <li><a href="/produk/paving-cacing/">Cacing (Uni)</a></li>
-        <li><a href="/produk/grassblock/">Grassblock</a></li>
-        <li><a href="/produk/paving-hexagon/">Hexagon</a></li>
-        <li><a href="/produk/kanstin/">Kanstin / Kerb</a></li>
-      </ul></div>
-      <div class="foot-col"><h3>Kontak</h3><ul>
-        <li><a href="https://wa.me/6285943492832">0859-4349-2832</a></li>
-        <li><a href="mailto:sales@solidpaving.id">sales@solidpaving.id</a></li>
-        <li><a href="/portofolio/">Portofolio</a></li>
-        <li><a href="/blog/">Panduan</a></li>
-      </ul></div>
+
+      <div class="foot-col">
+        <h3>Produk</h3>
+        <ul>
+          <li><a href="/produk/paving-holland/">Paving Holland</a></li>
+          <li><a href="/produk/paving-ubin/">Paving Ubin</a></li>
+          <li><a href="/produk/paving-cacing/">Paving Cacing</a></li>
+          <li><a href="/produk/paving-hexagon/">Paving Hexagon</a></li>
+          <li><a href="/produk/grassblock/">Grassblock</a></li>
+          <li><a href="/produk/kanstin/">Kanstin / Kerb</a></li>
+          <li><a href="/produk/" class="foot-all">Semua Produk →</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h3>Layanan</h3>
+        <ul>
+          <li><a href="/layanan/jasa-pasang/">Jasa Pasang</a></li>
+          <li><a href="/layanan/paving-lahan-parkir/">Paving Lahan Parkir</a></li>
+          <li><a href="/layanan/paving-kawasan-industri/">Kawasan Industri</a></li>
+          <li><a href="/layanan/paving-perumahan/">Perumahan & Cluster</a></li>
+          <li><a href="/layanan/supplier-paving/">Supplier Material</a></li>
+          <li><a href="/layanan/" class="foot-all">Semua Layanan →</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h3>Perusahaan</h3>
+        <ul>
+          <li><a href="/tentang-kami/">Tentang Kami</a></li>
+          <li><a href="/portofolio/">Portofolio Proyek</a></li>
+          <li><a href="/blog/">Blog & Panduan</a></li>
+          <li><a href="/#bukti">Testimoni Klien</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/kontak/" class="foot-all">Hubungi Kami →</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col foot-kontak">
+        <h3>Kontak</h3>
+        <ul>
+          <li><a href="https://wa.me/6285943492832" class="foot-wa">📱 0859-4349-2832</a></li>
+          <li><a href="mailto:sales@solidpaving.id">✉️ sales@solidpaving.id</a></li>
+          <li class="foot-addr">📍 Jl. Raya Cilangkap No. 10<br>Jakarta Timur 13870</li>
+          <li class="foot-hours">
+            <strong>Jam Kerja:</strong><br>
+            Senin–Sabtu · 08.00–17.00 WIB<br>
+            <span class="foot-wa-247">💬 WhatsApp 24/7 untuk urgent</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="foot-bottom"><span>© 2026 SolidPaving.id</span><span>Supplier & Jasa Pasang Paving Block · Jabodetabek & Jawa Barat</span></div>
+
+    <!-- Row 2: Area Layanan strip -->
+    <div class="foot-area-strip">
+      <div class="foot-area-head">
+        <h3>Area Layanan</h3>
+        <a href="/area-layanan/" class="foot-area-all">Lihat Semua Area Layanan →</a>
+      </div>
+      <div class="foot-area-grid">
+        <a href="/jakarta/">DKI Jakarta</a>
+        <a href="/jakarta-timur/">Jakarta Timur</a>
+        <a href="/jakarta-selatan/">Jakarta Selatan</a>
+        <a href="/jakarta-barat/">Jakarta Barat</a>
+        <a href="/jakarta-utara/">Jakarta Utara</a>
+        <a href="/bekasi/">Bekasi</a>
+        <a href="/cikarang/">Cikarang</a>
+        <a href="/jababeka/">Jababeka</a>
+        <a href="/mm2100/">MM2100</a>
+        <a href="/cibitung/">Cibitung</a>
+        <a href="/karawang/">Karawang</a>
+        <a href="/depok/">Depok</a>
+        <a href="/bogor/">Bogor</a>
+        <a href="/tangerang/">Tangerang</a>
+        <a href="/tangerang-selatan/">Tangerang Selatan</a>
+        <a href="/serpong/">Serpong</a>
+        <a href="/bandung/">Bandung</a>
+        <a href="/purwakarta/">Purwakarta</a>
+      </div>
+    </div>
+
+    <!-- Row 3: Legal -->
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        <span>© 2026 SolidPaving.id</span>
+        <span class="foot-sep">·</span>
+        <span>Supplier Paving Block & Jasa Pasang</span>
+        <span class="foot-sep">·</span>
+        <span>Jabodetabek & Jawa Barat</span>
+      </div>
+      <div class="foot-legal-sub">
+        <!-- NIB akan ditambahkan setelah dokumen siap -->
+      </div>
+    </div>
   </div>
 </footer>
+<!-- FOOTER:END -->
 
 <a href="https://wa.me/6285943492832" class="float-wa" aria-label="Chat WhatsApp SolidPaving.id"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 

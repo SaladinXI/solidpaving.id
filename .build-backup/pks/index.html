@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<title>PKS · SolidPaving.id</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Archivo',sans-serif;background:#f5f5f3;color:#1a1a1a;min-height:100vh}
+.container{max-width:720px;margin:0 auto;padding:2rem 1.25rem}
+.card{background:#fff;border-radius:12px;border:0.5px solid #e0ddd6;padding:1.5rem;margin-bottom:1.25rem}
+.site-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}
+.brand{font-size:22px;font-weight:500;letter-spacing:-0.3px}.brand span{color:#4A7FB5}
+.doc-badge{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#888;border:0.5px solid #ddd;padding:4px 10px;border-radius:6px}
+.section-title{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:10px;padding-bottom:6px;border-bottom:0.5px solid #eee}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin-bottom:10px}
+.field label{font-size:11px;color:#888;display:block;margin-bottom:4px}
+.field input,.field textarea,.field select{width:100%;background:#fafaf8;border:0.5px solid #ddd;border-radius:8px;padding:8px 10px;font-size:13px;color:#1a1a1a;font-family:'Archivo',sans-serif;transition:border-color .15s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:#4A7FB5}
+.field textarea{resize:vertical;min-height:64px;line-height:1.6}
+
+/* items */
+.item-header{display:grid;grid-template-columns:1fr 70px 90px 100px 28px;gap:8px;margin-bottom:4px}
+.item-header span{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:0.5px}
+.item-row{display:grid;grid-template-columns:1fr 70px 90px 100px 28px;gap:8px;align-items:center;margin-bottom:6px}
+.item-row input,.item-row select{background:#fafaf8;border:0.5px solid #ddd;border-radius:6px;padding:6px 8px;font-size:12px;color:#1a1a1a;font-family:'Archivo',sans-serif;width:100%}
+.item-row input:focus,.item-row select:focus{outline:none;border-color:#4A7FB5}
+
+/* termin */
+.termin-header{display:grid;grid-template-columns:1fr 70px 110px 110px 28px;gap:8px;margin-bottom:4px}
+.termin-header span{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:0.5px}
+.termin-row{display:grid;grid-template-columns:1fr 70px 110px 110px 28px;gap:8px;align-items:center;margin-bottom:6px}
+.termin-row input,.termin-row select{background:#fafaf8;border:0.5px solid #ddd;border-radius:6px;padding:6px 8px;font-size:12px;color:#1a1a1a;font-family:'Archivo',sans-serif;width:100%}
+.termin-row input:focus{outline:none;border-color:#4A7FB5}
+.termin-rp{font-size:12px;font-weight:500;color:#4A7FB5;white-space:nowrap}
+.termin-warn{font-size:11px;margin-top:8px;padding-top:8px;border-top:0.5px solid #eee}
+.termin-warn.error{color:#e24b4a}.termin-warn.ok{color:#3B6D11}
+
+/* buttons */
+.btn-primary{width:100%;padding:12px;background:#4A7FB5;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Archivo',sans-serif;transition:background .15s}
+.btn-primary:hover{background:#3d6d9e}
+.btn-secondary{padding:10px 20px;background:#fff;color:#1a1a1a;border:0.5px solid #ddd;border-radius:10px;font-size:13px;cursor:pointer;font-family:'Archivo',sans-serif}
+.btn-secondary:hover{background:#f5f5f3}
+.btn-add{font-size:12px;color:#4A7FB5;background:none;border:0.5px dashed #4A7FB5;border-radius:6px;padding:5px 14px;cursor:pointer;margin-top:4px}
+.btn-del{background:none;border:none;color:#bbb;cursor:pointer;font-size:18px;line-height:1;padding:0}
+.btn-del:hover{color:#e24b4a}
+.btn-row{display:flex;gap:10px;margin-bottom:1.25rem}
+
+/* preview */
+#preview-area{display:none}
+.preview-doc{background:#fff;border-radius:12px;border:0.5px solid #e0ddd6;padding:2rem}
+.preview-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:2px solid #1a1a1a}
+.preview-brand{font-size:20px;font-weight:500}.preview-brand span{color:#4A7FB5}
+.preview-sub{font-size:11px;color:#888;margin-top:2px}
+.preview-title{text-align:right}
+.preview-title h2{font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:1px}
+.preview-title p{font-size:11px;color:#888;margin-top:3px}
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.preview-block{font-size:12px;line-height:1.8}
+.preview-block strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:2px}
+.pv-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:6px;margin-top:1rem}
+.pv-text{font-size:12px;line-height:1.7;margin-bottom:.75rem}
+table.pv-table{width:100%;font-size:12px;border-collapse:collapse;margin-bottom:1rem}
+table.pv-table th{text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:#888;padding:4px 8px;border-bottom:.5px solid #eee}
+table.pv-table td{padding:5px 8px;border-bottom:.5px solid #eee}
+table.pv-table tr:last-child td{border-bottom:none}
+.pv-total{display:flex;justify-content:space-between;padding:10px 12px;background:#f5f5f3;border-radius:8px;margin-bottom:1rem}
+.pv-total span:first-child{font-size:13px;font-weight:500}
+.pv-total span:last-child{font-size:16px;font-weight:500}
+.klausul-box{font-size:11px;color:#555;line-height:1.75;padding:12px;border:.5px solid #eee;border-radius:8px;margin-bottom:1rem}
+.klausul-box strong{color:#1a1a1a;font-weight:500}
+.ttd-area{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;font-size:12px}
+.ttd-block{text-align:center}
+.ttd-line{border-bottom:.5px solid #ccc;margin:3rem 0 4px}
+
+@media print{
+  body{background:#fff}
+  .no-print{display:none!important}
+  .container{padding:0}
+  .preview-doc{border:none;border-radius:0;padding:1rem}
+}
+@media(max-width:560px){
+  .two-col{grid-template-columns:1fr}
+  .item-header,.item-row{grid-template-columns:1fr 60px 80px 80px 24px}
+  .termin-header,.termin-row{grid-template-columns:1fr 60px 1fr 1fr 24px}
+  .preview-grid,.ttd-area{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══ FORM ═══ -->
+<div id="form-area">
+  <div class="site-header no-print">
+    <div class="brand">Solid<span>Paving</span>.id</div>
+    <div class="doc-badge">Generator PKS</div>
+  </div>
+
+  <!-- Info Dokumen -->
+  <div class="card">
+    <div class="section-title">Info Dokumen</div>
+    <div class="two-col">
+      <div class="field"><label>No. SPK</label><input type="text" id="spk-no" placeholder="SPK-20260605-001"></div>
+      <div class="field"><label>Tanggal SPK</label><input type="date" id="tgl-spk"></div>
+    </div>
+  </div>
+
+  <!-- Pihak Pertama -->
+  <div class="card">
+    <div class="section-title">Pihak Pertama — Pelaksana</div>
+    <div class="two-col">
+      <div class="field"><label>Nama</label><input type="text" id="p1-nama" value="Muh Nafis Arifuddin"></div>
+      <div class="field"><label>Jabatan</label><input type="text" id="p1-jabatan" value="Pemilik"></div>
+    </div>
+    <div class="field"><label>Nama Usaha</label><input type="text" id="p1-usaha" value="SolidPaving.id"></div>
+    <div class="two-col">
+      <div class="field"><label>Alamat</label><input type="text" id="p1-alamat" value="Jl. Raya Cilangkap No. 10a RT 004 RW 001 Kec. Cipayung, Kel. Cipayung, Jakarta Timur"></div>
+      <div class="field"><label>No. WA</label><input type="text" id="p1-wa" value="0859-4349-2832"></div>
+    </div>
+  </div>
+
+  <!-- Pihak Kedua -->
+  <div class="card">
+    <div class="section-title">Pihak Kedua — Pemberi Kerja</div>
+    <div class="two-col">
+      <div class="field"><label>Nama / Perusahaan</label><input type="text" id="p2-nama" placeholder="PT. Maju Bersama / Budi Santoso"></div>
+      <div class="field"><label>Jabatan / Posisi</label><input type="text" id="p2-jabatan" placeholder="Direktur / Owner"></div>
+    </div>
+    <div class="two-col">
+      <div class="field"><label>Alamat</label><input type="text" id="p2-alamat" placeholder="Alamat klien"></div>
+      <div class="field"><label>No. WA</label><input type="text" id="p2-wa" placeholder="0812-xxxx-xxxx"></div>
+    </div>
+  </div>
+
+  <!-- Lokasi & Lingkup -->
+  <div class="card">
+    <div class="section-title">Lokasi &amp; Lingkup Pekerjaan</div>
+    <div class="field"><label>Lokasi Proyek</label><input type="text" id="lokasi" placeholder="Jl. Industri No. 12, Cikarang Barat, Bekasi"></div>
+    <div class="field"><label>Deskripsi Pekerjaan</label><textarea id="deskripsi" placeholder="Pemasangan paving block jenis Holland uk. 10x20x6cm, luas ± 500 m², termasuk kanstin beton dan urugan pasir"></textarea></div>
+    <div class="two-col">
+      <div class="field"><label>Mulai Pekerjaan</label><input type="date" id="tgl-mulai"></div>
+      <div class="field"><label>Target Selesai</label><input type="date" id="tgl-selesai"></div>
+    </div>
+  </div>
+
+  <!-- Item -->
+  <div class="card">
+    <div class="section-title">Item Pekerjaan &amp; Harga</div>
+    <div class="item-header">
+      <span>Deskripsi</span><span>Volume</span><span>Satuan</span><span>Harga/Sat</span><span></span>
+    </div>
+    <div id="items"></div>
+    <button class="btn-add" onclick="addItem()">+ tambah item</button>
+  </div>
+
+  <!-- Termin -->
+  <div class="card">
+    <div class="section-title">Termin Pembayaran</div>
+    <div class="termin-header">
+      <span>Nama termin</span><span>%</span><span>Nilai (Rp)</span><span>Trigger pembayaran</span><span></span>
+    </div>
+    <div id="termins"></div>
+    <button class="btn-add" onclick="addTermin()">+ tambah termin</button>
+    <div class="termin-warn" id="termin-warn"></div>
+  </div>
+
+  <!-- Garansi -->
+  <div class="card">
+    <div class="section-title">Garansi &amp; Pembayaran</div>
+    <div class="two-col">
+      <div class="field">
+        <label>Masa Garansi</label>
+        <select id="garansi">
+          <option value="3 (tiga) bulan">3 bulan (standar)</option>
+          <option value="6 (enam) bulan">6 bulan</option>
+          <option value="tanpa garansi (supply only)">Supply only</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Rekening Pembayaran</label>
+        <select id="rekening">
+          <option value="BCA Cab. Cibubur Arundina — 6281846962 a.n. Muh Nafis Arifuddin">BCA — 6281846962 a.n. Muh Nafis Arifuddin</option>
+          <option value="—">Lainnya (isi di catatan)</option>
+        </select>
+      </div>
+    </div>
+    <div class="field"><label>Catatan Tambahan (opsional)</label><textarea id="catatan" placeholder="Pekerjaan galian dan persiapan lahan bukan termasuk lingkup pekerjaan ini..."></textarea></div>
+  </div>
+
+  <button class="btn-primary no-print" onclick="generatePreview()">&#128196; Buat Pratinjau SPK</button>
+</div>
+
+<!-- ═══ PREVIEW ═══ -->
+<div id="preview-area">
+  <div class="btn-row no-print">
+    <button class="btn-secondary" onclick="backToForm()">&#8592; Kembali Edit</button>
+    <button class="btn-primary" style="flex:1" onclick="printSPK()">&#128438; Cetak / Simpan PDF</button>
+  </div>
+  <div class="preview-doc" id="spk-output"></div>
+</div>
+
+</div><!-- /container -->
+<script>
+var items=[];
+var termins=[];
+var SATUAN=['m²','m¹','m³','pcs','unit','Ls','set','kg','ton','zak'];
+var TRIGGER_OPTS=[
+  'Setelah SPK ditandatangani',
+  'Saat progress pekerjaan mencapai 30%',
+  'Saat progress pekerjaan mencapai 40%',
+  'Saat progress pekerjaan mencapai 50%',
+  'Saat progress pekerjaan mencapai 60%',
+  'Saat progress pekerjaan mencapai 70%',
+  'Saat pekerjaan selesai 100%',
+  'Saat serah terima & pemeriksaan bersama',
+  'Retensi — dibayar 30 hari setelah serah terima',
+  'Retensi — dibayar 60 hari setelah serah terima',
+  'Retensi — dibayar 90 hari setelah serah terima'
+];
+
+var fmt=function(n){return new Intl.NumberFormat('id-ID').format(Math.round(n));};
+var esc=function(s){return(s||'').replace(/"/g,'&quot;');};
+var fmtDate=function(s){
+  if(!s)return'—';
+  var d=new Date(s+'T00:00:00');
+  return d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+};
+var v=function(id){return document.getElementById(id).value||'—';};
+
+// ── Items ──
+function addItem(){
+  items.push({id:Date.now(),desc:'',vol:'',sat:'m²',price:''});
+  renderItems();
+}
+function removeItem(id){items=items.filter(function(i){return i.id!==id;});renderItems();updateTermins();}
+function renderItems(){
+  var satuanOpts=SATUAN.map(function(s){return'<option>'+s+'</option>';}).join('');
+  document.getElementById('items').innerHTML=items.map(function(it){
+    var opts=SATUAN.map(function(s){return'<option'+(s===it.sat?' selected':'')+'>'+s+'</option>';}).join('');
+    return'<div class="item-row">'+
+      '<input value="'+esc(it.desc)+'" placeholder="Pemasangan paving block..." oninput="updI('+it.id+',\'desc\',this.value)">'+
+      '<input value="'+esc(it.vol)+'" placeholder="500" type="number" oninput="updI('+it.id+',\'vol\',this.value);updateTermins()">'+
+      '<select onchange="updI('+it.id+',\'sat\',this.value)">'+opts+'</select>'+
+      '<input value="'+esc(it.price)+'" placeholder="85000" type="number" oninput="updI('+it.id+',\'price\',this.value);updateTermins()">'+
+      '<button class="btn-del" onclick="removeItem('+it.id+')">&#215;</button>'+
+    '</div>';
+  }).join('');
+}
+function updI(id,k,v){var i=items.find(function(x){return x.id===id;});if(i)i[k]=v;}
+function getTotal(){
+  return items.reduce(function(s,i){return s+(parseFloat(i.vol)||0)*(parseFloat(i.price)||0);},0);
+}
+
+// ── Termins ──
+function addTermin(){
+  var id=Date.now();
+  var idx=termins.length;
+  var nama='Termin '+(idx+1);
+  var pct=idx===0?30:idx===1?60:10;
+  var trigger=idx===0?TRIGGER_OPTS[0]:idx===1?TRIGGER_OPTS[3]:TRIGGER_OPTS[7];
+  termins.push({id:id,nama:nama,pct:pct,trigger:trigger});
+  renderTermins();
+  updateTermins();
+}
+function removeTermin(id){
+  if(termins.length<=1)return;
+  termins=termins.filter(function(t){return t.id!==id;});
+  renderTermins();
+  updateTermins();
+}
+function renderTermins(){
+  var total=getTotal();
+  var triggerOpts=TRIGGER_OPTS.map(function(t){return'<option>'+t+'</option>';}).join('');
+  document.getElementById('termins').innerHTML=termins.map(function(t){
+    var rp=total>0?'Rp '+fmt(total*t.pct/100):'—';
+    var opts=TRIGGER_OPTS.map(function(o){return'<option'+(o===t.trigger?' selected':'')+'>'+o+'</option>';}).join('');
+    return'<div class="termin-row">'+
+      '<input value="'+esc(t.nama)+'" placeholder="Termin I — DP" oninput="updT('+t.id+',\'nama\',this.value)">'+
+      '<input value="'+t.pct+'" type="number" min="0" max="100" oninput="updT('+t.id+',\'pct\',parseFloat(this.value)||0);updateTermins()">'+
+      '<span class="termin-rp" id="trp-'+t.id+'">'+rp+'</span>'+
+      '<select onchange="updT('+t.id+',\'trigger\',this.value)">'+opts+'</select>'+
+      '<button class="btn-del" onclick="removeTermin('+t.id+')" title="Hapus">&#215;</button>'+
+    '</div>';
+  }).join('');
+}
+function updT(id,k,val){var t=termins.find(function(x){return x.id===id;});if(t)t[k]=val;}
+function updateTermins(){
+  var total=getTotal();
+  var sum=0;
+  termins.forEach(function(t){
+    sum+=t.pct;
+    var el=document.getElementById('trp-'+t.id);
+    if(el)el.textContent=total>0?'Rp '+fmt(total*t.pct/100):'—';
+  });
+  sum=Math.round(sum*10)/10;
+  var w=document.getElementById('termin-warn');
+  if(sum!==100){w.textContent='⚠ Total termin '+sum+'% — harus 100%';w.className='termin-warn error';}
+  else{w.textContent='✓ Total termin 100%';w.className='termin-warn ok';}
+}
+
+// ── Preview ──
+function generatePreview(){
+  var total=getTotal();
+  var garansi=document.getElementById('garansi').value;
+  var catatan=document.getElementById('catatan').value;
+  var rek=document.getElementById('rekening').value||'—';
+
+  var itemRows=items.map(function(it){
+    var vol=parseFloat(it.vol)||0;
+    var price=parseFloat(it.price)||0;
+    return'<tr><td>'+(it.desc||'—')+'</td>'+
+      '<td style="text-align:right">'+it.vol+' '+it.sat+'</td>'+
+      '<td style="text-align:right">Rp '+fmt(price)+'</td>'+
+      '<td style="text-align:right">Rp '+fmt(vol*price)+'</td></tr>';
+  }).join('');
+
+  var terminRows=termins.map(function(t){
+    return'<tr>'+
+      '<td>'+t.nama+'</td>'+
+      '<td style="text-align:center;width:50px">'+t.pct+'%</td>'+
+      '<td style="text-align:right;width:130px">'+(total>0?'Rp '+fmt(total*t.pct/100):'—')+'</td>'+
+      '<td style="font-size:11px;color:#888;padding-left:8px">'+t.trigger+'</td>'+
+    '</tr>';
+  }).join('');
+
+  // Klausul termin dinamis
+  var terminKlausul=termins.map(function(t,i){
+    return(i+1)+'. '+t.nama+' sebesar '+t.pct+'% ('+( total>0?'Rp '+fmt(total*t.pct/100):'—')+') — '+t.trigger+'.';
+  }).join('<br>');
+
+  var html=
+  '<div class="preview-header">'+
+    '<div>'+
+      '<div class="preview-brand">Solid<span>Paving</span>.id</div>'+
+      '<div class="preview-sub">Supplier &amp; Instalasi Paving Block</div>'+
+    '</div>'+
+    '<div class="preview-title">'+
+      '<h2>Perjanjian Kerja Sama</h2>'+
+      '<p>No. '+v('spk-no')+'</p>'+
+      '<p>'+fmtDate(document.getElementById('tgl-spk').value)+'</p>'+
+    '</div>'+
+  '</div>'+
+
+  '<div class="preview-grid">'+
+    '<div class="preview-block"><strong>Pihak Pertama (Pelaksana)</strong>'+
+      v('p1-nama')+' — '+v('p1-jabatan')+'<br>'+v('p1-usaha')+'<br>'+v('p1-alamat')+'<br>WA: '+v('p1-wa')+'</div>'+
+    '<div class="preview-block"><strong>Pihak Kedua (Pemberi Kerja)</strong>'+
+      v('p2-nama')+' — '+v('p2-jabatan')+'<br>'+v('p2-alamat')+'<br>WA: '+v('p2-wa')+'</div>'+
+  '</div>'+
+
+  '<div class="pv-label">Lingkup Pekerjaan</div>'+
+  '<div class="pv-text"><strong>Lokasi:</strong> '+v('lokasi')+'<br>'+
+    '<strong>Deskripsi:</strong> '+v('deskripsi')+'<br>'+
+    '<strong>Waktu:</strong> '+fmtDate(document.getElementById('tgl-mulai').value)+' s/d '+fmtDate(document.getElementById('tgl-selesai').value)+'</div>'+
+
+  (items.length?
+    '<table class="pv-table"><thead><tr><th>Uraian</th><th style="text-align:right">Volume</th><th style="text-align:right">Harga Satuan</th><th style="text-align:right">Jumlah</th></tr></thead><tbody>'+itemRows+'</tbody></table>'+
+    '<div class="pv-total"><span>Total Nilai Pekerjaan</span><span>Rp '+fmt(total)+'</span></div>':'')+
+
+  '<div class="pv-label">Termin Pembayaran</div>'+
+  '<table style="width:100%;font-size:12px;border-collapse:collapse;margin-bottom:1rem">'+
+    '<tbody>'+terminRows+'</tbody>'+
+  '</table>'+
+  '<div class="pv-text" style="font-size:12px"><strong>Rekening pembayaran:</strong> '+rek+'</div>'+
+
+  '<div class="klausul-box">'+
+    '<strong>Pasal 1 — Lingkup Pekerjaan</strong><br>'+
+    'Pihak Pertama sepakat melaksanakan pekerjaan pemasangan paving block sebagaimana tercantum dalam deskripsi di atas, dengan standar kualitas yang baik dan sesuai spesifikasi yang telah disepakati.<br><br>'+
+    '<strong>Pasal 2 — Garansi</strong><br>'+
+    'Pihak Pertama memberikan garansi selama '+garansi+' terhitung sejak tanggal serah terima. Garansi mencakup kerusakan akibat cacat material dan/atau kesalahan pemasangan. Garansi tidak berlaku untuk kerusakan akibat beban berlebih, bencana alam, atau kesalahan pihak lain.<br><br>'+
+    '<strong>Pasal 3 — Pembayaran</strong><br>'+
+    'Pembayaran dilakukan sesuai termin berikut:<br>'+terminKlausul+'<br><br>'+
+    'Apabila pembayaran termin tidak dilakukan sesuai jadwal yang disepakati, Pihak Pertama berhak menghentikan pekerjaan sementara hingga pembayaran termin terpenuhi. Pihak Pertama tidak bertanggung jawab atas keterlambatan penyelesaian yang diakibatkan oleh penghentian tersebut.<br><br>'+
+    'Apabila pelunasan tidak dilakukan dalam 14 (empat belas) hari kalender terhitung sejak pekerjaan mencapai 100%, Pihak Pertama akan menerbitkan surat peringatan tertulis. Apabila dalam 3 (tiga) hari kalender setelah surat peringatan pelunasan tetap tidak dilakukan, Pihak Pertama berhak melakukan pembongkaran atas pekerjaan yang telah dipasang tanpa kewajiban ganti rugi kepada Pihak Kedua.<br><br>'+
+    '<strong>Pasal 5 — Keadaan Kahar (Force Majeure)</strong><br>'+
+    'Apabila terjadi keadaan di luar kendali kedua belah pihak seperti bencana alam, cuaca ekstrem, gangguan keamanan, atau kelangkaan material, maka keterlambatan yang diakibatkannya tidak dapat dijadikan dasar tuntutan oleh salah satu pihak. Kedua pihak sepakat untuk menyesuaikan jadwal pekerjaan secara musyawarah sesuai kondisi yang ada.<br><br>'+
+    '<strong>Pasal 4 — Serah Terima</strong><br>'+
+    'Serah terima pekerjaan dilakukan secara bersama-sama. Apabila terdapat kekurangan, Pihak Pertama wajib menyelesaikan dalam 7 hari kerja.'+
+    (catatan?'<br><br><strong>Catatan Tambahan</strong><br>'+catatan.replace(/\n/g,'<br>'):'')+'</div>'+
+
+  '<div class="ttd-area">'+
+    '<div class="ttd-block">'+
+      '<div style="font-size:11px;color:#888">Pihak Pertama</div>'+
+      '<div class="ttd-line"></div>'+
+      '<div style="font-size:12px;font-weight:500">'+v('p1-nama')+'</div>'+
+      '<div style="font-size:11px;color:#888">'+v('p1-jabatan')+', '+v('p1-usaha')+'</div>'+
+    '</div>'+
+    '<div class="ttd-block">'+
+      '<div style="font-size:11px;color:#888">Pihak Kedua</div>'+
+      '<div class="ttd-line"></div>'+
+      '<div style="font-size:12px;font-weight:500">'+v('p2-nama')+'</div>'+
+      '<div style="font-size:11px;color:#888">'+v('p2-jabatan')+'</div>'+
+    '</div>'+
+  '</div>';
+
+  document.getElementById('spk-output').innerHTML=html;
+  document.getElementById('form-area').style.display='none';
+  document.getElementById('preview-area').style.display='block';
+  window.scrollTo(0,0);
+}
+
+function printSPK(){
+  var spkNo=document.getElementById('spk-no').value||'SPK';
+  var p2=document.getElementById('p2-nama').value||'Klien';
+  document.title='SPK - '+p2+' - '+spkNo;
+  window.print();
+  document.title='PKS · SolidPaving.id';
+}
+function backToForm(){
+  document.getElementById('form-area').style.display='block';
+  document.getElementById('preview-area').style.display='none';
+  window.scrollTo(0,0);
+}
+
+// ── Init ──
+(function(){
+  var now=new Date();
+  var ymd=now.getFullYear().toString()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0');
+  var key='spk_counter_'+ymd;
+  var count=parseInt(localStorage.getItem(key)||'0')+1;
+  localStorage.setItem(key,count);
+  document.getElementById('spk-no').value='PKS-'+ymd+'-'+String(count).padStart(3,'0');
+  document.getElementById('tgl-spk').valueAsDate=new Date();
+
+  // Default 3 termin
+  termins=[
+    {id:1,nama:'Termin I — Uang Muka (DP)',pct:30,trigger:'Setelah SPK ditandatangani'},
+    {id:2,nama:'Termin II — Progress',pct:40,trigger:'Saat progress pekerjaan mencapai 30%'},
+    {id:3,nama:'Termin III — Progress',pct:25,trigger:'Saat progress pekerjaan mencapai 70%'},
+    {id:4,nama:'Termin IV — Pelunasan',pct:5,trigger:'Saat pekerjaan selesai 100%'}
+  ];
+  renderTermins();
+  updateTermins();
+  addItem();
+})();
+</script>
+</body>
+</html>
