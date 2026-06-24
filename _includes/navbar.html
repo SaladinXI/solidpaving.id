@@ -3,19 +3,6 @@
 nav .nav-item.open .nav-panel{opacity:1;pointer-events:all;visibility:visible;}
 nav .nav-item.open .nav-btn{background:var(--bg1);color:var(--tx1);}
 nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
-
-/* Fix: Replace broken pin emoji with clean CSS dot indicator */
-nav .pnl-plain::before{
-  content:'';
-  display:inline-block;
-  width:5px;
-  height:5px;
-  background:var(--accent);
-  border-radius:50%;
-  flex-shrink:0;
-  margin-right:2px;
-}
-nav .pnl-plain{gap:8px;}
 </style>
 <nav>
   <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
@@ -45,10 +32,12 @@ nav .pnl-plain{gap:8px;}
       <button class="nav-btn">Layanan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></button>
       <div class="nav-panel">
         <div class="pnl-head">Jasa Pemasangan</div>
-        <a href="/layanan/jasa-pasang/" class="pnl-link"><div class="pnl-ico">🔨</div><div><span class="pnl-title">Jasa Pasang Paving Block</span><span class="pnl-sub">Sub-base · bedding · kanstin · garansi</span></div></a>
+        <a href="/layanan/jasa-pasang-paving-block/" class="pnl-link"><div class="pnl-ico">🔨</div><div><span class="pnl-title">Jasa Pasang Paving Block</span><span class="pnl-sub">Sub-base · bedding · kanstin · garansi</span></div></a>
         <a href="/layanan/paving-lahan-parkir/" class="pnl-link"><div class="pnl-ico">🅿️</div><div><span class="pnl-title">Paving Lahan Parkir</span><span class="pnl-sub">Komersial & industri</span></div></a>
         <a href="/layanan/paving-kawasan-industri/" class="pnl-link"><div class="pnl-ico">🏭</div><div><span class="pnl-title">Paving Kawasan Industri</span><span class="pnl-sub">Standar forklift & truk berat</span></div></a>
         <a href="/layanan/paving-perumahan/" class="pnl-link"><div class="pnl-ico">🏠</div><div><span class="pnl-title">Paving Perumahan & Cluster</span><span class="pnl-sub">Hunian, taman, carport</span></div></a>
+        <a href="/layanan/paving-jalan-komplek-perumahan/" class="pnl-link"><div class="pnl-ico">🏘️</div><div><span class="pnl-title">Paving Jalan Komplek</span><span class="pnl-sub">Cluster perumahan & developer</span></div></a>
+        <a href="/layanan/kanstin/" class="pnl-link"><div class="pnl-ico">📐</div><div><span class="pnl-title">Jasa Pasang Kanstin</span><span class="pnl-sub">Taman & jepit 40×20×10 cm</span></div></a>
         <div class="pnl-sep"></div>
         <div class="pnl-head">Supply Material</div>
         <a href="/layanan/supplier-paving/" class="pnl-link"><div class="pnl-ico">🚚</div><div><span class="pnl-title">Supplier Material Only</span><span class="pnl-sub">Kirim ke lokasi proyek Anda</span></div></a>
