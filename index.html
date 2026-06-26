@@ -504,6 +504,19 @@ html{scroll-behavior:smooth;}
 .ct-foot{margin-top:12px;padding-top:12px;border-top:1px solid var(--bds);font-size:12px;color:var(--tx3);line-height:1.5;}
 .fd-card{max-width:1000px;}
 @media(max-width:860px){.calc-top{grid-template-columns:1fr;}.calc-aside{position:static;}}
+/* mobile overflow hardening — cegah blok kalkulator melebihi lebar layar */
+.calc-top,.calc-shell,.sc,.sc-body,.size-row,.sf,.luas-box,.calc-hint,.calc-progress,.struk,.calc-trust,.fd-card{min-width:0;}
+.sf-in input{min-width:0;}
+.calc-hint,.calc-progress,.struk,.calc-trust,.fd-card{max-width:100%;}
+@media(max-width:560px){
+  .size-row{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;align-items:end;}
+  .size-row .size-sep{display:none;}
+  .size-row .luas-box{grid-column:1 / -1;}
+  .cp-dot{width:26px;height:26px;font-size:11px;}
+  .cp-line{margin:0 3px;}
+  .calc-hint{padding:12px 14px;gap:10px;}
+  .calc-hint-txt{font-size:12.5px;}
+}
 details summary{padding-top:16px;padding-bottom:16px;}
 .faq-a{padding-bottom:18px;}
 
