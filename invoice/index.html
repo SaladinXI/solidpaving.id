@@ -56,91 +56,81 @@ textarea{resize:vertical;}
 
 .pp{background:#c8d3e0;padding:24px;overflow-y:auto;display:flex;justify-content:center;align-items:flex-start;}
 
-.a4{background:#fff;width:210mm;min-height:297mm;padding:13mm 14mm 11mm;font-family:'Segoe UI',system-ui,sans-serif;color:#111827;line-height:1.55;box-shadow:0 4px 32px rgba(0,0,0,.15);}
+/* ═══════════ A4 — disciplined, single-accent ═══════════ */
+.a4{background:#fff;width:210mm;min-height:297mm;padding:14mm 15mm 11mm;font-family:'Segoe UI',system-ui,sans-serif;color:#111827;line-height:1.55;box-shadow:0 4px 32px rgba(0,0,0,.15);display:flex;flex-direction:column;}
 
-.a4-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6mm;padding-bottom:5mm;border-bottom:1.5px solid #2E3E5F;}
+.a4-head{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:5mm;border-bottom:2px solid #2E3E5F;}
 .logo-main{font-size:17pt;letter-spacing:2px;line-height:1;}
 .logo-main .s1{color:#2E3E5F;font-weight:700;}
 .logo-main .s2{color:#6A9CC8;font-weight:300;}
-.tagline{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;margin-top:3px;}
-.from-contact{font-size:7pt;color:#6A80A0;margin-top:5px;line-height:1.8;}
+.tagline{font-size:6.5pt;color:#6A80A0;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+.lh-legal{font-size:9pt;color:#111827;font-weight:600;letter-spacing:.4px;margin-top:8px;}
+.lh-reg{font-size:6.5pt;color:#6A80A0;margin-top:2px;letter-spacing:.2px;}
 .inv-info-block{text-align:right;}
-.inv-label{font-size:6.5pt;color:#6A80A0;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px;}
-.inv-number{font-size:13pt;color:#1a2a40;font-weight:600;letter-spacing:.5px;line-height:1.2;}
-.status-badge{display:inline-block;padding:2px 9px;border-radius:3px;font-size:6.5pt;letter-spacing:.5px;margin-top:4px;font-weight:600;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.inv-label{font-size:6.5pt;color:#6A80A0;letter-spacing:2px;text-transform:uppercase;margin-bottom:2px;}
+.inv-number{font-size:13pt;color:#2E3E5F;font-weight:600;letter-spacing:.5px;line-height:1.2;}
+.status-badge{display:inline-block;padding:2px 10px;border-radius:2px;font-size:6.5pt;letter-spacing:1px;text-transform:uppercase;margin-top:5px;font-weight:600;border:1px solid;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 
-.meta-row{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
-.meta-box{background:#F2F5FA;border-radius:3px;padding:5px 8px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.meta-strip{display:flex;gap:0;padding:3.5mm 0;border-bottom:1px solid #E5EAF2;}
+.meta-cell{padding-right:9mm;margin-right:9mm;border-right:1px solid #E5EAF2;}
+.meta-cell:last-child{border-right:none;margin-right:0;padding-right:0;}
 .ml{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:1px;}
 .mv{font-size:8.5pt;color:#111827;}
-.mv-due{color:#991B1B;font-weight:600;}
-.mv2{font-size:7pt;color:#6A80A0;margin-top:1px;}
+.mv.strong{font-weight:600;color:#2E3E5F;}
 
-.client-row{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
-.client-box{background:#F2F5FA;border-radius:3px;padding:7px 9px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.box-lbl{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
-.client-name{font-size:9.5pt;color:#111827;font-weight:600;margin-bottom:3px;}
+.client-row{display:grid;grid-template-columns:1fr 1fr;gap:10mm;padding:4.5mm 0 5mm;}
+.box-lbl{font-size:6.5pt;color:#6A80A0;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:3px;border-bottom:1px solid #E5EAF2;margin-bottom:5px;}
+.client-name{font-size:9.5pt;color:#111827;font-weight:600;margin-bottom:2px;}
 .client-detail{font-size:7.5pt;color:#374151;line-height:1.75;}
-.from-box{background:#2E3E5F;border-radius:3px;padding:7px 9px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.from-box .box-lbl{color:rgba(255,255,255,.5);}
-.from-box .client-name{color:#fff;font-weight:500;}
-.from-box .client-detail{color:rgba(255,255,255,.75);}
 
-table.it{width:100%;border-collapse:collapse;margin-bottom:5mm;font-size:8pt;}
+table.it{width:100%;border-collapse:collapse;font-size:8pt;}
 table.it thead tr{background:#2E3E5F;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-table.it thead th{color:#fff;padding:5px 7px;font-size:6.5pt;font-weight:600;letter-spacing:.8px;text-transform:uppercase;}
+table.it thead th{color:#fff;padding:5.5px 8px;font-size:6.5pt;font-weight:600;letter-spacing:.8px;text-transform:uppercase;}
 table.it thead th:not(:first-child){text-align:right;}
 table.it tbody tr{border-bottom:1px solid #E5EAF2;}
-table.it tbody tr:nth-child(even){background:#F8FAFC;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-table.it tbody td{padding:5px 7px;color:#111827;}
-table.it tbody td:not(:first-child){text-align:right;color:#374151;}
+table.it tbody td{padding:6px 8px;color:#111827;}
+table.it tbody td:not(:first-child){text-align:right;color:#374151;font-variant-numeric:tabular-nums;}
 table.it tbody td.td-unit{text-align:center;color:#6A80A0;font-size:7.5pt;}
 
-.pay-block{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
-.pay-table{font-size:8pt;width:100%;border-top:1px solid #E5EAF2;padding-top:3mm;}
-.pay-table tr td{padding:2.5px 0;color:#374151;}
+.pay-block{display:grid;grid-template-columns:1fr 82mm;gap:10mm;margin-top:5mm;}
+.left-notes{display:flex;flex-direction:column;gap:3mm;}
+.note-box{border-left:2px solid #2E3E5F;padding:4px 0 4px 9px;font-size:7.5pt;color:#374151;line-height:1.65;}
+.nlbl{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+
+.pay-table{font-size:8pt;width:100%;border-collapse:collapse;}
+.pay-table tr td{padding:3px 0;color:#6A80A0;font-variant-numeric:tabular-nums;}
 .pay-table tr td:last-child{text-align:right;}
-.pt-disc td{color:#991B1B;}
 .pt-gross td{color:#111827;border-top:1px solid #C8D3E0;padding-top:5px;font-weight:600;}
-.pt-termin td{color:#1E3A5F;font-weight:600;}
-.pt-paid td{color:#065F46;}
-.pt-sisa td{color:#991B1B;font-weight:600;}
+.pt-termin td{color:#2E3E5F;font-weight:600;}
+.sisa-band{margin-top:2.5mm;background:#2E3E5F;color:#fff;padding:7px 10px;display:flex;justify-content:space-between;align-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.sisa-band .sb-l{font-size:7pt;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:600;}
+.sisa-band .sb-v{font-size:11pt;font-weight:600;letter-spacing:.3px;font-variant-numeric:tabular-nums;}
+.sisa-band.lunas{background:#fff;color:#0F6E56;border:1.5px solid #0F6E56;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.sisa-band.lunas .sb-l{color:#0F6E56;opacity:.7;}
 
-.right-pay{display:flex;flex-direction:column;gap:3mm;}
-.termin-box{background:#2E3E5F;border-radius:3px;padding:8px 10px;text-align:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.tb-lbl{font-size:6.5pt;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
-.tb-pct{font-size:16pt;color:#95B3D9;font-weight:300;line-height:1;}
-.tb-amt{font-size:9pt;color:#fff;font-weight:500;margin-top:3px;}
-.tb-badge{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:3px;font-size:6.5pt;font-weight:600;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.sisa-box{border:1.5px solid #FECACA;border-radius:3px;padding:8px 10px;text-align:center;background:#FEF2F2;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.sisa-box .tb-lbl{color:#991B1B;opacity:.7;}
-.sisa-box .tb-amt{font-size:9.5pt;color:#991B1B;font-weight:600;}
-.sisa-box.lunas{background:#F0FDF4;border-color:#86EFAC;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.sisa-box.lunas .tb-lbl{color:#065F46;opacity:.7;}
-.sisa-box.lunas .tb-amt{color:#065F46;}
+.terbilang{margin-top:4mm;padding:5px 0 6px;border-top:1px solid #E5EAF2;border-bottom:1px solid #E5EAF2;font-size:7.5pt;color:#374151;}
+.terbilang .tl{font-size:6.5pt;color:#6A80A0;letter-spacing:1.5px;text-transform:uppercase;margin-right:6px;}
+.terbilang i{color:#111827;font-weight:600;}
 
-.note-guar{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
-.note-box{border-left:2.5px solid #95B3D9;padding:6px 9px;background:#F5F8FC;border-radius:0 3px 3px 0;font-size:7.5pt;color:#374151;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.guar-box{border-left:2.5px solid #059669;padding:6px 9px;background:#F0FDF4;border-radius:0 3px 3px 0;font-size:7.5pt;color:#065F46;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.nlbl{font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
-
-.bank-sig{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:5mm;}
-.bank-box{background:#F2F5FA;border-radius:3px;padding:7px 9px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-.bank-name{font-size:7.5pt;color:#1E3A5F;font-weight:600;margin-bottom:3px;}
+.bank-sig{display:grid;grid-template-columns:1fr 1fr;gap:10mm;margin-top:5mm;}
+.bank-name{font-size:8pt;color:#2E3E5F;font-weight:600;margin-bottom:2px;}
 .bank-detail{font-size:7.5pt;color:#374151;line-height:1.7;}
-.sig-box{text-align:center;padding-top:2mm;}
-.sig-space{height:36px;border-bottom:1px solid #C8D3E0;margin-bottom:4px;}
+.bank-note{font-size:6.5pt;color:#6A80A0;margin-top:5px;line-height:1.6;}
+.sig-box{text-align:center;padding-top:1mm;}
 .sig-lbl{font-size:7pt;color:#6A80A0;}
-.sig-name{font-size:8pt;color:#111827;margin-top:2px;}
+.sig-space{height:52px;}
+.sig-name{font-size:8.5pt;color:#111827;font-weight:600;border-top:1px solid #C8D3E0;display:inline-block;padding:3px 14px 0;}
+.sig-role{font-size:6.5pt;color:#6A80A0;margin-top:1px;}
 
-.a4-foot{border-top:1px solid #E5EAF2;padding-top:3mm;text-align:center;font-size:7pt;color:#6A80A0;line-height:1.8;}
-.a4-foot span{color:#374151;}
+.a4-foot{margin-top:auto;border-top:1px solid #E5EAF2;padding-top:3mm;display:flex;justify-content:space-between;gap:8mm;font-size:6.5pt;color:#6A80A0;line-height:1.7;}
+.a4-foot .fr{text-align:right;letter-spacing:.4px;}
+.a4-foot span{color:#374151;font-weight:600;}
 
 @media print{
   .fp{display:none!important;}
   body{background:#fff;}
   .pp{padding:0;background:#fff;display:block;}
-  .a4{box-shadow:none;margin:0;width:100%;min-height:auto;}
+  .a4{box-shadow:none;margin:0;width:100%;min-height:297mm;}
   @page{size:A4 portrait;margin:0;}
 }
 @media(max-width:960px){
@@ -313,15 +303,16 @@ var sLabel={
   'TAGIHAN':'Tagihan Penuh',
   'CUSTOM':'Tagihan'
 };
+/* Badge: outline saja — tidak ada blok warna pastel */
 var sBadge={
-  'PROFORMA':'background:#DBEAFE;color:#1E40AF;',
-  'TERMIN1':'background:#FEF3C7;color:#92400E;',
-  'TERMIN2':'background:#FEF3C7;color:#92400E;',
-  'TERMIN3':'background:#FEF3C7;color:#92400E;',
-  'TERMIN4':'background:#FEE2E2;color:#991B1B;',
-  'LUNAS':'background:#D1FAE5;color:#065F46;',
-  'TAGIHAN':'background:#FEF3C7;color:#92400E;',
-  'CUSTOM':'background:#FEF3C7;color:#92400E;'
+  'PROFORMA':'border-color:#6A80A0;color:#6A80A0;background:#fff;',
+  'TERMIN1':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
+  'TERMIN2':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
+  'TERMIN3':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
+  'TERMIN4':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
+  'LUNAS':'border-color:#0F6E56;color:#0F6E56;background:#fff;',
+  'TAGIHAN':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
+  'CUSTOM':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;'
 };
 var units=['m²','m¹','m³','pcs','unit','Ls','set','kg','ton','zak'];
 
@@ -334,6 +325,27 @@ function pct(){return sk()==='CUSTOM'?parseFloat(v('fCPct'))||0:sMap[sk()]||0;}
 function customLabel(){
   var l=v('fCLabel').trim();
   return l?l+(pct()?' · '+pct()+'%':''):'Tagihan'+(pct()?' · '+pct()+'%':'');
+}
+
+/* Terbilang (id) */
+function terbilang(n){
+  n=Math.round(Math.abs(n));
+  var s=['','satu','dua','tiga','empat','lima','enam','tujuh','delapan','sembilan','sepuluh','sebelas'];
+  function t(x){
+    if(x<12)return s[x];
+    if(x<20)return t(x-10)+' belas';
+    if(x<100)return t(Math.floor(x/10))+' puluh'+(x%10?' '+t(x%10):'');
+    if(x<200)return 'seratus'+(x%100?' '+t(x%100):'');
+    if(x<1000)return t(Math.floor(x/100))+' ratus'+(x%100?' '+t(x%100):'');
+    if(x<2000)return 'seribu'+(x%1000?' '+t(x%1000):'');
+    if(x<1e6)return t(Math.floor(x/1000))+' ribu'+(x%1000?' '+t(x%1000):'');
+    if(x<1e9)return t(Math.floor(x/1e6))+' juta'+(x%1e6?' '+t(x%1e6):'');
+    if(x<1e12)return t(Math.floor(x/1e9))+' miliar'+(x%1e9?' '+t(x%1e9):'');
+    return t(Math.floor(x/1e12))+' triliun'+(x%1e12?' '+t(x%1e12):'');
+  }
+  if(!n)return'Nol rupiah';
+  var w=t(n).replace(/\s+/g,' ').trim();
+  return w.charAt(0).toUpperCase()+w.slice(1)+' rupiah';
 }
 
 function genNo(){
@@ -381,10 +393,12 @@ function calc(){
 }
 
 function render(){
-  var c=calc(),key=sk(),lbl=sLabel[key]||'',bs=sBadge[key]||sBadge['TAGIHAN'];
+  var c=calc(),key=sk(),bs=sBadge[key]||sBadge['TAGIHAN'];
+  var lbl=key==='CUSTOM'?customLabel():(sLabel[key]||'');
   var no=v('fNo')||'INV-2026-001';
-  var cn=v('cName')||'—',cp=v('cPhone')||'—',ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj')||'—';
+  var cn=v('cName')||'—',cp=v('cPhone')||'—',ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj');
   var notes=v('fNotes'),guar=getGuar(),next=v('fNext');
+  var lunas=c.sisa<=0&&c.tag>0;
 
   var cleanName=(v('cName')||'Klien').replace(/[^a-zA-Z0-9\s]/g,'').trim().replace(/\s+/g,'-');
   document.title='INV-'+key+'-'+cleanName;
@@ -402,17 +416,18 @@ function render(){
   });
   if(!items.length)trows='<tr><td colspan="5" style="text-align:center;color:#6A80A0;padding:10px;font-size:7.5pt;">Belum ada item</td></tr>';
 
-  var dRow=c.disc>0?'<tr class="pt-disc"><td>Diskon</td><td style="text-align:right">− '+idr(c.disc)+'</td></tr>':'';
-  var pRow=c.pp?'<tr><td style="color:#6A80A0">PPN '+c.pp+'%</td><td style="text-align:right;color:#6A80A0">'+idr(c.ppA)+'</td></tr>':'';
-  var nxtRow=next?'<div class="mv2">Tagihan berikutnya: '+fd(next)+'</div>':'';
-  var lunas=c.sisa<=0;
+  var dRow=c.disc>0?'<tr><td>Diskon</td><td style="text-align:right">&minus;&nbsp;'+idr(c.disc)+'</td></tr>':'';
+  var pRow=c.pp?'<tr><td>PPN '+c.pp+'%</td><td style="text-align:right">'+idr(c.ppA)+'</td></tr>':'';
+  var paidRow=c.paid>0?'<tr><td>Sudah terbayar</td><td style="text-align:right">&minus;&nbsp;'+idr(c.paid)+'</td></tr>':'';
+  var nextCell=next?'<div class="meta-cell"><div class="ml">Penagihan Berikutnya</div><div class="mv">'+fd(next)+'</div></div>':'';
 
   document.getElementById('inv').innerHTML=
   '<div class="a4-head">'+
     '<div>'+
       '<div class="logo-main"><span class="s1">SOLID</span><span class="s2">PAVING</span></div>'+
       '<div class="tagline">Tidak Amblas &nbsp;·&nbsp; Bergaransi</div>'+
-      '<div class="from-contact">solidpaving.id &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id</div>'+
+      '<div class="lh-legal">PT SOLID PRECAST INDUSTRI</div>'+
+      '<div class="lh-reg">SK Kemenkumham RI No. AHU-A106589.AH.01.30.Tahun 2026</div>'+
     '</div>'+
     '<div class="inv-info-block">'+
       '<div class="inv-label">Invoice</div>'+
@@ -420,21 +435,22 @@ function render(){
       '<div><span class="status-badge" style="'+bs+'">'+lbl+'</span></div>'+
     '</div>'+
   '</div>'+
-  '<div class="meta-row">'+
-    '<div class="meta-box"><div class="ml">Tanggal Invoice</div><div class="mv">'+fd(v('fDate'))+'</div></div>'+
-    '<div class="meta-box"><div class="ml">Jatuh Tempo</div><div class="mv mv-due">'+fd(v('fDue'))+'</div>'+nxtRow+'</div>'+
+  '<div class="meta-strip">'+
+    '<div class="meta-cell"><div class="ml">Tanggal Invoice</div><div class="mv">'+fd(v('fDate'))+'</div></div>'+
+    '<div class="meta-cell"><div class="ml">Jatuh Tempo</div><div class="mv strong">'+fd(v('fDue'))+'</div></div>'+
+    nextCell+
   '</div>'+
   '<div class="client-row">'+
-    '<div class="client-box">'+
-      '<div class="box-lbl">Ditagihkan kepada</div>'+
+    '<div>'+
+      '<div class="box-lbl">Ditagihkan Kepada</div>'+
       '<div class="client-name">'+eh(cn)+'</div>'+
-      '<div class="client-detail">'+eh(cp)+(ce?'<br>'+eh(ce):'')+
-        '<br>'+eh(ca)+'<br>'+eh(cpr)+'</div>'+
+      '<div class="client-detail">'+eh(cp)+(ce?'<br>'+eh(ce):'')+'<br>'+eh(ca)+
+        (cpr?'<br><span style="color:#6A80A0">Lokasi proyek:</span> '+eh(cpr):'')+'</div>'+
     '</div>'+
-    '<div class="from-box">'+
-      '<div class="box-lbl">Dari</div>'+
-      '<div class="client-name">SolidPaving.id</div>'+
-      '<div class="client-detail">Muh Nafis Arifuddin<br>0859-4349-2832<br>sales@solidpaving.id<br>Jabodetabek &amp; Jawa Barat</div>'+
+    '<div>'+
+      '<div class="box-lbl">Diterbitkan Oleh</div>'+
+      '<div class="client-name">PT Solid Precast Industri</div>'+
+      '<div class="client-detail">Muh Nafis Arifuddin — Direktur<br>Jl. Raya Cilangkap No. 10, Cipayung, Jakarta Timur 13870<br>0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id</div>'+
     '</div>'+
   '</div>'+
   '<table class="it">'+
@@ -442,48 +458,42 @@ function render(){
     '<tbody>'+trows+'</tbody>'+
   '</table>'+
   '<div class="pay-block">'+
-    '<table class="pay-table">'+
-      '<tr><td style="color:#6A80A0">Subtotal</td><td style="text-align:right;color:#6A80A0">'+idr(c.sub)+'</td></tr>'+
-      dRow+pRow+
-      '<tr class="pt-gross"><td>Grand Total</td><td style="text-align:right">'+idr(c.gross)+'</td></tr>'+
-      (c.p<100?'<tr class="pt-termin"><td>Tagihan ini ('+c.p+'%)</td><td style="text-align:right">'+idr(c.tag)+'</td></tr>':'')+
-      '<tr class="pt-paid"><td>Sudah terbayar</td><td style="text-align:right">'+idr(c.paid)+'</td></tr>'+
-      '<tr class="pt-sisa"><td>Sisa tagihan</td><td style="text-align:right">'+idr(Math.max(0,c.sisa))+'</td></tr>'+
-    '</table>'+
-    '<div class="right-pay">'+
-      '<div class="termin-box">'+
-        '<div class="tb-lbl">Tagihan Ini</div>'+
-        '<div class="tb-pct">'+c.p+'%</div>'+
-        '<div class="tb-amt">'+idr(c.tag)+'</div>'+
-        '<span class="tb-badge" style="'+bs+'">'+lbl+'</span>'+
-      '</div>'+
-      '<div class="sisa-box'+(lunas?' lunas':'')+'">'+
-        '<div class="tb-lbl">'+(lunas?'Status':'Sisa Tagihan')+'</div>'+
-        '<div class="tb-amt">'+(lunas?'&#10003; Lunas':idr(c.sisa))+'</div>'+
+    '<div class="left-notes">'+
+      (notes?'<div class="note-box"><div class="nlbl">Catatan</div>'+eh(notes)+'</div>':'')+
+      (guar?'<div class="note-box"><div class="nlbl">Garansi</div>'+eh(guar)+'</div>':'')+
+    '</div>'+
+    '<div>'+
+      '<table class="pay-table">'+
+        '<tr><td>Subtotal</td><td style="text-align:right">'+idr(c.sub)+'</td></tr>'+
+        dRow+pRow+
+        '<tr class="pt-gross"><td>Grand Total</td><td style="text-align:right">'+idr(c.gross)+'</td></tr>'+
+        (c.p<100?'<tr class="pt-termin"><td>Tagihan ini ('+c.p+'%)</td><td style="text-align:right">'+idr(c.tag)+'</td></tr>':'')+
+        paidRow+
+      '</table>'+
+      '<div class="sisa-band'+(lunas?' lunas':'')+'">'+
+        '<span class="sb-l">'+(lunas?'Status Pembayaran':'Sisa Tagihan')+'</span>'+
+        '<span class="sb-v">'+(lunas?'LUNAS &#10003;':idr(Math.max(0,c.sisa)))+'</span>'+
       '</div>'+
     '</div>'+
   '</div>'+
-  ((notes||guar)?
-    '<div class="note-guar">'+
-      (notes?'<div class="note-box"><div class="nlbl">Catatan</div>'+eh(notes)+'</div>':'<div></div>')+
-      (guar?'<div class="guar-box"><div class="nlbl">Garansi</div>&#10003;&nbsp;'+eh(guar)+'</div>':'<div></div>')+
-    '</div>':'')+
+  '<div class="terbilang"><span class="tl">Terbilang</span><i>'+terbilang(lunas?c.tag:Math.max(0,c.sisa))+'</i></div>'+
   '<div class="bank-sig">'+
-    '<div class="bank-box">'+
-      '<div class="box-lbl" style="font-size:6.5pt;color:#6A80A0;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;">Pembayaran ke</div>'+
-      '<div class="bank-name">BCA — Cab. Cibubur Arundina</div>'+
-      '<div class="bank-detail">628-184-6962 &nbsp;·&nbsp; a.n. Muh Nafis Arifuddin</div>'+
+    '<div>'+
+      '<div class="box-lbl">Pembayaran</div>'+
+      '<div class="bank-name">Bank BCA — Cab. Cibubur Arundina</div>'+
+      '<div class="bank-detail">No. Rekening <b>628-184-6962</b> &nbsp;·&nbsp; a.n. <b>Muh Nafis Arifuddin</b></div>'+
+      '<div class="bank-note">Pembayaran dianggap sah setelah dana diterima. Mohon konfirmasi bukti transfer via WhatsApp 0859-4349-2832.</div>'+
     '</div>'+
     '<div class="sig-box">'+
-      '<div class="sig-space"></div>'+
       '<div class="sig-lbl">Hormat kami,</div>'+
+      '<div class="sig-space"></div>'+
       '<div class="sig-name">Muh Nafis Arifuddin</div>'+
-      '<div class="sig-lbl">SolidPaving.id</div>'+
+      '<div class="sig-role">Direktur — PT Solid Precast Industri</div>'+
     '</div>'+
   '</div>'+
   '<div class="a4-foot">'+
-    '<span>SolidPaving.id</span> &nbsp;·&nbsp; Supplier Paving Block &amp; Jasa Pasang Bergaransi &nbsp;·&nbsp; Jabodetabek &amp; Jawa Barat<br>'+
-    'solidpaving.id &nbsp;·&nbsp; 0859-4349-2832 &nbsp;·&nbsp; sales@solidpaving.id'+
+    '<div><span>PT Solid Precast Industri</span> — Supplier Paving Block &amp; Jasa Pemasangan Bergaransi<br>Dokumen ini diterbitkan secara resmi dan sah tanpa memerlukan cap basah.</div>'+
+    '<div class="fr">AHU-A106589.AH.01.30.TAHUN 2026<br>JAKARTA TIMUR</div>'+
   '</div>';
 }
 
