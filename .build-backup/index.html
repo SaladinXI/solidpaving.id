@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1BD3TL3WF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K1BD3TL3WF');
+</script>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/images/site-icon.svg">
@@ -113,21 +122,21 @@ nav{
 }
 
 /* ─── LAYOUT ─── */
-section{padding:80px 5%;}
+section{padding:56px 5%;}
 .container{max-width:1100px;margin:0 auto;}
 .sec-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
 h1{font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.1;letter-spacing:-1px;}
 h2{font-size:clamp(24px,3.5vw,38px);font-weight:700;line-height:1.2;letter-spacing:-.5px;}
 h3{font-size:18px;font-weight:700;}
 .blue{color:var(--blue);}
-.divider{width:48px;height:3px;background:var(--blue);margin:16px 0 32px;border-radius:2px;}
+.divider{width:48px;height:3px;background:var(--blue);margin:14px 0 24px;border-radius:2px;}
 
 /* ─── HERO ─── */
-#hero{padding-top:140px;padding-bottom:100px;background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);overflow:hidden;}
+#hero{padding-top:112px;padding-bottom:60px;background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);overflow:hidden;}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,62,95,.08);border:1px solid var(--bdr);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;color:var(--blue);margin-bottom:20px;}
-.hero-sub{font-size:18px;color:var(--tx2);margin:20px 0 36px;line-height:1.6;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
+.hero-sub{font-size:18px;color:var(--tx2);margin:16px 0 28px;line-height:1.6;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
 .btn-primary{background:var(--blue);color:#fff;padding:14px 28px;border-radius:var(--r);font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .2s;display:inline-block;}
 .btn-primary:hover{background:var(--blue2);color:#fff;transform:translateY(-1px);}
 .btn-outline{background:transparent;color:var(--tx1);padding:14px 28px;border-radius:var(--r);font-weight:600;font-size:15px;border:1px solid var(--bds);cursor:pointer;transition:all .2s;display:inline-block;}
@@ -147,23 +156,23 @@ h3{font-size:18px;font-weight:700;}
 .trust-item svg{color:rgba(255,255,255,.7);flex-shrink:0;}
 
 /* ─── STATS ─── */
-#stats{padding:64px 5%;background:var(--bg1);}
+#stats{padding:44px 5%;background:var(--bg1);}
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--bds);border-radius:var(--rl);overflow:hidden;border:1px solid var(--bdr);}
-.stat-card{background:var(--bg0);padding:32px 24px;text-align:center;}
+.stat-card{background:var(--bg0);padding:24px 20px;text-align:center;}
 .stat-num{font-size:40px;font-weight:800;color:var(--blue);letter-spacing:-2px;line-height:1;}
 .stat-label{font-size:13px;color:var(--tx3);margin-top:8px;line-height:1.4;}
 
 /* ─── PROBLEM ─── */
 #problem{background:var(--bg0);}
-.prob-intro{max-width:680px;margin-bottom:48px;font-size:18px;color:var(--tx2);line-height:1.7;}
+.prob-intro{max-width:680px;margin-bottom:32px;font-size:18px;color:var(--tx2);line-height:1.7;}
 .fail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
-.fail-card{background:var(--bg1);border:1px solid var(--bds);border-left:3px solid var(--tx3);border-radius:var(--rl);padding:24px;}
+.fail-card{background:var(--bg1);border:1px solid var(--bds);border-left:3px solid var(--tx3);border-radius:var(--rl);padding:22px;}
 .fail-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .fail-ico{width:20px;height:20px;color:var(--tx3);flex-shrink:0;}
-.fail-tag{font-size:11px;font-weight:700;color:var(--tx3);letter-spacing:1px;text-transform:uppercase;}
+.fail-tag{font-size:11px;font-weight:700;color:var(--red);letter-spacing:1px;text-transform:uppercase;}
 .fail-card h3{margin-bottom:8px;}
 .fail-card p{font-size:14px;color:var(--tx2);}
-.cost-warn{margin-top:40px;padding:28px 32px;background:rgba(192,57,43,.06);border:1px solid rgba(192,57,43,.2);border-radius:var(--rl);font-size:16px;color:var(--tx2);line-height:1.7;}
+.cost-warn{margin-top:28px;padding:22px 26px;background:rgba(192,57,43,.06);border:1px solid rgba(192,57,43,.2);border-radius:var(--rl);font-size:16px;color:var(--tx2);line-height:1.7;}
 .cost-warn strong{color:var(--red);}
 
 /* ─── METHOD ─── */
@@ -172,7 +181,7 @@ h3{font-size:18px;font-weight:700;}
 .method-img{border-radius:var(--rl);overflow:hidden;border:1px solid var(--bdr);box-shadow:0 4px 20px rgba(46,62,95,.08);}
 .method-img img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
 .steps{display:flex;flex-direction:column;}
-.step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--bds);}
+.step{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--bds);}
 .step:last-child{border-bottom:none;}
 .step-num{width:36px;height:36px;border-radius:50%;background:var(--bg2);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0;}
 .step h3{font-size:15px;margin-bottom:4px;}
@@ -334,7 +343,7 @@ h3{font-size:18px;font-weight:700;}
 .gal-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s;}
 .gal-item:hover img{transform:scale(1.03);}
 .gal-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(13,26,46,.7));font-size:11px;font-weight:600;color:#fff;}
-.testis{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:48px;}
+.testis{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:36px;}
 .testi{background:var(--bg1);border:1px solid var(--bds);border-radius:var(--rl);padding:24px;}
 .testi-stars{color:var(--blue);font-size:14px;letter-spacing:2px;margin-bottom:12px;}
 .testi-q{font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;font-style:italic;}
@@ -482,6 +491,108 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
+
+/* ════════ UPGRADE v2: GUIDED CALCULATOR + STARTUP POLISH ════════ */
+
+/* — global flow polish — */
+html{scroll-behavior:smooth;}
+@media(max-width:768px){
+  section{padding:44px 5%;}
+  #hero{padding-top:96px;padding-bottom:44px;}
+}
+#kalkulator{padding-bottom:80px;}
+.calc-top{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:24px;align-items:start;max-width:1000px;}
+.calc-top .calc-shell{max-width:none;}
+.calc-aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:14px;}
+.calc-aside .struk{margin-bottom:0;}
+.calc-trust{background:var(--bg0);border:1.5px solid var(--bds);border-radius:var(--rl);padding:18px 20px;}
+.ct-title{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.4px;margin-bottom:12px;text-transform:uppercase;}
+.ct-item{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--tx2);padding:5px 0;line-height:1.45;}
+.ct-item b{color:var(--tx1);font-weight:700;}
+.ct-ico{color:var(--blue);flex-shrink:0;margin-top:2px;}
+.ct-foot{margin-top:12px;padding-top:12px;border-top:1px solid var(--bds);font-size:12px;color:var(--tx3);line-height:1.5;}
+.fd-card{max-width:1000px;}
+@media(max-width:860px){.calc-top{grid-template-columns:1fr;}.calc-aside{position:static;}}
+/* mobile overflow hardening — cegah blok kalkulator melebihi lebar layar */
+.calc-top,.calc-shell,.sc,.sc-body,.size-row,.sf,.luas-box,.calc-hint,.calc-progress,.struk,.calc-trust,.fd-card{min-width:0;}
+.sf-in input{min-width:0;}
+.calc-hint,.calc-progress,.struk,.calc-trust,.fd-card{max-width:100%;}
+@media(max-width:560px){
+  .size-row{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;align-items:end;}
+  .size-row .size-sep{display:none;}
+  .size-row .luas-box{grid-column:1 / -1;}
+  .cp-dot{width:26px;height:26px;font-size:11px;}
+  .cp-line{margin:0 3px;}
+  .calc-hint{padding:12px 14px;gap:10px;}
+  .calc-hint-txt{font-size:12.5px;}
+}
+details summary{padding-top:16px;padding-bottom:16px;}
+.faq-a{padding-bottom:18px;}
+
+/* — area layanan: 2 kolom biar tidak terlalu panjang — */
+.area-regions{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start;}
+@media(max-width:760px){.area-regions{grid-template-columns:1fr;}}
+
+/* — ikon "problem" jadi chip bertinta (lebih hidup + memperkuat rasa khawatir) — */
+.fail-ico{width:18px;height:18px;padding:8px;box-sizing:content-box;border-radius:10px;background:rgba(192,57,43,.09);color:var(--red);stroke-width:2;flex-shrink:0;}
+.fail-card[style*="blue"] .fail-ico{background:rgba(46,62,95,.09);}
+.fail-card[style*="blue"] .fail-ico[style*="blue"]{color:var(--blue);}
+
+/* — nomor step & checklist: gradient biar pop — */
+.step-num,.check-num{background:linear-gradient(135deg,var(--blue),var(--blue2))!important;border:none!important;color:#fff!important;box-shadow:0 3px 10px rgba(46,62,95,.22);}
+
+/* — ikon trust bar lebih terang — */
+.trust-item svg{color:var(--accent)!important;}
+
+/* — micro-interaction hover (ala startup) — */
+.fail-card,.produk-card,.check-item,.testi,.porto-strip-item{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
+.fail-card:hover,.check-item:hover,.testi:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(13,26,46,.09);}
+.produk-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(13,26,46,.12);}
+.stat-card{transition:background .2s ease;}
+.stat-card:hover{background:var(--bg2);}
+.area-link-card,.btn-primary,.btn-white,.prod-link{will-change:transform;}
+
+/* — reveal on scroll (di-inject via JS, jadi tanpa JS konten tetap tampil) — */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
+.reveal.in{opacity:1;transform:none;}
+
+/* — STEP PROGRESS TRACKER — */
+.calc-progress-label{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.4px;margin-bottom:10px;}
+.calc-progress{display:flex;align-items:center;margin-bottom:18px;}
+.cp-step{display:flex;align-items:center;flex:1;}
+.cp-step:last-child{flex:0 0 auto;}
+.cp-dot{width:30px;height:30px;border-radius:50%;background:var(--bg2);border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--tx3);flex-shrink:0;cursor:pointer;transition:all .25s;position:relative;z-index:2;}
+.cp-dot:hover{border-color:var(--blue);color:var(--blue);}
+.cp-dot.done{background:var(--blue);border-color:var(--blue);color:#fff;}
+.cp-dot.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 0 0 4px rgba(46,62,95,.14);}
+.cp-line{flex:1;height:3px;background:var(--bds);margin:0 5px;border-radius:2px;transition:background .35s;}
+.cp-line.done{background:var(--blue);}
+
+/* — HINT CARD (gradient + bouncing arrow) — */
+.calc-hint{display:flex;align-items:center;gap:13px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-radius:var(--rl);padding:14px 18px;margin-bottom:16px;box-shadow:0 8px 24px rgba(46,62,95,.20);}
+.calc-hint-emoji{font-size:22px;line-height:1;animation:bounceDown 1.5s ease-in-out infinite;}
+@keyframes bounceDown{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+.calc-hint-txt{font-size:13px;line-height:1.5;}
+.calc-hint-txt b{font-weight:800;}
+
+/* — smooth step reveal saat dibuka — */
+.sc.open .sc-body{animation:scReveal .3s cubic-bezier(.16,1,.3,1);}
+@keyframes scReveal{from{opacity:0;transform:translateY(-7px);}to{opacity:1;transform:none;}}
+
+/* — tombol "Lanjut" (di-inject via JS) — */
+.sc-next{display:inline-flex;align-items:center;gap:7px;margin-top:16px;background:var(--blue);color:#fff;border:none;padding:11px 22px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(46,62,95,.22);}
+.sc-next:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 7px 18px rgba(46,62,95,.3);}
+.sc-next svg{transition:transform .2s;}
+.sc-next:hover svg{transform:translateX(3px);}
+
+/* — hormati reduced-motion — */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  .calc-hint-emoji{animation:none;}
+  .sc.open .sc-body{animation:none;}
+  .fail-card:hover,.check-item:hover,.testi:hover,.produk-card:hover{transform:none;}
+}
 </style>
 <script type="application/ld+json">
 [
@@ -822,60 +933,84 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 
 <!-- Mobile drawer -->
 <!-- MOB-DRAWER:START -->
+<style>
+/* Collapsible sections for mobile drawer */
+.mob-drawer details{border-bottom:1px solid var(--bds);}
+.mob-drawer details:last-of-type{border-bottom:0;}
+.mob-drawer details summary{padding:14px 4px;font-size:14px;font-weight:700;color:var(--tx1);list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.mob-drawer details summary::-webkit-details-marker{display:none;}
+.mob-drawer details summary::after{content:'+';font-size:22px;color:var(--tx3);font-weight:300;transition:transform .2s;}
+.mob-drawer details[open] summary{color:var(--blue);}
+.mob-drawer details[open] summary::after{transform:rotate(45deg);}
+.mob-drawer details a{font-size:13.5px;color:var(--tx2);padding:8px 4px 8px 16px;display:block;border:none;}
+.mob-drawer details a.mob-all{font-weight:700;color:var(--blue);}
+.mob-drawer .mob-cta{margin-top:18px;}
+</style>
+
 <div class="mob-drawer" id="mobDrawer">
-  <div class="mob-head">Produk</div>
-  <a href="/produk/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">🧱 Lihat Semua Produk →</a>
-  <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
-  <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
-  <a href="/produk/paving-cacing/" onclick="closeMob()">Cacing (Uni)</a>
-  <a href="/produk/paving-hexagon/" onclick="closeMob()">Hexagon</a>
-  <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
-  <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
+  <details>
+    <summary>Produk</summary>
+    <a href="/produk/" onclick="closeMob()" class="mob-all">Lihat Semua Produk →</a>
+    <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
+    <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
+    <a href="/produk/paving-cacing/" onclick="closeMob()">Cacing (Uni)</a>
+    <a href="/produk/paving-hexagon/" onclick="closeMob()">Hexagon</a>
+    <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
+    <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
+  </details>
 
-  <div class="mob-head">Layanan</div>
-  <a href="/layanan/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">🔨 Lihat Semua Layanan →</a>
-  <a href="/layanan/jasa-pasang-paving-block/" onclick="closeMob()">Jasa Pasang Paving Block</a>
-  <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
-  <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">Paving Kawasan Industri</a>
-  <a href="/layanan/paving-perumahan/" onclick="closeMob()">Paving Perumahan</a>
-  <a href="/layanan/paving-jalan-komplek-perumahan/" onclick="closeMob()">Paving Jalan Komplek</a>
-  <a href="/layanan/kanstin/" onclick="closeMob()">Jasa Pasang Kanstin</a>
-  <a href="/layanan/supplier-paving/" onclick="closeMob()">Supplier Material Only</a>
+  <details>
+    <summary>Layanan</summary>
+    <a href="/layanan/" onclick="closeMob()" class="mob-all">Lihat Semua Layanan →</a>
+    <a href="/layanan/jasa-pasang-paving-block/" onclick="closeMob()">Jasa Pasang Paving Block</a>
+    <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
+    <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">Paving Kawasan Industri</a>
+    <a href="/layanan/paving-perumahan/" onclick="closeMob()">Paving Perumahan</a>
+    <a href="/layanan/paving-jalan-komplek-perumahan/" onclick="closeMob()">Paving Jalan Komplek</a>
+    <a href="/layanan/kanstin/" onclick="closeMob()">Jasa Pasang Kanstin</a>
+    <a href="/layanan/supplier-paving/" onclick="closeMob()">Supplier Material Only</a>
+  </details>
 
-  <div class="mob-head">Harga & Estimasi</div>
-  <a href="/#kalkulator" onclick="closeMob()">🧮 Kalkulator Estimasi</a>
-  <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">💰 Daftar Harga Terbaru</a>
-  <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">📋 Contoh RAB Parkir 1.000 m²</a>
+  <details>
+    <summary>Harga &amp; Estimasi</summary>
+    <a href="/#kalkulator" onclick="closeMob()">Kalkulator Estimasi</a>
+    <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">Daftar Harga Terbaru</a>
+    <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">Contoh RAB Parkir 1.000 m²</a>
+  </details>
 
-  <div class="mob-head">Area Layanan</div>
-  <a href="/area-layanan/" onclick="closeMob()" style="font-weight:700;color:var(--blue);">📍 Lihat Semua Area →</a>
-  <a href="/jakarta/" onclick="closeMob()">DKI Jakarta</a>
-  <a href="/jakarta-timur/" onclick="closeMob()">Jakarta Timur</a>
-  <a href="/jakarta-selatan/" onclick="closeMob()">Jakarta Selatan</a>
-  <a href="/jakarta-barat/" onclick="closeMob()">Jakarta Barat</a>
-  <a href="/jakarta-utara/" onclick="closeMob()">Jakarta Utara</a>
-  <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
-  <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
-  <a href="/jababeka/" onclick="closeMob()">Jababeka</a>
-  <a href="/mm2100/" onclick="closeMob()">MM2100</a>
-  <a href="/cibitung/" onclick="closeMob()">Cibitung</a>
-  <a href="/karawang/" onclick="closeMob()">Karawang</a>
-  <a href="/depok/" onclick="closeMob()">Depok</a>
-  <a href="/bogor/" onclick="closeMob()">Bogor</a>
-  <a href="/tangerang/" onclick="closeMob()">Tangerang</a>
-  <a href="/tangerang-selatan/" onclick="closeMob()">Tangerang Selatan</a>
-  <a href="/serpong/" onclick="closeMob()">Serpong</a>
-  <a href="/bandung/" onclick="closeMob()">Bandung</a>
-  <a href="/purwakarta/" onclick="closeMob()">Purwakarta</a>
+  <details>
+    <summary>Area Layanan</summary>
+    <a href="/area-layanan/" onclick="closeMob()" class="mob-all">Lihat Semua Area Layanan →</a>
+    <a href="/jakarta/" onclick="closeMob()">DKI Jakarta</a>
+    <a href="/jakarta-selatan/" onclick="closeMob()">Jakarta Selatan</a>
+    <a href="/jakarta-timur/" onclick="closeMob()">Jakarta Timur</a>
+    <a href="/jakarta-barat/" onclick="closeMob()">Jakarta Barat</a>
+    <a href="/jakarta-utara/" onclick="closeMob()">Jakarta Utara</a>
+    <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
+    <a href="/depok/" onclick="closeMob()">Depok</a>
+    <a href="/bogor/" onclick="closeMob()">Bogor</a>
+    <a href="/tangerang/" onclick="closeMob()">Tangerang</a>
+    <a href="/tangerang-selatan/" onclick="closeMob()">Tangerang Selatan</a>
+    <a href="/serpong/" onclick="closeMob()">Serpong (BSD)</a>
+    <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
+    <a href="/jababeka/" onclick="closeMob()">Jababeka</a>
+    <a href="/mm2100/" onclick="closeMob()">MM2100</a>
+    <a href="/cibitung/" onclick="closeMob()">Cibitung</a>
+    <a href="/karawang/" onclick="closeMob()">Karawang</a>
+    <a href="/bandung/" onclick="closeMob()">Bandung</a>
+    <a href="/purwakarta/" onclick="closeMob()">Purwakarta</a>
+  </details>
 
-  <div class="mob-head">Tentang & Panduan</div>
-  <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
-  <a href="/portofolio/" onclick="closeMob()">📸 Portofolio Proyek</a>
-  <a href="/blog/" onclick="closeMob()">📚 Semua Artikel</a>
-  <a href="/#faq" onclick="closeMob()">FAQ</a>
-  <a href="/kontak/" onclick="closeMob()">✉️ Hubungi Kami</a>
+  <details>
+    <summary>Tentang &amp; Panduan</summary>
+    <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
+    <a href="/portofolio/" onclick="closeMob()">Portofolio Proyek</a>
+    <a href="/blog/" onclick="closeMob()">Semua Artikel</a>
+    <a href="/#faq" onclick="closeMob()">FAQ</a>
+    <a href="/kontak/" onclick="closeMob()">Hubungi Kami</a>
+  </details>
 
-  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">💬 Survei & RAB Gratis</a>
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">💬 Survei &amp; RAB Gratis</a>
 </div>
 <!-- MOB-DRAWER:END -->
 
@@ -924,7 +1059,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 </div>
 
 <!-- STATS -->
-<section id="stats" style="padding:64px 5%;background:var(--bg1);">
+<section id="stats" style="padding:44px 5%;background:var(--bg1);">
   <div class="container">
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Proyek dari hunian hingga kawasan industri</div></div>
@@ -944,12 +1079,12 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <div class="divider"></div>
     <p class="prob-intro">Sebagian besar kegagalan paving bukan karena bloknya jelek — melainkan karena pondasi dan pemasangan yang keliru.</p>
     <div class="fail-grid">
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><div class="fail-tag">AMBLAS</div></div><h3>Amblas di Titik Beban</h3><p>Sub-base tidak dipadatkan. Paving turun di titik beban berat, muncul cekungan dan genangan.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12 Q6 8 10 12 Q14 16 18 12 Q20 10 22 12"/></svg><div class="fail-tag">BERGELOMBANG</div></div><h3>Permukaan Bergelombang</h3><p>Abu batu tidak di-leveling presisi. Permukaan tidak rata, merusak estetika dan kendaraan.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="6" x2="20" y2="6"/><path d="M12 22V12m0 0l-4-4m4 4l4-4"/></svg><div class="fail-tag">RETAK</div></div><h3>Blok Pecah & Retak</h3><p>Mutu terlalu rendah untuk bebannya. K300 dipakai untuk truk — hancur dalam hitungan bulan.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 00-5 5c0 5 5 11 5 11s5-6 5-11a5 5 0 00-5-5z"/><circle cx="12" cy="7" r="2"/></svg><div class="fail-tag">GENANGAN</div></div><h3>Genangan Air Kronis</h3><p>Kemiringan & drainase tidak dirancang. Air menggenang dan mempercepat kerusakan sub-base.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3"/></svg><div class="fail-tag">BERGESER</div></div><h3>Paving Bergeser & Merenggang</h3><p>Tanpa kanstin pengunci, paving merenggang saat menahan beban kendaraan.</p></div>
-      <div class="fail-card" style="border-left-color:var(--blue)"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--blue)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><div class="fail-tag" style="color:var(--blue)">BAYAR 2X</div></div><h3>Anda Bayar Dua Kali</h3><p>Biaya bongkar + material baru + kerugian parkir tutup. Vendor termurah sering berakhir paling mahal.</p></div>
+      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="5" rx="1"/><path d="M9.5 10.5v4m0 0l-1.6-1.6M9.5 14.5l1.6-1.6"/><path d="M14.5 10.5v4m0 0l-1.6-1.6M14.5 14.5l1.6-1.6"/><path d="M3 20.5q9 -4 18 0"/></svg><div class="fail-tag">AMBLAS</div></div><h3>Amblas di Titik Beban</h3><p>Sub-base tidak dipadatkan. Paving turun di titik beban berat, muncul cekungan dan genangan.</p></div>
+      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11q3 -5 6 0t6 0 6 0"/><path d="M3 17h18"/></svg><div class="fail-tag">BERGELOMBANG</div></div><h3>Permukaan Bergelombang</h3><p>Abu batu tidak di-leveling presisi. Permukaan tidak rata, merusak estetika dan kendaraan.</p></div>
+      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="14" rx="1"/><path d="M11 5l-1.5 5 3 2.5-2 6.5"/></svg><div class="fail-tag">RETAK</div></div><h3>Blok Pecah & Retak</h3><p>Mutu terlalu rendah untuk bebannya. K300 dipakai untuk truk — hancur dalam hitungan bulan.</p></div>
+      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-2.2 3-3.6 5-3.6 7a3.6 3.6 0 007.2 0c0-2-1.4-4-3.6-7z"/><path d="M3 18q4.5 2.5 9 0t9 0"/><path d="M3 21q4.5 2.5 9 0t9 0"/></svg><div class="fail-tag">GENANGAN</div></div><h3>Genangan Air Kronis</h3><p>Kemiringan & drainase tidak dirancang. Air menggenang dan mempercepat kerusakan sub-base.</p></div>
+      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="8" width="7" height="8" rx="1"/><rect x="14.5" y="8" width="7" height="8" rx="1"/><path d="M11.5 12h-2.2m0 0l1.3-1.3M9.3 12l1.3 1.3"/><path d="M12.5 12h2.2m0 0l-1.3-1.3M14.7 12l-1.3 1.3"/></svg><div class="fail-tag">BERGESER</div></div><h3>Paving Bergeser & Merenggang</h3><p>Tanpa kanstin pengunci, paving merenggang saat menahan beban kendaraan.</p></div>
+      <div class="fail-card" style="border-left-color:var(--blue)"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--blue)"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7"/><path d="M5 12v3c0 1.7 3.1 3 7 3s7-1.3 7-3v-3"/></svg><div class="fail-tag" style="color:var(--blue)">BAYAR 2X</div></div><h3>Anda Bayar Dua Kali</h3><p>Biaya bongkar + material baru + kerugian parkir tutup. Vendor termurah sering berakhir paling mahal.</p></div>
     </div>
     <div class="cost-warn"><strong>Biaya perbaikan selalu lebih mahal dari biaya pengerjaan yang benar.</strong> Memilih harga terendah tanpa mempertimbangkan metode pemasangan adalah keputusan yang paling sering disesali.</div>
   </div>
@@ -986,7 +1121,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <h2>Hitung <span class="blue">Estimasi Biaya</span> Proyek Anda</h2>
     <div class="divider"></div>
     <p style="color:var(--tx2);margin-bottom:24px;max-width:520px;font-size:15px;">Isi langkah demi langkah — estimasi langsung muncul.</p>
-    <div class="calc-shell">
+    <div class="calc-top"><div class="calc-shell">
       <div class="sc open" id="sc1">
         <div class="sc-head" onclick="toggleSc(1)">
           <div class="sc-dot"><span class="sc-dot-num">1</span><svg class="sc-done-check" width="11" height="11" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -1104,7 +1239,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
           </div>
         </div>
       </div>
-      <div class="struk">
+      </div><aside class="calc-aside"><div class="struk">
         <div class="struk-top">
           <div class="struk-top-label">Total Estimasi</div>
           <div class="struk-total" id="s-grand">—</div>
@@ -1119,7 +1254,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
         </div>
         <div class="struk-note">* Estimasi awal — harga pasti dikonfirmasi setelah survei lapangan gratis.</div>
       </div>
-      <div class="fd-card">
+      <div class="calc-trust"><div class="ct-title">Kenapa SolidPaving.id</div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>Garansi <b>3 bulan tertulis</b> dalam kontrak</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span><b>50+ proyek</b> · 40rb+ m² terpasang &amp; terbukti</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>Material <b>SNI</b> · hidrolik press</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>RAB <b>&lt;24 jam</b> · survei lapangan gratis</span></div><div class="ct-foot">Estimasi ini sudah memperhitungkan metode pemasangan yang benar — bukan harga termurah yang menunggu amblas.</div></div></aside></div><div class="fd-card">
         <div class="fd-title">Data Anda</div>
         <div class="fd-sub">Isi data berikut agar tim kami bisa segera menindaklanjuti.</div>
         <div class="fd-grid">
@@ -1144,7 +1279,6 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
           </div>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -1495,7 +1629,7 @@ var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxfWKBqgsmmKPcJCNysEim
 
 var S={jenis:'holland',mutu:'K300',tebal:'8'};
 var JL={holland:'Holland (Bata)',ubin:'Ubin (Square)',cacing:'Cacing (Uni)',hexagon:'Hexagon',grassL8:'Grassblock Lubang 8',grassL5:'Grassblock Lubang 5'};
-var HP={K200:{6:75000,8:85000},K300:{6:90000,8:100000,10:150000},K350:{6:100000,8:105000,10:155000},K400:{6:110000,8:115000,10:160000}};
+var HP={K200:{6:75000,8:85000},K300:{6:90000,8:100000,10:150000},K350:{6:100000,8:110000,10:155000},K400:{6:110000,8:120000,10:160000}};
 var HG={grassL8:{pcs6:18000,pcs8:23000,perM2:7.4},grassL5:{pcs6:19000,pcs8:24000,perM2:6.25}};
 var HL={1:45000,2:35000,3:40000};
 var RK={K200:'Cocok untuk taman, trotoar, dan pejalan kaki',K300:'Ideal untuk perumahan dan parkiran motor / mobil pribadi',K350:'Pilihan menengah untuk parkiran padat dan ruko',K400:'Direkomendasikan untuk gudang dan kendaraan niaga'};
@@ -1624,5 +1758,148 @@ window.unduhPDF=function(){
 calc();
 })();
 </script>
+<script>
+/* ════ UPGRADE v2: GUIDED CALCULATOR FLOW + SCROLL REVEAL ════ */
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var TOTAL = 5;
+  var shell = document.querySelector('.calc-shell');
+
+  function sc(n){ return document.getElementById('sc'+n); }
+  function luasNow(){
+    var p=parseFloat((document.getElementById('inp-p')||{}).value)||0;
+    var l=parseFloat((document.getElementById('inp-l')||{}).value)||0;
+    return p*l;
+  }
+  function currentOpen(){
+    for(var i=1;i<=TOTAL;i++){ if(sc(i)&&sc(i).classList.contains('open')) return i; }
+    return 0;
+  }
+  function openOnly(n){
+    for(var i=1;i<=TOTAL;i++){ if(sc(i)) sc(i).classList.toggle('open', i===n); }
+  }
+  function markDone(n){ if(sc(n)) sc(n).classList.add('done'); }
+
+  window.syncProgress = function(){
+    if(luasNow()>0) markDone(1);
+    var open = currentOpen();
+    var dots = document.querySelectorAll('#calcProgress .cp-dot');
+    var lines = document.querySelectorAll('#calcProgress .cp-line');
+    dots.forEach(function(d){
+      var st = +d.getAttribute('data-step');
+      var card = sc(st);
+      var done = card && card.classList.contains('done') && st!==open;
+      d.classList.toggle('active', st===open);
+      d.classList.toggle('done', done);
+      d.textContent = done ? '✓' : st;
+    });
+    lines.forEach(function(l,idx){
+      var card = sc(idx+1);
+      l.classList.toggle('done', card && card.classList.contains('done'));
+    });
+    var lbl = document.getElementById('cpLabel');
+    if(lbl) lbl.textContent = open ? ('Langkah '+open+' dari '+TOTAL) : 'Selesai — cek estimasi di bawah ↓';
+  };
+
+  window.goSc = function(n){
+    openOnly(n); window.syncProgress();
+    var el = sc(n); if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+  };
+  window.nextSc = function(cur){
+    markDone(cur);
+    var nxt = Math.min(cur+1, TOTAL);
+    openOnly(nxt); window.syncProgress();
+    var el = sc(nxt); if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+  };
+  /* single-open accordion + progress sync (replaces basic toggle) */
+  window.toggleSc = function(n){
+    var card = sc(n);
+    var wasOpen = card && card.classList.contains('open');
+    openOnly(wasOpen ? 0 : n);
+    window.syncProgress();
+  };
+
+  if(shell){
+    /* hint card */
+    var hint = document.createElement('div');
+    hint.className = 'calc-hint';
+    hint.innerHTML = '<div class="calc-hint-emoji">👇</div><div class="calc-hint-txt"><b>Mulai dari sini.</b> Isi 5 langkah singkat — estimasi biaya muncul otomatis di bawah. Hanya butuh ±30 detik, gratis & tanpa kewajiban.</div>';
+
+    /* step label + progress dots */
+    var lbl = document.createElement('div');
+    lbl.className = 'calc-progress-label'; lbl.id = 'cpLabel'; lbl.textContent = 'Langkah 1 dari '+TOTAL;
+    var prog = document.createElement('div');
+    prog.className = 'calc-progress'; prog.id = 'calcProgress';
+    var ph='';
+    for(var i=1;i<=TOTAL;i++){
+      ph += '<div class="cp-step"><div class="cp-dot" data-step="'+i+'" onclick="goSc('+i+')">'+i+'</div>'+(i<TOTAL?'<div class="cp-line"></div>':'')+'</div>';
+    }
+    prog.innerHTML = ph;
+
+    shell.insertBefore(prog, shell.firstChild);
+    shell.insertBefore(lbl, shell.firstChild);
+    shell.insertBefore(hint, shell.firstChild);
+
+    /* inject Lanjut / Lihat Estimasi buttons into each step body */
+    for(var s=1;s<=TOTAL;s++){
+      var body = document.querySelector('#sc'+s+' .sc-body');
+      if(!body) continue;
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'sc-next';
+      if(s < TOTAL){
+        btn.innerHTML = 'Lanjut <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9,6 15,12 9,18"/></svg>';
+        (function(step){ btn.addEventListener('click', function(){ window.nextSc(step); }); })(s);
+      } else {
+        btn.innerHTML = 'Lihat Estimasi <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg>';
+        btn.addEventListener('click', function(){
+          markDone(TOTAL); openOnly(0); window.syncProgress();
+          var st = document.querySelector('.struk'); if(st) st.scrollIntoView({behavior:'smooth',block:'center'});
+        });
+      }
+      body.appendChild(btn);
+    }
+
+    /* mark a step done the moment the user makes a choice in it */
+    if(window.pickPill){
+      var _pick = window.pickPill;
+      window.pickPill = function(el){
+        _pick(el);
+        var card = el.closest('.sc'); if(card) card.classList.add('done');
+        window.syncProgress();
+      };
+    }
+    ['inp-p','inp-l'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.addEventListener('input', function(){ window.syncProgress(); });
+    });
+
+    window.syncProgress();
+  }
+
+  /* ──────── scroll reveal (staggered, opt-in via JS so no-JS stays visible) ──────── */
+  if(!rm && 'IntersectionObserver' in window){
+    var groups = [
+      '#stats .stat-card', '#problem .fail-card', '#method .step',
+      '#produk .produk-card', '#validator .check-item',
+      '#bukti .porto-strip-item', '#bukti .testi',
+      '#area-operasional .area-region-block', '#faq details'
+    ];
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    groups.forEach(function(sel){
+      var nodes = document.querySelectorAll(sel);
+      nodes.forEach(function(el,i){
+        el.classList.add('reveal');
+        el.style.transitionDelay = Math.min(i*65, 320) + 'ms';
+        io.observe(el);
+      });
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
