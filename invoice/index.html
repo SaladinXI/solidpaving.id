@@ -41,6 +41,10 @@ textarea{resize:vertical;}
 .ih span{font-size:9px;color:var(--tx3);}
 .ir{display:grid;grid-template-columns:1fr 50px 70px 88px 24px;gap:4px;align-items:start;margin-bottom:4px;}
 .ir input,.ir select{font-size:11px;padding:4px 6px;}
+.pr{display:grid;grid-template-columns:1fr 110px 92px 24px;gap:4px;align-items:start;margin-bottom:4px;}
+.pr input{font-size:11px;padding:4px 6px;}
+.ih-pay{grid-template-columns:1fr 110px 92px 24px !important;}
+.pay-note-s{font-size:9px;color:var(--tx3);margin-top:5px;line-height:1.4;}
 .bd{width:24px;height:28px;background:none;border:1px solid rgba(180,30,30,.2);border-radius:var(--r);color:var(--red);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;opacity:.7;}
 .bd:hover{opacity:1;background:rgba(180,30,30,.06);}
 .ba{background:none;border:1px dashed var(--bdr);color:var(--tx3);padding:4px 8px;border-radius:var(--r);cursor:pointer;font-size:11px;width:100%;margin-top:2px;transition:all .15s;}
@@ -210,6 +214,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
         <button class="btn-gen" onclick="genNo()">&#8635; Auto</button>
       </div>
     </div>
+    <div class="f"><label>No. PO / Referensi (opsional)</label><input id="fPO" placeholder="PO-xxxx / SPK-xxxx" oninput="render()"></div>
     <div class="f"><label>Status Pembayaran</label>
       <select id="fStatus" onchange="statusChange()">
         <option value="PROFORMA:0">Proforma</option>
@@ -217,6 +222,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
         <option value="TERMIN2:40">Termin II — Progress 40%</option>
         <option value="TERMIN3:25">Termin III — Progress 25%</option>
         <option value="TERMIN4:5">Termin IV — Pelunasan 5%</option>
+        <option value="SISA:0">Pelunasan — Sisa Tagihan (auto)</option>
         <option value="LUNAS:100">Lunas — 100%</option>
         <option value="TAGIHAN:100">Tagihan Penuh</option>
         <option value="CUSTOM:0">Persentase Kustom...</option>
@@ -225,7 +231,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
     <div id="cPctWrap" style="display:none">
       <div class="r2">
         <div class="f"><label>Nama Tagihan</label><input id="fCLabel" placeholder="Uang Muka, Cicilan 1..." oninput="render()"></div>
-        <div class="f"><label>Persentase (%)</label><input id="fCPct" type="number" min="1" max="100" value="30" oninput="render()"></div>
+        <div class="f" id="pctField"><label>Persentase (%)</label><input id="fCPct" type="number" min="1" max="100" value="30" oninput="render()"></div>
       </div>
     </div>
     <div class="r2">
@@ -265,7 +271,14 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
         </select>
       </div>
     </div>
-    <div class="f"><label>Sudah Terbayar (Rp)</label><input id="fPaid" type="number" min="0" value="0" oninput="render()"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-t">Dana Masuk (Pembayaran Diterima)</div>
+    <div class="ih ih-pay"><span>Keterangan</span><span>Tanggal</span><span>Jumlah (Rp)</span><span></span></div>
+    <div id="pWrap"></div>
+    <button class="ba" onclick="addPay()">+ tambah pembayaran</button>
+    <div class="pay-note-s">Isi tiap pembayaran yang benar-benar sudah masuk (DP, termin, dst). Sisa tagihan &amp; persentase aktual dihitung otomatis dari total dana masuk.</div>
   </div>
 
   <div class="sec">
@@ -295,9 +308,10 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
 
 <script>
 var items=[],uid=0;
+var pays=[],puid=0;
 var sMap={
   'PROFORMA':0,'TERMIN1':30,'TERMIN2':40,'TERMIN3':25,'TERMIN4':5,
-  'LUNAS':100,'TAGIHAN':100,'CUSTOM':0
+  'LUNAS':100,'TAGIHAN':100,'CUSTOM':0,'SISA':0
 };
 var sLabel={
   'PROFORMA':'Proforma',
@@ -307,7 +321,8 @@ var sLabel={
   'TERMIN4':'Termin IV · Pelunasan 5%',
   'LUNAS':'Lunas',
   'TAGIHAN':'Tagihan Penuh',
-  'CUSTOM':'Tagihan'
+  'CUSTOM':'Tagihan',
+  'SISA':'Pelunasan'
 };
 /* Badge: outline saja — tidak ada blok warna pastel */
 var sBadge={
@@ -318,7 +333,8 @@ var sBadge={
   'TERMIN4':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
   'LUNAS':'border-color:#0F6E56;color:#0F6E56;background:#fff;',
   'TAGIHAN':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
-  'CUSTOM':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;'
+  'CUSTOM':'border-color:#2E3E5F;color:#2E3E5F;background:#fff;',
+  'SISA':'border-color:#0F6E56;color:#0F6E56;background:#fff;'
 };
 var units=['m²','m¹','m³','pcs','unit','Ls','set','kg','ton','zak'];
 
@@ -362,7 +378,7 @@ function genNo(){
   document.getElementById('fNo').value='INV-'+y+m+dy+'-'+('00'+count).slice(-3);
   render();
 }
-function statusChange(){document.getElementById('cPctWrap').style.display=sk()==='CUSTOM'?'':'none';render();}
+function statusChange(){var k=sk();document.getElementById('cPctWrap').style.display=(k==='CUSTOM'||k==='SISA')?'':'none';document.getElementById('pctField').style.display=(k==='SISA')?'none':'';render();}
 function guarChange(){document.getElementById('gcWrap').style.display=v('fGuar')==='__c'?'':'none';render();}
 function getGuar(){var s=v('fGuar');return s==='__c'?v('fGuarC'):s;}
 
@@ -373,6 +389,11 @@ function addItem(){
 }
 function delItem(id){items=items.filter(function(i){return i.id!==id;});renderItems();render();}
 function upd(id,f,val){items.forEach(function(i){if(i.id===id)i[f]=val;});render();}
+function addPay(){var id=++puid;pays.push({id:id,label:'',date:'',amt:''});renderPays();render();}
+function delPay(id){pays=pays.filter(function(x){return x.id!==id;});renderPays();render();}
+function updPay(id,f,val){pays.forEach(function(x){if(x.id===id)x[f]=val;});render();}
+function renderPays(){var w=document.getElementById('pWrap');w.innerHTML='';pays.forEach(function(x){var d=document.createElement('div');d.className='pr';d.innerHTML='<input value="'+eh(x.label)+'" placeholder="DP 30% / Termin II..." oninput="updPay('+x.id+',\'label\',this.value)">'+'<input type="date" value="'+eh(x.date)+'" oninput="updPay('+x.id+',\'date\',this.value)">'+'<input type="number" min="0" value="'+eh(x.amt)+'" placeholder="5000000" oninput="updPay('+x.id+',\'amt\',this.value)" style="text-align:right">'+'<button class="bd" onclick="delPay('+x.id+')">&times;</button>';w.appendChild(d);});}
+function fmtPct(n){return (Math.round(n*10)/10).toString().replace('.',',');}
 
 function renderItems(){
   var w=document.getElementById('iWrap');w.innerHTML='';
@@ -394,8 +415,12 @@ function calc(){
   items.forEach(function(it){sub+=(parseFloat(it.qty)||0)*(parseFloat(it.price)||0);});
   var disc=parseFloat(v('fDisc'))||0,pp=parseInt(v('fPpn'))||0;
   var ad=sub-disc,ppA=ad*(pp/100),gross=ad+ppA;
-  var p=pct(),tag=gross*(p/100),paid=parseFloat(v('fPaid'))||0,sisa=tag-paid;
-  return{sub:sub,disc:disc,pp:pp,ppA:ppA,gross:gross,p:p,tag:tag,paid:paid,sisa:sisa};
+  var terbayar=0;pays.forEach(function(x){terbayar+=parseFloat(x.amt)||0;});
+  var key=sk(),p,tag;
+  if(key==='SISA'){tag=Math.max(0,gross-terbayar);p=gross>0?(tag/gross*100):0;}
+  else{p=pct();tag=gross*(p/100);}
+  var sisa=gross-terbayar-tag;
+  return{sub:sub,disc:disc,pp:pp,ppA:ppA,gross:gross,terbayar:terbayar,paid:terbayar,p:p,tag:tag,sisa:sisa};
 }
 
 function render(){
@@ -404,16 +429,16 @@ function render(){
   var no=v('fNo')||'INV-2026-001';
   var cn=v('cName')||'—',cp=v('cPhone')||'—',ce=v('cEmail'),ca=v('cAddr')||'—',cpr=v('cProj');
   var notes=v('fNotes'),guar=getGuar(),next=v('fNext');
-  var lunas=c.sisa<=0&&c.tag>0;
+  var lunas=c.gross>0&&c.tag<=0.5;
 
   var cleanName=(v('cName')||'Klien').replace(/[^a-zA-Z0-9\s]/g,'').trim().replace(/\s+/g,'-');
   document.title='INV-'+key+'-'+cleanName;
 
   document.getElementById('liveSummary').innerHTML=
-    '<div class="pay-row"><span>Grand Total</span><span>'+idr(c.gross)+'</span></div>'+
-    '<div class="pay-row em"><span>Tagihan ini ('+c.p+'%)</span><span>'+idr(c.tag)+'</span></div>'+
-    '<div class="pay-row green"><span>Terbayar</span><span>'+idr(c.paid)+'</span></div>'+
-    '<div class="pay-row red"><span>Sisa</span><span>'+idr(Math.max(0,c.sisa))+'</span></div>';
+    '<div class="pay-row"><span>Nilai Proyek</span><span>'+idr(c.gross)+'</span></div>'+
+    '<div class="pay-row green"><span>Total Terbayar</span><span>'+idr(c.terbayar)+'</span></div>'+
+    '<div class="pay-row em"><span>Tagihan invoice ini ('+fmtPct(c.p)+'%)</span><span>'+idr(c.tag)+'</span></div>'+
+    '<div class="pay-row red"><span>Sisa setelah ini</span><span>'+idr(Math.max(0,c.sisa))+'</span></div>';
 
   var trows='';
   items.forEach(function(it){
@@ -424,7 +449,9 @@ function render(){
 
   var dRow=c.disc>0?'<tr><td>Diskon</td><td style="text-align:right">&minus;&nbsp;'+idr(c.disc)+'</td></tr>':'';
   var pRow=c.pp?'<tr><td>PPN '+c.pp+'%</td><td style="text-align:right">'+idr(c.ppA)+'</td></tr>':'';
-  var paidRow=c.paid>0?'<tr><td>Sudah terbayar</td><td style="text-align:right">&minus;&nbsp;'+idr(c.paid)+'</td></tr>':'';
+  var payRows='';pays.forEach(function(x){var a=parseFloat(x.amt)||0;if(a<=0)return;payRows+='<tr class="pt-pay"><td>Terbayar: '+eh(x.label||'Pembayaran')+(x.date?' &middot; '+fd(x.date):'')+'</td><td style="text-align:right">&minus;&nbsp;'+idr(a)+'</td></tr>';});
+  var sisaRow=c.sisa>0.5?'<tr class="pt-sisa"><td>Sisa Setelah Invoice Ini</td><td style="text-align:right">'+idr(c.sisa)+'</td></tr>':'';
+  var poCell=v('fPO')?'<div class="meta-cell"><div class="ml">No. PO / Ref</div><div class="mv strong">'+eh(v('fPO'))+'</div></div>':'';
   var nextCell=next?'<div class="meta-cell"><div class="ml">Penagihan Berikutnya</div><div class="mv">'+fd(next)+'</div></div>':'';
 
   document.getElementById('inv').innerHTML=
@@ -444,7 +471,7 @@ function render(){
   '<div class="meta-strip">'+
     '<div class="meta-cell"><div class="ml">Tanggal Invoice</div><div class="mv">'+fd(v('fDate'))+'</div></div>'+
     '<div class="meta-cell"><div class="ml">Jatuh Tempo</div><div class="mv strong">'+fd(v('fDue'))+'</div></div>'+
-    nextCell+
+    poCell+nextCell+
   '</div>'+
   '<div class="client-row">'+
     '<div>'+
@@ -472,17 +499,18 @@ function render(){
       '<table class="pay-table">'+
         '<tr><td>Subtotal</td><td style="text-align:right">'+idr(c.sub)+'</td></tr>'+
         dRow+pRow+
-        '<tr class="pt-gross"><td>Grand Total</td><td style="text-align:right">'+idr(c.gross)+'</td></tr>'+
-        (c.p<100?'<tr class="pt-termin"><td>Tagihan ini ('+c.p+'%)</td><td style="text-align:right">'+idr(c.tag)+'</td></tr>':'')+
-        paidRow+
+        '<tr class="pt-gross"><td>Grand Total (Nilai Proyek)</td><td style="text-align:right">'+idr(c.gross)+'</td></tr>'+
+        payRows+
+        '<tr class="pt-termin"><td>Tagihan Invoice Ini ('+fmtPct(c.p)+'%)</td><td style="text-align:right">'+idr(c.tag)+'</td></tr>'+
+        sisaRow+
       '</table>'+
       '<div class="sisa-band'+(lunas?' lunas':'')+'">'+
-        '<span class="sb-l">'+(lunas?'Status Pembayaran':'Sisa Tagihan')+'</span>'+
-        '<span class="sb-v">'+(lunas?'LUNAS &#10003;':idr(Math.max(0,c.sisa)))+'</span>'+
+        '<span class="sb-l">'+(lunas?'Status Pembayaran':'Jumlah Tagihan Invoice Ini')+'</span>'+
+        '<span class="sb-v">'+(lunas?'LUNAS &#10003;':idr(c.tag))+'</span>'+
       '</div>'+
     '</div>'+
   '</div>'+
-  '<div class="terbilang"><span class="tl">Terbilang</span><i>'+terbilang(lunas?c.tag:Math.max(0,c.sisa))+'</i></div>'+
+  '<div class="terbilang"><span class="tl">Terbilang</span><i>'+terbilang(c.tag)+'</i></div>'+
   '<div class="bank-sig">'+
     '<div>'+
       '<div class="box-lbl">Pembayaran</div>'+
@@ -508,7 +536,7 @@ function render(){
   function p(x){return x.getFullYear()+'-'+('0'+(x.getMonth()+1)).slice(-2)+'-'+('0'+x.getDate()).slice(-2);}
   document.getElementById('fDate').value=p(t);
   document.getElementById('fDue').value=p(d);
-  addItem();addItem();render();
+  addItem();addItem();addPay();render();
 })();
 </script>
 </body>
