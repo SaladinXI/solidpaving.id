@@ -233,6 +233,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
+
+/* ==== mobile overflow hardening ==== */
+.blog-body,.blog-grid,.blog-article,.blog-container{min-width:0;}
+.blog-article{overflow-wrap:break-word;}
+.table-wrap{max-width:100%;}
+@media(max-width:900px){.blog-body,.blog-container{overflow-x:hidden;}.blog-article{max-width:100%;}}
 </style>
 </head>
 <body>
@@ -520,8 +526,9 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <h3>Daftar Isi</h3>
       <ol>
         <li><a href="#kenali-dulu-tanda-tanda-kontraktor-berma">Kenali Dulu: Tanda-Tanda Kontraktor Bermasalah</a></li>
-<li><a href="#7-cara-memilih-kontraktor-paving-yang-te">7 Cara Memilih Kontraktor Paving yang Tepat</a></li>
-<li><a href="#pertanyaan-wajib-sebelum-tanda-tangan-ko">Pertanyaan Wajib Sebelum Tanda Tangan Kontrak</a></li>
+        <li><a href="#7-cara-memilih-kontraktor-paving-yang-te">7 Cara Memilih Kontraktor Paving yang Tepat</a></li>
+        <li><a href="#pertanyaan-wajib-sebelum-tanda-tangan-ko">Pertanyaan Wajib Sebelum Tanda Tangan Kontrak</a></li>
+        <li><a href="#artikel-terkait">Artikel Terkait</a></li>
       </ol>
     </aside>
     <article class="blog-article">
@@ -641,6 +648,28 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <div class="callout">
       <p><strong>SolidPaving.id memenuhi seluruh kriteria di atas.</strong> Setiap penawaran dimulai dengan survei lapangan gratis, RAB rinci per komponen, pemadatan sub-base dengan alat mekanis, garansi tertulis 3 bulan, dan paving hidrolik press bersertifikat SNI. Kami percaya bahwa transparansi adalah fondasi kepercayaan.</p>
     </div>
+
+    
+
+    
+
+    <div class="related">
+      <h2 id="artikel-terkait">Artikel Terkait</h2>
+      <div class="rel-grid">
+        <a href="/blog/kenapa-paving-amblas/" class="rel-card">
+          <div class="rel-tag">Tips Proyek</div>
+          <div class="rel-title">Kenapa Paving Amblas? 6 Penyebab yang Bisa Dicegah</div>
+        </a>
+        <a href="/blog/paving-block-k300-vs-k400/" class="rel-card">
+          <div class="rel-tag">Panduan Teknis</div>
+          <div class="rel-title">K300 vs K400 — Mana yang Tepat?</div>
+        </a>
+        <a href="/blog/biaya-paving-lahan-parkir-1000m2/" class="rel-card">
+          <div class="rel-tag">Panduan Biaya</div>
+          <div class="rel-title">Estimasi Biaya Paving Lahan Parkir 1.000 m²</div>
+        </a>
+      </div>
+    </div>
     </article>
   </div>
 </main>
@@ -648,16 +677,16 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <section class="faq-section">
   <div class="container-inner">
     <h2>Pertanyaan yang Sering Ditanyakan</h2>
-    <details><summary>Apa tanda-tanda kontraktor paving yang tidak profesional?</summary><div class="faq-a">Tanda paling jelas: memberi harga tanpa survei lapangan, RAB tidak merinci komponen, tidak membahas pemadatan sub-base, tidak ada garansi tertulis, dan tidak bisa menunjukkan portofolio atau sertifikat SNI. Kontraktor yang langsung kasih harga murah tanpa melihat kondisi tanah hampir pasti akan melewati tahap penting.</div></details>
-    <details><summary>Berapa lama garansi yang wajar dari kontraktor paving?</summary><div class="faq-a">Garansi perbaikan 3–6 bulan adalah standar minimum yang wajar. Kontraktor premium menawarkan 1 tahun. Yang terpenting: garansi harus tertulis dalam kontrak, bukan hanya janji lisan, dengan klausul yang jelas soal apa yang dicakup dan prosedur klaimnya.</div></details>
-    <details><summary>Apakah kontraktor paling mahal pasti yang terbaik?</summary><div class="faq-a">Tidak selalu. Yang lebih penting adalah spesifikasi teknis yang ditawarkan: apakah sub-base dipadatkan dengan benar, apakah kanstin termasuk, mutu paving apa yang digunakan, dan apakah ada garansi. Kontraktor dengan harga menengah tapi spesifikasi lengkap hampir selalu lebih baik dari yang termahal tapi RAB-nya tidak jelas.</div></details>
-    <details><summary>Bagaimana cara verifikasi pengalaman kontraktor paving?</summary><div class="faq-a">Minta portofolio proyek yang sudah berumur minimal 1 tahun dan minta kontak klien yang bisa dihubungi. Tanyakan langsung ke klien tersebut: apakah ada paving yang amblas? Apakah kontraktor responsif saat ada masalah? Ini lebih bermakna dari ratusan testimoni di website.</div></details>
+    <details><summary>Apa tanda-tanda kontraktor paving yang tidak profesional?</summary><div class="faq-a"><p>Tanda paling jelas: memberi harga tanpa survei lapangan, RAB tidak merinci komponen, tidak membahas pemadatan sub-base, tidak ada garansi tertulis, dan tidak bisa menunjukkan portofolio atau sertifikat SNI. Kontraktor yang langsung kasih harga murah tanpa melihat kondisi tanah hampir pasti akan melewati tahap penting.</p></div></details>
+    <details><summary>Berapa lama garansi yang wajar dari kontraktor paving?</summary><div class="faq-a"><p>Garansi perbaikan 3–6 bulan adalah standar minimum yang wajar. Kontraktor premium menawarkan 1 tahun. Yang terpenting: garansi harus tertulis dalam kontrak, bukan hanya janji lisan, dengan klausul yang jelas soal apa yang dicakup dan prosedur klaimnya.</p></div></details>
+    <details><summary>Apakah kontraktor paling mahal pasti yang terbaik?</summary><div class="faq-a"><p>Tidak selalu. Yang lebih penting adalah spesifikasi teknis yang ditawarkan: apakah sub-base dipadatkan dengan benar, apakah kanstin termasuk, mutu paving apa yang digunakan, dan apakah ada garansi. Kontraktor dengan harga menengah tapi spesifikasi lengkap hampir selalu lebih baik dari yang termahal tapi RAB-nya tidak jelas.</p></div></details>
+    <details><summary>Bagaimana cara verifikasi pengalaman kontraktor paving?</summary><div class="faq-a"><p>Minta portofolio proyek yang sudah berumur minimal 1 tahun dan minta kontak klien yang bisa dihubungi. Tanyakan langsung ke klien tersebut: apakah ada paving yang amblas? Apakah kontraktor responsif saat ada masalah? Ini lebih bermakna dari ratusan testimoni di website.</p></div></details>
   </div>
 </section>
 
 <section class="blog-cta">
   <h2>Ingin Bandingkan dengan Kontraktor Lain?</h2>
-  <p>Silakan. Kami justru mendorong Anda mendapat beberapa penawaran. Tim SolidPaving.id siap survei lapangan, buat RAB rinci, dan biarkan kualitas spesifikasi kami berbicara sendiri.</p>
+  <p>Silakan. Kami justru mendorong Anda mendapat beberapa penawaran. Tim SolidPaving.id siap survei lapangan, buat RAB rinci, dan biarkan kualitas spesifikasi kami berbicara sendiri. Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat · Min. 30 m²</p>
   <div class="cta-buttons">
     <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20baca%20artikel%20tips%20kontraktor%20dan%20ingin%20minta%20penawaran%20untuk%20proyek%20paving%20saya." class="btn-white">Chat WhatsApp Sekarang</a>
     <a href="/#kalkulator" class="btn-ow">Hitung Estimasi Biaya</a>
@@ -770,9 +799,12 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <script>
 (function(){
   var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
-  if(!ham || !drawer) return;
-  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
+  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));});
   window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
+  var items=document.querySelectorAll('.nav-item');
+  items.forEach(function(item){var btn=item.querySelector('.nav-btn');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var open=item.classList.contains('js-open');items.forEach(function(o){o.classList.remove('js-open');});if(!open)item.classList.add('js-open');});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))items.forEach(function(i){i.classList.remove('js-open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')items.forEach(function(i){i.classList.remove('js-open');});});
 })();
 </script>
 </body>

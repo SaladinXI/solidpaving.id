@@ -265,6 +265,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
+
+/* ==== mobile overflow hardening ==== */
+.blog-body,.blog-grid,.blog-article,.blog-container{min-width:0;}
+.blog-article{overflow-wrap:break-word;}
+.table-wrap{max-width:100%;}
+@media(max-width:900px){.blog-body,.blog-container{overflow-x:hidden;}.blog-article{max-width:100%;}}
 </style>
 </head>
 <body>
@@ -554,10 +560,11 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <h3>Daftar Isi</h3>
       <ol>
         <li><a href="#6-penyebab-utama-paving-parkir-amblas">6 Penyebab Utama Paving Parkir Amblas</a></li>
-<li><a href="#cara-membedakan-vendor-yang-benar-vs-ven">Cara Membedakan Vendor yang Benar vs Vendor Asal Murah</a></li>
-<li><a href="#solusi-6-tahap-yang-tidak-boleh-dilewati">Solusi: 6 Tahap yang Tidak Boleh Dilewati</a></li>
-<li><a href="#checklist-sebelum-setujui-penawaran-vend">Checklist Sebelum Setujui Penawaran Vendor</a></li>
-<li><a href="#bagaimana-jika-paving-sudah-terlanjur-am">Bagaimana Jika Paving Sudah Terlanjur Amblas?</a></li>
+        <li><a href="#cara-membedakan-vendor-yang-benar-vs-ven">Cara Membedakan Vendor yang Benar vs Vendor Asal Murah</a></li>
+        <li><a href="#solusi-6-tahap-yang-tidak-boleh-dilewati">Solusi: 6 Tahap yang Tidak Boleh Dilewati</a></li>
+        <li><a href="#checklist-sebelum-setujui-penawaran-vend">Checklist Sebelum Setujui Penawaran Vendor</a></li>
+        <li><a href="#bagaimana-jika-paving-sudah-terlanjur-am">Bagaimana Jika Paving Sudah Terlanjur Amblas?</a></li>
+        <li><a href="#artikel-terkait">Artikel Terkait</a></li>
       </ol>
     </aside>
     <article class="blog-article">
@@ -737,6 +744,28 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <div class="callout warn">
       <p><strong>Perhatian:</strong> Perbaikan tanpa memperbaiki akar masalah (sub-base yang tidak stabil) hanya akan menghasilkan masalah yang sama dalam beberapa bulan ke depan. Pastikan penyebab amblas diidentifikasi dan ditangani tuntas sebelum memasang ulang.</p>
     </div>
+
+    
+
+    
+
+    <div class="related">
+      <h2 id="artikel-terkait">Artikel Terkait</h2>
+      <div class="rel-grid">
+        <a href="/blog/harga-pasang-paving-block-2026/" class="rel-card">
+          <div class="rel-tag">Panduan Biaya</div>
+          <div class="rel-title">Harga Pasang Paving Block per m² 2026 — Semua Komponen Biaya</div>
+        </a>
+        <a href="/blog/paving-block-k300-vs-k400/" class="rel-card">
+          <div class="rel-tag">Panduan Teknis</div>
+          <div class="rel-title">Paving Block K300 vs K400 — Mana yang Tepat untuk Proyek Anda?</div>
+        </a>
+        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="rel-card">
+          <div class="rel-tag">Kalkulator</div>
+          <div class="rel-title">Cara Menghitung Kebutuhan Paving Block per m²</div>
+        </a>
+      </div>
+    </div>
     </article>
   </div>
 </main>
@@ -744,17 +773,17 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <section class="faq-section">
   <div class="container-inner">
     <h2>Pertanyaan yang Sering Ditanyakan</h2>
-    <details><summary>Kenapa paving block lahan parkir cepat amblas?</summary><div class="faq-a">Penyebab utama adalah sub-base yang tidak dipadatkan dengan benar. Tanah dasar yang tidak stabil akan terus memadat seiring beban kendaraan, menarik paving di atasnya ikut turun. Penyebab lain termasuk bedding tidak rata, mutu paving terlalu rendah untuk bebannya, drainase buruk, dan tidak ada kanstin pengunci.</div></details>
-    <details><summary>Berapa lama paving block seharusnya bertahan?</summary><div class="faq-a">Paving block yang dipasang dengan benar bisa bertahan 15–25 tahun dengan perawatan minimal. Jika amblas dalam 1–2 tahun, hampir pasti ada tahap pemasangan yang dilewati — paling sering pemadatan sub-base.</div></details>
-    <details><summary>Apakah paving yang sudah amblas bisa diperbaiki tanpa bongkar total?</summary><div class="faq-a">Bisa. Ini salah satu keunggulan paving block dibanding aspal atau beton cor. Cukup bongkar bagian yang bermasalah, perbaiki sub-base, padatkan ulang, lalu pasang kembali. Biayanya jauh lebih hemat dari mengganti seluruh area.</div></details>
-    <details><summary>Apa bedanya paving hidrolik press dan cetak manual?</summary><div class="faq-a">Paving hidrolik press diproduksi dengan tekanan mesin yang seragam sehingga setiap blok punya kepadatan dan kekuatan yang konsisten. Paving cetak manual kepadatannya tidak merata — kekuatan antar blok bisa berbeda-beda dan lebih mudah retak untuk penggunaan komersial.</div></details>
-    <details><summary>Berapa biaya perbaikan paving yang sudah amblas?</summary><div class="faq-a">Biaya perbaikan tergantung luas area yang rusak dan kondisi sub-base. Secara umum, perbaikan parsial jauh lebih mahal per m² dibanding pemasangan yang benar dari awal — belum termasuk kerugian operasional selama parkir tidak bisa digunakan.</div></details>
+    <details><summary>Kenapa paving block lahan parkir cepat amblas?</summary><div class="faq-a"><p>Penyebab utama adalah sub-base yang tidak dipadatkan dengan benar. Tanah dasar yang tidak stabil akan terus memadat seiring beban kendaraan, menarik paving di atasnya ikut turun. Penyebab lain termasuk bedding tidak rata, mutu paving terlalu rendah untuk bebannya, drainase buruk, dan tidak ada kanstin pengunci.</p></div></details>
+    <details><summary>Berapa lama paving block seharusnya bertahan?</summary><div class="faq-a"><p>Paving block yang dipasang dengan benar bisa bertahan 15–25 tahun dengan perawatan minimal. Jika amblas dalam 1–2 tahun, hampir pasti ada tahap pemasangan yang dilewati — paling sering pemadatan sub-base.</p></div></details>
+    <details><summary>Apakah paving yang sudah amblas bisa diperbaiki tanpa bongkar total?</summary><div class="faq-a"><p>Bisa. Ini salah satu keunggulan paving block dibanding aspal atau beton cor. Cukup bongkar bagian yang bermasalah, perbaiki sub-base, padatkan ulang, lalu pasang kembali. Biayanya jauh lebih hemat dari mengganti seluruh area.</p></div></details>
+    <details><summary>Apa bedanya paving hidrolik press dan cetak manual?</summary><div class="faq-a"><p>Paving hidrolik press diproduksi dengan tekanan mesin yang seragam sehingga setiap blok punya kepadatan dan kekuatan yang konsisten. Paving cetak manual kepadatannya tidak merata — kekuatan antar blok bisa berbeda-beda dan lebih mudah retak untuk penggunaan komersial.</p></div></details>
+    <details><summary>Berapa biaya perbaikan paving yang sudah amblas?</summary><div class="faq-a"><p>Biaya perbaikan tergantung luas area yang rusak dan kondisi sub-base. Secara umum, perbaikan parsial jauh lebih mahal per m² dibanding pemasangan yang benar dari awal — belum termasuk kerugian operasional selama parkir tidak bisa digunakan.</p></div></details>
   </div>
 </section>
 
 <section class="blog-cta">
   <h2>Mau Pastikan Proyek Paving Anda Tidak Amblas?</h2>
-  <p>Survei lapangan gratis — tim kami periksa kondisi tanah, rekomendasikan mutu yang tepat, dan beri RAB transparan. Tanpa kewajiban apapun.</p>
+  <p>Survei lapangan gratis — tim kami periksa kondisi tanah, rekomendasikan mutu yang tepat, dan beri RAB transparan. Tanpa kewajiban apapun. Senin–Sabtu 08.00–17.00 WIB · Melayani Jabodetabek & Jawa Barat · Min. 30 m²</p>
   <div class="cta-buttons">
     <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20baca%20artikel%20paving%20amblas%20dan%20ingin%20konsultasi%20proyek%20saya." class="btn-white">Chat WhatsApp Sekarang</a>
     <a href="/#kalkulator" class="btn-ow">Hitung Estimasi Biaya</a>
@@ -866,10 +895,40 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 
 <script>
 (function(){
-  var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
-  if(!ham || !drawer) return;
-  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
-  window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
+  var ham = document.getElementById('navHam');
+  var drawer = document.getElementById('mobDrawer');
+  ham.addEventListener('click', function(){
+    var o = ham.classList.toggle('open');
+    drawer.classList.toggle('open', o);
+    ham.setAttribute('aria-expanded', String(o));
+  });
+  window.closeMob = function(){
+    ham.classList.remove('open');
+    drawer.classList.remove('open');
+    ham.setAttribute('aria-expanded','false');
+  };
+
+  var navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(function(item){
+    var btn = item.querySelector('.nav-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = item.classList.contains('js-open');
+      navItems.forEach(function(other){ other.classList.remove('js-open'); });
+      if (!isOpen) item.classList.add('js-open');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.nav-item')) {
+      navItems.forEach(function(item){ item.classList.remove('js-open'); });
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      navItems.forEach(function(item){ item.classList.remove('js-open'); });
+    }
+  });
 })();
 </script>
 </body>

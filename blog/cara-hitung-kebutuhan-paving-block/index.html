@@ -237,6 +237,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
+
+/* ==== mobile overflow hardening ==== */
+.blog-body,.blog-grid,.blog-article,.blog-container{min-width:0;}
+.blog-article{overflow-wrap:break-word;}
+.table-wrap{max-width:100%;}
+@media(max-width:900px){.blog-body,.blog-container{overflow-x:hidden;}.blog-article{max-width:100%;}}
 </style>
 </head>
 <body>
@@ -524,9 +530,10 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <h3>Daftar Isi</h3>
       <ol>
         <li><a href="#kalkulator-estimasi-material-paving">Kalkulator Estimasi Material Paving</a></li>
-<li><a href="#panduan-lengkap-5-komponen-yang-perlu-di">Panduan Lengkap: 5 Komponen yang Perlu Dihitung</a></li>
-<li><a href="#komponen-material-per-lapisan-konstruksi">Komponen Material per Lapisan Konstruksi</a></li>
-<li><a href="#kesalahan-perhitungan-yang-paling-sering">Kesalahan Perhitungan yang Paling Sering Terjadi</a></li>
+        <li><a href="#panduan-lengkap-5-komponen-yang-perlu-di">Panduan Lengkap: 5 Komponen yang Perlu Dihitung</a></li>
+        <li><a href="#komponen-material-per-lapisan-konstruksi">Komponen Material per Lapisan Konstruksi</a></li>
+        <li><a href="#kesalahan-perhitungan-yang-paling-sering">Kesalahan Perhitungan yang Paling Sering Terjadi</a></li>
+        <li><a href="#artikel-terkait">Artikel Terkait</a></li>
       </ol>
     </aside>
     <article class="blog-article">
@@ -606,46 +613,52 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 
     <div class="step-list">
       
-        <div class="step-num">1</div>
+        
         <div class="step-body">
           <h3>Luas Area Bersih</h3>
           <p>Ukur panjang dan lebar area yang akan dipaving. Untuk area tidak beraturan, bagi menjadi beberapa bagian persegi panjang, hitung masing-masing, lalu jumlahkan. Kurangi area yang tidak perlu dipaving (kolam, taman tetap, bangunan).</p>
           <div class="formula">Luas = Panjang × Lebar (m²)</div>
         </div>
       
-        <div class="step-num">2</div>
+      
+        
         <div class="step-body">
           <h3>Faktor Waste (Pemborosan Wajar)</h3>
           <p>Selalu ada material yang terbuang: blok yang perlu dipotong di tepi, yang pecah saat pengiriman atau pemasangan, dan sisa potongan yang tidak bisa dipakai. Ini bukan kesalahan — ini fakta lapangan yang harus diantisipasi.</p>
-          <div class="formula">Material Paving = Luas × (1 + faktor waste)<p style="margin-top:10px;font-size:13px;color:var(--tx3);">Pola lurus: +5% · Herringbone 45°: +8% · Diagonal/kompleks: +10%</p>
+          <div class="formula">Material Paving = Luas × (1 + faktor waste)</div>
+          <p style="margin-top:10px;font-size:13px;color:var(--tx3);">Pola lurus: +5% · Herringbone 45°: +8% · Diagonal/kompleks: +10%</p>
         </div>
-      </div>
       
-        <div class="step-num">3</div>
+      
+        
         <div class="step-body">
           <h3>Lapisan Bedding (Abu Batu)</h3>
           <p>Lapisan abu batu setebal 3–5 cm (standar 4 cm) dibutuhkan di seluruh area sebagai bantalan paving. Volume dihitung berdasarkan luas area bersih dikali ketebalan lapisan.</p>
           <div class="formula">Volume Bedding = Luas × 0,04 m (m³)</div>
         </div>
       
-        <div class="step-num">4</div>
+      
+        
         <div class="step-body">
           <h3>Kanstin Pengunci Tepi</h3>
           <p>Kanstin dipasang mengelilingi seluruh perimeter area. Panjang kanstin yang dibutuhkan adalah keliling area (2 × panjang + 2 × lebar untuk area persegi). Tambahkan 5% untuk potongan sudut dan sambungan.</p>
           <div class="formula">Panjang Kanstin = Keliling Area × 1,05 (meter linear)</div>
         </div>
       
-        <div class="step-num">5</div>
+      
+        
         <div class="step-body">
           <h3>Sub-Base & Material Timbunan</h3>
           <p>Kebutuhan material sub-base (sirtu, agregat) bergantung pada kondisi tanah dasar yang hanya bisa diketahui lewat survei lapangan. Area dengan tanah lunak membutuhkan lebih banyak material pemadatan dibanding tanah yang sudah padat alami. Inilah mengapa survei tidak bisa dilewati.</p>
           <div class="formula">Volume Sub-base = dinilai saat survei lapangan</div>
         </div>
-      </div>
+      
+    </div>
+
     <h2 id="komponen-material-per-lapisan-konstruksi">Komponen Material per Lapisan Konstruksi</h2>
     <p>Untuk memahami mengapa semua komponen ini diperlukan, ini adalah susunan lapisan konstruksi paving block yang benar dari bawah ke atas:</p>
 
-    <div class="table-wrap"><table class="data-table">
+    <table class="layer-table">
       <thead><tr><th>Lapisan</th><th>Material</th><th>Ketebalan</th><th>Fungsi</th></tr></thead>
       <tbody>
         <tr><td class="lbl">Tanah Dasar</td><td>Tanah asli yang dipadatkan</td><td>Sesuai kondisi</td><td>Dasar konstruksi</td></tr>
@@ -655,7 +668,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
         <tr><td class="lbl">Nat / Jointing</td><td>Pasir halus</td><td>—</td><td>Pengisi celah antar blok</td></tr>
         <tr><td class="lbl">Kanstin</td><td>Beton pracetak</td><td>—</td><td>Pengunci tepi seluruh area</td></tr>
       </tbody>
-    </table></div>
+    </table>
 
     <div class="callout">
       <p><strong>Tips Hemat Anggaran:</strong> Jangan hitung material hanya untuk minimum — selalu pesan 5–10% lebih dari estimasi. Memesan kekurangan dalam jumlah kecil belakangan hampir selalu lebih mahal per unitnya, dan ada risiko batch produksi berbeda yang menyebabkan warna blok tidak seragam.</p>
@@ -668,6 +681,28 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <li><strong>Menganggap bedding bisa dihemat:</strong> Mengurangi ketebalan bedding di bawah 3 cm untuk hemat material justru meningkatkan risiko permukaan tidak rata.</li>
       <li><strong>Tidak memperhitungkan area tidak beraturan:</strong> Area dengan banyak sudut miring atau lengkungan membutuhkan waste factor lebih besar karena banyak blok yang perlu dipotong.</li>
     </ul>
+
+    
+
+    
+
+    <div class="related">
+      <h2 id="artikel-terkait">Artikel Terkait</h2>
+      <div class="rel-grid">
+        <a href="/blog/paving-block-k300-vs-k400/" class="rel-card">
+          <div class="rel-tag">Panduan Teknis</div>
+          <div class="rel-title">K300 vs K400 — Mana yang Tepat untuk Proyek Anda?</div>
+        </a>
+        <a href="/blog/biaya-paving-lahan-parkir-1000m2/" class="rel-card">
+          <div class="rel-tag">Panduan Biaya</div>
+          <div class="rel-title">Estimasi Biaya Paving Lahan Parkir 1.000 m²</div>
+        </a>
+        <a href="/blog/kenapa-paving-amblas/" class="rel-card">
+          <div class="rel-tag">Tips Proyek</div>
+          <div class="rel-title">Kenapa Paving Amblas? 6 Penyebab & Solusinya</div>
+        </a>
+      </div>
+    </div>
     </article>
   </div>
 </main>
@@ -675,16 +710,16 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <section class="faq-section">
   <div class="container-inner">
     <h2>Pertanyaan yang Sering Ditanyakan</h2>
-    <details><summary>Berapa persen waste factor yang wajar untuk paving block?</summary><div class="faq-a">Untuk area persegi dengan pola lurus, 5% sudah cukup. Pola herringbone 45° butuh sekitar 8%, dan pola diagonal atau area dengan banyak sudut membutuhkan 10%. Angka ini sudah memperhitungkan blok yang perlu dipotong dan potensi kerusakan saat pemasangan.</div></details>
-    <details><summary>Apakah semua komponen bisa dihitung sendiri tanpa survei?</summary><div class="faq-a">Untuk paving block, bedding, dan kanstin bisa diestimasi sendiri dengan data luas area. Tapi kebutuhan sub-base dan material timbunan hanya bisa ditentukan setelah melihat kondisi tanah dasar di lapangan. Menebak volume sub-base tanpa survei berisiko kekurangan atau kelebihan material yang signifikan.</div></details>
-    <details><summary>Berapa ketebalan bedding yang standar untuk lahan parkir?</summary><div class="faq-a">Standar industri untuk lahan parkir adalah 3–5 cm, dengan 4 cm sebagai angka yang paling umum digunakan. Di bawah 3 cm terlalu tipis untuk menyerap ketidakrataan sub-base. Di atas 5 cm, lapisan bedding sendiri bisa menjadi sumber ketidakstabilan.</div></details>
-    <details><summary>Apakah pola pemasangan memengaruhi kekuatan paving?</summary><div class="faq-a">Ya. Pola herringbone (tulang ikan) terbukti menghasilkan interlocking yang lebih kuat dibanding pola lurus karena setiap blok dikunci oleh blok di empat arah berbeda. Untuk area beban berat, herringbone direkomendasikan meski waste factor-nya sedikit lebih tinggi.</div></details>
+    <details><summary>Berapa persen waste factor yang wajar untuk paving block?</summary><div class="faq-a"><p>Untuk area persegi dengan pola lurus, 5% sudah cukup. Pola herringbone 45° butuh sekitar 8%, dan pola diagonal atau area dengan banyak sudut membutuhkan 10%. Angka ini sudah memperhitungkan blok yang perlu dipotong dan potensi kerusakan saat pemasangan.</p></div></details>
+    <details><summary>Apakah semua komponen bisa dihitung sendiri tanpa survei?</summary><div class="faq-a"><p>Untuk paving block, bedding, dan kanstin bisa diestimasi sendiri dengan data luas area. Tapi kebutuhan sub-base dan material timbunan hanya bisa ditentukan setelah melihat kondisi tanah dasar di lapangan. Menebak volume sub-base tanpa survei berisiko kekurangan atau kelebihan material yang signifikan.</p></div></details>
+    <details><summary>Berapa ketebalan bedding yang standar untuk lahan parkir?</summary><div class="faq-a"><p>Standar industri untuk lahan parkir adalah 3–5 cm, dengan 4 cm sebagai angka yang paling umum digunakan. Di bawah 3 cm terlalu tipis untuk menyerap ketidakrataan sub-base. Di atas 5 cm, lapisan bedding sendiri bisa menjadi sumber ketidakstabilan.</p></div></details>
+    <details><summary>Apakah pola pemasangan memengaruhi kekuatan paving?</summary><div class="faq-a"><p>Ya. Pola herringbone (tulang ikan) terbukti menghasilkan interlocking yang lebih kuat dibanding pola lurus karena setiap blok dikunci oleh blok di empat arah berbeda. Untuk area beban berat, herringbone direkomendasikan meski waste factor-nya sedikit lebih tinggi.</p></div></details>
   </div>
 </section>
 
 <section class="blog-cta">
   <h2>Estimasi Sudah Ada — Sekarang Butuh Angka yang Presisi?</h2>
-  <p>Kalkulator di atas memberikan gambaran awal. Untuk RAB yang benar-benar akurat, tim SolidPaving.id siap survei lapangan gratis dan hitung seluruh komponen material dengan tepat.</p>
+  <p>Kalkulator di atas memberikan gambaran awal. Untuk RAB yang benar-benar akurat, tim SolidPaving.id siap survei lapangan gratis dan hitung seluruh komponen material dengan tepat. Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat · Min. 30 m²</p>
   <div class="cta-buttons">
     <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20sudah%20pakai%20kalkulator%20dan%20ingin%20RAB%20yang%20lebih%20akurat%20untuk%20proyek%20saya." class="btn-white">Chat WhatsApp Sekarang</a>
     <a href="/#kalkulator" class="btn-ow">Hitung Estimasi Biaya</a>
@@ -795,11 +830,36 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 </a>
 
 <script>
+function hitung(){
+  var p=parseFloat(document.getElementById('panjang').value);
+  var l=parseFloat(document.getElementById('lebar').value);
+  var w=parseInt(document.getElementById('pola').value);
+  var j=document.getElementById('jenis').value;
+  if(!p||!l||p<=0||l<=0){alert('Masukkan panjang dan lebar area terlebih dahulu.');return;}
+  var luas=p*l;
+  var pavingNeeded=luas*(1+w/100);
+  var bedding=luas*0.04;
+  var keliling=2*(p+l);
+  var kanstin=keliling*1.05;
+  var mutu=j==='industri'?'K400':'K300';
+  var tebal=j==='industri'?'8 cm':'6 cm';
+  document.getElementById('resLuas').textContent=luas.toFixed(0);
+  document.getElementById('resPaving').textContent=pavingNeeded.toFixed(1);
+  document.getElementById('resBedding').textContent=bedding.toFixed(2);
+  document.getElementById('resKanstin').textContent=kanstin.toFixed(1);
+  document.getElementById('resNote').innerHTML='<strong>Spesifikasi yang disarankan:</strong> Paving '+mutu+' ketebalan '+tebal+'. Waste factor yang diterapkan: '+w+'%. Kebutuhan sub-base (sirtu/agregat) tidak termasuk karena bergantung kondisi tanah — diperlukan survei lapangan. <strong>Untuk RAB final yang akurat, hubungi tim SolidPaving.id.</strong>';
+  var box=document.getElementById('hasilBox');
+  box.classList.add('show');
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
 (function(){
   var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
-  if(!ham || !drawer) return;
-  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
+  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));});
   window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
+  var items=document.querySelectorAll('.nav-item');
+  items.forEach(function(item){var btn=item.querySelector('.nav-btn');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var open=item.classList.contains('js-open');items.forEach(function(o){o.classList.remove('js-open');});if(!open)item.classList.add('js-open');});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))items.forEach(function(i){i.classList.remove('js-open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')items.forEach(function(i){i.classList.remove('js-open');});});
 })();
 </script>
 </body>

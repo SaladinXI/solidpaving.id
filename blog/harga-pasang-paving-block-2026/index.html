@@ -261,6 +261,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
+
+/* ==== mobile overflow hardening ==== */
+.blog-body,.blog-grid,.blog-article,.blog-container{min-width:0;}
+.blog-article{overflow-wrap:break-word;}
+.table-wrap{max-width:100%;}
+@media(max-width:900px){.blog-body,.blog-container{overflow-x:hidden;}.blog-article{max-width:100%;}}
 </style>
 </head>
 <body>

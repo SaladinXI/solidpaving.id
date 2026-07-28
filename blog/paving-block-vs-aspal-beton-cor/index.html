@@ -236,6 +236,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
+
+/* ==== mobile overflow hardening ==== */
+.blog-body,.blog-grid,.blog-article,.blog-container{min-width:0;}
+.blog-article{overflow-wrap:break-word;}
+.table-wrap{max-width:100%;}
+@media(max-width:900px){.blog-body,.blog-container{overflow-x:hidden;}.blog-article{max-width:100%;}}
 </style>
 </head>
 <body>
@@ -523,9 +529,10 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <h3>Daftar Isi</h3>
       <ol>
         <li><a href="#perbandingan-cepat-3-material-perkerasan">Perbandingan Cepat: 3 Material Perkerasan Parkir</a></li>
-<li><a href="#analisis-mendalam-biaya-kepemilikan-15-t">Analisis Mendalam: Biaya Kepemilikan 15 Tahun</a></li>
-<li><a href="#kapan-masing-masing-pilihan-masuk-akal">Kapan Masing-Masing Pilihan Masuk Akal?</a></li>
-<li><a href="#kesimpulan-angka-yang-bicara">Kesimpulan: Angka yang Bicara</a></li>
+        <li><a href="#analisis-mendalam-biaya-kepemilikan-15-t">Analisis Mendalam: Biaya Kepemilikan 15 Tahun</a></li>
+        <li><a href="#kapan-masing-masing-pilihan-masuk-akal">Kapan Masing-Masing Pilihan Masuk Akal?</a></li>
+        <li><a href="#kesimpulan-angka-yang-bicara">Kesimpulan: Angka yang Bicara</a></li>
+        <li><a href="#artikel-terkait">Artikel Terkait</a></li>
       </ol>
     </aside>
     <article class="blog-article">
@@ -610,6 +617,28 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <p>Untuk parkir komersial skala menengah-besar (500 m² ke atas) dengan horizon penggunaan 10–20 tahun, paving block hampir selalu merupakan pilihan yang paling ekonomis secara keseluruhan.</p>
 
     <p>Biaya awal yang sedikit lebih tinggi dibanding aspal terkompensasi penuh dalam 5–7 tahun pertama — saat aspal sudah perlu recoating pertama kali, paving block masih dalam kondisi prima tanpa biaya tambahan apapun.</p>
+
+    
+
+    
+
+    <div class="related">
+      <h2 id="artikel-terkait">Artikel Terkait</h2>
+      <div class="rel-grid">
+        <a href="/blog/harga-pasang-paving-block-2026/" class="rel-card">
+          <div class="rel-tag">Panduan Biaya</div>
+          <div class="rel-title">Harga Pasang Paving Block per m² 2026</div>
+        </a>
+        <a href="/blog/biaya-paving-lahan-parkir-1000m2/" class="rel-card">
+          <div class="rel-tag">Studi Kasus</div>
+          <div class="rel-title">RAB Lengkap Paving Parkir 1.000 m²</div>
+        </a>
+        <a href="/blog/kenapa-paving-amblas/" class="rel-card">
+          <div class="rel-tag">Tips Proyek</div>
+          <div class="rel-title">Kenapa Paving Amblas? 6 Penyebab Utama</div>
+        </a>
+      </div>
+    </div>
     </article>
   </div>
 </main>
@@ -617,16 +646,16 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <section class="faq-section">
   <div class="container-inner">
     <h2>Pertanyaan yang Sering Ditanyakan</h2>
-    <details><summary>Mana yang lebih murah: paving block atau aspal untuk parkir?</summary><div class="faq-a">Biaya awal aspal bisa sedikit lebih murah. Tapi dalam 15 tahun, paving block hampir selalu lebih hemat karena tidak ada biaya recoating berkala (Rp 80.000–120.000/m² setiap 3–5 tahun untuk aspal). Total cost of ownership 15 tahun paving block bisa 40–60% lebih rendah dari aspal.</div></details>
-    <details><summary>Apakah paving block cocok untuk area yang sering dilalui truk?</summary><div class="faq-a">Ya, dengan syarat menggunakan mutu yang tepat. Untuk area yang dilalui truk dan forklift, gunakan K400 ketebalan 8–10 cm dengan sub-base yang dipadatkan benar. Paving block K400 dirancang khusus untuk beban berat dan terbukti digunakan di kawasan industri dan logistik besar.</div></details>
-    <details><summary>Kenapa aspal melunak di musim panas?</summary><div class="faq-a">Aspal mengandung bitumen yang bersifat termoplastik — melunak saat panas dan mengeras saat dingin. Di Indonesia dengan suhu siang bisa mencapai 38–40°C, aspal tipis bisa terdeformasi jika tertindih kendaraan berat dalam waktu lama. Paving block tidak mengalami masalah ini.</div></details>
-    <details><summary>Berapa lama umur paving block yang dipasang dengan benar?</summary><div class="faq-a">Paving block hidrolik press SNI yang dipasang dengan sub-base dipadatkan, bedding rata, dan kanstin terpasang bisa bertahan 15–25 tahun dengan perawatan minimal. Beberapa proyek paving yang kami kerjakan sudah berjalan lebih dari 10 tahun dalam kondisi baik.</div></details>
+    <details><summary>Mana yang lebih murah: paving block atau aspal untuk parkir?</summary><div class="faq-a"><p>Biaya awal aspal bisa sedikit lebih murah. Tapi dalam 15 tahun, paving block hampir selalu lebih hemat karena tidak ada biaya recoating berkala (Rp 80.000–120.000/m² setiap 3–5 tahun untuk aspal). Total cost of ownership 15 tahun paving block bisa 40–60% lebih rendah dari aspal.</p></div></details>
+    <details><summary>Apakah paving block cocok untuk area yang sering dilalui truk?</summary><div class="faq-a"><p>Ya, dengan syarat menggunakan mutu yang tepat. Untuk area yang dilalui truk dan forklift, gunakan K400 ketebalan 8–10 cm dengan sub-base yang dipadatkan benar. Paving block K400 dirancang khusus untuk beban berat dan terbukti digunakan di kawasan industri dan logistik besar.</p></div></details>
+    <details><summary>Kenapa aspal melunak di musim panas?</summary><div class="faq-a"><p>Aspal mengandung bitumen yang bersifat termoplastik — melunak saat panas dan mengeras saat dingin. Di Indonesia dengan suhu siang bisa mencapai 38–40°C, aspal tipis bisa terdeformasi jika tertindih kendaraan berat dalam waktu lama. Paving block tidak mengalami masalah ini.</p></div></details>
+    <details><summary>Berapa lama umur paving block yang dipasang dengan benar?</summary><div class="faq-a"><p>Paving block hidrolik press SNI yang dipasang dengan sub-base dipadatkan, bedding rata, dan kanstin terpasang bisa bertahan 15–25 tahun dengan perawatan minimal. Beberapa proyek paving yang kami kerjakan sudah berjalan lebih dari 10 tahun dalam kondisi baik.</p></div></details>
   </div>
 </section>
 
 <section class="blog-cta">
   <h2>Sudah Memutuskan Pakai Paving Block?</h2>
-  <p>Tim SolidPaving.id siap survei lokasi Anda, rekomendasikan mutu yang tepat, dan berikan RAB transparan dalam 24 jam. Gratis, tanpa kewajiban apapun.</p>
+  <p>Tim SolidPaving.id siap survei lokasi Anda, rekomendasikan mutu yang tepat, dan berikan RAB transparan dalam 24 jam. Gratis, tanpa kewajiban apapun. Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat</p>
   <div class="cta-buttons">
     <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20baca%20artikel%20perbandingan%20paving%20vs%20aspal%20dan%20ingin%20konsultasi%20proyek%20parkir%20saya." class="btn-white">Chat WhatsApp Sekarang</a>
     <a href="/#kalkulator" class="btn-ow">Hitung Estimasi Biaya</a>
@@ -739,9 +768,12 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <script>
 (function(){
   var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
-  if(!ham || !drawer) return;
-  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
+  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));});
   window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
+  var items=document.querySelectorAll('.nav-item');
+  items.forEach(function(item){var btn=item.querySelector('.nav-btn');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var open=item.classList.contains('js-open');items.forEach(function(o){o.classList.remove('js-open');});if(!open)item.classList.add('js-open');});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))items.forEach(function(i){i.classList.remove('js-open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')items.forEach(function(i){i.classList.remove('js-open');});});
 })();
 </script>
 </body>

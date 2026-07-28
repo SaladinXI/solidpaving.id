@@ -273,6 +273,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
+
+/* ==== mobile overflow hardening ==== */
+.blog-body,.blog-grid,.blog-article,.blog-container{min-width:0;}
+.blog-article{overflow-wrap:break-word;}
+.table-wrap{max-width:100%;}
+@media(max-width:900px){.blog-body,.blog-container{overflow-x:hidden;}.blog-article{max-width:100%;}}
 </style>
 </head>
 <body>
@@ -560,9 +566,10 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <h3>Daftar Isi</h3>
       <ol>
         <li><a href="#5-komponen-biaya-yang-harus-ada-di-rab-p">5 Komponen Biaya yang Harus Ada di RAB Parkir</a></li>
-<li><a href="#rab-lengkap-parkir-1000-m-3-skenario">RAB Lengkap Parkir 1.000 m² — 3 Skenario</a></li>
-<li><a href="#faktor-yang-bisa-menaikkan-atau-menurunk">Faktor yang Bisa Menaikkan atau Menurunkan Biaya</a></li>
-<li><a href="#perbandingan-paving-vs-aspal-untuk-parki">Perbandingan: Paving vs Aspal untuk Parkir 1.000 m²</a></li>
+        <li><a href="#rab-lengkap-parkir-1000-m-3-skenario">RAB Lengkap Parkir 1.000 m² — 3 Skenario</a></li>
+        <li><a href="#faktor-yang-bisa-menaikkan-atau-menurunk">Faktor yang Bisa Menaikkan atau Menurunkan Biaya</a></li>
+        <li><a href="#perbandingan-paving-vs-aspal-untuk-parki">Perbandingan: Paving vs Aspal untuk Parkir 1.000 m²</a></li>
+        <li><a href="#artikel-terkait">Artikel Terkait</a></li>
       </ol>
     </aside>
     <article class="blog-article">
@@ -577,11 +584,11 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <p>Artikel ini adalah RAB terbuka — semua komponen kami rinci, lengkap dengan alasan mengapa setiap komponen itu ada.</p>
 
     <h2 id="5-komponen-biaya-yang-harus-ada-di-rab-p">5 Komponen Biaya yang Harus Ada di RAB Parkir</h2>
-    <div class="callout"><div class="callout-tag"></div><p><strong></strong> — </p></div>
-<div class="callout"><div class="callout-tag"></div><p><strong></strong> — </p></div>
-<div class="callout"><div class="callout-tag"></div><p><strong></strong> — </p></div>
-<div class="callout"><div class="callout-tag"></div><p><strong></strong> — </p></div>
-<div class="callout"><div class="callout-tag"></div><p><strong></strong> — </p></div>
+    <div class="callout"><div class="callout-tag"></div></div>
+<div class="callout"><div class="callout-tag"></div></div>
+<div class="callout"><div class="callout-tag"></div></div>
+<div class="callout"><div class="callout-tag"></div></div>
+<div class="callout"><div class="callout-tag"></div></div>
 
     <h2 id="rab-lengkap-parkir-1000-m-3-skenario">RAB Lengkap Parkir 1.000 m² — 3 Skenario</h2>
     <p>Berikut tiga skenario RAB berdasarkan spesifikasi yang berbeda. Semua harga sudah termasuk material, jasa pasang, dan bedding. Kanstin dihitung terpisah dengan asumsi keliling area persegi ±130 meter lari.</p>
@@ -634,6 +641,28 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     </div>
 
     <p>Dalam horizon 15 tahun, paving block hampir selalu lebih ekonomis dari aspal karena tidak ada biaya recoating berkala. Keunggulan lain: jika satu titik rusak atau amblas, hanya titik itu yang diperbaiki — tidak perlu mengganti seluruh area.</p>
+
+    
+
+    
+
+    <div class="related">
+      <h2 id="artikel-terkait">Artikel Terkait</h2>
+      <div class="rel-grid">
+        <a href="/blog/harga-pasang-paving-block-2026/" class="rel-card">
+          <div class="rel-tag">Panduan Biaya</div>
+          <div class="rel-title">Harga Pasang Paving Block per m² 2026 — Semua Komponen</div>
+        </a>
+        <a href="/blog/paving-block-k300-vs-k400/" class="rel-card">
+          <div class="rel-tag">Panduan Teknis</div>
+          <div class="rel-title">K300 vs K400 — Mana yang Tepat untuk Parkir Anda?</div>
+        </a>
+        <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="rel-card">
+          <div class="rel-tag">Kalkulator</div>
+          <div class="rel-title">Cara Menghitung Kebutuhan Paving Block yang Benar</div>
+        </a>
+      </div>
+    </div>
     </article>
   </div>
 </main>
@@ -641,17 +670,17 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <section class="faq-section">
   <div class="container-inner">
     <h2>Pertanyaan yang Sering Ditanyakan</h2>
-    <details><summary>Berapa biaya paving lahan parkir 1.000 m²?</summary><div class="faq-a">Untuk paket standar Holland K300 8cm (material + pasang + bedding + kanstin), estimasinya sekitar Rp 191.700.000. Jika kondisi tanah memerlukan pemadatan sub-base, tambahkan Rp 40.000.000. Total dengan sub-base sekitar Rp 231.700.000. Angka final baru bisa dikonfirmasi setelah survei lapangan gratis.</div></details>
-    <details><summary>Kenapa RAB bisa berbeda jauh antar vendor?</summary><div class="faq-a">Karena tidak semua vendor menghitung komponen yang sama. Penawaran murah hampir selalu menghilangkan bedding, kanstin, atau menggunakan material mutu lebih rendah. Selalu bandingkan berdasarkan spesifikasi yang setara, bukan hanya angka akhir.</div></details>
-    <details><summary>Apakah harga bisa lebih murah untuk area lebih dari 1.000 m²?</summary><div class="faq-a">Ya. Proyek di atas 1.000 m² umumnya mendapat efisiensi harga material karena pembelian volume besar. Biaya mobilisasi alat juga terbagi lebih banyak sehingga harga per m² lebih efisien. Hubungi kami untuk penawaran khusus proyek skala besar.</div></details>
-    <details><summary>Berapa lama pengerjaan paving parkir 1.000 m²?</summary><div class="faq-a">Dengan kapasitas ±2.000 m²/hari, area 1.000 m² bisa selesai dalam 1–2 hari kerja untuk pemasangan paving. Termasuk persiapan sub-base dan bedding, total pengerjaan biasanya 3–5 hari kerja tergantung kondisi lapangan dan aksesibilitas.</div></details>
-    <details><summary>Apa yang membuat parkir paving tahan lama?</summary><div class="faq-a">Tiga faktor paling menentukan: (1) sub-base dipadatkan dengan benar menggunakan alat mekanis, (2) bedding diratakan presisi dengan kemiringan untuk drainase, dan (3) mutu paving sesuai beban aktual kendaraan. Ketiga hal ini lebih penting dari merek atau harga paving itu sendiri.</div></details>
+    <details><summary>Berapa biaya paving lahan parkir 1.000 m²?</summary><div class="faq-a"><p>Untuk paket standar Holland K300 8cm (material + pasang + bedding + kanstin), estimasinya sekitar Rp 191.700.000. Jika kondisi tanah memerlukan pemadatan sub-base, tambahkan Rp 40.000.000. Total dengan sub-base sekitar Rp 231.700.000. Angka final baru bisa dikonfirmasi setelah survei lapangan gratis.</p></div></details>
+    <details><summary>Kenapa RAB bisa berbeda jauh antar vendor?</summary><div class="faq-a"><p>Karena tidak semua vendor menghitung komponen yang sama. Penawaran murah hampir selalu menghilangkan bedding, kanstin, atau menggunakan material mutu lebih rendah. Selalu bandingkan berdasarkan spesifikasi yang setara, bukan hanya angka akhir.</p></div></details>
+    <details><summary>Apakah harga bisa lebih murah untuk area lebih dari 1.000 m²?</summary><div class="faq-a"><p>Ya. Proyek di atas 1.000 m² umumnya mendapat efisiensi harga material karena pembelian volume besar. Biaya mobilisasi alat juga terbagi lebih banyak sehingga harga per m² lebih efisien. Hubungi kami untuk penawaran khusus proyek skala besar.</p></div></details>
+    <details><summary>Berapa lama pengerjaan paving parkir 1.000 m²?</summary><div class="faq-a"><p>Dengan kapasitas ±2.000 m²/hari, area 1.000 m² bisa selesai dalam 1–2 hari kerja untuk pemasangan paving. Termasuk persiapan sub-base dan bedding, total pengerjaan biasanya 3–5 hari kerja tergantung kondisi lapangan dan aksesibilitas.</p></div></details>
+    <details><summary>Apa yang membuat parkir paving tahan lama?</summary><div class="faq-a"><p>Tiga faktor paling menentukan: (1) sub-base dipadatkan dengan benar menggunakan alat mekanis, (2) bedding diratakan presisi dengan kemiringan untuk drainase, dan (3) mutu paving sesuai beban aktual kendaraan. Ketiga hal ini lebih penting dari merek atau harga paving itu sendiri.</p></div></details>
   </div>
 </section>
 
 <section class="blog-cta">
   <h2>Butuh RAB yang Akurat untuk Proyek Anda?</h2>
-  <p>Angka di artikel ini adalah estimasi untuk perencanaan. RAB yang benar-benar akurat hanya bisa dibuat setelah survei lapangan — karena kondisi tanah, kontur, dan aksesibilitas tiap lokasi berbeda. Survei gratis, RAB dalam 24 jam.</p>
+  <p>Angka di artikel ini adalah estimasi untuk perencanaan. RAB yang benar-benar akurat hanya bisa dibuat setelah survei lapangan — karena kondisi tanah, kontur, dan aksesibilitas tiap lokasi berbeda. Survei gratis, RAB dalam 24 jam. Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat · Respon &lt;24 jam</p>
   <div class="cta-buttons">
     <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20baca%20artikel%20RAB%201000m2%20dan%20ingin%20minta%20survei%20gratis%20untuk%20proyek%20parkir%20saya." class="btn-white">Chat WhatsApp Sekarang</a>
     <a href="/#kalkulator" class="btn-ow">Hitung Estimasi Biaya</a>
@@ -764,9 +793,12 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <script>
 (function(){
   var ham=document.getElementById('navHam'),drawer=document.getElementById('mobDrawer');
-  if(!ham || !drawer) return;
-  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',o);});
+  ham.addEventListener('click',function(){var o=ham.classList.toggle('open');drawer.classList.toggle('open',o);ham.setAttribute('aria-expanded',String(o));});
   window.closeMob=function(){ham.classList.remove('open');drawer.classList.remove('open');ham.setAttribute('aria-expanded','false');};
+  var items=document.querySelectorAll('.nav-item');
+  items.forEach(function(item){var btn=item.querySelector('.nav-btn');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var open=item.classList.contains('js-open');items.forEach(function(o){o.classList.remove('js-open');});if(!open)item.classList.add('js-open');});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))items.forEach(function(i){i.classList.remove('js-open');});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')items.forEach(function(i){i.classList.remove('js-open');});});
 })();
 </script>
 </body>
