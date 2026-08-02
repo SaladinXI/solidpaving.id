@@ -599,6 +599,27 @@ details summary{padding-top:16px;padding-bottom:16px;}
   .sc.open .sc-body{animation:none;}
   .fail-card:hover,.check-item:hover,.testi:hover,.produk-card:hover{transform:none;}
 }
+
+/* ===== PROOF STRIP (tambahan, additive) ===== */
+#proof-strip{padding:56px 5%;background:var(--bg0);}
+.proof-strip-label{text-align:center;}
+.proof-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;}
+.pcard{background:var(--bg0);border:1px solid var(--bdr);border-radius:var(--rl);overflow:hidden;box-shadow:0 8px 32px rgba(46,62,95,.08);transition:transform .2s ease,box-shadow .2s ease;}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(46,62,95,.14);}
+.pcard-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--bg2);}
+.pcard-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.pcard-body{padding:16px 18px;}
+.pcard-name{font-size:15px;font-weight:700;color:var(--tx1);line-height:1.35;}
+.pcard-loc{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--tx3);margin-top:6px;}
+.pcard-loc svg{flex:0 0 auto;color:var(--accent);}
+.proof-all-wrap{text-align:center;margin-top:28px;}
+.proof-all{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue);text-decoration:none;transition:gap .2s ease;}
+.proof-all:hover{gap:10px;text-decoration:underline;}
+@media(max-width:768px){
+  #proof-strip{padding:40px 5%;}
+  .proof-cards{display:flex;gap:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:8px;}
+  .pcard{flex:0 0 80%;scroll-snap-align:start;}
+}
 </style>
 <script type="application/ld+json">
 [
@@ -1090,6 +1111,39 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       <div class="stat-card"><div class="stat-num">±2000</div><div class="stat-label">m² kapasitas pasang per hari</div></div>
       <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Akuntabilitas satu tangan</div></div>
       <div class="stat-card"><div class="stat-num">&lt;24j</div><div class="stat-label">Respons RAB setelah survei</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<section id="proof-strip">
+  <div class="container">
+    <div class="sec-label proof-strip-label">Dipercaya untuk Proyek Nyata</div>
+    <div class="proof-cards">
+      <div class="pcard">
+        <div class="pcard-img"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0735.jpeg?w=400&h=300&q=70&format=webp" alt="Proyek paving block OFFO Living Cikampek, Karawang" width="400" height="300" loading="lazy"></div>
+        <div class="pcard-body">
+          <div class="pcard-name">OFFO Living Cikampek</div>
+          <div class="pcard-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Karawang</div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0740.jpeg?w=400&h=300&q=70&format=webp" alt="Proyek paving block Polytron EV, Jl. Sudirman, Jakarta Pusat" width="400" height="300" loading="lazy"></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Polytron EV</div>
+          <div class="pcard-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jl. Sudirman, Jakarta Pusat</div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Peruamahan%20tangerang%20pondok%20kacang/IMG_4449.jpeg?w=400&h=300&q=70&format=webp" alt="Proyek paving block Perumahan Pondok Kacang, Tangerang" width="400" height="300" loading="lazy"></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Perumahan Pondok Kacang</div>
+          <div class="pcard-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Tangerang</div>
+        </div>
+      </div>
+    </div>
+    <div class="proof-all-wrap">
+      <a href="/portofolio/" class="proof-all">Lihat Semua Proyek &rarr;</a>
     </div>
   </div>
 </section>
