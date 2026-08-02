@@ -121,6 +121,32 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
 </style>
 </head>
 <body>
+<!-- ===== ACCESS GATE (client-side, ganti hash untuk ubah password) ===== -->
+<div id="__gate" style="position:fixed;inset:0;z-index:2147483647;background:#F4F7FB;display:flex;align-items:center;justify-content:center;font-family:Montserrat,system-ui,sans-serif;">
+  <div style="background:#fff;border:1px solid rgba(46,62,95,.18);border-radius:12px;padding:30px 26px;max-width:330px;width:88%;box-shadow:0 8px 32px rgba(46,62,95,.12);text-align:center;">
+    <div style="font-weight:800;color:#2E3E5F;font-size:18px;margin-bottom:6px;">Area Internal</div>
+    <div style="color:#4A6080;font-size:13px;margin-bottom:16px;line-height:1.5;">Halaman ini khusus tim SolidPaving.id.</div>
+    <input id="__gp" type="password" placeholder="Password" autocomplete="current-password" style="width:100%;padding:11px 12px;border:1px solid rgba(46,62,95,.25);border-radius:8px;font-size:14px;box-sizing:border-box;margin-bottom:10px;">
+    <button id="__gb" type="button" style="width:100%;padding:11px;background:#2E3E5F;color:#fff;border:0;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">Masuk</button>
+    <div id="__ge" style="color:#C0392B;font-size:12px;margin-top:10px;min-height:14px;"></div>
+  </div>
+</div>
+<script>
+(function(){
+  /* Untuk ganti password: buka Console browser di halaman ini, ketik:
+       gateHash('passwordbaru')
+     lalu salin hasilnya ke variabel HASH di bawah, di semua halaman tool. */
+  var HASH="565ccec570fecadd1596ef6096805be4be2a804e839ae11f4d60844a80abcc3e";
+  var KEY="sp_gate_ok";
+  window.gateHash=async function(p){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(p));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('');};
+  function unlock(){var g=document.getElementById('__gate');if(g)g.parentNode.removeChild(g);}
+  try{if(sessionStorage.getItem(KEY)==='1'){unlock();return;}}catch(e){}
+  var inp=document.getElementById('__gp'),btn=document.getElementById('__gb'),err=document.getElementById('__ge');
+  async function tryit(){var h=await window.gateHash(inp.value||'');if(h===HASH){try{sessionStorage.setItem(KEY,'1')}catch(e){}unlock();}else{err.textContent='Password salah';inp.value='';inp.focus();}}
+  if(btn){btn.addEventListener('click',tryit);inp.addEventListener('keydown',function(e){if(e.key==='Enter')tryit();});setTimeout(function(){inp.focus()},50);}
+})();
+</script>
+
 
 <div class="container">
   <div class="site-header">
