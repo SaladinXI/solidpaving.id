@@ -570,5 +570,18 @@ function render(){
   addItem();addItem();addPay();render();
 })();
 </script>
+<script>
+(function(){
+  function clean(x){return (x||'').toString().trim().replace(/[\\/:*?"<>|]+/g,'-').replace(/\.+/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'').slice(0,60);}
+  function fname(){
+    var no=clean((document.getElementById('fNo')||{}).value);
+    var nm=clean((document.getElementById('cName')||{}).value);
+    return ['Invoice',no,nm].filter(Boolean).join('-')||'Invoice';
+  }
+  var orig=null;
+  window.addEventListener('beforeprint',function(){orig=document.title;document.title=fname();});
+  window.addEventListener('afterprint',function(){if(orig!==null){document.title=orig;orig=null;}});
+})();
+</script>
 </body>
 </html>

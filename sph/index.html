@@ -106,17 +106,17 @@ table.pv-termin-table tr:nth-child(odd) td{background:#fafaf8}
 .ttd-line{border-bottom:.5px solid #ccc;margin:3.5rem 0 4px}
 
 @media print{
-  body{background:#fff}
+  html,body{background:#fff;margin:0}
   .no-print{display:none!important}
   #__gate{display:none!important}
   .container{padding:0}
-  .preview-doc{border:none;border-radius:0;padding:1.5rem}
+  .preview-doc{border:none;border-radius:0;padding:14mm 13mm}
   /* tidak ada link saat dicetak: netralkan semua tautan & jangan cetak URL-nya */
   a{color:inherit!important;text-decoration:none!important;pointer-events:none}
   a[href]:after{content:""!important}
   footer,nav{display:none!important}
 }
-@page{margin:14mm}
+@page{margin:0}
 @media(max-width:600px){
   .two-col,.three-col,.four-col{grid-template-columns:1fr 1fr}
   .termin-header,.termin-row{grid-template-columns:1fr 60px 100px 1fr 24px}
@@ -725,6 +725,19 @@ function generatePreview(){
   ];
   renderItems();
   renderTermins();
+})();
+</script>
+<script>
+(function(){
+  function clean(x){return (x||'').toString().trim().replace(/[\\/:*?"<>|]+/g,'-').replace(/\.+/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'').slice(0,60);}
+  function fname(){
+    var no=clean((document.getElementById('sph-no')||{}).value);
+    var nm=clean((document.getElementById('kl-nama')||{}).value);
+    return ['SPH',no,nm].filter(Boolean).join('-')||'SPH';
+  }
+  var orig=null;
+  window.addEventListener('beforeprint',function(){orig=document.title;document.title=fname();});
+  window.addEventListener('afterprint',function(){if(orig!==null){document.title=orig;orig=null;}});
 })();
 </script>
 </body>
