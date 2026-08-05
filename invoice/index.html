@@ -116,14 +116,14 @@ table.it tbody td.td-unit{text-align:center;color:#6A80A0;font-size:7.5pt;}
 .terbilang .tl{font-size:6.5pt;color:#6A80A0;letter-spacing:1.5px;text-transform:uppercase;margin-right:6px;}
 .terbilang i{color:#111827;font-weight:600;}
 
-.bank-sig{display:grid;grid-template-columns:1fr 1fr;gap:10mm;margin-top:5mm;}
+.bank-sig{display:grid;grid-template-columns:1fr 1.3fr;gap:8mm;margin-top:5mm;}
 .bank-name{font-size:8pt;color:#2E3E5F;font-weight:600;margin-bottom:2px;}
 .bank-detail{font-size:7.5pt;color:#374151;line-height:1.7;}
 .bank-note{font-size:6.5pt;color:#6A80A0;margin-top:5px;line-height:1.6;}
 .sig-box{text-align:center;padding-top:1mm;}
 .sig-lbl{font-size:7pt;color:#6A80A0;}
-.sig-space{height:52px;}
-.sig-name{font-size:8.5pt;color:#111827;font-weight:600;border-top:1px solid #C8D3E0;display:inline-block;padding:3px 14px 0;}
+.sig-space{height:100px;}
+.sig-name{font-size:8.5pt;color:#111827;font-weight:600;border-top:1px solid #C8D3E0;display:inline-block;padding:3px 40px 0;}
 .sig-role{font-size:6.5pt;color:#6A80A0;margin-top:1px;}
 
 .a4-foot{margin-top:auto;border-top:1px solid #E5EAF2;padding-top:3mm;display:flex;justify-content:space-between;gap:8mm;font-size:6.5pt;color:#6A80A0;line-height:1.7;}
@@ -320,6 +320,12 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
     </div>
     <div class="f" id="gcWrap" style="display:none">
       <textarea id="fGuarC" rows="2" placeholder="Syarat garansi kustom..." oninput="render()"></textarea>
+    </div>
+    <div class="f"><label>Rekening Pembayaran</label>
+      <select id="fBank" onchange="render()">
+        <option value="pt">BCA a.n. PT Solid Precast Industri (6282744593)</option>
+        <option value="pribadi">BCA a.n. Muh Nafis Arifuddin (628-184-6962)</option>
+      </select>
     </div>
   </div>
 
@@ -540,8 +546,7 @@ function render(){
   '<div class="bank-sig">'+
     '<div>'+
       '<div class="box-lbl">Pembayaran</div>'+
-      '<div class="bank-name">Bank BCA — Cab. Cibubur Arundina</div>'+
-      '<div class="bank-detail">No. Rekening <b>628-184-6962</b> &nbsp;·&nbsp; a.n. <b>Muh Nafis Arifuddin</b></div>'+
+      (function(){var bk=v('fBank')||'pt';var b=bk==='pribadi'?{n:'Bank BCA a.n. Muh Nafis Arifuddin',r:'628-184-6962',x:' (Cab. Cibubur Arundina)'}:{n:'Bank BCA a.n. PT Solid Precast Industri',r:'6282744593',x:''};return '<div class="bank-name">'+b.n+'</div><div class="bank-detail">No. Rekening <b>'+b.r+'</b>'+b.x+'</div>';})()+
       '<div class="bank-note">Pembayaran dianggap sah setelah dana diterima. Mohon konfirmasi bukti transfer via WhatsApp 0859-4349-2832.</div>'+
     '</div>'+
     '<div class="sig-box">'+
