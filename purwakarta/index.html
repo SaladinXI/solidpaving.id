@@ -298,7 +298,31 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
-.area-feat{padding:60px 5%;}.area-feat .afi{max-width:960px;margin:0 auto;}.area-feat .aftag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}.area-feat h2{font-size:clamp(20px,3vw,26px);color:var(--tx1);margin:0 0 8px;}.area-feat .aflead{color:var(--tx2);font-size:15px;line-height:1.6;max-width:640px;margin-bottom:8px;}.loadbars{max-width:760px;margin:28px 0 0;display:flex;flex-direction:column;gap:15px;}.lb-row{display:grid;grid-template-columns:180px 1fr 140px;align-items:center;gap:14px;}.lb-label{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--tx1);}.lb-track{height:15px;background:var(--bg2);border-radius:100px;overflow:hidden;}.lb-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--blue));border-radius:100px;}.lb-spec{font-size:12.5px;font-weight:700;color:var(--blue);text-align:right;}@media(max-width:640px){.lb-row{grid-template-columns:1fr;gap:5px;}.lb-spec{text-align:left;}}.uc-ico svg{color:#fff!important;stroke:#fff!important;}</style>
+.area-feat{padding:34px 5% 40px!important;}.area-feat .afi{max-width:960px;margin:0 auto;}.area-feat .aftag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}.area-feat h2{font-size:clamp(20px,3vw,26px);color:var(--tx1);margin:0 0 8px;}.area-feat .aflead{color:var(--tx2);font-size:15px;line-height:1.6;max-width:640px;margin-bottom:8px;}.loadbars{max-width:760px;margin:28px 0 0;display:flex;flex-direction:column;gap:15px;}.lb-row{display:grid;grid-template-columns:180px 1fr 140px;align-items:center;gap:14px;}.lb-label{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--tx1);}.lb-track{height:15px;background:var(--bg2);border-radius:100px;overflow:hidden;}.lb-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--blue));border-radius:100px;}.lb-spec{font-size:12.5px;font-weight:700;color:var(--blue);text-align:right;}@media(max-width:640px){.lb-row{grid-template-columns:1fr;gap:5px;}.lb-spec{text-align:left;}}.uc-ico svg{color:#fff!important;stroke:#fff!important;}
+.cmp{max-width:860px;margin:26px 0 0;}
+.cmp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.cmp-col{border:1.5px solid var(--bdr);border-radius:var(--rl);background:var(--bg0);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;}
+.cmp-col:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(46,62,95,.1);}
+.cmp-col.on{border-color:var(--blue);box-shadow:0 10px 26px rgba(46,62,95,.14);}
+.cmp-h{padding:15px;text-align:center;background:var(--bg1);border-bottom:1px solid var(--bdr);}
+.cmp-col.on .cmp-h{background:var(--blue);}
+.cmp-h b{display:block;font-size:14.5px;color:var(--tx1);font-weight:800;}
+.cmp-h span{font-size:11.5px;color:var(--tx3);}
+.cmp-col.on .cmp-h b,.cmp-col.on .cmp-h span{color:#fff;}
+.cmp-col.on .cmp-h span{opacity:.85;}
+.cmp-b{padding:14px 15px;}
+.cmp-row{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px dashed var(--bdr);font-size:12.5px;}
+.cmp-row:last-of-type{border-bottom:0;}
+.cmp-row span{color:var(--tx3);}
+.cmp-row b{color:var(--tx1);text-align:right;}
+.cmp-score{display:flex;align-items:center;gap:6px;justify-content:flex-end;}
+.cmp-dot{width:9px;height:9px;border-radius:50%;background:var(--bdr);display:inline-block;}
+.cmp-dot.f{background:var(--blue);}
+.cmp-detail{margin-top:16px;background:var(--bg1);border-left:3px solid var(--accent);border-radius:0 9px 9px 0;padding:15px 17px;}
+.cmp-detail h3{font-size:15px;color:var(--tx1);margin:0 0 6px;font-weight:800;}
+.cmp-detail p{font-size:13px;color:var(--tx2);line-height:1.65;margin:0;}
+@media(max-width:700px){.cmp-grid{grid-template-columns:1fr;}}
+.pf{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}.pf-card{border:1px solid var(--bdr);border-radius:var(--rl);overflow:hidden;background:var(--bg0);}.pf-imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;}.pf-imgs img{width:100%;height:150px;object-fit:cover;display:block;}.pf-b{padding:15px 16px;}.pf-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.6px;color:var(--accent);margin-bottom:5px;}.pf-b h3{font-size:14.5px;color:var(--tx1);margin:0 0 5px;font-weight:700;}.pf-b p{font-size:12.5px;color:var(--tx3);line-height:1.55;margin:0;}.pf-meta{display:flex;gap:14px;margin-top:9px;flex-wrap:wrap;}.pf-meta span{font-size:11.5px;color:var(--tx2);font-weight:600;}@media(max-width:700px){.pf{grid-template-columns:1fr;}}</style>
 <script type="application/ld+json">
 [
   {
@@ -673,11 +697,29 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     </div>
   </div>
 </section>
-<section class="area-feat" style="background:var(--bg1)"><div class="afi">
-<span class="aftag">STANDAR KAWASAN INDUSTRI</span><h2>Spesifikasi Beban untuk Industri di Purwakarta</h2>
-<p class="aflead">Proyek industri di Purwakarta (Kota Bukit Indah, Kawasan Industri Purwakarta) menuntut spec yang tepat. Makin berat beban yang lewat, makin tinggi mutu dan tebal yang wajib. Ini standar kami:</p>
-<div class="loadbars"><div class="lb-row"><div class="lb-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:var(--blue)"><path d="M5 13l1.5-4.5A2 2 0 017.4 7h7.2a2 2 0 011.9 1.5L18 13"/><rect x="4" y="13" width="16" height="4" rx="1"/><circle cx="7.5" cy="18" r="1.3"/><circle cx="16.5" cy="18" r="1.3"/></svg><span>Mobil & Pickup</span></div><div class="lb-track"><div class="lb-fill" style="width:22%"></div></div><div class="lb-spec">K300 · 6-8 cm</div></div><div class="lb-row"><div class="lb-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:var(--blue)"><path d="M4 4v13h10"/><circle cx="6" cy="19" r="1.6"/><circle cx="12" cy="19" r="1.6"/><path d="M16 6v8M16 6h4M16 10h4"/></svg><span>Forklift 3 Ton</span></div><div class="lb-track"><div class="lb-fill" style="width:58%"></div></div><div class="lb-spec">K400 · 8-10 cm</div></div><div class="lb-row"><div class="lb-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:var(--blue)"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span>Truk & Trailer</span></div><div class="lb-track"><div class="lb-fill" style="width:82%"></div></div><div class="lb-spec">K400 · 10 cm</div></div><div class="lb-row"><div class="lb-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;color:var(--blue)"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M7 6v12M11 6v12M15 6v12"/></svg><span>Container Yard</span></div><div class="lb-track"><div class="lb-fill" style="width:100%"></div></div><div class="lb-spec">K400 · 10 cm + sub-base</div></div></div>
+<section class="area-feat"><div class="afi">
+<span class="aftag">BANDINGKAN MATERIAL</span>
+<h2>Paving, Beton Cor, atau Aspal untuk Proyek di Purwakarta?</h2>
+<p class="aflead">Untuk area luar ruang di Purwakarta, tiga material ini yang paling sering dibandingkan. Masing-masing punya konsekuensi biaya, waktu, dan perawatan yang berbeda. Klik tiap kolom untuk penjelasan lengkapnya:</p>
+<div class="cmp" id="cmp-purwakarta">
+  <div class="cmp-grid"><div class="cmp-col" data-i="0"><div class="cmp-h"><b>Paving Block</b><span>Direkomendasikan</span></div><div class="cmp-b"><div class="cmp-row"><span>Biaya</span><b>Rp 105rb sampai 230rb/m2</b></div><div class="cmp-row"><span>Waktu kerja</span><b>3 sampai 7 hari</b></div><div class="cmp-row"><span>Resapan air</span><b>Baik</b></div><div class="cmp-row"><span>Perbaikan</span><b>Per titik, murah</b></div><div class="cmp-row"><span>Perkiraan umur</span><b>10 sampai 20 tahun</b></div><div class="cmp-row"><span>Kemudahan rawat</span><b class="cmp-score"><i class="cmp-dot f"></i><i class="cmp-dot f"></i><i class="cmp-dot f"></i><i class="cmp-dot f"></i><i class="cmp-dot f"></i></b></div></div></div><div class="cmp-col" data-i="1"><div class="cmp-h"><b>Beton Cor</b><span>Alternatif kaku</span></div><div class="cmp-b"><div class="cmp-row"><span>Biaya</span><b>Rp 120rb sampai 250rb/m2</b></div><div class="cmp-row"><span>Waktu kerja</span><b>7 sampai 21 hari</b></div><div class="cmp-row"><span>Resapan air</span><b>Tidak ada</b></div><div class="cmp-row"><span>Perbaikan</span><b>Bongkar area luas</b></div><div class="cmp-row"><span>Perkiraan umur</span><b>15 sampai 25 tahun</b></div><div class="cmp-row"><span>Kemudahan rawat</span><b class="cmp-score"><i class="cmp-dot f"></i><i class="cmp-dot f"></i><i class="cmp-dot"></i><i class="cmp-dot"></i><i class="cmp-dot"></i></b></div></div></div><div class="cmp-col" data-i="2"><div class="cmp-h"><b>Aspal</b><span>Untuk jalan panjang</span></div><div class="cmp-b"><div class="cmp-row"><span>Biaya</span><b>Rp 100rb sampai 180rb/m2</b></div><div class="cmp-row"><span>Waktu kerja</span><b>2 sampai 5 hari</b></div><div class="cmp-row"><span>Resapan air</span><b>Tidak ada</b></div><div class="cmp-row"><span>Perbaikan</span><b>Tambal, cepat aus</b></div><div class="cmp-row"><span>Perkiraan umur</span><b>5 sampai 10 tahun</b></div><div class="cmp-row"><span>Kemudahan rawat</span><b class="cmp-score"><i class="cmp-dot f"></i><i class="cmp-dot f"></i><i class="cmp-dot f"></i><i class="cmp-dot"></i><i class="cmp-dot"></i></b></div></div></div></div>
+  <div class="cmp-detail"><h3 class="cd-n"></h3><p class="cd-d"></p></div>
+</div>
 </div></section>
+<script>
+(function(){
+var C=[{"n": "Paving Block", "s": "Direkomendasikan", "biaya": "Rp 105rb sampai 230rb/m2", "pasang": "3 sampai 7 hari", "resap": "Baik", "perbaikan": "Per titik, murah", "umur": "10 sampai 20 tahun", "sk": [5, 5, 4, 5], "d": "Paling fleksibel. Bisa dibongkar per titik tanpa merusak area sekitar, jadi kalau ada pipa bocor atau kabel yang perlu diakses, cukup angkat beberapa block lalu pasang lagi. Air masih bisa meresap lewat nat sehingga mengurangi genangan. Bisa dipakai segera setelah pemasangan selesai, tanpa masa tunggu."}, {"n": "Beton Cor", "s": "Alternatif kaku", "biaya": "Rp 120rb sampai 250rb/m2", "pasang": "7 sampai 21 hari", "resap": "Tidak ada", "perbaikan": "Bongkar area luas", "umur": "15 sampai 25 tahun", "sk": [4, 2, 1, 2], "d": "Kuat dan mulus, tapi kaku. Kalau retak, perbaikannya harus membongkar bidang yang cukup luas dan hasil tambalannya terlihat berbeda. Perlu masa curing sekitar 21 hari sebelum bisa dibebani penuh, dan air sama sekali tidak meresap sehingga drainase harus dirancang lebih serius."}, {"n": "Aspal", "s": "Untuk jalan panjang", "biaya": "Rp 100rb sampai 180rb/m2", "pasang": "2 sampai 5 hari", "resap": "Tidak ada", "perbaikan": "Tambal, cepat aus", "umur": "5 sampai 10 tahun", "sk": [3, 3, 2, 2], "d": "Cepat dikerjakan dan cocok untuk jalan panjang. Kelemahannya, aspal melunak saat panas terik dan mudah berlubang saat sering tergenang air. Umurnya paling pendek dari ketiganya, dan biasanya butuh pelapisan ulang beberapa tahun sekali."}];
+var R=document.getElementById("cmp-purwakarta");if(!R)return;
+function sel(i){var c=C[i];
+ R.querySelector(".cd-n").textContent=c.n;
+ R.querySelector(".cd-d").textContent=c.d;
+ R.querySelectorAll(".cmp-col").forEach(function(e,j){e.classList.toggle("on",j===i);});}
+R.querySelectorAll(".cmp-col").forEach(function(e,j){e.addEventListener("click",function(){sel(j);});});
+sel(0);
+})();
+</script>
+
+
 
 
 <div id="trust">
@@ -725,37 +767,9 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     </div>
   </div>
 </section>
-<section id="proyek">
-  <div class="container">
-    <div class="sec-label">02, Bukti Lapangan</div>
-    <h2>Proyek Nyata <span class="blue">di Sekitar Purwakarta</span></h2>
-    <div class="divider"></div>
-    <p style="font-size:15px;color:var(--tx2);max-width:680px;margin-bottom:32px;">Dokumentasi proyek aktual SolidPaving.id yang relevan untuk profile pekerjaan di Purwakarta. Foto asli dari lapangan.</p>
-    <div class="proyek-grid">
-        <div class="proyek-card">
-          <div class="proyek-img"><img src="https://ectascom.sirv.com/solidpaving.id/IMG_3960.jpeg?w=600&q=80&format=webp" alt="Hunian VIP Kenegaraan Cimanggis Depok, paving ubin K300 6cm presisi" loading="lazy" width="600" height="338"></div>
-          <div class="proyek-body">
-            <div class="proyek-spec">Ubin K300 6cm · hunian VIP</div>
-            <h3>Hunian VIP Kenegaraan</h3>
-            <div class="proyek-sub">Cimanggis, Depok · paving ubin presisi</div>
-            <p>Referensi proyek paving block ubin K300 6cm untuk hunian VIP kenegaraan di Cimanggis, Depok. Pattern yang sama bisa diterapkan untuk perumahan premium dan suburban Purwakarta.</p>
-          </div>
-        </div>
-        <div class="proyek-card">
-          <div class="proyek-img"><img src="https://ectascom.sirv.com/solidpaving.id/IMG_3971.jpeg?w=600&q=80&format=webp" alt="Hunian VIP Kenegaraan Cimanggis Depok, angle detail paving ubin K300 6cm" loading="lazy" width="600" height="338"></div>
-          <div class="proyek-body">
-            <div class="proyek-spec">Ubin K300 6cm · hunian VIP</div>
-            <h3>Hunian VIP Kenegaraan (Detail)</h3>
-            <div class="proyek-sub">Cimanggis, Depok · angle pemasangan presisi</div>
-            <p>Detail close-up pemasangan paving ubin K300 tebal 6 cm di hunian VIP kenegaraan Cimanggis. Pattern presisi yang sama bisa diterapkan untuk hunian premium di Purwakarta area Bukit Indah City dan Cipularang corridor.</p>
-          </div>
-        </div>
-    </div>
-    <div style="margin-top:28px;">
-      <a href="/portofolio/" class="btn-outline">Lihat Semua Portofolio →</a>
-    </div>
-  </div>
-</section>
+<section class="area-feat"><div class="afi"><span class="aftag">BUKTI LAPANGAN</span><h2>Proyek Nyata di Sekitar Purwakarta</h2><p class="aflead">Dokumentasi pekerjaan kami di koridor Karawang sampai Purwakarta dan sekitarnya:</p><div class="pf"><div class="pf-card"><div class="pf-imgs"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0735.jpeg?w=380&q=72&format=webp" alt="OFFO Living Cikampek" loading="lazy" width="380" height="150"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0737.jpeg?w=380&q=72&format=webp" alt="OFFO Living Cikampek hasil akhir" loading="lazy" width="380" height="150"></div><div class="pf-b"><span class="pf-tag">HUNIAN KOMERSIAL</span><h3>OFFO Living Cikampek</h3><p>Hunian komersial di Cikampek. Mencakup area akses kendaraan dan jalur pejalan.</p><div class="pf-meta"><span>Akses & pedestrian</span><span>Finishing rapi</span><span>Selesai</span></div></div></div><div class="pf-card"><div class="pf-imgs"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2661.jpeg?w=380&q=72&format=webp" alt="Pergudangan Tiga Raksa" loading="lazy" width="380" height="150"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2667.jpeg?w=380&q=72&format=webp" alt="Pergudangan Tiga Raksa hasil akhir" loading="lazy" width="380" height="150"></div><div class="pf-b"><span class="pf-tag">GUDANG LOGISTIK</span><h3>Pergudangan Tiga Raksa</h3><p>Area gudang dengan lalu lintas truk dan forklift harian.</p><div class="pf-meta"><span>Paving K400</span><span>Beban berat</span><span>Selesai</span></div></div></div></div><p class="exp-note" style="margin-top:16px">Dokumentasi lengkap proyek lain bisa dilihat di <a href="/portofolio/" style="color:var(--blue);font-weight:600">halaman portofolio</a>.</p></div></section>
+
+
 <section id="why">
   <div class="container">
     <div class="sec-label">03, Kenapa SolidPaving.id</div>

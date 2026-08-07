@@ -314,7 +314,42 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
   .foot-area-grid{grid-template-columns:1fr 1fr;}
 }
 /* FOOTER-CSS:END */
-.area-feat{padding:60px 5%;}.area-feat .afi{max-width:960px;margin:0 auto;}.area-feat .aftag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}.area-feat h2{font-size:clamp(20px,3vw,26px);color:var(--tx1);margin:0 0 8px;}.area-feat .aflead{color:var(--tx2);font-size:15px;line-height:1.6;max-width:640px;margin-bottom:8px;}.urb{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:840px;margin:28px 0 0;}.urb-card{border:1px solid var(--bdr);border-radius:var(--rl);padding:20px;background:var(--bg0);}.urb-ic{width:40px;height:40px;border-radius:9px;background:var(--bg2);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}.urb-card h3{font-size:14.5px;color:var(--tx1);margin:0 0 5px;font-weight:700;}.urb-card p{font-size:13px;color:var(--tx3);line-height:1.6;margin:0;}@media(max-width:640px){.urb{grid-template-columns:1fr;}}.lokasi-box svg{color:#fff!important;stroke:#fff!important;}</style>
+.area-feat{padding:34px 5% 40px!important;}.area-feat .afi{max-width:960px;margin:0 auto;}.area-feat .aftag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}.area-feat h2{font-size:clamp(20px,3vw,26px);color:var(--tx1);margin:0 0 8px;}.area-feat .aflead{color:var(--tx2);font-size:15px;line-height:1.6;max-width:640px;margin-bottom:8px;}.urb{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:840px;margin:28px 0 0;}.urb-card{border:1px solid var(--bdr);border-radius:var(--rl);padding:20px;background:var(--bg0);}.urb-ic{width:40px;height:40px;border-radius:9px;background:var(--bg2);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}.urb-card h3{font-size:14.5px;color:var(--tx1);margin:0 0 5px;font-weight:700;}.urb-card p{font-size:13px;color:var(--tx3);line-height:1.6;margin:0;}@media(max-width:640px){.urb{grid-template-columns:1fr;}}.lokasi-box svg{color:#fff!important;stroke:#fff!important;}
+.bud{max-width:820px;margin:26px 0 0;border:1px solid var(--bdr);border-radius:var(--rl);background:var(--bg0);padding:24px;}
+.bud-pk{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.bud-p{padding:14px 10px;background:var(--bg1);border:1.5px solid var(--bdr);border-radius:10px;cursor:pointer;font-family:inherit;text-align:left;transition:all .18s;}
+.bud-p:hover{border-color:var(--accent);}
+.bud-p.on{background:var(--blue);border-color:var(--blue);}
+.bud-p b{display:block;font-size:13.5px;font-weight:800;color:var(--tx1);margin-bottom:3px;}
+.bud-p span{font-size:11.5px;color:var(--tx3);line-height:1.4;display:block;}
+.bud-p.on b,.bud-p.on span{color:#fff;}
+.bud-p.on span{opacity:.85;}
+.bud-lbl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
+.bud-lbl b{font-size:13px;color:var(--tx1);}
+.bud-lbl i{font-style:normal;font-size:20px;font-weight:800;color:var(--blue);}
+.bud-r{width:100%;-webkit-appearance:none;appearance:none;height:8px;border-radius:100px;background:linear-gradient(90deg,var(--accent),var(--blue));outline:none;margin:8px 0 5px;}
+.bud-r::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--blue);cursor:pointer;box-shadow:0 2px 8px rgba(46,62,95,.25);}
+.bud-r::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--blue);cursor:pointer;}
+.bud-tick{display:flex;justify-content:space-between;font-size:10.5px;color:var(--tx3);margin-bottom:20px;}
+.bud-bar{display:flex;height:34px;border-radius:8px;overflow:hidden;margin-bottom:10px;}
+.bud-seg{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;transition:width .4s cubic-bezier(.16,.8,.3,1);white-space:nowrap;overflow:hidden;}
+.bud-mat{background:var(--blue);}
+.bud-jas{background:var(--accent);}
+.bud-lg{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--tx2);margin-bottom:18px;}
+.bud-lg span{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
+.bud-lg i{width:12px;height:12px;border-radius:3px;display:inline-block;font-style:normal;}
+.bud-rows{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.bud-c{background:var(--bg1);border-radius:9px;padding:13px;}
+.bud-c span{display:block;font-size:10.5px;color:var(--tx3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.bud-c b{font-size:15px;color:var(--tx1);}
+.bud-tot{grid-column:1/-1;background:var(--blue);border-radius:9px;padding:16px;text-align:center;}
+.bud-tot span{display:block;font-size:11px;color:rgba(255,255,255,.75);letter-spacing:.5px;margin-bottom:4px;}
+.bud-tot b{font-size:19px;color:#fff;}
+.bud-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px 20px;background:#25D366;color:#fff;border-radius:9px;font-size:13.5px;font-weight:700;text-decoration:none;}
+.bud-wa:hover{opacity:.9;color:#fff;text-decoration:none;}
+.bud-note{font-size:11.5px;color:var(--tx3);margin:10px 0 0;line-height:1.5;}
+@media(max-width:640px){.bud-pk{grid-template-columns:1fr;}.bud-rows{grid-template-columns:1fr;}}
+.pf{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}.pf-card{border:1px solid var(--bdr);border-radius:var(--rl);overflow:hidden;background:var(--bg0);}.pf-imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;}.pf-imgs img{width:100%;height:150px;object-fit:cover;display:block;}.pf-b{padding:15px 16px;}.pf-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.6px;color:var(--accent);margin-bottom:5px;}.pf-b h3{font-size:14.5px;color:var(--tx1);margin:0 0 5px;font-weight:700;}.pf-b p{font-size:12.5px;color:var(--tx3);line-height:1.55;margin:0;}.pf-meta{display:flex;gap:14px;margin-top:9px;flex-wrap:wrap;}.pf-meta span{font-size:11.5px;color:var(--tx2);font-weight:600;}@media(max-width:700px){.pf{grid-template-columns:1fr;}}</style>
 <script type="application/ld+json">
 [
   {
@@ -644,38 +679,56 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <main>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="hero-badge"> DKI Jakarta · Sudirman, SCBD, & Seluruh Wilayah</div>
-      <h1>Supplier & Jasa Pasang <span class="blue">Paving Block Jakarta</span></h1>
-      <p class="hero-sub">Spesialis paving block untuk kawasan perkantoran, komersial, dan residensial di Jakarta. Terbukti dipercaya di area prestisius Jl. Sudirman Jakarta Pusat. Material K200–K400 hidrolik press SNI, bergaransi.</p>
-      <div class="hero-btns">
-        <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20butuh%20paving%20block%20di%20Jakarta%2C%20bisa%20survei%20gratis%3F" class="btn-primary">Survei & RAB Gratis Jakarta</a>
-        <a href="/#kalkulator" class="btn-outline">Hitung Estimasi Biaya</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Proyek selesai</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">K300</div><div class="hero-stat-label">Standar komersial</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">3 Bln</div><div class="hero-stat-label">Garansi tertulis</div></div>
-      </div>
-    </div>
-    <div class="hero-img">
-      <img src="https://ectascom.sirv.com/solidpaving.id/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0740.jpeg?w=760&q=82&format=webp" alt="Hasil pemasangan paving block di Polytron EV Jl. Sudirman Jakarta Pusat oleh SolidPaving.id" loading="eager" fetchpriority="high" width="760" height="570">
-      <div class="hero-img-badges">
-        <span class="hbadge">SNI Bersertifikat</span>
-        <span class="hbadge">Hidrolik Press</span>
-        <span class="hbadge">Jl. Sudirman</span>
-        <span class="hbadge">Proyek Nyata</span>
-      </div>
-    </div>
-  </div>
-</section>
+
 <section class="area-feat" style="background:var(--bg1)"><div class="afi">
-<span class="aftag">KONTEKS URBAN</span><h2>Tantangan Paving di Jakarta, dan Solusi Kami</h2>
-<p class="aflead">Proyek di Jakarta punya tantangan khas kota padat. Kami sudah terbiasa menanganinya:</p>
-<div class="urb"><div class="urb-card"><div class="urb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--blue)"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16M15 4v16M4 9h16M4 15h16"/></svg></div><h3>Lahan Terbatas</h3><p>Akses sempit dan lahan padat. Kami atur mobilisasi material dan alat agar tidak mengganggu operasional sekitar.</p></div><div class="urb-card"><div class="urb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--blue)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Akses & Waktu Kerja</h3><p>Fleksibel kerja malam atau akhir pekan untuk area komersial, supaya bisnis tetap jalan selama pengerjaan.</p></div><div class="urb-card"><div class="urb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--blue)"><path d="M12 3s6 6 6 11a6 6 0 01-12 0c0-5 6-11 6-11z"/></svg></div><h3>Drainase Kota</h3><p>Kemiringan dan resapan dirancang agar air hujan tidak menggenang di area parkir dan halaman.</p></div></div>
+<span class="aftag">KALKULATOR ANGGARAN</span>
+<h2>Susun Perkiraan Anggaran Proyek Anda di Jakarta</h2>
+<p class="aflead">Proyek di Jakarta perlu perencanaan anggaran yang jelas sejak awal, apalagi bila melibatkan persetujuan manajemen gedung atau pemilik properti. Pilih paket dan geser luas area, kami pecah anggarannya jadi porsi material dan jasa pasang:</p>
+<div class="bud" id="bud-jakarta">
+  <div class="bud-pk"><button class="bud-p" data-i="0"><b>Standar</b><span>K300 tebal 6 cm, hunian & pedestrian</span></button><button class="bud-p" data-i="1"><b>Komersial</b><span>K350 tebal 8 cm, parkir & drop-off</span></button><button class="bud-p" data-i="2"><b>Beban Berat</b><span>K400 tebal 10 cm, truk & logistik</span></button></div>
+  <div class="bud-lbl"><b>Luas area</b><i class="bd-l">100 m2</i></div>
+  <input type="range" class="bud-r bd-r" min="25" max="2000" step="25" value="100">
+  <div class="bud-tick"><span>25 m2</span><span>500 m2</span><span>1.000 m2</span><span>2.000 m2</span></div>
+  <div class="bud-bar"><div class="bud-seg bud-mat bd-sm"></div><div class="bud-seg bud-jas bd-sj"></div></div>
+  <div class="bud-lg"><span><i class="bud-mat"></i>Material paving</span><span><i class="bud-jas"></i>Jasa pasang &amp; persiapan lahan</span></div>
+  <div class="bud-rows">
+    <div class="bud-c"><span>Porsi Material</span><b class="bd-m"></b></div>
+    <div class="bud-c"><span>Porsi Jasa Pasang</span><b class="bd-j"></b></div>
+    <div class="bud-c"><span>Spesifikasi</span><b class="bd-sp"></b></div>
+    <div class="bud-c"><span>Estimasi per m2</span><b class="bd-pm"></b></div>
+    <div class="bud-tot"><span>PERKIRAAN TOTAL ANGGARAN</span><b class="bd-t"></b></div>
+  </div>
+  <a class="bud-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.3.5-.3.3c-.1.1-.2.3 0 .5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.8.9c.2.1.4.2.4.3.1.1.1.4-.1.9z"/></svg>Minta RAB Detail Gratis</a>
+  <p class="bud-note">Perkiraan ini untuk membantu menyusun anggaran awal. Angka final ditentukan setelah survei lapangan, tergantung kondisi tanah, akses lokasi, dan kebutuhan galian atau bongkaran.</p>
+</div>
 </div></section>
+<section class="area-feat"><div class="afi"><span class="aftag">BUKTI LAPANGAN</span><h2>Proyek Nyata di Jakarta</h2><p class="aflead">Dokumentasi pekerjaan kami di Jakarta, dari koridor bisnis sampai kampus:</p><div class="pf"><div class="pf-card"><div class="pf-imgs"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0740.jpeg?w=380&q=72&format=webp" alt="Polytron EV, Jl. Sudirman Jakarta" loading="lazy" width="380" height="150"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0739.jpeg?w=380&q=72&format=webp" alt="Polytron EV, Jl. Sudirman Jakarta hasil akhir" loading="lazy" width="380" height="150"></div><div class="pf-b"><span class="pf-tag">KOMERSIAL</span><h3>Polytron EV, Jl. Sudirman Jakarta</h3><p>Showroom kendaraan listrik di koridor bisnis Sudirman, dikerjakan dengan finishing presisi.</p><div class="pf-meta"><span>Jakarta</span><span>Komersial</span><span>Selesai</span></div></div></div><div class="pf-card"><div class="pf-imgs"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_6595.jpeg?w=380&q=72&format=webp" alt="Kampus Institut Teknologi PLN" loading="lazy" width="380" height="150"><img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Institut%20teknologi%20PLN/IMG_7019.jpeg?w=380&q=72&format=webp" alt="Kampus Institut Teknologi PLN hasil akhir" loading="lazy" width="380" height="150"></div><div class="pf-b"><span class="pf-tag">INSTITUSI</span><h3>Kampus Institut Teknologi PLN</h3><p>Jalur pejalan, parkir, dan taman grassblock untuk resapan air.</p><div class="pf-meta"><span>Jakarta</span><span>Paving + grassblock</span><span>Selesai</span></div></div></div></div><p class="exp-note" style="margin-top:16px">Dokumentasi lengkap proyek lain bisa dilihat di <a href="/portofolio/" style="color:var(--blue);font-weight:600">halaman portofolio</a>.</p></div></section>
+
+<script>
+(function(){
+var P=[{"n": "Standar", "d": "K300 tebal 6 cm, hunian & pedestrian", "spec": "K300 · 6 cm", "mat": 90000, "jas": 45000}, {"n": "Komersial", "d": "K350 tebal 8 cm, parkir & drop-off", "spec": "K350 · 8 cm", "mat": 110000, "jas": 55000}, {"n": "Beban Berat", "d": "K400 tebal 10 cm, truk & logistik", "spec": "K400 · 10 cm", "mat": 160000, "jas": 70000}];var cur=0;
+var R=document.getElementById("bud-jakarta");if(!R)return;
+function $(x){return R.querySelector(x);}
+function fmt(n){return "Rp "+Math.round(n).toLocaleString("id-ID");}
+function draw(){var p=P[cur];var l=+$(".bd-r").value;
+ var mat=p.mat*l,jas=p.jas*l,tot=mat+jas;
+ var pm=Math.round(mat/tot*100);
+ $(".bd-l").textContent=l.toLocaleString("id-ID")+" m2";
+ $(".bd-sm").style.width=pm+"%";$(".bd-sj").style.width=(100-pm)+"%";
+ $(".bd-sm").textContent=pm+"%";$(".bd-sj").textContent=(100-pm)+"%";
+ $(".bd-m").textContent=fmt(mat);$(".bd-j").textContent=fmt(jas);
+ $(".bd-sp").textContent=p.spec;$(".bd-pm").textContent=fmt(p.mat+p.jas);
+ $(".bd-t").textContent=fmt(tot);
+ var msg="Halo, saya menyusun anggaran lewat kalkulator di halaman Jakarta.%0A%0APaket: "+p.n+"%0ASpec: "+p.spec+"%0ALuas: "+l+" m2%0AEstimasi total: "+fmt(tot)+"%0A%0AMohon dibuatkan RAB detail dan jadwal survei.";
+ $(".bud-wa").href="https://wa.me/6285943492832?text="+msg;
+}
+R.querySelectorAll(".bud-p").forEach(function(b,j){b.addEventListener("click",function(){cur=j;R.querySelectorAll(".bud-p").forEach(function(x,k){x.classList.toggle("on",k===j);});draw();});});
+$(".bd-r").addEventListener("input",draw);
+R.querySelectorAll(".bud-p")[0].classList.add("on");draw();
+})();
+</script>
+
+
 
 
 <!-- TRUST -->
