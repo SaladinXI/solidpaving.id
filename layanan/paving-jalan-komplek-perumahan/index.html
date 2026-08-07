@@ -494,7 +494,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 .mob-drawer details a{font-size:13.5px;color:var(--tx2);padding:8px 4px 8px 16px;display:block;border:none;}
 .mob-drawer details a.mob-all{font-weight:700;color:var(--blue);}
 .mob-drawer .mob-cta{margin-top:18px;}
-</style>
+.reveal,.reveal-stagger,.reveal-stagger>*{opacity:1!important;transform:none!important;transition:none!important;}</style>
 
 <div class="mob-drawer" id="mobDrawer">
   <details>
@@ -960,13 +960,6 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 })();
 </script>
 
-<script>
-(function(){
-  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var sels=['.uc-card','.harga-card','.gar-card','.gal-item','.spec-card','.vp-card'];
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-  sels.forEach(function(sel){document.querySelectorAll(sel).forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=Math.min(i*60,300)+'ms';io.observe(el);});});
-})();
-</script>
+
 </body>
 </html>
