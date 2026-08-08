@@ -821,7 +821,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 .pnl-plain::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
 </style>
 <nav>
-  <a href="/" class="nav-logo" aria-label="SolidPaving.id — Beranda">
+  <a href="/" class="nav-logo" aria-label="SolidPaving.id Beranda">
     <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" height="34">
       <g transform="translate(0,3)"><polygon points="0,0 28,0 19,13 0,13" fill="#2e3e5f"/><polygon points="9,16 28,16 28,29 0,29" fill="#95b3d9"/></g>
       <text x="36" y="32" font-family="Montserrat,sans-serif" font-weight="900" font-size="17" fill="#2e3e5f" letter-spacing="3">SOLID<tspan font-weight="300" fill="#95b3d9" letter-spacing="3">PAVING</tspan></text>
@@ -880,6 +880,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
         <div class="mega-col">
           <div class="pnl-head">Jakarta & Sekitarnya</div>
           <a href="/jakarta/" class="pnl-plain">DKI Jakarta</a>
+          <a href="/jakarta-pusat/" class="pnl-plain">Jakarta Pusat</a>
           <a href="/jakarta-timur/" class="pnl-plain">Jakarta Timur</a>
           <a href="/jakarta-selatan/" class="pnl-plain">Jakarta Selatan</a>
           <a href="/jakarta-barat/" class="pnl-plain">Jakarta Barat</a>
@@ -925,7 +926,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
         <a href="/blog/harga-pasang-paving-block-2026/" class="pnl-link"><div class="pnl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div><div><span class="pnl-title">Daftar Harga Terbaru</span></div></a>
         <a href="/blog/biaya-paving-lahan-parkir-1000m2/" class="pnl-link"><div class="pnl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div><div><span class="pnl-title">Contoh RAB Parkir 1.000 m²</span></div></a>
         <a href="/blog/kenapa-paving-amblas/" class="pnl-link"><div class="pnl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div><div><span class="pnl-title">Kenapa Paving Amblas?</span></div></a>
-        <a href="/blog/paving-block-k300-vs-k400/" class="pnl-link"><div class="pnl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-2.5 5a3 3 0 005 0z"/><path d="M19 7l-2.5 5a3 3 0 005 0z"/></svg></div><div><span class="pnl-title">K300 vs K400 — Pilih Mana?</span></div></a>
+        <a href="/blog/paving-block-k300-vs-k400/" class="pnl-link"><div class="pnl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-2.5 5a3 3 0 005 0z"/><path d="M19 7l-2.5 5a3 3 0 005 0z"/></svg></div><div><span class="pnl-title">K300 vs K400, Pilih Mana?</span></div></a>
         <a href="/blog/cara-hitung-kebutuhan-paving-block/" class="pnl-link"><div class="pnl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7h7"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></svg></div><div><span class="pnl-title">Cara Hitung Kebutuhan Paving</span></div></a>
         <a href="/blog/tips-memilih-kontraktor-paving/" class="pnl-link"><div class="pnl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9.5"/></svg></div><div><span class="pnl-title">Tips Memilih Kontraktor</span></div></a>
         <div class="pnl-sep"></div>
@@ -975,94 +976,178 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 <!-- Mobile drawer -->
 <!-- MOB-DRAWER:START -->
 <style>
-/* Collapsible sections for mobile drawer */
-.mob-drawer details{border-bottom:1px solid var(--bds);}
+/* ===== Mobile drawer, versi rapi ===== */
+.mob-drawer{padding-bottom:8px;}
+.mob-quick{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:2px 0 16px;}
+.mob-q{display:flex;align-items:center;gap:9px;padding:12px;background:var(--bg1);border:1px solid var(--bds,rgba(46,62,95,.14));border-radius:11px;text-decoration:none;transition:background .18s,border-color .18s;}
+.mob-q:active{background:var(--bg2);}
+.mob-q svg{width:18px;height:18px;color:var(--blue);flex-shrink:0;}
+.mob-q b{font-size:12.5px;color:var(--tx1);font-weight:700;line-height:1.25;}
+.mob-q span{display:block;font-size:10.5px;color:var(--tx3);font-weight:500;margin-top:1px;}
+.mob-drawer details{border-bottom:1px solid var(--bds,rgba(46,62,95,.12));}
 .mob-drawer details:last-of-type{border-bottom:0;}
-.mob-drawer details summary{padding:14px 4px;font-size:14px;font-weight:700;color:var(--tx1);list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.mob-drawer details summary{padding:13px 2px;font-size:14px;font-weight:700;color:var(--tx1);list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;}
 .mob-drawer details summary::-webkit-details-marker{display:none;}
-.mob-drawer details summary::after{content:'+';font-size:22px;color:var(--tx3);font-weight:300;transition:transform .2s;}
+.mob-sico{width:28px;height:28px;border-radius:8px;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s;}
+.mob-sico svg{width:15px;height:15px;color:var(--blue);transition:color .2s;}
+.mob-drawer details summary .mob-arw{margin-left:auto;width:15px;height:15px;color:var(--tx3);transition:transform .25s cubic-bezier(.16,.8,.3,1);flex-shrink:0;}
 .mob-drawer details[open] summary{color:var(--blue);}
-.mob-drawer details[open] summary::after{transform:rotate(45deg);}
-.mob-drawer details a{font-size:13.5px;color:var(--tx2);padding:8px 4px 8px 16px;display:block;border:none;}
-.mob-drawer details a.mob-all{font-weight:700;color:var(--blue);}
-.mob-drawer .mob-cta{margin-top:18px;}
+.mob-drawer details[open] .mob-sico{background:var(--blue);}
+.mob-drawer details[open] .mob-sico svg{color:#fff;}
+.mob-drawer details[open] summary .mob-arw{transform:rotate(180deg);color:var(--blue);}
+.mob-body{padding:0 2px 12px 38px;}
+.mob-drawer details a{font-size:13.5px;color:var(--tx2);padding:8px 2px;display:block;border:none;text-decoration:none;}
+.mob-drawer details a:active{color:var(--blue);}
+.mob-drawer details a.mob-all{font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:5px;}
+.mob-chips{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0 4px;}
+.mob-chips a{font-size:12px;font-weight:600;color:var(--tx2);background:var(--bg1);border:1px solid var(--bds,rgba(46,62,95,.14));border-radius:100px;padding:7px 12px;display:inline-block;}
+.mob-chips a:active{background:var(--blue);color:#fff;border-color:var(--blue);}
+.mob-grp{font-size:10.5px;font-weight:800;letter-spacing:.7px;color:var(--tx3);margin:12px 0 7px;text-transform:uppercase;}
+.mob-drawer .mob-cta{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.mob-note{text-align:center;font-size:11px;color:var(--tx3);margin-top:9px;line-height:1.5;}
 </style>
 
 <div class="mob-drawer" id="mobDrawer">
+
+  <div class="mob-quick">
+    <a href="/kalkulator/" class="mob-q" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></svg>
+      <b>Hitung Biaya<span>Estimasi cepat</span></b>
+    </a>
+    <a href="/portofolio/" class="mob-q" onclick="closeMob()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-3 6 5"/><circle cx="8.5" cy="9" r="1.2"/></svg>
+      <b>Portofolio<span>Proyek nyata</span></b>
+    </a>
+  </div>
+
   <details>
-    <summary>Produk</summary>
-    <a href="/produk/" onclick="closeMob()" class="mob-all">Lihat Semua Produk →</a>
-    <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
-    <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
-    <a href="/produk/paving-cacing/" onclick="closeMob()">Cacing (Uni)</a>
-    <a href="/produk/paving-hexagon/" onclick="closeMob()">Hexagon</a>
-    <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
-    <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
+    <summary>
+      <span class="mob-sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+      Produk
+      <svg class="mob-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+    </summary>
+    <div class="mob-body">
+      <a href="/produk/" onclick="closeMob()" class="mob-all">Lihat Semua Produk &rarr;</a>
+      <a href="/produk/paving-holland/" onclick="closeMob()">Holland (Bata)</a>
+      <a href="/produk/paving-ubin/" onclick="closeMob()">Ubin (Square)</a>
+      <a href="/produk/paving-cacing/" onclick="closeMob()">Cacing (Uni)</a>
+      <a href="/produk/paving-hexagon/" onclick="closeMob()">Hexagon</a>
+      <a href="/produk/grassblock/" onclick="closeMob()">Grassblock</a>
+      <a href="/produk/kanstin/" onclick="closeMob()">Kanstin / Kerb</a>
+    </div>
   </details>
 
   <details>
-    <summary>Layanan</summary>
-    <a href="/layanan/" onclick="closeMob()" class="mob-all">Lihat Semua Layanan →</a>
-    <a href="/layanan/jasa-pasang-paving-block/" onclick="closeMob()">Jasa Pasang Paving Block</a>
-    <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
-    <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">Paving Kawasan Industri</a>
-    <a href="/layanan/paving-perumahan/" onclick="closeMob()">Paving Perumahan</a>
-    <a href="/layanan/paving-jalan-komplek-perumahan/" onclick="closeMob()">Paving Jalan Komplek</a>
-    <a href="/layanan/kanstin/" onclick="closeMob()">Jasa Pasang Kanstin</a>
-    <a href="/layanan/supplier-paving/" onclick="closeMob()">Supplier Material Only</a>
+    <summary>
+      <span class="mob-sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l4 4M3 21l9-9"/><path d="M14.5 5.5a2.1 2.1 0 013 0l1 1a2.1 2.1 0 010 3"/></svg></span>
+      Layanan
+      <svg class="mob-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+    </summary>
+    <div class="mob-body">
+      <a href="/layanan/" onclick="closeMob()" class="mob-all">Lihat Semua Layanan &rarr;</a>
+      <a href="/layanan/jasa-pasang-paving-block/" onclick="closeMob()">Jasa Pasang Paving Block</a>
+      <a href="/layanan/paving-lahan-parkir/" onclick="closeMob()">Paving Lahan Parkir</a>
+      <a href="/layanan/paving-kawasan-industri/" onclick="closeMob()">Paving Kawasan Industri</a>
+      <a href="/layanan/paving-perumahan/" onclick="closeMob()">Paving Perumahan</a>
+      <a href="/layanan/paving-jalan-komplek-perumahan/" onclick="closeMob()">Paving Jalan Komplek</a>
+      <a href="/layanan/kanstin/" onclick="closeMob()">Jasa Pasang Kanstin</a>
+      <a href="/layanan/supplier-paving/" onclick="closeMob()">Supplier Material Saja</a>
+    </div>
   </details>
 
   <details>
-    <summary>Harga &amp; Estimasi</summary>
-    <a href="/#kalkulator" onclick="closeMob()">Kalkulator Estimasi</a>
-    <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">Daftar Harga Terbaru</a>
-    <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">Contoh RAB Parkir 1.000 m²</a>
+    <summary>
+      <span class="mob-sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+      Harga &amp; Estimasi
+      <svg class="mob-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+    </summary>
+    <div class="mob-body">
+      <a href="/kalkulator/" onclick="closeMob()" class="mob-all">Kalkulator Estimasi &rarr;</a>
+      <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">Daftar Harga Terbaru</a>
+      <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">Contoh RAB Parkir 1.000 m&sup2;</a>
+    </div>
   </details>
 
   <details>
-    <summary>Area Layanan</summary>
-    <a href="/area-layanan/" onclick="closeMob()" class="mob-all">Lihat Semua Area Layanan →</a>
-    <a href="/jakarta/" onclick="closeMob()">DKI Jakarta</a>
-    <a href="/jakarta-selatan/" onclick="closeMob()">Jakarta Selatan</a>
-    <a href="/jakarta-timur/" onclick="closeMob()">Jakarta Timur</a>
-    <a href="/jakarta-barat/" onclick="closeMob()">Jakarta Barat</a>
-    <a href="/jakarta-utara/" onclick="closeMob()">Jakarta Utara</a>
-    <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
-    <a href="/depok/" onclick="closeMob()">Depok</a>
-    <a href="/bogor/" onclick="closeMob()">Bogor</a>
-    <a href="/tangerang/" onclick="closeMob()">Tangerang</a>
-    <a href="/tangerang-selatan/" onclick="closeMob()">Tangerang Selatan</a>
-    <a href="/serpong/" onclick="closeMob()">Serpong (BSD)</a>
-    <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
-    <a href="/jababeka/" onclick="closeMob()">Jababeka</a>
-    <a href="/mm2100/" onclick="closeMob()">MM2100</a>
-    <a href="/cibitung/" onclick="closeMob()">Cibitung</a>
-    <a href="/karawang/" onclick="closeMob()">Karawang</a>
-    <a href="/bandung/" onclick="closeMob()">Bandung</a>
-    <a href="/purwakarta/" onclick="closeMob()">Purwakarta</a>
+    <summary>
+      <span class="mob-sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg></span>
+      Area Layanan
+      <svg class="mob-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+    </summary>
+    <div class="mob-body">
+      <a href="/area-layanan/" onclick="closeMob()" class="mob-all">Lihat Semua Area &rarr;</a>
+      <div class="mob-grp">Jakarta</div>
+      <div class="mob-chips">
+        <a href="/jakarta/" onclick="closeMob()">DKI Jakarta</a>
+        <a href="/jakarta-pusat/" onclick="closeMob()">Jakarta Pusat</a>
+        <a href="/jakarta-selatan/" onclick="closeMob()">Jakarta Selatan</a>
+        <a href="/jakarta-timur/" onclick="closeMob()">Jakarta Timur</a>
+        <a href="/jakarta-barat/" onclick="closeMob()">Jakarta Barat</a>
+        <a href="/jakarta-utara/" onclick="closeMob()">Jakarta Utara</a>
+      </div>
+      <div class="mob-grp">Bodetabek</div>
+      <div class="mob-chips">
+        <a href="/bekasi/" onclick="closeMob()">Bekasi</a>
+        <a href="/depok/" onclick="closeMob()">Depok</a>
+        <a href="/bogor/" onclick="closeMob()">Bogor</a>
+        <a href="/tangerang/" onclick="closeMob()">Tangerang</a>
+        <a href="/tangerang-selatan/" onclick="closeMob()">Tangsel</a>
+        <a href="/serpong/" onclick="closeMob()">Serpong (BSD)</a>
+      </div>
+      <div class="mob-grp">Kawasan Industri</div>
+      <div class="mob-chips">
+        <a href="/cikarang/" onclick="closeMob()">Cikarang</a>
+        <a href="/jababeka/" onclick="closeMob()">Jababeka</a>
+        <a href="/mm2100/" onclick="closeMob()">MM2100</a>
+        <a href="/cibitung/" onclick="closeMob()">Cibitung</a>
+        <a href="/karawang/" onclick="closeMob()">Karawang</a>
+      </div>
+      <div class="mob-grp">Jawa Barat</div>
+      <div class="mob-chips">
+        <a href="/bandung/" onclick="closeMob()">Bandung</a>
+        <a href="/purwakarta/" onclick="closeMob()">Purwakarta</a>
+      </div>
+    </div>
   </details>
 
   <details>
-    <summary>Blog</summary>
-    <a href="/blog/" onclick="closeMob()" class="mob-all">Lihat Semua Artikel →</a>
-    <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">Daftar Harga Terbaru</a>
-    <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">Contoh RAB Parkir 1.000 m²</a>
-    <a href="/blog/kenapa-paving-amblas/" onclick="closeMob()">Kenapa Paving Amblas?</a>
-    <a href="/blog/paving-block-k300-vs-k400/" onclick="closeMob()">K300 vs K400 — Pilih Mana?</a>
-    <a href="/blog/cara-hitung-kebutuhan-paving-block/" onclick="closeMob()">Cara Hitung Kebutuhan Paving</a>
-    <a href="/blog/tips-memilih-kontraktor-paving/" onclick="closeMob()">Tips Memilih Kontraktor</a>
+    <summary>
+      <span class="mob-sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg></span>
+      Blog &amp; Panduan
+      <svg class="mob-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+    </summary>
+    <div class="mob-body">
+      <a href="/blog/" onclick="closeMob()" class="mob-all">Lihat Semua Artikel &rarr;</a>
+      <a href="/blog/harga-pasang-paving-block-2026/" onclick="closeMob()">Daftar Harga Terbaru</a>
+      <a href="/blog/biaya-paving-lahan-parkir-1000m2/" onclick="closeMob()">Contoh RAB Parkir 1.000 m&sup2;</a>
+      <a href="/blog/kenapa-paving-amblas/" onclick="closeMob()">Kenapa Paving Amblas?</a>
+      <a href="/blog/paving-block-k300-vs-k400/" onclick="closeMob()">K300 vs K400, Pilih Mana?</a>
+      <a href="/blog/cara-hitung-kebutuhan-paving-block/" onclick="closeMob()">Cara Hitung Kebutuhan Paving</a>
+      <a href="/blog/tips-memilih-kontraktor-paving/" onclick="closeMob()">Tips Memilih Kontraktor</a>
+    </div>
   </details>
 
   <details>
-    <summary>Tentang &amp; Panduan</summary>
-    <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
-    <a href="/portofolio/" onclick="closeMob()">Portofolio Proyek</a>
-    <a href="/#faq" onclick="closeMob()">FAQ</a>
-    <a href="/kebijakan-privasi/" onclick="closeMob()">Kebijakan Privasi</a>
-    <a href="/kontak/" onclick="closeMob()">Hubungi Kami</a>
+    <summary>
+      <span class="mob-sico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+      Tentang &amp; Kontak
+      <svg class="mob-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+    </summary>
+    <div class="mob-body">
+      <a href="/tentang-kami/" onclick="closeMob()">Tentang SolidPaving.id</a>
+      <a href="/portofolio/" onclick="closeMob()">Portofolio Proyek</a>
+      <a href="/kontak/" onclick="closeMob()">Hubungi Kami</a>
+      <a href="/#faq" onclick="closeMob()">FAQ</a>
+      <a href="/kebijakan-privasi/" onclick="closeMob()">Kebijakan Privasi</a>
+    </div>
   </details>
 
-  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">Survei &amp; RAB Gratis</a>
+  <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20survei%20gratis." class="mob-cta" onclick="closeMob()">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.3.5-.3.3c-.1.1-.2.3 0 .5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.8.9c.2.1.4.2.4.3.1.1.1.4-.1.9z"/></svg>
+    Survei &amp; RAB Gratis
+  </a>
+  <p class="mob-note">Respons di bawah 24 jam kerja. Jabodetabek &amp; Jawa Barat.</p>
+
 </div>
 <!-- MOB-DRAWER:END -->
 
