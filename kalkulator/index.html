@@ -15,15 +15,15 @@
 <link rel="icon" type="image/svg+xml" href="/images/site-icon.svg">
 <link rel="icon" type="image/png" sizes="64x64" href="https://ectascom.sirv.com/solidpaving.id/solidpaving.id%20logo.png?w=64&h=64">
 <link rel="icon" type="image/png" sizes="32x32" href="https://ectascom.sirv.com/solidpaving.id/solidpaving.id%20logo.png?w=32&h=32">  
-<title>Jasa Pasang Paving Block Anti Amblas [Survei Gratis 24 Jam]</title>
-<meta name="description" content="Bukan asal pasang — kami padatkan sub-base agar tidak amblas, garansi 3 bulan tertulis, satu kontrak material + jasa. Survei & RAB gratis 24 jam, Jabodetabek.">
+<title>Kalkulator Paving Block [Estimasi Biaya Otomatis]</title>
+<meta name="description" content="Kalkulator paving block gratis. Hitung estimasi kebutuhan material dan biaya pemasangan per m2 secara otomatis, lengkap dengan pilihan mutu K200 sampai K400.">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="Jasa Pasang Paving Block Anti Amblas — Survei Gratis 24 Jam">
-<meta property="og:description" content="Jasa pasang & supplier paving block bergaransi. Sub-base dipadatkan agar tidak amblas. Survei & RAB gratis 24 jam.">
+<meta property="og:title" content="Kalkulator Paving Block [Estimasi Biaya Otomatis]">
+<meta property="og:description" content="Hitung estimasi kebutuhan material dan biaya pasang paving block secara otomatis. Gratis, tanpa perlu daftar.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://solidpaving.id/">
+<meta property="og:url" content="https://solidpaving.id/kalkulator/">
 <meta property="og:image" content="https://solidpaving.sirv.com/solidpaving/Jasa%20pasang%20paving%20block/pengiriman%20menggunakan%20pallet%20dan%20crane.jpeg?w=1200&h=630&format=webp">  
-<link rel="canonical" href="https://solidpaving.id/">
+<link rel="canonical" href="https://solidpaving.id/kalkulator/">
 <!-- FIX 1: Preload LCP image → eliminasi resource load delay 130ms -->
 <link rel="preload" as="image" href="https://solidpaving.sirv.com/solidpaving/Jasa%20pasang%20paving%20block/pengiriman%20menggunakan%20pallet%20dan%20crane.jpeg?w=760&q=55&format=webp" fetchpriority="high" media="(min-width:769px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -501,7 +501,7 @@ footer{background:var(--bg1);border-top:1px solid var(--bdr);padding:64px 5% 28p
 
 /* ════════ UPGRADE v2: GUIDED CALCULATOR + STARTUP POLISH ════════ */
 
-/* — global flow polish — */
+/*, global flow polish, */
 html{scroll-behavior:smooth;}
 @media(max-width:768px){
   section{padding:44px 5%;}
@@ -520,7 +520,7 @@ html{scroll-behavior:smooth;}
 .ct-foot{margin-top:12px;padding-top:12px;border-top:1px solid var(--bds);font-size:12px;color:var(--tx3);line-height:1.5;}
 .fd-card{max-width:1000px;}
 @media(max-width:860px){.calc-top{grid-template-columns:1fr;}.calc-aside{position:static;}}
-/* mobile overflow hardening — cegah blok kalkulator melebihi lebar layar */
+/* mobile overflow hardening, cegah blok kalkulator melebihi lebar layar */
 .calc-top,.calc-shell,.sc,.sc-body,.size-row,.sf,.luas-box,.calc-hint,.calc-progress,.struk,.calc-trust,.fd-card{min-width:0;}
 .sf-in input{min-width:0;}
 .calc-hint,.calc-progress,.struk,.calc-trust,.fd-card{max-width:100%;}
@@ -536,22 +536,22 @@ html{scroll-behavior:smooth;}
 details summary{padding-top:16px;padding-bottom:16px;}
 .faq-a{padding-bottom:18px;}
 
-/* — area layanan: 2 kolom biar tidak terlalu panjang — */
+/*, area layanan: 2 kolom biar tidak terlalu panjang, */
 .area-regions{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start;}
 @media(max-width:760px){.area-regions{grid-template-columns:1fr;}}
 
-/* — ikon "problem" jadi chip bertinta (lebih hidup + memperkuat rasa khawatir) — */
+/*, ikon "problem" jadi chip bertinta (lebih hidup + memperkuat rasa khawatir), */
 .fail-ico{width:18px;height:18px;padding:8px;box-sizing:content-box;border-radius:10px;background:rgba(192,57,43,.09);color:var(--red);stroke-width:2;flex-shrink:0;}
 .fail-card[style*="blue"] .fail-ico{background:rgba(46,62,95,.09);}
 .fail-card[style*="blue"] .fail-ico[style*="blue"]{color:var(--blue);}
 
-/* — nomor step & checklist: gradient biar pop — */
+/*, nomor step & checklist: gradient biar pop, */
 .step-num,.check-num{background:linear-gradient(135deg,var(--blue),var(--blue2))!important;border:none!important;color:#fff!important;box-shadow:0 3px 10px rgba(46,62,95,.22);}
 
-/* — ikon trust bar lebih terang — */
+/*, ikon trust bar lebih terang, */
 .trust-item svg{color:var(--accent)!important;}
 
-/* — micro-interaction hover (ala startup) — */
+/*, micro-interaction hover (ala startup), */
 .fail-card,.produk-card,.check-item,.testi,.porto-strip-item{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
 .fail-card:hover,.check-item:hover,.testi:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(13,26,46,.09);}
 .produk-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(13,26,46,.12);}
@@ -559,11 +559,11 @@ details summary{padding-top:16px;padding-bottom:16px;}
 .stat-card:hover{background:var(--bg2);}
 .area-link-card,.btn-primary,.btn-white,.prod-link{will-change:transform;}
 
-/* — reveal on scroll (di-inject via JS, jadi tanpa JS konten tetap tampil) — */
+/*, reveal on scroll (di-inject via JS, jadi tanpa JS konten tetap tampil), */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
 .has-reveal .reveal.in{opacity:1;transform:none;}
 
-/* — STEP PROGRESS TRACKER — */
+/*, STEP PROGRESS TRACKER, */
 .calc-progress-label{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.4px;margin-bottom:10px;}
 .calc-progress{display:flex;align-items:center;margin-bottom:18px;}
 .cp-step{display:flex;align-items:center;flex:1;}
@@ -575,24 +575,24 @@ details summary{padding-top:16px;padding-bottom:16px;}
 .cp-line{flex:1;height:3px;background:var(--bds);margin:0 5px;border-radius:2px;transition:background .35s;}
 .cp-line.done{background:var(--blue);}
 
-/* — HINT CARD (gradient + bouncing arrow) — */
+/*, HINT CARD (gradient + bouncing arrow), */
 .calc-hint{display:flex;align-items:center;gap:13px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-radius:var(--rl);padding:14px 18px;margin-bottom:16px;box-shadow:0 8px 24px rgba(46,62,95,.20);}
 .calc-hint-emoji{font-size:22px;line-height:1;animation:bounceDown 1.5s ease-in-out infinite;}
 @keyframes bounceDown{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
 .calc-hint-txt{font-size:13px;line-height:1.5;}
 .calc-hint-txt b{font-weight:800;}
 
-/* — smooth step reveal saat dibuka — */
+/*, smooth step reveal saat dibuka, */
 .sc.open .sc-body{animation:scReveal .3s cubic-bezier(.16,1,.3,1);}
 @keyframes scReveal{from{opacity:0;transform:translateY(-7px);}to{opacity:1;transform:none;}}
 
-/* — tombol "Lanjut" (di-inject via JS) — */
+/*, tombol "Lanjut" (di-inject via JS), */
 .sc-next{display:inline-flex;align-items:center;gap:7px;margin-top:16px;background:var(--blue);color:#fff;border:none;padding:11px 22px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(46,62,95,.22);}
 .sc-next:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 7px 18px rgba(46,62,95,.3);}
 .sc-next svg{transition:transform .2s;}
 .sc-next:hover svg{transform:translateX(3px);}
 
-/* — hormati reduced-motion — */
+/*, hormati reduced-motion, */
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   .reveal{opacity:1!important;transform:none!important;transition:none!important;}
@@ -631,177 +631,10 @@ details summary{padding-top:16px;padding-bottom:16px;}
 .hp-eng{padding:16px 5% 64px;background:var(--bg0);}.hp-eng-inner{max-width:1000px;margin:0 auto;}.hp-eng-cmp{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:780px;margin:34px auto 0;}.hp-eng-panel{border:1px solid var(--bdr);border-radius:var(--rl);padding:20px;background:var(--bg0);}.hp-eng-panel h3{font-size:15px;margin:14px 0 5px;text-align:center;}.hp-eng-bad{color:#c0392b;}.hp-eng-good{color:#1a7a43;}.hp-eng-panel p{font-size:13px;color:var(--tx3);text-align:center;margin:0;line-height:1.6;}.hp-eng h2{text-align:center;}.hp-eng .lead{text-align:center;max-width:620px;margin:10px auto 0;color:var(--tx2);font-size:15px;}@media(max-width:560px){.hp-eng-cmp{grid-template-columns:1fr;}}.reveal,.reveal-stagger,.reveal-stagger>*{opacity:1!important;transform:none!important;transition:none!important;}</style>
 <script type="application/ld+json">
 [
-  {
-    "@context": "https://schema.org",
-    "@type": "GeneralContractor",
-    "@id": "https://solidpaving.id/#business",
-    "name": "SolidPaving.id",
-    "url": "https://solidpaving.id/",
-    "telephone": "+6285943492832",
-    "email": "sales@solidpaving.id",
-    "image": "https://solidpaving.sirv.com/solidpaving/Jasa%20pasang%20paving%20block/pengiriman%20menggunakan%20pallet%20dan%20crane.jpeg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. Raya Cilangkap No. 10",
-      "addressLocality": "Jakarta Timur",
-      "addressRegion": "DKI Jakarta",
-      "postalCode": "13870",
-      "addressCountry": "ID"
-    },
-    "areaServed": [
-      "Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi",
-      "Cikarang", "Karawang", "Bandung", "Cimahi", "Sukabumi",
-      "Purwakarta", "Subang"
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday",
-          "Thursday", "Friday", "Saturday"
-        ],
-        "opens": "08:00",
-        "closes": "17:00"
-      }
-    ],
-    "priceRange": "Rp",
-    "description": "Supplier paving block dan jasa pemasangan profesional untuk area Jabodetabek dan Jawa Barat. Melayani proyek residensial, komersial, dan industri.",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1",
-      "reviewCount": "3"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "Budi Wicaksono"},
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "reviewBody": "Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."
-      },
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "Rini Anggraeni"},
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "reviewBody": "Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."
-      },
-      {
-        "@type": "Review",
-        "author": {"@type": "Person", "name": "Denny Prasetyo"},
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "reviewBody": "RAB transparan sejak awal, tidak ada biaya kejutan. K400 untuk area forklift kami terbukti kuat sampai sekarang."
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Produk & Layanan Paving Block",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Holland K200",
-            "description": "Paving block tipe Holland mutu K200. Tersedia tebal 6cm dan 8cm. Cocok untuk pedestrian dan halaman ringan.",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5",
-              "bestRating": "5",
-              "worstRating": "1",
-              "reviewCount": "3"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Budi Wicaksono"},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."
-              },
-              {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Rini Anggraeni"},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."
-              },
-              {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Denny Prasetyo"},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "RAB transparan sejak awal, tidak ada biaya kejutan. K400 untuk area forklift kami terbukti kuat sampai sekarang."
-              }
-            ],
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "75000",
-              "highPrice": "85000",
-              "offerCount": "2",
-              "seller": {"@id": "https://solidpaving.id/#business"}
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Paving Block Holland K300",
-            "description": "Paving block tipe Holland mutu K300. Tersedia tebal 6cm, 8cm, dan 10cm. Cocok untuk jalan perumahan dan area parkir.",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5",
-              "bestRating": "5",
-              "worstRating": "1",
-              "reviewCount": "3"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Budi Wicaksono"},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."
-              },
-              {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Rini Anggraeni"},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."
-              },
-              {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Denny Prasetyo"},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "RAB transparan sejak awal, tidak ada biaya kejutan. K400 untuk area forklift kami terbukti kuat sampai sekarang."
-              }
-            ],
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "90000",
-              "highPrice": "150000",
-              "offerCount": "3",
-              "seller": {"@id": "https://solidpaving.id/#business"}
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Jasa Pemasangan Paving Block",
-            "description": "Jasa pemasangan paving block mulai Rp 45.000/m². Termasuk opsi penambahan lapisan abu batu 5cm (+Rp 35.000/m²) dan pemadatan lahan (+Rp 40.000/m²).",
-            "offers": {
-              "@type": "AggregateOffer",
-              "priceCurrency": "IDR",
-              "lowPrice": "45000",
-              "highPrice": "120000",
-              "offerCount": "3",
-              "seller": {"@id": "https://solidpaving.id/#business"}
-            }
-          }
-        }
-      ]
-    }
-  }
+{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulator Paving Block SolidPaving.id","url":"https://solidpaving.id/kalkulator/","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"},"description":"Kalkulator estimasi kebutuhan material dan biaya pemasangan paving block per meter persegi.","provider":{"@type":"GeneralContractor","name":"PT Solid Precast Industri","url":"https://solidpaving.id/"}},
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"SolidPaving.id","item":"https://solidpaving.id/"},
+{"@type":"ListItem","position":2,"name":"Kalkulator","item":"https://solidpaving.id/kalkulator/"}]}
 ]
 </script> 
 </head>
@@ -1150,155 +983,14 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
 
 </div>
 <!-- MOB-DRAWER:END -->
-
-<main id="main-content">
-
-<!-- HERO -->
-<section id="hero">
-  <div class="container hero-inner">
-    <div>
-      <div class="hero-badge">Supplier + Jasa Pasang · Jabodetabek & Jawa Barat</div>
-      <h1>Lahan Parkir Paving <span class="blue">yang Tidak Amblas.</span> Bergaransi.</h1>
-      <p class="hero-sub">Satu kontrak, satu akuntabilitas. Material K200–K400 hidrolik press dan pemasangan presisi untuk kontraktor, developer, dan pemilik bisnis yang tidak mau bayar dua kali.</p>
-      <div class="hero-btns">
-        <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20ingin%20survei%20gratis." class="btn-primary">Minta Survei & RAB Gratis</a>
-        <a href="#kalkulator" class="btn-outline">Hitung Estimasi Biaya</a>
-      </div>
-      <div class="hero-proof" style="margin-top:24px;">
-        <div><div class="proof-num">50+</div><div class="proof-label">Proyek Selesai</div></div>
-        <div><div class="proof-num">40rb+</div><div class="proof-label">m² Terpasang</div></div>
-        <div><div class="proof-num">3 Bln</div><div class="proof-label">Garansi Tertulis</div></div>
-      </div>
-    </div>
-    <div class="hero-img-wrap">
-      <!-- FIX B: <picture> untuk serve ukuran gambar sesuai viewport
-           Mobile (~390px): w=480 q=50 → est ~15 KiB (bukan LCP di mobile, h1 yg jadi LCP)
-           Desktop: w=760 q=50 → est ~37 KiB (LCP element, preload di head sudah match) -->
-      <picture>
-        <source media="(max-width:768px)" srcset="https://solidpaving.sirv.com/solidpaving/Jasa%20pasang%20paving%20block/pengiriman%20menggunakan%20pallet%20dan%20crane.jpeg?w=480&q=50&format=webp">
-        <img src="https://solidpaving.sirv.com/solidpaving/Jasa%20pasang%20paving%20block/pengiriman%20menggunakan%20pallet%20dan%20crane.jpeg?w=760&q=55&format=webp" alt="Pengiriman paving block SolidPaving.id menggunakan pallet dan crane" loading="eager" fetchpriority="high" width="760" height="570">
-      </picture>
-      <div class="hero-badges">
-        <span class="hbadge">SNI Bersertifikat</span><span class="hbadge">Hidrolik Press</span><span class="hbadge">K200–K400</span><span class="hbadge">±2000 m²/hari</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST -->
-<div id="trust">
-  <div class="container trust-inner">
-    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garansi 3 Bulan Tertulis</div>
-    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>Respons &lt;24 Jam</div>
-    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>Satu Kontrak, Nol Saling Lempar</div>
-    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jabodetabek & Jawa Barat</div>
-  </div>
-</div>
-
-<!-- STATS -->
-<section id="stats" style="padding:44px 5%;background:var(--bg1);">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Proyek dari hunian hingga kawasan industri</div></div>
-      <div class="stat-card"><div class="stat-num">40rb+</div><div class="stat-label">m² paving terpasang dan terbukti tahan</div></div>
-      <div class="stat-card"><div class="stat-num">±2000</div><div class="stat-label">m² kapasitas pasang per hari</div></div>
-      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Akuntabilitas satu tangan</div></div>
-      <div class="stat-card"><div class="stat-num">&lt;24j</div><div class="stat-label">Respons RAB setelah survei</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<section id="problem">
-  <div class="container">
-    <div class="sec-label">Kenapa Ini Penting</div>
-    <h2>Mengapa Lahan Parkir Paving <span class="blue">Gagal dalam 1–2 Tahun</span></h2>
-    <div class="divider"></div>
-    <p class="prob-intro">Sebagian besar kegagalan paving bukan karena bloknya jelek — melainkan karena pondasi dan pemasangan yang keliru.</p>
-    <div class="fail-grid">
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="5" rx="1"/><path d="M9.5 10.5v4m0 0l-1.6-1.6M9.5 14.5l1.6-1.6"/><path d="M14.5 10.5v4m0 0l-1.6-1.6M14.5 14.5l1.6-1.6"/><path d="M3 20.5q9 -4 18 0"/></svg><div class="fail-tag">AMBLAS</div></div><h3>Amblas di Titik Beban</h3><p>Sub-base tidak dipadatkan. Paving turun di titik beban berat, muncul cekungan dan genangan.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11q3 -5 6 0t6 0 6 0"/><path d="M3 17h18"/></svg><div class="fail-tag">BERGELOMBANG</div></div><h3>Permukaan Bergelombang</h3><p>Abu batu tidak di-leveling presisi. Permukaan tidak rata, merusak estetika dan kendaraan.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="14" rx="1"/><path d="M11 5l-1.5 5 3 2.5-2 6.5"/></svg><div class="fail-tag">RETAK</div></div><h3>Blok Pecah & Retak</h3><p>Mutu terlalu rendah untuk bebannya. K300 dipakai untuk truk — hancur dalam hitungan bulan.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-2.2 3-3.6 5-3.6 7a3.6 3.6 0 007.2 0c0-2-1.4-4-3.6-7z"/><path d="M3 18q4.5 2.5 9 0t9 0"/><path d="M3 21q4.5 2.5 9 0t9 0"/></svg><div class="fail-tag">GENANGAN</div></div><h3>Genangan Air Kronis</h3><p>Kemiringan & drainase tidak dirancang. Air menggenang dan mempercepat kerusakan sub-base.</p></div>
-      <div class="fail-card"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="8" width="7" height="8" rx="1"/><rect x="14.5" y="8" width="7" height="8" rx="1"/><path d="M11.5 12h-2.2m0 0l1.3-1.3M9.3 12l1.3 1.3"/><path d="M12.5 12h2.2m0 0l-1.3-1.3M14.7 12l-1.3 1.3"/></svg><div class="fail-tag">BERGESER</div></div><h3>Paving Bergeser & Merenggang</h3><p>Tanpa kanstin pengunci, paving merenggang saat menahan beban kendaraan.</p></div>
-      <div class="fail-card" style="border-left-color:var(--blue)"><div class="fail-header"><svg class="fail-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--blue)"><ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7"/><path d="M5 12v3c0 1.7 3.1 3 7 3s7-1.3 7-3v-3"/></svg><div class="fail-tag" style="color:var(--blue)">BAYAR 2X</div></div><h3>Anda Bayar Dua Kali</h3><p>Biaya bongkar + material baru + kerugian parkir tutup. Vendor termurah sering berakhir paling mahal.</p></div>
-    </div>
-    <div class="cost-warn"><strong>Biaya perbaikan selalu lebih mahal dari biaya pengerjaan yang benar.</strong> Memilih harga terendah tanpa mempertimbangkan metode pemasangan adalah keputusan yang paling sering disesali.</div>
-  </div>
-</section>
-<section id="engineering" class="hp-eng reveal">
-  <div class="hp-eng-inner">
-    <div class="sec-label">Anti Amblas</div>
-    <h2>Kenapa Kami Berani <span class="blue">Garansi Anti Amblas</span></h2>
-    <p class="lead">Paving yang amblas hampir selalu karena lapisan di bawahnya, bukan pavingnya. Ini bedanya pemasangan asal jadi dengan metode engineering yang kami pakai di setiap proyek:</p>
-    <div class="hp-eng-cmp">
-      <div class="hp-eng-panel"><svg viewBox="0 0 200 132" style="width:100%;height:auto"><rect x="0" y="74" width="200" height="58" fill="#a68b6d"/><rect x="0" y="64" width="200" height="10" fill="#e6ddcf"/><g fill="var(--bg2)" stroke="#c0392b" stroke-width="1.2"><rect x="8" y="50" width="24" height="14"/><rect x="34" y="55" width="24" height="14"/><rect x="60" y="47" width="24" height="14"/><rect x="86" y="58" width="24" height="14"/><rect x="112" y="51" width="24" height="14"/><rect x="138" y="56" width="24" height="14"/><rect x="164" y="49" width="24" height="14"/></g><text x="100" y="24" font-size="11" fill="#c0392b" text-anchor="middle" font-weight="700">Bergelombang &amp; Amblas</text><text x="100" y="98" font-size="9.5" fill="#fff" text-anchor="middle">Tanah tidak dipadatkan</text></svg><h3 class="hp-eng-bad">Pemasangan Asal Jadi</h3><p>Paving digelar di pasir tipis tanpa pemadatan dan tanpa kanstin. Beberapa bulan kemudian mulai ambles dan bergelombang.</p></div>
-      <div class="hp-eng-panel"><svg viewBox="0 0 200 132" style="width:100%;height:auto"><rect x="0" y="98" width="200" height="34" fill="#a68b6d"/><rect x="0" y="80" width="200" height="18" fill="#b9c3cf"/><rect x="0" y="68" width="200" height="12" fill="#cdd6e0"/><rect x="0" y="60" width="200" height="8" fill="#dfe6ee"/><g fill="var(--bg2)" stroke="var(--blue)" stroke-width="1.2"><rect x="10" y="46" width="24" height="14"/><rect x="36" y="46" width="24" height="14"/><rect x="62" y="46" width="24" height="14"/><rect x="88" y="46" width="24" height="14"/><rect x="114" y="46" width="24" height="14"/><rect x="140" y="46" width="24" height="14"/><rect x="166" y="46" width="24" height="14"/></g><rect x="0" y="42" width="7" height="30" fill="var(--blue)"/><rect x="193" y="42" width="7" height="30" fill="var(--blue)"/><text x="100" y="24" font-size="11" fill="var(--blue)" text-anchor="middle" font-weight="700">Rata &amp; Anti Amblas</text><text x="100" y="92" font-size="9.5" fill="#3a3a3a" text-anchor="middle">Sub-base padat + kanstin</text></svg><h3 class="hp-eng-good">Metode Engineering Kami</h3><p>Tanah dipadatkan, dilapisi sub-base dan base course, lalu dikunci kanstin. Permukaan tetap rata dan stabil bertahun-tahun.</p></div>
-    </div>
-  </div>
-</section>
-
-
-<section id="bukti">
-  <div class="container">
-    <div class="sec-label">Bukti Lapangan</div>
-    <h2>Dikerjakan, <span class="blue">Bukan Sekadar Diklaim</span></h2>
-    <div class="divider"></div>
-    <div class="porto-strip">
-      <div class="porto-strip-item">
-        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Offo%20living%20cikampek/IMG_0735.jpeg?w=480&q=80&format=webp" alt="OFFO Living Cikampek — lahan parkir paving block rapi" loading="lazy" width="480" height="360">
-        <div class="porto-strip-overlay"><div class="porto-strip-label">OFFO Living Cikampek</div><div class="porto-strip-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;color:var(--accent);vertical-align:-1px"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg> Karawang</div></div>
-      </div>
-      <div class="porto-strip-item">
-        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Polytron%20EV%20jl%20sudirman%20Jakarta%20Pusat/IMG_0740.jpeg?w=480&q=80&format=webp" alt="Polytron EV Sudirman Jakarta — paving block komersial" loading="lazy" width="480" height="360">
-        <div class="porto-strip-overlay"><div class="porto-strip-label">Polytron EV</div><div class="porto-strip-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;color:var(--accent);vertical-align:-1px"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg> Jl. Sudirman, Jakarta Pusat</div></div>
-      </div>
-      <div class="porto-strip-item">
-        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Peruamahan%20tangerang%20pondok%20kacang/IMG_4449.jpeg?w=480&q=80&format=webp" alt="Perumahan Pondok Kacang Tangerang — jalan cluster paving block" loading="lazy" width="480" height="360">
-        <div class="porto-strip-overlay"><div class="porto-strip-label">Perumahan Pondok Kacang</div><div class="porto-strip-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;color:var(--accent);vertical-align:-1px"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg> Tangerang</div></div>
-      </div>
-      <div class="porto-strip-item">
-        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Parkiran%20gedung/IMG_9900.jpeg?w=480&q=80&format=webp" alt="Parkiran gedung komersial paving block" loading="lazy" width="480" height="360">
-        <div class="porto-strip-overlay"><div class="porto-strip-label">Parkiran Gedung Komersial</div><div class="porto-strip-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;color:var(--accent);vertical-align:-1px"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg> Jabodetabek</div></div>
-      </div>
-      <div class="porto-strip-item">
-        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Gudang%20tiga%20raksa%20tangerang/IMG_2661.jpeg?w=480&q=80&format=webp" alt="Gudang Tiga Raksa Tangerang — paving block pergudangan" loading="lazy" width="480" height="360">
-        <div class="porto-strip-overlay"><div class="porto-strip-label">Gudang Tiga Raksa</div><div class="porto-strip-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;color:var(--accent);vertical-align:-1px"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg> Tangerang</div></div>
-      </div>
-      <div class="porto-strip-item">
-        <img src="https://ectascom.sirv.com/solidpaving.id/portofolio/Hunian%20VIP/IMG_8654.jpeg?w=480&q=80&format=webp" alt="Hunian VIP — paving block premium kenegaraan" loading="lazy" width="480" height="360">
-        <div class="porto-strip-overlay"><div class="porto-strip-label">Hunian VIP Kenegaraan</div><div class="porto-strip-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;color:var(--accent);vertical-align:-1px"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg> Jabodetabek</div></div>
-      </div>
-    </div>
-    <div class="porto-cta-row">
-      <p>12 proyek terdokumentasi · dari Labuan hingga Sudirman Jakarta</p>
-      <a href="/portofolio/" class="porto-cta-link">Lihat Semua Proyek <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9,18 15,12 9,6"/></svg></a>
-    </div>
-    <div class="testis">
-      <div class="testi"><div class="testi-stars"><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div><p class="testi-q">"Parkir gudang kami dilalui truk tiap hari. Sudah setahun lebih, tidak ada yang amblas. Pemadatan sub-base mereka benar-benar beda."</p><div class="testi-av"><div class="av">BW</div><div><div class="av-name">Budi Wicaksono</div><div class="av-role">Manajer Operasional, Pergudangan</div></div></div></div>
-      <div class="testi"><div class="testi-stars"><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div><p class="testi-q">"Tiga proyek cluster pakai SolidPaving.id. Satu pintu untuk material dan pasang — tidak ada saling lempar tanggung jawab."</p><div class="testi-av"><div class="av">RA</div><div><div class="av-name">Rini Anggraeni</div><div class="av-role">Project Manager, Developer</div></div></div></div>
-      <div class="testi"><div class="testi-stars"><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:13px;height:13px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div><p class="testi-q">"RAB transparan sejak awal, tidak ada biaya kejutan. K400 untuk area forklift kami terbukti kuat sampai sekarang."</p><div class="testi-av"><div class="av">DP</div><div><div class="av-name">Denny Prasetyo</div><div class="av-role">Kepala Teknik, Logistik</div></div></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="kredibilitas" class="reveal">
-<div class="container">
-<div class="sec-label">Kredibilitas</div>
-<h2>Alasan Proyek Nyata <span class="blue">Mempercayakan ke Kami</span></h2>
-<div class="divider"></div>
-<div class="eeat-grid reveal-stagger"><div class="eeat-card"><div class="eeat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Badan Hukum Resmi</h3><p>PT Solid Precast Industri. NIB 2207260138436, SK Kemenkumham. Bukan usaha perorangan tanpa payung hukum.</p></div><div class="eeat-card"><div class="eeat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Material Bersertifikat SNI</h3><p>Paving K200 sampai K400 hidrolik press dengan uji kuat tekan laboratorium. Bukan cetak manual.</p></div><div class="eeat-card"><div class="eeat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7H4V5h11"/></svg></div><h3>Garansi 3 Bulan Tertulis</h3><p>Tercantum dalam kontrak, bukan janji lisan. Jika ada masalah pemasangan, kami perbaiki.</p></div><div class="eeat-card"><div class="eeat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4V10l6 4V7l6 4v10z"/><path d="M7 21v-4M12 21v-4M17 21v-4"/></svg></div><h3>Pengalaman Lapangan</h3><p>Puluhan proyek industri, komersial, dan perumahan: PLTU Labuan, Polytron EV Sudirman, IT PLN, dan lainnya.</p></div><div class="eeat-card"><div class="eeat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 8h4M19 6v4"/></svg></div><h3>Tim Pasang Sendiri</h3><p>Dikerjakan tim internal terlatih, bukan diserahkan ke calo. Prosedur sub-base sampai finishing dijaga.</p></div><div class="eeat-card"><div class="eeat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>RAB Transparan</h3><p>Rincian biaya per komponen: material, jasa, bedding, kanstin. Tanpa biaya tersembunyi di tengah jalan.</p></div></div>
-</div>
-</section>
-
-<!-- METHOD -->
-<!-- KALKULATOR -->
+<div class="breadcrumb"><div class="container"><a href="/">SolidPaving.id</a> <span>&rsaquo;</span> Kalkulator</div></div>
+<section style="padding:56px 5% 26px;background:var(--bg1);text-align:center"><div style="max-width:760px;margin:0 auto"><h1 style="font-size:clamp(26px,5vw,40px);color:var(--tx1);margin:0 0 14px;line-height:1.2">Kalkulator Paving Block</h1><p style="font-size:16px;color:var(--tx2);line-height:1.7;margin:0">Hitung perkiraan kebutuhan material dan biaya pemasangan paving block untuk proyek Anda. Pilih jenis pekerjaan, mutu, dan luas area, hasilnya muncul otomatis. Gratis dan tanpa perlu mendaftar.</p></div></section>
 <section id="kalkulator">
   <div class="container">
     <div class="sec-label">Estimasi Biaya</div>
     <h2>Hitung <span class="blue">Estimasi Biaya</span> Proyek Anda</h2>
     <div class="divider"></div>
-    <p style="color:var(--tx2);margin-bottom:24px;max-width:520px;font-size:15px;">Isi langkah demi langkah — estimasi langsung muncul.</p>
+    <p style="color:var(--tx2);margin-bottom:24px;max-width:520px;font-size:15px;">Isi langkah demi langkah, estimasi langsung muncul.</p>
     <div class="calc-top"><div class="calc-shell">
       <div class="sc open" id="sc1">
         <div class="sc-head" onclick="toggleSc(1)">
@@ -1392,7 +1084,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
                   <label class="tog" aria-label="Aktifkan layanan Pemasangan" onclick="event.stopPropagation()"><input type="checkbox" id="t1" onchange="calc()" aria-label="Pemasangan Rp 45.000 per m²"><div class="tog-track"></div><div class="tog-thumb"></div></label>
                 </div>
               </div>
-              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la1">—</span></div>
+              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la1">-</span></div>
             </div>
             <div class="lay-card" id="lc2" onclick="toggleLay(2,event)">
               <div class="lay-main">
@@ -1402,7 +1094,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
                   <label class="tog" aria-label="Aktifkan layanan Lapisan Bedding" onclick="event.stopPropagation()"><input type="checkbox" id="t2" onchange="calc()" aria-label="Lapisan Bedding Rp 35.000 per m²"><div class="tog-track"></div><div class="tog-thumb"></div></label>
                 </div>
               </div>
-              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la2">—</span></div>
+              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la2">-</span></div>
             </div>
             <div class="lay-card" id="lc3" onclick="toggleLay(3,event)">
               <div class="lay-main">
@@ -1412,7 +1104,7 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
                   <label class="tog" aria-label="Aktifkan layanan Pemadatan Sub-Base" onclick="event.stopPropagation()"><input type="checkbox" id="t3" onchange="calc()" aria-label="Pemadatan Sub-Base Rp 40.000 per m²"><div class="tog-track"></div><div class="tog-thumb"></div></label>
                 </div>
               </div>
-              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la3">—</span></div>
+              <div class="lay-added"><span class="lay-added-label">Ditambahkan</span><span class="lay-added-val" id="la3">-</span></div>
             </div>
           </div>
         </div>
@@ -1420,19 +1112,19 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       </div><aside class="calc-aside"><div class="struk">
         <div class="struk-top">
           <div class="struk-top-label">Total Estimasi</div>
-          <div class="struk-total" id="s-grand">—</div>
+          <div class="struk-total" id="s-grand">-</div>
           <div class="struk-sub" id="s-sub">untuk 0 m² · K300 · 8 cm</div>
         </div>
         <div class="struk-rows">
-          <div class="s-row"><span class="s-row-lbl">Material Paving</span><span class="s-row-val" id="s-mat">—</span></div>
-          <div class="s-row" id="sr1" style="display:none"><span class="s-row-lbl">Pemasangan</span><span class="s-row-val" id="sv1">—</span></div>
-          <div class="s-row" id="sr2" style="display:none"><span class="s-row-lbl">Lapisan Bedding</span><span class="s-row-val" id="sv2">—</span></div>
-          <div class="s-row" id="sr3" style="display:none"><span class="s-row-lbl">Pemadatan Sub-Base</span><span class="s-row-val" id="sv3">—</span></div>
-          <div class="s-row hl"><span class="s-row-lbl">Harga per m²</span><span class="s-row-val" id="s-pm2">—</span></div>
+          <div class="s-row"><span class="s-row-lbl">Material Paving</span><span class="s-row-val" id="s-mat">-</span></div>
+          <div class="s-row" id="sr1" style="display:none"><span class="s-row-lbl">Pemasangan</span><span class="s-row-val" id="sv1">-</span></div>
+          <div class="s-row" id="sr2" style="display:none"><span class="s-row-lbl">Lapisan Bedding</span><span class="s-row-val" id="sv2">-</span></div>
+          <div class="s-row" id="sr3" style="display:none"><span class="s-row-lbl">Pemadatan Sub-Base</span><span class="s-row-val" id="sv3">-</span></div>
+          <div class="s-row hl"><span class="s-row-lbl">Harga per m²</span><span class="s-row-val" id="s-pm2">-</span></div>
         </div>
-        <div class="struk-note">* Estimasi awal — harga pasti dikonfirmasi setelah survei lapangan gratis.</div>
+        <div class="struk-note">* Estimasi awal, harga pasti dikonfirmasi setelah survei lapangan gratis.</div>
       </div>
-      <div class="calc-trust"><div class="ct-title">Kenapa SolidPaving.id</div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>Garansi <b>3 bulan tertulis</b> dalam kontrak</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span><b>50+ proyek</b> · 40rb+ m² terpasang &amp; terbukti</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>Material <b>SNI</b> · hidrolik press</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>RAB <b>&lt;24 jam</b> · survei lapangan gratis</span></div><div class="ct-foot">Estimasi ini sudah memperhitungkan metode pemasangan yang benar — bukan harga termurah yang menunggu amblas.</div></div></aside></div><div class="fd-card">
+      <div class="calc-trust"><div class="ct-title">Kenapa SolidPaving.id</div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>Garansi <b>3 bulan tertulis</b> dalam kontrak</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span><b>50+ proyek</b> · 40rb+ m² terpasang &amp; terbukti</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>Material <b>SNI</b> · hidrolik press</span></div><div class="ct-item"><svg class="ct-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg><span>RAB <b>&lt;24 jam</b> · survei lapangan gratis</span></div><div class="ct-foot">Estimasi ini sudah memperhitungkan metode pemasangan yang benar, bukan harga termurah yang menunggu amblas.</div></div></aside></div><div class="fd-card">
         <div class="fd-title">Data Anda</div>
         <div class="fd-sub">Isi data berikut agar tim kami bisa segera menindaklanjuti.</div>
         <div class="fd-grid">
@@ -1459,193 +1151,11 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
       </div>
   </div>
 </section>
-
-<!-- STICKY -->
-<div class="sticky-est" id="sticky">
-  <div class="sticky-inner">
-    <div class="sticky-breakdown">
-      <div class="sticky-item"><div class="sticky-lbl">Material</div><div class="sticky-val" id="st-mat">—</div></div>
-      <div class="sticky-sep"></div>
-      <div class="sticky-item"><div class="sticky-lbl">Layanan</div><div class="sticky-val" id="st-lay">—</div></div>
-      <div class="sticky-sep"></div>
-      <div class="sticky-item sticky-total"><div class="sticky-lbl">Total</div><div class="sticky-val" id="st-total">—</div></div>
-    </div>
-    <button class="btn-wa-sm" onclick="kirimWA()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </button>
-  </div>
-</div>
-
-<!-- PRODUK -->
-<section id="produk">
-  <div class="container">
-    <div class="sec-label">Produk</div>
-    <h2>Pilih Model, <span class="blue">Kami Bantu Tentukan Mutunya</span></h2>
-    <div class="divider"></div>
-    <div class="produk-grid">
-      <div class="produk-card feat">
-        <div class="prod-top">TERLARIS</div>
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/paving/Paving%20block%20bata.jpg?w=420&h=420&q=75&format=webp" alt="Paving block Holland Bata" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Holland (Bata)</h3><p>Klasik & fleksibel. Cocok untuk hampir semua lahan parkir.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Holland." class="prod-link">Cek Harga / m² →</a></div>
-      </div>
-      <div class="produk-card">
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/paving/Paving%20ubin%2021.jpg?w=420&h=420&q=75&format=webp" alt="Paving block Ubin Square" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Ubin (Square)</h3><p>Tampilan minimalis modern untuk properti komersial premium.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Ubin." class="prod-link">Cek Harga / m² →</a></div>
-      </div>
-      <div class="produk-card">
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/paving/Paving%20cacing.jpg?w=420&h=420&q=75&format=webp" alt="Paving block Cacing Uni" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Cacing (Uni)</h3><p>Kuncian paling rapat. Ideal untuk area beban kendaraan berat.</p><div class="prod-specs"><span class="spec-tag">K200–K400</span><span class="spec-tag">6–10 cm</span><span class="spec-tag">Ready Stock</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Cacing." class="prod-link">Cek Harga / m² →</a></div>
-      </div>
-      <div class="produk-card">
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/paving/Paving%20hexagon.jpg?w=420&h=420&q=75&format=webp" alt="Paving block Hexagon" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Hexagon</h3><p>Pola segi enam dekoratif untuk taman &amp; area pedestrian.</p><div class="prod-specs"><span class="spec-tag">K200–K300</span><span class="spec-tag">6–8 cm</span><span class="spec-tag">Dekoratif</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20paving%20Hexagon." class="prod-link">Cek Harga / m² →</a></div>
-      </div>
-      <div class="produk-card">
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/paving/grassblock%20lubang%205.JPG?w=420&h=420&q=75&format=webp" alt="Grassblock berlubang untuk resapan air" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Grassblock</h3><p>Berlubang untuk resapan air &amp; area hijau yang tetap kuat dilalui.</p><div class="prod-specs"><span class="spec-tag">K200–K300</span><span class="spec-tag">L5 / L8</span><span class="spec-tag">Resapan Air</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20Grassblock." class="prod-link">Cek Harga / m² →</a></div>
-      </div>
-      <div class="produk-card">
-        <div class="prod-img"><img src="https://ectascom.sirv.com/solidpaving.id/paving/Kanstin%20taman.jpg?w=420&h=420&q=75&format=webp" alt="Kanstin beton taman" loading="lazy" width="420" height="420"></div>
-        <div class="prod-body"><h3>Kanstin</h3><p>Pengunci tepi &amp; pembatas. Wajib agar susunan paving tidak bergeser.</p><div class="prod-specs"><span class="spec-tag">Taman / Jepit</span><span class="spec-tag">40×20×10</span><span class="spec-tag">Rp 95rb/m¹</span></div><a href="https://wa.me/6285943492832?text=Halo,%20mau%20tanya%20harga%20Kanstin." class="prod-link">Cek Harga →</a></div>
-      </div>
-    </div>
-    <div class="produk-cta-row">
-      <p>Semua model tersedia mutu K200 sampai K400, sebagian ready stock.</p>
-      <a href="/produk/" class="btn-outline-blue">Lihat Semua Produk →</a>
-    </div>
-  </div>
-</section>
-
-<!-- VALIDATOR -->
-<section id="validator">
-  <div class="container">
-    <div class="sec-label">Lindungi Proyek Anda</div>
-    <h2>5 Pertanyaan Wajib ke <span class="blue">Calon Vendor Paving</span></h2>
-    <div class="divider"></div>
-    <p class="val-intro">Gunakan daftar ini untuk menyaring vendor mana pun — termasuk kami.</p>
-    <div class="check-list">
-      <div class="check-item"><div class="check-num">01</div><div class="check-body"><h3>Hidrolik press atau cetak manual?</h3><p>Cetak manual menghasilkan kepadatan tidak merata. Wajib hidrolik press untuk parkir komersial.</p></div></div>
-      <div class="check-item"><div class="check-num">02</div><div class="check-body"><h3>Bisa tunjukkan hasil uji kuat tekan / SNI?</h3><p>Klaim "K300" tanpa bukti uji lab tidak ada artinya.</p></div></div>
-      <div class="check-item"><div class="check-num">03</div><div class="check-body"><h3>Pemasangan termasuk pemadatan & kanstin?</h3><p>Tanpa ini, Anda hanya membeli paving yang menunggu waktu amblas.</p></div></div>
-      <div class="check-item"><div class="check-num">04</div><div class="check-body"><h3>Bagaimana penanganan kemiringan & drainase?</h3><p>Vendor yang tidak bicara soal air akan menciptakan masalah genangan.</p></div></div>
-      <div class="check-item"><div class="check-num">05</div><div class="check-body"><h3>Ada garansi perbaikan tertulis?</h3><p>Tanpa garansi tertulis, 100% risiko perbaikan ada di pundak Anda.</p></div></div>
-    </div>
-    <div class="val-footer">
-      <p><strong>SolidPaving.id menjawab "Ya" untuk kelimanya.</strong> Hidrolik press SNI, sub-base dipadatkan, drainase terancang, garansi 3 bulan tertulis dalam kontrak.</p>
-      <a href="https://wa.me/6285943492832" class="btn-primary">Bandingkan dengan Vendor Lain</a>
-    </div>
-  </div>
-</section>
-
-<!-- BUKTI -->
-<!-- AREA LAYANAN -->
-<section id="area-operasional">
-  <div class="container">
-    <div class="sec-label">Area Layanan</div>
-    <h2>Melayani Seluruh <span class="blue">Jabodetabek & Jawa Barat</span></h2>
-    <div class="divider"></div>
-    <p class="prob-intro">Tim SolidPaving.id siap datang ke lokasi Anda — dari kawasan industri berskala internasional hingga cluster perumahan. Survei gratis, respons dalam 24 jam kerja.</p>
-    <div class="area-regions">
-      <div class="area-region-block">
-        <div class="area-region-header">
-          <div class="area-region-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--blue)"><path d="M3 21V10l6 4V10l6 4V7l6 4v10z"/><path d="M7 21v-4M12 21v-4M17 21v-4"/></svg></div>
-          <div><div class="area-region-title">Kawasan Industri</div><div class="area-region-desc">Standar K400 · forklift & truk berat</div></div>
-        </div>
-        <div class="area-links-grid">
-          <a href="/jababeka/" class="area-link-card">Jababeka <span>Cikarang</span></a>
-          <a href="/mm2100/" class="area-link-card">MM2100 <span>Cibitung</span></a>
-          <a href="/ejip/" class="area-link-card">EJIP <span>Cikarang Selatan</span></a>
-          <a href="/cikarang/" class="area-link-card">Cikarang <span>Bekasi</span></a>
-          <a href="/karawang/" class="area-link-card">Karawang <span>Jawa Barat</span></a>
-        </div>
-      </div>
-      <div class="area-region-block">
-        <div class="area-region-header">
-          <div class="area-region-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--blue)"><rect x="4" y="8" width="6" height="12" rx="1"/><rect x="12" y="4" width="8" height="16" rx="1"/><path d="M15 8h.01M17 8h.01M15 12h.01M17 12h.01"/></svg></div>
-          <div><div class="area-region-title">Jakarta & Sekitarnya</div><div class="area-region-desc">Parkir komersial · perkantoran · pergudangan</div></div>
-        </div>
-        <div class="area-links-grid">
-          <a href="/jakarta/" class="area-link-card">DKI Jakarta <span>Semua wilayah</span></a>
-          <a href="/jakarta-timur/" class="area-link-card">Jakarta Timur <span>DKI Jakarta</span></a>
-          <a href="/jakarta-selatan/" class="area-link-card">Jakarta Selatan <span>DKI Jakarta</span></a>
-          <a href="/jakarta-barat/" class="area-link-card">Jakarta Barat <span>DKI Jakarta</span></a>
-          <a href="/jakarta-utara/" class="area-link-card">Jakarta Utara <span>DKI Jakarta</span></a>
-          <a href="/depok/" class="area-link-card">Depok <span>Jawa Barat</span></a>
-        </div>
-      </div>
-      <div class="area-region-block">
-        <div class="area-region-header">
-          <div class="area-region-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--blue)"><path d="M3 11l6-5 6 5"/><path d="M5 10v9h8v-9"/><path d="M14 12l4-3 4 3v7h-6"/></svg></div>
-          <div><div class="area-region-title">Bekasi & Tangerang</div><div class="area-region-desc">Perumahan · ruko · komersial</div></div>
-        </div>
-        <div class="area-links-grid">
-          <a href="/bekasi/" class="area-link-card">Bekasi <span>Kota & Kabupaten</span></a>
-          <a href="/cibitung/" class="area-link-card">Cibitung <span>Bekasi</span></a>
-          <a href="/tambun/" class="area-link-card">Tambun <span>Bekasi</span></a>
-          <a href="/tangerang/" class="area-link-card">Tangerang <span>Kota & Kab, Banten</span></a>
-          <a href="/tangerang-selatan/" class="area-link-card">Tangerang Selatan <span>BSD · Ciputat</span></a>
-          <a href="/serpong/" class="area-link-card">Serpong <span>BSD · Alam Sutera</span></a>
-        </div>
-      </div>
-      <div class="area-region-block">
-        <div class="area-region-header">
-          <div class="area-region-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:var(--blue)"><circle cx="8" cy="7" r="2"/><path d="M3 19l5-6 3 4 4-6 6 8z"/></svg></div>
-          <div><div class="area-region-title">Jawa Barat</div><div class="area-region-desc">Bandung · Bogor · Purwakarta & sekitarnya</div></div>
-        </div>
-        <div class="area-links-grid">
-          <a href="/bandung/" class="area-link-card">Bandung <span>Kota & Kab.</span></a>
-          <a href="/bogor/" class="area-link-card">Bogor <span>Kota & Kab.</span></a>
-          <a href="/purwakarta/" class="area-link-card">Purwakarta <span>Jawa Barat</span></a>
-          <a href="/cimahi/" class="area-link-card">Cimahi <span>Jawa Barat</span></a>
-          <a href="/cileungsi/" class="area-link-card">Cileungsi <span>Kab. Bogor</span></a>
-          <a href="/subang/" class="area-link-card">Subang <span>Jawa Barat</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="area-cta-strip">
-      <div>
-        <div class="area-cta-title">Tidak ada di daftar?</div>
-        <div class="area-cta-sub">Kami melayani seluruh Jabodetabek & Jawa Barat — hubungi kami untuk konfirmasi area Anda.</div>
-      </div>
-      <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id%2C%20saya%20ingin%20tanya%20area%20layanan." class="btn-primary">Tanya Area Layanan →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="sec-label">FAQ</div>
-    <h2>Pertanyaan yang <span class="blue">Sering Ditanyakan</span></h2>
-    <div class="divider"></div>
-    <div class="faq-wrap">
-      <details><summary>Apa penyebab utama lahan parkir paving amblas?</summary><p class="faq-a">Mayoritas bukan karena bloknya, melainkan sub-base tidak dipadatkan benar dan lapisan bedding tidak di-leveling presisi.</p></details>
-      <details><summary>Mutu paving block apa yang tepat untuk lahan parkir saya?</summary><p class="faq-a">K200 untuk taman/trotoar. K300 untuk parkir motor dan mobil pribadi. K350 untuk parkiran padat dan ruko. K400 untuk gudang dan kendaraan niaga.</p></details>
-      <details><summary>Apakah SolidPaving.id menyediakan material sekaligus jasa pasang?</summary><p class="faq-a">Ya. Supply material dan jasa pasang dalam satu kontrak terima beres — akuntabilitas penuh dari survei hingga garansi 3 bulan.</p></details>
-      <details><summary>Mengapa harga SolidPaving.id tidak selalu yang termurah?</summary><p class="faq-a">Karena harga kami sudah termasuk pemadatan sub-base yang benar, leveling presisi, kanstin pengunci, dan garansi tertulis.</p></details>
-      <details><summary>Berapa minimal order dan area layanan?</summary><p class="faq-a">Tidak ada minimum order yang kaku. Namun untuk proyek di bawah 100 m², harga per m² akan berbeda karena biaya mobilisasi dan alat tidak berubah. Hubungi kami untuk diskusi — kami melayani Jabodetabek dan seluruh Jawa Barat.</p></details>
-      <details><summary>Ada garansi pekerjaan?</summary><p class="faq-a">Ya. Garansi perbaikan 3 bulan tertulis setelah serah terima.</p></details>
-      <details><summary>Berapa lama proses survei dan RAB?</summary><p class="faq-a">RAB siap dalam kurang dari 24 jam kerja setelah survei. Gratis, tanpa kewajiban apapun.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section id="navigasi" class="reveal">
-<div class="container">
-<div class="sec-label">Jelajahi</div>
-<h2>Semua yang Anda Butuhkan, <span class="blue">Satu Tempat</span></h2>
-<div class="divider"></div>
-<div class="nav-hub-grid reveal-stagger"><a href="/produk/" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><h3>Produk <span class="nav-arrow">→</span></h3><p>Holland, Ubin, Cacing, Hexagon, Grassblock, Kanstin.</p></a><a href="/layanan/" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l4 4M3 21l9-9"/><path d="M14.5 5.5a2.1 2.1 0 013 0l1 1a2.1 2.1 0 010 3"/></svg></div><h3>Layanan <span class="nav-arrow">→</span></h3><p>Jasa pasang, lahan parkir, kawasan industri, perumahan.</p></a><a href="/area-layanan/" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.7-6-10a6 6 0 0112 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg></div><h3>Area Layanan <span class="nav-arrow">→</span></h3><p>Jabodetabek dan Jawa Barat. Cek kota Anda.</p></a><a href="/portofolio/" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-3 6 5"/><circle cx="8.5" cy="9" r="1.2"/></svg></div><h3>Portofolio <span class="nav-arrow">→</span></h3><p>Dokumentasi proyek nyata yang sudah dikerjakan.</p></a><a href="/tentang-kami/" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><h3>Tentang Kami <span class="nav-arrow">→</span></h3><p>Siapa kami, nilai, dan cara kami bekerja.</p></a><a href="/blog/" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div><h3>Blog & Panduan <span class="nav-arrow">→</span></h3><p>Harga, cara hitung, tips memilih kontraktor.</p></a><a href="/kontak/" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg></div><h3>Kontak <span class="nav-arrow">→</span></h3><p>WhatsApp, email, dan form survei gratis.</p></a><a href="/#kalkulator" class="nav-hub"><div class="nav-hub-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01"/></svg></div><h3>Kalkulator <span class="nav-arrow">→</span></h3><p>Estimasi biaya proyek Anda secara real-time.</p></a></div>
-</div>
-</section>
-
 <section id="cta-final">
   <div class="container">
     <div class="sec-label" style="color:rgba(255,255,255,.85)">Langkah Berikutnya</div>
     <h2>Mulai dengan Survei & RAB Gratis</h2>
-    <p>Kirim lokasi dan luas lahan Anda. Kami balas dengan rekomendasi mutu, estimasi biaya, dan jadwal — dalam 24 jam kerja.</p>
+    <p>Kirim lokasi dan luas lahan Anda. Kami balas dengan rekomendasi mutu, estimasi biaya, dan jadwal, dalam 24 jam kerja.</p>
     <div class="cta-row">
       <a href="https://wa.me/6285943492832?text=Halo%20SolidPaving.id,%20saya%20mau%20survei%20gratis." class="btn-white">Chat WhatsApp Sekarang</a>
       <a href="/produk/" class="btn-ow">Lihat Produk</a>
@@ -1655,10 +1165,25 @@ nav .nav-item.open .nav-btn svg{transform:rotate(180deg);opacity:1;}
     <p class="cta-note">Senin–Sabtu 08.00–17.00 WIB · Jabodetabek & Jawa Barat</p>
   </div>
 </section>
-</main>
 
-<!-- FOOTER -->
-<!-- FIX 5: Semua <h5> di footer diganti ke <p class="foot-col-head"> untuk fix heading order accessibility -->
+<div class="sticky-est" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-breakdown">
+      <div class="sticky-item"><div class="sticky-lbl">Material</div><div class="sticky-val" id="st-mat">-</div></div>
+      <div class="sticky-sep"></div>
+      <div class="sticky-item"><div class="sticky-lbl">Layanan</div><div class="sticky-val" id="st-lay">-</div></div>
+      <div class="sticky-sep"></div>
+      <div class="sticky-item sticky-total"><div class="sticky-lbl">Total</div><div class="sticky-val" id="st-total">-</div></div>
+    </div>
+    <button class="btn-wa-sm" onclick="kirimWA()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </button>
+  </div>
+</div>
+<a href="https://wa.me/6285943492832" class="wa-float" id="waFloat" aria-label="Chat WhatsApp SolidPaving.id">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 <!-- FOOTER:START -->
 <footer>
   <div class="container">
@@ -1774,8 +1299,8 @@ var HL={1:45000,2:35000,3:40000};
 var RK={K200:'Cocok untuk taman, trotoar, dan pejalan kaki',K300:'Ideal untuk perumahan dan parkiran motor / mobil pribadi',K350:'Pilihan menengah untuk parkiran padat dan ruko',K400:'Direkomendasikan untuk gudang dan kendaraan niaga'};
 function isGrass(){return S.jenis==='grassL8'||S.jenis==='grassL5';}
 function hargaPerM2(){if(isGrass()){var g=HG[S.jenis];var pcs=S.tebal==='6'?g.pcs6:g.pcs8;return Math.round(pcs*g.perM2);}var tbl=HP[S.mutu];return tbl?(tbl[parseInt(S.tebal)]||0):0;}
-function R(n){if(!n||n===0)return'—';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
-function Rk(n){if(!n)return'—';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
+function R(n){if(!n||n===0)return'-';if(n>=1e9)return'Rp '+(n/1e9).toFixed(1).replace('.0','')+'M';if(n>=1e6)return'Rp '+(n/1e6).toFixed(1).replace('.0','')+' jt';return'Rp '+Math.round(n).toLocaleString('id-ID');}
+function Rk(n){if(!n)return'-';return'Rp '+(n/1000).toFixed(0)+'rb/m²';}
 
 function logToSheet(sumber, data) {
   if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_URL_APPS_SCRIPT_DI_SINI') return;
@@ -1813,26 +1338,26 @@ function calc(){
   document.getElementById('out-luas').textContent=Math.round(luas);
   document.getElementById('sum1').textContent=luas>0?(p+' m × '+l+' m = '+Math.round(luas)+' m²'):'Masukkan panjang dan lebar';
   document.getElementById('sum2').textContent=JL[S.jenis]||S.jenis;
-  document.getElementById('sum3').textContent=grass?'Tidak berlaku untuk grassblock':(mutu+' — '+(RK[mutu]||''));
+  document.getElementById('sum3').textContent=grass?'Tidak berlaku untuk grassblock':(mutu+', '+(RK[mutu]||''));
   document.getElementById('sum4').textContent=S.tebal+' cm';
   var la=[t1?'Pasang':null,t2?'Bedding':null,t3?'Pemadatan':null].filter(Boolean);
   document.getElementById('sum5').textContent=la.length?la.join(', '):'Aktifkan layanan yang dibutuhkan';
-  document.getElementById('rekom-txt').textContent=grass?(S.jenis==='grassL8'?'Grassblock lubang besar — 7,4 pcs/m² — cocok untuk parkir rumput dan resapan air':'Grassblock lubang kecil — 6,25 pcs/m² — cocok untuk taman dan jalan setapak hijau'):(RK[mutu]||'—');
+  document.getElementById('rekom-txt').textContent=grass?(S.jenis==='grassL8'?'Grassblock lubang besar, 7,4 pcs/m², cocok untuk parkir rumput dan resapan air':'Grassblock lubang kecil, 6,25 pcs/m², cocok untuk taman dan jalan setapak hijau'):(RK[mutu]||'-');
   [6,8,10].forEach(function(t){var el=document.getElementById('hp'+t);if(!el)return;var no10=grass||(mutu==='K200');if(t===10&&no10){el.textContent='';return;}if(grass){var g=HG[S.jenis];var pcs=t===6?g.pcs6:g.pcs8;el.textContent='· '+(pcs/1000).toFixed(0)+'rb/pcs';}else{var h=HP[mutu]&&HP[mutu][t]||null;el.textContent=h?'· '+Rk(h):'';}});
   [1,2,3].forEach(function(i){document.getElementById('lc'+i).classList.toggle('on',document.getElementById('t'+i).checked);});
   var hP=hargaPerM2(),mat=luas*hP,v1=t1?luas*HL[1]:0,v2=t2?luas*HL[2]:0,v3=t3?luas*HL[3]:0,lay=v1+v2+v3,grand=mat+lay,pm2=hP+(t1?HL[1]:0)+(t2?HL[2]:0)+(t3?HL[3]:0);
-  document.getElementById('la1').textContent=t1&&luas>0?R(v1):'—';
-  document.getElementById('la2').textContent=t2&&luas>0?R(v2):'—';
-  document.getElementById('la3').textContent=t3&&luas>0?R(v3):'—';
-  document.getElementById('s-mat').textContent=luas>0?R(mat):'—';
-  function sr(rId,vId,val,on){document.getElementById(rId).style.display=on&&luas>0?'flex':'none';document.getElementById(vId).textContent=on&&luas>0?R(val):'—';}
+  document.getElementById('la1').textContent=t1&&luas>0?R(v1):'-';
+  document.getElementById('la2').textContent=t2&&luas>0?R(v2):'-';
+  document.getElementById('la3').textContent=t3&&luas>0?R(v3):'-';
+  document.getElementById('s-mat').textContent=luas>0?R(mat):'-';
+  function sr(rId,vId,val,on){document.getElementById(rId).style.display=on&&luas>0?'flex':'none';document.getElementById(vId).textContent=on&&luas>0?R(val):'-';}
   sr('sr1','sv1',v1,t1);sr('sr2','sv2',v2,t2);sr('sr3','sv3',v3,t3);
-  document.getElementById('s-pm2').textContent=luas>0?Rk(pm2):'—';
-  document.getElementById('s-grand').textContent=luas>0?R(grand):'—';
+  document.getElementById('s-pm2').textContent=luas>0?Rk(pm2):'-';
+  document.getElementById('s-grand').textContent=luas>0?R(grand):'-';
   document.getElementById('s-sub').textContent='untuk '+Math.round(luas)+' m²'+(grass?'':' · '+mutu)+' · '+tebal+' cm';
-  document.getElementById('st-mat').textContent=luas>0?R(mat):'—';
-  document.getElementById('st-lay').textContent=lay>0?R(lay):'—';
-  document.getElementById('st-total').textContent=luas>0?R(grand):'—';
+  document.getElementById('st-mat').textContent=luas>0?R(mat):'-';
+  document.getElementById('st-lay').textContent=lay>0?R(lay):'-';
+  document.getElementById('st-total').textContent=luas>0?R(grand):'-';
   updateSticky();
 }
 window.calc=calc;
@@ -1867,7 +1392,7 @@ window.kirimWA=function(){
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
   logToSheet('WhatsApp', d);
   var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
-  var msg=['━━━━━━━━━━━━━━━━━━','[ ESTIMASI SOLIDPAVING.ID','Tiket  : '+d.tid,'Tanggal: '+d.tgl,'━━━━━━━━━━━━━━━━━━','— DATA PELANGGAN','Nama   : '+d.nama,'No. HP : '+d.hp,'Lokasi : '+d.kota,d.proyek?'Proyek : '+d.proyek:null,d.catatan?'Catatan: '+d.catatan:null,'— SPESIFIKASI','Ukuran : '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis  : '+d.jenis,'Mutu   : '+d.mutu,'Tebal  : '+d.tebal+' cm','— LAYANAN',lay.length?lay.join('\n'):'Material saja (tanpa pasang)','— ESTIMASI','Material : '+R(d.mat),d.t1?'Pasang   : '+R(d.v1):null,d.t2?'Bedding  : '+R(d.v2):null,d.t3?'Pemadatan: '+R(d.v3):null,'TOTAL    : '+R(d.grand),'━━━━━━━━━━━━━━━━━━','*Estimasi awal. Harga pasti setelah survei gratis.*'].filter(s=>s!==null&&s!==undefined).join('\n');
+  var msg=['━━━━━━━━━━━━━━━━━━','[ ESTIMASI SOLIDPAVING.ID','Tiket  : '+d.tid,'Tanggal: '+d.tgl,'━━━━━━━━━━━━━━━━━━','- DATA PELANGGAN','Nama   : '+d.nama,'No. HP : '+d.hp,'Lokasi : '+d.kota,d.proyek?'Proyek : '+d.proyek:null,d.catatan?'Catatan: '+d.catatan:null,'- SPESIFIKASI','Ukuran : '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis  : '+d.jenis,'Mutu   : '+d.mutu,'Tebal  : '+d.tebal+' cm','- LAYANAN',lay.length?lay.join('\n'):'Material saja (tanpa pasang)','- ESTIMASI','Material : '+R(d.mat),d.t1?'Pasang   : '+R(d.v1):null,d.t2?'Bedding  : '+R(d.v2):null,d.t3?'Pemadatan: '+R(d.v3):null,'TOTAL    : '+R(d.grand),'━━━━━━━━━━━━━━━━━━','*Estimasi awal. Harga pasti setelah survei gratis.*'].filter(s=>s!==null&&s!==undefined).join('\n');
   window.open('https://wa.me/6285943492832?text='+encodeURIComponent(msg),'_blank');
 };
 
@@ -1877,7 +1402,7 @@ window.kirimEmail=function(){
   if(d.luas<=0){alert('Mohon isi ukuran lahan.');return;}
   logToSheet('Email', d);
   var lay=[d.t1?'Pemasangan (Rp 45.000/m²)':null,d.t2?'Lapisan Bedding (Rp 35.000/m²)':null,d.t3?'Pemadatan Sub-Base (Rp 40.000/m²)':null].filter(Boolean);
-  var subj='Permintaan Estimasi Paving Block — '+d.tid+(d.nama?' ('+d.nama+')':'');
+  var subj='Permintaan Estimasi Paving Block, '+d.tid+(d.nama?' ('+d.nama+')':'');
   var body=['Halo Tim SolidPaving.id,','','Permintaan estimasi biaya paving block:','','--- DATA ---','Nama: '+d.nama,'HP: '+d.hp,'Lokasi: '+d.kota,d.proyek?'Proyek: '+d.proyek:'',d.catatan?'Catatan: '+d.catatan:'','','--- SPESIFIKASI ---','Ukuran: '+d.p+' × '+d.l+' m = '+Math.round(d.luas)+' m²','Jenis: '+d.jenis,'Mutu: '+d.mutu,'Tebal: '+d.tebal+' cm','','--- LAYANAN ---',lay.length?lay.join(', '):'Material saja','','--- ESTIMASI ---','Material: '+R(d.mat),d.t1?'Pasang: '+R(d.v1):'',d.t2?'Bedding: '+R(d.v2):'',d.t3?'Pemadatan: '+R(d.v3):'','TOTAL: '+R(d.grand),'','Ref: '+d.tid,'','Terima kasih.',d.nama].filter(s=>s!==null&&s!==undefined).join('\n');
   window.location.href='mailto:sales@solidpaving.id?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
 };
@@ -1937,7 +1462,7 @@ calc();
       l.classList.toggle('done', card && card.classList.contains('done'));
     });
     var lbl = document.getElementById('cpLabel');
-    if(lbl) lbl.textContent = open ? ('Langkah '+open+' dari '+TOTAL) : 'Selesai — cek estimasi di bawah ↓';
+    if(lbl) lbl.textContent = open ? ('Langkah '+open+' dari '+TOTAL) : 'Selesai, cek estimasi di bawah ↓';
   };
 
   window.goSc = function(n){
@@ -1962,7 +1487,7 @@ calc();
     /* hint card */
     var hint = document.createElement('div');
     hint.className = 'calc-hint';
-    hint.innerHTML = '<div class="calc-hint-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg></div><div class="calc-hint-txt"><b>Mulai dari sini.</b> Isi 5 langkah singkat — estimasi biaya muncul otomatis di bawah. Hanya butuh ±30 detik, gratis & tanpa kewajiban.</div>';
+    hint.innerHTML = '<div class="calc-hint-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg></div><div class="calc-hint-txt"><b>Mulai dari sini.</b> Isi 5 langkah singkat, estimasi biaya muncul otomatis di bawah. Hanya butuh ±30 detik, gratis & tanpa kewajiban.</div>';
 
     /* step label + progress dots */
     var lbl = document.createElement('div');
